@@ -1,4 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Practice" representedClassName=".Practice" syncable="YES">
+        <attribute name="image_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_completed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="is_deleted" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practiseddays" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startedday" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="practiceData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeData" inverseName="practiceDataToPractice" inverseEntity="PracticeData" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="practice" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="PracticeData" representedClassName=".PracticeData" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practised" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tracking_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="practiceDataToPractice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Practice" inverseName="practiceData" inverseEntity="Practice" syncable="YES"/>
+    </entity>
+    <entity name="PracticeHistory" representedClassName=".PracticeHistory" syncable="YES">
+        <attribute name="com_del_flag" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dss" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practice_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="td" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="dob" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="isloggedin" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <relationship name="practice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Practice" inverseName="user" inverseEntity="Practice" syncable="YES"/>
+    </entity>
+    <entity name="WeeklyData" representedClassName=".WeeklyData" syncable="YES">
+        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="no_of_days_practiced" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="practice_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Practice" positionX="-483.47265625" positionY="-341.15625" width="128" height="180"/>
+        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="28"/>
+        <element name="PracticeHistory" positionX="-441" positionY="-396" width="128" height="120"/>
+        <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="135"/>
+        <element name="WeeklyData" positionX="-441" positionY="-396" width="128" height="120"/>
+    </elements>
 </model>
