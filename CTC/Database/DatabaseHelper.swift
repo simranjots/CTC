@@ -157,56 +157,8 @@ class DatabaseHelper{
                 }
                 
             }
-            
-//            for weekData in weeklyPracticedData{
-//                bufferWeeklyData = []
-//                let practiceName = practice.practice!
-//                 let dateOfData = (weekData.start_date! as Date).dateFormateToString()
-//                for dateObject in practiceDateArray{
-//                    
-//                    let dateOfObject = dateObject.dateFormateToString()
-//                   
-//                    
-//                    if(dateOfObject == dateOfData && practiceName == weekData.practice_name){
-//                        
-//                        if(finalDateArray[dateOfData!]?.count != nil){
-//                            bufferWeeklyData = finalDateArray[dateOfData!]!
-//                            
-//                            bufferWeeklyData.append( [
-//                                "totalNoOfDays" : "\(weekData.total_no_of_days)",
-//                                "noOfDayPracticed" : "\(weekData.no_of_days_practiced)",
-//                                "startDate" : "\((weekData.start_date! as Date).dateFormateToString()!)",
-//                                "endDate" : "\((weekData.end_date! as Date).dateFormateToString()!)",
-//                                "PracticeName" : weekData.practice_name,
-//                                "CellType" : "2"
-//                                ])
-//                       
-//                            finalDateArray[ (weekData.start_date! as Date).dateFormateToString()!] = (bufferWeeklyData)
-//                          
-//                        }else{
-//                            
-//                            bufferWeeklyData = [( [
-//                                
-//                                "totalNoOfDays" : "\(weekData.total_no_of_days)",
-//                                "noOfDayPracticed" : "\(weekData.no_of_days_practiced)",
-//                                "startDate" : "\((weekData.start_date! as Date).dateFormateToString()!)",
-//                                "endDate" : "\((weekData.end_date! as Date).dateFormateToString()!)",
-//                                "PracticeName" : weekData.practice_name,
-//                                "CellType" : "2"
-//                                ] )]
-//                          
-//                            finalDateArray[(weekData.start_date! as Date).dateFormateToString()!] = (bufferWeeklyData)
-//                       
-//                        }
-//                    }
-//          
-//                }
-//            
-//            }
-        
         }
 
-        
                 print("from database--------------------------")
 //                        print(practiceBufferDict)
         for (key, val) in finalDateArray{
