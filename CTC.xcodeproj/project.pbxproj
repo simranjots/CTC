@@ -14,6 +14,8 @@
 		1AD65E83264E449900CD9974 /* TrackRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E82264E449900CD9974 /* TrackRecord.storyboard */; };
 		1AD65E85264E45A400CD9974 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E84264E45A400CD9974 /* Profile.storyboard */; };
 		1AD65E87264E466C00CD9974 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E86264E466C00CD9974 /* More.storyboard */; };
+		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
+		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
 		E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */; };
 		E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */; };
 		E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */; };
@@ -96,6 +98,8 @@
 		1AD65E82264E449900CD9974 /* TrackRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackRecord.storyboard; sourceTree = "<group>"; };
 		1AD65E84264E45A400CD9974 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1AD65E86264E466C00CD9974 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		844AA35F4ACF0ABF3EE6D56D /* Pods-CTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTC/Pods-CTC.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -245,6 +249,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		262946DE26601F73005BA95E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				262946DF26601F8B005BA95E /* Constants.swift */,
+				262946E126601F99005BA95E /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D41E64161121D26A09DACC1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +334,7 @@
 		E189D68421E4FA430078380B /* CTC */ = {
 			isa = PBXGroup;
 			children = (
+				262946DE26601F73005BA95E /* Helpers */,
 				1AD65E61264DED4900CD9974 /* Storyboard */,
 				E179F53821F294A600FBD293 /* Images */,
 				1AC4CAD32653407C008B2555 /* Design */,
@@ -543,6 +557,7 @@
 				E1383D8621E7CDFC00F8597F /* addTodayViewController.swift in Sources */,
 				E18EDF1121F8BC08009B18B1 /* MorePageTableViewCell.swift in Sources */,
 				E154CB91221F05DF007ACAC3 /* MainNavigationController.swift in Sources */,
+				262946E026601F8B005BA95E /* Constants.swift in Sources */,
 				E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */,
 				E173DE2922035A1C000CAE24 /* MoreOptionCollectionViewCell.swift in Sources */,
 				E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */,
@@ -553,6 +568,7 @@
 				E10D6675226F6F7900C0E4D8 /* faqViewController.swift in Sources */,
 				E16BBC6321F638D60094D8B6 /* MorePageViewController.swift in Sources */,
 				E11037BB21E6602E007BBEF1 /* LoginViewController.swift in Sources */,
+				262946E226601F99005BA95E /* Utilities.swift in Sources */,
 				E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */,
 				E169CA58225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift in Sources */,
 				E1C08F1121F772DE00446557 /* NavigationBar.swift in Sources */,

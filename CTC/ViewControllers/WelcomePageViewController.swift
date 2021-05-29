@@ -4,14 +4,7 @@ import UIKit
 
 class WelcomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    
-    
-    
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
-    
-    
-    
-    
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,6 +32,7 @@ class WelcomePageViewController: UIViewController, UICollectionViewDelegate, UIC
         dismiss(animated: true, completion: nil)
         self.present(vc, animated: true, completion: nil)
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
