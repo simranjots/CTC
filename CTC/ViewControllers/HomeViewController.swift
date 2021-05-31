@@ -214,7 +214,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         
-        // MARK: Gradiat Color Sewt for naviagation Bar
+        // MARK: Gradiat Color Set for naviagation Bar
         
         if let navigationBar = self.navigationController?.navigationBar {
             let gradient = CAGradientLayer()

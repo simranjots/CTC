@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var signInButton: UIButton!
-    @IBOutlet var errorLabel: UILabel!
     @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
     @IBOutlet var facebookSignInButton: UIButton!
@@ -25,6 +24,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
         setUpElements()
+        
+        // to dismiss keyboard on tap out side
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+        
     }
     
     
@@ -34,9 +39,6 @@ class LoginViewController: UIViewController {
         //Add textField Images
         guard let emailTextFieldImage = UIImage(named: "Email-1") else { return }
         guard let passwordTextFieldImage = UIImage(named: "Password-1") else { return }
-        
-        //Make error label invisible
-        errorLabel.alpha = 0
         
         //Style the textFields
         Utilities.styleTextField(emailTextField)
@@ -59,41 +61,41 @@ class LoginViewController: UIViewController {
         passwordTextField.resignFirstResponder()
         
     }
-   
+       
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+//
+//          // if keyboard size is not available for some reason, dont do anything
+//          return
+//        }
+//
+//        var shouldMoveViewUp = false
+//
+//        // if active text field is not nil
+//        if let activeTextField = activeTextField {
+//
+//            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
+//
+//          let topOfKeyboard = self.view.frame.height - keyboardSize.height
+//
+//          // if the bottom of Textfield is below the top of keyboard, move up
+//          if bottomOfTextField > topOfKeyboard {
+//            shouldMoveViewUp = true
+//          }
+//        }
+//
+//        if(shouldMoveViewUp) {
+//          self.view.frame.origin.y = 0 - keyboardSize.height
+//        }
+//    }
 
-          // if keyboard size is not available for some reason, dont do anything
-          return
-        }
-
-        var shouldMoveViewUp = false
-
-        // if active text field is not nil
-        if let activeTextField = activeTextField {
-
-            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
-          
-          let topOfKeyboard = self.view.frame.height - keyboardSize.height
-
-          // if the bottom of Textfield is below the top of keyboard, move up
-          if bottomOfTextField > topOfKeyboard {
-            shouldMoveViewUp = true
-          }
-        }
-
-        if(shouldMoveViewUp) {
-          self.view.frame.origin.y = 0 - keyboardSize.height
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
-      self.view.frame.origin.y = 0
-    }
-    
-    
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//      // move back the root view origin to zero
+//      self.view.frame.origin.y = 0
+//    }
+//
+//
     
     override func viewDidAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
@@ -203,26 +205,17 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //Dismiss keyboard when touch outside
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
 }
 
 extension LoginViewController : UITextFieldDelegate {
-  // when user select a textfield, this method will be called
-  func textFieldDidBeginEditing(_ textField: UITextField) {
-    // set the activeTextField to the selected textfield
-    self.activeTextField = textField
-  }
-    
-  // when user click 'done' or dismiss the keyboard
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    self.activeTextField = nil
-  }
-    
-    
-    
-    
+//  // when user select a textfield, this method will be called
+//  func textFieldDidBeginEditing(_ textField: UITextField) {
+//    // set the activeTextField to the selected textfield
+//    self.activeTextField = textField
+//  }
+//
+//  // when user click 'done' or dismiss the keyboard
+//  func textFieldDidEndEditing(_ textField: UITextField) {
+//    self.activeTextField = nil
+//  }
 }
