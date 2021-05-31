@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */; };
 		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
+		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
 		1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7E264E357D00CD9974 /* TabVC.storyboard */; };
 		1AD65E81264E412800CD9974 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E80264E412800CD9974 /* Home.storyboard */; };
@@ -93,6 +94,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A62B82026659CD70025D92C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1AD65E7E264E357D00CD9974 /* TabVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabVC.storyboard; sourceTree = "<group>"; };
 		1AD65E80264E412800CD9974 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				E1383D7B21E7835800F8597F /* ShowRecordViewController.swift */,
 				E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */,
 				E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */,
+				1A62B82026659CD70025D92C /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
 				E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */,
+				1A62B82126659CD70025D92C /* MainViewController.swift in Sources */,
 				E1383D8021E7905000F8597F /* DataHeaderCell.swift in Sources */,
 				E179F52F21F2476A00FBD293 /* HomeTableViewCell.swift in Sources */,
 				E10D6677226F7D7200C0E4D8 /* AboutUsViewController.swift in Sources */,

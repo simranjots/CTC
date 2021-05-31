@@ -11,7 +11,6 @@ class LoginViewController: UIViewController {
     //Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var signUpButton: UIButton!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
@@ -24,11 +23,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
         setUpElements()
-        
-        // to dismiss keyboard on tap out side
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
-        
         
     }
     
@@ -55,48 +49,6 @@ class LoginViewController: UIViewController {
     }
     
     
-    // to dismiss keyboard on tap out side
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        
-    }
-       
-    
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-//
-//          // if keyboard size is not available for some reason, dont do anything
-//          return
-//        }
-//
-//        var shouldMoveViewUp = false
-//
-//        // if active text field is not nil
-//        if let activeTextField = activeTextField {
-//
-//            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
-//
-//          let topOfKeyboard = self.view.frame.height - keyboardSize.height
-//
-//          // if the bottom of Textfield is below the top of keyboard, move up
-//          if bottomOfTextField > topOfKeyboard {
-//            shouldMoveViewUp = true
-//          }
-//        }
-//
-//        if(shouldMoveViewUp) {
-//          self.view.frame.origin.y = 0 - keyboardSize.height
-//        }
-//    }
-
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//      // move back the root view origin to zero
-//      self.view.frame.origin.y = 0
-//    }
-//
-//
-    
     override func viewDidAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
         firebaseHelper = FirebaseHelper()
@@ -116,8 +68,7 @@ class LoginViewController: UIViewController {
         
         
         view.endEditing(true)
-        
-        
+   
         var email = emailTextField.text!
         email = email.lowercased()
         
@@ -150,7 +101,6 @@ class LoginViewController: UIViewController {
                 
                 if result {
                     performSegue(withIdentifier: "MainTabbedBar", sender: self)
-                    presentingViewController?.dismiss(animated: true, completion: nil)
                 }
                 else {
                     
@@ -184,26 +134,6 @@ class LoginViewController: UIViewController {
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
     }
     
-    @IBAction func signUpButtonTapped(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "signup") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
-      
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch segue.identifier {
-        case "loginToHome":
-            let tbvc = segue.destination as! UITabBarController
-            let navvc = tbvc.viewControllers![0] as! UINavigationController
-            let destination = navvc.viewControllers[0] as! HomeViewController
-            
-            destination.userObject = userObjectPass
-        default: break
-            
-        }
-    }
     
 }
 

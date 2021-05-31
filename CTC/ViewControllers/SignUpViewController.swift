@@ -24,38 +24,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         dbHelper = DatabaseHelper()
         setUpElements()
         
-        // to dismiss keyboard on tap out side
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
-        
-        //self.nameTextField.delegate = self
-        //self.emailTextField.delegate = self
-        //self.passwordTextField.delegate = self
-    
-        //registerForKeyboardNotifications()
-        
-        // to make text field round corner
-        // view.setGradientBackground(colorOne: Theme.gradientColor1, colorTwo: Theme.gradientColor2)
-        //nameTextField.clipsToBounds = true
-        //passwordTextField.clipsToBounds = true
-        //emailTextField.clipsToBounds = true
-        //nameTextField.layer.cornerRadius = 10
-        //emailTextField.layer.cornerRadius = 10
-        //passwordTextField.layer.cornerRadius = 10
-        
-        
-        //nameTextField.customePlaceHolder(text: "Enter Your Name", color: UIColor.white.withAlphaComponent(1))
-        //emailTextField.customePlaceHolder(text: "Enter Your Email", color: UIColor.white.withAlphaComponent(1))
-        //passwordTextField.customePlaceHolder(text: "Enter Your Password", color: UIColor.white.withAlphaComponent(1))
-        
-        //nameTextField.setLeftPadding(iconName: "Name")
-        //emailTextField.setLeftPadding(iconName: "Email")
-        //passwordTextField.setLeftPadding(iconName: "Password")
-        
-        //signUpButton.layer.cornerRadius = 10
-        
-        //signUpButton.loginButton()
-        
     }
     
     //Set the properties of Sign Up screen elements
@@ -81,27 +49,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
     
     
-    // to dismiss keyboard on tap out side
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        nameTextField.resignFirstResponder()
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        
-    }
-    
-    
-    
-    
-    
-    @IBAction func backtoSignIn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
  
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        
-        
-        
+   
         let name = nameTextField.text!
         var email = emailTextField.text!
         email = email.lowercased()
@@ -126,9 +77,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                         showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
                         
                     }else if (resultFlag == 0){
-                        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-                        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "moreToLoginOptions") as! LoginViewController
-                        self.present(vc, animated: true, completion: nil)
+                        performSegue(withIdentifier: "MainTabbedBar", sender: self)
                     }
                     
                 }else{
@@ -147,56 +96,5 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         }
         
     }
-    
-//    func registerForKeyboardNotifications(){
-//        //Adding notifies on keyboard appearing
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
-//
-//    func deregisterFromKeyboardNotifications(){
-//        //Removing notifies on keyboard appearing
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
-
-//    @objc func keyboardWasShown(notification: NSNotification){
-//        //Need to calculate keyboard exact size due to Apple suggestions
-//        self.scrollview.isScrollEnabled = true
-//        var info = notification.userInfo!
-//        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-//        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height, right: 0.0)
-//
-//        self.scrollview.contentInset = contentInsets
-//        self.scrollview.scrollIndicatorInsets = contentInsets
-//
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardSize!.height
-//        if let activeField = self.activeField {
-//            if (!aRect.contains(activeField.frame.origin)){
-//                self.scrollview.scrollRectToVisible(activeField.frame, animated: true)
-//            }
-//        }
-//    }
-
-//    @objc func keyboardWillBeHidden(notification: NSNotification){
-//        //Once keyboard disappears, restore original positions
-//        var info = notification.userInfo!
-//        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-//        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -keyboardSize!.height, right: 0.0)
-//        self.scrollview.contentInset = contentInsets
-//        self.scrollview.scrollIndicatorInsets = contentInsets
-//        self.view.endEditing(true)
-//        self.scrollview.isScrollEnabled = false
-//    }
-
-//    func textFieldDidBeginEditing(_ textField: UITextField){
-//        activeField = textField
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField){
-//        activeField = nil
-//    }
-    
-    
+  
 }
