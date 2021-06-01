@@ -40,6 +40,37 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    static func styleHollowButton(_ button:UIButton) {
+        
+        // Hollow rounded corner style
+        button.layer.borderWidth = 2
+        if #available(iOS 13.0, *) {
+            button.layer.borderColor = CGColor(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
+        } else {
+            button.layer.borderColor = UIColor.systemTeal.cgColor
+        }
+        button.layer.cornerRadius = 10.0
+        //button.tintColor = UIColor.init(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
+    }
+    
+    static func styleGmailButton(_ button:UIButton) {
+        
+        //Filled rounded corner style
+        button.backgroundColor = UIColor.init(red: 234/255, green: 67/255, blue: 53/255, alpha: 1)
+        button.layer.cornerRadius = 10.0
+        button.tintColor = UIColor.white
+    }
+    
+    static func styleFacebookButton(_ button:UIButton) {
+        //Filled rounded corner style
+        button.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
+        button.layer.cornerRadius = 10.0
+        button.tintColor = UIColor.white
+    }
+    
+    
+    
+    
     static func isPasswordValid(_ password:String) -> Bool {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")

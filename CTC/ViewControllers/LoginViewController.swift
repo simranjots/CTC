@@ -42,8 +42,8 @@ class LoginViewController: UIViewController {
         
         //Style the buttons
         Utilities.styleButton(signInButton)
-        Utilities.styleButton(gmailSignInButton)
-        Utilities.styleButton(facebookSignInButton)
+        Utilities.styleGmailButton(gmailSignInButton)
+        Utilities.styleFacebookButton(facebookSignInButton)
         
         //Set textField Images
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailTextFieldImage)

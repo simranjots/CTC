@@ -141,7 +141,7 @@
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tm-Wn-l7r">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.91764705879999997" green="0.26274509800000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="ExB-VT-iUQ"/>
                                                                         </constraints>
@@ -162,7 +162,7 @@
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-sC-2cV">
                                                                         <rect key="frame" x="0.0" y="60" width="374" height="50"/>
-                                                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.25882352939999997" green="0.4039215686" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="ZM0-td-g5e"/>
                                                                         </constraints>
@@ -432,7 +432,6 @@
         <!--Welcome-->
         <scene sceneID="4wU-gD-iNF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YHT-eV-XiV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="spO-Uv-Gxb" customClass="MainViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pKk-ML-7IS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -482,7 +481,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wW-DL-gVC">
                                 <rect key="frame" x="20" y="790" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nfJ-eq-FVI"/>
                                 </constraints>
@@ -490,7 +488,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Register">
                                             <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="NSColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -523,15 +521,16 @@
                     <connections>
                         <outlet property="loginButton" destination="nyf-YU-Rhb" id="im0-mK-Ds6"/>
                         <outlet property="registerButton" destination="0wW-DL-gVC" id="AHI-Kf-f8C"/>
+                        <outlet property="tagLineLabel" destination="Zap-BR-8es" id="2TA-ig-XrL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHT-eV-XiV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1855.072463768116" y="2410.7142857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UeL-3n-Id9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dgy-wi-wbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="newLoginOptions" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0gR-qA-8gQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EBn-JB-gMW">
@@ -549,6 +548,7 @@
                         <segue destination="spO-Uv-Gxb" kind="relationship" relationship="rootViewController" id="WJr-ZZ-sjx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgy-wi-wbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2786" y="2411"/>
         </scene>
