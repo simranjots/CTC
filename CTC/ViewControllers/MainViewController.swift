@@ -2,6 +2,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var registerButton: UIButton!
+    
      override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
          navigationController?.isNavigationBarHidden = true
@@ -14,18 +17,9 @@ class MainViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.styleButton(loginButton)
+        Utilities.styleButton(registerButton)
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
