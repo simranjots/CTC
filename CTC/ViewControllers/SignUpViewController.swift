@@ -12,10 +12,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-    @IBOutlet weak var scrollview: UIScrollView!
-    @IBOutlet weak var backToSignIn: UIButton!
-    
-   
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
     //var activeField: UITextField?
 
     override func viewDidLoad() {

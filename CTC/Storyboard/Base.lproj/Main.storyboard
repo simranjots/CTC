@@ -11,7 +11,7 @@
         <!--Welcome Page View Controller-->
         <scene sceneID="bYH-xj-UuX">
             <objects>
-                <viewController storyboardIdentifier="newLoginOptions" id="JPR-DW-rmG" customClass="WelcomePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JPR-DW-rmG" customClass="WelcomePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ow0-ZQ-csl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

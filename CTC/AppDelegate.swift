@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
             
         }else{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "newLoginOptions")
             
         }
