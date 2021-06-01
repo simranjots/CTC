@@ -1,11 +1,3 @@
-//
-//  MorePageViewController.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-01-21.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 
 class MorePageViewController: UIViewController {
@@ -100,7 +92,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource{
                 var resultFlag = dbHelper.updateLoginStatus(status: false, email: (userObject?.email)!)
                 if (resultFlag == 0){
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "moreToLoginOptions") as! LoginViewController
+                    let vc = storyboard.instantiateViewController(withIdentifier: "newLoginOptions") as! UINavigationController
                     self.present(vc, animated: true, completion: nil)
                    
 

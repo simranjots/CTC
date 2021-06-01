@@ -25,7 +25,9 @@ class LoginViewController: UIViewController {
         setUpElements()
         
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
     
     //Set the properties of login screen elements
     func setUpElements() {
@@ -100,7 +102,7 @@ class LoginViewController: UIViewController {
                 
                 
                 if result {
-                    performSegue(withIdentifier: "MainTabbedBar", sender: self)
+                   performSegue(withIdentifier: "MainTabbedBar", sender: self)
                 }
                 else {
                     
