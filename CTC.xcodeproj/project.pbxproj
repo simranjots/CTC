@@ -70,7 +70,6 @@
 		E18EDF1121F8BC08009B18B1 /* MorePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */; };
 		E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */; };
 		E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1421F9081F009B18B1 /* HomeViewController.swift */; };
-		E18EDF1721F914B2009B18B1 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1621F914B2009B18B1 /* PopupViewController.swift */; };
 		E1A2CF83221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2CF80221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift */; };
 		E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */; };
 		E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */; };
@@ -157,7 +156,6 @@
 		E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePageTableViewCell.swift; sourceTree = "<group>"; };
 		E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E18EDF1421F9081F009B18B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E18EDF1621F914B2009B18B1 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		E1A2CF80221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
-				E18EDF1621F914B2009B18B1 /* PopupViewController.swift */,
 				E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */,
 			);
 			path = "Home View";
@@ -634,7 +631,6 @@
 				E1F6EBB721ED04390022F1A3 /* CircularViewController.swift in Sources */,
 				E133555022666C5200C3E0CF /* OnboardingMiddleCell.swift in Sources */,
 				E133555222666C6100C3E0CF /* OnboardingEndCell.swift in Sources */,
-				E18EDF1721F914B2009B18B1 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
