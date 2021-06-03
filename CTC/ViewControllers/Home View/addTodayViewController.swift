@@ -1,11 +1,3 @@
-//
-//  addTodayViewController.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-01-10.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 
 class addTodayViewController: UIViewController{

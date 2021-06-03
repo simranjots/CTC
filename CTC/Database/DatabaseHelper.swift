@@ -1,11 +1,3 @@
-//
-//  DatabaseHelper.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-02-06.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
-
 import Foundation
 import CoreData
 import UIKit
@@ -49,14 +41,14 @@ class DatabaseHelper{
                     if(dateObj == pracDate){
                         
                         if(finalData[dateObj] != nil){
-                        
-                        finalData[dateObj]?.append(pracData)
-                        
-                    }else{
-                        
+                            
+                            finalData[dateObj]?.append(pracData)
+                            
+                        }else{
+                            
                             finalData[dateObj] = [pracData]
-                        
-                    }
+                            
+                        }
                     }
                     
                 }
@@ -105,9 +97,9 @@ class DatabaseHelper{
         var finalDateArray = [String:[[String:String?]]]()
         
         let practices = getPractices(user: user)
-//        var finalDataArray = [ [String: [ [String:String?] ] ] ]()
+        //        var finalDataArray = [ [String: [ [String:String?] ] ] ]()
         finalDateArray = [String: [ [String:String?] ] ]()
-//        var dateArray = [NSDate]()
+        //        var dateArray = [NSDate]()
         
         let weeklyPracticedData = getPracticeWeeklyData()!
         
@@ -133,7 +125,7 @@ class DatabaseHelper{
                             
                             bufferData.append( ["Practice" : practice.practice,"Note" : practiceDataObject.note, "TrackingDay" : String(practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
                                                 "CellType" : "1"
-                                ])
+                            ])
                             //                        print("buffer Array. . . . ")
                             //                        print(bufferData)
                             finalDateArray[dateOfData!] = (bufferData)
@@ -143,12 +135,12 @@ class DatabaseHelper{
                             
                             bufferData = [( ["Practice" : practice.practice,"Note" : practiceDataObject.note, "TrackingDay" : String(describing: practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
                                              "CellType" : "1"
-                                ])]
+                            ])]
                             //                            print("buffer Array. . . . ")
                             //                            print(bufferData)
                             finalDateArray[dateOfData!] = (bufferData)
                             //                            print("final Array. . . . ")
-//                            print(finalDateArray)
+                            //                            print(finalDateArray)
                             
                             
                         }
@@ -158,9 +150,9 @@ class DatabaseHelper{
                 
             }
         }
-
-                print("from database--------------------------")
-//                        print(practiceBufferDict)
+        
+        print("from database--------------------------")
+        //                        print(practiceBufferDict)
         for (key, val) in finalDateArray{
             
             print("Key = \(key)")
@@ -368,7 +360,7 @@ class DatabaseHelper{
             newPractice.practice = practice
             newPractice.image_name = image_name
             newPractice.percentage = 0
-//            let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 27).date!
+            //            let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 27).date!
             newPractice.startedday = date as NSDate
             newPractice.practiseddays = 0
             newPractice.user = user
@@ -446,7 +438,7 @@ class DatabaseHelper{
         featchRequest.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
         
         do {
-           let practicesobjects = try (context?.fetch(featchRequest) as? [Practice])!
+            let practicesobjects = try (context?.fetch(featchRequest) as? [Practice])!
             
             for prac in practicesobjects{
                 let pracDate = prac.startedday! as Date
@@ -573,8 +565,8 @@ class DatabaseHelper{
         
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
         var practicePracticedDays = practice.practiseddays
-//        var date5 = DateComponents(calendar: .current, year: 2019, month: 3, day: 4).date!
-//        date5 = Date().dateFormate()!
+        //        var date5 = DateComponents(calendar: .current, year: 2019, month: 3, day: 4).date!
+        //        date5 = Date().dateFormate()!
         
         var trackingDays = (getTrackingDay(practice: practice, date: date)) ?? 0
         
@@ -591,65 +583,34 @@ class DatabaseHelper{
             
             trackingDays = lasrDayData!.tracking_days
             
-//            if (lasrDayData!.date! as Date).dateFormate() != date{
-//
-//                let newPracticesData = NSEntityDescription.insertNewObject(forEntityName: "PracticeData", into: context!) as! PracticeData
-//
-//
-//                if (practised && lasrDayData?.practised == false){
-//                    trackingDays = trackingDays ?? 0 + 1
-//                }else if (practised == false && lasrDayData?.practised == true){
-//                    trackingDays = trackingDays - 1
-//                }
-//
-//
-////                newPracticesData.date = Date().dateFormate()! as NSDate
-//                newPracticesData.date = date.dateFormate()! as NSDate
-//                newPracticesData.note = note
-//                newPracticesData.practised = practised
-//                newPracticesData.practiceDataToPractice = practice
-//                newPracticesData.tracking_days = trackingDays
-//                updatePracticedDay(noOfDays: Int(trackingDays), practiceName: practice.practice!, user: practice.user!)
-//                //------
-//                do{
-//                    try context?.save()
-//                    return 0
-//                }
-//                catch let err{
-//                    print(err)
-//                    return 1
-//                }
-//
-//            }else{
             
-                
-                if (practised == true && lasrDayData?.practised == false){
-                    trackingDays = (trackingDays) + 1
-                    practicePracticedDays = practicePracticedDays + 1
-                }else if (practised == false && lasrDayData?.practised == true){
-                    trackingDays = trackingDays - 1
-                    practicePracticedDays = practicePracticedDays - 1
-                }
-                lasrDayData!.practised = practised
-                lasrDayData?.note = note
-                lasrDayData!.practiceDataToPractice = practice
-                lasrDayData!.tracking_days = (trackingDays)
-                updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
-                do{
-                    try context?.save()
-                }
-                catch let err{
-                    print(err)
-                    return 1
-                }
-//            }
+            if (practised == true && lasrDayData?.practised == false){
+                trackingDays = (trackingDays) + 1
+                practicePracticedDays = practicePracticedDays + 1
+            }else if (practised == false && lasrDayData?.practised == true){
+                trackingDays = trackingDays - 1
+                practicePracticedDays = practicePracticedDays - 1
+            }
+            lasrDayData!.practised = practised
+            lasrDayData?.note = note
+            lasrDayData!.practiceDataToPractice = practice
+            lasrDayData!.tracking_days = (trackingDays)
+            updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
+            do{
+                try context?.save()
+            }
+            catch let err{
+                print(err)
+                return 1
+            }
+            //            }
         }
         else{
             
             let newPracticesData = NSEntityDescription.insertNewObject(forEntityName: "PracticeData", into: context!) as! PracticeData
             
             //            newPracticesData.date = Date().dateFormate()! as NSDate
-//            newPracticesData.date = Date().dateFormate()! as NSDate
+            //            newPracticesData.date = Date().dateFormate()! as NSDate
             newPracticesData.date = date.dateFormate()! as NSDate
             newPracticesData.note = note
             newPracticesData.practised = practised
@@ -698,72 +659,45 @@ class DatabaseHelper{
             
             trackingDays = lasrDayData!.tracking_days
             
-//            if (lasrDayData!.date! as Date).dateFormate() != Date().dateFormate(){
-//
-//                let newPracticesData = NSEntityDescription.insertNewObject(forEntityName: "PracticeData", into: context!) as! PracticeData
-//
-//                newPracticesData.date = Date().dateFormate()! as NSDate
-//                newPracticesData.practised = practised
-//                newPracticesData.practiceDataToPractice = practice
-//
-//                if (practised && lasrDayData?.practised == false){
-//                    trackingDays += 1
-//                }else if (practised == false && lasrDayData?.practised == true){
-//                    trackingDays -= 1
-//                }
-//
-//                newPracticesData.tracking_days = Int32(trackingDays)
-//                updatePracticedDay(noOfDays: Int(trackingDays), practiceName: practice.practice!, user: practice.user!)
-//                //------
-//                do{
-//                    try context?.save()
-//                    return 0
-//                }
-//                catch let err{
-//                    print(err)
-//                    return 1
-//                }
-//
-//            }else{
             
-                if (practised && lasrDayData?.practised == false){
-                    trackingDays += 1
-                    practicePracticedDays = practicePracticedDays + 1
-                }else if (practised == false && lasrDayData?.practised == true){
-                    trackingDays -= 1
-                    practicePracticedDays = practicePracticedDays - 1
-                }
-                lasrDayData!.practised = practised
-                lasrDayData!.practiceDataToPractice = practice
-                lasrDayData!.tracking_days = Int32(trackingDays)
-//                updatePracticedDay(noOfDays: Int(trackingDays), practiceName: practice.practice!, user: practice.user!)
-                do{
-                    try context?.save()
-                }
-                catch let err{
-                    print(err)
-                    return 1
-                }
-//            }
+            if (practised && lasrDayData?.practised == false){
+                trackingDays += 1
+                practicePracticedDays = practicePracticedDays + 1
+            }else if (practised == false && lasrDayData?.practised == true){
+                trackingDays -= 1
+                practicePracticedDays = practicePracticedDays - 1
+            }
+            lasrDayData!.practised = practised
+            lasrDayData!.practiceDataToPractice = practice
+            lasrDayData!.tracking_days = Int32(trackingDays)
+            //                updatePracticedDay(noOfDays: Int(trackingDays), practiceName: practice.practice!, user: practice.user!)
+            do{
+                try context?.save()
+            }
+            catch let err{
+                print(err)
+                return 1
+            }
+            //            }
         }
         else{
             
             let newPracticesData = NSEntityDescription.insertNewObject(forEntityName: "PracticeData", into: context!) as! PracticeData
             
-//            newPracticesData.date = Date().dateFormate()! as NSDate
+            //            newPracticesData.date = Date().dateFormate()! as NSDate
             newPracticesData.date = date.dateFormate()! as NSDate
             newPracticesData.practised = practised
             newPracticesData.practiceDataToPractice = practice
             
             if(practised == true){
-//                  updatePracticedDay(noOfDays: Int(finalTrackingDay!), practiceName: practice.practice!, user: practice.user!)
+                //                  updatePracticedDay(noOfDays: Int(finalTrackingDay!), practiceName: practice.practice!, user: practice.user!)
                 trackingDays = trackingDays + 1
                 practicePracticedDays = practicePracticedDays + 1
             }
             
             newPracticesData.tracking_days = trackingDays
             if (practised){
-               
+                
             }
             
             do{
@@ -780,7 +714,7 @@ class DatabaseHelper{
         updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
         
         
-      
+        
         
         return 0
         
@@ -836,37 +770,7 @@ class DatabaseHelper{
         return lastDayData
     }
     
-    //    func getPracticeDataByDate(date: Date) -> [PracticeData]? {
-    //
-    //        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PracticeData")
-    ////        featchRequest.predicate = NSPredicate(format: "date = %@", argumentArray: [date.dateFormate()])
-    //        var returnData: [PracticeData]?
-    //
-    //
-    //        do {
-    //            let dataArray = try (context?.fetch(featchRequest) as? [PracticeData])!
-    //                    print("Get practice data-----------------------------")
-    //                    print(dataArray)
-    //
-    //            for data in dataArray{
-    //
-    //                if ((data.date! as Date).dateFormateToString() == date.dateFormateToString()){
-    //
-    //                    returnData?.append(data)
-    //
-    //                }
-    //
-    //            }
-    //            return returnData
-    //
-    //        } catch let err {
-    //            print(err)
-    //        }
-    //
-    //        return nil
-    //
-    ////    }
-    //
+    
     
     func getPracticeDataByDate(date: Date) -> [PracticeData]?{
         
@@ -993,8 +897,8 @@ class DatabaseHelper{
                 
                 let restWeeks = noOfWeeks - 4.0
                 let restDays = Int(restWeeks * 7.0)
-            
-            
+                
+                
                 for prac in practice!{
                     weekStartDate = prac.startedday as Date?
                     let pracName = prac.practice!
@@ -1002,10 +906,10 @@ class DatabaseHelper{
                     totalNoOfDaysPractice = 0
                     
                     for i in 0...restDays{
-                    
-//                    for dateObject in dateArray{
+                        
+                        //                    for dateObject in dateArray{
                         let dateObject = dateArray[i]
-                
+                        
                         for pracData in practiceData! {
                             let pracDataName = pracData.practiceDataToPractice?.practice
                             
@@ -1027,13 +931,13 @@ class DatabaseHelper{
                                     if(dayNo == 7){
                                         weekEndDate = dateObject
                                         finalEndDate = dateObject
-//                                        print("Date : \(pracData.date)")
+                                        //                                        print("Date : \(pracData.date)")
                                         let result = addPracticeWeeklyData(practiceName: pracName, totalNoOfDaysPracticed: totalNoOfDaysPractice, totalNoOfDays: totalNoOfDays, startDay: weekStartDate, endDate: weekEndDate)
                                         
                                         totalNoOfDaysPractice = 0
                                         totalNoOfDays = 0
                                         
-                                       
+                                        
                                         if(result == 0 ){
                                             print("Weekly Data Added With date \(weekStartDate)")
                                         }else{
@@ -1042,48 +946,48 @@ class DatabaseHelper{
                                         
                                     }
                                     
-//                                    deletePracticeData(practiceData: pracData)
+                                    //                                    deletePracticeData(practiceData: pracData)
                                 }
-                                    
-                               
+                                
+                                
                             }
                             
-                          
                             
-                           
+                            
+                            
                         }
-                      
+                        
                     }
                     
-                 
                     
-                }
-            
-            if(finalEndDate != nil){
-            
-            var delPracArray : [PracticeData]? = []
-            for prac in practice!{
-                
-                let deletedDateArray = (prac.startedday! as Date).getDates(date: finalEndDate!)
-                for date in deletedDateArray {
-                    
-                    for pracData in practiceData!{
-                        if(pracData.date! as Date == date && pracData.practiceDataToPractice! == prac){
-                            delPracArray?.append(pracData)
-                        }
-                    }
                     
                 }
                 
-            }
-            deletePracticeData(practicesData: delPracArray!)
-            }
+                if(finalEndDate != nil){
+                    
+                    var delPracArray : [PracticeData]? = []
+                    for prac in practice!{
+                        
+                        let deletedDateArray = (prac.startedday! as Date).getDates(date: finalEndDate!)
+                        for date in deletedDateArray {
+                            
+                            for pracData in practiceData!{
+                                if(pracData.date! as Date == date && pracData.practiceDataToPractice! == prac){
+                                    delPracArray?.append(pracData)
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+                    deletePracticeData(practicesData: delPracArray!)
+                }
             }
             
             
             
             print("Final Data -------------------------------------")
-//            print(dictTemp)
+            //            print(dictTemp)
             
         }
         
@@ -1092,9 +996,9 @@ class DatabaseHelper{
     func deletePracticeData(practicesData: [PracticeData]!) {
         
         for delprac in practicesData{
-        context?.delete(delprac)
+            context?.delete(delprac)
         }
-            
+        
         do {
             try context?.save()
         } catch let err {
@@ -1106,7 +1010,7 @@ class DatabaseHelper{
     }
     
     func oldestPracticeDataDate(practiceData : [PracticeData]) -> Date {
-
+        
         let practicesDate = practiceData
         var oldestDate : Date = Date()
         for prac in practicesDate{
@@ -1114,7 +1018,7 @@ class DatabaseHelper{
             if(pracDate < oldestDate){
                 oldestDate = pracDate
             }
-
+            
         }
         return oldestDate
     }
