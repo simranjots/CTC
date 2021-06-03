@@ -31,35 +31,7 @@ class FirebaseHelper {
         
         var finalUser : [String: String]?
         
-//        ref.observe(DataEventType.value) { (DataSnapshot) in
-//            if DataSnapshot.childrenCount > 0{
-//
-//                for user in DataSnapshot.children.allObjects as! [DataSnapshot]{
-//
-//                    let userObject = user.value as? [String:String]
-//
-//                    if(userObject!["userEmail"] == userEmail){
-//
-//                        finalUser = ["userName": userObject!["userName"],"userEmail": userObject!["userEmail"],"userPassword": userObject!["userPassword"],"dob": userObject!["dob"]] as! [String : String]
-//
-//
-//                    }
-//
-//                }
-//
-//            }
-//        }
-        
-        
-        
-//        ref.observeSingleEvent(of: .value, with: { (snapShot) in
-//
-//            print(snapShot)
-//
-//        })
-//
-        
-        
+   
         ref.observe(.childAdded) { (dataSnapshot) in
             print(dataSnapshot)
         }

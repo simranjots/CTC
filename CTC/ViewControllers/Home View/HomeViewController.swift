@@ -619,15 +619,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             
         }
-//
-//        actionSheet.addAction(UIAlertAction(title: "Home", style: .default){action in self.changeResolutionIcon(number: 0)})
-//
-//        actionSheet.addAction(UIAlertAction(title: "Profile", style: .default){action in self.changeResolutionIcon(number: 1)})
-//
-//        actionSheet.addAction(UIAlertAction(title: "More", style: .default){action in self.changeResolutionIcon(number: 2)})
-//
-//
-//
+
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         if let popoverController = actionSheet.popoverPresentationController {
@@ -676,25 +668,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return nil
     }
     
-    
-    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 80
-    //    }
-
-    
-    //// Table View Code
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

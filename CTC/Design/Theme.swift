@@ -17,11 +17,7 @@ public class Theme {
     public static let tableHeaderCellBlueColor = UIColor(displayP3Red: 33/255, green: 71/255, blue: 157/255, alpha: 1)
     
     
-    
-    
-    
-    
-    
+   
     public static let navigationBarBackgroundColor = Theme.grey
     public static let secondaryColor = Theme.darkGreenishBlue
     
