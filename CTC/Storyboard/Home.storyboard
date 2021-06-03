@@ -375,7 +375,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2n-V8-e6Q">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xQ-Qe-pb3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xQ-Qe-pb3">
                                         <rect key="frame" x="16" y="24" width="382" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Nnt-uA-B9S"/>
@@ -422,30 +422,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElC-ge-04E">
-                                        <rect key="frame" x="16" y="292" width="382" height="342.5"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Your Notes Hete" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-C8-Nff">
-                                                <rect key="frame" x="16" y="8" width="350" height="334.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="QPm-CO-3oh" id="fsf-Ay-Wu7"/>
-                                                </connections>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="n1v-C8-Nff" firstAttribute="top" secondItem="ElC-ge-04E" secondAttribute="top" constant="8" id="9QL-no-z8N"/>
-                                            <constraint firstAttribute="trailing" secondItem="n1v-C8-Nff" secondAttribute="trailing" constant="16" id="TCg-l6-0kJ"/>
-                                            <constraint firstItem="n1v-C8-Nff" firstAttribute="leading" secondItem="ElC-ge-04E" secondAttribute="leading" constant="16" id="TeG-pH-yJM"/>
-                                            <constraint firstAttribute="bottom" secondItem="n1v-C8-Nff" secondAttribute="bottom" id="dEJ-Bd-WgY"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did You Practice Today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-9G-OeV">
-                                        <rect key="frame" x="107" y="650.5" width="200" height="20.5"/>
+                                        <rect key="frame" x="107" y="651" width="200" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="hDc-5q-Waz"/>
                                         </constraints>
@@ -472,7 +450,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-dq-O7k">
-                                        <rect key="frame" x="16" y="687" width="382" height="30"/>
+                                        <rect key="frame" x="16" y="687.5" width="382" height="29.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,29 +470,47 @@
                                             <action selector="starButtonTapped:" destination="QPm-CO-3oh" eventType="touchUpInside" id="hND-dA-MkD"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElC-ge-04E">
+                                        <rect key="frame" x="16" y="403" width="382" height="220"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write Your Notes Hete" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-C8-Nff">
+                                                <rect key="frame" x="8" y="0.0" width="366" height="201"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="QPm-CO-3oh" id="fsf-Ay-Wu7"/>
+                                                </connections>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yw2-dq-O7k" secondAttribute="trailing" constant="16" id="0nW-2L-bsd"/>
+                                    <constraint firstItem="ElC-ge-04E" firstAttribute="centerX" secondItem="vJO-9G-OeV" secondAttribute="centerX" id="0pr-0S-jhC"/>
                                     <constraint firstItem="5xQ-Qe-pb3" firstAttribute="top" secondItem="v2n-V8-e6Q" secondAttribute="top" constant="24" id="2pJ-zn-Abo"/>
-                                    <constraint firstItem="bl2-w3-lkd" firstAttribute="top" secondItem="FLO-iO-2LR" secondAttribute="bottom" constant="16" id="36l-oV-gGG"/>
                                     <constraint firstAttribute="trailing" secondItem="5xQ-Qe-pb3" secondAttribute="trailing" constant="16" id="5K3-J7-WtN"/>
                                     <constraint firstItem="5xQ-Qe-pb3" firstAttribute="leading" secondItem="v2n-V8-e6Q" secondAttribute="leading" constant="16" id="6es-t3-NEg"/>
+                                    <constraint firstAttribute="bottom" secondItem="ElC-ge-04E" secondAttribute="bottom" constant="102" id="7II-cQ-AOg"/>
                                     <constraint firstItem="5xQ-Qe-pb3" firstAttribute="centerX" secondItem="v2n-V8-e6Q" secondAttribute="centerX" id="B7Y-dt-tbg"/>
-                                    <constraint firstItem="ElC-ge-04E" firstAttribute="leading" secondItem="v2n-V8-e6Q" secondAttribute="leading" constant="16" id="CJK-zJ-Xom"/>
-                                    <constraint firstAttribute="trailing" secondItem="bl2-w3-lkd" secondAttribute="trailing" constant="16" id="GDd-Es-YNz"/>
                                     <constraint firstItem="eDR-CE-Wu8" firstAttribute="centerY" secondItem="vJO-9G-OeV" secondAttribute="centerY" id="Ghj-bq-tnd"/>
-                                    <constraint firstAttribute="trailing" secondItem="ElC-ge-04E" secondAttribute="trailing" constant="16" id="JyF-xP-dt2"/>
-                                    <constraint firstItem="bl2-w3-lkd" firstAttribute="leading" secondItem="v2n-V8-e6Q" secondAttribute="leading" constant="16" id="N0t-4u-4Uy"/>
+                                    <constraint firstItem="ElC-ge-04E" firstAttribute="trailing" secondItem="yw2-dq-O7k" secondAttribute="trailing" id="L9P-5T-dHQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bl2-w3-lkd" secondAttribute="trailing" constant="24" id="Myk-Vt-PVx"/>
+                                    <constraint firstItem="bl2-w3-lkd" firstAttribute="top" secondItem="FLO-iO-2LR" secondAttribute="bottom" constant="31" id="NZh-wn-q4E"/>
                                     <constraint firstItem="yw2-dq-O7k" firstAttribute="leading" secondItem="v2n-V8-e6Q" secondAttribute="leading" constant="16" id="Ob3-2J-5FC"/>
                                     <constraint firstItem="FLO-iO-2LR" firstAttribute="centerX" secondItem="v2n-V8-e6Q" secondAttribute="centerX" id="OeO-w7-nt7"/>
+                                    <constraint firstItem="eDR-CE-Wu8" firstAttribute="top" secondItem="ElC-ge-04E" secondAttribute="bottom" constant="23" id="S5Q-rG-dgU"/>
+                                    <constraint firstItem="ElC-ge-04E" firstAttribute="top" secondItem="v2n-V8-e6Q" secondAttribute="top" constant="403" id="SgO-Z4-1Ss"/>
                                     <constraint firstItem="yw2-dq-O7k" firstAttribute="top" secondItem="vJO-9G-OeV" secondAttribute="bottom" constant="16" id="cgl-PQ-Sth"/>
-                                    <constraint firstItem="vJO-9G-OeV" firstAttribute="top" secondItem="ElC-ge-04E" secondAttribute="bottom" constant="16" id="fOp-5m-dNN"/>
                                     <constraint firstItem="eDR-CE-Wu8" firstAttribute="leading" secondItem="vJO-9G-OeV" secondAttribute="trailing" id="i3X-o5-6LT"/>
+                                    <constraint firstItem="bl2-w3-lkd" firstAttribute="leading" secondItem="v2n-V8-e6Q" secondAttribute="leadingMargin" id="o9b-3L-mX1"/>
                                     <constraint firstItem="FLO-iO-2LR" firstAttribute="top" secondItem="5xQ-Qe-pb3" secondAttribute="bottom" constant="24" id="sga-Mw-Sa6"/>
-                                    <constraint firstItem="vJO-9G-OeV" firstAttribute="centerX" secondItem="ElC-ge-04E" secondAttribute="centerX" id="xPr-Ch-7IT"/>
+                                    <constraint firstItem="ElC-ge-04E" firstAttribute="leading" secondItem="yw2-dq-O7k" secondAttribute="leading" id="tpX-mM-e5x"/>
                                     <constraint firstAttribute="bottom" secondItem="yw2-dq-O7k" secondAttribute="bottom" constant="8" id="xbK-4T-W83"/>
-                                    <constraint firstItem="ElC-ge-04E" firstAttribute="top" secondItem="bl2-w3-lkd" secondAttribute="bottom" constant="16" id="zSu-8U-UZh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -542,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaQ-BD-bQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="471"/>
+            <point key="canvasLocation" x="1527.536231884058" y="470.75892857142856"/>
         </scene>
         <!--Home-->
         <scene sceneID="Oyb-rE-mHg">

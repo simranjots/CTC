@@ -16,11 +16,7 @@ class addTodayViewController: UIViewController{
     var isOn : Bool = false
     
     ////variables
-    
-//    @IBOutlet weak var progressView: CircularProgressView!
-    
-    
-    
+ 
     @IBOutlet weak var progressView: CircularProgressView!
     
     
