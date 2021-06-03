@@ -4,6 +4,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
+    @IBOutlet var tagLineLabel: UILabel!
     
      override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
@@ -17,9 +18,28 @@ class MainViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpElements()
+        
+    }
+    
+    
+    func setUpElements() {
+        
+        tagLineLabel.text = ""
+        var charIndex = 0.0
+        let taglineText = "Turn your wants to haves"
+        
+        for letters in taglineText {
+            
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { timer in
+                self.tagLineLabel.text?.append(letters)
+            }
+            charIndex += 1
+        }
+        
+        //Style Buttons
         Utilities.styleButton(loginButton)
-        Utilities.styleButton(registerButton)
-
+        Utilities.styleHollowButton(registerButton)
     }
     
 }
