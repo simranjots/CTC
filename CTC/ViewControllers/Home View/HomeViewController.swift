@@ -7,6 +7,7 @@ class HomeViewController: UIViewController,ReceiveData{
     // variables
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
+    var userPractices: UserPractices!
     var selectedDate: Date!
     var datePicker : UIDatePicker!
     var popUpDatePicker : UIDatePicker!
@@ -61,10 +62,11 @@ class HomeViewController: UIViewController,ReceiveData{
         dateTextField.text = "Date : \(Date().dateFormatemmmdd()!)"
         
         dbHelper = DatabaseHelper()
-        currentUser =  CurrentUser()
+        currentUser = CurrentUser()
+        userPractices = UserPractices()
         userObject = currentUser.checkLoggedIn()
         
-        let oldestDate = dbHelper.oldestPracticeDate(user: userObject)
+        let oldestDate = userPractices.oldestPracticeDate(user: userObject)
         
         //MARK: ViewController Date Picker
         datePicker = UIDatePicker()
@@ -85,15 +87,15 @@ class HomeViewController: UIViewController,ReceiveData{
         
         //MARK: Custome Done Tool bar
         
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
-        
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        dateTextField.inputAccessoryView = toolBar
-        
-        //MARK: Custome Done Tool bar for Popup
+//        let toolBar = UIToolbar()
+//        toolBar.sizeToFit()
+//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
+//
+//        toolBar.setItems([doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//        dateTextField.inputAccessoryView = toolBar
+//
+//        //MARK: Custome Done Tool bar for Popup
         
         let popUpToolBar = UIToolbar()
         popUpToolBar.sizeToFit()
@@ -190,7 +192,7 @@ class HomeViewController: UIViewController,ReceiveData{
     private func getPractices() -> [Practice]{
         
         
-        return dbHelper.getPractices(user: userObject)!
+        return userPractices.getPractices(user: userObject)!
         
     }
     private func getPracticesData(date: Date) -> [PracticeData]?{
@@ -200,20 +202,20 @@ class HomeViewController: UIViewController,ReceiveData{
         
     }
     
-    
-    @objc func dateSelected() {
-        
-        selectedDate = datePicker.date.dateFormate()!
-        
-        let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
-        
-        practices = dbHelper.getPractices(date: selectedDate, user: userObject)
-        practicesData = selectedData
-        self.homeTableView.reloadData()
-        
-        self.view.endEditing(true)
-        
-    }
+//
+//    @objc func dateSelected() {
+//
+//        selectedDate = datePicker.date.dateFormate()!
+//
+//        let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
+//
+//        practices = userPractices.getPractices(date: selectedDate, user: userObject)
+//        practicesData = selectedData
+//        self.homeTableView.reloadData()
+//
+//        self.view.endEditing(true)
+//
+//    }
     
     @objc func popUpDateSelected() {
         
@@ -276,10 +278,10 @@ class HomeViewController: UIViewController,ReceiveData{
         else{
             var practiceFlag: Int!
             if(isUpdating){
-                practiceFlag = dbHelper.updatePractice(oldPractice: oldPractice!, newPractice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
                 isUpdating = false}
             else{
-                practiceFlag = dbHelper.addPractices(practice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.addPractices(practice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
                 isUpdating = false
             }
             
@@ -345,7 +347,7 @@ class HomeViewController: UIViewController,ReceiveData{
         let flag = false
         let date = Date().dateFormate()!
         
-        dbHelper.deletePractice(practice: prac)
+        userPractices.deletePractice(practice: prac)
         let resultFlag = dbHelper.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td))
         
         if(resultFlag == 0){
@@ -359,9 +361,9 @@ class HomeViewController: UIViewController,ReceiveData{
     }
     func refreshTableview(date: Date) {
         
-        practices = dbHelper.getPractices(date: date, user: userObject)
+        practices = userPractices.getPractices(user: userObject)
         practicesData = self.getPracticesData(date: selectedDate)
-        let oldestDate = dbHelper.oldestPracticeDate(user: userObject)
+        let oldestDate = userPractices.oldestPracticeDate(user: userObject)
         self.datePicker.minimumDate = oldestDate
         self.homeTableView.reloadData()
         
@@ -468,7 +470,7 @@ extension HomeViewController: UITableViewDelegate{
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.section
+        myIndex = indexPath.row
         performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     

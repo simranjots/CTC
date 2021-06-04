@@ -29,7 +29,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
     var userObject: User?
     var dbHelper : DatabaseHelper!
     var currentUser: CurrentUser!
-    
+    var userPractices: UserPractices!
     var dataDict = [Date: [AnyObject] ]()
     var practices = [Practice]()
     var valueArray: [PracticeData]?
@@ -44,6 +44,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
         currentUser = CurrentUser()
+        userPractices = UserPractices()
         userObject = currentUser.checkLoggedIn()
         
         
@@ -58,13 +59,9 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
         
-        //        dataDict = dbHelper.getPracticeHistory(user: userObject!)!
-        practices = dbHelper.getPractices(user: userObject!)!
+        practices = userPractices.getPractices(user: userObject!)!
         dataDict = dbHelper.getPracRecordTemp(user: userObject!)!
-        //        print(practices)
-        //        print("Printing Data dict . . . .. . . . . . . . . . . . . . . . . . . . ")
-        //        print(dataDict)
-        //
+    
         for practiceObject in practices{
             let startedDate = ((practiceObject.startedday! as Date).originalFormate())
             let days = Date().days(from: startedDate) + 1
@@ -73,19 +70,10 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
             percentageData.append(["Practice": practiceObject.practice!, "Percentage": "\(percentage)", "TrackingDay": String(practiceObject.practiseddays), "outOfDays":String(days)])
             
         }
-        
-        //         var tempDictKeys = Array(dataDict.keys)
-        //
-        //        let swiftArray = NSMutableArray.self as AnyObject as! [String]
-        
-        //        dictKeys = swiftArray.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+      
         dictKeys = Array(dataDict.keys)
-        //        dictKeys = convertToDate(stringDate: tempDictKeys)
-        
         dictKeys =  dictKeys?.sorted(by: <)
-        //        dictKeys = dictKeys?.reversed()
-        //        print("Dict keys-------------------------")
-        //        print(dictKeys)
+      
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -105,14 +93,9 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         
         percentageData = [[String:String?]]()
         
-        //        dataDict = dbHelper.getPracticeRecords(user: userObject!)!
-        practices = dbHelper.getPractices(user: userObject!)!
+        practices = userPractices.getPractices(user: userObject!)!
         dataDict = dbHelper.getPracRecordTemp(user: userObject!)!
-        //        print(practices)
-        //        print("Printing Data dict . . . .. . . . . . . . . . . . . . . . . . . . ")
-        //        print(dataDict)
-        
-        
+    
         for practiceObject in practices{
             let startedDate = ((practiceObject.startedday! as Date).originalFormate())
             let days = Date().days(from: startedDate) + 1

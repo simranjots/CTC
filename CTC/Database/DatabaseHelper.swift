@@ -7,7 +7,7 @@ import UIKit
 class DatabaseHelper{
     
     let context: NSManagedObjectContext?
-    
+    let userPractices = UserPractices()
     init() {
         
         context = (UIApplication.shared.delegate  as? AppDelegate)?.persistentContainer.viewContext
@@ -22,7 +22,7 @@ class DatabaseHelper{
     
     func getPracRecordTemp(user: User) -> [Date: [AnyObject]]? {
         
-        let practices = getPractices(user: user)
+        let practices = userPractices.getPractices(user: user)
         let weeklyPracticedData = getPracticeWeeklyData()!
         
         
@@ -96,7 +96,7 @@ class DatabaseHelper{
         
         var finalDateArray = [String:[[String:String?]]]()
         
-        let practices = getPractices(user: user)
+        let practices = userPractices.getPractices(user: user)
         //        var finalDataArray = [ [String: [ [String:String?] ] ] ]()
         finalDateArray = [String: [ [String:String?] ] ]()
         //        var dateArray = [NSDate]()
@@ -166,230 +166,6 @@ class DatabaseHelper{
         
     }
 
-    //MARK: Practices class
-    //-------------------------------------------------------------------------------------------------------------------------------
-    
-    
-    
-    func addPractices(practice: String, image_name: String,date: Date, user: User) -> Int {
-        
-        let practices = getPractices(user: user)!
-        var practiceNotExist = true
-        
-        for practiceData in practices{
-            //            print("Test Data Flag - 01")
-            //            print(practiceData.practice)
-            //            print(practice)
-            //
-            if(practiceData.practice == practice){
-                
-                practiceNotExist = false
-            }
-        }
-        
-        
-        
-        if(practiceNotExist){
-            
-            
-            let newPractice = NSEntityDescription.insertNewObject(forEntityName: "Practice", into: context!) as! Practice
-            
-            newPractice.practice = practice
-            newPractice.image_name = image_name
-            newPractice.percentage = 0
-            //            let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 27).date!
-            newPractice.startedday = date as NSDate
-            newPractice.practiseddays = 0
-            newPractice.user = user
-            
-            do {
-                try context?.save()
-            } catch let err {
-                print(err)
-                return 2
-            }
-            print("User \(practice) added")
-            return 0
-        }else {
-            
-            print("Practice Exist")
-            return 1
-            
-        }
-        
-        
-        
-    }
-    
-    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User) -> Int {
-        
-        let practiceObject = getPractices(practiceName: oldPractice, user: user)
-        
-        practiceObject.practice = newPractice
-        practiceObject.image_name = image_name
-        practiceObject.startedday = date as NSDate
-        practiceObject.user = user
-        
-        do {
-            try context?.save()
-        } catch let err {
-            print(err)
-            return 2
-        }
-        print("User \(newPractice) Updated")
-        return 0
-    }
-    
-    
-    func getPractices(user: User) -> [Practice]? {
-        
-        var practices = [Practice]()
-        
-        
-        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Practice")
-        featchRequest.predicate = NSPredicate(format: "user.email = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!,false,false])
-        featchRequest.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
-        
-        do {
-            practices = try (context?.fetch(featchRequest) as? [Practice])!
-            
-            //            print(practices)
-            return practices
-            
-            
-        } catch let err {
-            print(err)
-        }
-        
-        return practices
-        
-    }
-    
-    func getPractices(date: Date, user: User) -> [Practice]? {
-        
-        var practices : [Practice] = []
-        
-        
-        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Practice")
-        featchRequest.predicate = NSPredicate(format: "user.email = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!,false,false])
-        featchRequest.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
-        
-        do {
-            let practicesobjects = try (context?.fetch(featchRequest) as? [Practice])!
-            
-            for prac in practicesobjects{
-                let pracDate = prac.startedday! as Date
-                if(pracDate <= date){
-                    
-                    practices.append(prac)
-                    
-                }
-                
-            }
-            
-            
-            //            print(practices)
-            return practices
-            
-            
-        } catch let err {
-            print(err)
-        }
-        
-        return practices
-        
-    }
-    
-    
-    func getPractices(practiceName: String, user: User) -> Practice {
-        
-        var practiceData : Practice!
-        
-        
-        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Practice")
-        featchRequest.predicate = NSPredicate(format: "user.email = %@ && practice = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!, practiceName, false, false])
-        featchRequest.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
-        
-        do {
-            let bufferArray = try (context?.fetch(featchRequest) as? [Practice])!
-            
-            for data in bufferArray{
-                
-                practiceData = data
-                
-            }
-            
-            //            print(practiceData)
-            
-        } catch let err {
-            print(err)
-        }
-        
-        return practiceData
-        
-    }
-    
-    func updatePracticedDay(noOfDays: Int, practiceName: String, user: User){
-        
-        let practices = getPractices(practiceName: practiceName, user: user)
-        
-        
-        practices.practiseddays = Int32(noOfDays)
-        
-        do {
-            try context?.save()
-            print("Practice \(practiceName) Updated")
-            
-        } catch let err {
-            print(err)
-            
-        }
-        
-    }
-    
-    func deletePractice(practiceName: String, user: User) -> Int {
-        
-        let practice = getPractices(practiceName: practiceName, user: user)
-        
-        practice.is_deleted = true
-        do {
-            try context?.save()
-            print("Practice \(practiceName) Updated")
-            
-        } catch let err {
-            print(err)
-            return 1
-            
-        }
-        return 0
-        
-    }
-    
-    
-    func deletePractice(practice: Practice) {
-        
-        context?.delete(practice)
-        
-    }
-    
-    func oldestPracticeDate(user: User) -> Date {
-        
-        let practicesData = getPractices(user: user)
-        var oldestDate : Date = Date()
-        for pracData in practicesData!{
-            let pracDate = pracData.startedday! as Date
-            if(pracDate < oldestDate){
-                oldestDate = pracDate
-            }
-            
-        }
-        return oldestDate
-    }
-    
-    
-    //MARK: Practices class over
-    //-------------------------------------------------------------------------------------------------------------------------------
-    
     //MARK: Practice Data class
     //-------------------------------------------------------------------------------------------------------------------------------
     
@@ -432,7 +208,7 @@ class DatabaseHelper{
             lasrDayData?.note = note
             lasrDayData!.practiceDataToPractice = practice
             lasrDayData!.tracking_days = (trackingDays)
-            updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
+            userPractices.updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
             do{
                 try context?.save()
             }
@@ -460,7 +236,7 @@ class DatabaseHelper{
             }
             newPracticesData.tracking_days = trackingDays
             if (practised){
-                updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
+                userPractices.updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
             }
             
             do{
@@ -548,7 +324,7 @@ class DatabaseHelper{
             
         }
         let finalTrackingDay = getTrackingDay(practice: practice)
-        updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
+        userPractices.updatePracticedDay(noOfDays: Int(practicePracticedDays), practiceName: practice.practice!, user: practice.user!)
         
         
         
@@ -709,7 +485,7 @@ class DatabaseHelper{
     func maintainPracticeDataWeekly(user: User){
         
         let practiceData = getPracticeData(user: user)
-        let practice = getPractices(user: user)
+        let practice = userPractices.getPractices(user: user)
         print(practiceData!)
         let oldDate = oldestPracticeDataDate(practiceData: practiceData!)
         let dayOfWeek = Date().getDayOfWeek()
