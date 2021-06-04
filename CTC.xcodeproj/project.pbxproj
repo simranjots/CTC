@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */; };
 		1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */; };
+		1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA243266A2C6C003A96A4 /* UserPractices.swift */; };
 		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
 		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
 		1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0C2668783400A1877D /* MainNavigationController.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		1A3FA243266A2C6C003A96A4 /* UserPractices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPractices.swift; sourceTree = "<group>"; };
 		1A62B82026659CD70025D92C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AACDE0C2668783400A1877D /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOpitonViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		1AC4CAD22653403A008B2555 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				1A3FA243266A2C6C003A96A4 /* UserPractices.swift */,
 				E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */,
 				1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */,
 				E12320E0226E1772006B05CB /* FirebaseHelper.swift */,
@@ -625,6 +628,7 @@
 				E11037BB21E6602E007BBEF1 /* LoginViewController.swift in Sources */,
 				262946E226601F99005BA95E /* Utilities.swift in Sources */,
 				E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */,
+				1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */,
 				E169CA58225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift in Sources */,
 				E1C08F1121F772DE00446557 /* NavigationBar.swift in Sources */,
 				E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */,

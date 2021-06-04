@@ -6,6 +6,7 @@ class addTodayViewController: UIViewController{
     
     var dbHelper: DatabaseHelper!
     var userObject: User!
+    var userPractices: UserPractices!
     var selectedDate: Date!
     var practicesArray: [Practice]!
     var myIndex: Int!
@@ -51,7 +52,7 @@ class addTodayViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
-        
+        userPractices = UserPractices()
         
         self.title = selectedDate.dateFormatemmmdd()!
         
@@ -72,7 +73,7 @@ class addTodayViewController: UIViewController{
         // getting current year
         
         
-        practicesArray = dbHelper.getPractices(user: userObject)!
+        practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  dbHelper.getPracticeDataByDate(date: selectedDate.dateFormate()!)
      
    
@@ -109,11 +110,9 @@ class addTodayViewController: UIViewController{
     }
     
     func setData() {
-        print((practicesArray[myIndex].startedday)! as Date)
+        
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
-        
-        print(startedDate)
         
         resolutionTextField.text = practicesArray[myIndex].practice
         dayOfYearLabel.text = "\(days)"
@@ -140,46 +139,8 @@ class addTodayViewController: UIViewController{
         
     }
     
+ 
     
-    deinit {
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
-    }
-    
-    //MARK: Save button tapped from bar
-    @objc func saveButtonTapped() {
-        
-        let ispracticed = isPracticedSwitch.isOn
-        var noteData = noteTextView.text
-        if noteData == "Write Your Notes Here. . . "{
-            noteData = ""
-        }
-        
-        
-        let savingResult = dbHelper.addPracticeData(note: noteData!, practised: ispracticed, practice: currentPractice,date: selectedDate)
-        
-        if(savingResult == 0){
-            
-            showToast(message: "Data Saved. . .", duration: 3)
-            delegate?.passUserObject(user: userObject)
-
-            for controller in self.navigationController!.viewControllers as Array {
-                if controller.isKind(of: HomeViewController.self) {
-                    self.navigationController!.popToViewController(controller, animated: true)
-                    break
-                }
-            }
-        }
-        else if(savingResult == 1){
-            showAlert(title: "Error", message: "Datasaving Error Please try again. . .", buttonTitle: "Try Again")
-        }
-        
-    }
-    // MARK: save button tapped from bar
-
     func setPercentageAnimation(percentageValue: Int){
         
         let percentageFloat : Float = Float(percentageValue)
@@ -199,7 +160,6 @@ class addTodayViewController: UIViewController{
         resolutionPicker.delegate = self
         
         resolutionPicker.backgroundColor = .white
-        print(myIndex)
 
         resolutionTextField.inputView = resolutionPicker
         
@@ -337,13 +297,7 @@ class addTodayViewController: UIViewController{
             
             showToast(message: "Data Saved. . .", duration: 3)
             delegate?.passUserObject(user: userObject)
-            //            dismiss(animated: true, completion: nil)
-            //            self.navigationController?.popViewController(animated: true)
-            //            self.navigationController?.popToRootViewController(animated: true)
-            //            let vc = storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-            //            self.navigationController?.popToViewController(vc, animated: true)
-            
-            //            performSegue(withIdentifier: "addDataToHomeSegue", sender: self)
+          
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
