@@ -33,9 +33,9 @@ class LoginOpitonViewController: UIViewController {
         
         print("View did appeared")
         
-        let dbHelper = DatabaseHelper()
+        let currentUser = CurrentUser()
         
-        userObject = dbHelper.checkLoggedIn()
+        userObject = currentUser.checkLoggedIn()
         if (userObject != nil){
             
             performSegue(withIdentifier: "loginOptionsToHome", sender: self)

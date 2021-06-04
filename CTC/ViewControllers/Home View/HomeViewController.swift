@@ -6,6 +6,7 @@ class HomeViewController: UIViewController,ReceiveData{
 
     // variables
     var dbHelper: DatabaseHelper!
+    var currentUser : CurrentUser!
     var selectedDate: Date!
     var datePicker : UIDatePicker!
     var popUpDatePicker : UIDatePicker!
@@ -60,8 +61,8 @@ class HomeViewController: UIViewController,ReceiveData{
         dateTextField.text = "Date : \(Date().dateFormatemmmdd()!)"
         
         dbHelper = DatabaseHelper()
-        
-        userObject = dbHelper.checkLoggedIn()
+        currentUser =  CurrentUser()
+        userObject = currentUser.checkLoggedIn()
         
         let oldestDate = dbHelper.oldestPracticeDate(user: userObject)
         

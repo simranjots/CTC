@@ -10,9 +10,9 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
         
         
-        let dbHelper = DatabaseHelper()
+        var currentUser = CurrentUser()
         
-        userObject = dbHelper.checkLoggedIn()
+        userObject = currentUser.checkLoggedIn()
         
         if (userObject != nil){
         

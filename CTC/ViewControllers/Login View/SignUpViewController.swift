@@ -6,7 +6,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     
     var dbHelper: DatabaseHelper!
-
+    var currentUser : CurrentUser!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,8 +20,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dbHelper = DatabaseHelper()
+        currentUser = CurrentUser()
         setUpElements()
         
     }
@@ -63,7 +62,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             if(email.isValidEmail){
                 if(password.isValidPassword){
                     
-                    let resultFlag = dbHelper.addUser(name: name, email: email, password: password)
+                    let resultFlag = currentUser.addUser(name: name, email: email, password: password)
                     let fireRef = FirebaseHelper()
                     fireRef.addUser(userName: name, userEmail: email, userPassword: password)
                     

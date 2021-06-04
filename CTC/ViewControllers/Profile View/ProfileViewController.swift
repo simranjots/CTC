@@ -3,7 +3,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var dbHelper : DatabaseHelper!
+    var currenUser : CurrentUser!
     var userObject : User!
     var userData: [String: String]!
     
@@ -71,7 +71,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbHelper = DatabaseHelper()
+        currenUser = CurrentUser()
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         dobTextField.inputView = datePicker
         createDoneToolBar(textField: dobTextField)
         
-        userObject = dbHelper.checkLoggedIn()
+        userObject = currenUser.checkLoggedIn()
         
         createDoneToolBar(textField: nameTextfield)
         createDoneToolBar(textField: dobTextField)
@@ -128,7 +128,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func showPopUp(password: String) {
         
-        if dbHelper.passwordCheck(email: userObject.email!, password: password){
+        if currenUser.passwordCheck(email: userObject.email!, password: password){
             
             nameTextfield.text = userObject.name
             emailTextfield.text = userObject.email
@@ -149,7 +149,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func refreshTableView() {
         
-        userObject = dbHelper.checkLoggedIn()
+        userObject = currenUser.checkLoggedIn()
         userData = (["Name": userObject.name, "Email": userObject.email, "Password": userObject.password, "DOB": userObject.dob] as! [String : String])
         self.profileDataTableView.reloadData()
         
@@ -158,7 +158,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func updateButtonTapped(_ sender: Any) {
         
-        let resultFlag = dbHelper.updateUser(oldEmail: userObject.email!, newEmail: emailTextfield.text!, name: nameTextfield.text!, dob: dobTextField.text!, password: passwordTextfield.text!)
+        let resultFlag = currenUser.updateUser(oldEmail: userObject.email!, newEmail: emailTextfield.text!, name: nameTextfield.text!, dob: dobTextField.text!, password: passwordTextfield.text!)
         if resultFlag == 0{
             
             self.popUpView.removeFromSuperview()
