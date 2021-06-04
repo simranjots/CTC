@@ -4,7 +4,7 @@ class LoginViewController: UIViewController {
     
     
     //Dabase initilizers
-    var dbHelper: DatabaseHelper!
+    var currentUser : CurrentUser!
     var firebaseHelper: FirebaseHelper!
     var userObjectPass: User!
     
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbHelper = DatabaseHelper()
+       currentUser = CurrentUser()
         setUpElements()
         
     }
@@ -52,12 +52,9 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        dbHelper = DatabaseHelper()
-        firebaseHelper = FirebaseHelper()
-        
-        userObjectPass = dbHelper.checkLoggedIn()
-        
-        
+       currentUser = CurrentUser()
+       firebaseHelper = FirebaseHelper()
+       userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
 
             performSegue(withIdentifier: "MainTabbedBar", sender: self)
@@ -67,39 +64,16 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        
-        
-        view.endEditing(true)
-   
-        var email = emailTextField.text!
+       view.endEditing(true)
+     var email = emailTextField.text!
         email = email.lowercased()
-        
-        let userDataFromFirebase = firebaseHelper.getUserFromFirebase(userEmail: email)
-        
-        let password = passwordTextField.text!
+       let password = passwordTextField.text!
         
         if(email.isValidEmail){
             
             if(password.isValidPassword){
                 
-                let resultUsers = dbHelper.getUser()
-                
-                var result = false
-                
-                for user in resultUsers{
-                    
-                    if(user.email == email && user.password == password){
-                        
-                        userObjectPass = user
-                        result = true
-                        
-                        dbHelper.updateLoginStatus(status: true, email: user.email!)
-                        break
-                        
-                    }
-                }
-                
-                
+                let result = currentUser.signInUser(email, password)
                 
                 if result {
                    performSegue(withIdentifier: "MainTabbedBar", sender: self)
@@ -107,18 +81,12 @@ class LoginViewController: UIViewController {
                 else {
                     
                     showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                    
-                    
-                    print("no")
                 }
             }else{
-                
                 showToast(message: "Enter Valid Password", duration: 2.0)
-                
             }
             
         }else{
-            
             showToast(message: "Enter Valid Email", duration: 2.0)
             
         }
@@ -137,17 +105,4 @@ class LoginViewController: UIViewController {
     }
     
     
-}
-
-extension LoginViewController : UITextFieldDelegate {
-//  // when user select a textfield, this method will be called
-//  func textFieldDidBeginEditing(_ textField: UITextField) {
-//    // set the activeTextField to the selected textfield
-//    self.activeTextField = textField
-//  }
-//
-//  // when user click 'done' or dismiss the keyboard
-//  func textFieldDidEndEditing(_ textField: UITextField) {
-//    self.activeTextField = nil
-//  }
 }

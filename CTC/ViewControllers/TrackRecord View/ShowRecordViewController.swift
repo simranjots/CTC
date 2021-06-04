@@ -28,6 +28,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: Variables
     var userObject: User?
     var dbHelper : DatabaseHelper!
+    var currentUser: CurrentUser!
     
     var dataDict = [Date: [AnyObject] ]()
     var practices = [Practice]()
@@ -42,8 +43,8 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
-        
-        userObject = dbHelper.checkLoggedIn()
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
         
         
         // MARK: Popup Setup

@@ -6,13 +6,13 @@ class MorePageViewController: UIViewController {
     let moreOptionList = ["Practice History", "FAQ", "About Us", "How To Use The App", "Logout", ""]
     let moreOptionIconList = ["History", "FAQ", "Aboutus", "User-Manual", "Logout", ""]
     
-    var dbHelper: DatabaseHelper!
+    var  currentUser: CurrentUser!
     var userObject: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dbHelper = DatabaseHelper()
-        userObject = dbHelper.checkLoggedIn()
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
 
     }
     
@@ -89,7 +89,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource{
         case "Logout":
             if(userObject != nil){
                 
-                var resultFlag = dbHelper.updateLoginStatus(status: false, email: (userObject?.email)!)
+                let resultFlag = currentUser.updateLoginStatus(status: false, email: (userObject?.email)!)
                 if (resultFlag == 0){
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "newLoginOptions") as! UINavigationController

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-01-08.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 import CoreData
 import UserNotifications
@@ -40,10 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainNavigationController()
         
         
-        let dbHelper = DatabaseHelper()
+        let currentUser = CurrentUser()
         var userObject: User?
         
-        userObject = dbHelper.checkLoggedIn()
+        userObject = currentUser.checkLoggedIn()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
