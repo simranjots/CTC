@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK: for path od coredata
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        //print(urls[urls.count-1] as URL)
-       // for path of coredata
         
         //MARK:  to select app launch
         

@@ -29,9 +29,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     func setUpElements() {
         
         //Add textField images
-        guard let nameTextFieldImage = UIImage(named: "Profile-Selected") else { return }
-        guard let emailTextFieldImage = UIImage(named: "Email-1") else { return }
-        guard let passwordTextFieldImage = UIImage(named: "Password-1") else { return }
+        guard let nameTextFieldImage = UIImage(named: "profile") else { return }
+        guard let emailTextFieldImage = UIImage(named: "email") else { return }
+        guard let passwordTextFieldImage = UIImage(named: "password") else { return }
         
         //Style Texfields
         Utilities.styleTextField(nameTextField)
