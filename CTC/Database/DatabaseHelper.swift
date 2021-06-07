@@ -23,7 +23,7 @@ class DatabaseHelper{
     func getPracRecordTemp(user: User) -> [Date: [AnyObject]]? {
         
         let practices = userPractices.getPractices(user: user)
-        let weeklyPracticedData = getPracticeWeeklyData()!
+        //_ = getPracticeWeeklyData()!
         
         
         
@@ -101,7 +101,7 @@ class DatabaseHelper{
         finalDateArray = [String: [ [String:String?] ] ]()
         //        var dateArray = [NSDate]()
         
-        let weeklyPracticedData = getPracticeWeeklyData()!
+        //let weeklyPracticedData = getPracticeWeeklyData()!
         
         for practice in practices!{
             
@@ -109,7 +109,7 @@ class DatabaseHelper{
             let practiceData = getPracticebyName(practice: practice)
             let practiceDateArray = (practice.startedday! as Date).getDates(date: Date())
             var bufferData = [[String: String?]]()
-            var bufferWeeklyData = [[String: String?]]()
+            //var bufferWeeklyData = [[String: String?]]()
             
             for practiceDataObject in practiceData!{
                 
@@ -552,7 +552,7 @@ class DatabaseHelper{
                                         
                                         
                                         if(result == 0 ){
-                                            print("Weekly Data Added With date \(weekStartDate)")
+                                            print("Weekly Data Added With date \(String(describing: weekStartDate))")
                                         }else{
                                             print("Error in Weekly Data adding")
                                         }

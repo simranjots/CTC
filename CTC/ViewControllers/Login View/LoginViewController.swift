@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     // to store the current active textfield
     var activeTextField : UITextField? = nil
     
+    var isIconClicked = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        currentUser = CurrentUser()
@@ -33,8 +35,9 @@ class LoginViewController: UIViewController {
     func setUpElements() {
         
         //Add textField Images
-        guard let emailTextFieldImage = UIImage(named: "Email-1") else { return }
-        guard let passwordTextFieldImage = UIImage(named: "Password-1") else { return }
+        guard let emailIcon = UIImage(named: "email") else { return }
+        guard let passwordLeftIcon = UIImage(named: "password") else { return }
+        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         
         //Style the textFields
         Utilities.styleTextField(emailTextField)
@@ -46,8 +49,10 @@ class LoginViewController: UIViewController {
         Utilities.styleFacebookButton(facebookSignInButton)
         
         //Set textField Images
-        Utilities.addTextFieldImage(textField: emailTextField, andImage: emailTextFieldImage)
-        Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordTextFieldImage)
+        Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
+        Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
+        addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
+        
     }
     
     
@@ -102,6 +107,53 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
+    }
+    
+    func addPasswordEyeIcon(textField: UITextField, andImage image: UIImage) {
+        
+        //Create textField view
+        let textFieldRightView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        
+        //Create textField subview and add image
+        let textFieldImageView = UIImageView(image: image)
+        
+        //Set subview frame
+        textFieldImageView.frame = CGRect(x: 0, y: 8, width: 25, height: 25)
+        
+        //Add subview
+        textFieldRightView.addSubview(textFieldImageView)
+        
+        //Set leftside textField properties
+        textField.rightView = textFieldRightView
+        textField.rightViewMode = .always
+        
+       
+        //Add color to textField Image
+        textFieldImageView.tintColor = .darkGray
+        
+        //Add Tap Gesture
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer: )))
+        textFieldImageView.isUserInteractionEnabled = true
+        textFieldImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+         
+        if isIconClicked {
+            isIconClicked = false
+            tappedImage.image = UIImage(named: "openEye")
+            passwordTextField.isSecureTextEntry = false
+            
+        } else {
+            isIconClicked = true
+            tappedImage.image = UIImage(named: "closedEye")
+            passwordTextField.isSecureTextEntry = true
+        }
+        
     }
     
     

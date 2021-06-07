@@ -50,8 +50,6 @@ extension UITextField{
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.backgroundColor = UIColor.white.withAlphaComponent(0.3).cgColor
         self.layer.cornerRadius = 2
-        //        self.layer.masksToBounds = false
-        
     }
     
     func setLeftPadding(iconName: String){
@@ -302,6 +300,7 @@ extension Date {
         return myStringafd
         
     }
+    
     func originalFormate() -> Date {
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
@@ -313,6 +312,7 @@ extension Date {
         //then again set the date format whhich type of output you need
         return yourDate!
     }
+    
     func getDates(date:Date) -> [Date] {
         
         var dateArray = [Date]()
@@ -327,20 +327,15 @@ extension Date {
         
         
         while  startdate <= endDate {
-            //                print(fmt.string(from: date))
-            var tempDate = fmt.string(from: startdate)
             
-            
+            let tempDate = fmt.string(from: startdate)
             dateArray.append(fmt.date(from: tempDate)!)
-            // Advance by one day:
-            //            date = Calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: [])!
-            
             startdate = Calendar.current.date(byAdding: .day, value: 1, to: startdate)!
         }
+        
         if(fmt.string(from: startdate) == fmt.string(from: endDate)){
             
             dateArray.append(startdate)
-            
         }
         
         return dateArray

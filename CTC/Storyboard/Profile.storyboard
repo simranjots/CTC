@@ -12,7 +12,7 @@
         <scene sceneID="El4-kM-hMF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBarsWhenVerticallyCompact="YES" id="PUg-jj-i8O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile-Selected" id="PYT-NR-FHy"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile-Selected" selectedImage="Profile-Selected" id="PYT-NR-FHy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iZU-XD-fze" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -281,7 +281,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Profile" width="29" height="29"/>
         <image name="Profile-Selected" width="29" height="29"/>
     </resources>
 </document>

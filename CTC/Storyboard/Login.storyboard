@@ -52,7 +52,15 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="JXB-0l-wBY"/>
                                                                         </constraints>
-                                                                        <attributedString key="attributedText"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="rajan@gmail.com">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
                                                                 </subviews>
@@ -81,7 +89,15 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="sX7-Oi-4WO"/>
                                                                         </constraints>
-                                                                        <attributedString key="attributedText"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Rajan@1234">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                 </subviews>

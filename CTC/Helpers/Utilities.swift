@@ -22,6 +22,8 @@ class Utilities {
         //Set subview frame
         textFieldImageView.frame = CGRect(x: 15, y: 8, width: 25, height: 25)
         
+        textFieldImageView.tintColor = .darkGray
+        
         //Add subview
         textFieldView.addSubview(textFieldImageView)
         

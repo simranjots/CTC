@@ -203,7 +203,7 @@
 			path = "Home View";
 			sourceTree = "<group>";
 		};
-		1AACDE072668759000A1877D /* More View */ = {
+		1AACDE072668759000A1877D /* More Views */ = {
 			isa = PBXGroup;
 			children = (
 				E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */,
@@ -211,7 +211,7 @@
 				E10D6676226F7D7200C0E4D8 /* AboutUsViewController.swift */,
 				E10D6674226F6F7900C0E4D8 /* faqViewController.swift */,
 			);
-			path = "More View";
+			path = "More Views";
 			sourceTree = "<group>";
 		};
 		1AACDE082668765600A1877D /* Welcome View */ = {
@@ -259,7 +259,7 @@
 				1AACDE0A2668775900A1877D /* TrackRecord View */,
 				1AACDE092668767400A1877D /* Login View */,
 				1AACDE082668765600A1877D /* Welcome View */,
-				1AACDE072668759000A1877D /* More View */,
+				1AACDE072668759000A1877D /* More Views */,
 				1AACDE062668751D00A1877D /* Home View */,
 			);
 			path = ViewControllers;
