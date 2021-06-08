@@ -5,6 +5,7 @@ class addTodayViewController: UIViewController{
    // variables
     
     var dbHelper: DatabaseHelper!
+    var userPracticesData: UserPracticesData!
     var userObject: User!
     var userPractices: UserPractices!
     var selectedDate: Date!
@@ -53,7 +54,7 @@ class addTodayViewController: UIViewController{
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
-        
+       userPracticesData = UserPracticesData()
         self.title = selectedDate.dateFormatemmmdd()!
         
         // getting current yeat
@@ -74,7 +75,7 @@ class addTodayViewController: UIViewController{
         
         
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  dbHelper.getPracticeDataByDate(date: selectedDate.dateFormate()!)
+        practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate.dateFormate()!)
      
    
         noteTextView.delegate = self
@@ -267,6 +268,7 @@ class addTodayViewController: UIViewController{
         
         self.activeButton(flag: !isOn)
         
+        
     }
     
     func activeButton(flag: Bool){
@@ -291,7 +293,7 @@ class addTodayViewController: UIViewController{
         }
         
         
-        let savingResult = dbHelper.addPracticeData(note: noteData!, practised: ispracticed, practice: currentPractice,date: selectedDate)
+        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: currentPractice, currentDate: selectedDate, userObject: userObject!, note: noteData!)
         
         if(savingResult == 0){
             

@@ -10,7 +10,7 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
         
         
-        var currentUser = CurrentUser()
+        let currentUser = CurrentUser()
         
         userObject = currentUser.checkLoggedIn()
         
