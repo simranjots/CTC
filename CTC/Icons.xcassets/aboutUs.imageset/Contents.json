@@ -1,20 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "More.png",
+      "filename" : "aboutUs.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "More-1.png",
+      "filename" : "aboutUs-3.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
-    {
-      "filename" : "More-2.png",
-      "idiom" : "universal",
-      "scale" : "3x"
-    }
   ],
   "info" : {
     "author" : "xcode",

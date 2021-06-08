@@ -10,19 +10,22 @@ import UIKit
 
 class AboutUsTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet var aboutAuthorsView: UIView!
+    @IBOutlet var authorsNameLabel: UILabel!
+    @IBOutlet var authorsImageView: UIImageView!
+    @IBOutlet var description1: UILabel!
+    @IBOutlet var description2: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        authorsImageView.layer.cornerRadius = authorsImageView.frame.height / 2
+        authorsImageView.layer.borderWidth = 3
+        authorsImageView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
