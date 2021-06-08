@@ -15,6 +15,7 @@ struct Constants {
     struct CellIdentifiers {
         static let moreVCTableViewCell = "moreVCReusableCell"
         static let faqVCTableViewCell = "faqVCResusableCell"
+        static let  aboutAuthorTableViewCell = "aboutAuthorsVCResusableCell"
         
     }
     
