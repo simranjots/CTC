@@ -5,8 +5,7 @@ import UIKit
 class CurrentUser {
     
     var users = [User]()
-    var currentUser = User()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func addUser(name: String, email: String, password: String) -> Int{
         loadUser()

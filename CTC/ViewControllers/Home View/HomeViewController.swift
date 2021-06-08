@@ -8,6 +8,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
     var userPractices: UserPractices!
+    var userPracticesData: UserPracticesData!
     var selectedDate: Date!
     var datePicker : UIDatePicker!
     var popUpDatePicker : UIDatePicker!
@@ -15,6 +16,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var isUpdating: Bool! = false
     var oldPractice: String?
     var window: UIWindow!
+    let popUpHome = PopUpHome()
     
     var userObject: User!
     let moreOptionIconList = ["Book", "cheese", "dollar","excercise","flour","friendCircle","language","maditation","Music","salad","sleep","spaCandle","speak","walking","wineGlass","Yoga"]
@@ -64,6 +66,7 @@ class HomeViewController: UIViewController,ReceiveData{
         dbHelper = DatabaseHelper()
         currentUser = CurrentUser()
         userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
         
         let oldestDate = userPractices.oldestPracticeDate(user: userObject)
@@ -146,7 +149,7 @@ class HomeViewController: UIViewController,ReceiveData{
         
         //MARK: for mainatain the practices data weekly
         
-        dbHelper.maintainPracticeDataWeekly(user: userObject)
+        userPracticesData.maintainPracticeDataWeekly(user: userObject)
         
     }
     
@@ -198,7 +201,7 @@ class HomeViewController: UIViewController,ReceiveData{
     private func getPracticesData(date: Date) -> [PracticeData]?{
         
         
-        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
+        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
         
     }
     
@@ -259,10 +262,10 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBAction func popUpAddButtonTapped(_ sender: Any) {
         
         
-        let practice = practiceTextfield.text
-        let image_Name = imageName
         
-        if (practice == ""){
+        let practiceName = practiceTextfield.text
+        let image_Name = imageName
+        if (practiceName == ""){
             
             showToast(message: "Please Enter Your Practice", duration: 3)
             
@@ -278,10 +281,10 @@ class HomeViewController: UIViewController,ReceiveData{
         else{
             var practiceFlag: Int!
             if(isUpdating){
-                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
                 isUpdating = false}
             else{
-                practiceFlag = userPractices.addPractices(practice: practice!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
                 isUpdating = false
             }
             
@@ -306,6 +309,8 @@ class HomeViewController: UIViewController,ReceiveData{
             }
             
         }
+        
+
         
     }
     
@@ -408,10 +413,14 @@ extension HomeViewController : UITableViewDataSource {
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row ], practicesData: practicesData)
         if (switchFlag != nil){
             cell.isOn = switchFlag!
+            cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
-            
-        }else {
+          }
+        else
+        {
+            cell.userObject = userObject
             cell.activeButton(flag: false)
+            
         }
         
         cell.practice = practices[indexPath.row ]

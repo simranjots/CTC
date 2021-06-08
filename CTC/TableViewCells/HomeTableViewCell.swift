@@ -4,8 +4,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var practiceTextLabel: UILabel!
     @IBOutlet weak var practiceIconImage: UIImageView!
-    
-    @IBOutlet weak var yesNoSwitch: UISwitch!
+
     
     @IBOutlet weak var starButton: UIButton!
     
@@ -15,13 +14,14 @@ class HomeTableViewCell: UITableViewCell {
     // variables
     
     var dbHelper: DatabaseHelper!
+    var userPracticesData: UserPracticesData!
     var resultFlag: Int!
     var practice: Practice!
     var selectedDate: Date!
     var view: UIView!
     var isOn: Bool = false
-    
-    //// variables
+    var userObject: User!
+    // variables
     
 
     override func awakeFromNib() {
@@ -29,29 +29,27 @@ class HomeTableViewCell: UITableViewCell {
      self.backgroundColor = UIColor.white
         
         dbHelper = DatabaseHelper()
-        
+        userPracticesData = UserPracticesData()
     }
    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
  
     @IBAction func starButtonTapped(_ sender: Any) {
         
         self.activeButton(flag: !isOn)
-         resultFlag = dbHelper.addPracticeData(practised: isOn, practice: practice, date: selectedDate)
+        resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "")
+       
         if resultFlag == 0{
             
-            //            showToast(message: "Data Saved", duration: 3,view: view)
             print("Data Saved")
             
         }else if resultFlag == 1{
             print("error in Cell Data Saving")
-            //            showAlert(title: "Error", message: "Data saving error please try againm", buttonTitle: "Try Again")
             
         }
 

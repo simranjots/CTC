@@ -28,6 +28,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: Variables
     var userObject: User?
     var dbHelper : DatabaseHelper!
+    var userPracticesData : UserPracticesData!
     var currentUser: CurrentUser!
     var userPractices: UserPractices!
     var dataDict = [Date: [AnyObject] ]()
@@ -45,6 +46,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         dbHelper = DatabaseHelper()
         currentUser = CurrentUser()
         userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
         
         
@@ -65,7 +67,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         for practiceObject in practices{
             let startedDate = ((practiceObject.startedday! as Date).originalFormate())
             let days = Date().days(from: startedDate) + 1
-            //            let percentage: Int = Int((Float(practicedDays) / Float(days)) * 100)
+          
             let percentage = Int(Float(practiceObject.practiseddays  * 100) / Float(days))
             percentageData.append(["Practice": practiceObject.practice!, "Percentage": "\(percentage)", "TrackingDay": String(practiceObject.practiseddays), "outOfDays":String(days)])
             
@@ -99,7 +101,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         for practiceObject in practices{
             let startedDate = ((practiceObject.startedday! as Date).originalFormate())
             let days = Date().days(from: startedDate) + 1
-            //            let percentage: Int = Int((Float(practicedDays) / Float(days)) * 100)
+          
             let percentage = Int(Float(practiceObject.practiseddays  * 100) / Float(days))
             percentageData.append(["Practice": practiceObject.practice!, "Percentage": "\(percentage)", "TrackingDay": String(practiceObject.practiseddays), "outOfDays":String(days)])
             
@@ -115,20 +117,6 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         //        print(dictKeys?.count)
         
         self.recordTableView.reloadData()
-        
-    }
-    
-    func convertToDate(stringDate: [String]) -> [Date]?{
-        
-        var dateArray : [Date] = []
-        
-        for date in stringDate{
-            
-            dateArray.append(date.stringToDate())
-            
-        }
-        
-        return dateArray
         
     }
     
@@ -316,7 +304,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         let date = (dictKeys![dateIndex])
         
         
-        let resultFlag = dbHelper.updatePracticeData(practiceName: practiceName, practiceDate: date, note: notes, practiced: practiced)
+        let resultFlag = userPracticesData.updatePracticeData(practiceName: practiceName, practiceDate: date, note: notes, practiced: practiced)
         
         if(resultFlag == 0){
             
