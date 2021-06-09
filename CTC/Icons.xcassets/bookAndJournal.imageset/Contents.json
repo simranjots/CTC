@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "aboutUs.svg",
+      "filename" : "bookAndJournal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "aboutUs-3.svg",
+      "filename" : "bookAndJournal-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "aboutUs-4.svg",
+      "filename" : "bookAndJournal-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
