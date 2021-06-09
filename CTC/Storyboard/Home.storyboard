@@ -413,7 +413,7 @@
                                     <constraint firstItem="YMW-a2-57C" firstAttribute="leading" secondItem="Zpo-Qe-RU3" secondAttribute="leading" constant="20" id="zuP-SO-76e"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="smT-8S-fW7">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="smT-8S-fW7">
                                 <rect key="frame" x="20" y="646" width="374" height="216"/>
                             </datePicker>
                         </subviews>
