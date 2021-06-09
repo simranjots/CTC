@@ -3,7 +3,7 @@ import UserNotifications
 
 class HomeViewController: UIViewController,ReceiveData{
     
-
+    
     // variables
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
@@ -11,53 +11,28 @@ class HomeViewController: UIViewController,ReceiveData{
     var userPracticesData: UserPracticesData!
     var selectedDate: Date!
     var datePicker : UIDatePicker!
-    var popUpDatePicker : UIDatePicker!
     var myIndex: Int!
-    var isUpdating: Bool! = false
-    var oldPractice: String?
     var window: UIWindow!
-    let popUpHome = PopUpHome()
+    var popUpHome : PopUpHome!
+    
     
     var userObject: User!
-    let moreOptionIconList = ["Book", "cheese", "dollar","excercise","flour","friendCircle","language","maditation","Music","salad","sleep","spaCandle","speak","walking","wineGlass","Yoga"]
-    var imageName: String = ""
     var practices:[Practice]!
     var practicesData: [PracticeData]!
-
+    
     // variables
- 
+    
     @IBOutlet weak var addResolutionButton: UIButton!
-    @IBOutlet weak var imageIconButton: UIButton!
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var titleTextLabel: UILabel!
-    @IBOutlet weak var practiceTextfield: UITextField!
-    @IBOutlet weak var popUpFregroundView: UIView!
-    @IBOutlet var popUpView: UIView!
-    @IBOutlet weak var practiceStartedDate: UITextField!
-   
     
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         selectedDate = datePicker.date.dateFormate()!
         self.refreshTableview(date: selectedDate)
     }
-
+    
     
     override func viewDidLoad() {
-        
-        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        popUpView.frame = frame
-        
-        let dateForDateComp = Date().addingTimeInterval(4)
-        
-        let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateForDateComp)
-        custome(dateComponent: dateComp)
-        // MARK: Testing
-        
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
         
@@ -67,6 +42,7 @@ class HomeViewController: UIViewController,ReceiveData{
         currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
+        popUpHome = PopUpHome()
         userObject = currentUser.checkLoggedIn()
         
         let oldestDate = userPractices.oldestPracticeDate(user: userObject)
@@ -79,34 +55,6 @@ class HomeViewController: UIViewController,ReceiveData{
         datePicker.maximumDate = Date()
         datePicker.minimumDate = oldestDate
         
-        
-        //MARK: Popup Date Picker
-        popUpDatePicker = UIDatePicker()
-        popUpDatePicker.datePickerMode = .date
-        popUpDatePicker.addTarget(self, action: #selector(self.PopUpDatePickerValueChanged(datePicker:)), for: .valueChanged)
-        practiceStartedDate.inputView = popUpDatePicker
-        popUpDatePicker.maximumDate = Date()
-        
-        
-        //MARK: Custome Done Tool bar
-        
-//        let toolBar = UIToolbar()
-//        toolBar.sizeToFit()
-//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
-//
-//        toolBar.setItems([doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//        dateTextField.inputAccessoryView = toolBar
-//
-//        //MARK: Custome Done Tool bar for Popup
-        
-        let popUpToolBar = UIToolbar()
-        popUpToolBar.sizeToFit()
-        let popUpDoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.popUpDateSelected))
-        
-        popUpToolBar.setItems([popUpDoneButton], animated: true)
-        popUpToolBar.isUserInteractionEnabled = true
-        practiceStartedDate.inputAccessoryView = popUpToolBar
         
         //MARK: Custome Done Tool bar for Popup
         addResolutionButton.backgroundColor = Theme.secondaryColor
@@ -122,16 +70,6 @@ class HomeViewController: UIViewController,ReceiveData{
         practicesData = self.getPracticesData(date: selectedDate)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
-        
-        
-        // for popup view
-        popUpFregroundView.setPopupView()
-        titleTextLabel.setPopUpTitle()
-        addButton.setPopUpButton()
-        cancelButton.setPopUpButton()
-        
-     // popup view
-        createDoneToolBar(textField: practiceTextfield)
         
         
         // MARK: Gradiat Color Set for naviagation Bar
@@ -181,7 +119,7 @@ class HomeViewController: UIViewController,ReceiveData{
                 
                 dateComp.day = dateComp.second! + 3
                 print("Complete")
-             
+                
             }
         }
         
@@ -194,12 +132,6 @@ class HomeViewController: UIViewController,ReceiveData{
         dateTextField.text = finalDate
         
     }
-    @objc func PopUpDatePickerValueChanged(datePicker: UIDatePicker){
-        
-        practiceStartedDate.text = popUpDatePicker.date.dateFormatemmmdd()!
-        
-    }
-    
     
     private func getPractices() -> [Practice]{
         
@@ -214,21 +146,7 @@ class HomeViewController: UIViewController,ReceiveData{
         
     }
     
-//
-//    @objc func dateSelected() {
-//
-//        selectedDate = datePicker.date.dateFormate()!
-//
-//        let selectedData : [PracticeData] = dbHelper.getPracticeDataByDate(date: selectedDate)!
-//
-//        practices = userPractices.getPractices(date: selectedDate, user: userObject)
-//        practicesData = selectedData
-//        self.homeTableView.reloadData()
-//
-//        self.view.endEditing(true)
-//
-//    }
-
+    
     @objc func popUpDateSelected() {
         
         self.view.endEditing(true)
@@ -245,114 +163,14 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = user
     }
     
-    @IBAction func addResolutionButtonTapped(_ sender: Any) {
-        
-        self.view.addSubview(popUpView)
-        self.titleTextLabel.text = "Add Practice"
-        self.addButton.setTitle("Add", for: .normal)
-        practiceStartedDate.text = Date().dateFormatemmmdd()
-        popUpView.center = self.view.center
-        
+    @IBAction func addResolutionButtonTapped(_ sender: UIButton) {
+        popUpHome.showPopup(parentVC: self, value: "add", indexpath: 0)
     }
     
     
     
     // Table View Code
     
-    
-    @IBAction func popUpCancelBtnTapped(_ sender: Any) {
-        self.practiceTextfield.text = ""
-        self.imageName = ""
-        self.popUpDatePicker.date = Date()
-        self.imageIconButton.setImage(UIImage(named: "Image-gallery"), for: .normal)
-        self.popUpView.removeFromSuperview()
-    }
-    
-    @IBAction func popUpAddButtonTapped(_ sender: Any) {
-        
-        
-        
-        let practiceName = practiceTextfield.text
-        let image_Name = imageName
-        if (practiceName == ""){
-            
-            showToast(message: "Please Enter Your Practice", duration: 3)
-            
-        }
-        else if(image_Name == ""){
-            
-            showToast(message: "Please Select Icon For Practice", duration: 3)
-            
-        }
-        else if(practiceStartedDate.text == ""){
-            showToast(message: "Please Select Practice Starting Date", duration: 3)
-        }
-        else{
-            var practiceFlag: Int!
-            if(isUpdating){
-                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
-                isUpdating = false}
-            else{
-                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: popUpDatePicker.date.dateFormate()!, user: userObject)
-                isUpdating = false
-            }
-            
-            
-            if(practiceFlag == 1){
-                
-                showAlert(title: "Warning", message: "Practice Already Exist. . . ", buttonTitle: "Try Again")
-                
-            }
-            else if(practiceFlag == 2){
-                
-                showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
-                
-            }else if (practiceFlag == 0 ){
-                self.refreshTableview(date: selectedDate)
-                self.practiceTextfield.text = ""
-                self.imageName = ""
-                self.popUpDatePicker.date = Date()
-                self.imageIconButton.setImage(UIImage(named: "Image-gallery"), for: .normal)
-                self.popUpView.removeFromSuperview()
-                
-            }
-            
-        }
-        
-
-        
-    }
-    
-    @IBAction func iconImageButtonTapped(_ sender: Any) {
-      
-        let actionSheet = UIAlertController(title: "Resolution Icons", message: "Choose an Icon to Categories Your Resolution", preferredStyle: .actionSheet)
-        for icon in moreOptionIconList{
-            let image = UIImage(named: icon)
-            
-            let action = UIAlertAction(title: icon, style: .default){action in self.changeResolutionIcon(imageName: icon)}
-            action.setValue(image, forKey: "image")
-            actionSheet.addAction(action)
-                
-        }
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.sourceView = self.view //to set the source of your alert
-            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0) // you can set this as per your requirement.
-            popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
-        }
-        
-        present(actionSheet,animated: true)
-        
-    }
-    
-    func changeResolutionIcon(imageName: String){
- 
-        self.imageName = imageName
-        imageIconButton.setImage(UIImage(named: imageName), for: .normal)
-        
-    }
     func delPractice(prac: Practice){
         
         let pracName = prac.practice
@@ -374,12 +192,17 @@ class HomeViewController: UIViewController,ReceiveData{
         
     }
     func refreshTableview(date: Date) {
-        
+        userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
+        selectedDate = Date().dateFormate()!
         practices = userPractices.getPractices(user: userObject)
         practicesData = self.getPracticesData(date: selectedDate)
         let oldestDate = userPractices.oldestPracticeDate(user: userObject)
+        self.datePicker = UIDatePicker()
         self.datePicker.minimumDate = oldestDate
-        self.homeTableView.reloadData()
+        homeTableView.reloadData()
         
     }
     
@@ -398,7 +221,7 @@ class HomeViewController: UIViewController,ReceiveData{
         }
         return nil
     }
-   
+    
 }
 
 
@@ -424,7 +247,7 @@ extension HomeViewController : UITableViewDataSource {
             cell.isOn = switchFlag!
             cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
-          }
+        }
         else
         {
             cell.userObject = userObject
@@ -462,36 +285,23 @@ extension HomeViewController: UITableViewDelegate{
         }
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Edit") { (action, view, handler) in
-            self.practiceTextfield.text = self.practices[indexPath.row].practice
-            self.oldPractice = self.practices[indexPath.row].practice
-            
-            self.imageIconButton.setImage(UIImage(named: self.practices[ indexPath.row].image_name!), for: .normal)
-            
-            self.imageName = self.practices[indexPath.row].image_name!
-            
-            self.popUpDatePicker.date = (self.practices[indexPath.row].startedday)! as Date
-            
-            self.practiceStartedDate.text = ((self.practices[indexPath.row].startedday)! as Date).dateFormatemmmdd()
-            self.titleTextLabel.text = "Edit Practice"
-            self.addButton.setTitle("Confirm", for: .normal)
-            self.view.addSubview(self.popUpView)
-            self.popUpView.center = self.view.center
-            self.isUpdating = true
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, handler) in
+            self.popUpHome.showPopup(parentVC: self, value: "edit", indexpath: indexPath.row)
+
         }
-        deleteAction.backgroundColor = .lightGray
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        editAction.backgroundColor = .lightGray
+        let configuration = UISwipeActionsConfiguration(actions: [editAction])
         return configuration
     }
-        
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
         performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
-    
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
