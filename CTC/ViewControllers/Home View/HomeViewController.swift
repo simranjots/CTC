@@ -153,6 +153,15 @@ class HomeViewController: UIViewController,ReceiveData{
         
     }
     
+    
+    @IBAction func ShowProgress(_ sender: UIBarButtonItem) {
+    
+        //ShowDetails
+        
+        performSegue(withIdentifier: "ShowDetails", sender: self)
+    }
+    
+    
     @objc func custome(dateComponent: DateComponents){
         
         
@@ -219,7 +228,7 @@ class HomeViewController: UIViewController,ReceiveData{
 //        self.view.endEditing(true)
 //
 //    }
-    
+
     @objc func popUpDateSelected() {
         
         self.view.endEditing(true)
@@ -494,5 +503,7 @@ extension HomeViewController: UITableViewDelegate{
         destination.delegate = self
         
     }
+    
+    
     
 }

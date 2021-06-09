@@ -124,7 +124,7 @@
                         <outlet property="practiceStartedDate" destination="THK-VN-yCh" id="Sbi-k8-I8O"/>
                         <outlet property="practiceTextfield" destination="1mS-3t-4Ws" id="m2N-by-AQ0"/>
                         <outlet property="titleTextLabel" destination="3kp-MF-uJf" id="MjP-7h-Hr0"/>
-                        <segue destination="QPm-CO-3oh" kind="show" identifier="HomeToAddDataSague" id="cRp-FA-fZS"/>
+                        <segue destination="QPm-CO-3oh" kind="show" identifier="HomeToAddDataSague" id="01V-p2-D8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2p-J4-7dG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaQ-BD-bQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.536231884058" y="470.75892857142856"/>
+            <point key="canvasLocation" x="1336" y="-54"/>
         </scene>
         <!--Home-->
         <scene sceneID="Oyb-rE-mHg">
