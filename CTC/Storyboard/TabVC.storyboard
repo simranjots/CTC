@@ -40,7 +40,7 @@
         <!--Maintab Bar View Controller-->
         <scene sceneID="ISh-hW-Wh8">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabbedBar" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="axN-kz-yEx" customClass="MaintabBarViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabbedBar" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="axN-kz-yEx" customClass="MaintabBarViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wIC-M8-l7m">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
