@@ -703,13 +703,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="nmv-as-aLC">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="159"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="149"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jhW-UH-46X">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="159"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="149"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6r-yh-Vgq">
-                                                                    <rect key="frame" x="0.0" y="6.5" width="131.5" height="146"/>
+                                                                    <rect key="frame" x="0.0" y="1.5" width="131.5" height="146"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="June 08, 2021" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-Fe-Tui">
                                                                             <rect key="frame" x="5" y="66" width="121.5" height="14"/>
@@ -727,7 +727,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZBw-Nk-cLf">
-                                                                    <rect key="frame" x="131.5" y="16" width="131" height="127"/>
+                                                                    <rect key="frame" x="131.5" y="16" width="131" height="117"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="131" id="txu-pa-oEs"/>
@@ -738,7 +738,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRf-SP-ZPi">
-                                                                    <rect key="frame" x="262.5" y="70" width="131.5" height="19"/>
+                                                                    <rect key="frame" x="262.5" y="65" width="131.5" height="19"/>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                     <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -760,8 +760,8 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nmv-as-aLC" firstAttribute="top" secondItem="Smg-fo-yPD" secondAttribute="top" id="eBf-Bz-pzK"/>
-                                                <constraint firstAttribute="bottom" secondItem="nmv-as-aLC" secondAttribute="bottom" id="tHP-of-BtN"/>
+                                                <constraint firstItem="nmv-as-aLC" firstAttribute="top" secondItem="Smg-fo-yPD" secondAttribute="top" constant="5" id="eBf-Bz-pzK"/>
+                                                <constraint firstAttribute="bottom" secondItem="nmv-as-aLC" secondAttribute="bottom" constant="5" id="tHP-of-BtN"/>
                                                 <constraint firstAttribute="trailing" secondItem="nmv-as-aLC" secondAttribute="trailing" constant="10" id="uCT-OQ-2g0"/>
                                                 <constraint firstItem="nmv-as-aLC" firstAttribute="leading" secondItem="Smg-fo-yPD" secondAttribute="leading" constant="10" id="w15-au-uYg"/>
                                             </constraints>
