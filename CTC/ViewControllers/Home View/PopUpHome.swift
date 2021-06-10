@@ -220,6 +220,7 @@ class PopUpHome :UIViewController{
             update(indexPath: indexPath)
         }
     }
+    
     func add(){
         self.titleLabel.text = "Add Practice"
         self.addButton.setTitle("Add", for: .normal)

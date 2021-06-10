@@ -152,7 +152,7 @@
                                                         <constraint firstAttribute="height" constant="100" id="9OE-1S-GpD"/>
                                                     </constraints>
                                                     <string key="text">Due to an injury, Kim retired from professional running but years later wanted to continue again, this time as a solution to his health.</string>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -163,7 +163,7 @@
 Teresa decided to apply Kim’s 201 magic number to her practices. His formula worked. Success followed, and she soon added other practices.
 
 Together they decided to share this 201 Day Achievement Principle with the world through a Book, Companion Tracking Journal and iPhone APP. </string>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -172,7 +172,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="O30-Kd-zfB"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -255,18 +255,18 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What if I didn't do anything all week?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ECr-Xf-dbC">
-                                                    <rect key="frame" x="20" y="5" width="374" height="70"/>
+                                                    <rect key="frame" x="20" y="5" width="374" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="rNR-Rv-GSg"/>
+                                                        <constraint firstAttribute="height" constant="45" id="rNR-Rv-GSg"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-hl-GDU">
-                                                    <rect key="frame" x="20" y="80" width="374" height="256"/>
+                                                    <rect key="frame" x="20" y="55" width="374" height="281"/>
                                                     <string key="text">This is not an all or nothing program. There will be times when adhering to your practices is more challenging than others. You can make those days up throughout the year. Also, plan to bank before times you know will be harder or at the beginning of the year so you don’t feel the pressure at the end of the year. And keep tracking every week so you know where you’re at. If you are able to be around 60% you should have lots of leeway. If you haven’t done your practice all week, your numbers would stay the same but the percentage would go down.</string>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -637,18 +637,18 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Privacy Policy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="2cu-vK-Nz2">
-                                                    <rect key="frame" x="20" y="10" width="374" height="30"/>
+                                                    <rect key="frame" x="20" y="10" width="374" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="NuH-JI-dud"/>
+                                                        <constraint firstAttribute="height" constant="25" id="NuH-JI-dud"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                     <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-NZ-P7X">
-                                                    <rect key="frame" x="20" y="45" width="374" height="289"/>
+                                                    <rect key="frame" x="20" y="40" width="374" height="294"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -701,92 +701,96 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="orderBooksReusableCell" rowHeight="551" id="Qdi-8f-n1o" customClass="OrderBooksTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="551"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="orderBooksReusableCell" rowHeight="387" id="Qdi-8f-n1o" customClass="OrderBooksTableViewCell" customModule="CTC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="387"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qdi-8f-n1o" id="40L-ke-tXs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fj-C8-WRA" userLabel="Order Books View">
-                                                    <rect key="frame" x="20" y="10" width="374" height="531"/>
+                                                    <rect key="frame" x="50" y="10" width="314" height="358"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-qP-T7g">
-                                                            <rect key="frame" x="97" y="44.5" width="180" height="240"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="240" id="LN6-de-uOC"/>
-                                                                <constraint firstAttribute="width" constant="180" id="see-Lx-ef4"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201 Day Achievement Principle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDg-3E-UBe">
-                                                            <rect key="frame" x="10" y="10" width="354" height="24.5"/>
-                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                                            <rect key="frame" x="10" y="5" width="294" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="6MX-hq-MAU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aja-l2-sKy">
-                                                            <rect key="frame" x="10" y="294.5" width="354" height="134.5"/>
+                                                            <rect key="frame" x="10" y="194" width="294" height="78"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="134.5" id="cJE-TZ-Yl0"/>
+                                                                <constraint firstAttribute="height" constant="78" id="0iz-or-90X"/>
+                                                                <constraint firstAttribute="width" constant="294" id="Cfi-1x-c5y"/>
                                                             </constraints>
                                                             <string key="text">The 201 Day Achievement Principle is a system that allows you to easily track those practices that are most important to you so that you can experience greater achievement in life, both personally and professionally.</string>
-                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$19.97 USD + FREE Shipping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5h-v4-I9s">
+                                                            <rect key="frame" x="10" y="280" width="294" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="rOc-Ad-ulQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-qP-T7g">
+                                                            <rect key="frame" x="114" y="36" width="86" height="148"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="120" id="FaU-Lh-f3u"/>
+                                                                <constraint firstAttribute="width" constant="86" id="qIo-5a-fc0"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZw-qY-ZBj">
-                                                            <rect key="frame" x="10" y="471" width="354" height="50"/>
+                                                            <rect key="frame" x="13" y="310" width="288" height="40"/>
                                                             <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="aI1-9s-eS1"/>
+                                                                <constraint firstAttribute="height" constant="40" id="aI1-9s-eS1"/>
                                                             </constraints>
                                                             <state key="normal">
                                                                 <attributedString key="attributedTitle">
-                                                                    <fragment content="Click on the Book to Purchase">
+                                                                    <fragment content="Tap on the Book to make Purchase">
                                                                         <attributes>
                                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <font key="NSFont" size="24" name="ArialRoundedMTBold"/>
+                                                                            <font key="NSFont" size="16" name="ArialRoundedMTBold"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
                                                             </state>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$19.97 USD + FREE Shipping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5h-v4-I9s">
-                                                            <rect key="frame" x="10" y="439" width="354" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="22" id="rOc-Ad-ulQ"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="k5h-v4-I9s" firstAttribute="top" secondItem="aja-l2-sKy" secondAttribute="bottom" constant="8" id="0wo-Sl-ESg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Vl5-qP-T7g" secondAttribute="trailing" constant="114" id="4Ef-hJ-dU9"/>
                                                         <constraint firstItem="cDg-3E-UBe" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="10" id="4zL-nh-Le3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Vl5-qP-T7g" secondAttribute="trailing" constant="97" id="6TF-o4-SwS"/>
                                                         <constraint firstAttribute="trailing" secondItem="k5h-v4-I9s" secondAttribute="trailing" constant="10" id="Bxj-xM-Swu"/>
-                                                        <constraint firstItem="Vl5-qP-T7g" firstAttribute="top" secondItem="cDg-3E-UBe" secondAttribute="bottom" constant="10" id="DeC-oB-wpk"/>
-                                                        <constraint firstAttribute="trailing" secondItem="YZw-qY-ZBj" secondAttribute="trailing" constant="10" id="Goa-ml-EP1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="YZw-qY-ZBj" secondAttribute="bottom" constant="10" id="NPV-re-ehV"/>
+                                                        <constraint firstItem="Vl5-qP-T7g" firstAttribute="top" secondItem="cDg-3E-UBe" secondAttribute="bottom" constant="10" id="CtZ-hk-zgB"/>
+                                                        <constraint firstItem="cDg-3E-UBe" firstAttribute="top" secondItem="9fj-C8-WRA" secondAttribute="top" constant="5" id="HmB-z7-5Ep"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YZw-qY-ZBj" secondAttribute="trailing" constant="13" id="JUO-NM-N0O"/>
+                                                        <constraint firstItem="YZw-qY-ZBj" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="13" id="KQ7-5n-hTs"/>
                                                         <constraint firstItem="k5h-v4-I9s" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="10" id="O43-Tx-jNZ"/>
-                                                        <constraint firstItem="YZw-qY-ZBj" firstAttribute="top" secondItem="k5h-v4-I9s" secondAttribute="bottom" constant="10" id="Vlz-nX-7Go"/>
-                                                        <constraint firstItem="YZw-qY-ZBj" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="10" id="ZKT-z8-x3L"/>
-                                                        <constraint firstItem="k5h-v4-I9s" firstAttribute="top" secondItem="aja-l2-sKy" secondAttribute="bottom" constant="10" id="ZwS-d7-mMW"/>
-                                                        <constraint firstItem="aja-l2-sKy" firstAttribute="top" secondItem="Vl5-qP-T7g" secondAttribute="bottom" constant="10" id="cg0-Fk-mcl"/>
+                                                        <constraint firstItem="YZw-qY-ZBj" firstAttribute="top" secondItem="k5h-v4-I9s" secondAttribute="bottom" constant="10" id="RbN-4Q-Lgc"/>
+                                                        <constraint firstItem="aja-l2-sKy" firstAttribute="top" secondItem="Vl5-qP-T7g" secondAttribute="bottom" constant="10" id="c5r-Ml-7WC"/>
                                                         <constraint firstAttribute="trailing" secondItem="cDg-3E-UBe" secondAttribute="trailing" constant="10" id="g5J-7t-Hfm"/>
-                                                        <constraint firstItem="cDg-3E-UBe" firstAttribute="top" secondItem="9fj-C8-WRA" secondAttribute="top" constant="10" id="lNx-Xi-Udy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YZw-qY-ZBj" secondAttribute="bottom" constant="8" id="kpJ-aG-7sb"/>
+                                                        <constraint firstItem="Vl5-qP-T7g" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="114" id="nnt-Ru-aKf"/>
                                                         <constraint firstAttribute="trailing" secondItem="aja-l2-sKy" secondAttribute="trailing" constant="10" id="qIi-pt-EcI"/>
-                                                        <constraint firstItem="Vl5-qP-T7g" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="97" id="tFm-KH-Aus"/>
                                                         <constraint firstItem="aja-l2-sKy" firstAttribute="leading" secondItem="9fj-C8-WRA" secondAttribute="leading" constant="10" id="vT7-4a-l34"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="9fj-C8-WRA" secondAttribute="trailing" constant="20" id="9SY-9h-6bq"/>
-                                                <constraint firstAttribute="bottom" secondItem="9fj-C8-WRA" secondAttribute="bottom" constant="10" id="fqE-ai-0B3"/>
-                                                <constraint firstItem="9fj-C8-WRA" firstAttribute="leading" secondItem="40L-ke-tXs" secondAttribute="leading" constant="20" id="uW6-0T-ech"/>
+                                                <constraint firstAttribute="trailing" secondItem="9fj-C8-WRA" secondAttribute="trailing" constant="50" id="9SY-9h-6bq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9fj-C8-WRA" secondAttribute="bottom" constant="8" id="EAJ-C1-FwQ"/>
+                                                <constraint firstItem="9fj-C8-WRA" firstAttribute="leading" secondItem="40L-ke-tXs" secondAttribute="leading" constant="50" id="uW6-0T-ech"/>
                                                 <constraint firstItem="9fj-C8-WRA" firstAttribute="top" secondItem="40L-ke-tXs" secondAttribute="top" constant="10" id="zp8-LO-oAT"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -845,48 +849,48 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-v2-jFL" userLabel="Title View">
-                                <rect key="frame" x="5" y="108" width="404" height="75"/>
+                                <rect key="frame" x="5" y="108" width="404" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aik-BJ-bH4">
-                                        <rect key="frame" x="10" y="10" width="328.5" height="29"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <rect key="frame" x="10" y="10" width="328.5" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="110" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPD-bY-ItH">
-                                        <rect key="frame" x="349" y="10" width="45" height="29"/>
+                                        <rect key="frame" x="349" y="10" width="45" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="QOj-kH-ZPc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5Q-fV-xly">
-                                        <rect key="frame" x="10" y="44" width="329" height="21"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                        <rect key="frame" x="10" y="33.5" width="329" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jG-d8-z2q">
-                                        <rect key="frame" x="349" y="44" width="45" height="21"/>
+                                        <rect key="frame" x="349" y="33.5" width="45" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="nMI-W6-LbX"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7Gc-zO-D2y"/>
                                     <constraint firstAttribute="trailing" secondItem="1jG-d8-z2q" secondAttribute="trailing" constant="10" id="87s-8J-wYj"/>
                                     <constraint firstItem="QPD-bY-ItH" firstAttribute="leading" secondItem="Aik-BJ-bH4" secondAttribute="trailing" constant="10.33" id="KxV-fI-1hH"/>
                                     <constraint firstItem="QPD-bY-ItH" firstAttribute="top" secondItem="Dnq-v2-jFL" secondAttribute="top" constant="10" id="NjB-eA-CaX"/>
                                     <constraint firstAttribute="trailing" secondItem="QPD-bY-ItH" secondAttribute="trailing" constant="10" id="Txe-Oj-BSS"/>
                                     <constraint firstAttribute="bottom" secondItem="z5Q-fV-xly" secondAttribute="bottom" constant="10" id="XtH-Yk-YXZ"/>
                                     <constraint firstItem="1jG-d8-z2q" firstAttribute="leading" secondItem="z5Q-fV-xly" secondAttribute="trailing" constant="10" id="b7E-Em-sDO"/>
-                                    <constraint firstItem="Aik-BJ-bH4" firstAttribute="firstBaseline" secondItem="QPD-bY-ItH" secondAttribute="firstBaseline" id="hBk-hN-0fu"/>
                                     <constraint firstItem="z5Q-fV-xly" firstAttribute="leading" secondItem="Dnq-v2-jFL" secondAttribute="leading" constant="10" id="hws-WJ-F9A"/>
                                     <constraint firstItem="Aik-BJ-bH4" firstAttribute="top" secondItem="Dnq-v2-jFL" secondAttribute="top" constant="10" id="lPR-M3-3jH"/>
                                     <constraint firstItem="z5Q-fV-xly" firstAttribute="top" secondItem="Aik-BJ-bH4" secondAttribute="bottom" constant="5" id="m7Y-fm-2Z0"/>
@@ -896,56 +900,56 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-1K-T0a" userLabel="Progress View">
-                                <rect key="frame" x="5" y="203" width="404" height="200"/>
+                                <rect key="frame" x="5" y="188" width="404" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tz0-TR-Vsc" userLabel="Progress Stats View">
-                                        <rect key="frame" x="230" y="5" width="164" height="190"/>
+                                        <rect key="frame" x="180" y="5" width="214" height="140"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zBR-CW-W8u">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="190"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zBR-CW-W8u">
+                                                <rect key="frame" x="5" y="5" width="204" height="130"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Since Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIU-W9-hTK">
-                                                        <rect key="frame" x="3.5" y="0.0" width="157.5" height="20"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Days Since Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIU-W9-hTK">
+                                                        <rect key="frame" x="37" y="0.0" width="130" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JW-Vn-6Yt">
-                                                        <rect key="frame" x="52" y="26" width="60" height="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JW-Vn-6Yt">
+                                                        <rect key="frame" x="72" y="20.5" width="60" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="OHt-Rf-0Nz"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-hx-U9r">
-                                                        <rect key="frame" x="34.5" y="67" width="95.5" height="21"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <rect key="frame" x="65" y="45.5" width="74" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-hW-Of5">
-                                                        <rect key="frame" x="57" y="94" width="50" height="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-hW-Of5">
+                                                        <rect key="frame" x="77" y="66" width="50" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="vLX-oe-uYX"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y53-Cb-lD3">
-                                                        <rect key="frame" x="53" y="135" width="58" height="21"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                        <rect key="frame" x="79.5" y="91" width="45" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="4" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfd-KM-m4l">
-                                                        <rect key="frame" x="52" y="162" width="60" height="28"/>
+                                                        <rect key="frame" x="72" y="111.5" width="60" height="18.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="dfA-TT-sKg"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -954,30 +958,30 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="zBR-CW-W8u" firstAttribute="leading" secondItem="Tz0-TR-Vsc" secondAttribute="leading" id="Jwf-5h-ahZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="zBR-CW-W8u" secondAttribute="trailing" id="TQZ-Zm-v8t"/>
-                                            <constraint firstAttribute="bottom" secondItem="zBR-CW-W8u" secondAttribute="bottom" id="bAK-rY-CEJ"/>
-                                            <constraint firstItem="zBR-CW-W8u" firstAttribute="top" secondItem="Tz0-TR-Vsc" secondAttribute="top" id="m5K-Gf-aJp"/>
+                                            <constraint firstItem="zBR-CW-W8u" firstAttribute="leading" secondItem="Tz0-TR-Vsc" secondAttribute="leading" constant="5" id="Jwf-5h-ahZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="zBR-CW-W8u" secondAttribute="trailing" constant="5" id="TQZ-Zm-v8t"/>
+                                            <constraint firstAttribute="bottom" secondItem="zBR-CW-W8u" secondAttribute="bottom" constant="5" id="bAK-rY-CEJ"/>
+                                            <constraint firstItem="zBR-CW-W8u" firstAttribute="top" secondItem="Tz0-TR-Vsc" secondAttribute="top" constant="5" id="m5K-Gf-aJp"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACl-eo-vYe" customClass="CircularProgressBarView" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="25" width="150" height="150"/>
+                                        <rect key="frame" x="30" y="25" width="100" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 55%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32x-7p-Fp9">
-                                                <rect key="frame" x="35" y="52" width="80.5" height="46"/>
+                                                <rect key="frame" x="29.5" y="27" width="41.5" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="bDD-OP-E0a"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="AkR-Oo-pae"/>
+                                            <constraint firstAttribute="width" constant="100" id="AkR-Oo-pae"/>
                                             <constraint firstItem="32x-7p-Fp9" firstAttribute="centerX" secondItem="ACl-eo-vYe" secondAttribute="centerX" id="JGj-77-vRd"/>
-                                            <constraint firstAttribute="height" constant="150" id="JZs-8s-I9o"/>
+                                            <constraint firstAttribute="height" constant="100" id="JZs-8s-I9o"/>
                                             <constraint firstItem="32x-7p-Fp9" firstAttribute="centerY" secondItem="ACl-eo-vYe" secondAttribute="centerY" id="eJg-i7-LWS"/>
                                         </constraints>
                                     </view>
@@ -994,54 +998,46 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJh-BA-CSh" userLabel="TableView Header">
-                                <rect key="frame" x="5" y="423" width="404" height="65"/>
+                                <rect key="frame" x="5" y="358" width="404" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Personal Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36o-cx-XEk">
-                                        <rect key="frame" x="173" y="10" width="86" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="75s-2Y-Uxb"/>
-                                            <constraint firstAttribute="height" constant="45" id="DC6-8f-ZyU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Practiced Days" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPT-AS-wi5">
-                                        <rect key="frame" x="309" y="10" width="85" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="Qcq-lU-CCy"/>
-                                            <constraint firstAttribute="height" constant="45" id="qe2-K0-mrK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-aD-le0">
-                                        <rect key="frame" x="40" y="22.5" width="45" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="XRh-qm-Izf"/>
-                                            <constraint firstAttribute="width" constant="45" id="tnK-Ah-LuL"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w45-YB-CuH">
+                                        <rect key="frame" x="8" y="8" width="388" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-aD-le0">
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Personal Note" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36o-cx-XEk">
+                                                <rect key="frame" x="132.5" y="0.0" width="123" height="19"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Practiced Days" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPT-AS-wi5">
+                                                <rect key="frame" x="265.5" y="0.0" width="122.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="3jT-aD-le0" firstAttribute="leading" secondItem="eJh-BA-CSh" secondAttribute="leading" constant="40" id="4Nt-s2-9WN"/>
-                                    <constraint firstAttribute="trailing" secondItem="kPT-AS-wi5" secondAttribute="trailing" constant="10" id="OBc-Bw-xRb"/>
-                                    <constraint firstAttribute="bottom" secondItem="kPT-AS-wi5" secondAttribute="bottom" constant="10" id="Tmk-bG-mfW"/>
-                                    <constraint firstItem="36o-cx-XEk" firstAttribute="top" secondItem="eJh-BA-CSh" secondAttribute="top" constant="10" id="VLl-OV-3Iy"/>
-                                    <constraint firstItem="kPT-AS-wi5" firstAttribute="leading" secondItem="36o-cx-XEk" secondAttribute="trailing" constant="50" id="WlT-vV-4m8"/>
-                                    <constraint firstItem="3jT-aD-le0" firstAttribute="centerY" secondItem="36o-cx-XEk" secondAttribute="centerY" id="XyE-Jl-e4m"/>
-                                    <constraint firstAttribute="bottom" secondItem="36o-cx-XEk" secondAttribute="bottom" constant="10" id="aMe-8P-waj"/>
-                                    <constraint firstItem="kPT-AS-wi5" firstAttribute="top" secondItem="eJh-BA-CSh" secondAttribute="top" constant="10" id="sZ4-F4-UQM"/>
+                                    <constraint firstItem="w45-YB-CuH" firstAttribute="top" secondItem="eJh-BA-CSh" secondAttribute="top" constant="8" id="Mio-EQ-TVd"/>
+                                    <constraint firstAttribute="height" constant="35" id="cOV-0g-XAu"/>
+                                    <constraint firstItem="w45-YB-CuH" firstAttribute="leading" secondItem="eJh-BA-CSh" secondAttribute="leading" constant="8" id="sU7-P8-6I3"/>
+                                    <constraint firstAttribute="trailing" secondItem="w45-YB-CuH" secondAttribute="trailing" constant="8" id="yTH-Qd-v8q"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-er-HBj">
-                                <rect key="frame" x="5" y="488" width="404" height="408"/>
+                                <rect key="frame" x="5" y="392" width="404" height="504"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="504" id="VHs-Qy-Njq"/>
+                                </constraints>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
@@ -1110,9 +1106,8 @@ Together they decided to share this 201 Day Achievement Principle with the world
                             <constraint firstItem="ePs-P3-pIc" firstAttribute="trailing" secondItem="xDd-er-HBj" secondAttribute="trailing" constant="5" id="Gap-7Y-m0y"/>
                             <constraint firstItem="FoE-1K-T0a" firstAttribute="leading" secondItem="ePs-P3-pIc" secondAttribute="leading" constant="5" id="HHO-Nq-aKQ"/>
                             <constraint firstItem="ePs-P3-pIc" firstAttribute="trailing" secondItem="Dnq-v2-jFL" secondAttribute="trailing" constant="5" id="bQc-jg-Z1q"/>
+                            <constraint firstItem="eJh-BA-CSh" firstAttribute="top" secondItem="FoE-1K-T0a" secondAttribute="bottom" constant="20" id="gDd-Um-0ry"/>
                             <constraint firstItem="FoE-1K-T0a" firstAttribute="top" secondItem="Dnq-v2-jFL" secondAttribute="bottom" constant="20" id="h53-i4-Bv5"/>
-                            <constraint firstItem="eJh-BA-CSh" firstAttribute="top" secondItem="FoE-1K-T0a" secondAttribute="bottom" constant="20" id="ivr-SA-JB3"/>
-                            <constraint firstItem="xDd-er-HBj" firstAttribute="top" secondItem="eJh-BA-CSh" secondAttribute="bottom" id="jtB-Ce-40e"/>
                             <constraint firstItem="xDd-er-HBj" firstAttribute="leading" secondItem="ePs-P3-pIc" secondAttribute="leading" constant="5" id="lpg-yf-XTX"/>
                             <constraint firstAttribute="bottom" secondItem="xDd-er-HBj" secondAttribute="bottom" id="mjS-tS-MH1"/>
                             <constraint firstItem="ePs-P3-pIc" firstAttribute="trailing" secondItem="eJh-BA-CSh" secondAttribute="trailing" constant="5" id="qxz-qS-Wue"/>
