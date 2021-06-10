@@ -14,6 +14,10 @@
 		1A3FA24E266F04CE003A96A4 /* PopUpHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA24D266F04CE003A96A4 /* PopUpHome.swift */; };
 		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
 		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
+		1AA35F842671B0E100BA918F /* PracticesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F832671B0E100BA918F /* PracticesListCell.swift */; };
+		1AA35F862671B41F00BA918F /* PracticesRecordListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */; };
+		1AA35F882671F31600BA918F /* ActivityProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F872671F31600BA918F /* ActivityProgressVC.swift */; };
+		1AA35F8A2671FA6900BA918F /* ActivityProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */; };
 		1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0C2668783400A1877D /* MainNavigationController.swift */; };
 		1AACDE0F2668787400A1877D /* LoginOpitonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
@@ -110,6 +114,10 @@
 		1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPracticesData.swift; sourceTree = "<group>"; };
 		1A3FA24D266F04CE003A96A4 /* PopUpHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpHome.swift; sourceTree = "<group>"; };
 		1A62B82026659CD70025D92C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1AA35F832671B0E100BA918F /* PracticesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesListCell.swift; sourceTree = "<group>"; };
+		1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesRecordListVC.swift; sourceTree = "<group>"; };
+		1AA35F872671F31600BA918F /* ActivityProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressVC.swift; sourceTree = "<group>"; };
+		1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressCell.swift; sourceTree = "<group>"; };
 		1AACDE0C2668783400A1877D /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOpitonViewController.swift; sourceTree = "<group>"; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -218,6 +226,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA35F822671B06F00BA918F /* TrackRecord Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1AA35F832671B0E100BA918F /* PracticesListCell.swift */,
+				1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */,
+			);
+			path = "TrackRecord Cell";
+			sourceTree = "<group>";
+		};
 		1AACDE062668751D00A1877D /* Home View */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +256,6 @@
 				26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */,
 				26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */,
 				2623EF9326705B2400951285 /* ShowStataticsViewController.swift */,
-				2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */,
 				2623EF9926705C1E00951285 /* StataticsTableViewCell.swift */,
 				2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */,
 				2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */,
@@ -272,6 +288,8 @@
 			children = (
 				E1383D7B21E7835800F8597F /* ShowRecordViewController.swift */,
 				E1F6EBB621ED04390022F1A3 /* CircularViewController.swift */,
+				1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */,
+				1AA35F872671F31600BA918F /* ActivityProgressVC.swift */,
 			);
 			path = "TrackRecord View";
 			sourceTree = "<group>";
@@ -315,6 +333,7 @@
 		1AC4CAD32653407C008B2555 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */,
 				E1E7D5742204CD27003C65F5 /* Extensios.swift */,
 				E147F43721FF716D00FFB8BB /* Theme.swift */,
 			);
@@ -355,6 +374,7 @@
 		E11D15092236AE1A000209B9 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				1AA35F822671B06F00BA918F /* TrackRecord Cell */,
 				E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */,
 				E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */,
 				E1383D7F21E7905000F8597F /* DataHeaderCell.swift */,
@@ -628,6 +648,7 @@
 				26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */,
 				E189D68E21E4FA430078380B /* CTC.xcdatamodeld in Sources */,
 				1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */,
+				1AA35F882671F31600BA918F /* ActivityProgressVC.swift in Sources */,
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
@@ -644,6 +665,7 @@
 				E10D6677226F7D7200C0E4D8 /* AboutUsViewController.swift in Sources */,
 				E1E2EEEF223064C3002046E7 /* Practice+CoreDataProperties.swift in Sources */,
 				E1E7D5752204CD27003C65F5 /* Extensios.swift in Sources */,
+				1AA35F842671B0E100BA918F /* PracticesListCell.swift in Sources */,
 				2623EF9A26705C1E00951285 /* StataticsTableViewCell.swift in Sources */,
 				E1383D8221E7905D00F8597F /* DataCell.swift in Sources */,
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
@@ -663,6 +685,7 @@
 				E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */,
 				26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */,
 				E173DE2922035A1C000CAE24 /* MoreOptionCollectionViewCell.swift in Sources */,
+				1AA35F862671B41F00BA918F /* PracticesRecordListVC.swift in Sources */,
 				E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */,
 				E1F3094721FB8560008ADE9D /* AnimationLabel.swift in Sources */,
 				E13AB3BB224ABA8E00E0BBFD /* Validation.swift in Sources */,
@@ -683,6 +706,7 @@
 				E18169B52200EC97002EE49F /* ProfileDataTableViewCell.swift in Sources */,
 				E1F63FC5220B8C560001FC6D /* Practice+CoreDataClass.swift in Sources */,
 				E11037BD21E6607C007BBEF1 /* SignUpViewController.swift in Sources */,
+				1AA35F8A2671FA6900BA918F /* ActivityProgressCell.swift in Sources */,
 				E1F6EBB721ED04390022F1A3 /* CircularViewController.swift in Sources */,
 				E133555022666C5200C3E0CF /* OnboardingMiddleCell.swift in Sources */,
 				2623EF9E2670852900951285 /* PrivacyPolicyViewController.swift in Sources */,

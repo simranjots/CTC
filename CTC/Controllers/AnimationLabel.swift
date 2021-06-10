@@ -1,11 +1,3 @@
-//
-//  AnimationLabel.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-01-25.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 
 class AnimationLabel: UILabel {
@@ -128,14 +120,6 @@ class AnimationLabel: UILabel {
         
     }
     
-    
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
