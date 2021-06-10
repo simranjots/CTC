@@ -18,6 +18,7 @@ struct Constants {
         static let aboutAuthorTableViewCell = "aboutAuthorsVCResusableCell"
         static let activityProgressTableViewCell = "activityProgressVCReusableCell"
         static let stataticsTableViewCell = "showStataticsVCResusableCell"
+        static let practicesRecordListCell = "practicesListVCResusableCell"
         static let privacyPolicyTableViewCell = "privacyPolicyVCResudableCell"
         static let orderBooksTableViewCell = "orderBooksReusableCell"
         

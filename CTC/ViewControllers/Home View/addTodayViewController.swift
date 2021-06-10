@@ -41,7 +41,7 @@ class addTodayViewController: UIViewController{
     
     @IBOutlet weak var starButton: UIButton!
     
-    var isTableViewVisible = false
+   // var isTableViewVisible = false
     
     var startValue: Double = 0
     var endValue: Double = 70
@@ -54,7 +54,7 @@ class addTodayViewController: UIViewController{
         super.viewDidLoad()
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
-       userPracticesData = UserPracticesData()
+        userPracticesData = UserPracticesData()
         self.title = selectedDate.dateFormatemmmdd()!
         
         // getting current yeat
@@ -214,13 +214,10 @@ class addTodayViewController: UIViewController{
     func customeButton(button : UIButton){
         
         button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 10
         button.setImage(UIImage(named: "DropDown"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 6, left: 100, bottom: 6, right: 14)
-//        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -36, bottom: 0, right: 34)
-        
-   
+
     }
     
     
@@ -344,6 +341,7 @@ extension addTodayViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     // Picker View
     
 }
+
 extension UITextField{
     
     

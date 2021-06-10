@@ -101,7 +101,7 @@ class UserPracticesData {
         request.predicate = NSPredicate(format: "practiceDataToPractice = %@", argumentArray: [practice])
         
         do {
-             let dataArray = try context.fetch(request) 
+             let dataArray = try context.fetch(request)
             return dataArray
          
         } catch let err {

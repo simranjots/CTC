@@ -32,6 +32,8 @@ class ShowStataticsViewController: UIViewController {
         stataticsVCTableView.delegate = self
         stataticsVCTableView.dataSource = self
     }
+    
+
 }
 
 extension ShowStataticsViewController: UITableViewDelegate, UITableViewDataSource {

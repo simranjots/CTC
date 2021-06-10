@@ -1,11 +1,3 @@
-//
-//  StataticsViewProgressBar.swift
-//  CTC
-//
-//  Created by Jaldeep Patel on 2021-06-08.
-//  Copyright © 2021 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 
 class StataticsViewProgressBar: UIView {
@@ -49,7 +41,7 @@ class StataticsViewProgressBar: UIView {
             trackLayer.path = circularPath.cgPath
             trackLayer.fillColor = UIColor.clear.cgColor
             trackLayer.strokeColor = trackColor.cgColor
-            trackLayer.lineWidth = 25.0
+            trackLayer.lineWidth = 15.0
             trackLayer.strokeEnd = 1.0
             layer.addSublayer(trackLayer)
             
@@ -58,7 +50,7 @@ class StataticsViewProgressBar: UIView {
             progressLayer.fillColor = UIColor.clear.cgColor
             progressLayer.strokeColor = trackColor.cgColor
             progressLayer.lineCap = .round
-            progressLayer.lineWidth = 25.0
+            progressLayer.lineWidth = 15.0
             progressLayer.strokeEnd = 0.0
             layer.addSublayer(progressLayer)
         }

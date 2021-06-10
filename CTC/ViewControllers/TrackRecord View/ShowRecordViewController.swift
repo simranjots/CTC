@@ -106,16 +106,10 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
             percentageData.append(["Practice": practiceObject.practice!, "Percentage": "\(percentage)", "TrackingDay": String(practiceObject.practiseddays), "outOfDays":String(days)])
             
         }
-        
-        //        dictKeys = Array(dataDict.keys)
+    
         dictKeys = Array(dataDict.keys)
-        //        dictKeys = convertToDate(stringDate: tempDictKeys)
         dictKeys =  dictKeys?.sorted(by: >)
-        //        print("percentage data .  --------------------------")
-        //        print(percentageData)
-        //        print("count. . . .")
-        //        print(dictKeys?.count)
-        
+     
         self.recordTableView.reloadData()
         
     }
@@ -155,28 +149,15 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         else{
             
             let dataOfDict = dataDict[dictKeys![section-1]]![0]
-            //            print("Data:-------------------------------------------------- \(dataDict[dictKeys![section-1].dateFormateToString()!])")
-            
+         
             let cell = tableView.dequeueReusableCell(withIdentifier: "SectionOneHederCell") as! DataHeaderCell
-            //            print("CellType = \(dataOfDict["CellType"])")
-            //            print("Data Dict Data===============================================")
-            //            print(dictKeys)
-            //            print("==========================================================")
-            //
-            //            for(key,Value) in dataDict{
-            //
-            //                print("Key =  \(key)")
-            //                print("value = \(Value)")
-            //
-            //            }
-            //            print(dataDict["01-04-2019"]!)
+           
             if let temobj = dataOfDict as? PracticeData {
                 
                 cell.LabelDate.text = "Date \n\(dictKeys![section-1].dateFormatemmmdd()!)"
                 let tempData = (dictKeys![section-1].dateFormateToString()!).stringToDate()
                 cell.daysLabel.text = "Practiced\nDays"
-                //                print("Tracking Day (\(tempData.days(from: firstDayOfYear)))")
-                
+               
                 cell.backgroundColor = Theme.secondaryColor
                 
                 
@@ -202,20 +183,14 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
-            //
-            //            print("Row = \(indexPath.row)")
-            //            print("Section = \(indexPath.section)")
-            
+      
             let cell = tableView.dequeueReusableCell(withIdentifier: "SectionZeroDataCell") as! ShowPercentageCell
-            //            let Percentege = PercentageData[indexPath.row]["Percentage"] as! String
-            //            let Percentege = practices[indexPath.row].percentage
+
             let perString = percentageData[indexPath.row]["Percentage"] as? String
             let Percentage = Int((perString ?? "0"))
             cell.PercentageLabel.text = "\(String(describing: Percentage!))%"
-            //            cell.ResolutionTextLabel.text = PercentageData[indexPath.row]["Resolution"]
             cell.ResolutionTextLabel.text = percentageData[indexPath.row]["Practice"] as? String
             cell.PercentageProgressView.setProgress( Float(Float(Percentage!)/100), animated: true)
-            //            let TrackingDay = PercentageData[indexPath.row]["TrackingDay"] as! String
             let TrackingDay = percentageData[indexPath.row]["TrackingDay"]
             
             let outofDays = percentageData[indexPath.row]["outOfDays"]

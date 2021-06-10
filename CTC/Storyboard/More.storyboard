@@ -1376,7 +1376,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mH2-k6-Jy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873.91304347826099" y="2049.7767857142858"/>
+            <point key="canvasLocation" x="874" y="2050"/>
         </scene>
     </scenes>
     <resources>

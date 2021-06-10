@@ -98,12 +98,7 @@ class DatabaseHelper{
         var finalDateArray = [String:[[String:String?]]]()
         
         let practices = userPractices.getPractices(user: user)
-        //        var finalDataArray = [ [String: [ [String:String?] ] ] ]()
         finalDateArray = [String: [ [String:String?] ] ]()
-        //        var dateArray = [NSDate]()
-        
-        //let weeklyPracticedData = getPracticeWeeklyData()!
-        
         for practice in practices!{
             
             
