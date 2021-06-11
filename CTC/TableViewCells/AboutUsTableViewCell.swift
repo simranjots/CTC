@@ -20,8 +20,8 @@ class AboutUsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         authorsImageView.layer.cornerRadius = authorsImageView.frame.height / 2
-        authorsImageView.layer.borderWidth = 3
-        authorsImageView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+//        authorsImageView.layer.borderWidth = 3
+//        authorsImageView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         
     }
     
