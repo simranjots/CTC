@@ -67,7 +67,7 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.activityHeaderTitleLabel.text = practicesArray[indexPath.row].practice
         cell.howManyDaysActivityPracticedLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
-        cell.tagLineLabel.text = "Lorem ipsum dolor sit amet."
+        cell.tagLineLabel.text = "Since " + startedDate.dateFormatemmmdd()!
         
         cell.daysSinceStartedLabel.text = "\(days)"
         cell.activityPracticedForThisMonthLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
