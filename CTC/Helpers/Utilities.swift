@@ -6,9 +6,26 @@ class Utilities {
     static func styleTextField(_ textfield:UITextField) {
         
         //Textfield style
-        textfield.layer.borderWidth = 3.0
-        textfield.layer.cornerRadius = 10.0
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.cornerRadius = 8.0
         textfield.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
+    }
+    
+    
+    static func styleTextView(_ textView:UITextView) {
+        
+        //TextView style
+        textView.layer.borderWidth = 1.0
+        textView.layer.cornerRadius = 8.0
+        textView.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
+    }
+    
+    static func styleImageView(_ imageView:UIImageView) {
+        
+        //TextView style
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.cornerRadius = 8.0
+        imageView.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
     }
     
     static func addTextFieldImage(textField: UITextField, andImage image: UIImage) {
@@ -32,26 +49,24 @@ class Utilities {
         textField.leftViewMode = .always
     }
     
-    
-    
     static func styleButton(_ button:UIButton) {
         
         // Filled rounded corner style
         button.backgroundColor = UIColor.init(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
-        button.layer.cornerRadius = 10.0
+        button.layer.cornerRadius = 8.0
         button.tintColor = UIColor.white
     }
     
     static func styleHollowButton(_ button:UIButton) {
         
         // Hollow rounded corner style
-        button.layer.borderWidth = 2
+        button.layer.borderWidth = 1
         if #available(iOS 13.0, *) {
             button.layer.borderColor = CGColor(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
         } else {
             button.layer.borderColor = UIColor.systemTeal.cgColor
         }
-        button.layer.cornerRadius = 10.0
+        button.layer.cornerRadius = 8.0
         //button.tintColor = UIColor.init(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
     }
     
@@ -59,19 +74,16 @@ class Utilities {
         
         //Filled rounded corner style
         button.backgroundColor = UIColor.init(red: 234/255, green: 67/255, blue: 53/255, alpha: 1)
-        button.layer.cornerRadius = 10.0
+        button.layer.cornerRadius = 8.0
         button.tintColor = UIColor.white
     }
     
     static func styleFacebookButton(_ button:UIButton) {
         //Filled rounded corner style
         button.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
-        button.layer.cornerRadius = 10.0
+        button.layer.cornerRadius = 8.0
         button.tintColor = UIColor.white
     }
-    
-    
-    
     
     static func isPasswordValid(_ password:String) -> Bool {
         

@@ -41,7 +41,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity History" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-hx-9XG">
                                                             <rect key="frame" x="80" y="10" width="269" height="39"/>
-                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -269,7 +269,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="346"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What if I didn't do anything all week?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ECr-Xf-dbC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What if I didn't do anything all week?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ECr-Xf-dbC">
                                                     <rect key="frame" x="20" y="5" width="374" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="rNR-Rv-GSg"/>
@@ -651,7 +651,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Privacy Policy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="2cu-vK-Nz2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Privacy Policy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="2cu-vK-Nz2">
                                                     <rect key="frame" x="20" y="10" width="374" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="NuH-JI-dud"/>
@@ -1426,7 +1426,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-gW-VSV">
                                                                     <rect key="frame" x="50" y="0.0" width="259" height="42"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-YL-rGF">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-YL-rGF">
                                                                             <rect key="frame" x="0.0" y="0.0" width="259" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="264" id="XMg-3c-r4h"/>
@@ -1436,7 +1436,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d08-be-5de">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d08-be-5de">
                                                                             <rect key="frame" x="0.0" y="30" width="259" height="12"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="4Zn-p6-PiW"/>
@@ -1558,164 +1558,174 @@ Together they decided to share this 201 Day Achievement Principle with the world
             </objects>
             <point key="canvasLocation" x="1666.6666666666667" y="2049.7767857142858"/>
         </scene>
-        <!--Add Resolution-->
+        <!--Add Practices View Controller-->
         <scene sceneID="wtJ-ja-0yA">
             <objects>
-                <viewController id="Lix-X0-umY" sceneMemberID="viewController">
+                <viewController id="Lix-X0-umY" customClass="AddPracticesViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Akv-FN-fhM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fo-5e-sE7">
-                                <rect key="frame" x="20" y="138" width="374" height="500"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DBt-zX-jSz">
+                                <rect key="frame" x="20" y="108" width="374" height="475"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Resolution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewT-9h-Id4">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="kUw-pL-rbK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Choose Your Values (E.g. Your goal, Something you have to achieve)" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="c2v-ed-4tw">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="TjV-wF-KVJ"/>
-                                        </constraints>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Choose the practices closely aligned with the values you selected" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-OF-OaE">
-                                        <rect key="frame" x="0.0" y="86" width="374" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="YAV-Ca-BMg"/>
-                                        </constraints>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Choose Resolution Starting Date" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-ft-zgt">
-                                        <rect key="frame" x="0.0" y="387" width="374" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="b2j-gR-PJL"/>
-                                        </constraints>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words of Encouragement" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHK-kJ-NgY">
-                                        <rect key="frame" x="0.0" y="144" width="374" height="19"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-Z0-dEl">
-                                        <rect key="frame" x="0.0" y="171" width="374" height="150"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="Oh1-aa-GMs"/>
-                                        </constraints>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-Ve-ZUb">
-                                        <rect key="frame" x="0.0" y="329" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="cbu-0p-7gx"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Choose Activity Icon">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="16" name="ArialRoundedMTBold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-gx-R2w">
-                                        <rect key="frame" x="0.0" y="445" width="374" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zPl-f7-dFV">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="355"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SA0-1M-2Cf">
-                                                <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
-                                                <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Resolution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZu-uc-PzZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Jfa-zh-4ek"/>
-                                                    <constraint firstAttribute="width" constant="182" id="im8-DF-7kk"/>
+                                                    <constraint firstAttribute="width" constant="374" id="AlC-hN-Wzt"/>
+                                                    <constraint firstAttribute="height" constant="40" id="kV6-ZV-ju6"/>
                                                 </constraints>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Save">
-                                                            <attributes>
-                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYT-jQ-SPl">
-                                                <rect key="frame" x="192" y="0.0" width="182" height="50"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Values E.g. Your goal, What you want to achieve" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-zF-AHl">
+                                                <rect key="frame" x="0.0" y="50" width="374" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="182" id="LRH-2J-c9P"/>
-                                                    <constraint firstAttribute="height" constant="50" id="P74-8v-nNP"/>
+                                                    <constraint firstAttribute="width" constant="374" id="HFH-wB-d34"/>
+                                                    <constraint firstAttribute="height" constant="50" id="xzB-zj-nlK"/>
                                                 </constraints>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Cancel">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                            </button>
+                                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose possible aligned practices for your values" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-Hd-1nC">
+                                                <rect key="frame" x="0.0" y="110" width="374" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="49A-gy-M8g"/>
+                                                    <constraint firstAttribute="width" constant="374" id="sNF-2f-ulc"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Starting Date" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NpR-zd-Dpb">
+                                                <rect key="frame" x="0.0" y="170" width="374" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="cM9-Cx-nIa"/>
+                                                    <constraint firstAttribute="height" constant="50" id="pEQ-ty-Opu"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qp5-YG-iFJ">
+                                                <rect key="frame" x="0.0" y="230" width="374" height="125"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words of Encouragement" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmY-Wk-eIY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Fzc-lW-x9M"/>
+                                                            <constraint firstAttribute="width" constant="374" id="cjQ-vM-L70"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gcq-uu-e8Q">
+                                                        <rect key="frame" x="0.0" y="25" width="374" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="374" id="Gus-pu-EQi"/>
+                                                            <constraint firstAttribute="height" constant="100" id="HUM-W6-Mvz"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" returnKeyType="next" smartQuotesType="yes"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-6p-71p">
+                                        <rect key="frame" x="0.0" y="365" width="374" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-icon" translatesAutoresizingMaskIntoConstraints="NO" id="XLa-rj-VsH">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="110"/>
+                                                <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="5fs-uc-u3x"/>
+                                                    <constraint firstAttribute="height" constant="110" id="a1d-vJ-lu0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-xa-51n">
+                                                <rect key="frame" x="110" y="0.0" width="264" height="110"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-Cu-qhL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="264" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="dYV-od-uuk"/>
+                                                            <constraint firstAttribute="width" constant="264" id="pTN-HK-hze"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                        <state key="normal" title="Choose Practice Icon ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="choosePracticesIconButtonTapped:" destination="Lix-X0-umY" eventType="touchUpInside" id="Kf1-tU-Bfg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="u8m-My-IRG">
+                                                        <rect key="frame" x="0.0" y="60" width="264" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-p0-OxR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="129" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="129" id="N0E-mz-3N9"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="W3Q-XI-5GZ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                <state key="normal" title="Save">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="saveButtonTapped:" destination="Lix-X0-umY" eventType="touchUpInside" id="mbj-GW-Kfl"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPZ-Ce-006">
+                                                                <rect key="frame" x="135" y="0.0" width="129" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="129" id="elh-pE-7UY"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="uRO-Nh-Q8b"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                <state key="normal" title="Cancel">
+                                                                    <color key="titleColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="cancelButtonTapped:" destination="Lix-X0-umY" eventType="touchUpInside" id="Fk8-Y3-fNx"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="9Eu-OF-OaE" firstAttribute="top" secondItem="c2v-ed-4tw" secondAttribute="bottom" constant="8" symbolic="YES" id="0Fu-0v-ouB"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Eu-OF-OaE" secondAttribute="trailing" id="0fL-5e-6nk"/>
-                                    <constraint firstItem="I3V-Ve-ZUb" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="1rc-Vx-KOG"/>
-                                    <constraint firstAttribute="trailing" secondItem="gHK-kJ-NgY" secondAttribute="trailing" id="333-fh-zlh"/>
-                                    <constraint firstAttribute="trailing" secondItem="c2v-ed-4tw" secondAttribute="trailing" id="4Bc-dN-aZk"/>
-                                    <constraint firstItem="c2v-ed-4tw" firstAttribute="top" secondItem="ewT-9h-Id4" secondAttribute="bottom" constant="8" id="CWm-Mz-9r2"/>
-                                    <constraint firstItem="mqu-ft-zgt" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="EOc-ps-05y"/>
-                                    <constraint firstAttribute="height" constant="500" id="J3M-PR-O5t"/>
-                                    <constraint firstItem="gHK-kJ-NgY" firstAttribute="top" secondItem="9Eu-OF-OaE" secondAttribute="bottom" constant="8" id="N3Z-Hc-JN6"/>
-                                    <constraint firstAttribute="trailing" secondItem="ewT-9h-Id4" secondAttribute="trailing" id="O5X-YP-PdB"/>
-                                    <constraint firstItem="Lgu-Z0-dEl" firstAttribute="top" secondItem="gHK-kJ-NgY" secondAttribute="bottom" constant="8" symbolic="YES" id="QwR-Ac-3mF"/>
-                                    <constraint firstItem="gHK-kJ-NgY" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="V59-BP-JZj"/>
-                                    <constraint firstItem="c2v-ed-4tw" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="ZbH-3M-QtK"/>
-                                    <constraint firstAttribute="trailing" secondItem="I3V-Ve-ZUb" secondAttribute="trailing" id="b7b-Aj-T70"/>
-                                    <constraint firstItem="Lgu-Z0-dEl" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="fAy-hF-JTL"/>
-                                    <constraint firstItem="9Eu-OF-OaE" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="gR4-0U-NsL"/>
-                                    <constraint firstItem="ewT-9h-Id4" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="gmh-Cc-ioA"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lgu-Z0-dEl" secondAttribute="trailing" id="jDz-Yb-ieA"/>
-                                    <constraint firstItem="mqu-ft-zgt" firstAttribute="top" secondItem="I3V-Ve-ZUb" secondAttribute="bottom" constant="8" symbolic="YES" id="jrY-QR-xZ0"/>
-                                    <constraint firstItem="I3V-Ve-ZUb" firstAttribute="top" secondItem="Lgu-Z0-dEl" secondAttribute="bottom" constant="8" symbolic="YES" id="m0e-sA-wLu"/>
-                                    <constraint firstItem="ewT-9h-Id4" firstAttribute="top" secondItem="6Fo-5e-sE7" secondAttribute="top" id="mWB-A1-dGQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="mqu-ft-zgt" secondAttribute="trailing" id="uEY-lt-aTP"/>
-                                    <constraint firstItem="Lgu-Z0-dEl" firstAttribute="leading" secondItem="6Fo-5e-sE7" secondAttribute="leading" id="ulb-UP-QJg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lgu-Z0-dEl" secondAttribute="trailing" id="utB-Wt-OMP"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tzh-OW-3xj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tzh-OW-3xj" firstAttribute="trailing" secondItem="6Fo-5e-sE7" secondAttribute="trailing" constant="20" id="7AL-LV-2pU"/>
-                            <constraint firstItem="6Fo-5e-sE7" firstAttribute="top" secondItem="Tzh-OW-3xj" secondAttribute="top" constant="50" id="gV9-3w-VrQ"/>
-                            <constraint firstItem="6Fo-5e-sE7" firstAttribute="leading" secondItem="Tzh-OW-3xj" secondAttribute="leading" constant="20" id="ucf-j6-bsg"/>
+                            <constraint firstItem="DBt-zX-jSz" firstAttribute="top" secondItem="Tzh-OW-3xj" secondAttribute="top" constant="20" id="1Ht-Yg-ApZ"/>
+                            <constraint firstItem="Tzh-OW-3xj" firstAttribute="trailing" secondItem="DBt-zX-jSz" secondAttribute="trailing" constant="20" id="mqv-FN-zLB"/>
+                            <constraint firstItem="DBt-zX-jSz" firstAttribute="leading" secondItem="Tzh-OW-3xj" secondAttribute="leading" constant="20" id="rZv-NK-z51"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Resolution" id="PTX-tr-K92"/>
+                    <navigationItem key="navigationItem" id="PTX-tr-K92"/>
+                    <connections>
+                        <outlet property="activityIconImageView" destination="XLa-rj-VsH" id="fWJ-V1-4vM"/>
+                        <outlet property="cancelButton" destination="yPZ-Ce-006" id="jwO-1y-aGG"/>
+                        <outlet property="choosePracticesIconButton" destination="3TH-Cu-qhL" id="K1A-Nl-PGQ"/>
+                        <outlet property="choosePracticesTextField" destination="f1f-Hd-1nC" id="bmO-FJ-uPO"/>
+                        <outlet property="chooseValuesTextField" destination="yH9-zF-AHl" id="d9j-1k-GnN"/>
+                        <outlet property="dateTextField" destination="NpR-zd-Dpb" id="1hH-UD-9Qc"/>
+                        <outlet property="saveButton" destination="JW3-p0-OxR" id="2Tq-ct-41L"/>
+                        <outlet property="wordsOfEncouragementTextView" destination="Gcq-uu-e8Q" id="bcf-DR-LWf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2m-1i-jqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1730,6 +1740,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="Plus" width="29" height="29"/>
         <image name="Star" width="29" height="29"/>
         <image name="Teresa Easler" width="200" height="200"/>
+        <image name="image-icon" width="512" height="512"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
         <systemColor name="labelColor">

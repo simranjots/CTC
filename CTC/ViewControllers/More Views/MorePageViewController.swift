@@ -26,7 +26,7 @@ class MorePageViewController: UIViewController {
 }
 
 
-//MARK:-
+//MARK:- Extention for tableView
 
 extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
     

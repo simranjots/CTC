@@ -25,7 +25,7 @@ class HomeScreenViewController: UIViewController {
                                   "Lorem ipsum dolor sit amet.", "Lorem ipsum dolor sit amet.",
                                   "Lorem ipsum dolor sit amet.", "Lorem ipsum dolor sit amet.",
                                   "Lorem ipsum dolor sit amet.", "Lorem ipsum dolor sit amet."],
-                        activityImages: ["maditation", "reading", "exercise-1", "jogging", "diet", "Music", "Yoga", "cheese", "walking", "salad"]
+                        activityImages: ["Meditation", "reading", "Exercise-1", "jogging", "diet", "Music", "Yoga", "Cheese", "Walking", "Salad"]
     )]
     
     @IBOutlet var homeScreenTableView: UITableView!

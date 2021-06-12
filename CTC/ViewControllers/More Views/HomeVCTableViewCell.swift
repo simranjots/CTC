@@ -21,7 +21,7 @@ class HomeVCTableViewCell: UITableViewCell {
         
         homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 7
         homeScreenTableCellView.layer.borderColor = #colorLiteral(red: 0.4509803922, green: 0.4509803922, blue: 0.4509803922, alpha: 1)
-        homeScreenTableCellView.layer.borderWidth = 2
+        homeScreenTableCellView.layer.borderWidth = 1
 
         
     }
