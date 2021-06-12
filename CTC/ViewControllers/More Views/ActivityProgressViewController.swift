@@ -61,7 +61,7 @@ class ActivityProgressViewController: UIViewController {
         //Set properties of activityTitleView
         activityTitleHeaderView.layer.cornerRadius = activityTitleHeaderView.frame.height / 4
         activityTitleHeaderView.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        activityTitleHeaderView.layer.borderWidth = 3
+        activityTitleHeaderView.layer.borderWidth = 1
         activityTitleHeaderView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         activityTitleHeaderView.layer.shadowOpacity = 0.9
         activityTitleHeaderView.layer.shadowOffset = .zero
@@ -70,7 +70,7 @@ class ActivityProgressViewController: UIViewController {
         //Set properties of ProgressView
         progressView.layer.cornerRadius = progressView.frame.height / 10
         progressView.layer.borderColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
-        progressView.layer.borderWidth = 3
+        progressView.layer.borderWidth = 1
         progressView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         progressView.layer.shadowOpacity = 0.9
         progressView.layer.shadowOffset = .zero
@@ -78,7 +78,7 @@ class ActivityProgressViewController: UIViewController {
         
         
         //Set properties of tableView Header
-        tableViewHeader.layer.cornerRadius = tableViewHeader.frame.height / 5
+        tableViewHeader.layer.cornerRadius = tableViewHeader.frame.height / 6
     }
 
 }

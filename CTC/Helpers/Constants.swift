@@ -13,6 +13,7 @@ struct Constants {
     }
     
     struct CellIdentifiers {
+        static let homeVCTableViewCell = "homeVCResudableCell"
         static let moreVCTableViewCell = "moreVCReusableCell"
         static let faqVCTableViewCell = "faqVCResusableCell"
         static let aboutAuthorTableViewCell = "aboutAuthorsVCResusableCell"
@@ -21,6 +22,7 @@ struct Constants {
         static let practicesRecordListCell = "practicesListVCResusableCell"
         static let privacyPolicyTableViewCell = "privacyPolicyVCResudableCell"
         static let orderBooksTableViewCell = "orderBooksReusableCell"
+        
         
     }
     

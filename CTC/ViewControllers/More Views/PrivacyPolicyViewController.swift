@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class PrivacyPolicyViewController: UIViewController {
     
     @IBOutlet var privacyPolicyTableView: UITableView!
@@ -23,15 +24,13 @@ class PrivacyPolicyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         privacyPolicyTableView.dataSource = self
         privacyPolicyTableView.delegate = self
-        
-
     }
 }
 
 extension PrivacyPolicyViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return privacyPolicyHeader.count

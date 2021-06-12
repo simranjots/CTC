@@ -57,19 +57,19 @@ class StataticsTableViewCell: UITableViewCell {
         //Set properties of activityTitleView
         headerTitleView.layer.cornerRadius = headerTitleView.frame.height / 4
         headerTitleView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        headerTitleView.layer.borderWidth = 3
-        headerTitleView.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        headerTitleView.layer.shadowOpacity = 0.9
-        headerTitleView.layer.shadowOffset = .zero
-        headerTitleView.layer.shadowRadius = 4
+        headerTitleView.layer.borderWidth = 2
+//        headerTitleView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//        headerTitleView.layer.shadowOpacity = 0.9
+//        headerTitleView.layer.shadowOffset = .zero
+//        headerTitleView.layer.shadowRadius = 4
         
         //Set properties of ProgressView
         circularBarAndStataticsView.layer.borderColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
-        circularBarAndStataticsView.layer.borderWidth = 3
-        circularBarAndStataticsView.layer.shadowColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        circularBarAndStataticsView.layer.shadowOpacity = 0.9
-        circularBarAndStataticsView.layer.shadowOffset = .zero
-        circularBarAndStataticsView.layer.shadowRadius = 4
+        circularBarAndStataticsView.layer.borderWidth = 2
+//        circularBarAndStataticsView.layer.shadowColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+//        circularBarAndStataticsView.layer.shadowOpacity = 0.9
+//        circularBarAndStataticsView.layer.shadowOffset = .zero
+//        circularBarAndStataticsView.layer.shadowRadius = 4
     }
 }
 

@@ -30,7 +30,7 @@ class PopUpHome :UIViewController{
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var datePickerView: UIDatePicker!
     
-    let moreOptionIconList = ["Book", "cheese", "dollar","excercise","flour","friendCircle","language","maditation","Music","salad","sleep","spaCandle","speak","walking","wineGlass","Yoga"]
+    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga"]
     var imageName: String = ""
     
    
@@ -220,6 +220,7 @@ class PopUpHome :UIViewController{
             update(indexPath: indexPath)
         }
     }
+    
     func add(){
         self.titleLabel.text = "Add Practice"
         self.addButton.setTitle("Add", for: .normal)
