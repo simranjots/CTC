@@ -1,16 +1,7 @@
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var practiceTextLabel: UILabel!
-    @IBOutlet weak var practiceIconImage: UIImageView!
+class HomeVCCell: UITableViewCell {
 
-    
-    @IBOutlet weak var starButton: UIButton!
-    
-    
-    
-    
     // variables
     
     var dbHelper: DatabaseHelper!
@@ -21,26 +12,29 @@ class HomeTableViewCell: UITableViewCell {
     var view: UIView!
     var isOn: Bool = false
     var userObject: User!
-    // variables
     
-
+    @IBOutlet var homeScreenTableCellView: UIView!
+    @IBOutlet var activityImageView: UIImageView!
+    @IBOutlet var activityNameLabel: UILabel!
+    @IBOutlet var tagLineLabel: UILabel!
+    @IBOutlet var starButtonOutlet: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-     self.backgroundColor = UIColor.white
-        
         dbHelper = DatabaseHelper()
         userPracticesData = UserPracticesData()
+        
+        homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 7
+        homeScreenTableCellView.layer.borderColor = #colorLiteral(red: 0.4509803922, green: 0.4509803922, blue: 0.4509803922, alpha: 1)
+        homeScreenTableCellView.layer.borderWidth = 1
     }
-   
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
-    
- 
-    @IBAction func starButtonTapped(_ sender: Any) {
-        
+    @IBAction func toggleStarTapped(_ sender: UIButton) {
         self.activeButton(flag: !isOn)
         resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "")
        
@@ -52,22 +46,19 @@ class HomeTableViewCell: UITableViewCell {
             print("error in Cell Data Saving")
             
         }
-
-    }
     
+    }
     func activeButton(flag: Bool){
         
         isOn = flag
         
         if(isOn){
-            starButton.setImage(UIImage(named: "Star-Selected"), for: .normal)
+            starButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
          
         }else{
             
-            starButton.setImage(UIImage(named: "Star"), for: .normal)
+            starButtonOutlet.setImage(UIImage(named: "Star"), for: .normal)
          
         }
     }
-    
-    
 }

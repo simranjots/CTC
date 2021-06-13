@@ -58,6 +58,7 @@ class UserPractices{
         
         do {
             practices = try context.fetch(request)
+            print(practices)
         } catch let err {
             print(err)
         }
