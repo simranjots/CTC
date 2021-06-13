@@ -10,6 +10,7 @@ struct Constants {
         static let historyViewController = "historyVC"
         static let moreViewController = "moreVC"
         static let tabBarViewController = "tabBarVC"
+        static let activityDetailsViewController = "ActivityDetailsVC"
     }
     
     struct CellIdentifiers {
@@ -22,8 +23,6 @@ struct Constants {
         static let practicesRecordListCell = "practicesListVCResusableCell"
         static let privacyPolicyTableViewCell = "privacyPolicyVCResudableCell"
         static let orderBooksTableViewCell = "orderBooksReusableCell"
-        
-        
     }
     
     struct Segues {
@@ -37,5 +36,6 @@ struct Constants {
         static let moreToOrderBooksSegue = "navigateToOrderBooks"
         static let moreToAboutAuthorsSegue = "navigateToAboutAuthors"
         static let moreToConnectToUsSegue = "navigateToConnectToUs"
+        static let homeToActivityDetailsSegue = "navigateToActivityDetailsVC"
     }
 }

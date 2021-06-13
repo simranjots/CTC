@@ -53,7 +53,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="JXB-0l-wBY"/>
                                                                         </constraints>
                                                                         <attributedString key="attributedText">
-                                                                            <fragment content="rajan@gmail.com">
+                                                                            <fragment content="jaldeep@gmail.com">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
@@ -90,7 +90,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="sX7-Oi-4WO"/>
                                                                         </constraints>
                                                                         <attributedString key="attributedText">
-                                                                            <fragment content="Rajan@1234">
+                                                                            <fragment content="Jaldeep@1234">
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="18" name="ArialRoundedMTBold"/>

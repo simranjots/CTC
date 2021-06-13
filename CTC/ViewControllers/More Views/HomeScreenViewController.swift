@@ -46,8 +46,8 @@ class HomeScreenViewController: UIViewController {
         
         dateView.layer.cornerRadius = dateView.frame.height / 6
         dateView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        dateView.layer.borderWidth = 2
-        dateLabel.text = "Thu June 10, 2021"
+        dateView.layer.borderWidth = 1
+        dateLabel.text = "Sun June 13, 2021"
     }
     
     
@@ -79,6 +79,14 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let VC = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.activityDetailsViewController) as! ActivityDetailsViewController
+        
+        VC.activityName = dummyData[homeScreenTableView.tag].activityName[indexPath.row]
+        self.navigationController?.pushViewController(VC, animated: true)
+        
+    }
     
     
     

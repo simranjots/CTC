@@ -35,6 +35,8 @@
 		2623EFA226708C9200951285 /* OrderBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */; };
 		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
+		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
+		263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */; };
 		26A56EC92672CF6B004CE3A5 /* HomeVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */; };
 		26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
@@ -138,6 +140,8 @@
 		2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksTableViewCell.swift; sourceTree = "<group>"; };
 		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
 		26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCell.swift; sourceTree = "<group>"; };
 		26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 				26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */,
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
 				26C76571267456F500BD646E /* AddPracticesViewController.swift */,
+				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
+				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
 			);
 			path = "More Views";
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
+				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
 				E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */,
@@ -681,6 +688,7 @@
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
+				263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */,
 				26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */,
 				E1BFA7362236B645005AB2D9 /* HistoryViewController.swift in Sources */,
 				E189D68621E4FA430078380B /* AppDelegate.swift in Sources */,

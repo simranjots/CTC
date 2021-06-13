@@ -22,7 +22,7 @@ class AddPracticesViewController: UIViewController {
     //PickerView instances
     let valuesPickerView = UIPickerView()
     let practicesPickerView = UIPickerView()
-    
+
     //DatePickerView instance
     let datePicker = UIDatePicker()
     

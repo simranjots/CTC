@@ -51,7 +51,7 @@ class AboutUsViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.aboutAuthorTableViewCell) as! AboutUsTableViewCell
         
         cell.authorsNameLabel.text = aboutAuthorsDetails[aboutAuthorsTableView.tag].authorNames[indexPath.row]
-        cell.authorsImageView.image = UIImage(named: aboutAuthorsDetails[aboutAuthorsTableView.tag].authorsImages[1])
+        cell.authorsImageView.image = UIImage(named: aboutAuthorsDetails[aboutAuthorsTableView.tag].authorsImages[indexPath.row])
         cell.description1.text = aboutAuthorsDetails[aboutAuthorsTableView.tag].description1[indexPath.row]
         cell.description2.text = aboutAuthorsDetails[aboutAuthorsTableView.tag].description2[indexPath.row]
         
