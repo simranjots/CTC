@@ -77,17 +77,17 @@ class HomeViewController: UIViewController,ReceiveData{
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         
-        // MARK: Gradiat Color Set for naviagation Bar
-        
-        if let navigationBar = self.navigationController?.navigationBar {
-            let gradient = CAGradientLayer()
-            var bounds = navigationBar.bounds
-            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
-            gradient.frame = bounds
-            gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
-            gradient.startPoint = CGPoint(x: 0, y: 0)
-            gradient.endPoint = CGPoint(x: 1, y: 0)
-        }
+//        // MARK: Gradiat Color Set for naviagation Bar
+//        
+//        if let navigationBar = self.navigationController?.navigationBar {
+//            let gradient = CAGradientLayer()
+//            var bounds = navigationBar.bounds
+//            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+//            gradient.frame = bounds
+//            gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+//            gradient.startPoint = CGPoint(x: 0, y: 0)
+//            gradient.endPoint = CGPoint(x: 1, y: 0)
+//        }
         
         
         //MARK: for mainatain the practices data weekly
