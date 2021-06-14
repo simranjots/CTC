@@ -22,12 +22,16 @@ class HomeViewController: UIViewController,ReceiveData{
     
     // variables
     
-    @IBOutlet weak var addResolutionButton: UIButton!
     @IBOutlet weak var homeTableView: UITableView!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var dateTextField: UILabel!
+    @IBOutlet weak var dateView: UIView!
+
+//    @IBOutlet weak var addResolutionButton: UIButton!
+//    @IBOutlet weak var homeTableView: UITableView!
+//    @IBOutlet weak var dateTextField: UITextField!
     
     override func viewWillAppear(_ animated: Bool) {
-        selectedDate = datePicker.date.dateFormate()!
+      //  selectedDate = datePicker.date.dateFormate()!
         self.refreshTableview(date: selectedDate)
     }
     
@@ -35,9 +39,7 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
-        
         dateTextField.text = "Date : \(Date().dateFormatemmmdd()!)"
-        
         dbHelper = DatabaseHelper()
         currentUser = CurrentUser()
         userPractices = UserPractices()
@@ -45,29 +47,32 @@ class HomeViewController: UIViewController,ReceiveData{
         popUpHome = PopUpHome()
         userObject = currentUser.checkLoggedIn()
         
+        practices = self.getPractices()
+        practicesData = self.getPracticesData(date: selectedDate)
+       
+
+        
         let oldestDate = userPractices.oldestPracticeDate(user: userObject)
         
         //MARK: ViewController Date Picker
-        datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(self.DatePickerValueChanged(datePicker:)), for: .valueChanged)
-        dateTextField.inputView = datePicker
-        datePicker.maximumDate = Date()
-        datePicker.minimumDate = oldestDate
+//        datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .date
+//        datePicker.addTarget(self, action: #selector(self.DatePickerValueChanged(datePicker:)), for: .valueChanged)
+//        dateTextField.inputView = datePicker
+//        datePicker.maximumDate = Date()
+//        datePicker.minimumDate = oldestDate
         
         
-        //MARK: Custome Done Tool bar for Popup
-        addResolutionButton.backgroundColor = Theme.secondaryColor
-        addResolutionButton.layer.cornerRadius = addResolutionButton.frame.height/2
-        addResolutionButton.layer.shadowColor = UIColor.black.cgColor
-        addResolutionButton.layer.shadowOffset = CGSize(width: 0, height: 10)
-        addResolutionButton.layer.shadowRadius = 5
-        addResolutionButton.layer.shadowOpacity = 0.25
+//        //MARK: Custome Done Tool bar for Popup
+//        addResolutionButton.backgroundColor = Theme.secondaryColor
+//        addResolutionButton.layer.cornerRadius = addResolutionButton.frame.height/2
+//        addResolutionButton.layer.shadowColor = UIColor.black.cgColor
+//        addResolutionButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+//        addResolutionButton.layer.shadowRadius = 5
+//        addResolutionButton.layer.shadowOpacity = 0.25
+//
         
         
-        
-        practices = self.getPractices()
-        practicesData = self.getPracticesData(date: selectedDate)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
@@ -88,7 +93,13 @@ class HomeViewController: UIViewController,ReceiveData{
         //MARK: for mainatain the practices data weekly
         
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
+        styleDateLabelView()
+    }
+    func styleDateLabelView() {
         
+        dateView.layer.cornerRadius = dateView.frame.height / 6
+        dateView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        dateView.layer.borderWidth = 2
     }
     
     
@@ -140,9 +151,8 @@ class HomeViewController: UIViewController,ReceiveData{
         
     }
     private func getPracticesData(date: Date) -> [PracticeData]?{
-        
-        
-        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
+    
+        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
         
     }
     
@@ -163,9 +173,9 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = user
     }
     
-    @IBAction func addResolutionButtonTapped(_ sender: UIButton) {
-        popUpHome.showPopup(parentVC: self, value: "add", indexpath: 0)
-    }
+//    @IBAction func addResolutionButtonTapped(_ sender: UIButton) {
+//        popUpHome.showPopup(parentVC: self, value: "add", indexpath: 0)
+//    }
     
     
     
@@ -229,20 +239,18 @@ extension HomeViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+       
         return practices.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResolutionCell") as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResolutionCell") as! HomeVCCell
         
-        cell.practiceTextLabel.text = practices[indexPath.row].practice
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
-        cell.practiceIconImage.image = UIImage(named:practices[indexPath.row ].image_name!)
-        let switchFlag = self.isSwitchOn(practice: practices[indexPath.row ], practicesData: practicesData)
+        cell.activityNameLabel.text = practices[indexPath.row].practice
+        cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
+        let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
         if (switchFlag != nil){
             cell.isOn = switchFlag!
             cell.userObject = userObject
@@ -263,6 +271,7 @@ extension HomeViewController : UITableViewDataSource {
     }
 }
 extension HomeViewController: UITableViewDelegate{
+    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

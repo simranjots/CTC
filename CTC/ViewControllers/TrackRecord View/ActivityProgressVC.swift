@@ -20,8 +20,7 @@ class ActivityProgressVC: UIViewController {
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
-        print("Data \(practice)")
-        valueArray = userPracticesData.getPracticebyName(practice: practice)
+        valueArray = userPracticesData.getPracticebyName(practice: practice.practice!)
         
         
     }
@@ -54,7 +53,12 @@ extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
     
         cell.activityDateLabel.text = date.dateFormatemmmdd()
         cell.activityNotesTextView.text = valueArray![indexPath.row].note
-        cell.practicedDaysLabel.text = "\(valueArray![indexPath.row].tracking_days)"
+        if valueArray![indexPath.row].practised == true {
+            cell.practicedDaysLabel.text = "Yes"
+        }else{
+            cell.practicedDaysLabel.text = "No"
+        }
+        
 
         return cell
     }

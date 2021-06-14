@@ -5,7 +5,7 @@ import UIKit
 class UserPracticesData {
     var tracking_days : Int32 = 0
     var practiceData : PracticeData!
-    var arrayData : [PracticeData]?
+    var arrayData = [PracticeData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let userPractices = UserPractices()
     let dbHelper = DatabaseHelper()
@@ -19,9 +19,7 @@ class UserPracticesData {
         
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
        
-       practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!, selectedDate: currentDate)
-        
-        
+       practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
         
@@ -36,8 +34,14 @@ class UserPracticesData {
          
                 tracking_days -= 1
                 practicedDaysCount -= 1
+            }else if (toggleBtn == true && practiceData.practised == false){
+              
+                    tracking_days += 1
+                    practicedDaysCount += 1
+                  
             }
             practiceData.practised = toggleBtn
+            practiceData.date = currentDate.dateFormate()! as NSDate
             practiceData.practiceDataToPractice = practiceObject
             practiceData.note = note
             practiceData.tracking_days = Int32(tracking_days)
@@ -64,18 +68,17 @@ class UserPracticesData {
     }
     
 
-    func getPracticeDataObj(practiceName: String,selectedDate: Date) -> PracticeData? {
+    func getPracticeDataObj(practiceName: String) -> PracticeData? {
       
-      arrayData = getPracticeDataByDate(date: selectedDate)
-        if(arrayData != nil){
-            for data in arrayData!{
+        arrayData = getPracticebyName(practice: practiceName)!
+            for data in arrayData{
                 
                 if(data.practiceDataToPractice?.practice == practiceName){
                     
                     practiceData = data
                 }
             }
-        }
+        
         return practiceData
     }
     
@@ -95,10 +98,10 @@ class UserPracticesData {
         return nil
     }
     
-    func getPracticebyName(practice: Practice) -> [PracticeData]? {
+    func getPracticebyName(practice: String) -> [PracticeData]? {
         
         let request : NSFetchRequest<PracticeData> = PracticeData.fetchRequest()
-        request.predicate = NSPredicate(format: "practiceDataToPractice = %@", argumentArray: [practice])
+        request.predicate = NSPredicate(format: "practiceDataToPractice.practice = %@", argumentArray: [practice])
         
         do {
              let dataArray = try context.fetch(request)
@@ -117,8 +120,8 @@ class UserPracticesData {
         
         var dateArray = (startingDate! as Date).getDates(date: date)
         dateArray =  dateArray.sorted(by: >)
-        for eachDate in dateArray{
-            let lastDayData = getPracticeDataObj(practiceName: practice.practice!,selectedDate: eachDate.dateFormate()!)
+        for _ in dateArray{
+            let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
             if(lastDayData != nil){
                 return (lastDayData?.tracking_days)
             }
@@ -129,7 +132,7 @@ class UserPracticesData {
     
     func updatePracticeData(practiceName: String, practiceDate: Date, note: String, practiced: Bool) -> Int {
     
-        practiceData = getPracticeDataObj(practiceName: practiceName, selectedDate:practiceDate)
+        practiceData = getPracticeDataObj(practiceName: practiceName)
         
         tracking_days = practiceData.tracking_days
         

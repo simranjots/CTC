@@ -174,7 +174,6 @@ class DatabaseHelper{
         
         do {
             let arrayData = try (context?.fetch(fearchRequest)) as! [PracticeData]
-            //            print(arrayData)
             arrayReturn = arrayData
         } catch let err {
             print(err)
