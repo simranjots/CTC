@@ -631,6 +631,9 @@
                             </barButtonItem>
                             <barButtonItem image="Plus" id="CLI-Hy-yam">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="eeE-ms-d9h" kind="show" id="FN7-IL-DSN"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -654,7 +657,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="erh-Sx-6LG">
-                                <rect key="frame" x="20" y="64" width="374" height="475"/>
+                                <rect key="frame" x="20" y="108" width="374" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-kT-o0L">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="355"/>
@@ -698,6 +701,11 @@
                                                 <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="dateFieldTapped:" destination="eeE-ms-d9h" eventType="editingDidEnd" id="DNi-0y-VtY"/>
+                                                    <action selector="dateFieldTapped:" destination="eeE-ms-d9h" eventType="editingDidBegin" id="M2b-VA-wWc"/>
+                                                    <action selector="dateFieldTapped:" destination="eeE-ms-d9h" eventType="touchUpInside" id="jid-fF-NKu"/>
+                                                </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-OI-ejz">
                                                 <rect key="frame" x="0.0" y="230" width="374" height="125"/>
@@ -793,6 +801,9 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="9rp-CA-Qw6">
+                                <rect key="frame" x="20" y="597" width="374" height="216"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ur8-DK-aky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -800,6 +811,9 @@
                             <constraint firstItem="Ur8-DK-aky" firstAttribute="trailing" secondItem="erh-Sx-6LG" secondAttribute="trailing" constant="20" id="283-u1-Bhv"/>
                             <constraint firstItem="erh-Sx-6LG" firstAttribute="leading" secondItem="Ur8-DK-aky" secondAttribute="leading" constant="20" id="7QS-dQ-xKt"/>
                             <constraint firstItem="erh-Sx-6LG" firstAttribute="top" secondItem="Ur8-DK-aky" secondAttribute="top" constant="20" id="W1f-4m-p7l"/>
+                            <constraint firstItem="Ur8-DK-aky" firstAttribute="trailing" secondItem="9rp-CA-Qw6" secondAttribute="trailing" constant="20" id="j39-Xg-TKD"/>
+                            <constraint firstItem="9rp-CA-Qw6" firstAttribute="bottom" secondItem="Ur8-DK-aky" secondAttribute="bottom" id="lwn-Un-bgj"/>
+                            <constraint firstItem="9rp-CA-Qw6" firstAttribute="leading" secondItem="Ur8-DK-aky" secondAttribute="leading" constant="20" id="uVe-vu-iRV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LJm-qr-X13"/>
@@ -809,6 +823,7 @@
                         <outlet property="choosePracticesIconButton" destination="MiK-kr-Cic" id="mB3-dJ-1Af"/>
                         <outlet property="choosePracticesTextField" destination="nQB-pr-z7e" id="S35-rU-r0f"/>
                         <outlet property="chooseValuesTextField" destination="BuY-qe-K9d" id="KTA-MQ-Q2c"/>
+                        <outlet property="datePickerView" destination="9rp-CA-Qw6" id="xNb-af-BPZ"/>
                         <outlet property="dateTextField" destination="umr-dP-XQb" id="q3I-pR-f2Y"/>
                         <outlet property="saveButton" destination="IDc-ET-mQK" id="jRm-z3-7ja"/>
                         <outlet property="wordsOfEncouragementTextView" destination="eta-pG-kbf" id="Cb7-k2-anU"/>
@@ -816,7 +831,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9D-8H-WXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="1183"/>
+            <point key="canvasLocation" x="579.71014492753625" y="1181.9196428571429"/>
         </scene>
     </scenes>
     <resources>

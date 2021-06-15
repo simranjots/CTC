@@ -308,20 +308,20 @@ extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
+      //  performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! addTodayViewController
-        
-        destination.userObject = userObject
-        destination.myIndex = myIndex
-        destination.selectedDate = datePicker.date.dateFormate()!
-        destination.delegate = self
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destination = segue.destination as! addTodayViewController
+//
+//        destination.userObject = userObject
+//        destination.myIndex = myIndex
+//        destination.selectedDate = datePicker.date.dateFormate()!
+//        destination.delegate = self
+//
+//    }
     
     
     

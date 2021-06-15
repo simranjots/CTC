@@ -1,11 +1,3 @@
-//
-//  AddPracticesViewController.swift
-//  CTC
-//
-//  Created by Jaldeep Patel on 2021-06-11.
-//  Copyright © 2021 Nirav Bavishi. All rights reserved.
-//
-
 import UIKit
 
 class AddPracticesViewController: UIViewController {
@@ -18,13 +10,26 @@ class AddPracticesViewController: UIViewController {
     @IBOutlet var choosePracticesIconButton: UIButton!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
+    @IBOutlet weak var datePickerView: UIDatePicker!
+    
+    var userPractices: UserPractices!
+    var userPracticesData: UserPracticesData!
+    var currentUser : CurrentUser!
+    var selectedDate: Date!
+    var isUpdating: Bool! = false
+    var oldPractice: String?
+    var userObject: User!
+    var practi:[Practice]!
+    var homeViewController = HomeViewController()
+    var practicesData: [PracticeData]!
+    let date = Date()
+    static var cvalue : String = ""
+    static var cindexPath : Int = 0
     
     //PickerView instances
     let valuesPickerView = UIPickerView()
     let practicesPickerView = UIPickerView()
 
-    //DatePickerView instance
-    let datePicker = UIDatePicker()
     
     //Values and Practices options array
     let values: [String] = [
@@ -38,9 +43,64 @@ class AddPracticesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePickerView.isHidden = true
+        dateTextField.text = date.dateFormatemmmdd()
+        userPractices = UserPractices()
+        currentUser = CurrentUser()
+        userPracticesData = UserPracticesData()
+        userObject = currentUser.checkLoggedIn()
+        selectedDate = Date().dateFormate()!
+        practi = self.getPractices()
+        practicesData = self.getPracticesData(date: selectedDate)
         styleElements()
         setPickerViewsPropertiesDelegatesAndDataSources()
+        
+        
+        //MARK: Popup Date Picker
+        datePickerView.datePickerMode = .date
+        datePickerView.addTarget(self, action: #selector(self.PopUpDatePickerValueChanged(datePicker:)), for: .valueChanged)
+        dateTextField.inputView = datePickerView
+        datePickerView.maximumDate = Date()
+        
+        //adding an overlay to the view to give focus to the dialog box
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        //MARK: Custome Done Tool bar
+              
+              let toolBar = UIToolbar()
+              toolBar.sizeToFit()
+              let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
+      
+              toolBar.setItems([doneButton], animated: false)
+              toolBar.isUserInteractionEnabled = true
+        dateTextField.inputAccessoryView = toolBar
+        
     }
+    
+    private func getPractices() -> [Practice]{
+        
+        
+        return userPractices.getPractices(user: userObject)!
+        
+    }
+    private func getPracticesData(date: Date) -> [PracticeData]?{
+        
+        
+        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
+        
+    }
+    
+    
+    @objc func dateSelected() {
+        dateTextField.text = datePickerView.date.dateFormatemmmdd()
+        self.view.endEditing(true)
+
+    }
+
+@objc func PopUpDatePickerValueChanged(datePicker: UIDatePicker){
+    
+    dateTextField.text = datePicker.date.dateFormatemmmdd()!
+    
+}
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
         
@@ -74,14 +134,102 @@ class AddPracticesViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        let practiceName = choosePracticesTextField.text
+        let image_Name = imageName
+        if (practiceName == ""){
+            
+            showToast(message: "Please Enter Your Practice", duration: 3)
+            
+        }
+        else if(image_Name == ""){
+            
+            showToast(message: "Please Select Icon For Practice", duration: 3)
+            
+        }
+        else if(dateTextField.text == ""){
+            showToast(message: "Please Select Practice Starting Date", duration: 3)
+        }
+        else{
+            var practiceFlag: Int!
+            if(isUpdating){
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject)
+                isUpdating = false}
+            else{
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject)
+                isUpdating = false
+            }
+            
+            
+            if(practiceFlag == 1){
+                
+                showAlert(title: "Warning", message: "Practice Already Exist. . . ", buttonTitle: "Try Again")
+                
+            }
+            else if(practiceFlag == 2){
+                
+                showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
+                
+            }else if (practiceFlag == 0 ){
+                
+                self.choosePracticesTextField.text = ""
+                self.imageName = ""
+                self.datePickerView.date = Date()
+                self.activityIconImageView.image = UIImage(named: "Image-gallery")
+                let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
+                let home = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
+                present(home, animated: true)
+            }
+            
+        }
+        
     }
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        
+        self.choosePracticesTextField.text = ""
+        self.imageName = ""
+        self.datePickerView.date = Date()
+        self.activityIconImageView.image = UIImage(named: "Iphoto.on.rectangle.angled")
+        self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func dateFieldTapped(_ sender: Any) {
+     datePickerView.isHidden = false
+ }
+ func setData(_ value : String,_ indexPath: Int){
+     if value == "add" {
+         add()
+     }
+     if value == "edit" {
+         update(indexPath: indexPath)
+     }
+ }
+
+ func add(){
+    // self.titleLabel.text = "Add Practice"
+     self.saveButton.setTitle("Add", for: .normal)
+    dateTextField.text = Date().dateFormatemmmdd()
+     
+ }
+ func update(indexPath :Int) {
+    choosePracticesTextField.text = self.practi[indexPath].practice
+     oldPractice = self.practi[indexPath].practice
+     
+    activityIconImageView.image = UIImage(named: self.practi[ indexPath].image_name!)
+     
+      imageName = self.practi[indexPath].image_name!
+     
+     datePickerView.date = (self.practi[indexPath].startedday)! as Date
+     
+    dateTextField.text = ((self.practi[indexPath].startedday)! as Date).dateFormatemmmdd()
+    // titleLabel.text = "Edit Practice"
+    saveButton.setTitle("Confirm", for: .normal)
+     isUpdating = true
+ }
+    
 }
+
+
 
 //MARK: - Extension for elements stylling and PickerViews setup
 
@@ -142,9 +290,9 @@ extension AddPracticesViewController {
         
         //Assign toolbar and datepicker
         dateTextField.inputAccessoryView = toolBar
-        dateTextField.inputView = datePicker
+        dateTextField.inputView = datePickerView
         
-        datePicker.datePickerMode = .date
+        datePickerView.datePickerMode = .date
         
     }
     
@@ -156,7 +304,7 @@ extension AddPracticesViewController {
         dateFormatter.timeStyle = .none
         
         //Assign formatted date to textField
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        dateTextField.text = dateFormatter.string(from: datePickerView.date)
         self.view.endEditing(true)
     }
 }
