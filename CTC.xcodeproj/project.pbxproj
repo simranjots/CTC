@@ -38,6 +38,7 @@
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */; };
+		267AFB9B26794E80002C07E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */; };
 		26A56EC92672CF6B004CE3A5 /* HomeVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */; };
 		26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
@@ -56,7 +57,6 @@
 		E11037BB21E6602E007BBEF1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11037BA21E6602E007BBEF1 /* LoginViewController.swift */; };
 		E11037BD21E6607C007BBEF1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */; };
 		E11752D92217486F0089B852 /* ToastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11752D82217486F0089B852 /* ToastLabel.swift */; };
-		E12320DF226E158C006B05CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E12320DE226E158C006B05CB /* GoogleService-Info.plist */; };
 		E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12320E0226E1772006B05CB /* FirebaseHelper.swift */; };
 		E12CCC6322380332009E0870 /* HistoryCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */; };
 		E133554422665FDD00C3E0CF /* FinalLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E133554322665FDD00C3E0CF /* FinalLogo.png */; };
@@ -144,6 +144,7 @@
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
+		267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCell.swift; sourceTree = "<group>"; };
 		26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +165,6 @@
 		E11037BA21E6602E007BBEF1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E11752D82217486F0089B852 /* ToastLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastLabel.swift; sourceTree = "<group>"; };
-		E12320DE226E158C006B05CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E12320E0226E1772006B05CB /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardCollectionView.swift; sourceTree = "<group>"; };
 		E133554322665FDD00C3E0CF /* FinalLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FinalLogo.png; sourceTree = "<group>"; };
@@ -484,9 +484,9 @@
 				26DE85D826701EA700994DA3 /* CircularProgressView.swift */,
 				E1C08F1021F772DE00446557 /* NavigationBar.swift */,
 				E179F53221F26F7D00FBD293 /* SetResolutionButton.swift */,
+				267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */,
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
-				E12320DE226E158C006B05CB /* GoogleService-Info.plist */,
 				E189D69421E4FA450078380B /* Info.plist */,
 				E189D68C21E4FA430078380B /* CTC.xcdatamodeld */,
 				E15E290021EFA76900F2177F /* Icons.xcassets */,
@@ -611,7 +611,7 @@
 				E189D68B21E4FA430078380B /* Main.storyboard in Resources */,
 				E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */,
 				E17A93CE2273636D009D3064 /* 1.jpeg in Resources */,
-				E12320DF226E158C006B05CB /* GoogleService-Info.plist in Resources */,
+				267AFB9B26794E80002C07E1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

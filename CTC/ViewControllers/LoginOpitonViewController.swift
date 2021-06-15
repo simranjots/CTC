@@ -1,8 +1,6 @@
 
 import UIKit
 
-
-
 class LoginOpitonViewController: UIViewController {
     
     var userObject: User!

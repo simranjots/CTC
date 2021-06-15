@@ -26,6 +26,8 @@ struct Constants {
     }
     
     struct Segues {
+        static let signInToHomeSegue = "navigateToHome"
+        static let signUpToHomeSegue = "navigateToHome"
         static let forgotPasswordSegue = "forgotPasswordSegue"
         static let signUpSegue = "signUpSegue"
         static let moreToPracticeHistorySegue = "navigateToPracticeHistory"
@@ -37,5 +39,6 @@ struct Constants {
         static let moreToAboutAuthorsSegue = "navigateToAboutAuthors"
         static let moreToConnectToUsSegue = "navigateToConnectToUs"
         static let homeToActivityDetailsSegue = "navigateToActivityDetailsVC"
+        
     }
 }

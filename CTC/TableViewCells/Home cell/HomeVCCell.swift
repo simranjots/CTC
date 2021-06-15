@@ -16,6 +16,7 @@ class HomeVCCell: UITableViewCell {
     @IBOutlet var homeScreenTableCellView: UIView!
     @IBOutlet var activityImageView: UIImageView!
     @IBOutlet var activityNameLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
     @IBOutlet var tagLineLabel: UILabel!
     @IBOutlet var starButtonOutlet: UIButton!
     
