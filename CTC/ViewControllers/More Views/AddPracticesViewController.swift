@@ -52,19 +52,18 @@ class AddPracticesViewController: UIViewController {
         selectedDate = Date().dateFormate()!
         practi = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
+        
+        setData(AddPracticesViewController.cvalue, AddPracticesViewController.cindexPath)
+        
         styleElements()
         setPickerViewsPropertiesDelegatesAndDataSources()
-        
-        
         //MARK: Popup Date Picker
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(self.PopUpDatePickerValueChanged(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePickerView
         datePickerView.maximumDate = Date()
         
-        //adding an overlay to the view to give focus to the dialog box
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
-        //MARK: Custome Done Tool bar
+       //MARK: Custome Done Tool bar
               
               let toolBar = UIToolbar()
               toolBar.sizeToFit()

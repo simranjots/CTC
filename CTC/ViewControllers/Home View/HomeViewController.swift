@@ -26,11 +26,9 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet weak var dateTextField: UILabel!
     @IBOutlet weak var dateView: UIView!
 
-//    @IBOutlet weak var addResolutionButton: UIButton!
-//    @IBOutlet weak var homeTableView: UITableView!
-//    @IBOutlet weak var dateTextField: UITextField!
-    
-    override func viewWillAppear(_ animated: Bool) {
+  
+
+        override func viewWillAppear(_ animated: Bool) {
       //  selectedDate = datePicker.date.dateFormate()!
         self.refreshTableview(date: selectedDate)
     }
@@ -53,41 +51,22 @@ class HomeViewController: UIViewController,ReceiveData{
 
         
         let oldestDate = userPractices.oldestPracticeDate(user: userObject)
-        
-        //MARK: ViewController Date Picker
-//        datePicker = UIDatePicker()
-//        datePicker.datePickerMode = .date
-//        datePicker.addTarget(self, action: #selector(self.DatePickerValueChanged(datePicker:)), for: .valueChanged)
-//        dateTextField.inputView = datePicker
-//        datePicker.maximumDate = Date()
-//        datePicker.minimumDate = oldestDate
-        
-        
-//        //MARK: Custome Done Tool bar for Popup
-//        addResolutionButton.backgroundColor = Theme.secondaryColor
-//        addResolutionButton.layer.cornerRadius = addResolutionButton.frame.height/2
-//        addResolutionButton.layer.shadowColor = UIColor.black.cgColor
-//        addResolutionButton.layer.shadowOffset = CGSize(width: 0, height: 10)
-//        addResolutionButton.layer.shadowRadius = 5
-//        addResolutionButton.layer.shadowOpacity = 0.25
-//
-        
-        
+    
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         
-//        // MARK: Gradiat Color Set for naviagation Bar
-//        
-//        if let navigationBar = self.navigationController?.navigationBar {
-//            let gradient = CAGradientLayer()
-//            var bounds = navigationBar.bounds
-//            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
-//            gradient.frame = bounds
-//            gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
-//            gradient.startPoint = CGPoint(x: 0, y: 0)
-//            gradient.endPoint = CGPoint(x: 1, y: 0)
-//        }
+        // MARK: Gradiat Color Set for naviagation Bar
+        
+        if let navigationBar = self.navigationController?.navigationBar {
+            let gradient = CAGradientLayer()
+            var bounds = navigationBar.bounds
+            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+            gradient.frame = bounds
+            gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 0)
+        }
         
         
         //MARK: for mainatain the practices data weekly
@@ -172,12 +151,14 @@ class HomeViewController: UIViewController,ReceiveData{
     func passUserObject(user: User) {
         userObject = user
     }
+ 
     
-//    @IBAction func addResolutionButtonTapped(_ sender: UIButton) {
-//        popUpHome.showPopup(parentVC: self, value: "add", indexpath: 0)
-//    }
-    
-    
+    @IBAction func addPractices(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AddPractices") as! AddPracticesViewController
+        AddPracticesViewController.cvalue = "add"
+        self.present(vc, animated: true, completion: nil)
+    }
     
     // Table View Code
     
@@ -298,7 +279,11 @@ extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, handler) in
-            self.popUpHome.showPopup(parentVC: self, value: "edit", indexpath: indexPath.row)
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AddPractices") as! AddPracticesViewController
+            AddPracticesViewController.cvalue = "edit"
+            AddPracticesViewController.cindexPath = indexPath.row
+            self.present(vc, animated: true, completion: nil)
 
         }
         editAction.backgroundColor = .lightGray
@@ -308,20 +293,20 @@ extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-      //  performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
+        performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destination = segue.destination as! addTodayViewController
-//
-//        destination.userObject = userObject
-//        destination.myIndex = myIndex
-//        destination.selectedDate = datePicker.date.dateFormate()!
-//        destination.delegate = self
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! addTodayViewController
+        
+        destination.userObject = userObject
+        destination.myIndex = myIndex
+        destination.selectedDate = datePicker.date.dateFormate()!
+        destination.delegate = self
+        
+    }
     
     
     

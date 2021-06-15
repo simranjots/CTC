@@ -86,9 +86,6 @@
                                     <constraint firstAttribute="height" constant="56" id="dwe-KO-qbR"/>
                                 </constraints>
                                 <state key="normal" image="Plus"/>
-                                <connections>
-                                    <action selector="addResolutionButtonTapped:" destination="RCl-1x-4mL" eventType="touchUpInside" id="jWl-lj-NNR"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date : " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fo8-Zz-pCZ">
                                 <rect key="frame" x="0.0" y="52" width="414" height="62.5"/>
@@ -115,7 +112,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="List Of Your Practices" id="Mex-FH-4dj"/>
                     <connections>
-                        <outlet property="addResolutionButton" destination="nBn-PZ-Y1v" id="eEw-rD-iOj"/>
                         <outlet property="dateTextField" destination="Fo8-Zz-pCZ" id="oCH-Q6-LZc"/>
                         <outlet property="homeTableView" destination="gPY-TL-Ecc" id="SAp-e9-8ih"/>
                     </connections>
@@ -339,7 +335,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="addButtonPressed:" destination="rY7-tT-rjA" eventType="touchUpInside" id="VKK-Xp-7AV"/>
-                                                    <action selector="popUpAddButtonTapped:" destination="RCl-1x-4mL" eventType="touchUpInside" id="jIX-QD-IAg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZV-ew-c4Q">
@@ -350,7 +345,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="cancelButtonPressed:" destination="rY7-tT-rjA" eventType="touchUpInside" id="x6P-GZ-B0g"/>
-                                                    <action selector="popUpCancelBtnTapped:" destination="RCl-1x-4mL" eventType="touchUpInside" id="bVO-Jm-rhc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -387,7 +381,6 @@
                                         </constraints>
                                         <state key="normal" image="Image-gallery"/>
                                         <connections>
-                                            <action selector="iconImageButtonTapped:" destination="RCl-1x-4mL" eventType="touchUpInside" id="dxM-1T-nVb"/>
                                             <action selector="imageButtonPressed:" destination="rY7-tT-rjA" eventType="touchUpInside" id="Lf6-Yr-f2p"/>
                                         </connections>
                                     </button>
@@ -632,7 +625,7 @@
                             <barButtonItem image="Plus" id="CLI-Hy-yam">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="eeE-ms-d9h" kind="show" id="FN7-IL-DSN"/>
+                                    <action selector="addPractices:" destination="rNy-SS-lWh" id="0aS-pF-RIa"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -651,13 +644,13 @@
         <!--Add Practices View Controller-->
         <scene sceneID="xmr-7f-Ql7">
             <objects>
-                <viewController id="eeE-ms-d9h" customClass="AddPracticesViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPractices" modalPresentationStyle="fullScreen" id="eeE-ms-d9h" customClass="AddPracticesViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MbN-fM-dci">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="erh-Sx-6LG">
-                                <rect key="frame" x="20" y="108" width="374" height="475"/>
+                                <rect key="frame" x="20" y="64" width="374" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-kT-o0L">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="355"/>
@@ -802,7 +795,7 @@
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="9rp-CA-Qw6">
-                                <rect key="frame" x="20" y="597" width="374" height="216"/>
+                                <rect key="frame" x="20" y="646" width="374" height="216"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ur8-DK-aky"/>
