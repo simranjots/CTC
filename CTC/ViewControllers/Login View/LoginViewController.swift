@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
                     self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
                 } else {
                     let result = self.currentUser.signInUser(email, password)
-                    if result {
+                   if result {
                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
                     }
                 }
