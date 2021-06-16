@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -18,15 +19,15 @@ class LoginViewController: UIViewController {
     
     // to store the current active textfield
     var activeTextField : UITextField? = nil
-    
     var isIconClicked = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       currentUser = CurrentUser()
+        currentUser = CurrentUser()
         setUpElements()
         
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
@@ -57,45 +58,86 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-       currentUser = CurrentUser()
-       firebaseHelper = FirebaseHelper()
-       userObjectPass = currentUser.checkLoggedIn()
+        
+        currentUser = CurrentUser()
+        firebaseHelper = FirebaseHelper()
+        
+        userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
-
-            performSegue(withIdentifier: "MainTabbedBar", sender: self)
+            performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
         }
         
     }
     
-    
-    @IBAction func signInButtonTapped(_ sender: Any) {
-       view.endEditing(true)
-     var email = emailTextField.text!
-        email = email.lowercased()
-       let password = passwordTextField.text!
+    func validateFields() -> String? {
         
-        if(email.isValidEmail){
+        //Validate any field is not blank
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
-            if(password.isValidPassword){
-                
-                let result = currentUser.signInUser(email, password)
-                
-                if result {
-                   performSegue(withIdentifier: "MainTabbedBar", sender: self)
-                }
-                else {
-                    
-                    showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                }
-            }else{
-                showToast(message: "Enter Valid Password", duration: 2.0)
-            }
-            
-        }else{
-            showToast(message: "Enter Valid Email", duration: 2.0)
-            
+            return "Email or password are blank."
         }
         
+        //Validate Email format is correct
+        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isEmailValid(cleanedEmail) == false {
+            
+            return "Please enter correct email."
+        }
+        
+        //Validate password is correct
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            
+            return "Please enter correct password."
+        }
+        
+        return nil
+    }
+    
+    
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        view.endEditing(true)
+        
+        let error = validateFields()
+        
+        if error != nil {
+            
+            showToast(message: error!, duration: 2.0)
+            
+        } else {
+           
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if error != nil {
+                    self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
+                } else {
+                    let result = self.currentUser.signInUser(email, password)
+                    if result {
+                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                    }
+                }
+            }
+            
+            
+//            if(email.isValidEmail) {
+//                if(password.isValidPassword) {
+//                    let result = currentUser.signInUser(email, password)
+//                    if result {
+//                        performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+//                    }
+//                    else {
+//                        showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+//                    }
+//                } else {
+//                    showToast(message: "Enter Valid Password", duration: 2.0)
+//                }
+//            } else {
+//                showToast(message: "Enter Valid Email", duration: 2.0)
+//            }
+        }
     }
     
     
@@ -127,7 +169,7 @@ class LoginViewController: UIViewController {
         textField.rightView = textFieldRightView
         textField.rightViewMode = .always
         
-       
+        
         //Add color to textField Image
         textFieldImageView.tintColor = .darkGray
         
@@ -142,7 +184,7 @@ class LoginViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-         
+        
         if isIconClicked {
             isIconClicked = false
             tappedImage.image = UIImage(named: "openEye")

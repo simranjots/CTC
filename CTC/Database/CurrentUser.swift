@@ -5,10 +5,13 @@ import UIKit
 class CurrentUser {
     
     var users = [User]()
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func addUser(name: String, email: String, password: String) -> Int{
+        
         loadUser()
+        
         var userNotExist: Bool = true
         
         for user in users{
@@ -18,6 +21,7 @@ class CurrentUser {
             }
             
         }
+        
         if(userNotExist){
             let newUser = User(context: self.context)
             newUser.name = name
@@ -32,10 +36,13 @@ class CurrentUser {
             
         }
         
+        
     }
-    func signInUser(_ email : String ,_ password : String) -> Bool{
+    func signInUser(_ email : String ,_ password : String) -> Bool {
+        
         loadUser()
-        for user in users{
+        
+        for user in users {
             
             if(user.email == email && user.password == password){
                 user.isloggedin = true
@@ -81,6 +88,7 @@ class CurrentUser {
         }
         
     }
+    
     func updateLoginStatus(status: Bool, email: String) -> Int{
         
         loadUser()
@@ -114,6 +122,7 @@ class CurrentUser {
         }
         return 0
     }
+    
     func loadUser(with request:NSFetchRequest<User> = User.fetchRequest()) {
         
         do {

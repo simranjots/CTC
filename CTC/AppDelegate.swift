@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar =  false
         IQKeyboardManager.shared.shouldResignOnTouchOutside =  true
+        
         //MARK: Firebase Configuration
         FirebaseApp.configure()
         

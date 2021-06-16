@@ -252,7 +252,7 @@
                         <outlet property="gmailSignInButton" destination="8tm-Wn-l7r" id="CyM-cy-loG"/>
                         <outlet property="passwordTextField" destination="miY-1T-4os" id="ZyG-V2-zB4"/>
                         <outlet property="signInButton" destination="dD2-7B-Gm0" id="vvT-da-wwV"/>
-                        <segue destination="iDN-fk-6wi" kind="show" identifier="MainTabbedBar" id="uzh-sq-IJl"/>
+                        <segue destination="iDN-fk-6wi" kind="show" identifier="navigateToHome" id="uzh-sq-IJl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngX-c6-zPI" sceneMemberID="firstResponder"/>
@@ -438,7 +438,7 @@
                         <outlet property="nameTextField" destination="owZ-hb-b5F" id="bX6-22-YEP"/>
                         <outlet property="passwordTextField" destination="PAD-sG-o6W" id="SjA-TY-3HT"/>
                         <outlet property="signUpButton" destination="hxH-ng-qLY" id="Sl4-U2-Y3a"/>
-                        <segue destination="iDN-fk-6wi" kind="show" identifier="MainTabbedBar" id="u5l-VQ-IMC"/>
+                        <segue destination="iDN-fk-6wi" kind="show" identifier="navigateToHome" id="u5l-VQ-IMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yA-ry-4N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -570,7 +570,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uzh-sq-IJl"/>
+        <segue reference="u5l-VQ-IMC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>
