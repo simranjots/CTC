@@ -26,6 +26,7 @@ extension Practice {
     @NSManaged public var is_completed: Bool
     @NSManaged public var practiceData: NSSet?
     @NSManaged public var user: User?
+    @NSManaged public var values: String?
 
 }
 

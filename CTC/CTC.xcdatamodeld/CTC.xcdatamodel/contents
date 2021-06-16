@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Practice" representedClassName=".Practice" syncable="YES">
         <attribute name="image_name" optional="YES" attributeType="String"/>
         <attribute name="is_completed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -8,6 +8,7 @@
         <attribute name="practice" optional="YES" attributeType="String"/>
         <attribute name="practiseddays" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="startedday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="values" optional="YES" attributeType="String"/>
         <relationship name="practiceData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeData" inverseName="practiceDataToPractice" inverseEntity="PracticeData"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="practice" inverseEntity="User"/>
     </entity>
@@ -41,7 +42,7 @@
         <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Practice" positionX="-483.47265625" positionY="-341.15625" width="128" height="180"/>
+        <element name="Practice" positionX="-483.47265625" positionY="-341.15625" width="128" height="179"/>
         <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="28"/>
         <element name="PracticeHistory" positionX="-441" positionY="-396" width="128" height="120"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="135"/>
