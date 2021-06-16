@@ -39,6 +39,7 @@ struct Constants {
         static let moreToAboutAuthorsSegue = "navigateToAboutAuthors"
         static let moreToConnectToUsSegue = "navigateToConnectToUs"
         static let homeToActivityDetailsSegue = "navigateToActivityDetailsVC"
+        static let moreToProfileSegue = "navigateToProfile"
         
     }
 }

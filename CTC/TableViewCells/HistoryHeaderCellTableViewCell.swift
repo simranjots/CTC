@@ -16,7 +16,7 @@ class HistoryHeaderCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = Theme.navigationBarBackgroundColor
+        //self.backgroundColor = Theme.navigationBarBackgroundColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

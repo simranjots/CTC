@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         currentUser = CurrentUser()
         setUpElements()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,9 +52,7 @@ class LoginViewController: UIViewController {
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
         Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
-        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -66,7 +63,6 @@ class LoginViewController: UIViewController {
         if (userObjectPass != nil){
             performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
         }
-        
     }
     
     func validateFields() -> String? {

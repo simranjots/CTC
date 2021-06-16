@@ -34,6 +34,7 @@
 		2623EFA026708C7900951285 /* OrderBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9F26708C7900951285 /* OrderBooksViewController.swift */; };
 		2623EFA226708C9200951285 /* OrderBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */; };
 		2626A118267A71890043C193 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2626A117267A71890043C193 /* GoogleService-Info.plist */; };
+		2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2626A119267AB49F0043C193 /* ProfilePageViewController.swift */; };
 		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
@@ -139,6 +140,7 @@
 		2623EF9F26708C7900951285 /* OrderBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksViewController.swift; sourceTree = "<group>"; };
 		2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksTableViewCell.swift; sourceTree = "<group>"; };
 		2626A117267A71890043C193 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2626A119267AB49F0043C193 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
 				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
+				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 			);
 			path = "More Views";
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
 				E10D6679226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift in Sources */,
+				2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */,
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,

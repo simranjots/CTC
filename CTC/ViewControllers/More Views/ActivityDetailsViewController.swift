@@ -39,6 +39,7 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title =  "Activity Details"
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
@@ -77,10 +78,10 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
         createPickerView()
         createToolBar()
         self.setData()
-        
         styleElements()
       
     }
+  
     func setData() {
         
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
