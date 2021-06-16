@@ -11,6 +11,7 @@
 		1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */; };
 		1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA243266A2C6C003A96A4 /* UserPractices.swift */; };
 		1A3FA24C266E924B003A96A4 /* UserPracticesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */; };
+		1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56C151267A465B00E6D18E /* NotificationManager.swift */; };
 		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
 		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
 		1AA35F842671B0E100BA918F /* PracticesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F832671B0E100BA918F /* PracticesListCell.swift */; };
@@ -118,6 +119,7 @@
 		1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		1A3FA243266A2C6C003A96A4 /* UserPractices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPractices.swift; sourceTree = "<group>"; };
 		1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPracticesData.swift; sourceTree = "<group>"; };
+		1A56C151267A465B00E6D18E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		1A62B82026659CD70025D92C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AA35F832671B0E100BA918F /* PracticesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesListCell.swift; sourceTree = "<group>"; };
 		1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesRecordListVC.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				26C76571267456F500BD646E /* AddPracticesViewController.swift */,
+				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
 				E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */,
 			);
@@ -275,7 +278,6 @@
 				2623EF9F26708C7900951285 /* OrderBooksViewController.swift */,
 				2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */,
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
-				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
 				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 			);
@@ -384,6 +386,7 @@
 			children = (
 				262946DF26601F8B005BA95E /* Constants.swift */,
 				262946E126601F99005BA95E /* Utilities.swift */,
+				1A56C151267A465B00E6D18E /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
+				1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */,
 				E10D6679226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift in Sources */,
 				2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */,
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,

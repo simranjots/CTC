@@ -28,7 +28,6 @@ class HomeViewController: UIViewController,ReceiveData{
   
 
         override func viewWillAppear(_ animated: Bool) {
-      //  selectedDate = datePicker.date.dateFormate()!
         self.refreshTableview(date: selectedDate)
     }
     

@@ -5,12 +5,14 @@ class AddPracticesViewController: UIViewController {
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var choosePracticesTextField: UITextField!
     @IBOutlet var dateTextField: UITextField!
-    @IBOutlet var wordsOfEncouragementTextView: UITextView!
+    @IBOutlet weak var wordsOfEncouragementTextField: UITextField!
     @IBOutlet var activityIconImageView: UIImageView!
     @IBOutlet var choosePracticesIconButton: UIButton!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet weak var changeButton: UIButton!
+    @IBOutlet weak var goalTextField: UITextField!
     
     var userPractices: UserPractices!
     var userPracticesData: UserPracticesData!
@@ -29,6 +31,7 @@ class AddPracticesViewController: UIViewController {
     //PickerView instances
     let valuesPickerView = UIPickerView()
     let practicesPickerView = UIPickerView()
+    let goalPickerView = UIPickerView()
 
     
     //Values and Practices options array
@@ -36,6 +39,7 @@ class AddPracticesViewController: UIViewController {
         "AUTHENTICITY", "ACHIEVEMENT", "ADVENTURE", "BEAUTY", "CHALLENGE", "COMFORT", "COURAGE", "CREATIVITY", "CURIOSITY", "EDUCATION", "EMPOWERMENT", "ENVIRONMENT", "FAMILY", "FINANCIAL", "FREEDOM", "FITNESS", "BALANCE", "GRATITUDE", "LOVE", "FRIENDSHIP", "SERVICE", "HEALTH", "HONESTY", "INDEPENDENCE", "INNER PEACE", "INTEGRITY", "INTELLIGENCE",  "INTIMACY", "JOY", "LEADERSHIP", "LEARNING",  "MOTIVATION", "PASSION", "COMPASSION", "CREDIBILITY", "EMPATHY", "HUMOUR", "RECREATION", "PEACE", "PERFORMANCE", "PERSONAL", "GROWTH", "PLAY", "PRODUCTIVITY", "RELIABILITY", "RESPECT", "SECURITY", "SPIRITUALITY", "SUCCESS", "TIME FREEDOM", "VARIETY" ]
     
     let practices: [String] = ["No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables"]
+    let goals: [String] = ["Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "356 Days"]
     
     let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship"]
     
@@ -99,6 +103,16 @@ class AddPracticesViewController: UIViewController {
     dateTextField.text = datePicker.date.dateFormatemmmdd()!
     
 }
+    
+
+    
+    @IBAction func changeTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func reminderTapped(_ sender: UISwitch) {
+        
+    }
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
         
@@ -187,7 +201,9 @@ class AddPracticesViewController: UIViewController {
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        self.chooseValuesTextField.text = ""
         self.choosePracticesTextField.text = ""
+        self.goalTextField.text = ""
         self.imageName = ""
         self.datePickerView.date = Date()
         self.activityIconImageView.image = UIImage(named: "Iphoto.on.rectangle.angled")
@@ -207,12 +223,17 @@ class AddPracticesViewController: UIViewController {
  }
 
  func add(){
-    // self.titleLabel.text = "Add Practice"
+     self.title = "Add Practice"
      self.saveButton.setTitle("Add", for: .normal)
-    dateTextField.text = Date().dateFormatemmmdd()
+     dateTextField.text = Date().dateFormatemmmdd()
+     chooseValuesTextField.text = values.first
+     choosePracticesTextField.text = practices.first
+    goalTextField.text = goals.first
+    
      
  }
  func update(indexPath :Int) {
+    self.title = "Update Practice"
     chooseValuesTextField.text = self.practi[indexPath].values
     choosePracticesTextField.text = self.practi[indexPath].practice
      oldPractice = self.practi[indexPath].practice
@@ -231,34 +252,22 @@ class AddPracticesViewController: UIViewController {
     
 }
 
-
-
 //MARK: - Extension for elements stylling and PickerViews setup
 
 extension AddPracticesViewController {
     
     //Style textFields, textView, imageView and buttons
     func styleElements() {
-        
-        //Style textfields, textView and imageView
-        Utilities.styleTextField(chooseValuesTextField)
-        Utilities.styleTextField(choosePracticesTextField)
-        Utilities.styleTextField(dateTextField)
-        Utilities.styleTextView(wordsOfEncouragementTextView)
-        Utilities.styleImageView(activityIconImageView)
+
+        Utilities.styleTextField(wordsOfEncouragementTextField)
         
         //Style buttons
         Utilities.styleButton(saveButton)
         Utilities.styleButton(choosePracticesIconButton)
         Utilities.styleHollowButton(cancelButton)
+        changeButton.layer.cornerRadius = 8.0
+        changeButton.layer.borderWidth = 0.5
         
-        //Add textfield's leftside icons
-        guard let valuesIcon = UIImage(named: "values") else { return }
-        guard let practicesIcon = UIImage(named: "practice") else { return }
-        guard let dateIcon = UIImage(named: "calender") else { return }
-        Utilities.addTextFieldImage(textField: chooseValuesTextField, andImage: valuesIcon)
-        Utilities.addTextFieldImage(textField: choosePracticesTextField, andImage: practicesIcon)
-        Utilities.addTextFieldImage(textField: dateTextField, andImage: dateIcon)
     }
     
     //Set pickerView datasources, delegates and inputViews
@@ -271,14 +280,18 @@ extension AddPracticesViewController {
         valuesPickerView.delegate = self
         practicesPickerView.dataSource = self
         practicesPickerView.delegate = self
+        goalPickerView.dataSource = self
+        goalPickerView.delegate = self
         
         //Set inputViews
         chooseValuesTextField.inputView = valuesPickerView
         choosePracticesTextField.inputView = practicesPickerView
+        goalTextField.inputView = goalPickerView
         
         //Set the tags
         valuesPickerView.tag = 1
         practicesPickerView.tag = 2
+        goalPickerView.tag = 3
         
         //=================DatePickerView inputView and toolbar=====================//
         
@@ -293,7 +306,6 @@ extension AddPracticesViewController {
         //Assign toolbar and datepicker
         dateTextField.inputAccessoryView = toolBar
         dateTextField.inputView = datePickerView
-        
         datePickerView.datePickerMode = .date
         
     }
@@ -329,6 +341,9 @@ extension AddPracticesViewController: UIPickerViewDataSource, UIPickerViewDelega
         case 2:
             return practices.count
             
+        case 3:
+            return goals.count
+            
         default:
             return 1
         }
@@ -342,6 +357,9 @@ extension AddPracticesViewController: UIPickerViewDataSource, UIPickerViewDelega
             
         case 2:
             return practices[row]
+            
+        case 3:
+            return goals[row]
             
         default:
             return "Data not found"
@@ -357,6 +375,10 @@ extension AddPracticesViewController: UIPickerViewDataSource, UIPickerViewDelega
         case 2:
             choosePracticesTextField.text = practices[row]
             choosePracticesTextField.resignFirstResponder()
+            
+        case 3:
+            goalTextField.text = goals[row]
+            goalTextField.resignFirstResponder()
             
         default:
             print("Data not found.")
