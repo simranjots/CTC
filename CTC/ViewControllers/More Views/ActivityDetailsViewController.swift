@@ -88,12 +88,12 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
         let days = Date().days(from: startedDate) + 1
         
         activityNameTextField.text = practicesArray[myIndex].practice
-        daysPracticedLabel.text = "\(days)"
+        daysPracticedLabel.text =  "\(practicesArray[myIndex].practiseddays)"
         let practicedDays = Int(practicesArray[myIndex].practiseddays)
         let percentage: Int = Int((Float(practicedDays) / Float(days)) * 100)
         
         setPercentageAnimation(percentageValue: percentage)
-        daysSinceStartedLabel.text = "\(practicesArray[myIndex].practiseddays)"
+        daysSinceStartedLabel.text = "\(days)"
         
         if(practicesData != nil){
             
@@ -279,7 +279,7 @@ extension addTodayViewController : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         
         if textView.textColor == UIColor.lightGray {
-            if textView.text == "Write Your Notes Here. . . "{
+            if textView.toolbarPlaceholder == "Write Your Notes Here. . . "{
                 textView.text = nil
                 
             }
@@ -289,7 +289,7 @@ extension addTodayViewController : UITextViewDelegate{
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Write Your Notes Here. . . "
+            textView.toolbarPlaceholder = "Write Your Notes Here. . . "
             textView.textColor = UIColor.lightGray
         }
     }
