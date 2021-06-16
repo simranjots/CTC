@@ -13,7 +13,6 @@ class HomeViewController: UIViewController,ReceiveData{
     var datePicker : UIDatePicker!
     var myIndex: Int!
     var window: UIWindow!
-    var popUpHome : PopUpHome!
     
     
     var userObject: User!
@@ -42,7 +41,6 @@ class HomeViewController: UIViewController,ReceiveData{
         currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        popUpHome = PopUpHome()
         userObject = currentUser.checkLoggedIn()
         
         practices = self.getPractices()
@@ -231,6 +229,7 @@ extension HomeViewController : UITableViewDataSource {
         
         cell.activityNameLabel.text = practices[indexPath.row].practice
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
+        cell.valueLabel.text = practices[indexPath.row].values
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
         if (switchFlag != nil){
             cell.isOn = switchFlag!
@@ -299,7 +298,7 @@ extension HomeViewController: UITableViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! addTodayViewController
+        let destination = segue.destination as! ActivityDetailsViewController
         
         destination.userObject = userObject
         destination.myIndex = myIndex

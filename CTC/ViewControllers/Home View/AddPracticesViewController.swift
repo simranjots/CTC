@@ -64,7 +64,6 @@ class AddPracticesViewController: UIViewController {
         datePickerView.maximumDate = Date()
         
        //MARK: Custome Done Tool bar
-              
               let toolBar = UIToolbar()
               toolBar.sizeToFit()
               let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
@@ -134,6 +133,7 @@ class AddPracticesViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         let practiceName = choosePracticesTextField.text
+        let valueName = chooseValuesTextField.text
         let image_Name = imageName
         if (practiceName == ""){
             
@@ -147,14 +147,16 @@ class AddPracticesViewController: UIViewController {
         }
         else if(dateTextField.text == ""){
             showToast(message: "Please Select Practice Starting Date", duration: 3)
+        }else if(chooseValuesTextField.text == ""){
+            showToast(message: "Please Enter Your Values", duration: 3)
         }
         else{
             var practiceFlag: Int!
             if(isUpdating){
-                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!)
                 isUpdating = false}
             else{
-                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject)
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!)
                 isUpdating = false
             }
             
@@ -169,7 +171,7 @@ class AddPracticesViewController: UIViewController {
                 showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
                 
             }else if (practiceFlag == 0 ){
-                
+                self.chooseValuesTextField.text = ""
                 self.choosePracticesTextField.text = ""
                 self.imageName = ""
                 self.datePickerView.date = Date()
@@ -211,6 +213,7 @@ class AddPracticesViewController: UIViewController {
      
  }
  func update(indexPath :Int) {
+    chooseValuesTextField.text = self.practi[indexPath].values
     choosePracticesTextField.text = self.practi[indexPath].practice
      oldPractice = self.practi[indexPath].practice
      
