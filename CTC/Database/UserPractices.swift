@@ -6,7 +6,7 @@ class UserPractices{
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let currentUser = CurrentUser()
     var practices = [Practice]()
-    func addPractices(practice: String, image_name: String,date: Date, user: User) -> Int {
+    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String) -> Int {
         
         let practices = getPractices(user: user)!
         var practiceNotExist = true
@@ -21,6 +21,7 @@ class UserPractices{
         
         if(practiceNotExist){
             let newPractice = Practice(context: self.context)
+            newPractice.values = value
             newPractice.practice = practice
             newPractice.image_name = image_name
             newPractice.percentage = 0
@@ -37,10 +38,10 @@ class UserPractices{
         
     }
     
-    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User) -> Int {
+    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String) -> Int {
         
         let practiceObject = getPractices(practiceName: oldPractice, user: user)
-        
+        practiceObject.values = newPractice
         practiceObject.practice = newPractice
         practiceObject.image_name = image_name
         practiceObject.startedday = date as NSDate
