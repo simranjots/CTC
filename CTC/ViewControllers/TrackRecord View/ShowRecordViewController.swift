@@ -79,9 +79,9 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(addTodayViewController.dismissKeyboard))
-        
-        toolBar.setItems([doneButton], animated: false)
+//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(addTodayViewController.dismissKeyboard))
+//
+       // toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         
         popUpNoteTextArea.inputAccessoryView = toolBar

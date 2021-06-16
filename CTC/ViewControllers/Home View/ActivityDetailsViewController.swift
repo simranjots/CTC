@@ -1,6 +1,6 @@
 import UIKit
 
-class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
+class ActivityDetailsViewController: UIViewController {
 
     
     
@@ -29,8 +29,6 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet var saveButtonOutlet: UIButton!
     
     var activityName = ""
-    
-    // var isTableViewVisible = false
      
      var startValue: Double = 0
      var endValue: Double = 70
@@ -43,7 +41,7 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        self.title = selectedDate.dateFormatemmmdd()!
+       // self.title = selectedDate.dateFormatemmmdd()!
         
         // getting current yeat
         let formatter = DateFormatter()
@@ -64,8 +62,6 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
         practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate.dateFormate()!)
      
-   
-       // notesTextView.delegate = self
         
         let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 10).date!
         let now = Date()
@@ -142,7 +138,7 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(addTodayViewController.dismissPickerView))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(ActivityDetailsViewController.dismissPickerView))
         
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -229,7 +225,7 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
     }
     }
     
-extension addTodayViewController : UIPickerViewDataSource, UIPickerViewDelegate{
+extension ActivityDetailsViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     
     
     // Picker View
@@ -250,11 +246,10 @@ extension addTodayViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         myIndex = row
-        resolutionTextField.text = "\(String(describing: practicesArray[row].practice!))"
+        activityNameTextField.text = "\(String(describing: practicesArray[row].practice!))"
   
     }
     
-    // Picker View
     
 }
 
@@ -274,7 +269,7 @@ extension UITextField{
     
 }
 
-extension addTodayViewController : UITextViewDelegate{
+extension ActivityDetailsViewController : UITextViewDelegate{
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
