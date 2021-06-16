@@ -34,11 +34,11 @@
 		2623EF9E2670852900951285 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */; };
 		2623EFA026708C7900951285 /* OrderBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9F26708C7900951285 /* OrderBooksViewController.swift */; };
 		2623EFA226708C9200951285 /* OrderBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */; };
+		2626A118267A71890043C193 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2626A117267A71890043C193 /* GoogleService-Info.plist */; };
 		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */; };
-		267AFB9B26794E80002C07E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */; };
 		26A56EC92672CF6B004CE3A5 /* HomeVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */; };
 		26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
@@ -140,11 +140,11 @@
 		2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		2623EF9F26708C7900951285 /* OrderBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksViewController.swift; sourceTree = "<group>"; };
 		2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksTableViewCell.swift; sourceTree = "<group>"; };
+		2626A117267A71890043C193 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
-		267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCell.swift; sourceTree = "<group>"; };
 		26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
@@ -484,9 +484,9 @@
 				26DE85D826701EA700994DA3 /* CircularProgressView.swift */,
 				E1C08F1021F772DE00446557 /* NavigationBar.swift */,
 				E179F53221F26F7D00FBD293 /* SetResolutionButton.swift */,
-				267AFB9A26794E80002C07E1 /* GoogleService-Info.plist */,
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
+				2626A117267A71890043C193 /* GoogleService-Info.plist */,
 				E189D69421E4FA450078380B /* Info.plist */,
 				E189D68C21E4FA430078380B /* CTC.xcdatamodeld */,
 				E15E290021EFA76900F2177F /* Icons.xcassets */,
@@ -609,9 +609,9 @@
 				E1E7D57B2204ECFB003C65F5 /* three-star-picture-id638324800.png in Resources */,
 				E133554A22666B1000C3E0CF /* 3.png in Resources */,
 				E189D68B21E4FA430078380B /* Main.storyboard in Resources */,
+				2626A118267A71890043C193 /* GoogleService-Info.plist in Resources */,
 				E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */,
 				E17A93CE2273636D009D3064 /* 1.jpeg in Resources */,
-				267AFB9B26794E80002C07E1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,7 +899,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.simranjot.CTC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DayAchievementPrinciple.CTTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -920,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.simranjot.CTC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DayAchievementPrinciple.CTTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
