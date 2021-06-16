@@ -150,6 +150,7 @@ class HomeViewController: UIViewController,ReceiveData{
         return userPractices.getPractices(user: userObject)!
         
     }
+    
     private func getPracticesData(date: Date) -> [PracticeData]?{
     
         return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)

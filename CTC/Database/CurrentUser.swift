@@ -101,7 +101,9 @@ class CurrentUser {
         }
         return 0
     }
+    
     func checkLoggedIn() -> User!{
+        
         loadUser()
         for user in users{
             if user.isloggedin == true{

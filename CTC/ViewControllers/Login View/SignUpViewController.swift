@@ -99,6 +99,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                     
                     let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password)
                     let db = Firestore.firestore()
+                    
                     db.collection("dap_users").addDocument(data: ["username": userName, "uid": result!.user.uid]) { error in
                         if error != nil {
                             self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
