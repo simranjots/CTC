@@ -638,7 +638,7 @@
                             <barButtonItem image="Plus" id="CLI-Hy-yam">
                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <segue destination="eeE-ms-d9h" kind="push" id="FN7-IL-DSN"/>
+                                    <action selector="addPractices:" destination="rNy-SS-lWh" id="AiR-M8-X5I"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -657,13 +657,13 @@
         <!--Add Practices View Controller-->
         <scene sceneID="xmr-7f-Ql7">
             <objects>
-                <viewController id="eeE-ms-d9h" customClass="AddPracticesViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPractices" modalPresentationStyle="fullScreen" id="eeE-ms-d9h" customClass="AddPracticesViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MbN-fM-dci">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="erh-Sx-6LG">
-                                <rect key="frame" x="20" y="160" width="374" height="475"/>
+                                <rect key="frame" x="20" y="64" width="374" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-kT-o0L">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="355"/>
@@ -808,7 +808,7 @@
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="9rp-CA-Qw6">
-                                <rect key="frame" x="20" y="597" width="374" height="216"/>
+                                <rect key="frame" x="20" y="646" width="374" height="216"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ur8-DK-aky"/>
