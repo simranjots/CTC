@@ -446,7 +446,7 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-281"/>
         </scene>
-        <!--Statatics-->
+        <!--Practices Track Records-->
         <scene sceneID="msh-va-dxi">
             <objects>
                 <viewController id="aaY-xe-BSj" customClass="PracticesRecordListVC" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -681,7 +681,7 @@
                             <constraint firstAttribute="trailing" secondItem="iV0-ah-829" secondAttribute="trailing" id="sNi-9P-VFY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Statatics" id="6c2-Ar-9x4"/>
+                    <navigationItem key="navigationItem" title="Practices Track Records" id="6c2-Ar-9x4"/>
                     <connections>
                         <outlet property="stataticsVCTableView" destination="iV0-ah-829" id="cMZ-85-Q9g"/>
                         <segue destination="VRj-4O-qQ4" kind="show" identifier="activity" id="cj3-CP-Q2K"/>
@@ -691,7 +691,7 @@
             </objects>
             <point key="canvasLocation" x="2828.985507246377" y="-281.25"/>
         </scene>
-        <!--Activity Progress-->
+        <!--Practice Progress-->
         <scene sceneID="itz-GX-xzn">
             <objects>
                 <viewController id="VRj-4O-qQ4" customClass="ActivityProgressVC" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -822,7 +822,7 @@
                             <constraint firstAttribute="bottom" secondItem="suf-Pa-wIp" secondAttribute="bottom" id="pcp-fC-ywW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activity Progress" id="oO3-XE-Ccu"/>
+                    <navigationItem key="navigationItem" title="Practice Progress" id="oO3-XE-Ccu"/>
                     <connections>
                         <outlet property="activityTrackingTableView" destination="suf-Pa-wIp" id="NDQ-hO-zJ3"/>
                         <outlet property="tableViewHeader" destination="iPf-GS-mjW" id="Fqw-5q-o5W"/>

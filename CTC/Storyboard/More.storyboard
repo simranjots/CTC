@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Er-W6g">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="258" width="414" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="moreVCReusableCell" rowHeight="69" id="umc-H3-joi" customClass="MorePageTableViewCell" customModule="CTC" customModuleProvider="target">
@@ -89,9 +89,9 @@
                         <viewLayoutGuide key="safeArea" id="efP-em-2FJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="170" id="0Y3-rt-5Sg"/>
                             <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0"/>
                             <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3"/>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" id="aDY-qu-BvN"/>
                             <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="yRz-kA-H1n"/>
                         </constraints>
                     </view>
@@ -103,18 +103,18 @@
                         <segue destination="J11-ys-rgU" kind="show" identifier="navigateToAboutProgram" id="d6S-5E-3Q8"/>
                         <segue destination="d4A-dt-ny0" kind="show" identifier="navigateToPrivacyPolicy" id="rbc-8D-KfB"/>
                         <segue destination="LfK-eg-UhY" kind="show" identifier="navigateToOrderBooks" id="fu4-XM-Cqv"/>
-                        <segue destination="PV4-Dz-VXX" kind="show" identifier="moreToConnectToUs" id="jZE-fl-JQb"/>
+                        <segue destination="PV4-Dz-VXX" kind="show" identifier="navigateToConnectToUs" id="jZE-fl-JQb"/>
                         <segue destination="wtB-pE-yg2" kind="show" identifier="moreToActivityProgress" id="LDI-t7-bRV"/>
                         <segue destination="Vfs-KR-7Fe" kind="show" identifier="moreToStatatics" id="pnu-0d-Ln7"/>
                         <segue destination="nfc-ZL-0H3" kind="show" identifier="navigateToPracticeHistory" id="Bik-M6-6D5"/>
                         <segue destination="pGD-iz-FJC" kind="show" identifier="navigateToHowToUse" id="vLz-Xa-gFh"/>
                         <segue destination="t6V-e9-XQV" kind="show" identifier="navigateToHome" id="M91-qc-d0q"/>
-                        <segue destination="slY-iE-BfU" kind="show" identifier="navigateToConnectToUs" id="rdr-38-sIj"/>
+                        <segue destination="slY-iE-BfU" kind="show" identifier="navigateToUpdateProfile" id="rdr-38-sIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1U-9A-NDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="2050"/>
+            <point key="canvasLocation" x="-786.95652173913049" y="2049.7767857142858"/>
         </scene>
         <!--About Authors-->
         <scene sceneID="zYJ-Tw-gH5">
@@ -1762,7 +1762,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <!--Profile-->
         <scene sceneID="WnT-pt-s8T">
             <objects>
-                <viewController id="slY-iE-BfU" customClass="ProfilePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateProfileVC" id="slY-iE-BfU" customClass="ProfilePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyZ-vX-Orr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

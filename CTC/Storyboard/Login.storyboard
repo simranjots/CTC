@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-pT-9tt">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-xK-Q0T" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
@@ -244,7 +244,7 @@
                             <constraint firstItem="aFx-pT-9tt" firstAttribute="leading" secondItem="V09-JU-FDW" secondAttribute="leading" id="xjT-OO-SuP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="scy-Hu-20e"/>
+                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="scy-Hu-20e"/>
                     <connections>
                         <outlet property="emailTextField" destination="VXN-Ts-W7N" id="GzJ-oc-mIH"/>
                         <outlet property="facebookSignInButton" destination="kyo-sC-2cV" id="kdN-P9-hhf"/>
@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vE1-XS-vQp">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upq-MX-FUx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
@@ -454,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="FinalLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-uh-Tqf">
-                                <rect key="frame" x="0.0" y="160" width="414" height="236"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="236"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="236" id="avp-7t-RbS"/>
                                 </constraints>
@@ -480,7 +480,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-BR-8es">
-                                <rect key="frame" x="62" y="404" width="290.33333333333331" height="30"/>
+                                <rect key="frame" x="62" y="352" width="290.33333333333331" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j7u-ND-LVP"/>
                                 </constraints>
@@ -533,7 +533,7 @@
                             <constraint firstItem="Zap-BR-8es" firstAttribute="top" secondItem="Ra9-uh-Tqf" secondAttribute="bottom" constant="8" symbolic="YES" id="xWH-x0-Jdx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="Ne5-Hv-Tiy">
+                    <navigationItem key="navigationItem" title="Welcome" largeTitleDisplayMode="always" id="Ne5-Hv-Tiy">
                         <barButtonItem key="backBarButtonItem" title=" " id="EdJ-es-GgH"/>
                     </navigationItem>
                     <connections>
@@ -551,8 +551,8 @@
             <objects>
                 <navigationController storyboardIdentifier="newLoginOptions" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0gR-qA-8gQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EBn-JB-gMW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EBn-JB-gMW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">

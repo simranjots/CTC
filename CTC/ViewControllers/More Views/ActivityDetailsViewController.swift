@@ -39,11 +39,12 @@ class ActivityDetailsViewController: UIViewController, UIPickerViewDelegate {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  "Activity Details"
+        
+        self.title =  "Practice Details"
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        self.title = selectedDate.dateFormatemmmdd()!
+        //self.title = selectedDate.dateFormatemmmdd()!
         
         // getting current yeat
         let formatter = DateFormatter()

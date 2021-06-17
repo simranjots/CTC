@@ -19,9 +19,16 @@ class ProfilePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = view.bounds
+//        gradientLayer.colors = [Utilities.gradientColor1.cgColor, Utilities.gradientColor2.cgColor]
+//        view.layer.addSublayer(gradientLayer)
+//        
         Utilities.styleTextField(nameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        
+
 
     }
     

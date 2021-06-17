@@ -87,9 +87,4 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.pushViewController(VC, animated: true)
         
     }
-    
-    
-    
-    
-    
 }

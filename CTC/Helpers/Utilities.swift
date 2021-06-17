@@ -3,6 +3,8 @@ import UIKit
 
 class Utilities {
     
+    //MARK: -  Textfield & TextView stylling
+    
     static func styleTextField(_ textfield:UITextField) {
         
         //Textfield style
@@ -35,14 +37,7 @@ class Utilities {
         textView.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
     }
     
-    static func styleImageView(_ imageView:UIImageView) {
-        
-        //TextView style
-        imageView.layer.borderWidth = 1.0
-        imageView.layer.cornerRadius = 8.0
-        imageView.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
-    }
-    
+    //MARK: - Set TextField left image
     static func addTextFieldImage(textField: UITextField, andImage image: UIImage) {
         
         //Create textField view
@@ -63,6 +58,18 @@ class Utilities {
         textField.leftView = textFieldView
         textField.leftViewMode = .always
     }
+    
+    //MARK: -  ImageView Stylling
+    
+    static func styleImageView(_ imageView:UIImageView) {
+        
+        //TextView style
+        imageView.layer.borderWidth = 1.0
+        imageView.layer.cornerRadius = 8.0
+        imageView.layer.borderColor = UIColor.init(red: 115/255, green: 115/255, blue: 115/255, alpha: 1).cgColor
+    }
+    
+    //MARK: -  Buttons Stylling
     
     static func styleButton(_ button:UIButton) {
         
@@ -100,6 +107,7 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    //MARK: - Regular expressions for Email and Password
     static func isPasswordValid(_ password:String) -> Bool {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,64}")
@@ -107,8 +115,28 @@ class Utilities {
     }
     
     static func isEmailValid(_ email:String) -> Bool {
-
+        
         let emailTest = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         return emailTest.evaluate(with: email)
+    }
+    
+    //MARK: - Color constants
+    
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
+    }
+    
+    static let primaryTextColor = rgb(red: 62, green: 178, blue: 174)
+    static let primaryBorderColor = rgb(red: 115, green: 115, blue: 115)
+    static let gradientColor1 = rgb(red: 78, green: 114, blue: 186)
+    static let gradientColor2 = rgb(red: 62, green: 178, blue: 174)
+    
+    func addColorGradient(view: UIView) {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [Utilities.gradientColor1.cgColor, Utilities.gradientColor2.cgColor]
+        view.layer.addSublayer(gradientLayer)
+        
     }
 }
