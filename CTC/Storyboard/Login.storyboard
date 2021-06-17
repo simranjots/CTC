@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-pT-9tt">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-xK-Q0T" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vE1-XS-vQp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upq-MX-FUx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
@@ -454,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="FinalLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-uh-Tqf">
-                                <rect key="frame" x="0.0" y="108" width="414" height="236"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="236"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="236" id="avp-7t-RbS"/>
                                 </constraints>
@@ -480,7 +480,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-BR-8es">
-                                <rect key="frame" x="62" y="352" width="290.33333333333331" height="30"/>
+                                <rect key="frame" x="62" y="404" width="290.33333333333331" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j7u-ND-LVP"/>
                                 </constraints>
@@ -533,7 +533,9 @@
                             <constraint firstItem="Zap-BR-8es" firstAttribute="top" secondItem="Ra9-uh-Tqf" secondAttribute="bottom" constant="8" symbolic="YES" id="xWH-x0-Jdx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="Ne5-Hv-Tiy"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="Ne5-Hv-Tiy">
+                        <barButtonItem key="backBarButtonItem" title=" " id="EdJ-es-GgH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="nyf-YU-Rhb" id="im0-mK-Ds6"/>
                         <outlet property="registerButton" destination="0wW-DL-gVC" id="AHI-Kf-f8C"/>
@@ -549,13 +551,16 @@
             <objects>
                 <navigationController storyboardIdentifier="newLoginOptions" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0gR-qA-8gQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EBn-JB-gMW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EBn-JB-gMW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                            <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
@@ -570,7 +575,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u5l-VQ-IMC"/>
+        <segue reference="uzh-sq-IJl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>

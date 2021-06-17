@@ -26,11 +26,11 @@ class NavigationBar: UINavigationBar {
     func initialNavigationBar() {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        self.layer.shadowRadius = 4.0
-        self.layer.shadowOpacity = 1.0
-        self.barTintColor = Theme.navigationBarBackgroundColor
-        self.tintColor = UIColor.white
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        //self.layer.shadowRadius = 4.0
+        //self.layer.shadowOpacity = 1.0
+        //self.barTintColor = Theme.navigationBarBackgroundColor
+        self.tintColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.init(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)]
         self.titleTextAttributes = textAttributes
 //
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Appbackground.png"), for: .default)

@@ -26,7 +26,7 @@ class ActivityDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  activityName
+        self.title =  "Activity Details"
         styleElements()
         dataFromHomeViewContoller()
     }
