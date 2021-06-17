@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Er-W6g">
-                                <rect key="frame" x="0.0" y="256" width="414" height="640"/>
+                                <rect key="frame" x="0.0" y="258" width="414" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="moreVCReusableCell" rowHeight="69" id="umc-H3-joi" customClass="MorePageTableViewCell" customModule="CTC" customModuleProvider="target">
@@ -85,18 +85,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SEW-vg-AoB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="efP-em-2FJ"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="170" id="3yf-dD-Vwg"/>
                             <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0"/>
                             <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3"/>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="168" id="aDY-qu-BvN"/>
                             <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="yRz-kA-H1n"/>
                         </constraints>
                     </view>
