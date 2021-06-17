@@ -424,7 +424,7 @@
                                                 <color key="textColor" name="DialogBoxGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-Wk-IIB">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-Wk-IIB">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="reminderTapped:" destination="eeE-ms-d9h" eventType="valueChanged" id="oBe-SD-ShH"/>
@@ -520,7 +520,7 @@
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ur8-DK-aky"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ur8-DK-aky" firstAttribute="trailing" secondItem="erh-Sx-6LG" secondAttribute="trailing" constant="20" id="283-u1-Bhv"/>
                             <constraint firstItem="erh-Sx-6LG" firstAttribute="leading" secondItem="Ur8-DK-aky" secondAttribute="leading" constant="20" id="7QS-dQ-xKt"/>
@@ -543,6 +543,7 @@
                         <outlet property="dateTextField" destination="umr-dP-XQb" id="q3I-pR-f2Y"/>
                         <outlet property="goalTextField" destination="kD6-ik-DTW" id="yvR-KY-bi6"/>
                         <outlet property="saveButton" destination="IDc-ET-mQK" id="jRm-z3-7ja"/>
+                        <outlet property="uiSwitch" destination="hnU-Wk-IIB" id="Wcf-E1-4qG"/>
                         <outlet property="wordsOfEncouragementTextField" destination="vxe-iI-a4I" id="U6n-lS-iJh"/>
                     </connections>
                 </viewController>
@@ -550,20 +551,42 @@
             </objects>
             <point key="canvasLocation" x="2209" y="471"/>
         </scene>
-        <!--View Controller-->
+        <!--Reminder View Controller-->
         <scene sceneID="KN6-bC-FSA">
             <objects>
-                <viewController id="TDN-sZ-eVO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reminder" id="TDN-sZ-eVO" customClass="ReminderViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OxP-De-CB2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DVv-RJ-h0s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Mqd-zE-IqY">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mqd-zE-IqY" id="um5-3i-V9W">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A8f-dl-xd1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DVv-RJ-h0s" firstAttribute="leading" secondItem="A8f-dl-xd1" secondAttribute="leading" id="KYM-pi-VzM"/>
+                            <constraint firstItem="DVv-RJ-h0s" firstAttribute="bottom" secondItem="A8f-dl-xd1" secondAttribute="bottom" id="Z5b-yd-DJE"/>
+                            <constraint firstItem="DVv-RJ-h0s" firstAttribute="top" secondItem="A8f-dl-xd1" secondAttribute="top" id="asu-uE-mkr"/>
+                            <constraint firstItem="DVv-RJ-h0s" firstAttribute="trailing" secondItem="A8f-dl-xd1" secondAttribute="trailing" id="uty-HL-Yls"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffx-MN-ajR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962" y="471"/>
+            <point key="canvasLocation" x="2960.8695652173915" y="470.75892857142856"/>
         </scene>
         <!--Activity Details-->
         <scene sceneID="eNE-kt-E6d">
@@ -685,7 +708,7 @@
                                                             <constraint firstItem="gTN-Uq-4Sn" firstAttribute="top" secondItem="0Eo-Tl-SrG" secondAttribute="top" constant="10" id="yme-qf-kfX"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your notes here!" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-Fb-Lhy">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-Fb-Lhy">
                                                         <rect key="frame" x="0.0" y="240" width="394" height="150"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -752,6 +775,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="PDR-aL-cH9" firstAttribute="top" secondItem="W5D-Da-tEE" secondAttribute="top" id="AEg-Qb-Y4j"/>
                                     <constraint firstItem="PDR-aL-cH9" firstAttribute="bottom" secondItem="W5D-Da-tEE" secondAttribute="bottom" id="FY0-cO-rcG"/>
