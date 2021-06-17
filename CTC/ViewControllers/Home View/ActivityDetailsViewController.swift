@@ -127,9 +127,6 @@ class ActivityDetailsViewController: UIViewController {
         
         let resolutionPicker = UIPickerView()
         resolutionPicker.delegate = self
-        
-        resolutionPicker.backgroundColor = .white
-
         activityNameTextField.inputView = resolutionPicker
         
     }

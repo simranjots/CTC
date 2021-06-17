@@ -11,6 +11,7 @@ struct Constants {
         static let moreViewController = "moreVC"
         static let tabBarViewController = "tabBarVC"
         static let activityDetailsViewController = "ActivityDetailsVC"
+        static let profileViewController = "updateProfileVC"
     }
     
     struct CellIdentifiers {
@@ -40,6 +41,7 @@ struct Constants {
         static let moreToConnectToUsSegue = "navigateToConnectToUs"
         static let homeToActivityDetailsSegue = "navigateToActivityDetailsVC"
         static let moreToProfileSegue = "navigateToProfile"
+        static let moreToUpdateProfileSegue = "navigateToUpdateProfile"
         
     }
 }

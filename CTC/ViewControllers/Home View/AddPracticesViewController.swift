@@ -13,6 +13,7 @@ class AddPracticesViewController: UIViewController {
     @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var uiSwitch: UISwitch!
     
     var userPractices: UserPractices!
     var userPracticesData: UserPracticesData!
@@ -27,6 +28,7 @@ class AddPracticesViewController: UIViewController {
     let date = Date()
     static var cvalue : String = ""
     static var cindexPath : Int = 0
+    static var uiSwitchState = false
     
     //PickerView instances
     let valuesPickerView = UIPickerView()
@@ -44,6 +46,8 @@ class AddPracticesViewController: UIViewController {
     let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship"]
     
     var imageName: String = ""
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +115,12 @@ class AddPracticesViewController: UIViewController {
     }
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
-        
+        if uiSwitch.isOn{
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+            AddPracticesViewController.cvalue = "add"
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
