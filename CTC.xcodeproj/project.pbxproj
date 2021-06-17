@@ -250,6 +250,7 @@
 		1AACDE062668751D00A1877D /* Home View */ = {
 			isa = PBXGroup;
 			children = (
+				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				26C76571267456F500BD646E /* AddPracticesViewController.swift */,
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
 				E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */,
@@ -275,7 +276,6 @@
 				2623EF9F26708C7900951285 /* OrderBooksViewController.swift */,
 				2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */,
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
-				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
 				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 			);
