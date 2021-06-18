@@ -2,6 +2,7 @@ import Foundation
 
 struct Constants {
     
+    //MARK: -  Storyboard IDs
     struct Storyboard {
         static let loginViewController = "loginVC"
         static let signUpViewController = "signUpVC"
@@ -14,6 +15,7 @@ struct Constants {
         static let profileViewController = "updateProfileVC"
     }
     
+    //MARK: -  TableView and CollectionView cell identifiers
     struct CellIdentifiers {
         static let homeVCTableViewCell = "homeVCResudableCell"
         static let moreVCTableViewCell = "moreVCReusableCell"
@@ -24,8 +26,10 @@ struct Constants {
         static let practicesRecordListCell = "practicesListVCResusableCell"
         static let privacyPolicyTableViewCell = "privacyPolicyVCResudableCell"
         static let orderBooksTableViewCell = "orderBooksReusableCell"
+        static let orderBooksCollectionViewCell = "OrderBooksCollectionViewReusableCell"
     }
     
+    //MARK: - Segue identifiers
     struct Segues {
         static let signInToHomeSegue = "navigateToHome"
         static let signUpToHomeSegue = "navigateToHome"
