@@ -48,6 +48,7 @@
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
 		26DE85DB26701F0A00994DA3 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */; };
+		26F893D7267C184500B347FC /* OrderBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */; };
 		E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */; };
 		E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */; };
 		E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */; };
@@ -156,6 +157,7 @@
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		844AA35F4ACF0ABF3EE6D56D /* Pods-CTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTC/Pods-CTC.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */,
 				2623EF9F26708C7900951285 /* OrderBooksViewController.swift */,
 				2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */,
+				26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */,
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
 				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
 				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
@@ -690,6 +693,7 @@
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
+				26F893D7267C184500B347FC /* OrderBooksCollectionViewCell.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,

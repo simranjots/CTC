@@ -118,7 +118,7 @@ class MorePageViewController: UIViewController {
 }
 
 
-//MARK:- Extention for tableView
+//MARK:- Extension for tableView
 
 extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
     
@@ -210,7 +210,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 
-//MARK: - Extenstion for UIView
+//MARK: - Extension for UIView
 
 extension UIView {
     

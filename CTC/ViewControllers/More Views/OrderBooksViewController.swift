@@ -12,6 +12,8 @@ class OrderBooksViewController: UIViewController {
 
     @IBOutlet var orderBooksTableView: UITableView!
     
+    @IBOutlet var orderBooksCollectionView: UICollectionView!
+    
     let booksName = ["201 Day Achievement Principle Book", "201 DAP Companion Tracking Journal", "Book + Journal Bundle"]
     
     let booksImageView = ["201DAPBook", "trackingJournal", "bookAndJournal"]
@@ -32,6 +34,8 @@ class OrderBooksViewController: UIViewController {
     }
 }
 
+
+//MARK: - Extension for TableView
 extension OrderBooksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,3 +81,18 @@ extension OrderBooksViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+
+//MARK: - Extension for Collection View
+//extension OrderBooksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        return indexPath.row
+//    }
+//    
+//    
+//}

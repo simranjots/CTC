@@ -6,14 +6,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Shopping-->
         <scene sceneID="El4-kM-hMF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBarsWhenVerticallyCompact="YES" id="PUg-jj-i8O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile-Selected" selectedImage="Profile-Selected" id="PYT-NR-FHy"/>
+                    <tabBarItem key="tabBarItem" title="Shopping" image="shopping-cart" selectedImage="shopping-cart-selected" id="PYT-NR-FHy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iZU-XD-fze" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -35,12 +36,60 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="uRZ-EQ-XMA" kind="relationship" relationship="rootViewController" id="lnK-PN-TmC"/>
+                        <segue destination="mMj-6P-zjg" kind="relationship" relationship="rootViewController" id="Zqz-yz-vvC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpn-zB-E56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2287" y="554"/>
+        </scene>
+        <!--Order Books-->
+        <scene sceneID="W8O-Iv-plb">
+            <objects>
+                <viewController id="mMj-6P-zjg" customClass="OrderBooksViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hUs-Ty-vDv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NNc-iQ-4nf">
+                                    <size key="itemSize" width="331" height="364"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OrderBooksCollectionViewReusableCell" id="atY-c2-yy2" customClass="OrderBooksCollectionViewCell" customModule="CTC" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="0.0" width="331" height="364"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b8y-yA-xSu">
+                                            <rect key="frame" x="0.0" y="0.0" width="331" height="364"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="331" height="364"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Njs-xf-sz2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" id="Omp-bl-L5V"/>
+                            <constraint firstItem="Njs-xf-sz2" firstAttribute="bottom" secondItem="ba7-Tn-qxU" secondAttribute="bottom" id="aux-tE-ZDM"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" id="cas-On-z4y"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="hUs-Ty-vDv" secondAttribute="leading" id="zdt-Cx-yMU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Books" id="2B4-Hv-8oa"/>
+                    <connections>
+                        <outlet property="orderBooksCollectionView" destination="ba7-Tn-qxU" id="hKn-eZ-1ab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zI0-rN-kn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3095.6521739130435" y="553.125"/>
         </scene>
         <!--Profile-->
         <scene sceneID="HtH-eS-FU8">
@@ -51,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-xG-bf4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileHeader" rowHeight="66" id="WmL-9F-fE4" customClass="ProfileHeaderCell" customModule="CTC" customModuleProvider="target">
@@ -288,13 +337,17 @@
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEU-yy-3NE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607" y="555"/>
+            <point key="canvasLocation" x="3965" y="546"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Profile-Selected" width="29" height="29"/>
+        <image name="shopping-cart" width="32" height="32"/>
+        <image name="shopping-cart-selected" width="32" height="32"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
