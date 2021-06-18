@@ -116,6 +116,7 @@ class AddPracticesViewController: UIViewController {
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
         if uiSwitch.isOn{
+            NotificationManager.instance.requestAuthorization()
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
             AddPracticesViewController.cvalue = "add"
@@ -237,7 +238,7 @@ class AddPracticesViewController: UIViewController {
      dateTextField.text = Date().dateFormatemmmdd()
      chooseValuesTextField.text = values.first
      choosePracticesTextField.text = practices.first
-    goalTextField.text = goals.first
+     goalTextField.text = goals.first
     
      
  }
@@ -314,6 +315,8 @@ extension AddPracticesViewController {
         
         //Assign toolbar and datepicker
         dateTextField.inputAccessoryView = toolBar
+        chooseValuesTextField.inputAccessoryView = toolBar
+        choosePracticesTextField.inputAccessoryView = toolBar
         dateTextField.inputView = datePickerView
         datePickerView.datePickerMode = .date
         

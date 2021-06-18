@@ -47,7 +47,7 @@ class HomeViewController: UIViewController,ReceiveData{
        
 
         
-        let oldestDate = userPractices.oldestPracticeDate(user: userObject)
+        _ = userPractices.oldestPracticeDate(user: userObject)
     
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)

@@ -5,7 +5,7 @@ import CoreLocation
 class NotificationManager{
     static var instance = NotificationManager()
     
-    func requestAuthorization(){
+    func requestAuthorization()-> Bool{
         let option: UNAuthorizationOptions = [.alert,.sound,.badge]
         UNUserNotificationCenter.current().requestAuthorization(options: option) { success, error in
             if let error = error {
@@ -14,8 +14,9 @@ class NotificationManager{
                 print("SUCCESS")
             }
         }
+        return true
     }
-    func scheduleNotification() {
+    func scheduleNotification(hour: Int,minute:Int,weekday:Int) {
         
       let content = UNMutableNotificationContent()
         content.title = "This is "
@@ -24,13 +25,15 @@ class NotificationManager{
         content.badge = 1
         
         //time
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
+       // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
+        
         //calender
         var  dateComponnet = DateComponents()
-        dateComponnet.hour = 12
-        dateComponnet.minute = 2
-        dateComponnet.weekday = 2 // mondday
-        _ = UNCalendarNotificationTrigger(dateMatching: dateComponnet, repeats: true)
+        dateComponnet.hour = hour
+        dateComponnet.minute = minute
+        //dateComponnet.weekday = 2 // monday
+        let tri = UNCalendarNotificationTrigger(dateMatching: dateComponnet, repeats: true)
+        
         //location
         let coordinates = CLLocationCoordinate2D(
             latitude: 40.0,
@@ -40,8 +43,9 @@ class NotificationManager{
                                       identifier: UUID().uuidString)
         region.notifyOnEntry = true
         region.notifyOnExit = false
-        let tri = UNLocationNotificationTrigger(region: region, repeats: true)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        _ = UNLocationNotificationTrigger(region: region, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: tri)
         UNUserNotificationCenter.current().add(request)
        
     }
