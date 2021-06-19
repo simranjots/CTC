@@ -27,6 +27,9 @@ extension Practice {
     @NSManaged public var practiceData: NSSet?
     @NSManaged public var user: User?
     @NSManaged public var values: String?
+    @NSManaged public var encourage: String?
+    @NSManaged public var remindswitch: Bool
+    @NSManaged public var goals: String?
 
 }
 

@@ -6,7 +6,7 @@ class UserPractices{
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let currentUser = CurrentUser()
     var practices = [Practice]()
-    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String) -> Int {
+    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
         let practices = getPractices(user: user)!
         var practiceNotExist = true
@@ -27,6 +27,9 @@ class UserPractices{
             newPractice.percentage = 0
             newPractice.startedday = date as NSDate
             newPractice.practiseddays = 0
+            newPractice.encourage = encourage
+            newPractice.remindswitch = remindswitch
+            newPractice.goals = goals
             newPractice.user = user
             let result = currentUser.saveUser()
             return result
@@ -38,13 +41,16 @@ class UserPractices{
         
     }
     
-    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String) -> Int {
+    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
         let practiceObject = getPractices(practiceName: oldPractice, user: user)
-        practiceObject.values = newPractice
+        practiceObject.values = value
         practiceObject.practice = newPractice
         practiceObject.image_name = image_name
         practiceObject.startedday = date as NSDate
+        practiceObject.encourage = encourage
+        practiceObject.remindswitch = remindswitch
+        practiceObject.goals = goals
         practiceObject.user = user
         let result = currentUser.saveUser()
         return result

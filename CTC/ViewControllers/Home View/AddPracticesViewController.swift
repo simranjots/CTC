@@ -28,7 +28,6 @@ class AddPracticesViewController: UIViewController {
     let date = Date()
     static var cvalue : String = ""
     static var cindexPath : Int = 0
-    static var uiSwitchState = false
     
     //PickerView instances
     let valuesPickerView = UIPickerView()
@@ -41,7 +40,7 @@ class AddPracticesViewController: UIViewController {
         "AUTHENTICITY", "ACHIEVEMENT", "ADVENTURE", "BEAUTY", "CHALLENGE", "COMFORT", "COURAGE", "CREATIVITY", "CURIOSITY", "EDUCATION", "EMPOWERMENT", "ENVIRONMENT", "FAMILY", "FINANCIAL", "FREEDOM", "FITNESS", "BALANCE", "GRATITUDE", "LOVE", "FRIENDSHIP", "SERVICE", "HEALTH", "HONESTY", "INDEPENDENCE", "INNER PEACE", "INTEGRITY", "INTELLIGENCE",  "INTIMACY", "JOY", "LEADERSHIP", "LEARNING",  "MOTIVATION", "PASSION", "COMPASSION", "CREDIBILITY", "EMPATHY", "HUMOUR", "RECREATION", "PEACE", "PERFORMANCE", "PERSONAL", "GROWTH", "PLAY", "PRODUCTIVITY", "RELIABILITY", "RESPECT", "SECURITY", "SPIRITUALITY", "SUCCESS", "TIME FREEDOM", "VARIETY" ]
     
     let practices: [String] = ["No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables"]
-    let goals: [String] = ["Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "356 Days"]
+    let goals: [String] = ["Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "365 Days"]
     
     let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship"]
     
@@ -51,6 +50,7 @@ class AddPracticesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        uiSwitch.setOn(false, animated: true)
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
         userPractices = UserPractices()
@@ -65,6 +65,7 @@ class AddPracticesViewController: UIViewController {
         
         styleElements()
         setPickerViewsPropertiesDelegatesAndDataSources()
+        
         //MARK: Popup Date Picker
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(self.PopUpDatePickerValueChanged(datePicker:)), for: .valueChanged)
@@ -75,7 +76,6 @@ class AddPracticesViewController: UIViewController {
               let toolBar = UIToolbar()
               toolBar.sizeToFit()
               let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
-      
               toolBar.setItems([doneButton], animated: false)
               toolBar.isUserInteractionEnabled = true
         dateTextField.inputAccessoryView = toolBar
@@ -115,12 +115,24 @@ class AddPracticesViewController: UIViewController {
     }
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
+        if choosePracticesTextField.text != nil{
         if uiSwitch.isOn{
-            NotificationManager.instance.requestAuthorization()
+            let value = NotificationManager.instance.requestAuthorization()
+            if  value {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-            AddPracticesViewController.cvalue = "add"
+                vc.practiceName = choosePracticesTextField.text!
             self.present(vc, animated: true, completion: nil)
+            }else{
+               
+                showToast(message: "Please go to the setting and allow Permission for Notification", duration: 2)
+            }
+        }else{
+            
+            NotificationManager.instance.cancelNotification()
+        }
+        }else{
+            showToast(message: "Please Enter any Practice", duration: 1)
         }
     }
     
@@ -158,7 +170,11 @@ class AddPracticesViewController: UIViewController {
         
         let practiceName = choosePracticesTextField.text
         let valueName = chooseValuesTextField.text
+        let encourage = wordsOfEncouragementTextField.text
+        let switchValue = uiSwitch.isOn
+        let goal =  goalTextField.text
         let image_Name = imageName
+        
         if (practiceName == ""){
             
             showToast(message: "Please Enter Your Practice", duration: 3)
@@ -174,13 +190,22 @@ class AddPracticesViewController: UIViewController {
         }else if(chooseValuesTextField.text == ""){
             showToast(message: "Please Enter Your Values", duration: 3)
         }
+        else if(goalTextField.text == ""){
+            showToast(message: "Please Enter Your Goals", duration: 3)
+        }else if(choosePracticesTextField.text == ""){
+            showToast(message: "Please Enter Your Practices", duration: 3)
+        }else if(wordsOfEncouragementTextField.text == ""){
+            showToast(message: "Please Enter Your Word Of Encouragement", duration: 3)
+        }
         else{
             var practiceFlag: Int!
             if(isUpdating){
-                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!)
-                isUpdating = false}
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!)
+                isUpdating = false
+                
+            }
             else{
-                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!)
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!)
                 isUpdating = false
             }
             
@@ -195,6 +220,7 @@ class AddPracticesViewController: UIViewController {
                 showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
                 
             }else if (practiceFlag == 0 ){
+                
                 self.chooseValuesTextField.text = ""
                 self.choosePracticesTextField.text = ""
                 self.imageName = ""
@@ -211,6 +237,7 @@ class AddPracticesViewController: UIViewController {
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        uiSwitch.setOn(false, animated: true)
         self.chooseValuesTextField.text = ""
         self.choosePracticesTextField.text = ""
         self.goalTextField.text = ""
@@ -246,6 +273,7 @@ class AddPracticesViewController: UIViewController {
     self.title = "Update Practice"
     chooseValuesTextField.text = self.practi[indexPath].values
     choosePracticesTextField.text = self.practi[indexPath].practice
+    goalTextField.text = practi[indexPath].goals
      oldPractice = self.practi[indexPath].practice
      
     activityIconImageView.image = UIImage(named: self.practi[ indexPath].image_name!)
@@ -255,6 +283,8 @@ class AddPracticesViewController: UIViewController {
      datePickerView.date = (self.practi[indexPath].startedday)! as Date
      
     dateTextField.text = ((self.practi[indexPath].startedday)! as Date).dateFormatemmmdd()
+    uiSwitch.setOn(self.practi[indexPath].remindswitch, animated: true)
+    wordsOfEncouragementTextField.text = practi[indexPath].encourage
     // titleLabel.text = "Edit Practice"
     saveButton.setTitle("Confirm", for: .normal)
      isUpdating = true

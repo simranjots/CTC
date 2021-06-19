@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar =  false
         IQKeyboardManager.shared.shouldResignOnTouchOutside =  true
-        UIApplication.shared.applicationIconBadgeNumber = 0
+       
         //MARK: Firebase Configuration
         FirebaseApp.configure()
         
@@ -42,10 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController:UIViewController?
         
         if (userObject != nil){
+            UIApplication.shared.applicationIconBadgeNumber = 0
             let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
             
         }else{
+            UIApplication.shared.applicationIconBadgeNumber = 0
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "newLoginOptions")
             
