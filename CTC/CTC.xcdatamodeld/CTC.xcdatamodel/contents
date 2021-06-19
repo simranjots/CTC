@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Practice" representedClassName=".Practice" syncable="YES">
+        <attribute name="encourage" optional="YES" attributeType="String"/>
+        <attribute name="goals" optional="YES" attributeType="String"/>
         <attribute name="image_name" optional="YES" attributeType="String"/>
         <attribute name="is_completed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="is_deleted" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="percentage" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practice" optional="YES" attributeType="String"/>
         <attribute name="practiseddays" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="remindswitch" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="startedday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="values" optional="YES" attributeType="String"/>
         <relationship name="practiceData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeData" inverseName="practiceDataToPractice" inverseEntity="PracticeData"/>
@@ -47,11 +50,11 @@
         <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Practice" positionX="-483.47265625" positionY="-341.15625" width="128" height="179"/>
+        <element name="Practice" positionX="-483.47265625" positionY="-341.15625" width="128" height="224"/>
         <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="28"/>
         <element name="PracticeHistory" positionX="-441" positionY="-396" width="128" height="120"/>
+        <element name="Reminder" positionX="-432" positionY="-378" width="128" height="74"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="135"/>
         <element name="WeeklyData" positionX="-441" positionY="-396" width="128" height="120"/>
-        <element name="Reminder" positionX="-432" positionY="-378" width="128" height="74"/>
     </elements>
 </model>

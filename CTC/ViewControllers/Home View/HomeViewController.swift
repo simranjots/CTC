@@ -13,8 +13,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var datePicker : UIDatePicker!
     var myIndex: Int!
     var window: UIWindow!
-    
-    
+    var practi:[Practice]!
     var userObject: User!
     var practices:[Practice]!
     var practicesData: [PracticeData]!
@@ -230,6 +229,7 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityNameLabel.text = practices[indexPath.row].practice
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
+        cell.tagLineLabel.text = practices[indexPath.row].encourage
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
         if (switchFlag != nil){
             cell.isOn = switchFlag!
