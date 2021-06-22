@@ -8,7 +8,7 @@ class ReminderViewController: UIViewController {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var reminder = [Reminder]()
-   var increaseCell = 1
+    var increaseCell = 1
     var RemindDaysLabel = "Everyday"
     let toolBar = UIToolbar()
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class ReminderViewController: UIViewController {
         }
         print("\(Int(reminder[0].hour)) " + " \(Int(reminder[0].minute))  ")
     
-        NotificationManager.instance.scheduleNotification(hour: Int(reminder[0].hour), minute: Int(reminder[0].minute), weekday: 5)
+        //NotificationManager.instance.scheduleNotification(hour: Int(reminder[0].hour), minute: Int(reminder[0].minute), weekday: 5)
         self.dismiss(animated: true)
     }
    

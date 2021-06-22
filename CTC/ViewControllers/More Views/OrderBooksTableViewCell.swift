@@ -31,14 +31,11 @@ class OrderBooksTableViewCell: UITableViewCell {
     func styleViewAndButton() {
         
         Utilities.styleButton(bookPurchaseButton)
-        
-        //orderBooksView.layer.cornerRadius = 6
-        orderBooksView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        orderBooksView.layer.borderWidth = 1
+        orderBooksView.layer.cornerRadius = 6
         orderBooksView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        orderBooksView.layer.shadowOpacity = 0.9
-        orderBooksView.layer.shadowOffset = .zero
-        orderBooksView.layer.shadowRadius = 4
+        orderBooksView.layer.shadowOpacity = 0.4
+        orderBooksView.layer.shadowOffset = CGSize(width: 0, height: 1.7)
+        //orderBooksView.layer.shadowRadius = 6
     }
 
 }

@@ -42,6 +42,10 @@
 		2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2626A119267AB49F0043C193 /* ProfilePageViewController.swift */; };
 		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
+		263F60EF2681240D00B4908E /* ShopBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60EE2681240D00B4908E /* ShopBooksViewController.swift */; };
+		263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */; };
+		263F60F32681474F00B4908E /* HowToUseAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60F22681474F00B4908E /* HowToUseAppViewController.swift */; };
+		263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */; };
 		26A56EC92672CF6B004CE3A5 /* HomeVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */; };
@@ -51,7 +55,6 @@
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
 		26DE85DB26701F0A00994DA3 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */; };
-		26F893D7267C184500B347FC /* OrderBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */; };
 		E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */; };
 		E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */; };
 		E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */; };
@@ -154,6 +157,10 @@
 		2626A119267AB49F0043C193 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		263F60EE2681240D00B4908E /* ShopBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopBooksViewController.swift; sourceTree = "<group>"; };
+		263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopBooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		263F60F22681474F00B4908E /* HowToUseAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseAppViewController.swift; sourceTree = "<group>"; };
+		263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseCollectionViewCell.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
 		26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,7 +170,6 @@
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
-		26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		844AA35F4ACF0ABF3EE6D56D /* Pods-CTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTC/Pods-CTC.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -288,10 +294,13 @@
 				2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */,
 				2623EF9F26708C7900951285 /* OrderBooksViewController.swift */,
 				2623EFA126708C9200951285 /* OrderBooksTableViewCell.swift */,
-				26F893D6267C184500B347FC /* OrderBooksCollectionViewCell.swift */,
 				26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */,
 				263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */,
 				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
+				263F60EE2681240D00B4908E /* ShopBooksViewController.swift */,
+				263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */,
+				263F60F22681474F00B4908E /* HowToUseAppViewController.swift */,
+				263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */,
 			);
 			path = "More Views";
 			sourceTree = "<group>";
@@ -694,15 +703,16 @@
 				1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */,
 				1AA35F882671F31600BA918F /* ActivityProgressVC.swift in Sources */,
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
+				263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
 				1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */,
 				E10D6679226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift in Sources */,
 				2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */,
+				263F60EF2681240D00B4908E /* ShopBooksViewController.swift in Sources */,
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
-				26F893D7267C184500B347FC /* OrderBooksCollectionViewCell.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
@@ -721,6 +731,7 @@
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
+				263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */,
 				263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */,
 				26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */,
 				1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */,
@@ -754,6 +765,7 @@
 				2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */,
 				262946E226601F99005BA95E /* Utilities.swift in Sources */,
 				E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */,
+				263F60F32681474F00B4908E /* HowToUseAppViewController.swift in Sources */,
 				1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */,
 				2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */,
 				E169CA58225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift in Sources */,

@@ -121,7 +121,7 @@ class AddPracticesViewController: UIViewController {
             if  value {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-                vc.practiceName = choosePracticesTextField.text!
+                //vc.practiceName = choosePracticesTextField.text!
             self.present(vc, animated: true, completion: nil)
             }else{
                

@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shopping-->
+        <!--Books-->
         <scene sceneID="El4-kM-hMF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBarsWhenVerticallyCompact="YES" id="PUg-jj-i8O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shopping" image="shopping-cart" selectedImage="shopping-cart-selected" id="PYT-NR-FHy"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="shopping-cart" selectedImage="shopping-cart-selected" id="PYT-NR-FHy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iZU-XD-fze" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -43,16 +43,16 @@
             </objects>
             <point key="canvasLocation" x="2287" y="554"/>
         </scene>
-        <!--Order Books-->
+        <!--Books-->
         <scene sceneID="W8O-Iv-plb">
             <objects>
-                <viewController id="mMj-6P-zjg" customClass="OrderBooksViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mMj-6P-zjg" customClass="ShopBooksViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUs-Ty-vDv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU" customClass="shopBoo">
+                                <rect key="frame" x="20" y="108" width="374" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NNc-iQ-4nf">
                                     <size key="itemSize" width="331" height="364"/>
@@ -61,14 +61,99 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OrderBooksCollectionViewReusableCell" id="atY-c2-yy2" customClass="OrderBooksCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="41.5" y="0.0" width="331" height="364"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopBooksCollectionViewReusableCell" id="atY-c2-yy2" customClass="ShopBooksCollectionViewCell" customModule="CTC" customModuleProvider="target">
+                                        <rect key="frame" x="21.5" y="0.0" width="331" height="364"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b8y-yA-xSu">
                                             <rect key="frame" x="0.0" y="0.0" width="331" height="364"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5E-f4-Nub">
+                                                    <rect key="frame" x="10" y="10" width="311" height="344"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201 DAP Companion Tracking Journal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzR-qh-6O4">
+                                                            <rect key="frame" x="5" y="10" width="301" height="19"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="321" id="hgJ-bw-N07"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                            <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="201DAPBook" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-O2-CMo">
+                                                            <rect key="frame" x="106" y="39" width="100" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="6fF-MX-uaf"/>
+                                                                <constraint firstAttribute="height" constant="150" id="7VL-23-zy7"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-7R-7CT">
+                                                            <rect key="frame" x="5" y="199" width="301" height="179"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFc-VG-IFm">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="71.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="321" id="Caj-d6-MqS"/>
+                                                                    </constraints>
+                                                                    <string key="text">The 201 Day Achievement Principle Book explains the origin of this powerful system offering a whole new perspective on achievement without the typical pressure.</string>
+                                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$32.97 USD + FREE Shipping(Reg. $39.94)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-gE-9w7">
+                                                                    <rect key="frame" x="0.0" y="81.5" width="301" height="37.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="321" id="mcs-tF-M8c"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-qo-iit">
+                                                                    <rect key="frame" x="0.0" y="129" width="301" height="50"/>
+                                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="ANG-8C-gVD"/>
+                                                                        <constraint firstAttribute="width" constant="321" id="Yfj-FA-XeP"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                    <state key="normal" title="Tap on the book to make purchase!">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="rZI-7R-7CT" firstAttribute="top" secondItem="X2F-O2-CMo" secondAttribute="bottom" constant="10" id="CD1-mv-iIR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X2F-O2-CMo" secondAttribute="trailing" constant="105" id="UuJ-AB-7jf"/>
+                                                        <constraint firstItem="X2F-O2-CMo" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="106" id="Zhm-Sl-5gQ"/>
+                                                        <constraint firstItem="JzR-qh-6O4" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="5" id="dqN-L7-uep"/>
+                                                        <constraint firstItem="rZI-7R-7CT" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="5" id="fPe-nD-pmU"/>
+                                                        <constraint firstItem="JzR-qh-6O4" firstAttribute="top" secondItem="v5E-f4-Nub" secondAttribute="top" constant="10" id="gEO-1e-q7W"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JzR-qh-6O4" secondAttribute="trailing" constant="5" id="hkX-gw-5mh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rZI-7R-7CT" secondAttribute="trailing" constant="5" id="ncV-Qi-K2y"/>
+                                                        <constraint firstItem="X2F-O2-CMo" firstAttribute="top" secondItem="JzR-qh-6O4" secondAttribute="bottom" constant="10" id="wBJ-UM-0He"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="v5E-f4-Nub" secondAttribute="bottom" constant="10" id="4kx-GF-fxG"/>
+                                                <constraint firstItem="v5E-f4-Nub" firstAttribute="top" secondItem="b8y-yA-xSu" secondAttribute="top" constant="10" id="D9R-tD-BgK"/>
+                                                <constraint firstItem="v5E-f4-Nub" firstAttribute="leading" secondItem="b8y-yA-xSu" secondAttribute="leading" constant="10" id="Obo-Mb-0KQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="v5E-f4-Nub" secondAttribute="trailing" constant="10" id="XT4-YU-MBx"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="331" height="364"/>
+                                        <connections>
+                                            <outlet property="booksCoverImageView" destination="X2F-O2-CMo" id="hvi-KZ-fzv"/>
+                                            <outlet property="booksDescriptionLabel" destination="oFc-VG-IFm" id="y27-6l-6Kf"/>
+                                            <outlet property="booksTitleLabel" destination="JzR-qh-6O4" id="lhV-79-1AZ"/>
+                                            <outlet property="containerView" destination="v5E-f4-Nub" id="Y7S-Gg-lE6"/>
+                                            <outlet property="priceLabel" destination="mEw-gE-9w7" id="LvN-yw-k8C"/>
+                                            <outlet property="purchaseLabel" destination="Aff-qo-iit" id="9i4-79-1OG"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -76,15 +161,16 @@
                         <viewLayoutGuide key="safeArea" id="Njs-xf-sz2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" id="Omp-bl-L5V"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="bottom" secondItem="hUs-Ty-vDv" secondAttribute="bottomMargin" id="1Eh-Ef-3Dd"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="Njs-xf-sz2" secondAttribute="leading" constant="20" id="Isl-uE-Yjb"/>
+                            <constraint firstItem="Njs-xf-sz2" firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" constant="20" id="RYL-wo-gge"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" constant="20" id="U5E-Rx-rct"/>
                             <constraint firstItem="Njs-xf-sz2" firstAttribute="bottom" secondItem="ba7-Tn-qxU" secondAttribute="bottom" id="aux-tE-ZDM"/>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" id="cas-On-z4y"/>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="hUs-Ty-vDv" secondAttribute="leading" id="zdt-Cx-yMU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Order Books" id="2B4-Hv-8oa"/>
+                    <navigationItem key="navigationItem" title="Books" id="2B4-Hv-8oa"/>
                     <connections>
-                        <outlet property="orderBooksCollectionView" destination="ba7-Tn-qxU" id="hKn-eZ-1ab"/>
+                        <outlet property="shopBooksCollectionView" destination="ba7-Tn-qxU" id="Bdp-NQ-58W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI0-rN-kn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -341,6 +427,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="201DAPBook" width="162" height="249.5"/>
         <image name="shopping-cart" width="32" height="32"/>
         <image name="shopping-cart-selected" width="32" height="32"/>
         <systemColor name="secondarySystemBackgroundColor">

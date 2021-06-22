@@ -26,7 +26,8 @@ struct Constants {
         static let practicesRecordListCell = "practicesListVCResusableCell"
         static let privacyPolicyTableViewCell = "privacyPolicyVCResudableCell"
         static let orderBooksTableViewCell = "orderBooksReusableCell"
-        static let orderBooksCollectionViewCell = "OrderBooksCollectionViewReusableCell"
+        static let orderBooksCollectionViewCell = "shopBooksCollectionViewReusableCell"
+        static let howToUseCollectionViewCell = "howToUseAppCollectionViewReusableCell"
     }
     
     //MARK: - Segue identifiers
