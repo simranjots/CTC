@@ -142,7 +142,7 @@
                                                                             </attributedString>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="forgotPasswordButtonTapped:" destination="QRo-Rj-Bfv" eventType="touchUpInside" id="hvj-qp-a3e"/>
+                                                                            <segue destination="sun-Dt-Lao" kind="show" id="yQ2-uP-ftB"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -248,7 +248,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="VXN-Ts-W7N" id="GzJ-oc-mIH"/>
                         <outlet property="facebookSignInButton" destination="kyo-sC-2cV" id="kdN-P9-hhf"/>
-                        <outlet property="forgotPasswordButton" destination="FAl-Ak-Pog" id="Mv3-DD-hPO"/>
                         <outlet property="gmailSignInButton" destination="8tm-Wn-l7r" id="CyM-cy-loG"/>
                         <outlet property="passwordTextField" destination="miY-1T-4os" id="ZyG-V2-zB4"/>
                         <outlet property="signInButton" destination="dD2-7B-Gm0" id="vvT-da-wwV"/>
@@ -258,6 +257,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngX-c6-zPI" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-704" y="2120"/>
+        </scene>
+        <!--Forgot Password-->
+        <scene sceneID="vAv-qr-XGp">
+            <objects>
+                <viewController id="sun-Dt-Lao" customClass="ResetPasswordViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eJ-tC-fap">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgotPassword" translatesAutoresizingMaskIntoConstraints="NO" id="ZaI-sh-yGh">
+                                <rect key="frame" x="157" y="240" width="100" height="100"/>
+                                <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Oea-KP-SLE"/>
+                                    <constraint firstAttribute="width" constant="100" id="s7U-br-p1c"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="38d-of-LaG">
+                                <rect key="frame" x="20" y="360" width="374" height="230.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-Lx-82u">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="MUw-4E-JSs"/>
+                                        </constraints>
+                                        <string key="text">Please enter the email address associated with your profile. We will send you an email which will allow you to reset your password.</string>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-FR-0ZN" userLabel="Email">
+                                        <rect key="frame" x="0.0" y="80.333333333333314" width="374" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bo3-Ic-LPS">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="jiY-dc-MFI"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Email">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66r-FG-b0e">
+                                                <rect key="frame" x="0.0" y="30" width="374" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ol0-Ay-s51"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-hV-ifQ">
+                                        <rect key="frame" x="0.0" y="180.33333333333337" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wZW-AP-wPY"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Reset Password">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetPasswordButtonTapped:" destination="sun-Dt-Lao" eventType="touchUpInside" id="8Jh-9J-ffh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y3a-s9-99K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y3a-s9-99K" firstAttribute="trailing" secondItem="38d-of-LaG" secondAttribute="trailing" constant="20" id="5dh-1j-VKX"/>
+                            <constraint firstItem="38d-of-LaG" firstAttribute="top" secondItem="ZaI-sh-yGh" secondAttribute="bottom" constant="20" id="AKU-s6-j0m"/>
+                            <constraint firstItem="ZaI-sh-yGh" firstAttribute="centerX" secondItem="1eJ-tC-fap" secondAttribute="centerX" id="EUV-u7-v6O"/>
+                            <constraint firstItem="38d-of-LaG" firstAttribute="leading" secondItem="y3a-s9-99K" secondAttribute="leading" constant="20" id="O3N-Pt-uxV"/>
+                            <constraint firstItem="ZaI-sh-yGh" firstAttribute="top" secondItem="y3a-s9-99K" secondAttribute="top" constant="100" id="ymk-ej-dcf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="EgX-qG-9XN"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="66r-FG-b0e" id="FKQ-a3-FRa"/>
+                        <outlet property="resetPasswordButton" destination="kBb-hV-ifQ" id="Gc7-9y-OtI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giL-lO-j1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="2107.3660714285716"/>
         </scene>
         <!--TabVC-->
         <scene sceneID="WGi-eF-lIy">
@@ -579,8 +679,10 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>
+        <image name="forgotPassword" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
+

@@ -78,9 +78,9 @@ class MorePageViewController: UIViewController {
     
     //MARK: - Array of more options and icons
     
-    let moreOptionsList = ["Practice History", "How to Use App", "About Program", "Frequently Asked Questions", "Join Facebook Community", "Privacy Policy", "Order Books", "About Authors", "Connect To Us", "Log Out"]
+    let moreOptionsList = ["About Program", "How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Connect to Us", "Sign Out"]
     
-    let moreOptionIcons = ["practiceHistory", "howToUseApp", "aboutProgram", "FAQs", "joinFacebookCommunity", "privacyPolicy", "orderBooks", "aboutAuthors", "connectToUs", "logOut"]
+    let moreOptionIcons = ["aboutProgram", "howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs-1", "logOut-1"]
     
     var currentUser: CurrentUser!
     var userObject: User?
@@ -145,45 +145,37 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch moreOptionIcons[indexPath.row] {
+        switch moreOptionsList[indexPath.row] {
         
-        case "practiceHistory":
-            performSegue(withIdentifier: Constants.Segues.moreToPracticeHistorySegue, sender: self)
-            break
-        
-        case "howToUseApp":
-            performSegue(withIdentifier: Constants.Segues.moreToHowToUseSegue, sender: self)
-            break
-            
-        case "aboutProgram":
+        case "About Program":
             performSegue(withIdentifier: Constants.Segues.moreToAboutProgramSegue, sender: self)
             break
             
-        case "FAQs":
+        case "How to Use App":
+            performSegue(withIdentifier: Constants.Segues.moreToHowToUseSegue, sender: self)
+            break
+            
+        case "Join Facebook Community":
+            UIApplication.shared.open(URL(string: "https://www.facebook.com/groups/375234539714492/")!, options: [:], completionHandler: nil)
+            break
+            
+        case "Frequently Asked Questions":
             performSegue(withIdentifier: Constants.Segues.moreToFAQsSegue, sender: self)
             break
             
-        case "joinFacebookCommunity":
-            UIApplication.shared.open(URL(string: "https://www.facebook.com")!, options: [:], completionHandler: nil)
-            break
-            
-        case "privacyPolicy":
-            performSegue(withIdentifier: Constants.Segues.moreToPrivacyPolicySegue, sender: self)
-            break
-            
-        case "orderBooks":
-            performSegue(withIdentifier: Constants.Segues.moreToOrderBooksSegue, sender: self)
-            break
-            
-        case "aboutAuthors":
+        case "About Authors":
             performSegue(withIdentifier: Constants.Segues.moreToAboutAuthorsSegue, sender: self)
             break
             
-        case "connectToUs":
+        case "Privacy Policy":
+            performSegue(withIdentifier: Constants.Segues.moreToPrivacyPolicySegue, sender: self)
+            break
+            
+        case "Connect to Us":
             performSegue(withIdentifier: Constants.Segues.moreToConnectToUsSegue, sender: self)
             break
             
-        case "logOut":
+        case "Sign Out":
             if (userObject != nil) {
                 
                 let resultFlag = currentUser.updateLoginStatus(status: false, email: (userObject?.email)!)
