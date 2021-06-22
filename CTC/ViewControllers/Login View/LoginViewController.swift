@@ -139,6 +139,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
         
+        self.performSegue(withIdentifier: Constants.Segues.loginToResetPasswordSegue, sender: self)
+        
     }
     
     @IBAction func gmailSignInButtonTapped(_ sender: UIButton) {

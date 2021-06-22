@@ -47,6 +47,7 @@ struct Constants {
         static let homeToActivityDetailsSegue = "navigateToActivityDetailsVC"
         static let moreToProfileSegue = "navigateToProfile"
         static let moreToUpdateProfileSegue = "navigateToUpdateProfile"
+        static let loginToResetPasswordSegue = "loginToResetPassword"
         
     }
 }
