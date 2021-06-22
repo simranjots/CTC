@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -310,7 +311,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="la8-Ed-bWA"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="la8-Ed-bWA" firstAttribute="trailing" secondItem="HAf-AS-9h0" secondAttribute="trailing" id="3Rq-74-lmH"/>
                             <constraint firstItem="HAf-AS-9h0" firstAttribute="top" secondItem="la8-Ed-bWA" secondAttribute="top" id="3sk-YK-uz3"/>
@@ -574,18 +575,106 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <!--How to Use App-->
         <scene sceneID="EeL-i5-EFV">
             <objects>
-                <viewController id="pGD-iz-FJC" sceneMemberID="viewController">
+                <viewController id="pGD-iz-FJC" customClass="HowToUseAppViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUV-6b-Sd5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agz-tS-E4b">
+                                <rect key="frame" x="20" y="150" width="374" height="633"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TBJ-bw-gSI">
+                                    <size key="itemSize" width="374" height="605"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="howToUseAppCollectionViewReusableCell" id="Si0-Pk-hgm" customClass="HowToUseCollectionViewCell" customModule="CTC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14" width="374" height="605"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AD1-4b-vvO">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="605"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP8-Dl-fSA">
+                                                    <rect key="frame" x="15" y="10" width="344" height="585"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zpW-Ch-fhS">
+                                                            <rect key="frame" x="42" y="20" width="260" height="415"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="430" id="7by-Up-Qzk"/>
+                                                                <constraint firstAttribute="width" constant="260" id="nOp-R1-bgR"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1D8-Xb-Uoa">
+                                                            <rect key="frame" x="10" y="445" width="324" height="130"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="130" id="3CT-n4-fOp"/>
+                                                            </constraints>
+                                                            <string key="text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia</string>
+                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="zpW-Ch-fhS" firstAttribute="top" secondItem="AP8-Dl-fSA" secondAttribute="top" constant="20" id="1a5-tH-5XD"/>
+                                                        <constraint firstItem="zpW-Ch-fhS" firstAttribute="leading" secondItem="AP8-Dl-fSA" secondAttribute="leading" constant="42" id="C7e-5g-mWr"/>
+                                                        <constraint firstItem="1D8-Xb-Uoa" firstAttribute="leading" secondItem="AP8-Dl-fSA" secondAttribute="leading" constant="10" id="F3x-hc-Ual"/>
+                                                        <constraint firstItem="1D8-Xb-Uoa" firstAttribute="top" secondItem="zpW-Ch-fhS" secondAttribute="bottom" constant="10" id="MHq-5U-POy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1D8-Xb-Uoa" secondAttribute="bottom" constant="10" id="MQg-cK-ACD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zpW-Ch-fhS" secondAttribute="trailing" constant="42" id="lih-qH-31q"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1D8-Xb-Uoa" secondAttribute="trailing" constant="10" id="zbP-c6-MVe"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AP8-Dl-fSA" secondAttribute="trailing" constant="15" id="0rd-vj-jUf"/>
+                                                <constraint firstItem="AP8-Dl-fSA" firstAttribute="top" secondItem="AD1-4b-vvO" secondAttribute="top" constant="10" id="LhA-cr-qN3"/>
+                                                <constraint firstItem="AP8-Dl-fSA" firstAttribute="leading" secondItem="AD1-4b-vvO" secondAttribute="leading" constant="15" id="gBJ-aW-PCG"/>
+                                                <constraint firstAttribute="bottom" secondItem="AP8-Dl-fSA" secondAttribute="bottom" constant="10" id="iXw-8g-4wg"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="374" height="605"/>
+                                        <connections>
+                                            <outlet property="appSnapshotsImageView" destination="zpW-Ch-fhS" id="mvs-zC-D66"/>
+                                            <outlet property="containerView" destination="AP8-Dl-fSA" id="O5J-Rg-mzr"/>
+                                            <outlet property="useDescriptionLabel" destination="1D8-Xb-Uoa" id="Chc-uC-YXw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-Ph-shY">
+                                <rect key="frame" x="146.5" y="788" width="121.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="10w-OP-mQS"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ITh-yO-tqL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cTX-Ph-shY" firstAttribute="top" secondItem="agz-tS-E4b" secondAttribute="bottom" constant="5" id="1pq-qb-ZtY"/>
+                            <constraint firstItem="agz-tS-E4b" firstAttribute="top" secondItem="ITh-yO-tqL" secondAttribute="top" constant="10" id="InE-38-1TO"/>
+                            <constraint firstItem="cTX-Ph-shY" firstAttribute="centerX" secondItem="QUV-6b-Sd5" secondAttribute="centerX" id="N3d-z8-DxI"/>
+                            <constraint firstItem="ITh-yO-tqL" firstAttribute="bottom" secondItem="cTX-Ph-shY" secondAttribute="bottom" constant="10" id="Q7Z-ht-9HP"/>
+                            <constraint firstItem="agz-tS-E4b" firstAttribute="leading" secondItem="ITh-yO-tqL" secondAttribute="leading" constant="20" id="ex0-Ik-LhJ"/>
+                            <constraint firstItem="ITh-yO-tqL" firstAttribute="trailing" secondItem="agz-tS-E4b" secondAttribute="trailing" constant="20" id="twK-Ff-Xme"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="How to Use App" id="gZ1-s8-cgB"/>
+                    <connections>
+                        <outlet property="howToUseCollectionView" destination="agz-tS-E4b" id="76s-fB-miS"/>
+                        <outlet property="pageControl" destination="cTX-Ph-shY" id="dkb-ma-bWa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XX-Gv-h4T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1722" y="2776"/>
+            <point key="canvasLocation" x="-1723.1884057971015" y="2775.6696428571427"/>
         </scene>
         <!--More-->
         <scene sceneID="83V-Vd-v1L">
@@ -1759,7 +1848,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
             </objects>
             <point key="canvasLocation" x="2405.7971014492755" y="2049.7767857142858"/>
         </scene>
-        <!--Profile-->
+        <!--Edit Profile-->
         <scene sceneID="WnT-pt-s8T">
             <objects>
                 <viewController id="slY-iE-BfU" customClass="ProfilePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -1771,21 +1860,21 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Vs-fES">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
-                                                <rect key="frame" x="157" y="20" width="100" height="100"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teresa Easler" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
+                                                <rect key="frame" x="147" y="20" width="120" height="120"/>
                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="d0A-QO-Hxn"/>
-                                                    <constraint firstAttribute="height" constant="100" id="rIe-xb-kQl"/>
+                                                    <constraint firstAttribute="width" constant="120" id="d0A-QO-Hxn"/>
+                                                    <constraint firstAttribute="height" constant="120" id="rIe-xb-kQl"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-Wm-PwB">
-                                                <rect key="frame" x="20" y="140" width="374" height="218"/>
+                                                <rect key="frame" x="20" y="160" width="374" height="266"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-cO-xJU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-QC-Gj2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -1797,10 +1886,10 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Simranjot Singh" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-Kt-f3S">
-                                                                <rect key="frame" x="0.0" y="30" width="374" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Teresa Easler" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-Kt-f3S">
+                                                                <rect key="frame" x="0.0" y="30" width="374" height="50"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="34" id="kr9-oe-zf4"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="0bU-a1-g2l"/>
                                                                     <constraint firstAttribute="width" constant="374" id="rR5-9P-mkf"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1810,7 +1899,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hlr-1a-wgl">
-                                                        <rect key="frame" x="0.0" y="79" width="374" height="62"/>
+                                                        <rect key="frame" x="0.0" y="95" width="374" height="78"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUZ-Ol-Wz3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -1821,9 +1910,10 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Simran@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-mn-V8P">
-                                                                <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teresa.easler@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-mn-V8P">
+                                                                <rect key="frame" x="0.0" y="28" width="374" height="50"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="DNO-r6-6N3"/>
                                                                     <constraint firstAttribute="width" constant="374" id="wpS-ln-mqN"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1833,7 +1923,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-eY-v4H">
-                                                        <rect key="frame" x="0.0" y="156" width="374" height="62"/>
+                                                        <rect key="frame" x="0.0" y="188" width="374" height="78"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obF-at-aRR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -1844,10 +1934,11 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="simran@1234" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-Bb-sJj">
-                                                                <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teresa@1234" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-Bb-sJj">
+                                                                <rect key="frame" x="0.0" y="28" width="374" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="374" id="ZxL-bx-TrZ"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="cTS-bR-WN6"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
@@ -1857,16 +1948,55 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9m-AT-4Ek">
+                                                <rect key="frame" x="20" y="446" width="374" height="50"/>
+                                                <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="XGd-Ou-B0w"/>
+                                                    <constraint firstAttribute="height" constant="50" id="vKF-4K-neu"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Update Profile">
+                                                            <attributes>
+                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="16" name="ArialRoundedMTBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <action selector="updateProfileButtonTapped:" destination="slY-iE-BfU" eventType="touchUpInside" id="cEw-ts-e6M"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIr-a1-rIR">
+                                                <rect key="frame" x="247" y="105" width="25" height="25"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="QtF-7U-lKc"/>
+                                                    <constraint firstAttribute="height" constant="25" id="ari-Ta-P7k"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Edit Button" image="camera"/>
+                                                <connections>
+                                                    <action selector="imageEditButtonTapped:" destination="slY-iE-BfU" eventType="touchUpInside" id="5g8-LV-3LF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="SNu-if-L5C" secondAttribute="trailing" constant="157" id="F8k-nA-3YP"/>
+                                            <constraint firstAttribute="trailing" secondItem="U9m-AT-4Ek" secondAttribute="trailing" constant="20" symbolic="YES" id="5zr-l5-Gim"/>
+                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="zIr-a1-rIR" secondAttribute="bottom" constant="30" id="Ivx-n0-bL3"/>
                                             <constraint firstAttribute="trailing" secondItem="TR9-Wm-PwB" secondAttribute="trailing" constant="20" id="KUY-Fe-yY8"/>
                                             <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="SNu-if-L5C" secondAttribute="bottom" constant="20" id="KXc-hT-Q5U"/>
+                                            <constraint firstItem="U9m-AT-4Ek" firstAttribute="top" secondItem="TR9-Wm-PwB" secondAttribute="bottom" constant="20" id="KpT-0b-rmi"/>
+                                            <constraint firstItem="SNu-if-L5C" firstAttribute="centerX" secondItem="jJG-Vs-fES" secondAttribute="centerX" id="PYu-yz-Mo3"/>
                                             <constraint firstItem="SNu-if-L5C" firstAttribute="top" secondItem="jJG-Vs-fES" secondAttribute="top" constant="20" id="QN0-7E-obN"/>
-                                            <constraint firstAttribute="height" constant="400" id="SkA-0S-Dgl"/>
-                                            <constraint firstItem="SNu-if-L5C" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="157" id="Vle-vZ-kU4"/>
+                                            <constraint firstAttribute="height" constant="550" id="SkA-0S-Dgl"/>
+                                            <constraint firstItem="zIr-a1-rIR" firstAttribute="leading" secondItem="SNu-if-L5C" secondAttribute="trailing" constant="-20" id="f7C-RI-6GH"/>
                                             <constraint firstItem="TR9-Wm-PwB" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" id="iVH-F5-bnL"/>
+                                            <constraint firstItem="U9m-AT-4Ek" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" symbolic="YES" id="j8J-1b-VDt"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1890,12 +2020,13 @@ Together they decided to share this 201 Day Achievement Principle with the world
                             <constraint firstAttribute="bottom" secondItem="Q0F-4z-R9y" secondAttribute="bottom" id="U9Y-va-g3K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="qzy-4g-sec"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="qzy-4g-sec"/>
                     <connections>
                         <outlet property="emailTextField" destination="Pgq-mn-V8P" id="c5z-bS-Ymi"/>
                         <outlet property="nameTextField" destination="QN8-Kt-f3S" id="t97-CY-gbA"/>
                         <outlet property="passwordTextField" destination="eQK-Bb-sJj" id="vB8-V3-eRt"/>
                         <outlet property="profileImageView" destination="SNu-if-L5C" id="zzO-qA-LMo"/>
+                        <outlet property="updateProfileButton" destination="U9m-AT-4Ek" id="Hb5-5G-oAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9H-iN-xQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2153,6 +2284,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         </scene>
     </scenes>
     <resources>
+        <image name="1.jpeg" width="1125" height="2247"/>
         <image name="Book" width="29" height="29"/>
         <image name="Home.png" width="411" height="784"/>
         <image name="More" width="29" height="29"/>
@@ -2160,10 +2292,10 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="Plus" width="29" height="29"/>
         <image name="Star" width="29" height="29"/>
         <image name="Teresa Easler" width="200" height="200"/>
+        <image name="camera" width="170.66667175292969" height="170.66667175292969"/>
         <image name="image-icon" width="512" height="512"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
-        <image name="profile" width="478.02398681640625" height="478.02398681640625"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -2177,9 +2309,6 @@ Together they decided to share this 201 Day Achievement Principle with the world
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

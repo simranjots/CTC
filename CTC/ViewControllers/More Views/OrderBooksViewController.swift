@@ -12,7 +12,7 @@ class OrderBooksViewController: UIViewController {
 
     @IBOutlet var orderBooksTableView: UITableView!
     
-    @IBOutlet var orderBooksCollectionView: UICollectionView!
+    //@IBOutlet var orderBooksCollectionView: UICollectionView!
     
     let booksName = ["201 Day Achievement Principle Book", "201 DAP Companion Tracking Journal", "Book + Journal Bundle"]
     
@@ -82,17 +82,3 @@ extension OrderBooksViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-//MARK: - Extension for Collection View
-//extension OrderBooksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 1
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        return indexPath.row
-//    }
-//    
-//    
-//}
