@@ -263,11 +263,10 @@ extension HomeViewController: UITableViewDelegate{
         if(editingStyle == .delete){
             
             let prac = self.practices[indexPath.row]
-            let remind = self.practiceReminder.loadReminderbyPracticeNameonly(practiceName: prac.practice!)
             let alert = UIAlertController(title: "Warning", message: "Do you want to delete \(prac.practice!)?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
-                self.practiceReminder.deleteReminder(reminder: remind)
+                self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
                 self.delPractice(prac: prac)
             }))
             
