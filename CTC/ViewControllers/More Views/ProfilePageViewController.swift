@@ -82,7 +82,7 @@ class ProfilePageViewController: UIViewController {
             image.allowsEditing = true
             image.delegate = self
             image.mediaTypes = [kUTTypeImage as String]
-            present(self, animated: true)
+            present(image, animated: true)
         }
     }
     
@@ -94,7 +94,7 @@ class ProfilePageViewController: UIViewController {
             image.sourceType = .photoLibrary
             image.allowsEditing = true
             image.delegate = self
-            present(self, animated: true)
+            present(image, animated: true)
         }
     }
     

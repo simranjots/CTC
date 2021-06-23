@@ -24,7 +24,7 @@ class ShopBooksViewController: UIViewController {
         "Both books together are $39.94. However, this SPECIAL OFFER is priced $32.97(save $6.97) !!! PLUS shipping is included in this special offer."
     ]
     
-    let booksPrice = ["$19.97 USD + FREE Shipping", "$19.97 USD + FREE Shipping", "$32.97 USD + FREE Shipping(Regular Price: $39.94)"]
+    let booksPrice = ["$19.97 USD + FREE Shipping", "$19.97 USD + FREE Shipping", "$32.97 USD + FREE Shipping(Reg. $39.94)"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
