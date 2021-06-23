@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Er-W6g">
-                                <rect key="frame" x="0.0" y="258" width="414" height="638"/>
+                                <rect key="frame" x="0.0" y="283" width="414" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="moreVCReusableCell" rowHeight="69" id="umc-H3-joi" customClass="MorePageTableViewCell" customModule="CTC" customModuleProvider="target">
@@ -86,14 +86,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utD-u2-uYd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="195"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="k53-yQ-vFg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="efP-em-2FJ"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="170" id="3yf-dD-Vwg"/>
+                            <constraint firstAttribute="trailing" secondItem="utD-u2-uYd" secondAttribute="trailing" id="0S2-eQ-966"/>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="utD-u2-uYd" secondAttribute="bottom" id="DT4-cs-VR3"/>
                             <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0"/>
                             <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3"/>
-                            <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="yRz-kA-H1n"/>
+                            <constraint firstItem="utD-u2-uYd" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="m6P-BB-EOU"/>
+                            <constraint firstItem="utD-u2-uYd" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" id="wWm-XR-pSG"/>
+                            <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="wcp-8T-bYP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="9VB-S7-RGg"/>
@@ -101,7 +111,6 @@
                         <outlet property="moreVCTableView" destination="GDc-Er-W6g" id="0m3-ze-inl"/>
                         <segue destination="013-ca-cqv" kind="show" identifier="navigateToFAQs" id="vBD-o1-Ocp"/>
                         <segue destination="Bcp-7X-tqs" kind="show" identifier="navigateToAboutAuthors" id="Ynw-OG-CCQ"/>
-                        <segue destination="J11-ys-rgU" kind="show" identifier="navigateToAboutProgram" id="d6S-5E-3Q8"/>
                         <segue destination="d4A-dt-ny0" kind="show" identifier="navigateToPrivacyPolicy" id="rbc-8D-KfB"/>
                         <segue destination="PV4-Dz-VXX" kind="show" identifier="navigateToContactUs" id="jZE-fl-JQb"/>
                         <segue destination="pGD-iz-FJC" kind="show" identifier="navigateToHowToUse" id="vLz-Xa-gFh"/>
@@ -244,7 +253,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-Am-Dgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="2776"/>
+            <point key="canvasLocation" x="1280" y="2776"/>
         </scene>
         <!--FAQs-->
         <scene sceneID="0oK-dA-Mv5">
@@ -321,7 +330,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPT-Yl-VRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365.21739130434787" y="2779.6875"/>
+            <point key="canvasLocation" x="-984" y="2776"/>
         </scene>
         <!--Practice History-->
         <scene sceneID="GTi-EK-n1b">
@@ -715,7 +724,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntq-GL-seP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1064" y="2780"/>
+            <point key="canvasLocation" x="-2675" y="3159"/>
         </scene>
         <!--Privacy Policy-->
         <scene sceneID="fmw-EM-LDY">
@@ -789,7 +798,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcr-Mw-n6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.55072463768118" y="2779.6875"/>
+            <point key="canvasLocation" x="-216" y="2776"/>
         </scene>
         <!--Order Books-->
         <scene sceneID="rHb-gg-cn4">
@@ -1142,7 +1151,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odh-gJ-KdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.9275362318842" y="2775.6696428571427"/>
+            <point key="canvasLocation" x="532" y="2776"/>
         </scene>
         <!--Activity Progress-->
         <scene sceneID="dho-DQ-CDm">

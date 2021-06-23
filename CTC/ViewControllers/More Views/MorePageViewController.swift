@@ -78,9 +78,9 @@ class MorePageViewController: UIViewController {
     
     //MARK: - Array of more options and icons
     
-    let moreOptionsList = ["About Program", "How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
+    let moreOptionsList = ["How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
     
-    let moreOptionIcons = ["aboutProgram", "howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs-1", "logOut-1"]
+    let moreOptionIcons = ["howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs-1", "logOut-1"]
     
     var currentUser: CurrentUser!
     var userObject: User?
@@ -146,11 +146,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch moreOptionsList[indexPath.row] {
-        
-        case "About Program":
-            performSegue(withIdentifier: Constants.Segues.moreToAboutProgramSegue, sender: self)
-            break
-            
+    
         case "How to Use App":
             performSegue(withIdentifier: Constants.Segues.moreToHowToUseSegue, sender: self)
             break
