@@ -38,7 +38,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eo3-2K-5Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="471"/>
+            <point key="canvasLocation" x="-12" y="471"/>
         </scene>
         <!--Home-->
         <scene sceneID="WhP-G2-YVN">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhm-fK-neI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579.71014492753625" y="470.75892857142856"/>
+            <point key="canvasLocation" x="736" y="471"/>
         </scene>
         <!--Add Practices View Controller-->
         <scene sceneID="xmr-7f-Ql7">
@@ -419,11 +419,20 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgw-EM-xpQ">
-                                                <rect key="frame" x="35" y="0.0" width="280" height="31"/>
+                                                <rect key="frame" x="35" y="0.0" width="250" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="DialogBoxGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-NM-Rf0">
+                                                <rect key="frame" x="295" y="0.0" width="20" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="axC-RY-VjW"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="reminderInfoPressed:" destination="eeE-ms-d9h" eventType="touchUpInside" id="Bic-oQ-Np8"/>
+                                                </connections>
+                                            </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-Wk-IIB">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
                                                 <connections>
@@ -542,6 +551,7 @@
                         <outlet property="datePickerView" destination="9rp-CA-Qw6" id="xNb-af-BPZ"/>
                         <outlet property="dateTextField" destination="umr-dP-XQb" id="q3I-pR-f2Y"/>
                         <outlet property="goalTextField" destination="kD6-ik-DTW" id="yvR-KY-bi6"/>
+                        <outlet property="reminderInfo" destination="mAC-NM-Rf0" id="Qiz-Zi-aHA"/>
                         <outlet property="saveButton" destination="IDc-ET-mQK" id="jRm-z3-7ja"/>
                         <outlet property="uiSwitch" destination="hnU-Wk-IIB" id="Wcf-E1-4qG"/>
                         <outlet property="wordsOfEncouragementTextField" destination="vxe-iI-a4I" id="U6n-lS-iJh"/>

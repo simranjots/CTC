@@ -17,6 +17,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var userObject: User!
     var practices:[Practice]!
     var practicesData: [PracticeData]!
+    var practiceReminder : PracticeReminder!
     
     // variables
     
@@ -40,6 +41,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
+        practiceReminder = PracticeReminder()
         
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
@@ -261,10 +263,11 @@ extension HomeViewController: UITableViewDelegate{
         if(editingStyle == .delete){
             
             let prac = self.practices[indexPath.row]
-            
+            let remind = self.practiceReminder.loadReminderbyPracticeNameonly(practiceName: prac.practice!)
             let alert = UIAlertController(title: "Warning", message: "Do you want to delete \(prac.practice!)?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
+                self.practiceReminder.deleteReminder(reminder: remind)
                 self.delPractice(prac: prac)
             }))
             
