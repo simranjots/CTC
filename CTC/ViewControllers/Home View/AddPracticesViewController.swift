@@ -1,6 +1,7 @@
 import UIKit
 
 class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
+    @IBOutlet weak var reminderInfo: UIButton!
     
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var choosePracticesTextField: UITextField!
@@ -50,6 +51,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reminderInfo.isHidden = true
         uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
@@ -108,7 +110,21 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
 }
     
-
+    @IBAction func reminderInfoPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+            vc.practiceName = choosePracticesTextField.text!
+            vc.value = AddPracticesViewController.cvalue
+            ReminderViewController.switchCompletion = {(flag) in
+             if(flag){
+                self.uiSwitch.setOn(flag, animated: true)
+             }else{
+                self.uiSwitch.setOn(flag, animated: true)
+             }
+            }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
     @IBAction func changeTapped(_ sender: UIButton) {
         
@@ -273,6 +289,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
 
  func add(){
      self.title = "Add Practice"
+      reminderInfo.isHidden = true
      self.saveButton.setTitle("Add", for: .normal)
      dateTextField.text = Date().dateFormatemmmdd()
      chooseValuesTextField.text = values.first
@@ -296,6 +313,9 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
      
     dateTextField.text = ((self.practi[indexPath].startedday)! as Date).dateFormatemmmdd()
     uiSwitch.setOn(self.practi[indexPath].remindswitch, animated: true)
+    if self.practi[indexPath].remindswitch {
+        reminderInfo.isHidden = false
+    }
     wordsOfEncouragementTextField.text = practi[indexPath].encourage
     // titleLabel.text = "Edit Practice"
     saveButton.setTitle("Confirm", for: .normal)

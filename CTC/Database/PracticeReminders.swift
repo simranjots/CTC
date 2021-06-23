@@ -84,6 +84,26 @@ class PracticeReminder {
         
         return reminder
     }
+    func loadReminderbyPracticeNameonly(practiceName: String) -> Reminder{
+        var rem  : Reminder!
+        let request = NSFetchRequest<Reminder>(entityName: "Reminder")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "practiceName = %@", argumentArray: [practiceName])
+        do {
+            print(practiceName)
+            reminder = try context.fetch(request)
+            for data in reminder {
+                if data.practiceName == practiceName {
+                  rem = data
+                }
+            }
+            print(rem)
+        } catch let err {
+            print(err)
+        }
+        
+        return rem
+    }
     func checkIdentifier(identifier: String) -> Bool {
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])

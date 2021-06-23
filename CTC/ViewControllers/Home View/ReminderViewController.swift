@@ -4,7 +4,7 @@ import CoreData
 class ReminderViewController: UIViewController {
     
     @IBOutlet weak var remindTableview: UITableView!
-   
+    
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -41,16 +41,16 @@ class ReminderViewController: UIViewController {
         
         reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
         if reminder.first?.identifier != nil {
-                self.dismiss(animated: true)
-                ReminderViewController.switchCompletion(true)
-            }else{
-                self.dismiss(animated: true)
-                ReminderViewController.switchCompletion(false)
-                
-            }
-      
-           
+            self.dismiss(animated: true)
+            ReminderViewController.switchCompletion(true)
+        }else{
+            self.dismiss(animated: true)
+            ReminderViewController.switchCompletion(false)
+            
         }
+        
+        
+    }
     
     
     @IBAction func addPressed(_ sender: Any) {
@@ -58,36 +58,40 @@ class ReminderViewController: UIViewController {
             PopUpReminder.value = "add"
             PopUpReminder.practiceName = practiceName
             PopUpReminder.searchCompletion = {(flag) in
-             if(flag){
-                self.reloadTable()
-             }
+                if(flag){
+                    self.reloadTable()
+                }
             }
             popUp.showPopup(parentVC: self)
         }else{
-            for practiceData in practices{
-                
-                if(practiceData.practice == practiceName){
-                    
-                   showToast(message: "Please Change the Practice Name it already exist", duration: 1)
-                }else{
-                    PopUpReminder.value = "add"
-                    PopUpReminder.practiceName = practiceName
-                    PopUpReminder.searchCompletion = {(flag) in
-                     if(flag){
-                        self.reloadTable()
-                     }
+            print("hello \(practiceName)")
+            if (practiceName == ""){
+                showToast(message: "Please Create your practice then set the the reminder", duration: 1)
+            }else{
+                for practiceData in practices{
+                    if(practiceData.practice == practiceName){
+                        
+                        showToast(message: "Please Change the Practice Name it already exist", duration: 1)
+                    }else{
+                        PopUpReminder.value = "add"
+                        PopUpReminder.practiceName = practiceName
+                        PopUpReminder.searchCompletion = {(flag) in
+                            if(flag){
+                                self.reloadTable()
+                            }
+                        }
+                        popUp.showPopup(parentVC: self)
                     }
-                    popUp.showPopup(parentVC: self)
                 }
             }
-           
+            
         }
         
     }
     
     func reloadTable(){
-         practiceReminder = PracticeReminder()
-         popUp = PopUpReminder()
+        practiceReminder = PracticeReminder()
+        popUp = PopUpReminder()
         reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
         self.remindTableview.reloadData()
     }
@@ -98,12 +102,12 @@ class ReminderViewController: UIViewController {
         return userPractices.getPractices(user: userObject)!
         
     }
-   
+    
 }
 
 extension ReminderViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         return reminder.count
     }
     
@@ -118,7 +122,7 @@ extension ReminderViewController:UITableViewDataSource{
         }else{
             cell.timeField.text = "\(remind.day!) " + " \(remind.hour):\(remind.minute) AM"
         }
-   
+        
         return cell
     }
     
@@ -133,13 +137,13 @@ extension ReminderViewController:UITableViewDelegate{
         PopUpReminder.hourlabel = reminder[indexPath.row].hour
         PopUpReminder.minutelabel = reminder[indexPath.row].minute
         PopUpReminder.searchCompletion = {(flag) in
-         if(flag){
-            self.reloadTable()
-         }
+            if(flag){
+                self.reloadTable()
+            }
         }
         popUp.showPopup(parentVC: self)
         tableView.deselectRow(at: indexPath, animated: true)
-      
+        
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -148,10 +152,10 @@ extension ReminderViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete){
             let remind = self.reminder[indexPath.row]
-                self.practiceReminder.deleteReminder(reminder: remind)
-                self.reloadTable()
+            self.practiceReminder.deleteReminder(reminder: remind)
+            self.reloadTable()
         }
-       
+        
     }
     
     

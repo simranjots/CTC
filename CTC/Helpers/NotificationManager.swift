@@ -29,7 +29,7 @@ class NotificationManager{
         
         let content = UNMutableNotificationContent()
         content.title = "Time to Practice "
-        content.subtitle = "Stay on track to meet your goals by learning a litle every day.Let's get started!"
+        content.body = "Stay on track to meet your goals by learning a litle every day.Let's get started!"
         content.sound = .default
         
         
