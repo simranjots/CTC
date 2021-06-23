@@ -1,6 +1,6 @@
 import UIKit
 
-class AddPracticesViewController: UIViewController {
+class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var choosePracticesTextField: UITextField!
@@ -28,6 +28,7 @@ class AddPracticesViewController: UIViewController {
     let date = Date()
     static var cvalue : String = ""
     static var cindexPath : Int = 0
+    static var toggle : Bool =  false
     
     //PickerView instances
     let valuesPickerView = UIPickerView()
@@ -46,11 +47,10 @@ class AddPracticesViewController: UIViewController {
     
     var imageName: String = ""
     
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiSwitch.setOn(false, animated: true)
+        uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
         userPractices = UserPractices()
@@ -121,19 +121,30 @@ class AddPracticesViewController: UIViewController {
             if  value {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-                //vc.practiceName = choosePracticesTextField.text!
+                vc.practiceName = choosePracticesTextField.text!
+                vc.value = AddPracticesViewController.cvalue
+                vc.presentationController?.delegate = self
+                ReminderViewController.switchCompletion = {(flag) in
+                 if(flag){
+                    self.uiSwitch.setOn(flag, animated: true)
+                 }else{
+                    self.uiSwitch.setOn(flag, animated: true)
+                 }
+                }
             self.present(vc, animated: true, completion: nil)
             }else{
                
-                showToast(message: "Please go to the setting and allow Permission for Notification", duration: 2)
+                showToast(message: "Please go to the setting and allow Permission for Notification", duration: 1)
             }
         }else{
-            
-            NotificationManager.instance.cancelNotification()
+            uiSwitch.setOn(false, animated: true)
         }
         }else{
             showToast(message: "Please Enter any Practice", duration: 1)
         }
+    }
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        uiSwitch.setOn(false, animated: true)
     }
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
@@ -200,6 +211,7 @@ class AddPracticesViewController: UIViewController {
         else{
             var practiceFlag: Int!
             if(isUpdating){
+               
                 practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!)
                 isUpdating = false
                 

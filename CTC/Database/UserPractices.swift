@@ -5,6 +5,7 @@ class UserPractices{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let currentUser = CurrentUser()
+    let remindPractices = PracticeReminder()
     var practices = [Practice]()
     func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
@@ -52,6 +53,11 @@ class UserPractices{
         practiceObject.remindswitch = remindswitch
         practiceObject.goals = goals
         practiceObject.user = user
+        print("this out")
+        if remindswitch == false {
+            print("this in")
+            remindPractices.RemoveReminder(practiceName: oldPractice)
+        }
         let result = currentUser.saveUser()
         return result
     }

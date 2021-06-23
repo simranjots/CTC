@@ -14,6 +14,7 @@
 		1A554391267BB109000C5FFF /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554390267BB109000C5FFF /* ReminderTableViewCell.swift */; };
 		1A554393267C3D46000C5FFF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554392267C3D46000C5FFF /* Reminder.swift */; };
 		1A554395267C3DA9000C5FFF /* Reminder+CoreProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554394267C3DA9000C5FFF /* Reminder+CoreProperties.swift */; };
+		1A55439726811583000C5FFF /* PracticeReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55439626811583000C5FFF /* PracticeReminders.swift */; };
 		1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56C151267A465B00E6D18E /* NotificationManager.swift */; };
 		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
 		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 		1AA35F8A2671FA6900BA918F /* ActivityProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */; };
 		1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0C2668783400A1877D /* MainNavigationController.swift */; };
 		1AACDE0F2668787400A1877D /* LoginOpitonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */; };
+		1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB939D26828C23007EF555 /* PopUpReminder.swift */; };
 		1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC96E2267B16BA0021195F /* ReminderViewController.swift */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
 		1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7E264E357D00CD9974 /* TabVC.storyboard */; };
@@ -132,6 +134,7 @@
 		1A554390267BB109000C5FFF /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		1A554392267C3D46000C5FFF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		1A554394267C3DA9000C5FFF /* Reminder+CoreProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreProperties.swift"; sourceTree = "<group>"; };
+		1A55439626811583000C5FFF /* PracticeReminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeReminders.swift; sourceTree = "<group>"; };
 		1A56C151267A465B00E6D18E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		1A62B82026659CD70025D92C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1AA35F832671B0E100BA918F /* PracticesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesListCell.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressCell.swift; sourceTree = "<group>"; };
 		1AACDE0C2668783400A1877D /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOpitonViewController.swift; sourceTree = "<group>"; };
+		1ABB939D26828C23007EF555 /* PopUpReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpReminder.swift; sourceTree = "<group>"; };
 		1ABC96E2267B16BA0021195F /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1AD65E7E264E357D00CD9974 /* TabVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabVC.storyboard; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
 				E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */,
 				1ABC96E2267B16BA0021195F /* ReminderViewController.swift */,
+				1ABB939D26828C23007EF555 /* PopUpReminder.swift */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */,
 				E12320E0226E1772006B05CB /* FirebaseHelper.swift */,
 				1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */,
+				1A55439626811583000C5FFF /* PracticeReminders.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				E189D68E21E4FA430078380B /* CTC.xcdatamodeld in Sources */,
 				1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */,
 				1AA35F882671F31600BA918F /* ActivityProgressVC.swift in Sources */,
+				1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */,
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
 				263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
@@ -754,6 +761,7 @@
 				E18EDF1121F8BC08009B18B1 /* MorePageTableViewCell.swift in Sources */,
 				262946E026601F8B005BA95E /* Constants.swift in Sources */,
 				26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */,
+				1A55439726811583000C5FFF /* PracticeReminders.swift in Sources */,
 				E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */,
 				26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */,
 				E173DE2922035A1C000CAE24 /* MoreOptionCollectionViewCell.swift in Sources */,

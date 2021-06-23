@@ -14,7 +14,6 @@ class NotificationManager{
         UNUserNotificationCenter.current().requestAuthorization(options: option) {
             
             success, error in
-            
             if let error = error {
                 print("ERROR: \(error)")
                 self.value = false
@@ -30,9 +29,8 @@ class NotificationManager{
         
         let content = UNMutableNotificationContent()
         content.title = "Time to Practice "
-        content.subtitle = identifier
+        content.subtitle = "Stay on track to meet your goals by learning a litle every day.Let's get started!"
         content.sound = .default
-        content.badge = 1
         
         
         var tri : UNCalendarNotificationTrigger
@@ -56,13 +54,22 @@ class NotificationManager{
         //        region.notifyOnExit = false
         //        _ = UNLocationNotificationTrigger(region: region, repeats: true)
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: tri)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: tri)
         UNUserNotificationCenter.current().add(request)
         
     }
-    func cancelNotification()  {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    func cancelNotification(identifier: String)  {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+           var identifiers: [String] = []
+           for notification:UNNotificationRequest in notificationRequests {
+               if notification.identifier == identifier {
+                  identifiers.append(notification.identifier)
+               }
+           }
+           UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        }
+       
     }
     
     

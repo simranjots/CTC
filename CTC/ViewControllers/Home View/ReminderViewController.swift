@@ -2,73 +2,158 @@ import UIKit
 import CoreData
 
 class ReminderViewController: UIViewController {
-
+    
     @IBOutlet weak var remindTableview: UITableView!
-    @IBOutlet weak var addButton: UIButton!
+   
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let weekDict = ["Sunday" : 1, "Monday" : 2, "Tuesday" : 3, "Wednesday" : 4, "thursday" : 5, "Friday" : 6, "Saturday" : 7]
+    var label = " "
+    var hourlabel = " "
+    var minutelabel = " "
+    var practiceName = ""
+    var value = ""
     var reminder = [Reminder]()
-    var increaseCell = 1
-    var RemindDaysLabel = "Everyday"
-    let toolBar = UIToolbar()
+    var practiceReminder : PracticeReminder!
+    var popUp : PopUpReminder!
+    var userObject: User!
+    var currentUser : CurrentUser!
+    var userPractices: UserPractices!
+    var practices:[Practice]!
+    var addPrac : AddPracticesViewController!
+    typealias completion = (Bool)->Void
+    static var switchCompletion:completion!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        // Do any additional setup after loading the view.
+        currentUser = CurrentUser()
+        userPractices = UserPractices()
+        userObject = currentUser.checkLoggedIn()
+        practices = self.getPractices()
+        practiceReminder = PracticeReminder()
+        addPrac = AddPracticesViewController()
+        popUp = PopUpReminder()
+        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
         
-            //Toolbar
+        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+        if reminder.first?.identifier != nil {
+                self.dismiss(animated: true)
+                ReminderViewController.switchCompletion(true)
+            }else{
+                self.dismiss(animated: true)
+                ReminderViewController.switchCompletion(false)
+                
+            }
+      
            
-            toolBar.sizeToFit()
-            //Toobar button
-            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-            toolBar.setItems([doneButton], animated: true)
-    }
-    @IBAction func donePressed(_ sender: UIButton) {
-        let request : NSFetchRequest<Reminder> = Reminder.fetchRequest()
-        do {
-            reminder = try context.fetch(request)
-            
-        } catch let err {
-            print(err)
         }
-        print("\(Int(reminder[0].hour)) " + " \(Int(reminder[0].minute))  ")
     
-        //NotificationManager.instance.scheduleNotification(hour: Int(reminder[0].hour), minute: Int(reminder[0].minute), weekday: 5)
-        self.dismiss(animated: true)
+    
+    @IBAction func addPressed(_ sender: Any) {
+        if value == "edit" {
+            PopUpReminder.value = "add"
+            PopUpReminder.practiceName = practiceName
+            PopUpReminder.searchCompletion = {(flag) in
+             if(flag){
+                self.reloadTable()
+             }
+            }
+            popUp.showPopup(parentVC: self)
+        }else{
+            for practiceData in practices{
+                
+                if(practiceData.practice == practiceName){
+                    
+                   showToast(message: "Please Change the Practice Name it already exist", duration: 1)
+                }else{
+                    PopUpReminder.value = "add"
+                    PopUpReminder.practiceName = practiceName
+                    PopUpReminder.searchCompletion = {(flag) in
+                     if(flag){
+                        self.reloadTable()
+                     }
+                    }
+                    popUp.showPopup(parentVC: self)
+                }
+            }
+           
+        }
+        
+    }
+    
+    func reloadTable(){
+         practiceReminder = PracticeReminder()
+         popUp = PopUpReminder()
+        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+        self.remindTableview.reloadData()
+    }
+    
+    private func getPractices() -> [Practice]{
+        
+        
+        return userPractices.getPractices(user: userObject)!
+        
     }
    
-   
-
-    @IBAction func addPressed(_ sender: UIButton) {
-        increaseCell += 1
-        remindTableview.reloadData()
-    }
-    
-
 }
-extension ReminderViewController:UITableViewDelegate{
-    
-}
+
 extension ReminderViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return increaseCell
+       
+        return reminder.count
     }
-  
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RemindCell") as! ReminderTableViewCell
         let date = NSDate()
         let calendar = NSCalendar.current
-        let hour = calendar.component(.hour, from: date as Date)
-        let minutes = calendar.component(.minute, from: date as Date)
-        cell.timeField.inputAccessoryView = toolBar
-        if hour >= 12{
-            cell.timeField.text = "\(RemindDaysLabel) " + " \(hour):\(minutes) PM"
+        let hours = calendar.component(.hour, from: date as Date)
+        let remind = reminder[indexPath.row]
+        if hours >= 12{
+            cell.timeField.text = "\(remind.day!) " + " \(remind.hour):\(remind.minute) PM"
         }else{
-            cell.timeField.text = "\(RemindDaysLabel) " + " \(hour):\(minutes) AM"
+            cell.timeField.text = "\(remind.day!) " + " \(remind.hour):\(remind.minute) AM"
         }
-        
+   
         return cell
     }
+    
+    
+}
+extension ReminderViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        PopUpReminder.practiceName = practiceName
+        PopUpReminder.myindex = indexPath.row
+        PopUpReminder.value = "update"
+        PopUpReminder.labels = reminder[indexPath.row].day!
+        PopUpReminder.hourlabel = reminder[indexPath.row].hour
+        PopUpReminder.minutelabel = reminder[indexPath.row].minute
+        PopUpReminder.searchCompletion = {(flag) in
+         if(flag){
+            self.reloadTable()
+         }
+        }
+        popUp.showPopup(parentVC: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+      
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            let remind = self.reminder[indexPath.row]
+                self.practiceReminder.deleteReminder(reminder: remind)
+                self.reloadTable()
+        }
+       
+    }
+    
     
     
 }

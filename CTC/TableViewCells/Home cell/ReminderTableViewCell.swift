@@ -2,9 +2,12 @@ import UIKit
 
 class ReminderTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var timeField: UITextField!
-    @IBOutlet weak var cancelButton: UIButton!
 
+    var practiceName = ""
+    var index = 0
+    var remindPractice = PracticeReminder()
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -18,8 +21,5 @@ class ReminderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func cancelTapped(_ sender: UIButton) {
-    
-    }
-  
-}
+ 
+  }
