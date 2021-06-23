@@ -78,7 +78,7 @@ class MorePageViewController: UIViewController {
     
     //MARK: - Array of more options and icons
     
-    let moreOptionsList = ["About Program", "How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Connect to Us", "Sign Out"]
+    let moreOptionsList = ["About Program", "How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
     
     let moreOptionIcons = ["aboutProgram", "howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs-1", "logOut-1"]
     
@@ -171,8 +171,8 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: Constants.Segues.moreToPrivacyPolicySegue, sender: self)
             break
             
-        case "Connect to Us":
-            performSegue(withIdentifier: Constants.Segues.moreToConnectToUsSegue, sender: self)
+        case "Contact Us":
+            performSegue(withIdentifier: Constants.Segues.moreToContactUsSegue, sender: self)
             break
             
         case "Sign Out":

@@ -48,6 +48,7 @@
 		263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		263FEE902675C72700EAEDCC /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */; };
+		2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */; };
 		26A56EC92672CF6B004CE3A5 /* HomeVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */; };
 		26A56ECB2672CFBA004CE3A5 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */; };
 		26C197FC268286D5003A6D88 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */; };
@@ -164,6 +165,7 @@
 		263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseCollectionViewCell.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		263FEE8F2675C72700EAEDCC /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
+		2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectToUsViewController.swift; sourceTree = "<group>"; };
 		26A56EC82672CF6B004CE3A5 /* HomeVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTableViewCell.swift; sourceTree = "<group>"; };
 		26A56ECA2672CFBA004CE3A5 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */,
 				263F60F22681474F00B4908E /* HowToUseAppViewController.swift */,
 				263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */,
+				2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */,
 			);
 			path = "More Views";
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				1A554395267C3DA9000C5FFF /* Reminder+CoreProperties.swift in Sources */,
 				E13AB3BB224ABA8E00E0BBFD /* Validation.swift in Sources */,
 				1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */,
+				2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */,
 				E11752D92217486F0089B852 /* ToastLabel.swift in Sources */,
 				E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */,
 				E10D6675226F6F7900C0E4D8 /* faqViewController.swift in Sources */,
