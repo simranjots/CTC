@@ -7,7 +7,7 @@ class PracticeReminder {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var reminder = [Reminder]()
     let weekDict = ["Sunday" : 1, "Monday" : 2, "Tuesday" : 3, "Wednesday" : 4, "thursday" : 5, "Friday" : 6, "Saturday" : 7]
-   
+    
     func AddReminder(daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
         let reminder = Reminder(context: self.context)
         reminder.day = daysLabel
@@ -15,14 +15,14 @@ class PracticeReminder {
         reminder.minute = minute
         reminder.practiceName = practiceName
         reminder.identifier = identifier
-            do{
-                try context.save()
-            }catch{
-                print("Error saving context \(error)")
+        do{
+            try context.save()
+        }catch{
+            print("Error saving context \(error)")
         }
-       
         
-       
+        
+        
     }
     func UpdateReminder(daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
         let reminder = loadReminderbyPracticeName(practiceName: practiceName)
@@ -34,41 +34,67 @@ class PracticeReminder {
                 data.practiceName = practiceName
                 data.identifier = identifier
             }
-           
+            
         }
-            do{
-                try context.save()
-            }catch{
-                print("Error saving context \(error)")
+        do{
+            try context.save()
+        }catch{
+            print("Error saving context \(error)")
         }
-       
         
-       
+        
+        
     }
     func RemoveReminder(practiceName:String){
         reminder = loadReminderbyPracticeName(practiceName: practiceName)
         for practices in reminder{
-            deleteReminder(reminder: practices)
             if practices.practiceName == practiceName{
-                if practices.day == "Weekdays" {
-                        NotificationManager.instance.cancelNotification(identifier: practiceName+"Weekdays"+"\(practices.hour)"+"\(practices.minute)")
+                deleteNotification(remind: practices)
+                deleteReminder(reminder: practices)
+            }
+            
+        }
+        
+    }
+    func RemoveOneReminder(remind:Reminder)  {
+        if remind.day == "Weekdays" {
+            NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
+            
+        }else if remind.day == "Everyday"{
+            
+            NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
+            
+        }else {
+            for weekday in weekDict {
+                if weekday.key == remind.day {
+                    NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
                     
-                }else if practices.day == "Everyday"{
-                   
-                        NotificationManager.instance.cancelNotification(identifier: practiceName+"Everyday"+"\(practices.hour)"+"\(practices.minute)")
+                }
+                
+            }
+        }
+    }
+    func deleteNotification(remind : Reminder) {
+        if remind.day == "Weekdays" {
+            for i in 2...6 {
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+"\(String(describing: remind.day))"+"\(remind.hour)"+"\(remind.minute)")
+                
+            }
+        }else if remind.day == "Everyday"{
+            for i in 1...7 {
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+"\(String(describing: remind.day))"+"\(remind.hour)"+"\(remind.minute)")
+                
+            }
+        }else {
+            for weekday in weekDict {
+                if weekday.key == remind.day{
+                    NotificationManager.instance.cancelNotification(identifier: PopUpReminder.practiceName+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
                     
-                }else {
-                    for weekday in weekDict {
-                        if weekday.key == practices.day {
-                            NotificationManager.instance.cancelNotification(identifier: practiceName+"\(weekday.value)"+"\(practices.hour)"+"\(practices.minute)")
-                            
-                        }
-                    }
                 }
             }
         }
-      
-        }
+        
+    }
     func loadReminderbyPracticeName(practiceName: String) -> [Reminder]{
         
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
@@ -94,7 +120,7 @@ class PracticeReminder {
             reminder = try context.fetch(request)
             for data in reminder {
                 if data.practiceName == practiceName {
-                  rem = data
+                    rem = data
                 }
             }
             print(rem)

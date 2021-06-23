@@ -152,6 +152,7 @@ extension ReminderViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete){
             let remind = self.reminder[indexPath.row]
+            self.practiceReminder.RemoveOneReminder(remind: remind)
             self.practiceReminder.deleteReminder(reminder: remind)
             self.reloadTable()
         }
