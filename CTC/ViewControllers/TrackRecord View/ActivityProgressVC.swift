@@ -10,7 +10,6 @@ class ActivityProgressVC: UIViewController {
     var practice : Practice!
     var practiceName : String!
     
-    
     @IBOutlet var activityTrackingTableView: UITableView!
     @IBOutlet var tableViewHeader: UIView!
     
@@ -21,20 +20,16 @@ class ActivityProgressVC: UIViewController {
         userPracticesData = UserPracticesData()
         practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
         valueArray = userPracticesData.getPracticebyName(practice: practice.practice!)
-        
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         //Set properties of tableView Header
         tableViewHeader.layer.cornerRadius = tableViewHeader.frame.height / 5
     }
-    
-    
-    
-
 }
+
 extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,11 +50,9 @@ extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
         cell.activityNotesTextView.text = valueArray![indexPath.row].note
         if valueArray![indexPath.row].practised == true {
             cell.practicedDaysLabel.text = "Yes"
-        }else{
+        } else {
             cell.practicedDaysLabel.text = "No"
         }
-        
-
         return cell
     }
     

@@ -56,7 +56,6 @@ class StataticsViewProgressBar: UIView {
         }
         
         //Progressbar Animation
-        
         func setProgressWithAnimation(duration: TimeInterval, value: Float) {
             let animation = CABasicAnimation(keyPath: "strokeEnd")
             animation.duration = duration
@@ -66,7 +65,5 @@ class StataticsViewProgressBar: UIView {
             
             progressLayer.strokeEnd = CGFloat(value)
             progressLayer.add(animation, forKey: "animateProgress")
-            
         }
-
 }

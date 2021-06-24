@@ -10,28 +10,18 @@ import UIKit
 
 class HistoryCardCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var PracticeNameLabel: UILabel!
-    
     @IBOutlet weak var statusDate: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
     @IBOutlet weak var trackingDaysLabel: UILabel!
-    
     @IBOutlet weak var totalDaysLabel: UILabel!
-    
     @IBOutlet weak var percentageProgressView: UIProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
-    
     @IBOutlet weak var cardBackgroundView: UIView!
     
     override func awakeFromNib() {
         cardBackgroundView.setPopupView()
-//        self.backgroundColor = .white
-//        cardBackgroundView.layer.cornerRadius = 10
-        
         PracticeNameLabel.setPopUpTitle()
         percentageProgressView.layer.cornerRadius = percentageProgressView.frame.height / 2
     }
-    
 }

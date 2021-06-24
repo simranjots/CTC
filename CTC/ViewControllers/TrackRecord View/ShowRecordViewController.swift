@@ -296,6 +296,7 @@ class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableVi
         self.refreshTableView()
         
     }
+    
     @IBAction func popUpCancelButtonTapped(_ sender: Any) {
         
         self.popUpPracticeTextField.text = ""
