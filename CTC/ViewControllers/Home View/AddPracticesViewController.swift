@@ -295,9 +295,8 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
      chooseValuesTextField.text = values.first
      choosePracticesTextField.text = practices.first
      goalTextField.text = goals.first
-    
-     
  }
+    
  func update(indexPath :Int) {
     self.title = "Update Practice"
     chooseValuesTextField.text = self.practi[indexPath].values
@@ -331,15 +330,20 @@ extension AddPracticesViewController {
     //Style textFields, textView, imageView and buttons
     func styleElements() {
 
-        Utilities.styleTextField(wordsOfEncouragementTextField)
+        
+        //Style Textfields
+        Utilities.addBottomLineToTextField(chooseValuesTextField)
+        Utilities.addBottomLineToTextField(choosePracticesTextField)
+        Utilities.addBottomLineToTextField(goalTextField)
+        Utilities.addBottomLineToTextField(dateTextField)
+        Utilities.addBottomLineToTextField(wordsOfEncouragementTextField)
         
         //Style buttons
         Utilities.styleButton(saveButton)
         Utilities.styleButton(choosePracticesIconButton)
         Utilities.styleHollowButton(cancelButton)
         changeButton.layer.cornerRadius = 8.0
-        changeButton.layer.borderWidth = 0.5
-        
+        changeButton.layer.borderWidth = 1.0
     }
     
     //Set pickerView datasources, delegates and inputViews
