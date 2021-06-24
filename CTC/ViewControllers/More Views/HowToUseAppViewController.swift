@@ -54,14 +54,12 @@ extension HowToUseAppViewController: UICollectionViewDelegate, UICollectionViewD
         cell.appSnapshotsImageView.image = UIImage(named: snapshotImages[indexPath.row])
         cell.useDescriptionLabel.text = howToUseDescription[indexPath.row]
         
-        //View styles
-        //cell.containerView.layer.cornerRadius = 15
+        //View style
         cell.containerView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         cell.containerView.layer.shadowOpacity = 0.5
         cell.containerView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
         
         //ImageView styles
-        //cell.appSnapshotsImageView.layer.cornerRadius = 10
         cell.appSnapshotsImageView.layer.borderWidth = 1
         cell.appSnapshotsImageView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 

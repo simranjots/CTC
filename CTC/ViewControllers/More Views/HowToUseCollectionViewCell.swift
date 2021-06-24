@@ -10,6 +10,9 @@ import UIKit
 
 class HowToUseCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet var outerContainerView: UIView!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var containerView: UIView!
     @IBOutlet var appSnapshotsImageView: UIImageView!
     @IBOutlet var useDescriptionLabel: UILabel!
