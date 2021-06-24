@@ -3,7 +3,6 @@ import UserNotifications
 
 class HomeViewController: UIViewController,ReceiveData{
     
-    
     // variables
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
@@ -24,13 +23,10 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var dateTextField: UILabel!
     @IBOutlet weak var dateView: UIView!
-
-  
-
-        override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.refreshTableview(date: selectedDate)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,20 +38,13 @@ class HomeViewController: UIViewController,ReceiveData{
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
         practiceReminder = PracticeReminder()
-        
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
-       
-
-        
         _ = userPractices.oldestPracticeDate(user: userObject)
-    
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
-        
         // MARK: Gradiat Color Set for naviagation Bar
-        
         if let navigationBar = self.navigationController?.navigationBar {
             let gradient = CAGradientLayer()
             var bounds = navigationBar.bounds
@@ -66,91 +55,66 @@ class HomeViewController: UIViewController,ReceiveData{
             gradient.endPoint = CGPoint(x: 1, y: 0)
         }
         
-        
         //MARK: for mainatain the practices data weekly
-        
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
         styleDateLabelView()
     }
+    
     func styleDateLabelView() {
         
         dateView.layer.cornerRadius = dateView.frame.height / 6
         dateView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         dateView.layer.borderWidth = 1
+        dateView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        dateView.layer.shadowOpacity = 0.5
+        dateView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
     }
     
-    
     @IBAction func ShowProgress(_ sender: UIBarButtonItem) {
-    
         //ShowDetails
-        
         performSegue(withIdentifier: "ShowDetails", sender: self)
     }
     
-    
     @objc func custome(dateComponent: DateComponents){
-        
-        
         var dateComp = dateComponent
-        
         let content = UNMutableNotificationContent()
         content.body = "Body"
         content.title = "Title"
         content.sound = UNNotificationSound.default
-        
         let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
-        
         let request = UNNotificationRequest(identifier: "Test", content: content, trigger: trigger2)
-        
         UNUserNotificationCenter.current().add(request) { (err) in
             if err == nil{
-                
                 dateComp.day = dateComp.second! + 3
                 print("Complete")
-                
             }
         }
-        
     }
     
-    
     @objc func DatePickerValueChanged(datePicker: UIDatePicker){
-        
         let finalDate = "Date: \(datePicker.date.dateFormatemmmdd()!)"
         dateTextField.text = finalDate
-        
     }
     
     private func getPractices() -> [Practice]{
-        
-        
         return userPractices.getPractices(user: userObject)!
-        
     }
     
-    private func getPracticesData(date: Date) -> [PracticeData]?{
-    
+    private func getPracticesData(date: Date) -> [PracticeData]? {
         return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
-        
     }
-    
     
     @objc func popUpDateSelected() {
-        
         self.view.endEditing(true)
-        
     }
     
     @objc func reloadHomeTableView(){
-        
         self.homeTableView.reloadData()
-        
     }
     
     func passUserObject(user: User) {
         userObject = user
     }
- 
     
     @IBAction func addPractices(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -164,8 +128,8 @@ class HomeViewController: UIViewController,ReceiveData{
         let vc = storyboard.instantiateViewController(withIdentifier: "history") as! HistoryViewController
         self.present(vc, animated: true)
     }
-    // Table View Code
     
+    // Table View Code
     func delPractice(prac: Practice){
         
         let pracName = prac.practice
@@ -179,13 +143,12 @@ class HomeViewController: UIViewController,ReceiveData{
         
         if(resultFlag == 0){
             showToast(message: "\(pracName!) Deleted", duration: 3)
-        }else{
+        } else {
             showToast(message: "Deletion Error", duration: 3)
         }
-        
         self.refreshTableview(date: selectedDate)
-        
     }
+    
     func refreshTableview(date: Date) {
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
@@ -198,73 +161,58 @@ class HomeViewController: UIViewController,ReceiveData{
         self.datePicker = UIDatePicker()
         self.datePicker.minimumDate = oldestDate
         homeTableView.reloadData()
-        
     }
     
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
-        
         if(practicesData != nil){
             for data in practicesData!{
-                
                 if data.practiceDataToPractice == practice{
-                    
                     return data.practised
-                    
                 }
-                
             }
         }
         return nil
     }
-    
 }
-
 
 extension HomeViewController : UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return practices.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResolutionCell") as! HomeVCCell
-        
         cell.activityNameLabel.text = practices[indexPath.row].practice
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
+        
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
+        
         if (switchFlag != nil){
             cell.isOn = switchFlag!
             cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
-        }
-        else
-        {
+        } else {
             cell.userObject = userObject
             cell.activeButton(flag: false)
-            
         }
-        
         cell.practice = practices[indexPath.row]
         cell.selectedDate = datePicker.date.dateFormate()!
-        
         return cell
-        
     }
 }
+
 extension HomeViewController: UITableViewDelegate{
-    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if(editingStyle == .delete){
             
             let prac = self.practices[indexPath.row]
@@ -277,11 +225,8 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
-            
         }
     }
-    
-    
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, handler) in
@@ -290,7 +235,7 @@ extension HomeViewController: UITableViewDelegate{
             AddPracticesViewController.cvalue = "edit"
             AddPracticesViewController.cindexPath = indexPath.row
             self.present(vc, animated: true, completion: nil)
-
+            
         }
         editAction.backgroundColor = .lightGray
         let configuration = UISwipeActionsConfiguration(actions: [editAction])
@@ -305,8 +250,8 @@ extension HomeViewController: UITableViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ActivityDetailsViewController
         
+        let destination = segue.destination as! ActivityDetailsViewController
         destination.userObject = userObject
         destination.myIndex = myIndex
         destination.selectedDate = datePicker.date.dateFormate()!

@@ -4,15 +4,9 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var practiceTextLabel: UILabel!
     @IBOutlet weak var practiceIconImage: UIImageView!
-
-    
     @IBOutlet weak var starButton: UIButton!
     
-    
-    
-    
     // variables
-    
     var dbHelper: DatabaseHelper!
     var userPracticesData: UserPracticesData!
     var resultFlag: Int!
@@ -21,24 +15,18 @@ class HomeTableViewCell: UITableViewCell {
     var view: UIView!
     var isOn: Bool = false
     var userObject: User!
-    // variables
-    
-
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
-     self.backgroundColor = UIColor.white
-        
+        self.backgroundColor = UIColor.white
         dbHelper = DatabaseHelper()
         userPracticesData = UserPracticesData()
     }
    
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
- 
     @IBAction func starButtonTapped(_ sender: Any) {
         
         self.activeButton(flag: !isOn)
@@ -48,7 +36,7 @@ class HomeTableViewCell: UITableViewCell {
             
             print("Data Saved")
             
-        }else if resultFlag == 1{
+        } else if resultFlag == 1{
             print("error in Cell Data Saving")
             
         }
@@ -56,18 +44,11 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func activeButton(flag: Bool){
-        
         isOn = flag
-        
         if(isOn){
             starButton.setImage(UIImage(named: "Star-Selected"), for: .normal)
-         
-        }else{
-            
+        } else {
             starButton.setImage(UIImage(named: "Star"), for: .normal)
-         
         }
     }
-    
-    
 }

@@ -9,33 +9,21 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let currentUser = CurrentUser()
-        
         userObject = currentUser.checkLoggedIn()
-        
-        if (userObject != nil){
-        
-            
+        if (userObject != nil) {
             perform( #selector(MainNavigationController.showHome), with: nil, afterDelay: 0.01 )
-            
-        }else{
-            
+        } else {
             perform(#selector(MainNavigationController.showLogin), with: nil, afterDelay: 0.01)
         }
-        
     }
     
     @objc func showHome() {
-        
         let homeController = MaintabBarViewController()
-        
         present(homeController, animated: true, completion: {
-            
         })
-        
-        
     }
+    
     @objc func showLogin() {
         let login = LoginOpitonViewController()
         present(login, animated: true, completion: {

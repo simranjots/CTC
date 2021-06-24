@@ -198,7 +198,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="KNM-n6-XTv">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="3M6-L5-AmH">
+                        <barButtonItem key="leftBarButtonItem" title="History" image="history" id="3M6-L5-AmH">
                             <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="historyButton:" destination="rNy-SS-lWh" id="8hj-VZ-J1s"/>
@@ -1027,7 +1027,6 @@
         <!--Practice History-->
         <scene sceneID="Iop-4d-sQh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="etG-iA-ZEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="history" id="dJA-jR-jPZ" customClass="HistoryViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qon-AF-udO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1265,6 +1264,7 @@
                         <outlet property="historyTableView" destination="CbC-tG-FIi" id="1ZJ-bJ-7LQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etG-iA-ZEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="735" y="1159"/>
         </scene>
@@ -1279,6 +1279,7 @@
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="gift.fill" catalog="system" width="128" height="124"/>
         <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
+        <image name="history" width="32" height="32"/>
         <image name="image-icon" width="512" height="512"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practice" width="480" height="480"/>
