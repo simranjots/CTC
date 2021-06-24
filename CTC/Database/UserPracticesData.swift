@@ -22,23 +22,26 @@ class UserPracticesData {
        practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
-        
+        print(tracking_days)
         if  practiceData != nil{
             
             tracking_days = practiceData.tracking_days
             
             if (toggleBtn && practiceData.practised == false){
+                
                 tracking_days += 1
                 practicedDaysCount += 1
+                print("inside f \(tracking_days)")
             }else if (toggleBtn == false && practiceData.practised == true){
-         
+               
                 tracking_days -= 1
                 practicedDaysCount -= 1
+                print("inside s\(tracking_days)")
             }else if (toggleBtn == true && practiceData.practised == false){
               
                     tracking_days += 1
                     practicedDaysCount += 1
-                  
+                print("inside 3\(tracking_days)")
             }
             let date = Date()
             if save == "save"{
@@ -60,6 +63,8 @@ class UserPracticesData {
                     
                 }
             }else{
+                print(toggleBtn)
+                print("\(Int32(tracking_days))")
                 
                       practiceData.practised = toggleBtn
                       practiceData.date = currentDate.dateFormate()! as NSDate
