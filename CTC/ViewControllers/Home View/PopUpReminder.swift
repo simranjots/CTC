@@ -102,6 +102,7 @@ class PopUpReminder: UIViewController {
             }
         }else if label.text == "Everyday"{
             for i in 1...7 {
+                print("note \(PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)")
                 NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)
             }
         }else {

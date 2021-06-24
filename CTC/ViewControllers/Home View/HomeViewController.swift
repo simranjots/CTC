@@ -159,6 +159,11 @@ class HomeViewController: UIViewController,ReceiveData{
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func historyButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "history") as! HistoryViewController
+        self.present(vc, animated: true)
+    }
     // Table View Code
     
     func delPractice(prac: Practice){
@@ -245,7 +250,7 @@ extension HomeViewController : UITableViewDataSource {
             
         }
         
-        cell.practice = practices[indexPath.row ]
+        cell.practice = practices[indexPath.row]
         cell.selectedDate = datePicker.date.dateFormate()!
         
         return cell

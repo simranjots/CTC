@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //MARK: for path od coredata
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        print("Address \(urls)")
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        print("Address \(urls)")
         
         //MARK:  to select app launch
         
@@ -33,9 +33,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let currentUser = CurrentUser()
+        let userPractice = UserPractices()
+        let dbHelper = DatabaseHelper()
         var userObject: User?
         
         userObject = currentUser.checkLoggedIn()
+        if (userObject != nil){
+            let days: [String] = [ "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "365 Days"]
+            let data = userPractice.getPractices(user: userObject!)
+            for goal in data! {
+                for day in days {
+                    if goal.goals == day{
+                        print(day)
+                        let pracName = goal.practice
+                        let td = goal.practiseddays
+                        let dss = (Date().dateFormate()!).days(from: (goal.startedday! as Date).dateFormate()!) + 1
+                        let flag = false
+                        let date = Date().dateFormate()!
+                        userPractice.deletePractice(practice: goal)
+                        let resultFlag = dbHelper.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td))
+                        print(resultFlag)
+                       
+                    }
+                }
+                
+            }
+        }
+     
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         

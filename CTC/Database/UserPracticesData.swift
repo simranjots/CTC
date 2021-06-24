@@ -12,7 +12,7 @@ class UserPracticesData {
     let currentUser = CurrentUser()
     var userObject: User!
     
-    func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String) -> Int {
+    func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
 
         let resultFlag = dbHelper.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
         var practicedDaysCount = practiceObject.practiseddays
@@ -40,16 +40,39 @@ class UserPracticesData {
                     practicedDaysCount += 1
                   
             }
-            practiceData.practised = toggleBtn
-            practiceData.date = currentDate.dateFormate()! as NSDate
-            practiceData.practiceDataToPractice = practiceObject
-            practiceData.note = note
-            practiceData.tracking_days = Int32(tracking_days)
+            let date = Date()
+            if save == "save"{
+                let Practices = PracticeData(context: self.context)
+                if (date.dateFormate() == (practiceData.date! as Date).dateFormate()) {
+                    practiceData.practised = toggleBtn
+                    practiceData.date = currentDate.dateFormate()! as NSDate
+                    practiceData.practiceDataToPractice = practiceObject
+                    practiceData.note = note
+                    practiceData.tracking_days = Int32(tracking_days)
+                    
+                }else{
+                
+                    Practices.practised = toggleBtn
+                    Practices.date = currentDate.dateFormate()! as NSDate
+                    Practices.practiceDataToPractice = practiceObject
+                    Practices.note = note
+                    Practices.tracking_days = Int32(tracking_days)
+                    
+                }
+            }else{
+                
+                      practiceData.practised = toggleBtn
+                      practiceData.date = currentDate.dateFormate()! as NSDate
+                      practiceData.practiceDataToPractice = practiceObject
+                      practiceData.note = note
+                      practiceData.tracking_days = Int32(tracking_days)
+            }
+            
+           
         }
         else{
-            
+           
             let newPracticesData = PracticeData(context: self.context)
-            
             newPracticesData.date = currentDate.dateFormate()! as NSDate
             newPracticesData.practised = toggleBtn
             newPracticesData.note = note
@@ -60,10 +83,13 @@ class UserPracticesData {
                 practicedDaysCount += 1
             }
             newPracticesData.tracking_days = tracking_days
+         
         }
         userPractices.updatePracticedDay(noOfDays: Int(practicedDaysCount), practiceName: practiceObject.practice!, user: practiceObject.user!)
         let result = currentUser.saveUser()
         return result
+      
+       
          
     }
     

@@ -19,6 +19,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="practised" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tracking_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="practiceDataToPractice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Practice" inverseName="practiceData" inverseEntity="Practice"/>
     </entity>
@@ -53,7 +54,7 @@
     </entity>
     <elements>
         <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="238"/>
-        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="28"/>
+        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="119"/>
         <element name="PracticeHistory" positionX="-441" positionY="-396" width="128" height="120"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="135"/>

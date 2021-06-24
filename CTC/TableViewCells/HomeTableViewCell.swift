@@ -42,7 +42,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBAction func starButtonTapped(_ sender: Any) {
         
         self.activeButton(flag: !isOn)
-        resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "")
+        resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "", save: "")
        
         if resultFlag == 0{
             

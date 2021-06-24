@@ -59,16 +59,9 @@ class NotificationManager{
         
     }
     func cancelNotification(identifier: String)  {
-        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-           var identifiers: [String] = []
-           for notification:UNNotificationRequest in notificationRequests {
-               if notification.identifier == identifier {
-                  identifiers.append(notification.identifier)
-               }
-           }
-           UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
-            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        }
+       
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [identifier])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
        
     }
     
