@@ -79,7 +79,8 @@ class ActivityDetailsViewController: UIViewController {
     }
   
     func setData() {
-        
+        practicesArray = userPractices.getPractices(user: userObject)!
+        practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate.dateFormate()!)
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         
@@ -201,7 +202,7 @@ class ActivityDetailsViewController: UIViewController {
         }
         
         
-        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: currentPractice, currentDate: selectedDate, userObject: userObject!, note: noteData!)
+        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: currentPractice, currentDate: selectedDate, userObject: userObject!, note: noteData!, save: "save")
         
         if(savingResult == 0){
             

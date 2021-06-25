@@ -50,29 +50,33 @@ class PracticeReminder {
         for practices in reminder{
             if practices.practiceName == practiceName{
                 deleteNotification(remind: practices)
-                deleteReminder(reminder: practices)
             }
             
         }
         
     }
     func RemoveOneReminder(remind:Reminder)  {
+        
         if remind.day == "Weekdays" {
-            NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
-            
-        }else if remind.day == "Everyday"{
-            
-            NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
-            
-        }else {
-            for weekday in weekDict {
-                if weekday.key == remind.day {
-                    NotificationManager.instance.cancelNotification(identifier: remind.identifier!)
-                    
-                }
+            for i in 2...6 {
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+remind.day!+"\(remind.hour)"+"\(remind.minute)")
                 
             }
+        }else if remind.day == "Everyday"{
+            for i in 1...7 {
+               
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+remind.day!+"\(remind.hour)"+"\(remind.minute)")
+                
+            }
+        }else {
+            for weekday in weekDict {
+                if weekday.key == remind.day{
+                    NotificationManager.instance.cancelNotification(identifier: PopUpReminder.practiceName+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
+                    
+                }
+            }
         }
+        
     }
     func deleteNotification(remind : Reminder) {
         if remind.day == "Weekdays" {
@@ -101,9 +105,7 @@ class PracticeReminder {
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "practiceName = %@", argumentArray: [practiceName])
         do {
-            print(practiceName)
             reminder = try context.fetch(request)
-            print(reminder)
         } catch let err {
             print(err)
         }
@@ -123,7 +125,7 @@ class PracticeReminder {
                     rem = data
                 }
             }
-            print(rem)
+        
         } catch let err {
             print(err)
         }

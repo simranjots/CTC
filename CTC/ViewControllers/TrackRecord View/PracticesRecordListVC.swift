@@ -71,7 +71,24 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.daysSinceStartedLabel.text = "\(days)"
         cell.activityPracticedForThisMonthLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
-        cell.streakLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
+        let newDay = Date().days(from: startedDate)
+        if newDay > days {
+            if practicesData[indexPath.row].practised == true{
+                let dates = (( practicesData[indexPath.row].date)! as Date).originalFormate()
+                let days = Date().days(from: dates)
+                if days < 2 {
+                    practicesData[indexPath.row].streak += 1
+                    cell.streakLabel.text = "\(practicesData[indexPath.row].streak)"
+                }else{
+                    practicesData[indexPath.row].streak = 0
+                    cell.streakLabel.text = "\(practicesData[indexPath.row].streak)"
+                }
+            }
+        }else{
+            cell.streakLabel.text = "\(0)"
+        }
+       
+        
         cell.setPercentageAnimation(percentageValue: percentage)
         
         cell.daysLabelTitle.text = "Days"
