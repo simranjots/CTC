@@ -1,7 +1,7 @@
 import UIKit
 
 class PracticesRecordListVC: UIViewController {
-
+    
     @IBOutlet var stataticsVCTableView: UITableView!
     var userPracticesData: UserPracticesData!
     var currentUser : CurrentUser!
@@ -13,6 +13,7 @@ class PracticesRecordListVC: UIViewController {
     var practicesData: [PracticeData]!
     var percentage: Int = 0
     var myIndex: Int!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -32,14 +33,14 @@ class PracticesRecordListVC: UIViewController {
     func reloadPractices() {
         stataticsVCTableView.reloadData()
     }
-
+    
 }
 extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 265
     }
-  
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return practicesArray.count
@@ -63,7 +64,7 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         let days = Date().days(from: startedDate) + 1
         let practicedDays = Int(practicesArray[indexPath.row].practiseddays)
         percentage = Int((Float(practicedDays) / Float(days)) * 100)
-       
+        
         
         cell.activityHeaderTitleLabel.text = practicesArray[indexPath.row].practice
         cell.howManyDaysActivityPracticedLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
@@ -71,24 +72,13 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.daysSinceStartedLabel.text = "\(days)"
         cell.activityPracticedForThisMonthLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
-        let newDay = Date().days(from: startedDate)
-        if newDay > days {
-            if practicesData[indexPath.row].practised == true{
-                let dates = (( practicesData[indexPath.row].date)! as Date).originalFormate()
-                let days = Date().days(from: dates)
-                if days < 2 {
-                    practicesData[indexPath.row].streak += 1
-                    cell.streakLabel.text = "\(practicesData[indexPath.row].streak)"
-                }else{
-                    practicesData[indexPath.row].streak = 0
-                    cell.streakLabel.text = "\(practicesData[indexPath.row].streak)"
-                }
-            }
+        let practiceData = userPracticesData.getPracticeDataObj(practiceName: practicesArray[indexPath.row].practice!)
+        if practiceData != nil {
+            cell.streakLabel.text = "\(practiceData!.streak)"
         }else{
             cell.streakLabel.text = "\(0)"
         }
        
-        
         cell.setPercentageAnimation(percentageValue: percentage)
         
         cell.daysLabelTitle.text = "Days"
