@@ -11,8 +11,8 @@ import UIKit
 class TabBarViewController: UITabBar {
 
     private var shapeLayer: CALayer?
-    
     private func addShape()
+    
     {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()

@@ -62,9 +62,9 @@ class HomeViewController: UIViewController,ReceiveData{
     
     func styleDateLabelView() {
         
-        dateView.layer.cornerRadius = dateView.frame.height / 6
-        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        dateView.layer.borderWidth = 1
+//        dateView.layer.cornerRadius = dateView.frame.height / 6
+//        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+//        dateView.layer.borderWidth = 1
     }
     
     @IBAction func ShowProgress(_ sender: UIBarButtonItem) {
@@ -119,12 +119,7 @@ class HomeViewController: UIViewController,ReceiveData{
         AddPracticesViewController.cvalue = "add"
         self.present(vc, animated: true, completion: nil)
     }
-    
-    @IBAction func historyButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "history") as! HistoryViewController
-        self.present(vc, animated: true)
-    }
+
     
     // Table View Code
     func delPractice(prac: Practice){
