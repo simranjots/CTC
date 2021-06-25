@@ -4,6 +4,7 @@ import UIKit
 
 class UserPracticesData {
     var tracking_days : Int32 = 0
+    var streak : Int32 = 0
     var practiceData : PracticeData!
     var arrayData = [PracticeData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -13,7 +14,7 @@ class UserPracticesData {
     var userObject: User!
     
     func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
-
+       
         let resultFlag = dbHelper.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
         var practicedDaysCount = practiceObject.practiseddays
         
@@ -22,31 +23,48 @@ class UserPracticesData {
        practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
-        print(tracking_days)
+        streak =  (getStreak(practice: practiceObject, date: currentDate))
         if  practiceData != nil{
-            
             tracking_days = practiceData.tracking_days
             
             if (toggleBtn && practiceData.practised == false){
-                
                 tracking_days += 1
                 practicedDaysCount += 1
-                print("inside f \(tracking_days)")
+                streak += 1
             }else if (toggleBtn == false && practiceData.practised == true){
                
                 tracking_days -= 1
                 practicedDaysCount -= 1
-                print("inside s\(tracking_days)")
+                if streak == 0{
+                    streak = 0
+                }else{
+                    streak -= 1
+                }
+                
             }else if (toggleBtn == true && practiceData.practised == false){
               
                     tracking_days += 1
                     practicedDaysCount += 1
-                print("inside 3\(tracking_days)")
+               
+            }else if (toggleBtn  && practiceData.practised == true){
+                if save == "" {
+                    tracking_days += 1
+                    practicedDaysCount += 1
+                    if streak == 0{
+                        streak = 0
+                    }else{
+                        streak += 1
+                    }
+                    
+                    
+                }
+               
             }
             let date = Date()
             if save == "save"{
                 let Practices = PracticeData(context: self.context)
                 if (date.dateFormate() == (practiceData.date! as Date).dateFormate()) {
+                    
                     practiceData.practised = toggleBtn
                     practiceData.date = currentDate.dateFormate()! as NSDate
                     practiceData.practiceDataToPractice = practiceObject
@@ -63,14 +81,13 @@ class UserPracticesData {
                     
                 }
             }else{
-                print(toggleBtn)
-                print("\(Int32(tracking_days))")
-                
+                      
                       practiceData.practised = toggleBtn
                       practiceData.date = currentDate.dateFormate()! as NSDate
                       practiceData.practiceDataToPractice = practiceObject
                       practiceData.note = note
                       practiceData.tracking_days = Int32(tracking_days)
+                      practiceData.streak = streak
             }
             
            
@@ -82,7 +99,6 @@ class UserPracticesData {
             newPracticesData.practised = toggleBtn
             newPracticesData.note = note
             newPracticesData.practiceDataToPractice = practiceObject
-            
             if(toggleBtn == true){
                 tracking_days += 1
                 practicedDaysCount += 1
@@ -157,6 +173,19 @@ class UserPracticesData {
                 return (lastDayData?.tracking_days)
             }
         }
+        return 0
+    }
+    func getStreak(practice: Practice,date: Date) -> Int32 {
+    let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
+            if(lastDayData != nil){
+                let newDay = Date().days(from: lastDayData!.date! as Date )
+                let Today =  Date().days(from: Date().originalFormate())
+                let diff = newDay - Today
+                print("diff \(diff)")
+                if diff < 2 {
+                    return (lastDayData?.streak)!
+                }
+            }
         return 0
     }
 
