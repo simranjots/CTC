@@ -7,30 +7,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--TrackRecord-->
         <scene sceneID="bNG-YH-ei5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="Kb4-dm-36D" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TrackRecord" id="Kb4-dm-36D" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="hjH-Q1-FBm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SET-kH-LfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2599" y="1694"/>
         </scene>
-        <!--TrackRecord-->
+        <!--AddPractice-->
         <scene sceneID="qYX-iQ-p6n">
             <objects>
-                <viewControllerPlaceholder storyboardName="TrackRecord" id="Eek-w0-cou" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddPractice" id="Eek-w0-cou" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OPF-T0-FcD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XxQ-AV-I5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2392" y="1694"/>
         </scene>
-        <!--AddPractice-->
+        <!--Home-->
         <scene sceneID="NpD-wi-PHA">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddPractice" id="Dmf-Ju-yEo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" id="Dmf-Ju-yEo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ayH-Wf-LYX"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAA-t1-jUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

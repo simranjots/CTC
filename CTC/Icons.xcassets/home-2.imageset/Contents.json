@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "home.svg",
+      "filename" : "home-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "home-1.svg",
+      "filename" : "home-4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "home-2.svg",
+      "filename" : "home-5.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -21,6 +21,6 @@
     "version" : 1
   },
   "properties" : {
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

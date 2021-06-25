@@ -5,37 +5,35 @@ class MaintabBarViewController: UITabBarController, UITabBarControllerDelegate {
 //    required init?(coder: NSCoder) {
 //        super.init(coder: coder)
 //    }
-    
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.delegate = self
-        self.selectedIndex = 0
+        self.selectedIndex = 2
         setupMiddleButton()
     }
+    
     func setupMiddleButton() {
         
-        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 25, y: -20, width: 60, height: 60))
+        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 30, y: -30, width: 70, height: 70))
         
-        middleButton.setBackgroundImage(UIImage(named: "plus"), for: .normal)
+        middleButton.setBackgroundImage(UIImage(named: "home-2"), for: .normal)
         middleButton.layer.shadowColor = UIColor.black.cgColor
         middleButton.layer.shadowOpacity = 0.1
         middleButton.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
-        middleButton.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        //middleButton.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     
         self.tabBar.addSubview(middleButton)
-        middleButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        middleButton.addTarget(self, action: #selector(homeButtonTapped), for: .touchUpInside)
         
         self.view.layoutIfNeeded()
     }
     
-    @objc func addButtonTapped(sender: UIButton) {
+    @objc func homeButtonTapped(sender: UIButton) {
         self.selectedIndex = 2
-        print("Tapped")
     }
-
-
 }
