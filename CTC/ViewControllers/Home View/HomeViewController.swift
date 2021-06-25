@@ -63,11 +63,8 @@ class HomeViewController: UIViewController,ReceiveData{
     func styleDateLabelView() {
         
         dateView.layer.cornerRadius = dateView.frame.height / 6
-        dateView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         dateView.layer.borderWidth = 1
-        dateView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        dateView.layer.shadowOpacity = 0.5
-        dateView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
     }
     
     @IBAction func ShowProgress(_ sender: UIBarButtonItem) {

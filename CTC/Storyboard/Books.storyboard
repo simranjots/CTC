@@ -14,7 +14,7 @@
         <scene sceneID="El4-kM-hMF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBarsWhenVerticallyCompact="YES" id="PUg-jj-i8O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Books" image="shopping-cart" selectedImage="shopping-cart-selected" id="PYT-NR-FHy"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="shopping-cart" selectedImage="shopping-cart" id="PYT-NR-FHy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iZU-XD-fze" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -181,7 +181,6 @@
     <resources>
         <image name="201DAPBook" width="162" height="249.5"/>
         <image name="shopping-cart" width="32" height="32"/>
-        <image name="shopping-cart-selected" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

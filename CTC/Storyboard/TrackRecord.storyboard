@@ -14,7 +14,7 @@
         <scene sceneID="1fE-Qt-X3T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="ehL-g8-T33" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Track Records" image="Records" selectedImage="Record-Selected" id="udv-xe-1Ct"/>
+                    <tabBarItem key="tabBarItem" title="Track Records" image="Records" selectedImage="Records" id="udv-xe-1Ct"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5VD-cc-U3L" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -428,7 +428,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Record-Selected" width="29" height="29"/>
         <image name="Records" width="29" height="29"/>
         <namedColor name="primaryTextColor">
             <color red="0.13699999451637268" green="0.13699999451637268" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +13,7 @@
         <scene sceneID="Oyb-rE-mHg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="B85-ze-rcU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home-Selected" id="w39-Kb-lrW"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home" id="w39-Kb-lrW"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="a5X-7I-mhA" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
@@ -173,11 +172,11 @@
                                             <constraint firstAttribute="height" constant="30" id="DzP-mT-6Yr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <color key="textColor" name="DialogBoxGray"/>
+                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4nk-2p-Abj" firstAttribute="centerY" secondItem="5MA-kB-zQ2" secondAttribute="centerY" id="LQz-hG-Jhk"/>
                                     <constraint firstItem="4nk-2p-Abj" firstAttribute="centerX" secondItem="5MA-kB-zQ2" secondAttribute="centerX" id="d5e-Li-Yew"/>
@@ -211,7 +210,7 @@
                             <barButtonItem image="Plus" id="CLI-Hy-yam">
                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <action selector="addPractices:" destination="rNy-SS-lWh" id="AiR-M8-X5I"/>
+                                    <action selector="addPractices:" destination="rNy-SS-lWh" id="oeF-yN-0Ce"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1272,7 +1271,6 @@
     <resources>
         <image name="Book" width="29" height="29"/>
         <image name="Home" width="29" height="29"/>
-        <image name="Home-Selected" width="29" height="29"/>
         <image name="Plus" width="29" height="29"/>
         <image name="Star" width="29" height="29"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
@@ -1284,14 +1282,8 @@
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practice" width="480" height="480"/>
         <image name="values" width="512" height="512"/>
-        <namedColor name="DialogBoxGray">
-            <color red="0.52499997615814209" green="0.54500001668930054" blue="0.55699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

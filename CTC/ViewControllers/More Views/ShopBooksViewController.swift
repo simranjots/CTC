@@ -53,7 +53,9 @@ extension ShopBooksViewController: UICollectionViewDelegate, UICollectionViewDat
         
         
         //View styles
-        //cell.containerView.layer.cornerRadius = 15
+        cell.containerView.layer.cornerRadius = cell.containerView.frame.height / 20
+        cell.containerView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        cell.containerView.layer.borderWidth = 1
         cell.containerView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         cell.containerView.layer.shadowOpacity = 0.5
         cell.containerView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)

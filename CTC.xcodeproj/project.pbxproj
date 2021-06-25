@@ -49,6 +49,8 @@
 		26C197FC268286D5003A6D88 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
 		26CAE06C26850D3B00A54802 /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */; };
+		26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE0952685870F00A54802 /* TabBarViewController.swift */; };
+		26CAE0982685886500A54802 /* AddPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CAE0972685886500A54802 /* AddPractice.storyboard */; };
 		26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */; };
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
@@ -83,7 +85,6 @@
 		E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E16BBC6021F618E70094D8B6 /* Appbackground.png */; };
 		E16BBC6321F638D60094D8B6 /* MorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */; };
 		E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */; };
-		E173DE2922035A1C000CAE24 /* MoreOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173DE2822035A1C000CAE24 /* MoreOptionCollectionViewCell.swift */; };
 		E179F52F21F2476A00FBD293 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */; };
 		E179F53C21F2956F00FBD293 /* HomeBackgroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E179F53B21F2956F00FBD293 /* HomeBackgroundImage.jpeg */; };
 		E17A93CE2273636D009D3064 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E17A93CD2273636D009D3064 /* 1.jpeg */; };
@@ -154,6 +155,8 @@
 		26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
 		26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
+		26CAE0952685870F00A54802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		26CAE0972685886500A54802 /* AddPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPractice.storyboard; sourceTree = "<group>"; };
 		26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressViewController.swift; sourceTree = "<group>"; };
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -190,7 +193,6 @@
 		E16BBC6021F618E70094D8B6 /* Appbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Appbackground.png; sourceTree = "<group>"; };
 		E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePageViewController.swift; sourceTree = "<group>"; };
 		E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableSectionZeroTableViewCell.swift; sourceTree = "<group>"; };
-		E173DE2822035A1C000CAE24 /* MoreOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		E179F53B21F2956F00FBD293 /* HomeBackgroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HomeBackgroundImage.jpeg; sourceTree = "<group>"; };
 		E17A93CD2273636D009D3064 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */,
 				1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */,
 				1AACDE0C2668783400A1877D /* MainNavigationController.swift */,
+				26CAE0952685870F00A54802 /* TabBarViewController.swift */,
 				1AACDE0B2668777A00A1877D /* Profile View */,
 				1AACDE0A2668775900A1877D /* TrackRecord View */,
 				1AACDE092668767400A1877D /* Login View */,
@@ -358,6 +361,7 @@
 				1AD65E82264E449900CD9974 /* TrackRecord.storyboard */,
 				1AD65E84264E45A400CD9974 /* Books.storyboard */,
 				1AD65E86264E466C00CD9974 /* More.storyboard */,
+				26CAE0972685886500A54802 /* AddPractice.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -402,7 +406,6 @@
 				E18169B82201042C002EE49F /* ProfileHeaderCell.swift */,
 				E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */,
 				E18169B42200EC97002EE49F /* ProfileDataTableViewCell.swift */,
-				E173DE2822035A1C000CAE24 /* MoreOptionCollectionViewCell.swift */,
 				E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */,
 				E10D6678226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift */,
 				E10D6672226F6F0700C0E4D8 /* faqTableViewCell.swift */,
@@ -586,6 +589,7 @@
 				1AD65E85264E45A400CD9974 /* Books.storyboard in Resources */,
 				E189D69321E4FA450078380B /* LaunchScreen.storyboard in Resources */,
 				E179F53C21F2956F00FBD293 /* HomeBackgroundImage.jpeg in Resources */,
+				26CAE0982685886500A54802 /* AddPractice.storyboard in Resources */,
 				E189D69021E4FA450078380B /* Assets.xcassets in Resources */,
 				1AD65E81264E412800CD9974 /* Home.storyboard in Resources */,
 				E133554922666B1000C3E0CF /* 2.png in Resources */,
@@ -673,6 +677,7 @@
 				263F60EF2681240D00B4908E /* ShopBooksViewController.swift in Sources */,
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
+				26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
@@ -704,7 +709,6 @@
 				1A55439726811583000C5FFF /* PracticeReminders.swift in Sources */,
 				E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */,
 				26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */,
-				E173DE2922035A1C000CAE24 /* MoreOptionCollectionViewCell.swift in Sources */,
 				1AA35F862671B41F00BA918F /* PracticesRecordListVC.swift in Sources */,
 				E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */,
 				E1F3094721FB8560008ADE9D /* AnimationLabel.swift in Sources */,
