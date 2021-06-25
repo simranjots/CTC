@@ -235,7 +235,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V09-JU-FDW"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aFx-pT-9tt" firstAttribute="top" secondItem="V09-JU-FDW" secondAttribute="top" id="bCg-Xe-u63"/>
@@ -523,8 +523,8 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JWl-XT-8Ku"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vE1-XS-vQp" firstAttribute="trailing" secondItem="JWl-XT-8Ku" secondAttribute="trailing" id="43l-V6-5yN"/>
                             <constraint firstItem="vE1-XS-vQp" firstAttribute="leading" secondItem="JWl-XT-8Ku" secondAttribute="leading" id="5aQ-5q-nOx"/>

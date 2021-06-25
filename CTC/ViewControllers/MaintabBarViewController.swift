@@ -19,7 +19,7 @@ class MaintabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func setupMiddleButton() {
         
-        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 30, y: -30, width: 70, height: 70))
+        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 35, y: -30, width: 80, height: 80))
         
         middleButton.setBackgroundImage(UIImage(named: "home-2"), for: .normal)
         middleButton.layer.shadowColor = UIColor.black.cgColor
