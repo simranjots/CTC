@@ -26,10 +26,9 @@ class HomeVCCell: UITableViewCell {
         dbHelper = DatabaseHelper()
         userPracticesData = UserPracticesData()
         
-        homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 7
-//        homeScreenTableCellView.layer.borderColor = #colorLiteral(red: 0.4509803922, green: 0.4509803922, blue: 0.4509803922, alpha: 1)
-//        homeScreenTableCellView.layer.borderWidth = 1
-//        
+        homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
+        homeScreenTableCellView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        homeScreenTableCellView.layer.borderWidth = 1
         homeScreenTableCellView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         homeScreenTableCellView.layer.shadowOpacity = 0.5
         homeScreenTableCellView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)

@@ -26,19 +26,10 @@ class MorePageTableViewCell: UITableViewCell {
     }
     
     func styleTableViewCell() {
-        
-        //Style OptionsImageView color
-        optionIconImageView.tintColor = UIColor.init(red: 62/255, green: 178/255, blue: 174/255, alpha: 1)
-        
-        //Style nextImageView and color
-        nextImageView.image = UIImage(named: "next")
-        nextImageView.tintColor = .gray
-        
+            
         //Style CellView
         moreCellView.layer.cornerRadius = moreCellView.frame.height / 6
-        moreCellView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        moreCellView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         moreCellView.layer.borderWidth = 1
     }
-
-
 }

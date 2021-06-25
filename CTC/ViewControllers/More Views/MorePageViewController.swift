@@ -75,6 +75,7 @@ class MorePageViewController: UIViewController {
     
     //MARK:- TableView outlet
     @IBOutlet var moreVCTableView: UITableView!
+    @IBOutlet var manualViewBelowContainerView: UIView!
     
     //MARK: - Array of more options and icons
     
@@ -103,7 +104,6 @@ class MorePageViewController: UIViewController {
     
         //Set containerView bottom constraints
         moreVCTableView.anchor(top: containerView.bottomAnchor, paddingTop: 10)
-        
     }
    
     override var preferredStatusBarStyle: UIStatusBarStyle {
