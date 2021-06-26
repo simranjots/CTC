@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //MARK: for path od coredata
-//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let urls = FileManager.default.urls(for: .documentDirectory, in:   .userDomainMask)
 //        print("Address \(urls)")
         
         //MARK:  to select app launch
@@ -39,20 +39,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         userObject = currentUser.checkLoggedIn()
         if (userObject != nil){
-            let days: [String] = [ "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "365 Days"]
+            let days: [String] = ["365 Days"]
             let data = userPractice.getPractices(user: userObject!)
             for goal in data! {
                 for day in days {
                     if goal.goals == day{
                         print(day)
-                        let pracName = goal.practice
-                        let td = goal.practiseddays
-                        let dss = (Date().dateFormate()!).days(from: (goal.startedday! as Date).dateFormate()!) + 1
-                        let flag = false
-                        let date = Date().dateFormate()!
-                        userPractice.deletePractice(practice: goal)
-                        let resultFlag = dbHelper.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td))
-                        print(resultFlag)
+                        let startDate = Date().days(from: goal.startedday! as Date  )
+                        let Today =  Date().days(from: Date().originalFormate())
+                        let diff = startDate - Today
+                        if diff > 365 {
+                            let pracName = goal.practice
+                            let td = goal.practiseddays
+                            let dss = (Date().dateFormate()!).days(from: (goal.startedday! as Date).dateFormate()!) + 1
+                            let flag = false
+                            let date = Date().dateFormate()!
+                            userPractice.deletePractice(practice: goal)
+                            let resultFlag = dbHelper.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td))
+                            print(resultFlag)
+                        }
+                        
                        
                     }
                 }
@@ -66,11 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController:UIViewController?
         
         if (userObject != nil){
+            NotificationManager.instance.requestAuthorization()
             UIApplication.shared.applicationIconBadgeNumber = 0
             let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
             
         }else{
+            NotificationManager.instance.requestAuthorization()
             UIApplication.shared.applicationIconBadgeNumber = 0
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "newLoginOptions")

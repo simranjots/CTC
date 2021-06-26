@@ -33,6 +33,7 @@ class UserPractices{
             newPractice.goals = goals
             newPractice.user = user
             let result = currentUser.saveUser()
+            
             return result
         }else {
             print("Practice Exist")

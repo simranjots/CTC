@@ -2,7 +2,6 @@ import UIKit
 
 class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var reminderInfo: UIButton!
-    
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var choosePracticesTextField: UITextField!
     @IBOutlet var dateTextField: UITextField!
@@ -42,7 +41,8 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         "AUTHENTICITY", "ACHIEVEMENT", "ADVENTURE", "BEAUTY", "CHALLENGE", "COMFORT", "COURAGE", "CREATIVITY", "CURIOSITY", "EDUCATION", "EMPOWERMENT", "ENVIRONMENT", "FAMILY", "FINANCIAL", "FREEDOM", "FITNESS", "BALANCE", "GRATITUDE", "LOVE", "FRIENDSHIP", "SERVICE", "HEALTH", "HONESTY", "INDEPENDENCE", "INNER PEACE", "INTEGRITY", "INTELLIGENCE",  "INTIMACY", "JOY", "LEADERSHIP", "LEARNING",  "MOTIVATION", "PASSION", "COMPASSION", "CREDIBILITY", "EMPATHY", "HUMOUR", "RECREATION", "PEACE", "PERFORMANCE", "PERSONAL", "GROWTH", "PLAY", "PRODUCTIVITY", "RELIABILITY", "RESPECT", "SECURITY", "SPIRITUALITY", "SUCCESS", "TIME FREEDOM", "VARIETY" ]
     
     let practices: [String] = ["No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables"]
-    let goals: [String] = ["Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days", "365 Days"]
+    // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
+    let goals: [String] = ["365 Days"]
     
     let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship"]
     
@@ -52,6 +52,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     override func viewDidLoad() {
         super.viewDidLoad()
         reminderInfo.isHidden = true
+        NotificationManager.instance.requestAuthorization()
         uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
@@ -131,10 +132,10 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     }
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
-        if choosePracticesTextField.text != nil{
+        let value = UserDefaults.standard.bool(forKey: "Permission")
+        if AddPracticesViewController.cvalue == "edit"{
         if uiSwitch.isOn{
-            let value = NotificationManager.instance.requestAuthorization()
-            if  value {
+            if  value == true {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
                 vc.practiceName = choosePracticesTextField.text!
@@ -149,14 +150,20 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
                 }
             self.present(vc, animated: true, completion: nil)
             }else{
-               
-                showToast(message: "Please go to the setting and allow Permission for Notification", duration: 1)
+                
+               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
+                uiSwitch.setOn(false, animated: true)
+                _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
+                    self.dismiss(animated: true)
+                }
             }
         }else{
             uiSwitch.setOn(false, animated: true)
         }
         }else{
-            showToast(message: "Please Enter any Practice", duration: 1)
+            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
+            uiSwitch.setOn(false, animated: true)
+            
         }
     }
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
@@ -208,9 +215,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
             
         }
         else if(image_Name == ""){
-            
             showToast(message: "Please Select Icon For Practice", duration: 3)
-            
         }
         else if(dateTextField.text == ""){
             showToast(message: "Please Select Practice Starting Date", duration: 3)
@@ -240,12 +245,12 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
             
             if(practiceFlag == 1){
                 
-                showAlert(title: "Warning", message: "Practice Already Exist. . . ", buttonTitle: "Try Again")
+                showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
                 
             }
             else if(practiceFlag == 2){
-                
-                showAlert(title: "Error", message: "Please Report an Error . . .", buttonTitle: "Try Again")
+                showAlert(title: "Warning", message: "Practice Already Exist. . . ", buttonTitle: "Try Again")
+
                 
             }else if (practiceFlag == 0 ){
                 
@@ -254,9 +259,8 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
                 self.imageName = ""
                 self.datePickerView.date = Date()
                 self.activityIconImageView.image = UIImage(named: "Image-gallery")
-                let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
-                let home = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
-                present(home, animated: true)
+                HomeViewController.practiceAdded(true)
+                dismiss(animated: true)
             }
             
         }
