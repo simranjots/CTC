@@ -23,7 +23,7 @@ class UserPracticesData {
        practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
-        streak =  (getStreak(practice: practiceObject, date: currentDate))
+        streak =  (getStreak(practice: practiceObject))
         if  practiceData != nil{
             tracking_days = practiceData.tracking_days
             
@@ -31,31 +31,25 @@ class UserPracticesData {
                 tracking_days += 1
                 practicedDaysCount += 1
                 streak += 1
+                
             }else if (toggleBtn == false && practiceData.practised == true){
                
                 tracking_days -= 1
                 practicedDaysCount -= 1
-                if streak == 0{
-                    streak = 0
-                }else{
                     streak -= 1
-                }
+                    
                 
             }else if (toggleBtn == true && practiceData.practised == false){
               
                     tracking_days += 1
                     practicedDaysCount += 1
-               
+                    streak += 1
+
             }else if (toggleBtn  && practiceData.practised == true){
                 if save == "" {
                     tracking_days += 1
                     practicedDaysCount += 1
-                    if streak == 0{
-                        streak = 0
-                    }else{
                         streak += 1
-                    }
-                    
                     
                 }
                
@@ -102,7 +96,9 @@ class UserPracticesData {
             if(toggleBtn == true){
                 tracking_days += 1
                 practicedDaysCount += 1
+                streak += 1
             }
+            newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
          
         }
@@ -175,7 +171,7 @@ class UserPracticesData {
         }
         return 0
     }
-    func getStreak(practice: Practice,date: Date) -> Int32 {
+    func getStreak(practice: Practice) -> Int32 {
     let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
             if(lastDayData != nil){
                 let newDay = Date().days(from: lastDayData!.date! as Date )

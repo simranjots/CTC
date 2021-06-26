@@ -17,7 +17,8 @@ class HomeViewController: UIViewController,ReceiveData{
     var practices:[Practice]!
     var practicesData: [PracticeData]!
     var practiceReminder : PracticeReminder!
-    
+    typealias completion = (Bool)->Void
+    static var practiceAdded:completion!
     // variables
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -62,35 +63,14 @@ class HomeViewController: UIViewController,ReceiveData{
     
     func styleDateLabelView() {
         
-//        dateView.layer.cornerRadius = dateView.frame.height / 6
-//        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-//        dateView.layer.borderWidth = 1
+        //        dateView.layer.cornerRadius = dateView.frame.height / 6
+        //        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        //        dateView.layer.borderWidth = 1
     }
     
     @IBAction func ShowProgress(_ sender: UIBarButtonItem) {
         //ShowDetails
         performSegue(withIdentifier: "ShowDetails", sender: self)
-    }
-    
-    @objc func custome(dateComponent: DateComponents){
-        var dateComp = dateComponent
-        let content = UNMutableNotificationContent()
-        content.body = "Body"
-        content.title = "Title"
-        content.sound = UNNotificationSound.default
-        let trigger2 = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
-        let request = UNNotificationRequest(identifier: "Test", content: content, trigger: trigger2)
-        UNUserNotificationCenter.current().add(request) { (err) in
-            if err == nil{
-                dateComp.day = dateComp.second! + 3
-                print("Complete")
-            }
-        }
-    }
-    
-    @objc func DatePickerValueChanged(datePicker: UIDatePicker){
-        let finalDate = "Date: \(datePicker.date.dateFormatemmmdd()!)"
-        dateTextField.text = finalDate
     }
     
     private func getPractices() -> [Practice]{
@@ -99,10 +79,6 @@ class HomeViewController: UIViewController,ReceiveData{
     
     private func getPracticesData(date: Date) -> [PracticeData]? {
         return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
-    }
-    
-    @objc func popUpDateSelected() {
-        self.view.endEditing(true)
     }
     
     @objc func reloadHomeTableView(){
@@ -118,8 +94,13 @@ class HomeViewController: UIViewController,ReceiveData{
         let vc = storyboard.instantiateViewController(withIdentifier: "AddPractices") as! AddPracticesViewController
         AddPracticesViewController.cvalue = "add"
         self.present(vc, animated: true, completion: nil)
+        HomeViewController.practiceAdded  = {(flag) in
+            if(flag){
+                self.refreshTableview(date: self.selectedDate)
+            }
+        }
     }
-
+    
     
     // Table View Code
     func delPractice(prac: Practice){
@@ -250,7 +231,4 @@ extension HomeViewController: UITableViewDelegate{
         destination.delegate = self
         
     }
-    
-    
-    
 }

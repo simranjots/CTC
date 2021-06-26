@@ -32,7 +32,6 @@ class PopUpReminder: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         practiceReminder = PracticeReminder()
         reminder = practiceReminder.loadReminderbyPracticeName(practiceName: PopUpReminder.practiceName)
@@ -53,7 +52,6 @@ class PopUpReminder: UIViewController {
         if PopUpReminder.value == "update"{
             upDate()
         }
-        
         label.inputView = ReminderPickerView
         hour.inputView = ReminderPickerView
         minute.inputView = ReminderPickerView
@@ -73,14 +71,14 @@ class PopUpReminder: UIViewController {
                     }else{
                         
                         self.practiceReminder.AddReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: identifier)
-                        setNotification()
+                        setNotification(practiceName: PopUpReminder.practiceName)
                         self.dismiss(animated: true, completion: nil)
                         PopUpReminder.searchCompletion(true)
                     }
                 
             }else{
                 self.practiceReminder.AddReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: identifier)
-                setNotification()
+                setNotification(practiceName: PopUpReminder.practiceName)
                 self.dismiss(animated: true, completion: nil)
                 PopUpReminder.searchCompletion(true)
             }
@@ -89,32 +87,33 @@ class PopUpReminder: UIViewController {
         if PopUpReminder.value == "update"{
             
             practiceReminder.UpdateReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: reminder[PopUpReminder.myindex].identifier!)
-            setNotification()
+            setNotification(practiceName: PopUpReminder.practiceName)
             self.dismiss(animated: true, completion: nil)
             PopUpReminder.searchCompletion(true)
         }
+       
+        
+        
     }
-    
-    func setNotification() {
+    func setNotification(practiceName:String) {
         if label.text == "Weekdays" {
             for i in 2...6 {
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)
+                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
             }
         }else if label.text == "Everyday"{
             for i in 1...7 {
                 print("note \(PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)")
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)
+                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
             }
         }else {
             for weekday in weekDict {
                 if weekday.key == label.text {
-                    NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: weekday.value, identifier: PopUpReminder.practiceName+"\(weekday.value)"+hour.text!+minute.text!)
+                    NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: weekday.value, identifier: PopUpReminder.practiceName+"\(weekday.value)"+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
                 }
             }
         }
         
     }
-    
     func add()  {
         let date = NSDate()
         let calendar = NSCalendar.current
@@ -125,14 +124,12 @@ class PopUpReminder: UIViewController {
         minute.text = "\(currentminutes)"
         
     }
-    
     func upDate() {
         label.text = PopUpReminder.labels
         hour.text = "\(PopUpReminder.hourlabel)"
         minute.text = "\(PopUpReminder.minutelabel)"
         
     }
-    
     func setupView()  {
         //adding an overlay to the view to give focus to the dialog box
         view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
@@ -144,10 +141,17 @@ class PopUpReminder: UIViewController {
         popUpView.layer.shadowOffset = CGSize(width: 0, height: 0)
         popUpView.layer.shadowRadius = 10
         popUpView.layer.shadowOpacity = 1
-        
         //customizing the add button
-        Utilities.styleButton(addButton)
-        Utilities.styleHollowButton(cancelButton)
+        addButton.setTitleColor(UIColor.white, for: .normal)
+        addButton.layer.borderWidth = 1.2
+        addButton.layer.cornerRadius = 4.0
+        addButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
+        
+        //customizing the cancel button
+        cancelButton.setTitleColor(UIColor.white, for: .normal)
+        cancelButton.layer.borderWidth = 1.2
+        cancelButton.layer.cornerRadius = 4.0
+        cancelButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
     }
     @IBAction func cancelbutton(_ sender: Any) {
         self.dismiss(animated: true)

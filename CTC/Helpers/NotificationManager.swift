@@ -6,9 +6,7 @@ class NotificationManager{
     
     static var instance = NotificationManager()
     
-    var value = true
-    
-    func requestAuthorization()-> Bool {
+    func requestAuthorization(){
         
         let option: UNAuthorizationOptions = [.alert,.sound,.badge]
         UNUserNotificationCenter.current().requestAuthorization(options: option) {
@@ -16,20 +14,20 @@ class NotificationManager{
             success, error in
             if let error = error {
                 print("ERROR: \(error)")
-                self.value = false
+                
             } else {
                 print("SUCCESS")
-                self.value = true
+                print(success)
+                UserDefaults.standard.set(success, forKey: "Permission")
             }
         }
-        return value
     }
     
-    func scheduleNotification(hour: Int,minute:Int,weekday:Int?,identifier:String) {
+    func scheduleNotification(hour: Int,minute:Int,weekday:Int?,identifier:String,title: String,body:String) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Time to Practice "
-        content.body = "Stay on track to meet your goals by learning a litle every day.Let's get started!"
+        content.title = title
+        content.body = body
         content.sound = .default
         
         

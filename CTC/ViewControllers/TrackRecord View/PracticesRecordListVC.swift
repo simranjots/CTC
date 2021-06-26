@@ -72,9 +72,9 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.daysSinceStartedLabel.text = "\(days)"
         cell.activityPracticedForThisMonthLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
-        let practiceData = userPracticesData.getPracticeDataObj(practiceName: practicesArray[indexPath.row].practice!)
-        if practiceData != nil {
-            cell.streakLabel.text = "\(practiceData!.streak)"
+        let practiceData = userPracticesData.getStreak(practice: practicesArray[indexPath.row])
+        if practiceData != 0 {
+            cell.streakLabel.text = "\(practiceData)"
         }else{
             cell.streakLabel.text = "\(0)"
         }
