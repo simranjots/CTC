@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AddPractice-->
+        <!--History-->
         <scene sceneID="bNG-YH-ei5">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddPractice" id="Kb4-dm-36D" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="History" id="Kb4-dm-36D" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="hjH-Q1-FBm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SET-kH-LfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

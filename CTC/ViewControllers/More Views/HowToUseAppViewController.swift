@@ -55,9 +55,7 @@ extension HowToUseAppViewController: UICollectionViewDelegate, UICollectionViewD
         cell.useDescriptionLabel.text = howToUseDescription[indexPath.row]
         
         //View style
-        cell.containerView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cell.containerView.layer.shadowOpacity = 0.5
-        cell.containerView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
+        Utilities.addShadowAndBorderToView(cell.containerView)
         
         //ImageView styles
         cell.appSnapshotsImageView.layer.borderWidth = 1

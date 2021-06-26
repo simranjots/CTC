@@ -55,20 +55,20 @@ class MorePageViewController: UIViewController {
         view.backgroundColor = Utilities.primaryTextColor
         
         view.addSubview(profileImageView)
-        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor, paddingTop: 90, width: 120, height: 120)
+        //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 130, paddingLeft: 40, width: 120, height: 120)
         profileImageView.layer.cornerRadius = 120 / 2
         
         view.addSubview(editButton)
-        editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 250, paddingRight: 20, width: 20, height: 20)
+        editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 140, paddingRight: 20, width: 20, height: 20)
         
         view.addSubview(nameLabel)
-        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: profileImageView.bottomAnchor, paddingTop: 10)
+        //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 160, paddingLeft: 180)
         
         view.addSubview(emailLabel)
-        emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emailLabel.anchor(top:nameLabel.bottomAnchor, paddingTop: 5)
+        //emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emailLabel.anchor(top:nameLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 5, paddingLeft: 180)
         
         return view
     }()
@@ -100,7 +100,8 @@ class MorePageViewController: UIViewController {
         
         //Set containerView above tableview
         view.addSubview(containerView)
-        containerView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 300)
+        containerView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 200)
+        Utilities.addShadowAndBorderToView(containerView)
     
         //Set containerView bottom constraints
         moreVCTableView.anchor(top: containerView.bottomAnchor, paddingTop: 10)

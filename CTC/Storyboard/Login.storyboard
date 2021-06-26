@@ -135,7 +135,7 @@
                                                                                 <fragment content="Forgot Password?">
                                                                                     <attributes>
                                                                                         <color key="NSColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                                                                        <font key="NSFont" size="16" name="ArialMT"/>
                                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                     </attributes>
                                                                                 </fragment>
@@ -675,7 +675,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u5l-VQ-IMC"/>
+        <segue reference="uzh-sq-IJl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>

@@ -29,7 +29,6 @@ class MorePageTableViewCell: UITableViewCell {
             
         //Style CellView
         moreCellView.layer.cornerRadius = moreCellView.frame.height / 6
-        moreCellView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        moreCellView.layer.borderWidth = 1
+        Utilities.addBorderToView(moreCellView)
     }
 }

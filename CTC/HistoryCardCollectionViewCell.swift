@@ -18,10 +18,14 @@ class HistoryCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var percentageProgressView: UIProgressView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var cardBackgroundView: UIView!
+    @IBOutlet var cardContainerView: UIView!
     
     override func awakeFromNib() {
-        cardBackgroundView.setPopupView()
-        PracticeNameLabel.setPopUpTitle()
-        percentageProgressView.layer.cornerRadius = percentageProgressView.frame.height / 2
+        
+        
+        Utilities.addShadowAndBorderToView(cardBackgroundView)
+        //cardBackgroundView.setPopupView()
+        //PracticeNameLabel.setPopUpTitle()
+        //percentageProgressView.layer.cornerRadius = percentageProgressView.frame.height / 2
     }
 }

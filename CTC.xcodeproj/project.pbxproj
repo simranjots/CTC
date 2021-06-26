@@ -50,7 +50,7 @@
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
 		26CAE06C26850D3B00A54802 /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */; };
 		26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE0952685870F00A54802 /* TabBarViewController.swift */; };
-		26CAE0982685886500A54802 /* AddPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CAE0972685886500A54802 /* AddPractice.storyboard */; };
+		26CAE0982685886500A54802 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CAE0972685886500A54802 /* History.storyboard */; };
 		26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */; };
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
@@ -156,7 +156,7 @@
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
 		26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
 		26CAE0952685870F00A54802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		26CAE0972685886500A54802 /* AddPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPractice.storyboard; sourceTree = "<group>"; };
+		26CAE0972685886500A54802 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressViewController.swift; sourceTree = "<group>"; };
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -317,9 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */,
+				26CAE0952685870F00A54802 /* TabBarViewController.swift */,
 				1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */,
 				1AACDE0C2668783400A1877D /* MainNavigationController.swift */,
-				26CAE0952685870F00A54802 /* TabBarViewController.swift */,
 				1AACDE0B2668777A00A1877D /* Profile View */,
 				1AACDE0A2668775900A1877D /* TrackRecord View */,
 				1AACDE092668767400A1877D /* Login View */,
@@ -357,11 +357,11 @@
 			children = (
 				1AD65E7C264E32CA00CD9974 /* Login.storyboard */,
 				1AD65E7E264E357D00CD9974 /* TabVC.storyboard */,
-				1AD65E80264E412800CD9974 /* Home.storyboard */,
+				26CAE0972685886500A54802 /* History.storyboard */,
 				1AD65E82264E449900CD9974 /* TrackRecord.storyboard */,
+				1AD65E80264E412800CD9974 /* Home.storyboard */,
 				1AD65E84264E45A400CD9974 /* Books.storyboard */,
 				1AD65E86264E466C00CD9974 /* More.storyboard */,
-				26CAE0972685886500A54802 /* AddPractice.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -589,7 +589,7 @@
 				1AD65E85264E45A400CD9974 /* Books.storyboard in Resources */,
 				E189D69321E4FA450078380B /* LaunchScreen.storyboard in Resources */,
 				E179F53C21F2956F00FBD293 /* HomeBackgroundImage.jpeg in Resources */,
-				26CAE0982685886500A54802 /* AddPractice.storyboard in Resources */,
+				26CAE0982685886500A54802 /* History.storyboard in Resources */,
 				E189D69021E4FA450078380B /* Assets.xcassets in Resources */,
 				1AD65E81264E412800CD9974 /* Home.storyboard in Resources */,
 				E133554922666B1000C3E0CF /* 2.png in Resources */,

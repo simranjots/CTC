@@ -14,13 +14,16 @@ class ConnectToUsViewController: UIViewController, CLLocationManagerDelegate {
 
     //MARK: - Outlet
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var contactLabel1: UILabel!
+    @IBOutlet var contactLabel2: UILabel!
+    @IBOutlet var purchaseButton: UIButton!
     
     let manager = CLLocationManager()
     
     //MARK: - Lifcycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupElements()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,7 +35,7 @@ class ConnectToUsViewController: UIViewController, CLLocationManagerDelegate {
         manager.startUpdatingLocation()
     }
     
-    
+    //MARK: - Map Rendering
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             manager.stopUpdatingLocation()
@@ -60,27 +63,39 @@ class ConnectToUsViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addAnnotation(pin)
         pin.title = "Connect To The Core"
     }
+
+    //Set up and style the elements
+    func setupElements() {
+        
+        //Set labels texts
+        contactLabel1.text = "To order multiple copies of the books,"
+        contactLabel2.text = "Send us an email at info@connecttothecore.com"
+        
+        //Style purchase button
+        Utilities.styleButton(purchaseButton)
+        Utilities.addShadowToButton(purchaseButton)
+        
+        //Style mapView
+        mapView.layer.borderColor = Utilities.primaryTextColor.cgColor
+        mapView.layer.borderWidth = 1
+    }
     
     
     //MARK: - IBActions
+    
+    @IBAction func purchaseButtonTapped(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://www.201dayachievementprinciple.com/#section-1586207225653")!, options: [:], completionHandler: nil)
+    }
+    
     @IBAction func instagramButtontapped(_ sender: UIButton) {
-       UIApplication.shared.open(URL(string: "https://www.instagram.com/connecttothecore/")!, options: [:], completionHandler: nil)
+       UIApplication.shared.open(URL(string: "https://www.instagram.com/201dayachievementprinciple/")!, options: [:], completionHandler: nil)
     }
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://www.facebook.com/Connect-To-The-Core-Inc-244517470006/?ref=bookmarks")!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "https://www.facebook.com/groups/375234539714492/")!, options: [:], completionHandler: nil)
     }
     
     @IBAction func youtubeButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://www.youtube.com/channel/UCWjLdrHSw6nQDYXrCWQw9IA?view_as=subscriber")!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "https://www.youtube.com/watch?v=DH4CLrOH9XQ&t=22s")!, options: [:], completionHandler: nil)
     }
-    
-    @IBAction func linkedInButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F802137%2Fadmin%2F")!, options: [:], completionHandler: nil)
-    }
-    
-    @IBAction func soundCloudButtonTapped(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://soundcloud.com/teresa-easler")!, options: [:], completionHandler: nil)
-    }
-    
 }

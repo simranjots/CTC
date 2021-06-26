@@ -45,13 +45,17 @@ class LoginViewController: UIViewController {
         
         //Style the buttons
         Utilities.styleButton(signInButton)
+        Utilities.addShadowToButton(signInButton)
         Utilities.styleGmailButton(gmailSignInButton)
+        Utilities.addShadowToButton(gmailSignInButton)
         Utilities.styleFacebookButton(facebookSignInButton)
-        
+        Utilities.addShadowToButton(facebookSignInButton)
         //Set textField Images
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
         Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -137,13 +141,8 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
-        
-        self.performSegue(withIdentifier: Constants.Segues.loginToResetPasswordSegue, sender: self)
-        
-    }
-    
     @IBAction func gmailSignInButtonTapped(_ sender: UIButton) {
+    
     }
     
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
