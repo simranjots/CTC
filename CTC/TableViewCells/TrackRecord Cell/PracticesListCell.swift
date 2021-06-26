@@ -1,9 +1,8 @@
 import UIKit
 
 class PracticesListCell: UITableViewCell {
-
     
-    
+    //MARK: - Outlets
     //Tablview Views
     @IBOutlet var stataticsVCMainContainer: UIView!
     @IBOutlet var headerTitleView: UIView!
@@ -29,8 +28,14 @@ class PracticesListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        styleViews()
+
+        //Set properties of activityTitleView
+        headerTitleView.layer.cornerRadius = headerTitleView.frame.height / 4
+        Utilities.addShadowAndBorderToView(headerTitleView)
+        
+        //Set properties of ProgressView
+        Utilities.addShadowAndBorderToView(circularBarAndStataticsView)
+        circularProgressBarView.layer.borderWidth = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,28 +54,4 @@ class PracticesListCell: UITableViewCell {
         percentageLabel.text = "\(percentageValue)%"
         
     }
-    
-    //Style Views
-    func styleViews() {
-        
-        //Set properties of activityTitleView
-        headerTitleView.layer.cornerRadius = headerTitleView.frame.height / 4
-        headerTitleView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        headerTitleView.layer.borderWidth = 1
-//        headerTitleView.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//        headerTitleView.layer.shadowOpacity = 0.9
-//        headerTitleView.layer.shadowOffset = .zero
-//        headerTitleView.layer.shadowRadius = 4
-        
-        //Set properties of ProgressView
-        circularBarAndStataticsView.layer.borderColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
-        circularBarAndStataticsView.layer.borderWidth = 1
-//        circularBarAndStataticsView.layer.shadowColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-//        circularBarAndStataticsView.layer.shadowOpacity = 0.9
-//        circularBarAndStataticsView.layer.shadowOffset = .zero
-//        circularBarAndStataticsView.layer.shadowRadius = 4
-    }
-
-    
-
 }

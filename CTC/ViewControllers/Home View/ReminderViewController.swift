@@ -7,8 +7,11 @@ class ReminderViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     
+    @IBOutlet var containerView: UIView!
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let weekDict = ["Sunday" : 1, "Monday" : 2, "Tuesday" : 3, "Wednesday" : 4, "thursday" : 5, "Friday" : 6, "Saturday" : 7]
+    
     var label = " "
     var hourlabel = " "
     var minutelabel = " "
@@ -105,10 +108,14 @@ class ReminderViewController: UIViewController {
     
 }
 
-extension ReminderViewController:UITableViewDataSource{
+extension ReminderViewController:UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return reminder.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,10 +132,10 @@ extension ReminderViewController:UITableViewDataSource{
         
         return cell
     }
-    
-    
 }
-extension ReminderViewController:UITableViewDelegate{
+
+extension ReminderViewController:UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         PopUpReminder.practiceName = practiceName
         PopUpReminder.myindex = indexPath.row
@@ -145,6 +152,7 @@ extension ReminderViewController:UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -158,8 +166,5 @@ extension ReminderViewController:UITableViewDelegate{
         }
         
     }
-    
-    
-    
 }
 

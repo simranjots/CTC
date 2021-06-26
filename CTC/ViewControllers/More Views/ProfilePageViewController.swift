@@ -36,8 +36,7 @@ class ProfilePageViewController: UIViewController {
         
         //Style profile Image
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-        profileImageView.layer.borderColor = Utilities.primaryBorderColor.cgColor
-        profileImageView.layer.borderWidth = 2
+        Utilities.addBorderToView(profileImageView)
         
     }
     

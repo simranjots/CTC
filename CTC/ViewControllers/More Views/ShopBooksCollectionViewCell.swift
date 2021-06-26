@@ -16,4 +16,5 @@ class ShopBooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet var booksDescriptionLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var purchaseLabel: UIButton!
+    
 }

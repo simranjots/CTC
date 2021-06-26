@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         //Style Buttons
         Utilities.styleButton(loginButton)
         Utilities.styleHollowButton(registerButton)
+        Utilities.addShadowToButton(loginButton)
     }
     
 }

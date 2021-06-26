@@ -27,12 +27,8 @@ class HomeVCCell: UITableViewCell {
         userPracticesData = UserPracticesData()
         
         homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
-        homeScreenTableCellView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        homeScreenTableCellView.layer.borderWidth = 1
-        homeScreenTableCellView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        homeScreenTableCellView.layer.shadowOpacity = 0.5
-        homeScreenTableCellView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
-
+        Utilities.addShadowAndBorderToView(homeScreenTableCellView)
+        homeScreenTableCellView.layer.borderWidth = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -45,6 +45,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         //Style Sign Up button
         Utilities.styleButton(signUpButton)
+        Utilities.addShadowToButton(signUpButton)
         
         //Set textField Images
         Utilities.addTextFieldImage(textField: nameTextField, andImage: nameTextFieldImage)

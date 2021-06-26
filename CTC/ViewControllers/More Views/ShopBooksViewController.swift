@@ -10,7 +10,6 @@ import UIKit
 
 class ShopBooksViewController: UIViewController {
     
-    
     @IBOutlet var shopBooksCollectionView:UICollectionView!
     
     //MARK: - Books Data
@@ -32,7 +31,6 @@ class ShopBooksViewController: UIViewController {
         shopBooksCollectionView.delegate = self
         shopBooksCollectionView.dataSource = self
     }
-    
 }
 
 //MARK: - Extension for ShopBooksViewController
@@ -51,17 +49,10 @@ extension ShopBooksViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.booksDescriptionLabel.text = booksDescription[indexPath.row]
         cell.priceLabel.text = booksPrice[indexPath.row]
         
-        
         //View styles
         cell.containerView.layer.cornerRadius = cell.containerView.frame.height / 20
-        cell.containerView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        cell.containerView.layer.borderWidth = 1
-        cell.containerView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cell.containerView.layer.shadowOpacity = 0.5
-        cell.containerView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
-        
-        //Button Styles
-        cell.purchaseLabel.layer.cornerRadius = 6
+        Utilities.addShadowAndBorderToView(cell.containerView)
+        Utilities.styleButton(cell.purchaseLabel)
         
         return cell
     }

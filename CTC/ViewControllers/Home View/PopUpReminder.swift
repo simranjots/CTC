@@ -32,6 +32,7 @@ class PopUpReminder: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         practiceReminder = PracticeReminder()
         reminder = practiceReminder.loadReminderbyPracticeName(practiceName: PopUpReminder.practiceName)
@@ -52,6 +53,7 @@ class PopUpReminder: UIViewController {
         if PopUpReminder.value == "update"{
             upDate()
         }
+        
         label.inputView = ReminderPickerView
         hour.inputView = ReminderPickerView
         minute.inputView = ReminderPickerView
@@ -91,10 +93,8 @@ class PopUpReminder: UIViewController {
             self.dismiss(animated: true, completion: nil)
             PopUpReminder.searchCompletion(true)
         }
-       
-        
-        
     }
+    
     func setNotification() {
         if label.text == "Weekdays" {
             for i in 2...6 {
@@ -114,6 +114,7 @@ class PopUpReminder: UIViewController {
         }
         
     }
+    
     func add()  {
         let date = NSDate()
         let calendar = NSCalendar.current
@@ -124,12 +125,14 @@ class PopUpReminder: UIViewController {
         minute.text = "\(currentminutes)"
         
     }
+    
     func upDate() {
         label.text = PopUpReminder.labels
         hour.text = "\(PopUpReminder.hourlabel)"
         minute.text = "\(PopUpReminder.minutelabel)"
         
     }
+    
     func setupView()  {
         //adding an overlay to the view to give focus to the dialog box
         view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
@@ -141,17 +144,10 @@ class PopUpReminder: UIViewController {
         popUpView.layer.shadowOffset = CGSize(width: 0, height: 0)
         popUpView.layer.shadowRadius = 10
         popUpView.layer.shadowOpacity = 1
-        //customizing the add button
-        addButton.setTitleColor(UIColor.white, for: .normal)
-        addButton.layer.borderWidth = 1.2
-        addButton.layer.cornerRadius = 4.0
-        addButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
         
-        //customizing the cancel button
-        cancelButton.setTitleColor(UIColor.white, for: .normal)
-        cancelButton.layer.borderWidth = 1.2
-        cancelButton.layer.cornerRadius = 4.0
-        cancelButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
+        //customizing the add button
+        Utilities.styleButton(addButton)
+        Utilities.styleHollowButton(cancelButton)
     }
     @IBAction func cancelbutton(_ sender: Any) {
         self.dismiss(animated: true)
