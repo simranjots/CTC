@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOu-Lv-6jj">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -15,22 +15,22 @@
             <objects>
                 <viewController id="VRe-HJ-LVM" customClass="MorePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wwc-sa-fyf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Er-W6g">
-                                <rect key="frame" x="0.0" y="188" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="228" width="428" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="moreVCReusableCell" rowHeight="69" id="umc-H3-joi" customClass="MorePageTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="umc-H3-joi" id="aPT-9g-FjP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-SM-UgH">
-                                                    <rect key="frame" x="5" y="5" width="404" height="59"/>
+                                                    <rect key="frame" x="5" y="5" width="418" height="59"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="practiceHistory" translatesAutoresizingMaskIntoConstraints="NO" id="HpN-by-bOQ">
                                                             <rect key="frame" x="20" y="10" width="40" height="39"/>
@@ -41,13 +41,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity History" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-hx-9XG">
-                                                            <rect key="frame" x="80" y="10" width="269" height="39"/>
+                                                            <rect key="frame" x="80" y="10" width="283" height="39"/>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-wQ-aam">
-                                                            <rect key="frame" x="369" y="22" width="15" height="15"/>
+                                                            <rect key="frame" x="383" y="22" width="15" height="15"/>
                                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="Fxk-ez-8id"/>
@@ -90,7 +90,7 @@
                         <viewLayoutGuide key="safeArea" id="efP-em-2FJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="100" id="H5g-7a-Koh"/>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="140" id="H5g-7a-Koh"/>
                             <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0"/>
                             <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3"/>
                             <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="wcp-8T-bYP"/>
@@ -116,30 +116,30 @@
             <objects>
                 <viewController id="Bcp-7X-tqs" customClass="AboutUsViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZxR-8L-jD4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="367" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-hP-3F3">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="140" width="428" height="786"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="aboutAuthorsVCResusableCell" rowHeight="367" id="92j-Bk-t1e" customClass="AboutUsTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="367"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="367"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="92j-Bk-t1e" id="Z4i-MR-dHE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="367"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="367"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-0S-9Ae">
-                                                    <rect key="frame" x="5" y="20" width="404" height="342"/>
+                                                    <rect key="frame" x="5" y="20" width="418" height="342"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="txu-I9-1nM">
-                                                            <rect key="frame" x="20" y="10" width="364" height="322"/>
+                                                            <rect key="frame" x="20" y="10" width="378" height="322"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wZV-t1-1PC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="100"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="100"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teresa Easler" translatesAutoresizingMaskIntoConstraints="NO" id="sdQ-5d-P4E">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -149,10 +149,10 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DMU-wR-CsK">
-                                                                            <rect key="frame" x="110" y="0.0" width="254" height="100"/>
+                                                                            <rect key="frame" x="110" y="0.0" width="268" height="100"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teresa Easler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvh-gW-1e8">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="254" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="20"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="254" id="85X-I4-Nc3"/>
                                                                                         <constraint firstAttribute="height" constant="20" id="O30-Kd-zfB"/>
@@ -162,7 +162,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt3-fE-vKe" userLabel="Description 1">
-                                                                                    <rect key="frame" x="0.0" y="26" width="254" height="74"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="268" height="74"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="74" id="9OE-1S-GpD"/>
                                                                                         <constraint firstAttribute="width" constant="254" id="b74-9j-gFq"/>
@@ -177,7 +177,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-5B-ydE" userLabel="Description 2">
-                                                                    <rect key="frame" x="0.0" y="103" width="364" height="219"/>
+                                                                    <rect key="frame" x="0.0" y="103" width="378" height="219"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="364" id="AGN-Gi-fgi"/>
                                                                     </constraints>
@@ -250,23 +250,23 @@ Together they decided to share this 201 Day Achievement Principle with the world
             <objects>
                 <viewController id="013-ca-cqv" customClass="faqViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BbM-Xx-MGY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-AS-9h0">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="428" height="703"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="faqVCResusableCell" rowHeight="346" id="cz1-Jq-1Xm" customClass="faqTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="346"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="346"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cz1-Jq-1Xm" id="2Kw-vD-jbH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="346"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="346"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What if I didn't do anything all week?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ECr-Xf-dbC">
-                                                    <rect key="frame" x="20" y="5" width="374" height="45"/>
+                                                    <rect key="frame" x="20" y="5" width="388" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="rNR-Rv-GSg"/>
                                                     </constraints>
@@ -275,7 +275,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-hl-GDU">
-                                                    <rect key="frame" x="20" y="55" width="374" height="281"/>
+                                                    <rect key="frame" x="20" y="55" width="388" height="281"/>
                                                     <string key="text">This is not an all or nothing program. There will be times when adhering to your practices is more challenging than others. You can make those days up throughout the year. Also, plan to bank before times you know will be harder or at the beginning of the year so you don’t feel the pressure at the end of the year. And keep tracking every week so you know where you’re at. If you are able to be around 60% you should have lots of leeway. If you haven’t done your practice all week, your numbers would stay the same but the percentage would go down.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -295,6 +295,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         <connections>
                                             <outlet property="bodyLabel" destination="bSd-hl-GDU" id="6ob-ht-kkT"/>
                                             <outlet property="titleLabel" destination="ECr-Xf-dbC" id="g8K-bb-Efb"/>
+                                            <outlet property="titleLabelHeightConstraints" destination="rNR-Rv-GSg" id="dc6-i4-8wc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -327,11 +328,11 @@ Together they decided to share this 201 Day Achievement Principle with the world
             <objects>
                 <viewController id="pGD-iz-FJC" customClass="HowToUseAppViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUV-6b-Sd5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agz-tS-E4b">
-                                <rect key="frame" x="20" y="150" width="374" height="603"/>
+                                <rect key="frame" x="20" y="150" width="388" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TBJ-bw-gSI">
                                     <size key="itemSize" width="374" height="605"/>
@@ -341,17 +342,17 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="howToUseAppCollectionViewReusableCell" id="Si0-Pk-hgm" customClass="HowToUseCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-1" width="374" height="605"/>
+                                        <rect key="frame" x="0.0" y="14" width="374" height="605"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AD1-4b-vvO">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="605"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ej-dT-IiB" userLabel="Container">
-                                                    <rect key="frame" x="20" y="20" width="334" height="565"/>
+                                                    <rect key="frame" x="20" y="40" width="334" height="525"/>
                                                     <subviews>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-Ov-TDS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="565"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="525"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5F-T1-C1G">
                                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="750"/>
@@ -425,7 +426,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTX-Ph-shY">
-                                <rect key="frame" x="146.5" y="758" width="121.5" height="15"/>
+                                <rect key="frame" x="154" y="788" width="120.33333333333331" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="10w-OP-mQS"/>
                                 </constraints>
@@ -462,7 +463,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0wk-BZ-cQs" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -489,24 +490,24 @@ Together they decided to share this 201 Day Achievement Principle with the world
             <objects>
                 <viewController id="d4A-dt-ny0" customClass="PrivacyPolicyViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D3C-zc-LyF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="59v-rT-X1n">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="140" width="428" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="privacyPolicyVCResudableCell" rowHeight="344" id="QWs-O5-8KI" customClass="PrivacyPolicyTableViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="344"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="344"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QWs-O5-8KI" id="HfJ-CY-fch">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="344"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Privacy Policy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="2cu-vK-Nz2">
-                                                    <rect key="frame" x="20" y="10" width="374" height="25"/>
+                                                    <rect key="frame" x="20" y="10" width="388" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="NuH-JI-dud"/>
                                                     </constraints>
@@ -515,7 +516,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-NZ-P7X">
-                                                    <rect key="frame" x="20" y="40" width="374" height="294"/>
+                                                    <rect key="frame" x="20" y="40" width="388" height="294"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -563,17 +564,17 @@ Together they decided to share this 201 Day Achievement Principle with the world
             <objects>
                 <viewController id="PV4-Dz-VXX" customClass="ConnectToUsViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="91J-hR-DAb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-Y4-ypo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Et8-Zk-o1T">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="650"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-Wh-Qtn">
-                                                <rect key="frame" x="20" y="30" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="30" width="388" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="TXH-58-a4J"/>
                                                 </constraints>
@@ -587,22 +588,16 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-yt-dVV">
-                                                <rect key="frame" x="70" y="250" width="334" height="70"/>
+                                                <rect key="frame" x="70" y="250" width="338" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Connect To The Core" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWQ-Jb-P7T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="24.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="334" id="bIs-HG-icu"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="338" height="24.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="374 Aspen Forest Drive, Oakville, ON L6J 6H4" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7f-sZ-HUh">
-                                                        <rect key="frame" x="0.0" y="29.5" width="334" height="40.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="334" id="3QB-up-LdP"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="29.666666666666689" width="338" height="40.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -610,32 +605,29 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-C5-6XO">
-                                                <rect key="frame" x="20" y="340" width="374" height="1"/>
+                                                <rect key="frame" x="20" y="340" width="388" height="1"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="sYe-lo-mHG"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-Zn-yDU">
-                                                <rect key="frame" x="20" y="361" width="374" height="121"/>
+                                                <rect key="frame" x="20" y="361" width="388" height="120.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call us at (416) 696-2020" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-tH-D1I">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send us an email at info@connecttothecore.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-F9-A8m">
-                                                        <rect key="frame" x="0.0" y="30.5" width="374" height="40.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="374" id="bLL-IY-Qaf"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="30.333333333333318" width="388" height="40.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bu-pL-a0A">
-                                                        <rect key="frame" x="0.0" y="81" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="80.666666666666686" width="388" height="40"/>
                                                         <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="tn2-fl-ZvB"/>
@@ -655,7 +647,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-IM-ELO">
-                                                <rect key="frame" x="20" y="502" width="374" height="1"/>
+                                                <rect key="frame" x="20" y="501.66666666666669" width="388" height="1"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="QAh-MS-8dM"/>
@@ -663,16 +655,13 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on our other social platforms for updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tup-dw-ury">
-                                                <rect key="frame" x="20" y="523" width="374" height="40.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="SOD-Ek-IxP"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="522.66666666666663" width="388" height="40.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="acT-1H-2KT">
-                                                <rect key="frame" x="147" y="583.5" width="120" height="30"/>
+                                                <rect key="frame" x="154" y="583" width="120" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-jK-rNL">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -716,18 +705,20 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="bg7-Wh-Qtn" firstAttribute="top" secondItem="Et8-Zk-o1T" secondAttribute="top" constant="30" id="0XQ-Bb-HZW"/>
-                                            <constraint firstAttribute="trailing" secondItem="w4h-yt-dVV" secondAttribute="trailing" constant="10" id="1BT-TV-HgQ"/>
                                             <constraint firstAttribute="trailing" secondItem="wSf-IM-ELO" secondAttribute="trailing" constant="20" symbolic="YES" id="1Gh-Gq-j7I"/>
+                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="6xm-Bu-08X"/>
                                             <constraint firstAttribute="trailing" secondItem="Tup-dw-ury" secondAttribute="trailing" constant="20" symbolic="YES" id="7KF-GF-2Ms"/>
                                             <constraint firstItem="w4h-yt-dVV" firstAttribute="leading" secondItem="CiW-LS-xFM" secondAttribute="trailing" constant="10" id="AQ1-dU-AH8"/>
                                             <constraint firstAttribute="trailing" secondItem="b3G-C5-6XO" secondAttribute="trailing" constant="20" symbolic="YES" id="BRi-Cv-U4p"/>
                                             <constraint firstItem="b3G-C5-6XO" firstAttribute="top" secondItem="w4h-yt-dVV" secondAttribute="bottom" constant="20" id="EGu-kb-h9O"/>
+                                            <constraint firstAttribute="trailing" secondItem="w4h-yt-dVV" secondAttribute="trailing" constant="20" symbolic="YES" id="Ey1-RO-OgF"/>
                                             <constraint firstItem="CiW-LS-xFM" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="10" id="JOH-9G-JA6"/>
                                             <constraint firstAttribute="height" constant="650" id="Kkm-s0-g25"/>
                                             <constraint firstItem="w4h-yt-dVV" firstAttribute="top" secondItem="bg7-Wh-Qtn" secondAttribute="bottom" constant="20" id="QSh-ZX-pGY"/>
                                             <constraint firstItem="Tup-dw-ury" firstAttribute="top" secondItem="wSf-IM-ELO" secondAttribute="bottom" constant="20" id="V30-eZ-9kp"/>
+                                            <constraint firstAttribute="trailing" secondItem="bg7-Wh-Qtn" secondAttribute="trailing" constant="20" symbolic="YES" id="aTv-zc-IJW"/>
                                             <constraint firstItem="b3G-C5-6XO" firstAttribute="top" secondItem="CiW-LS-xFM" secondAttribute="bottom" constant="20" id="aU6-HE-g7K"/>
-                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="b9W-OJ-Z7Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="1nd-Zn-yDU" secondAttribute="trailing" constant="20" symbolic="YES" id="b3C-Rc-n3I"/>
                                             <constraint firstItem="1nd-Zn-yDU" firstAttribute="top" secondItem="b3G-C5-6XO" secondAttribute="bottom" constant="20" id="cNI-9f-ZFP"/>
                                             <constraint firstItem="b3G-C5-6XO" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="dNx-iI-b5f"/>
                                             <constraint firstItem="1nd-Zn-yDU" firstAttribute="leading" secondItem="b3G-C5-6XO" secondAttribute="leading" id="eB2-58-iJ7"/>
@@ -737,15 +728,14 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <constraint firstItem="acT-1H-2KT" firstAttribute="centerX" secondItem="Et8-Zk-o1T" secondAttribute="centerX" id="mhL-1v-VfF"/>
                                             <constraint firstItem="wSf-IM-ELO" firstAttribute="top" secondItem="1nd-Zn-yDU" secondAttribute="bottom" constant="20" id="v1V-pX-Cl5"/>
                                             <constraint firstItem="Tup-dw-ury" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="yzw-4m-0qv"/>
-                                            <constraint firstAttribute="trailing" secondItem="bg7-Wh-Qtn" secondAttribute="trailing" constant="20" symbolic="YES" id="zzG-it-WlC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Et8-Zk-o1T" firstAttribute="bottom" secondItem="Rto-ap-iBe" secondAttribute="bottom" id="BdR-qk-4FC"/>
+                                    <constraint firstItem="Et8-Zk-o1T" firstAttribute="width" secondItem="Qep-Ok-8tP" secondAttribute="width" id="PiI-qA-2hw"/>
                                     <constraint firstItem="Rto-ap-iBe" firstAttribute="top" secondItem="Et8-Zk-o1T" secondAttribute="top" id="RZy-9t-SS2"/>
                                     <constraint firstItem="Et8-Zk-o1T" firstAttribute="leading" secondItem="Rto-ap-iBe" secondAttribute="leading" id="ZEr-bD-O9r"/>
-                                    <constraint firstItem="Et8-Zk-o1T" firstAttribute="width" secondItem="Qep-Ok-8tP" secondAttribute="width" id="gn8-cX-jtA"/>
                                     <constraint firstItem="Et8-Zk-o1T" firstAttribute="trailing" secondItem="Rto-ap-iBe" secondAttribute="trailing" id="k9r-aH-6Tg"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Rto-ap-iBe"/>
@@ -771,24 +761,24 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odh-gJ-KdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="2776"/>
+            <point key="canvasLocation" x="532" y="2775.3694581280788"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="WnT-pt-s8T">
             <objects>
                 <viewController id="slY-iE-BfU" customClass="ProfilePageViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyZ-vX-Orr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0F-4z-R9y">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="140" width="428" height="786"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Vs-fES">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="550"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teresa Easler" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
-                                                <rect key="frame" x="147" y="20" width="120" height="120"/>
+                                                <rect key="frame" x="154" y="20" width="120" height="120"/>
                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="d0A-QO-Hxn"/>
@@ -796,15 +786,14 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-Wm-PwB">
-                                                <rect key="frame" x="20" y="160" width="374" height="266"/>
+                                                <rect key="frame" x="20" y="160" width="388" height="266"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-cO-xJU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-QC-Gj2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="374" id="WZc-N1-T1j"/>
                                                                     <constraint firstAttribute="height" constant="20" id="nvW-eA-gNv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
@@ -812,10 +801,9 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Teresa Easler" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-Kt-f3S">
-                                                                <rect key="frame" x="0.0" y="30" width="374" height="50"/>
+                                                                <rect key="frame" x="0.0" y="30" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="0bU-a1-g2l"/>
-                                                                    <constraint firstAttribute="width" constant="374" id="rR5-9P-mkf"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
@@ -824,22 +812,18 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hlr-1a-wgl">
-                                                        <rect key="frame" x="0.0" y="95" width="374" height="78"/>
+                                                        <rect key="frame" x="0.0" y="95" width="388" height="78"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUZ-Ol-Wz3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="374" id="C4L-09-XBE"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="18"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teresa.easler@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-mn-V8P">
-                                                                <rect key="frame" x="0.0" y="28" width="374" height="50"/>
+                                                                <rect key="frame" x="0.0" y="28" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="DNO-r6-6N3"/>
-                                                                    <constraint firstAttribute="width" constant="374" id="wpS-ln-mqN"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
@@ -848,21 +832,17 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-eY-v4H">
-                                                        <rect key="frame" x="0.0" y="188" width="374" height="78"/>
+                                                        <rect key="frame" x="0.0" y="188" width="388" height="78"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obF-at-aRR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="374" id="IVu-jg-cMb"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="18"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teresa@1234" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-Bb-sJj">
-                                                                <rect key="frame" x="0.0" y="28" width="374" height="50"/>
+                                                                <rect key="frame" x="0.0" y="28" width="388" height="50"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="374" id="ZxL-bx-TrZ"/>
                                                                     <constraint firstAttribute="height" constant="50" id="cTS-bR-WN6"/>
                                                                 </constraints>
                                                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -874,10 +854,9 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9m-AT-4Ek">
-                                                <rect key="frame" x="20" y="446" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="446" width="388" height="50"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="XGd-Ou-B0w"/>
                                                     <constraint firstAttribute="height" constant="50" id="vKF-4K-neu"/>
                                                 </constraints>
                                                 <state key="normal">
@@ -896,7 +875,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIr-a1-rIR">
-                                                <rect key="frame" x="247" y="105" width="25" height="25"/>
+                                                <rect key="frame" x="254" y="105" width="25" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="QtF-7U-lKc"/>
@@ -962,14 +941,14 @@ Together they decided to share this 201 Day Achievement Principle with the world
     <resources>
         <image name="1.jpeg" width="1125" height="2247"/>
         <image name="More" width="29" height="29"/>
-        <image name="Teresa Easler" width="200" height="200"/>
+        <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
         <image name="camera" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="facebook" width="256" height="256"/>
-        <image name="instagram" width="256" height="256"/>
-        <image name="locationPin" width="256" height="256"/>
+        <image name="facebook" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="locationPin" width="170.66667175292969" height="170.66667175292969"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
-        <image name="youtube" width="256" height="256"/>
+        <image name="youtube" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -48,7 +48,7 @@ class faqViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         cell.titleLabel.text = faqQuestionsAndAnswers[faqTableView.tag].questions[indexPath.row]
         cell.bodyLabel?.text = faqQuestionsAndAnswers[faqTableView.tag].answers[indexPath.row]
-    
+        
         return cell
     }
 }
