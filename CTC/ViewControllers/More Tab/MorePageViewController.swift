@@ -55,7 +55,7 @@ class MorePageViewController: UIViewController {
         
         view.addSubview(profileImageView)
         //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 90, paddingLeft: 30, width: 80, height: 80)
+        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 30, width: 80, height: 80)
         profileImageView.layer.cornerRadius = 80 / 2
         
         view.addSubview(editButton)
@@ -63,7 +63,7 @@ class MorePageViewController: UIViewController {
         
         view.addSubview(nameLabel)
         //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 100, paddingLeft: 120)
+        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 110, paddingLeft: 120)
         
         view.addSubview(emailLabel)
         //emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
