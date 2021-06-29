@@ -86,10 +86,6 @@ class ActivityDetailsViewController: UIViewController {
         
         activityNameTextField.text = practicesArray[myIndex].practice
         daysPracticedLabel.text =  "\(practicesArray[myIndex].practiseddays)"
-        let practicedDays = Int(practicesArray[myIndex].practiseddays)
-        let percentage: Int = Int((Float(practicedDays) / Float(days)) * 100)
-        
-        setPercentageAnimation(percentageValue: percentage)
         daysSinceStartedLabel.text = "\(days)"
         
         if(practicesData != nil){
@@ -97,6 +93,7 @@ class ActivityDetailsViewController: UIViewController {
             for data in practicesData{
                 
                 if data.practiceDataToPractice == practicesArray[myIndex]{
+                    setPercentageAnimation(percentageValue: Int(data.percentage))
                     let temp = data.note
                     notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                     self.activeButton(flag: data.practised)

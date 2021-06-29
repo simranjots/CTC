@@ -14,5 +14,6 @@ extension PracticeData {
     @NSManaged public var tracking_days: Int32
     @NSManaged public var practiceDataToPractice: Practice?
     @NSManaged public var streak: Int32
+    @NSManaged public var percentage: Int16
 
 }

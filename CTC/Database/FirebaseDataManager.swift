@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import FirebaseFirestore
 class FirebaseDataManager {
     
     let db = Firestore.firestore()
@@ -16,8 +17,8 @@ class FirebaseDataManager {
                      "goals": goals,
                      "practiced-days" : 0,
                      "is_completed": false,
-                     "is_deleted": false,
-                     "percentage" : 0
+                     "is_deleted": false
+                     
         ] as [String : Any]
         db.collection("UsersData").document(user.email!)
             .collection("Practices").document(practiceName)
@@ -51,7 +52,7 @@ class FirebaseDataManager {
             }
         }
     }
-    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32){
+    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32,percentage:Int){
         let datas = ["id": practiceName,
                      "practiceName": practiceName,
                      "PracticedDate": PracticedDate,
@@ -59,6 +60,7 @@ class FirebaseDataManager {
                      "toggleStarBtn": toggleStarBtn,
                      "note": note,
                      "streak":streak,
+                     "percentage" : percentage,
                      "trackingDays":trackingDays
         ] as [String : Any]
         db.collection("UsersData").document(user.email!)

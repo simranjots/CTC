@@ -6,7 +6,6 @@
         <attribute name="image_name" optional="YES" attributeType="String"/>
         <attribute name="is_completed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="is_deleted" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="percentage" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practice" optional="YES" attributeType="String"/>
         <attribute name="practiseddays" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="remindswitch" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -18,6 +17,7 @@
     <entity name="PracticeData" representedClassName=".PracticeData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="percentage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practised" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tracking_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -55,8 +55,8 @@
         <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="238"/>
-        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="119"/>
+        <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="209"/>
+        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="134"/>
         <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="119"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="134"/>

@@ -26,7 +26,6 @@ class UserPractices{
             newPractice.values = value
             newPractice.practice = practice
             newPractice.image_name = image_name
-            newPractice.percentage = 0
             newPractice.startedday = date as NSDate
             newPractice.practiseddays = 0
             newPractice.encourage = encourage
