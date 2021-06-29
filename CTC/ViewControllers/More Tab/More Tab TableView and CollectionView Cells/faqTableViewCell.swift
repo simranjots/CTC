@@ -12,11 +12,11 @@ class faqTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
-    
+    @IBOutlet weak var titleLabelHeightConstraints: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
