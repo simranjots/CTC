@@ -56,15 +56,15 @@ class MorePageViewController: UIViewController {
         
         view.addSubview(profileImageView)
         //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 130, paddingLeft: 40, width: 120, height: 120)
+        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 80, paddingLeft: 40, width: 120, height: 120)
         profileImageView.layer.cornerRadius = 120 / 2
         
         view.addSubview(editButton)
-        editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 140, paddingRight: 20, width: 20, height: 20)
+        editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 200, paddingRight: 15, width: 20, height: 20)
         
         view.addSubview(nameLabel)
         //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 160, paddingLeft: 180)
+        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 110, paddingLeft: 180)
         
         view.addSubview(emailLabel)
         //emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -100,7 +100,7 @@ class MorePageViewController: UIViewController {
         
         //Set containerView above tableview
         view.addSubview(containerView)
-        containerView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 200)
+        containerView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 300)
         Utilities.addShadowAndBorderToView(containerView)
     
         //Set containerView bottom constraints

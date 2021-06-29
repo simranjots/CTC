@@ -238,18 +238,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AA35F822671B06F00BA918F /* TrackRecord Cell */ = {
+		1AACDE062668751D00A1877D /* Home Tab */ = {
 			isa = PBXGroup;
 			children = (
-				1AA35F832671B0E100BA918F /* PracticesListCell.swift */,
-				1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */,
-			);
-			path = "TrackRecord Cell";
-			sourceTree = "<group>";
-		};
-		1AACDE062668751D00A1877D /* Home View */ = {
-			isa = PBXGroup;
-			children = (
+				26BBA84E268A4D94009D1E20 /* Home Tab TableViewCells */,
 				26C76571267456F500BD646E /* AddPracticesViewController.swift */,
 				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
@@ -257,33 +249,28 @@
 				1ABC96E2267B16BA0021195F /* ReminderViewController.swift */,
 				1ABB939D26828C23007EF555 /* PopUpReminder.swift */,
 			);
-			path = "Home View";
+			path = "Home Tab";
 			sourceTree = "<group>";
 		};
-		1AACDE072668759000A1877D /* More Views */ = {
+		1AACDE072668759000A1877D /* More Tab */ = {
 			isa = PBXGroup;
 			children = (
-				E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */,
+				26BBA852268A4ED5009D1E20 /* More Tab TableView and CollectionView Cells */,
+				1AACDE0B2668777A00A1877D /* Profile View */,
 				26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */,
-				26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */,
 				26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */,
 				E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */,
-				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 				263F60F22681474F00B4908E /* HowToUseAppViewController.swift */,
-				263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */,
 				E10D6674226F6F7900C0E4D8 /* faqViewController.swift */,
 				E10D6676226F7D7200C0E4D8 /* AboutUsViewController.swift */,
 				26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */,
-				2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */,
 				2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */,
-				263F60EE2681240D00B4908E /* ShopBooksViewController.swift */,
-				263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */,
 				2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */,
 			);
-			path = "More Views";
+			path = "More Tab";
 			sourceTree = "<group>";
 		};
-		1AACDE092668767400A1877D /* Login View */ = {
+		1AACDE092668767400A1877D /* Login Views */ = {
 			isa = PBXGroup;
 			children = (
 				1A62B82026659CD70025D92C /* MainViewController.swift */,
@@ -291,24 +278,27 @@
 				E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */,
 				26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */,
 			);
-			path = "Login View";
+			path = "Login Views";
 			sourceTree = "<group>";
 		};
-		1AACDE0A2668775900A1877D /* TrackRecord View */ = {
+		1AACDE0A2668775900A1877D /* TrackRecord Tab */ = {
 			isa = PBXGroup;
 			children = (
+				26BBA850268A4E29009D1E20 /* Track Records Tab TableView Cells */,
 				E1383D7B21E7835800F8597F /* ShowRecordViewController.swift */,
 				E1F6EBB621ED04390022F1A3 /* CircularViewController.swift */,
 				1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */,
 				1AA35F872671F31600BA918F /* ActivityProgressVC.swift */,
 			);
-			path = "TrackRecord View";
+			path = "TrackRecord Tab";
 			sourceTree = "<group>";
 		};
 		1AACDE0B2668777A00A1877D /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
+				26BBA851268A4EAF009D1E20 /* Profile View Cells */,
 				E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */,
+				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 			);
 			path = "Profile View";
 			sourceTree = "<group>";
@@ -316,15 +306,13 @@
 		1AC4CAD126533EC9008B2555 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */,
-				26CAE0952685870F00A54802 /* TabBarViewController.swift */,
-				1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */,
-				1AACDE0C2668783400A1877D /* MainNavigationController.swift */,
-				1AACDE0B2668777A00A1877D /* Profile View */,
-				1AACDE0A2668775900A1877D /* TrackRecord View */,
-				1AACDE092668767400A1877D /* Login View */,
-				1AACDE072668759000A1877D /* More Views */,
-				1AACDE062668751D00A1877D /* Home View */,
+				1AACDE092668767400A1877D /* Login Views */,
+				26BBA84D268A4B1E009D1E20 /* Tab Bar */,
+				1AACDE062668751D00A1877D /* Home Tab */,
+				26BBA84B268A4A17009D1E20 /* History Tab */,
+				1AACDE0A2668775900A1877D /* TrackRecord Tab */,
+				26BBA84C268A4A9F009D1E20 /* Books Tab */,
+				1AACDE072668759000A1877D /* More Tab */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,23 +354,99 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		1AE94EFB2675FD1500DB9579 /* Home cell */ = {
-			isa = PBXGroup;
-			children = (
-				1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */,
-				1A554390267BB109000C5FFF /* ReminderTableViewCell.swift */,
-			);
-			path = "Home cell";
-			sourceTree = "<group>";
-		};
 		262946DE26601F73005BA95E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				262946DF26601F8B005BA95E /* Constants.swift */,
 				262946E126601F99005BA95E /* Utilities.swift */,
+				E11752D82217486F0089B852 /* ToastLabel.swift */,
+				E1F3094621FB855F008ADE9D /* AnimationLabel.swift */,
 				1A56C151267A465B00E6D18E /* NotificationManager.swift */,
+				26DE85D826701EA700994DA3 /* CircularProgressView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26BBA84B268A4A17009D1E20 /* History Tab */ = {
+			isa = PBXGroup;
+			children = (
+				26BBA84F268A4DF6009D1E20 /* History Tab TableView and CollectionView Cells */,
+				E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */,
+				E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */,
+			);
+			path = "History Tab";
+			sourceTree = "<group>";
+		};
+		26BBA84C268A4A9F009D1E20 /* Books Tab */ = {
+			isa = PBXGroup;
+			children = (
+				263F60EE2681240D00B4908E /* ShopBooksViewController.swift */,
+				263F60F02681272400B4908E /* ShopBooksCollectionViewCell.swift */,
+			);
+			path = "Books Tab";
+			sourceTree = "<group>";
+		};
+		26BBA84D268A4B1E009D1E20 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */,
+				26CAE0952685870F00A54802 /* TabBarViewController.swift */,
+				1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */,
+				1AACDE0C2668783400A1877D /* MainNavigationController.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		26BBA84E268A4D94009D1E20 /* Home Tab TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */,
+				E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */,
+				1A554390267BB109000C5FFF /* ReminderTableViewCell.swift */,
+			);
+			path = "Home Tab TableViewCells";
+			sourceTree = "<group>";
+		};
+		26BBA84F268A4DF6009D1E20 /* History Tab TableView and CollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */,
+				E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */,
+				E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */,
+				E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */,
+			);
+			path = "History Tab TableView and CollectionView Cells";
+			sourceTree = "<group>";
+		};
+		26BBA850268A4E29009D1E20 /* Track Records Tab TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1AA35F832671B0E100BA918F /* PracticesListCell.swift */,
+				1AA35F892671FA6900BA918F /* ActivityProgressCell.swift */,
+			);
+			path = "Track Records Tab TableView Cells";
+			sourceTree = "<group>";
+		};
+		26BBA851268A4EAF009D1E20 /* Profile View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E18169B42200EC97002EE49F /* ProfileDataTableViewCell.swift */,
+				E18169B82201042C002EE49F /* ProfileHeaderCell.swift */,
+			);
+			path = "Profile View Cells";
+			sourceTree = "<group>";
+		};
+		26BBA852268A4ED5009D1E20 /* More Tab TableView and CollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */,
+				26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */,
+				E10D6672226F6F0700C0E4D8 /* faqTableViewCell.swift */,
+				263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */,
+				2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */,
+				E10D6678226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift */,
+			);
+			path = "More Tab TableView and CollectionView Cells";
 			sourceTree = "<group>";
 		};
 		D41E64161121D26A09DACC1B /* Frameworks */ = {
@@ -396,32 +460,12 @@
 		E11D15092236AE1A000209B9 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				1AE94EFB2675FD1500DB9579 /* Home cell */,
-				1AA35F822671B06F00BA918F /* TrackRecord Cell */,
 				E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */,
-				E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */,
 				E1383D7F21E7905000F8597F /* DataHeaderCell.swift */,
 				E1383D8121E7905D00F8597F /* DataCell.swift */,
-				E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */,
-				E18169B82201042C002EE49F /* ProfileHeaderCell.swift */,
 				E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */,
-				E18169B42200EC97002EE49F /* ProfileDataTableViewCell.swift */,
-				E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */,
-				E10D6678226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift */,
-				E10D6672226F6F0700C0E4D8 /* faqTableViewCell.swift */,
-				E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */,
-				E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */,
 			);
 			path = TableViewCells;
-			sourceTree = "<group>";
-		};
-		E11D150A2236AF34000209B9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E11752D82217486F0089B852 /* ToastLabel.swift */,
-				E1F3094621FB855F008ADE9D /* AnimationLabel.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E179F53821F294A600FBD293 /* Images */ = {
@@ -461,19 +505,15 @@
 		E189D68421E4FA430078380B /* CTC */ = {
 			isa = PBXGroup;
 			children = (
-				262946DE26601F73005BA95E /* Helpers */,
+				E189D68521E4FA430078380B /* AppDelegate.swift */,
 				1AD65E61264DED4900CD9974 /* Storyboard */,
+				1AC4CAD22653403A008B2555 /* Database */,
+				262946DE26601F73005BA95E /* Helpers */,
+				E1F63FBC220B8C3A0001FC6D /* Models */,
+				1AC4CAD126533EC9008B2555 /* ViewControllers */,
 				E179F53821F294A600FBD293 /* Images */,
 				1AC4CAD32653407C008B2555 /* Design */,
-				1AC4CAD22653403A008B2555 /* Database */,
 				E11D15092236AE1A000209B9 /* TableViewCells */,
-				1AC4CAD126533EC9008B2555 /* ViewControllers */,
-				E11D150A2236AF34000209B9 /* Controllers */,
-				E1F63FBC220B8C3A0001FC6D /* Models */,
-				E189D68521E4FA430078380B /* AppDelegate.swift */,
-				E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */,
-				E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */,
-				26DE85D826701EA700994DA3 /* CircularProgressView.swift */,
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
 				2626A117267A71890043C193 /* GoogleService-Info.plist */,

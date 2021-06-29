@@ -224,6 +224,7 @@
                                         <connections>
                                             <outlet property="CardPageControl" destination="Msu-Pt-BGn" id="8W6-ZK-Syc"/>
                                             <outlet property="HistoryCollectionView" destination="rGk-ES-yDq" id="GGt-nA-IZ3"/>
+                                            <outlet property="historyCardCollectionView" destination="rGk-ES-yDq" id="8jV-8R-d1l"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryHeaderCell" rowHeight="60" id="Iwd-rg-aPA" customClass="HistoryHeaderCellTableViewCell" customModule="CTC" customModuleProvider="target">
@@ -248,7 +249,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="HeaderTextLabel" destination="7bw-CG-NlV" id="vlV-CP-am9"/>
+                                            <outlet property="HeaderTextLabel" destination="7bw-CG-NlV" id="Heo-ii-s2g"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -269,7 +270,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Practice History" id="ZD6-Ve-udX"/>
                     <connections>
-                        <outlet property="historyTableView" destination="iQw-Du-x59" id="ZCU-fu-bHS"/>
+                        <outlet property="historyTableView" destination="iQw-Du-x59" id="Pej-Xs-JU2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1R-Yo-xbW" userLabel="First Responder" sceneMemberID="firstResponder"/>

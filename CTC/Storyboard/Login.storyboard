@@ -633,9 +633,7 @@
                             <constraint firstItem="Zap-BR-8es" firstAttribute="top" secondItem="Ra9-uh-Tqf" secondAttribute="bottom" constant="8" symbolic="YES" id="xWH-x0-Jdx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="Ne5-Hv-Tiy">
-                        <barButtonItem key="backBarButtonItem" title=" " id="EdJ-es-GgH"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Welcome" id="Ne5-Hv-Tiy"/>
                     <connections>
                         <outlet property="loginButton" destination="nyf-YU-Rhb" id="im0-mK-Ds6"/>
                         <outlet property="registerButton" destination="0wW-DL-gVC" id="AHI-Kf-f8C"/>
