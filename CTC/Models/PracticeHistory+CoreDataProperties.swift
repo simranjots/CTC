@@ -22,5 +22,6 @@ extension PracticeHistory {
     @NSManaged public var dss: Int32
     @NSManaged public var date: NSDate?
     @NSManaged public var com_del_flag: Bool
+    @NSManaged public var user: User?
 
 }

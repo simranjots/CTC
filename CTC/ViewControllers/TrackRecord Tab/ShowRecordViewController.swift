@@ -1,13 +1,7 @@
 import UIKit
 
 class ShowRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
-    
-    //    MARK: Old Variables
-    
-    
+ 
     
     @IBOutlet weak var recordTableView: UITableView!
     

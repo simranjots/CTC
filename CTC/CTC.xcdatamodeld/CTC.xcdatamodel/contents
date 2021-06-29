@@ -29,6 +29,7 @@
         <attribute name="dss" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practice_name" optional="YES" attributeType="String"/>
         <attribute name="td" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="practiceHistory" inverseEntity="User"/>
     </entity>
     <entity name="Reminder" representedClassName=".Reminder" syncable="YES">
         <attribute name="day" optional="YES" attributeType="String"/>
@@ -44,6 +45,7 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="password" attributeType="String"/>
         <relationship name="practice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Practice" inverseName="user" inverseEntity="Practice"/>
+        <relationship name="practiceHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeHistory" inverseName="user" inverseEntity="PracticeHistory"/>
     </entity>
     <entity name="WeeklyData" representedClassName=".WeeklyData" syncable="YES">
         <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -55,9 +57,9 @@
     <elements>
         <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="238"/>
         <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="119"/>
-        <element name="PracticeHistory" positionX="-441" positionY="-396" width="128" height="120"/>
+        <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="119"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
-        <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="135"/>
+        <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="134"/>
         <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="120"/>
     </elements>
 </model>

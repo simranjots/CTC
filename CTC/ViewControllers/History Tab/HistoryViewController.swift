@@ -1,23 +1,23 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    let no = [1,2,3,4]
-    
+
     @IBOutlet weak var historyTableView: HistoryTableView!
     
-    var dbHelper: DatabaseHelper!
+    var practiceHistory: PracticedHistory!
     var deletedHistory: [PracticeHistory] = []
     var completedHistory: [PracticeHistory] = []
+    var currentUser : CurrentUser!
+    var userObject: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dbHelper = DatabaseHelper()
-        
+        practiceHistory = PracticedHistory()
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
         // let resultFlag = dbHelper.addPracticeHistory(practiceName: "Prac - 2", comDelFlag: true, date: Date().dateFormate()!, dss: 4, td: 3)
         
-        let history = dbHelper.getPracticeHistory()
+        let history = practiceHistory.getPracticeHistory(userobject: userObject)
         
         //print(history)
         
@@ -127,7 +127,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         completedHistory = []
         deletedHistory = []
         
-        let history = dbHelper.getPracticeHistory()
+        let history = practiceHistory.getPracticeHistory(userobject: userObject)
         
         //print(history)
         
