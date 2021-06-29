@@ -119,7 +119,6 @@
 /* Begin PBXFileReference section */
 		1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
 		1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticedHistory.swift; sourceTree = "<group>"; };
-		1A2E9B92268B5CC9005587FA /* CTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CTC.entitlements; sourceTree = "<group>"; };
 		1A2E9B95268B818F005587FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		1A3FA243266A2C6C003A96A4 /* UserPractices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPractices.swift; sourceTree = "<group>"; };
