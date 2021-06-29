@@ -14,12 +14,13 @@ class UserPracticesData {
     let currentUser = CurrentUser()
     var firebaseDataManager = FirebaseDataManager()
     var userObject: User!
+    var percentage : Int16 = 0
     
     func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
-        
+       
         let resultFlag = practiceHistory.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
         var practicedDaysCount = practiceObject.practiseddays
-        
+        let days = Date().days(from: practiceObject.startedday! as Date) + 1
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
         
         practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
@@ -56,17 +57,18 @@ class UserPracticesData {
                 }
                 
             }
-            let date = Date()
+           percentage = Int16(Int((Float(practicedDaysCount) / Float(days)) * 100))
             if save == "save"{
                 let Practices = PracticeData(context: self.context)
-                if (date.dateFormate() == (practiceData.date! as Date).dateFormate()) {
+                if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
                     
                     practiceData.practised = toggleBtn
                     practiceData.date = currentDate.dateFormate()! as NSDate
                     practiceData.practiceDataToPractice = practiceObject
                     practiceData.note = note
                     practiceData.tracking_days = Int32(tracking_days)
-                    
+                    practiceData.streak = streak
+                    practiceData.percentage = percentage
                 }else{
                     
                     Practices.practised = toggleBtn
@@ -74,7 +76,8 @@ class UserPracticesData {
                     Practices.practiceDataToPractice = practiceObject
                     Practices.note = note
                     Practices.tracking_days = Int32(tracking_days)
-                    
+                    Practices.streak = streak
+                    practiceData.percentage = percentage
                 }
             }else{
                 
@@ -84,11 +87,13 @@ class UserPracticesData {
                 practiceData.note = note
                 practiceData.tracking_days = Int32(tracking_days)
                 practiceData.streak = streak
+                practiceData.percentage = percentage
             }
             
             
         }
         else{
+           
             
             let newPracticesData = PracticeData(context: self.context)
             newPracticesData.date = currentDate.dateFormate()! as NSDate
@@ -100,14 +105,16 @@ class UserPracticesData {
                 practicedDaysCount += 1
                 streak += 1
             }
+            percentage = Int16(Int((Float(practicedDaysCount) / Float(days)) * 100))
             newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
+            newPracticesData.percentage = percentage
             
         }
         userPractices.updatePracticedDay(noOfDays: Int(practicedDaysCount), practiceName: practiceObject.practice!, user: practiceObject.user!)
         let result = currentUser.saveUser()
         if result == 0 {
-            firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days)
+            firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days, percentage: Int(percentage))
         }
         return result
     }

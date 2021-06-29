@@ -27,7 +27,7 @@ class MaintabBarViewController: UITabBarController, UITabBarControllerDelegate {
     func setupMiddleButton() {
         
         //Set position and size
-        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 35, y: -37, width: 80, height: 80))
+        let middleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - 35, y: -25, width: 80, height: 80))
         
         //Set properties
         middleButton.setBackgroundImage(UIImage(named: "home-2"), for: .normal)
@@ -35,7 +35,7 @@ class MaintabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         //Set in subView
         self.tabBar.addSubview(middleButton)
-        middleButton.addTarget(self, action: #selector(homeButtonTapped), for: .touchUpInside)
+        middleButton.addTarget(self, action: #selector(homeButtonTapped), for: .allTouchEvents)
         self.view.layoutIfNeeded()
     }
     
