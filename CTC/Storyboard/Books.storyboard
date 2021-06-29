@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PUg-jj-i8O">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -18,7 +18,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iZU-XD-fze" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,11 +48,11 @@
             <objects>
                 <viewController id="mMj-6P-zjg" customClass="ShopBooksViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUs-Ty-vDv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU" customClass="shopBoo">
-                                <rect key="frame" x="20" y="108" width="374" height="705"/>
+                                <rect key="frame" x="20" y="160" width="388" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NNc-iQ-4nf">
                                     <size key="itemSize" width="331" height="364"/>
@@ -62,7 +62,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopBooksCollectionViewReusableCell" id="atY-c2-yy2" customClass="ShopBooksCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="21.5" y="0.0" width="331" height="364"/>
+                                        <rect key="frame" x="28.666666666666668" y="0.0" width="331" height="364"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b8y-yA-xSu">
                                             <rect key="frame" x="0.0" y="0.0" width="331" height="364"/>
@@ -72,7 +72,7 @@
                                                     <rect key="frame" x="10" y="10" width="311" height="344"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201 DAP Companion Tracking Journal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzR-qh-6O4">
-                                                            <rect key="frame" x="5" y="10" width="301" height="19"/>
+                                                            <rect key="frame" x="5" y="10.000000000000002" width="301" height="18.666666666666671"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="321" id="hgJ-bw-N07"/>
                                                             </constraints>
@@ -81,17 +81,17 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="201DAPBook" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-O2-CMo">
-                                                            <rect key="frame" x="106" y="39" width="100" height="150"/>
+                                                            <rect key="frame" x="106" y="38.666666666666657" width="100" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="6fF-MX-uaf"/>
                                                                 <constraint firstAttribute="height" constant="150" id="7VL-23-zy7"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-7R-7CT">
-                                                            <rect key="frame" x="5" y="199" width="301" height="158"/>
+                                                            <rect key="frame" x="5" y="198.66666666666663" width="301" height="158"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFc-VG-IFm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="71.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="71.666666666666671"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="321" id="Caj-d6-MqS"/>
                                                                     </constraints>
@@ -101,7 +101,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$32.97 USD + FREE Shipping(Reg. $39.94)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-gE-9w7">
-                                                                    <rect key="frame" x="0.0" y="81.5" width="301" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="81.666666666666657" width="301" height="16.333333333333329"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="321" id="mcs-tF-M8c"/>
                                                                     </constraints>
@@ -110,7 +110,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-qo-iit">
-                                                                    <rect key="frame" x="0.0" y="108" width="301" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="108.00000000000003" width="301" height="50"/>
                                                                     <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="ANG-8C-gVD"/>
@@ -179,7 +179,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="201DAPBook" width="162" height="249.5"/>
+        <image name="201DAPBook" width="108" height="166.33332824707031"/>
         <image name="shopping-cart" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
