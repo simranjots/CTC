@@ -4,7 +4,8 @@ import UserNotifications
 class HomeViewController: UIViewController,ReceiveData{
     
     // variables
-    var dbHelper: DatabaseHelper!
+    var dbHelper : DatabaseHelper!
+    var practiceHistory: PracticedHistory!
     var currentUser : CurrentUser!
     var userPractices: UserPractices!
     var userPracticesData: UserPracticesData!
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController,ReceiveData{
         selectedDate = Date().dateFormate()!
         dateTextField.text = "Date : \(Date().dateFormatemmmdd()!)"
         dbHelper = DatabaseHelper()
+        practiceHistory = PracticedHistory()
         currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
@@ -42,6 +44,8 @@ class HomeViewController: UIViewController,ReceiveData{
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
         _ = userPractices.oldestPracticeDate(user: userObject)
+        
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
@@ -97,13 +101,14 @@ class HomeViewController: UIViewController,ReceiveData{
         HomeViewController.practiceAdded  = {(flag) in
             if(flag){
                 self.refreshTableview(date: self.selectedDate)
+                
             }
         }
     }
     
     
     // Table View Code
-    func delPractice(prac: Practice){
+    func delPractice(prac: Practice,userOb: User){
         
         let pracName = prac.practice
         let td = prac.practiseddays
@@ -112,7 +117,8 @@ class HomeViewController: UIViewController,ReceiveData{
         let date = Date().dateFormate()!
         
         userPractices.deletePractice(practice: prac)
-        let resultFlag = dbHelper.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td))
+    
+        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td),userOb:userOb)
         
         if(resultFlag == 0){
             showToast(message: "\(pracName!) Deleted", duration: 3)
@@ -193,7 +199,7 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
-                self.delPractice(prac: prac)
+                self.delPractice(prac: prac, userOb: self.userObject)
             }))
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -207,6 +213,12 @@ extension HomeViewController: UITableViewDelegate{
             let vc = storyboard.instantiateViewController(withIdentifier: "AddPractices") as! AddPracticesViewController
             AddPracticesViewController.cvalue = "edit"
             AddPracticesViewController.cindexPath = indexPath.row
+            HomeViewController.practiceAdded  = {(flag) in
+                if(flag){
+                    self.refreshTableview(date: self.selectedDate)
+                    
+                }
+            }
             self.present(vc, animated: true, completion: nil)
             
         }

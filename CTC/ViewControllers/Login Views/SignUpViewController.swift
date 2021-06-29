@@ -8,6 +8,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
+    let db = Firestore.firestore()
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -105,9 +106,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 } else {
                     
                     let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password)
-                    let db = Firestore.firestore()
+                 
                     
-                    db.collection("dap_users").addDocument(data: ["username": userName, "uid": result!.user.uid]) { error in
+                    self.db.collection("dap_users").addDocument(data: ["username": userName, "uid": result!.user.uid]) { error in
                         if error != nil {
                             self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                         } else if resultFlag == 1 {

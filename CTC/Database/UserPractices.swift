@@ -7,6 +7,7 @@ class UserPractices{
     let currentUser = CurrentUser()
     let remindPractices = PracticeReminder()
     var practices = [Practice]()
+    var firebaseDataManager = FirebaseDataManager()
     func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
         let practices = getPractices(user: user)!
@@ -33,7 +34,9 @@ class UserPractices{
             newPractice.goals = goals
             newPractice.user = user
             let result = currentUser.saveUser()
-            
+            if result == 0 {
+                firebaseDataManager.addPracticesToFirebase(practiceName: practice, image_name: image_name, date: date, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+            }
             return result
         }else {
             print("Practice Exist")
@@ -49,23 +52,32 @@ class UserPractices{
         practiceObject.values = value
         practiceObject.practice = newPractice
         practiceObject.image_name = image_name
-        practiceObject.startedday = date as NSDate
+       // practiceObject.startedday = date as NSDate
         practiceObject.encourage = encourage
         practiceObject.remindswitch = remindswitch
         practiceObject.goals = goals
         practiceObject.user = user
-        print("this out")
+        if oldPractice != newPractice {
+            remindPractices.RemoveReminder(practiceName: oldPractice)
+            #warning("Need to update Reminder")
+        }
         if remindswitch == false {
-            print("this in")
+        
             remindPractices.RemoveReminder(practiceName: oldPractice)
         }
         let result = currentUser.saveUser()
+        if result == 0 {
+            DispatchQueue.main.async {
+                self.firebaseDataManager.updatePracticesInFirebase(oldPractice: oldPractice, newPractice: newPractice, image_name: image_name, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+            }
+            
+        }
         return result
     }
     
     
     func getPractices(user: User) -> [Practice]? {
-    
+        
         let request : NSFetchRequest<Practice> = Practice.fetchRequest()
         request.predicate = NSPredicate(format: "user.email = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!,false,false])
         request.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
@@ -92,7 +104,7 @@ class UserPractices{
         do {
             practices = try context.fetch(request)
             for data in practices{
-            practiceData = data
+                practiceData = data
             }
         } catch let err {
             print(err)

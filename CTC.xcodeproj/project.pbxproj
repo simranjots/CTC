@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */; };
+		1A2E9B8D2689EBC2005587FA /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */; };
+		1A2E9B91268AA6A2005587FA /* PracticedHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */; };
+		1A2E9B96268B818F005587FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E9B95268B818F005587FA /* GoogleService-Info.plist */; };
 		1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */; };
 		1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA243266A2C6C003A96A4 /* UserPractices.swift */; };
 		1A3FA24C266E924B003A96A4 /* UserPracticesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */; };
@@ -36,7 +39,6 @@
 		2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */; };
 		2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */; };
 		2623EF9E2670852900951285 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */; };
-		2626A118267A71890043C193 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2626A117267A71890043C193 /* GoogleService-Info.plist */; };
 		2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2626A119267AB49F0043C193 /* ProfilePageViewController.swift */; };
 		262946E026601F8B005BA95E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946DF26601F8B005BA95E /* Constants.swift */; };
 		262946E226601F99005BA95E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262946E126601F99005BA95E /* Utilities.swift */; };
@@ -115,6 +117,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
+		1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticedHistory.swift; sourceTree = "<group>"; };
+		1A2E9B92268B5CC9005587FA /* CTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CTC.entitlements; sourceTree = "<group>"; };
+		1A2E9B95268B818F005587FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		1A3FA243266A2C6C003A96A4 /* UserPractices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPractices.swift; sourceTree = "<group>"; };
 		1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPracticesData.swift; sourceTree = "<group>"; };
@@ -142,7 +148,6 @@
 		2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StataticsViewProgressBar.swift; sourceTree = "<group>"; };
 		2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyTableViewCell.swift; sourceTree = "<group>"; };
 		2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
-		2626A117267A71890043C193 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2626A119267AB49F0043C193 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		262946DF26601F8B005BA95E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		262946E126601F99005BA95E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -326,6 +331,8 @@
 				E12320E0226E1772006B05CB /* FirebaseHelper.swift */,
 				1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */,
 				1A55439626811583000C5FFF /* PracticeReminders.swift */,
+				1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */,
+				1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -516,8 +523,8 @@
 				E11D15092236AE1A000209B9 /* TableViewCells */,
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
-				2626A117267A71890043C193 /* GoogleService-Info.plist */,
 				E189D69421E4FA450078380B /* Info.plist */,
+				1A2E9B95268B818F005587FA /* GoogleService-Info.plist */,
 				E189D68C21E4FA430078380B /* CTC.xcdatamodeld */,
 				E15E290021EFA76900F2177F /* Icons.xcassets */,
 			);
@@ -585,7 +592,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1250;
-				ORGANIZATIONNAME = "Nirav Bavishi";
+				ORGANIZATIONNAME = ConnectToTheCore;
 				TargetAttributes = {
 					E189D68121E4FA430078380B = {
 						CreatedOnToolsVersion = 10.1;
@@ -641,7 +648,7 @@
 				1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */,
 				E1E7D57B2204ECFB003C65F5 /* three-star-picture-id638324800.png in Resources */,
 				E133554A22666B1000C3E0CF /* 3.png in Resources */,
-				2626A118267A71890043C193 /* GoogleService-Info.plist in Resources */,
+				1A2E9B96268B818F005587FA /* GoogleService-Info.plist in Resources */,
 				E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */,
 				E17A93CE2273636D009D3064 /* 1.jpeg in Resources */,
 			);
@@ -718,6 +725,7 @@
 				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
 				26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */,
+				1A2E9B8D2689EBC2005587FA /* FirebaseDataManager.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
@@ -763,6 +771,7 @@
 				E11037BB21E6602E007BBEF1 /* LoginViewController.swift in Sources */,
 				2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */,
 				262946E226601F99005BA95E /* Utilities.swift in Sources */,
+				1A2E9B91268AA6A2005587FA /* PracticedHistory.swift in Sources */,
 				E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */,
 				263F60F32681474F00B4908E /* HowToUseAppViewController.swift in Sources */,
 				1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */,
@@ -915,15 +924,16 @@
 			baseConfigurationReference = 844AA35F4ACF0ABF3EE6D56D /* Pods-CTC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z3H2FJ8TF;
+				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.201DayAchievementPrinciple.CTTC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.dap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -936,15 +946,16 @@
 			baseConfigurationReference = FB7AA6C23E171863E575DEDB /* Pods-CTC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z3H2FJ8TF;
+				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.201DayAchievementPrinciple.CTTC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.dap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -10,17 +10,19 @@ class UserPracticesData {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let userPractices = UserPractices()
     let dbHelper = DatabaseHelper()
+    let practiceHistory = PracticedHistory()
     let currentUser = CurrentUser()
+    var firebaseDataManager = FirebaseDataManager()
     var userObject: User!
     
     func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
-       
-        let resultFlag = dbHelper.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
+        
+        let resultFlag = practiceHistory.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
         var practicedDaysCount = practiceObject.practiseddays
         
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
-       
-       practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
+        
+        practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
         streak =  (getStreak(practice: practiceObject))
@@ -33,26 +35,26 @@ class UserPracticesData {
                 streak += 1
                 
             }else if (toggleBtn == false && practiceData.practised == true){
-               
+                
                 tracking_days -= 1
                 practicedDaysCount -= 1
-                    streak -= 1
-                    
+                streak -= 1
+                
                 
             }else if (toggleBtn == true && practiceData.practised == false){
-              
-                    tracking_days += 1
-                    practicedDaysCount += 1
-                    streak += 1
-
+                
+                tracking_days += 1
+                practicedDaysCount += 1
+                streak += 1
+                
             }else if (toggleBtn  && practiceData.practised == true){
                 if save == "" {
                     tracking_days += 1
                     practicedDaysCount += 1
-                        streak += 1
+                    streak += 1
                     
                 }
-               
+                
             }
             let date = Date()
             if save == "save"{
@@ -66,7 +68,7 @@ class UserPracticesData {
                     practiceData.tracking_days = Int32(tracking_days)
                     
                 }else{
-                
+                    
                     Practices.practised = toggleBtn
                     Practices.date = currentDate.dateFormate()! as NSDate
                     Practices.practiceDataToPractice = practiceObject
@@ -75,19 +77,19 @@ class UserPracticesData {
                     
                 }
             }else{
-                      
-                      practiceData.practised = toggleBtn
-                      practiceData.date = currentDate.dateFormate()! as NSDate
-                      practiceData.practiceDataToPractice = practiceObject
-                      practiceData.note = note
-                      practiceData.tracking_days = Int32(tracking_days)
-                      practiceData.streak = streak
+                
+                practiceData.practised = toggleBtn
+                practiceData.date = currentDate.dateFormate()! as NSDate
+                practiceData.practiceDataToPractice = practiceObject
+                practiceData.note = note
+                practiceData.tracking_days = Int32(tracking_days)
+                practiceData.streak = streak
             }
             
-           
+            
         }
         else{
-           
+            
             let newPracticesData = PracticeData(context: self.context)
             newPracticesData.date = currentDate.dateFormate()! as NSDate
             newPracticesData.practised = toggleBtn
@@ -100,27 +102,27 @@ class UserPracticesData {
             }
             newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
-         
+            
         }
         userPractices.updatePracticedDay(noOfDays: Int(practicedDaysCount), practiceName: practiceObject.practice!, user: practiceObject.user!)
         let result = currentUser.saveUser()
+        if result == 0 {
+            firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days)
+        }
         return result
-      
-       
-         
     }
     
-
+    
     func getPracticeDataObj(practiceName: String) -> PracticeData? {
-      
+        
         arrayData = getPracticebyName(practice: practiceName)!
-            for data in arrayData{
+        for data in arrayData{
+            
+            if(data.practiceDataToPractice?.practice == practiceName){
                 
-                if(data.practiceDataToPractice?.practice == practiceName){
-                    
-                    practiceData = data
-                }
+                practiceData = data
             }
+        }
         
         return practiceData
     }
@@ -128,7 +130,7 @@ class UserPracticesData {
     func getPracticeDataByDate(date: Date) -> [PracticeData]? {
         
         let request : NSFetchRequest<PracticeData> = PracticeData.fetchRequest()
-
+        
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "date = %@", argumentArray: [date])
         
@@ -147,9 +149,9 @@ class UserPracticesData {
         request.predicate = NSPredicate(format: "practiceDataToPractice.practice = %@", argumentArray: [practice])
         
         do {
-             let dataArray = try context.fetch(request)
+            let dataArray = try context.fetch(request)
             return dataArray
-         
+            
         } catch let err {
             print(err)
         }
@@ -172,22 +174,22 @@ class UserPracticesData {
         return 0
     }
     func getStreak(practice: Practice) -> Int32 {
-    let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
-            if(lastDayData != nil){
-                let newDay = Date().days(from: lastDayData!.date! as Date )
-                let Today =  Date().days(from: Date().originalFormate())
-                let diff = newDay - Today
-                print("diff \(diff)")
-                if diff < 2 {
-                    return (lastDayData?.streak)!
-                }
+        let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
+        if(lastDayData != nil){
+            let newDay = Date().days(from: lastDayData!.date! as Date )
+            let Today =  Date().days(from: Date().originalFormate())
+            let diff = newDay - Today
+            print("diff \(diff)")
+            if diff < 2 {
+                return (lastDayData?.streak)!
             }
+        }
         return 0
     }
-
+    
     
     func updatePracticeData(practiceName: String, practiceDate: Date, note: String, practiced: Bool) -> Int {
-    
+        
         practiceData = getPracticeDataObj(practiceName: practiceName)
         
         tracking_days = practiceData.tracking_days
@@ -229,7 +231,7 @@ class UserPracticesData {
     }
     
     func maintainPracticeDataWeekly(user: User){
-       
+        
         let arrayData = getPracticeData(user: user)
         let practice = userPractices.getPractices(user: user)
         let oldDate = oldestPracticeDataDate(practiceData: arrayData!)
@@ -296,29 +298,16 @@ class UserPracticesData {
                                         
                                         
                                         if(result == 0 ){
-                                            print("Weekly Data Added With date \(weekStartDate)")
+                                            print("Weekly Data Added With date \(String(describing: weekStartDate))")
                                         }else{
                                             print("Error in Weekly Data adding")
                                         }
                                         
                                     }
                                     
-                                    //                                    deletePracticeData(practiceData: pracData)
-                                }
-                                
-                                
-                            }
-                            
-                            
-                            
-                            
-                        }
-                        
-                    }
-                    
-                    
-                    
-                }
+                                   // deletePracticeData(practicesData: pracData)
+                                    
+                                }}}}}
                 
                 if(finalEndDate != nil){
                     

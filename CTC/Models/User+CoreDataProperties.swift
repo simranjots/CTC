@@ -23,6 +23,7 @@ extension User {
     @NSManaged public var password: String?
     @NSManaged public var dob: String?
     @NSManaged public var practice: NSSet?
+    @NSManaged public var practiceHistory: NSSet?
 
 }
 

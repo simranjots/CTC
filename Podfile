@@ -12,5 +12,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Messaging'
 
 end

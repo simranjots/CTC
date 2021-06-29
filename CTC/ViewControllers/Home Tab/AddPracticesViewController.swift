@@ -23,7 +23,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     var oldPractice: String?
     var userObject: User!
     var practi:[Practice]!
-    var homeViewController = HomeViewController()
+    var homeViewController : HomeViewController!
     var practicesData: [PracticeData]!
     let date = Date()
     static var cvalue : String = ""
@@ -61,8 +61,10 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
+        homeViewController = HomeViewController()
         practi = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
+  
         
         setData(AddPracticesViewController.cvalue, AddPracticesViewController.cindexPath)
         
@@ -322,6 +324,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     wordsOfEncouragementTextField.text = practi[indexPath].encourage
     // titleLabel.text = "Edit Practice"
     saveButton.setTitle("Confirm", for: .normal)
+    dateTextField.isUserInteractionEnabled = false
      isUpdating = true
  }
     
