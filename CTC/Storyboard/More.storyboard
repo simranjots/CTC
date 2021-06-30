@@ -34,6 +34,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="practiceHistory" translatesAutoresizingMaskIntoConstraints="NO" id="HpN-by-bOQ">
                                                             <rect key="frame" x="20" y="10" width="40" height="39"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="J4H-JK-7ED"/>
@@ -777,7 +778,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Vs-fES">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="550"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teresa Easler" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
                                                 <rect key="frame" x="154" y="20" width="120" height="120"/>
                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -875,14 +876,14 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIr-a1-rIR">
-                                                <rect key="frame" x="254" y="105" width="25" height="25"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="254" y="110" width="25" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="QtF-7U-lKc"/>
                                                     <constraint firstAttribute="height" constant="25" id="ari-Ta-P7k"/>
                                                 </constraints>
-                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Edit Button" image="camera"/>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                                <state key="normal" title="Edit Button" image="camera" catalog="system"/>
                                                 <connections>
                                                     <action selector="imageEditButtonTapped:" destination="slY-iE-BfU" eventType="touchUpInside" id="5g8-LV-3LF"/>
                                                 </connections>
@@ -891,7 +892,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="U9m-AT-4Ek" secondAttribute="trailing" constant="20" symbolic="YES" id="5zr-l5-Gim"/>
-                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="zIr-a1-rIR" secondAttribute="bottom" constant="30" id="Ivx-n0-bL3"/>
+                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="zIr-a1-rIR" secondAttribute="bottom" constant="25" id="Ivx-n0-bL3"/>
                                             <constraint firstAttribute="trailing" secondItem="TR9-Wm-PwB" secondAttribute="trailing" constant="20" id="KUY-Fe-yY8"/>
                                             <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="SNu-if-L5C" secondAttribute="bottom" constant="20" id="KXc-hT-Q5U"/>
                                             <constraint firstItem="U9m-AT-4Ek" firstAttribute="top" secondItem="TR9-Wm-PwB" secondAttribute="bottom" constant="20" id="KpT-0b-rmi"/>
@@ -942,15 +943,19 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="1.jpeg" width="1125" height="2247"/>
         <image name="More" width="29" height="29"/>
         <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="camera" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="facebook" width="170.66667175292969" height="170.66667175292969"/>
         <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
         <image name="locationPin" width="170.66667175292969" height="170.66667175292969"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
+        <image name="profile" width="478.02398681640625" height="478.02398681640625"/>
         <image name="youtube" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

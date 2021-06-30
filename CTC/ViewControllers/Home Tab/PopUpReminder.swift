@@ -124,15 +124,19 @@ class PopUpReminder: UIViewController {
         minute.text = "\(currentminutes)"
         
     }
+    
     func upDate() {
         label.text = PopUpReminder.labels
         hour.text = "\(PopUpReminder.hourlabel)"
         minute.text = "\(PopUpReminder.minutelabel)"
         
     }
+    
     func setupView()  {
+        
         //adding an overlay to the view to give focus to the dialog box
         view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        
         // Do any additional setup after loading the view.
         popUpView.layer.cornerRadius = 10
         popUpView.layer.borderWidth = 1
@@ -141,26 +145,27 @@ class PopUpReminder: UIViewController {
         popUpView.layer.shadowOffset = CGSize(width: 0, height: 0)
         popUpView.layer.shadowRadius = 10
         popUpView.layer.shadowOpacity = 1
-        //customizing the add button
-        addButton.setTitleColor(UIColor.white, for: .normal)
-        addButton.layer.borderWidth = 1.2
-        addButton.layer.cornerRadius = 4.0
-        addButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
         
-        //customizing the cancel button
-        cancelButton.setTitleColor(UIColor.white, for: .normal)
-        cancelButton.layer.borderWidth = 1.2
-        cancelButton.layer.cornerRadius = 4.0
-        cancelButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
+        //Styling add and cancel button
+        Utilities.styleButton(addButton)
+        Utilities.styleHollowButton(cancelButton)
+        
+        //Styling textFields
+        Utilities.styleTextField(label)
+        Utilities.styleTextField(hour)
+        Utilities.styleTextField(minute)
+        
+        
     }
+    
     @IBAction func cancelbutton(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
     @objc func savePressed() {
-        
         self.view.endEditing(true)
     }
+    
     //MARK:- functions for the viewController
     func showPopup(parentVC: UIViewController){
         //creating a reference for the dialogView controller
