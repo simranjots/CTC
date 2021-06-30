@@ -84,11 +84,9 @@
 		E15E290121EFA76900F2177F /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15E290021EFA76900F2177F /* Icons.xcassets */; };
 		E169CA57225BAA8700A100A6 /* WeeklyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E169CA55225BAA8700A100A6 /* WeeklyData+CoreDataClass.swift */; };
 		E169CA58225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E169CA56225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift */; };
-		E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E16BBC6021F618E70094D8B6 /* Appbackground.png */; };
 		E16BBC6321F638D60094D8B6 /* MorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */; };
 		E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */; };
 		E179F52F21F2476A00FBD293 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */; };
-		E179F53C21F2956F00FBD293 /* HomeBackgroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E179F53B21F2956F00FBD293 /* HomeBackgroundImage.jpeg */; };
 		E17A93CE2273636D009D3064 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E17A93CD2273636D009D3064 /* 1.jpeg */; };
 		E18169B52200EC97002EE49F /* ProfileDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18169B42200EC97002EE49F /* ProfileDataTableViewCell.swift */; };
 		E18169B92201042C002EE49F /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18169B82201042C002EE49F /* ProfileHeaderCell.swift */; };
@@ -105,8 +103,6 @@
 		E1BFA7362236B645005AB2D9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */; };
 		E1E2EEEF223064C3002046E7 /* Practice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2EEEE223064C3002046E7 /* Practice+CoreDataProperties.swift */; };
 		E1E7D5752204CD27003C65F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7D5742204CD27003C65F5 /* Extensions.swift */; };
-		E1E7D5792204EC31003C65F5 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7D5782204EC31003C65F5 /* Home.png */; };
-		E1E7D57B2204ECFB003C65F5 /* three-star-picture-id638324800.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7D57A2204ECFB003C65F5 /* three-star-picture-id638324800.png */; };
 		E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */; };
 		E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */; };
 		E1F3094721FB8560008ADE9D /* AnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3094621FB855F008ADE9D /* AnimationLabel.swift */; };
@@ -194,11 +190,9 @@
 		E15E290021EFA76900F2177F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		E169CA55225BAA8700A100A6 /* WeeklyData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeeklyData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E169CA56225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeeklyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E16BBC6021F618E70094D8B6 /* Appbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Appbackground.png; sourceTree = "<group>"; };
 		E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePageViewController.swift; sourceTree = "<group>"; };
 		E16DBD22225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableSectionZeroTableViewCell.swift; sourceTree = "<group>"; };
 		E179F52E21F2476A00FBD293 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		E179F53B21F2956F00FBD293 /* HomeBackgroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HomeBackgroundImage.jpeg; sourceTree = "<group>"; };
 		E17A93CD2273636D009D3064 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		E18169B42200EC97002EE49F /* ProfileDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataTableViewCell.swift; sourceTree = "<group>"; };
 		E18169B82201042C002EE49F /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
@@ -217,8 +211,6 @@
 		E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		E1E2EEEE223064C3002046E7 /* Practice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Practice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1E7D5742204CD27003C65F5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E1E7D5782204EC31003C65F5 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
-		E1E7D57A2204ECFB003C65F5 /* three-star-picture-id638324800.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "three-star-picture-id638324800.png"; sourceTree = "<group>"; };
 		E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
 		E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRecordTableViewCell.swift; sourceTree = "<group>"; };
 		E1F3094621FB855F008ADE9D /* AnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLabel.swift; sourceTree = "<group>"; };
@@ -482,10 +474,6 @@
 				E133554622666B1000C3E0CF /* 2.png */,
 				E133554722666B1000C3E0CF /* 3.png */,
 				E133554322665FDD00C3E0CF /* FinalLogo.png */,
-				E1E7D57A2204ECFB003C65F5 /* three-star-picture-id638324800.png */,
-				E1E7D5782204EC31003C65F5 /* Home.png */,
-				E16BBC6021F618E70094D8B6 /* Appbackground.png */,
-				E179F53B21F2956F00FBD293 /* HomeBackgroundImage.jpeg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -630,11 +618,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E7D5792204EC31003C65F5 /* Home.png in Resources */,
 				1AD65E87264E466C00CD9974 /* More.storyboard in Resources */,
 				1AD65E85264E45A400CD9974 /* Books.storyboard in Resources */,
 				E189D69321E4FA450078380B /* LaunchScreen.storyboard in Resources */,
-				E179F53C21F2956F00FBD293 /* HomeBackgroundImage.jpeg in Resources */,
 				26CAE0982685886500A54802 /* History.storyboard in Resources */,
 				E189D69021E4FA450078380B /* Assets.xcassets in Resources */,
 				1AD65E81264E412800CD9974 /* Home.storyboard in Resources */,
@@ -645,10 +631,8 @@
 				1AD65E83264E449900CD9974 /* TrackRecord.storyboard in Resources */,
 				E15E290121EFA76900F2177F /* Icons.xcassets in Resources */,
 				1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */,
-				E1E7D57B2204ECFB003C65F5 /* three-star-picture-id638324800.png in Resources */,
 				E133554A22666B1000C3E0CF /* 3.png in Resources */,
 				1A2E9B96268B818F005587FA /* GoogleService-Info.plist in Resources */,
-				E16BBC6121F618E70094D8B6 /* Appbackground.png in Resources */,
 				E17A93CE2273636D009D3064 /* 1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
