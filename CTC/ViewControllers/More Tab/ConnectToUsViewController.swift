@@ -73,7 +73,7 @@ class ConnectToUsViewController: UIViewController, CLLocationManagerDelegate {
         
         //Style purchase button
         Utilities.styleButton(purchaseButton)
-        Utilities.addShadowToButton(purchaseButton)
+        //Utilities.addShadowToButton(purchaseButton)
         
         //Style mapView
         mapView.layer.borderColor = Utilities.primaryTextColor.cgColor

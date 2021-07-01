@@ -50,8 +50,9 @@ extension ShopBooksViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.priceLabel.text = booksPrice[indexPath.row]
         
         //View styles
-        cell.containerView.layer.cornerRadius = cell.containerView.frame.height / 20
+        cell.containerView.layer.cornerRadius = cell.containerView.frame.height / 30
         Utilities.addShadowAndBorderToView(cell.containerView)
+        //cell.containerView.layer.borderColor = UIColor.white.cgColor
         Utilities.styleButton(cell.purchaseLabel)
         
         return cell

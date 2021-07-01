@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU" customClass="shopBoo">
-                                <rect key="frame" x="10" y="98" width="408" height="750"/>
+                                <rect key="frame" x="0.0" y="98" width="428" height="828"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NNc-iQ-4nf">
                                     <size key="itemSize" width="333" height="399"/>
@@ -62,7 +62,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopBooksCollectionViewReusableCell" id="atY-c2-yy2" customClass="ShopBooksCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="37.666666666666664" y="0.0" width="333" height="399"/>
+                                        <rect key="frame" x="47.666666666666664" y="0.0" width="333" height="399"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b8y-yA-xSu">
                                             <rect key="frame" x="0.0" y="0.0" width="333" height="399"/>
@@ -73,6 +73,9 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201 DAP Companion Tracking Journal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzR-qh-6O4">
                                                             <rect key="frame" x="5" y="5" width="303" height="18.666666666666668"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18.666666666666668" id="cba-a4-kbF"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -80,6 +83,7 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="201DAPBook" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-O2-CMo">
                                                             <rect key="frame" x="96.666666666666686" y="33.666666666666671" width="120" height="166.33333333333331"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="166.33333333333331" id="FVH-rR-tBI"/>
                                                                 <constraint firstAttribute="width" constant="120" id="kR3-mQ-fZL"/>
                                                             </constraints>
                                                         </imageView>
@@ -126,12 +130,13 @@
                                                         <constraint firstItem="X2F-O2-CMo" firstAttribute="top" secondItem="JzR-qh-6O4" secondAttribute="bottom" constant="10" id="Mve-Cj-qd6"/>
                                                         <constraint firstItem="JzR-qh-6O4" firstAttribute="top" secondItem="v5E-f4-Nub" secondAttribute="top" constant="5" id="OJs-OQ-rGR"/>
                                                         <constraint firstItem="rZI-7R-7CT" firstAttribute="top" secondItem="X2F-O2-CMo" secondAttribute="bottom" constant="16" id="PC7-hA-qnF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X2F-O2-CMo" secondAttribute="trailing" constant="96.329999999999998" id="RrN-2k-09j"/>
                                                         <constraint firstItem="rZI-7R-7CT" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="5" id="WZA-4B-QPB"/>
                                                         <constraint firstItem="JzR-qh-6O4" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="5" id="dB9-44-Puv"/>
                                                         <constraint firstAttribute="trailing" secondItem="rZI-7R-7CT" secondAttribute="trailing" constant="5" id="hr4-Vk-spN"/>
-                                                        <constraint firstItem="X2F-O2-CMo" firstAttribute="centerX" secondItem="v5E-f4-Nub" secondAttribute="centerX" id="oDV-th-lVN"/>
                                                         <constraint firstAttribute="trailing" secondItem="JzR-qh-6O4" secondAttribute="trailing" constant="5" id="qv6-nF-5DF"/>
                                                         <constraint firstAttribute="bottom" secondItem="rZI-7R-7CT" secondAttribute="bottom" constant="5" id="spw-JO-t6I"/>
+                                                        <constraint firstItem="X2F-O2-CMo" firstAttribute="leading" secondItem="v5E-f4-Nub" secondAttribute="leading" constant="96.670000000000002" id="yRo-tp-VKw"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -158,10 +163,10 @@
                         <viewLayoutGuide key="safeArea" id="Njs-xf-sz2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="bottom" secondItem="Njs-xf-sz2" secondAttribute="bottom" constant="5" id="ODc-QY-N8J"/>
-                            <constraint firstItem="Njs-xf-sz2" firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" constant="10" id="S2L-hp-ZyX"/>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" constant="10" id="Vuj-an-0NC"/>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="Njs-xf-sz2" secondAttribute="leading" constant="10" id="eq9-An-AGd"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="hUs-Ty-vDv" secondAttribute="leading" id="K2R-UT-dbn"/>
+                            <constraint firstAttribute="bottom" secondItem="ba7-Tn-qxU" secondAttribute="bottom" id="SFj-kb-8zD"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" constant="10" id="tfL-ku-6At"/>
+                            <constraint firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" id="z2S-YA-gfH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Books" id="2B4-Hv-8oa"/>
