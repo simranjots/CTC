@@ -203,7 +203,7 @@
                                                                 <constraint firstAttribute="width" constant="30" id="ink-VQ-M92"/>
                                                             </constraints>
                                                             <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <state key="normal" title="NEXT" image="next-1"/>
+                                                            <state key="normal" title="NEXT" image="next1"/>
                                                             <connections>
                                                                 <action selector="nextPageButtonTapped:" destination="eox-Gz-kbu" eventType="touchUpInside" id="0c0-ft-apl"/>
                                                             </connections>
@@ -279,7 +279,7 @@
     </scenes>
     <resources>
         <image name="history" width="32" height="32"/>
-        <image name="next-1" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="next1" width="170.66667175292969" height="170.66667175292969"/>
         <image name="previous" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

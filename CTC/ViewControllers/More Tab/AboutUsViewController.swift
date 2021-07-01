@@ -38,9 +38,9 @@ class AboutUsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.title = "About Authors"
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 330
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 330
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return aboutAuthorsDetails[aboutAuthorsTableView.tag].authorNames.count
