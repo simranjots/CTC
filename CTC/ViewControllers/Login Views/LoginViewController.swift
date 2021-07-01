@@ -1,6 +1,7 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
     
     
@@ -8,6 +9,7 @@ class LoginViewController: UIViewController {
     var currentUser : CurrentUser!
     var firebaseHelper: FirebaseHelper!
     var userObjectPass: User!
+   
     
     //Outlets
     @IBOutlet var emailTextField: UITextField!
@@ -20,11 +22,13 @@ class LoginViewController: UIViewController {
     // to store the current active textfield
     var activeTextField : UITextField? = nil
     var isIconClicked = true
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser = CurrentUser()
         setUpElements()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,33 +114,28 @@ class LoginViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                if error != nil {
-                    self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
-                } else {
-                    let result = self.currentUser.signInUser(email, password)
-                   if result {
-                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+            if(email.isValidEmail) {
+                if(password.isValidPassword) {
+                    Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                        if error != nil {
+                            self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
+                        } else {
+                            let result = self.currentUser.signInUser(email, password, "")
+                            if result {
+                                self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                            }
+                            else {
+                                self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+                            }
+                        }
                     }
+                 
+                } else {
+                    showToast(message: "Enter Valid Password", duration: 2.0)
                 }
+            } else {
+                showToast(message: "Enter Valid Email", duration: 2.0)
             }
-            
-            
-//            if(email.isValidEmail) {
-//                if(password.isValidPassword) {
-//                    let result = currentUser.signInUser(email, password)
-//                    if result {
-//                        performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-//                    }
-//                    else {
-//                        showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-//                    }
-//                } else {
-//                    showToast(message: "Enter Valid Password", duration: 2.0)
-//                }
-//            } else {
-//                showToast(message: "Enter Valid Email", duration: 2.0)
-//            }
         }
     }
     
@@ -148,6 +147,7 @@ class LoginViewController: UIViewController {
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
     }
     
+
     func addPasswordEyeIcon(textField: UITextField, andImage image: UIImage) {
         
         //Create textField view

@@ -95,76 +95,65 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         } else {
             
             let userName = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            var email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            //Create the user
-             Auth.auth().createUser(withEmail: email, password: password) { result, err in
-                if err != nil {
-                    //There was an error creating the user
-                    self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
-                } else {
-                    
-                    let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password)
-                 
-                    
-                    self.db.collection("dap_users").addDocument(data: ["username": userName, "uid": result!.user.uid]) { error in
-                        if error != nil {
-                            self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-                        } else if resultFlag == 1 {
-                            self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
-                            //self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
-                        }
-                    }
-                    //Trasition to the Home screen
-                    self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
-                }
-            }
-        }
+            email = email.lowercased()
         
-//        let name = nameTextField.text!
-//        var email = emailTextField.text!
-//        email = email.lowercased()
-//        let password = passwordTextField.text!
-//
-//        if(!name.isEmpty && !email.isEmpty && !password.isEmpty){
-//
-//            if(email.isValidEmail){
-//                if(password.isValidPassword){
-//
-//                    let resultFlag = currentUser.addUser(name: name, email: email, password: password)
-//                    let fireRef = FirebaseHelper()
-//                    fireRef.addUser(userName: name, userEmail: email, userPassword: password)
-//
-//                    if(resultFlag == 1){
-//
-//                        showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
-//
-//
-//                    }else if (resultFlag == 2){
-//
-//                        showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
-//
-//                    }else if (resultFlag == 0){
-//
-//                        performSegue(withIdentifier: "MainTabbedBar", sender: self)
-//                    }
-//
-//                }else{
-//                    showToast(message: "Enter Valid Password", duration: 2.0)
-//                }
-//            }else{
-//                showToast(message: "Enter Valid Email", duration: 2.0)
-//            }
-//
-//
-////        }
-//        else{
-//
-//            print("fill the form")
-//
-//        }
-//
+            if(!userName.isEmpty && !email.isEmpty && !password.isEmpty){
+
+                if(email.isValidEmail){
+                    if(password.isValidPassword){
+
+                        //Create the user
+                         Auth.auth().createUser(withEmail: email, password: password) { result, err in
+                            if err != nil {
+                                //There was an error creating the user
+                                self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
+                            } else {
+                                
+                                let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password)
+                             
+                                
+                             if(resultFlag == 1){
+                                        
+                                        self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
+
+
+                                    }else if (resultFlag == 2){
+
+                                        self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
+
+                                    }else if (resultFlag == 0){
+                                        self.db.collection("dap_users").document( email).setData(["username": userName, "uid": email]) { error in
+                                            if error != nil {
+                                                self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+                                            }
+                                        }
+                                        self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
+                                    }
+                                
+                                
+                            }
+                        }
+                        
+
+                    }else{
+                        showToast(message: "Enter Valid Password", duration: 2.0)
+                    }
+                }else{
+                    showToast(message: "Enter Valid Email", duration: 2.0)
+                }
+
+
+            }
+            else{
+
+                print("fill the form")
+
+            }
+            
+        }
+
     }
     
     

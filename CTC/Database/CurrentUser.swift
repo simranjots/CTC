@@ -1,11 +1,14 @@
 import Foundation
 import CoreData
 import UIKit
+import Firebase
 
 class CurrentUser {
     
     var users = [User]()
-    
+    let db = Firestore.firestore()
+    var  uEmail = ""
+    var uName = ""
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func addUser(name: String, email: String, password: String) -> Int{
@@ -38,22 +41,42 @@ class CurrentUser {
         
         
     }
-    func signInUser(_ email : String ,_ password : String) -> Bool {
+    func signInUser(_ userName : String,_ email : String ,_ password : String) -> Bool {
         
         loadUser()
-        
+        fetchData(email: email)
         for user in users {
             
             if(user.email == email && user.password == password){
                 user.isloggedin = true
-                return true
+                
             }else{
-                return false
+                _ = addUser(name: uName, email: email, password: password)
+                user.isloggedin = true
             }
         }
-        return false
+        return true
     }
-    
+    func fetchData(email: String) -> Void{
+        let ref = Firestore.firestore().collection("dap_users").whereField("uid", isEqualTo: email)
+        ref.addSnapshotListener { (snapshot, error) in
+            if error != nil
+            {
+                
+            }
+            else {
+                for document in snapshot!.documents {
+                    print("\(document.documentID) => \(document.data() ["name"] as! String)")
+                    self.uName = document.data() ["username"] as! String
+                    self.uEmail = document.data() ["uid"] as! String
+                    print("hell \(self.uName)")
+                    
+                }
+                
+            }
+        }
+        
+    }
     func getUserObject(email: String) -> User{
         let request : NSFetchRequest<User> = User.fetchRequest()
         request.predicate = NSPredicate(format: "email = %@", argumentArray: [email])
