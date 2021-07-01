@@ -30,7 +30,7 @@ class MorePageViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.font = UIFont(name: "Arial Rounded MT Bold", size: 22)
-        label.text = "Teresa Easler"
+        label.text = "Xxxxx Xxxxx"
         return label
     }()
     
@@ -40,7 +40,7 @@ class MorePageViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.font = UIFont(name: "Arial", size: 18)
-        label.text = "teresa.easler@gmail.com"
+        label.text = "xxx.xxx@gmail.com"
         return label
     }()
     

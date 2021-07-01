@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "right-arrow.png",
+      "filename" : "job-search-symbol-of-a-clock-with-arrows-circle-around.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "right-arrow-1.png",
+      "filename" : "job-search-symbol-of-a-clock-with-arrows-circle-around-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "right-arrow-2.png",
+      "filename" : "job-search-symbol-of-a-clock-with-arrows-circle-around-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

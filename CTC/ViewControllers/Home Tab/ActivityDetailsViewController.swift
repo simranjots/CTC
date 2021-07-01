@@ -1,8 +1,6 @@
 import UIKit
 
 class ActivityDetailsViewController: UIViewController {
-
-    
     
     var dbHelper: DatabaseHelper!
     var userPracticesData: UserPracticesData!
@@ -17,7 +15,6 @@ class ActivityDetailsViewController: UIViewController {
     var delegate: ReceiveData?
     var isOn : Bool = false
     
-   
     @IBOutlet var activityNameTextField: UITextField!
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
@@ -69,8 +66,6 @@ class ActivityDetailsViewController: UIViewController {
 
          currentPractice = practicesArray[myIndex]
 
-        activityNameTextField.setUnderLineWithColor(color: UIColor.lightGray, alpha: 0.5)
-        
         createPickerView()
         createToolBar()
         self.setData()
@@ -105,8 +100,6 @@ class ActivityDetailsViewController: UIViewController {
         }
         
     }
-    
- 
     
     func setPercentageAnimation(percentageValue: Int){
         
@@ -152,42 +145,39 @@ class ActivityDetailsViewController: UIViewController {
     
     
     
-    //Style textFields, textView, Button and Views
+    //Style textFields, textView, Button
     func styleElements() {
         
-        //Style textfields, textView and imageView
+        //Style textView, textField and View
+        activityNameTextField.setUnderLineWithColor(color: UIColor.lightGray, alpha: 0.5)
         Utilities.styleTextField(activityNameTextField)
+        
         Utilities.styleTextView(notesTextView)
         
+        Utilities.addShadowAndBorderToView(stataticsView)
+        stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
+        stataticsView.layer.shadowRadius = 0
+        stataticsView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        stataticsView.layer.backgroundColor = UIColor.white.cgColor
         
         //Style buttons
-        Utilities.styleButton(saveButtonOutlet)
-        
-        
-        //Style Statactics View
-        stataticsView.layer.cornerRadius = stataticsView.frame.height / 10
-        stataticsView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        stataticsView.layer.borderWidth = 1
-        
-        
-        
+        Utilities.styleHollowButton(saveButtonOutlet)
     }
-    
-  
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+    
         self.activeButton(flag: !isOn)
     }
+    
     func activeButton(flag: Bool){
         
         isOn = flag
-        if(isOn){
+        if (isOn) {
             startButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
             
-        }else{
+        } else {
             
             startButtonOutlet.setImage(UIImage(named: "Star"), for: .normal)
-            
         }
     }
     
@@ -242,26 +232,21 @@ extension ActivityDetailsViewController : UIPickerViewDataSource, UIPickerViewDe
         
         myIndex = row
         activityNameTextField.text = "\(String(describing: practicesArray[row].practice!))"
-  
     }
-    
-    
 }
 
 extension UITextField{
     
-    
     func setUnderLineWithColor(color: UIColor, alpha : Float){
-        
+
         self.layer.shadowOpacity = alpha
         self.layer.shadowRadius = 0
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.layer.shadowColor = color.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.cornerRadius = 2
-        
+
     }
-    
 }
 
 extension ActivityDetailsViewController : UITextViewDelegate{

@@ -48,6 +48,8 @@
 		263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */; };
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */; };
+		26A2153D268D1FEE00B581BC /* PracticeHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */; };
+		26A2153F268D201100B581BC /* PracticeHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */; };
 		26C197FC268286D5003A6D88 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
 		26CAE06C26850D3B00A54802 /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */; };
@@ -152,6 +154,8 @@
 		263F60F42681476D00B4908E /* HowToUseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseCollectionViewCell.swift; sourceTree = "<group>"; };
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectToUsViewController.swift; sourceTree = "<group>"; };
+		26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistoryViewController.swift; sourceTree = "<group>"; };
+		26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
 		26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
@@ -371,6 +375,8 @@
 				26BBA84F268A4DF6009D1E20 /* History Tab TableView and CollectionView Cells */,
 				E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */,
 				E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */,
+				26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */,
+				26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */,
 			);
 			path = "History Tab";
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
+				26A2153F268D201100B581BC /* PracticeHistoryCollectionViewCell.swift in Sources */,
 				1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */,
 				E10D6679226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift in Sources */,
 				2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */,
@@ -746,6 +753,7 @@
 				1A554395267C3DA9000C5FFF /* Reminder+CoreProperties.swift in Sources */,
 				1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */,
 				2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */,
+				26A2153D268D1FEE00B581BC /* PracticeHistoryViewController.swift in Sources */,
 				E11752D92217486F0089B852 /* ToastLabel.swift in Sources */,
 				E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */,
 				E10D6675226F6F7900C0E4D8 /* faqViewController.swift in Sources */,
