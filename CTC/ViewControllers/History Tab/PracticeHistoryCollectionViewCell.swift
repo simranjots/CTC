@@ -14,10 +14,9 @@ class PracticeHistoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet var practiceNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet var circularProgressBarView: CircularProgressView!
     @IBOutlet var trackingDaysLabel: UILabel!
     @IBOutlet var daysSinceStartedLabel: UILabel!
-    
-    
+    @IBOutlet var percentageLabel: UILabel!
     
 }

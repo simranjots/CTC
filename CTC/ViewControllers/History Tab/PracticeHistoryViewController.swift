@@ -16,6 +16,7 @@ class PracticeHistoryViewController: UIViewController {
     @IBOutlet var previousButtonOutlet: UIButton!
     @IBOutlet var nextButtonOutlet: UIButton!
     @IBOutlet var restoreButtonOutlet: UIButton!
+    @IBOutlet var pageControl: UIPageControl!
     
     //Dummy Data
     let practicesName = ["No Salt", "No Cheese", "Meditation", "Dieting", "Music"]
@@ -32,6 +33,9 @@ class PracticeHistoryViewController: UIViewController {
         practiceHistoryCollectionView.dataSource = self
         addShadowToButtons()
         
+        //guard let restoreButtonIcon = UIImage(named: "logOut-1") else { return }
+        /Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
+        Utilities.styleButton(restoreButtonOutlet)
     }
     
     //MARK: - IBActions
@@ -70,13 +74,17 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
         cell.practiceNameLabel.text = practicesName[indexPath.row]
         cell.dateLabel.text = "Completed On : \(completedDateDetails[indexPath.row])"
         cell.scoreLabel.text = "Your Score was : \(percentageScore[indexPath.row])%"
-        cell.progressBar.progress = Float(progressBarPercentage[indexPath.row])
+        cell.percentageLabel.text = "\(percentageScore[indexPath.row])%"
         cell.trackingDaysLabel.text = trackedDays[indexPath.row]
         cell.daysSinceStartedLabel.text = daysSinceStarted[indexPath.row]
         
+        //Style CollectionView Elements
         Utilities.addShadowAndBorderToView(cell.histotyContainerView)
         cell.histotyContainerView.layer.borderColor = UIColor.white.cgColor
-        
+        cell.circularProgressBarView.trackColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.circularProgressBarView.progressColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
+        cell.circularProgressBarView.setProgressWithAnimation(duration: 1.0, value: Float(progressBarPercentage[indexPath.row]))
+         
         return cell
     }
     
