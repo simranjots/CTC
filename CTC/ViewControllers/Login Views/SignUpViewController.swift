@@ -111,7 +111,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
                             } else {
                                 
-                                let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password)
+                                let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password, completionHandler: {(flag) -> Void in })
                              
                                 
                              if(resultFlag == 1){

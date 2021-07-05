@@ -7,7 +7,6 @@ class LoginViewController: UIViewController {
     
     //Dabase initilizers
     var currentUser : CurrentUser!
-    var firebaseHelper: FirebaseHelper!
     var userObjectPass: User!
    
     
@@ -18,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
     @IBOutlet var facebookSignInButton: UIButton!
+   
     
     // to store the current active textfield
     var activeTextField : UITextField? = nil
@@ -35,37 +35,11 @@ class LoginViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    //Set the properties of login screen elements
-    func setUpElements() {
-        
-        //Add textField Images
-        guard let emailIcon = UIImage(named: "email") else { return }
-        guard let passwordLeftIcon = UIImage(named: "password") else { return }
-        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
-        
-        //Style the textFields
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        
-        //Style the buttons
-        Utilities.styleButton(signInButton)
-        Utilities.addShadowToButton(signInButton)
-        Utilities.styleGmailButton(gmailSignInButton)
-        Utilities.addShadowToButton(gmailSignInButton)
-        Utilities.styleFacebookButton(facebookSignInButton)
-        Utilities.addShadowToButton(facebookSignInButton)
-        //Set textField Images
-        Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
-        Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
-        addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
-        
 
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         
         currentUser = CurrentUser()
-        firebaseHelper = FirebaseHelper()
+       
         
         userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
@@ -73,31 +47,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func validateFields() -> String? {
-        
-        //Validate any field is not blank
-        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
-            return "Email or password are blank."
-        }
-        
-        //Validate Email format is correct
-        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if Utilities.isEmailValid(cleanedEmail) == false {
-            
-            return "Please enter correct email."
-        }
-        
-        //Validate password is correct
-        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if Utilities.isPasswordValid(cleanedPassword) == false {
-            
-            return "Please enter correct password."
-        }
-        
-        return nil
-    }
     
     
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -111,22 +60,25 @@ class LoginViewController: UIViewController {
             
         } else {
            
-            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            var email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
+            email = email.lowercased()
             if(email.isValidEmail) {
                 if(password.isValidPassword) {
                     Auth.auth().signIn(withEmail: email, password: password) { result, error in
                         if error != nil {
                             self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
                         } else {
-                            let result = self.currentUser.signInUser(email, password, "")
-                            if result {
-                                self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                            }
-                            else {
-                                self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                            }
+                            self.currentUser.signInUser(userName: "", email: email, password: password, Completion: {(flag) -> Void in
+                                    if(flag){
+                                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                    }else{
+                                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+                                    }
+                                
+                            })
+                         
+                           
                         }
                     }
                  
@@ -193,6 +145,58 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
         
+    }
+    //Set the properties of login screen elements
+    func setUpElements() {
+        
+        //Add textField Images
+        guard let emailIcon = UIImage(named: "email") else { return }
+        guard let passwordLeftIcon = UIImage(named: "password") else { return }
+        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
+        
+        //Style the textFields
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        
+        //Style the buttons
+        Utilities.styleButton(signInButton)
+        Utilities.addShadowToButton(signInButton)
+        Utilities.styleGmailButton(gmailSignInButton)
+        Utilities.addShadowToButton(gmailSignInButton)
+        Utilities.styleFacebookButton(facebookSignInButton)
+        Utilities.addShadowToButton(facebookSignInButton)
+        //Set textField Images
+        Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
+        Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
+        addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
+        
+
+    }
+    
+    func validateFields() -> String? {
+        
+        //Validate any field is not blank
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Email or password are blank."
+        }
+        
+        //Validate Email format is correct
+        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isEmailValid(cleanedEmail) == false {
+            
+            return "Please enter correct email."
+        }
+        
+        //Validate password is correct
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            
+            return "Please enter correct password."
+        }
+        
+        return nil
     }
     
     

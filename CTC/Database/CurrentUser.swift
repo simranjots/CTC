@@ -1,17 +1,19 @@
 import Foundation
 import CoreData
 import UIKit
-import Firebase
+
 
 class CurrentUser {
     
     var users = [User]()
-    let db = Firestore.firestore()
-    var  uEmail = ""
-    var uName = ""
+    let db = FirebaseDataManager()
+    typealias userSignIn = (Bool) -> Void
+    typealias userAdded = (Bool) -> Void
+    
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String) -> Int{
+    func addUser(name: String, email: String, password: String,completionHandler: @escaping userAdded) -> Int{
         
         loadUser()
         
@@ -32,6 +34,15 @@ class CurrentUser {
             newUser.password = password
             newUser.isloggedin = true
             let result = saveUser()
+            if result == 0 {
+                db.FetchPractices(email: email) { success in
+                    if success {
+                      completionHandler(success)
+                    }else{
+                        completionHandler(true)
+                    }
+                }
+            }
             return result
         }else {
             print("User Exist")
@@ -41,42 +52,42 @@ class CurrentUser {
         
         
     }
-    func signInUser(_ userName : String,_ email : String ,_ password : String) -> Bool {
-        
-        loadUser()
-        fetchData(email: email)
-        for user in users {
+    func signInUser(userName : String, email : String ,password : String,Completion :@escaping userSignIn ) {
+        let request:NSFetchRequest<User> = User.fetchRequest()
+        do {
+            users = try context.fetch(request)
             
-            if(user.email == email && user.password == password){
-                user.isloggedin = true
-                
-            }else{
-                _ = addUser(name: uName, email: email, password: password)
-                user.isloggedin = true
-            }
+        } catch let err {
+            print(err)
         }
-        return true
-    }
-    func fetchData(email: String) -> Void{
-        let ref = Firestore.firestore().collection("dap_users").whereField("uid", isEqualTo: email)
-        ref.addSnapshotListener { (snapshot, error) in
-            if error != nil
-            {
-                
-            }
-            else {
-                for document in snapshot!.documents {
-                    print("\(document.documentID) => \(document.data() ["name"] as! String)")
-                    self.uName = document.data() ["username"] as! String
-                    self.uEmail = document.data() ["uid"] as! String
-                    print("hell \(self.uName)")
+        if users.isEmpty {
+            db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
+                if(success){
+                    _ = self.addUser(name: value, email: email, password: password, completionHandler: {(flag) -> Void in
+                        Completion(flag)
+                    })
                     
+                }else{
+                    Completion(success)
                 }
-                
+            })
+            
+            
+        }else{
+            for user in users {
+                if(user.email == email && user.password == password){
+                    user.isloggedin = true
+                    Completion(true)
+                }else{
+                    Completion(false)
+                }
             }
+            
+            
         }
         
     }
+    
     func getUserObject(email: String) -> User{
         let request : NSFetchRequest<User> = User.fetchRequest()
         request.predicate = NSPredicate(format: "email = %@", argumentArray: [email])

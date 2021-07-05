@@ -1,5 +1,6 @@
 import UIKit
 import UserNotifications
+import Firebase
 
 class HomeViewController: UIViewController,ReceiveData{
     
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var practiceReminder : PracticeReminder!
     typealias completion = (Bool)->Void
     static var practiceAdded:completion!
+    let db = FirebaseDataManager()
     // variables
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -154,6 +156,7 @@ class HomeViewController: UIViewController,ReceiveData{
     }
 }
 
+
 extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -199,7 +202,9 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
+                self.db.updateSinglePractices(valueName: "is_deleted", value: true, practiceName: prac.practice!, email: self.userObject.email!)
                 self.delPractice(prac: prac, userOb: self.userObject)
+               
             }))
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
