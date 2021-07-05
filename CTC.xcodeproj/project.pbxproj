@@ -10,7 +10,7 @@
 		0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */; };
 		1A2E9B8D2689EBC2005587FA /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */; };
 		1A2E9B91268AA6A2005587FA /* PracticedHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */; };
-		1A2E9B96268B818F005587FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E9B95268B818F005587FA /* GoogleService-Info.plist */; };
+		1A2E9B9A268F4150005587FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E9B99268F4150005587FA /* GoogleService-Info.plist */; };
 		1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */; };
 		1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA243266A2C6C003A96A4 /* UserPractices.swift */; };
 		1A3FA24C266E924B003A96A4 /* UserPracticesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */; };
@@ -117,7 +117,7 @@
 /* Begin PBXFileReference section */
 		1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
 		1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticedHistory.swift; sourceTree = "<group>"; };
-		1A2E9B95268B818F005587FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A2E9B99268F4150005587FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		1A3FA243266A2C6C003A96A4 /* UserPractices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPractices.swift; sourceTree = "<group>"; };
 		1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPracticesData.swift; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
 				E189D69421E4FA450078380B /* Info.plist */,
-				1A2E9B95268B818F005587FA /* GoogleService-Info.plist */,
+				1A2E9B99268F4150005587FA /* GoogleService-Info.plist */,
 				E189D68C21E4FA430078380B /* CTC.xcdatamodeld */,
 				E15E290021EFA76900F2177F /* Icons.xcassets */,
 			);
@@ -633,12 +633,12 @@
 				E133554922666B1000C3E0CF /* 2.png in Resources */,
 				E133554C22666B2F00C3E0CF /* 4.png in Resources */,
 				E133554422665FDD00C3E0CF /* FinalLogo.png in Resources */,
+				1A2E9B9A268F4150005587FA /* GoogleService-Info.plist in Resources */,
 				1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */,
 				1AD65E83264E449900CD9974 /* TrackRecord.storyboard in Resources */,
 				E15E290121EFA76900F2177F /* Icons.xcassets in Resources */,
 				1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */,
 				E133554A22666B1000C3E0CF /* 3.png in Resources */,
-				1A2E9B96268B818F005587FA /* GoogleService-Info.plist in Resources */,
 				E17A93CE2273636D009D3064 /* 1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

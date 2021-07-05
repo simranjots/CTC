@@ -118,6 +118,18 @@ class UserPracticesData {
         }
         return result
     }
+    func addPracticedData(toggleBtn: Bool, practiceObject: String, currentDate: Date,userObject: User!,note: String,tracking_days: Int,streak:Int,percentage:Int){
+        let practice =  userPractices.getPractices(practiceName: practiceObject, user: userObject)
+        let Practices = PracticeData(context: self.context)
+        Practices.practised = toggleBtn
+        Practices.date = currentDate.dateFormate()! as NSDate
+        Practices.note = note
+        Practices.tracking_days = Int32(tracking_days)
+        Practices.streak = Int32(streak)
+        Practices.percentage = Int16(percentage)
+        Practices.practiceDataToPractice = practice
+        _ = currentUser.saveUser()
+    }
     
     
     func getPracticeDataObj(practiceName: String) -> PracticeData? {
