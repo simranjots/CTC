@@ -153,6 +153,8 @@ class LoginViewController: UIViewController {
         guard let emailIcon = UIImage(named: "email") else { return }
         guard let passwordLeftIcon = UIImage(named: "password") else { return }
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
+        guard let googleIcon = UIImage(named: "google") else { return }
+        guard let facebookIcon = UIImage(named: "facebook-1") else { return }
         
         //Style the textFields
         Utilities.styleTextField(emailTextField)
@@ -165,10 +167,13 @@ class LoginViewController: UIViewController {
         Utilities.addShadowToButton(gmailSignInButton)
         Utilities.styleFacebookButton(facebookSignInButton)
         Utilities.addShadowToButton(facebookSignInButton)
+        
         //Set textField Images
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
         Utilities.addTextFieldImage(textField: passwordTextField, andImage: passwordLeftIcon)
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
+        Utilities.addGoogleImage(button: gmailSignInButton, andImage: googleIcon)
+        Utilities.addButtonImage(button: facebookSignInButton, andImage: facebookIcon)
         
 
     }

@@ -25,8 +25,8 @@ class PracticeHistoryViewController: UIViewController {
         practiceHistoryCollectionView.dataSource = self
         addShadowToButtons()
         
-        //guard let restoreButtonIcon = UIImage(named: "logOut-1") else { return }
-        //Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
+        guard let restoreButtonIcon = UIImage(named: "restore-1") else { return }
+        Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
         Utilities.styleButton(restoreButtonOutlet)
     }
     

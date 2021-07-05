@@ -82,11 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td), userOb: userObject!)
                             print(resultFlag)
                         }
-                        
-                       
                     }
                 }
-                
             }
         }
      
@@ -96,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController:UIViewController?
         
         if (userObject != nil){
+            
             NotificationManager.instance.requestAuthorization()
             UIApplication.shared.applicationIconBadgeNumber = 0
             let storyboard = UIStoryboard(name: "TabVC", bundle: nil)

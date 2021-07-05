@@ -14,20 +14,20 @@
             <objects>
                 <viewController storyboardIdentifier="moreToLoginOptions" modalPresentationStyle="fullScreen" id="QRo-Rj-Bfv" customClass="LoginViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCb-1X-acB">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-pT-9tt">
-                                <rect key="frame" x="0.0" y="140" width="428" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-xK-Q0T" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="500"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rjD-NC-BTh" userLabel="Main">
-                                                <rect key="frame" x="20" y="30" width="388" height="432"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rjD-NC-BTh" userLabel="Main">
+                                                <rect key="frame" x="20" y="30" width="388" height="441"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-XQ-wyl" userLabel="Email-Password-SignIn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="292"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-XQ-wyl" userLabel="Email-Password-SignIn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="311"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyp-Os-V7B" userLabel="Email">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="81"/>
@@ -44,7 +44,7 @@
                                                                         </attributedString>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jaldeep@gmail.com" borderStyle="roundedRect" placeholder="Enter Your Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jaldeep@gmail.com" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
                                                                         <rect key="frame" x="0.0" y="31" width="388" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="SJG-Yr-2Nj"/>
@@ -56,7 +56,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8X9-40-UPD" userLabel="Password">
-                                                                <rect key="frame" x="0.0" y="101" width="388" height="81"/>
+                                                                <rect key="frame" x="0.0" y="91" width="388" height="81"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-Mv-k3f">
                                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="21"/>
@@ -64,7 +64,7 @@
                                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jaldeep@1234" borderStyle="roundedRect" placeholder="Enter Your Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="miY-1T-4os">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jaldeep@1234" borderStyle="roundedRect" placeholder="Enter Your Password" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="miY-1T-4os">
                                                                         <rect key="frame" x="0.0" y="31" width="388" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="h85-ZW-zmY"/>
@@ -76,10 +76,20 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-oE-uj3" userLabel="SignIn-ForgotPassword">
-                                                                <rect key="frame" x="0.0" y="202" width="388" height="90"/>
+                                                                <rect key="frame" x="0.0" y="182" width="388" height="88"/>
                                                                 <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-Ak-Pog">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="28"/>
+                                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                                        <state key="normal" title="Forgot Password?">
+                                                                            <color key="titleColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <segue destination="sun-Dt-Lao" kind="presentation" id="n4t-n2-Bmn"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD2-7B-Gm0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="38" width="388" height="50"/>
                                                                         <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="Ltu-8S-VgE"/>
@@ -92,22 +102,33 @@
                                                                             <action selector="signInButtonTapped:" destination="QRo-Rj-Bfv" eventType="touchUpInside" id="Udv-W1-NYL"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-Ak-Pog">
-                                                                        <rect key="frame" x="0.0" y="60" width="388" height="30"/>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="v16-N9-ar0">
+                                                                <rect key="frame" x="0.0" y="280" width="388" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-0D-yTi">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="31"/>
                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                                        <state key="normal" title="Forgot Password?">
+                                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJB-eT-GLL">
+                                                                        <rect key="frame" x="194" y="0.0" width="194" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                                        <state key="normal" title="  Become a member">
                                                                             <color key="titleColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <segue destination="sun-Dt-Lao" kind="presentation" id="n4t-n2-Bmn"/>
+                                                                            <segue destination="rao-AT-4HQ" kind="presentation" identifier="SignInToSignUpSegue" modalPresentationStyle="automatic" id="wk0-hH-4J1"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-iU-njZ" userLabel="Gmail-Facebook">
-                                                        <rect key="frame" x="0.0" y="322" width="388" height="110"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-iU-njZ" userLabel="Gmail-Facebook">
+                                                        <rect key="frame" x="0.0" y="331" width="388" height="110"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpm-PS-lAe" userLabel="Gmail-Facebook Buttons">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="110"/>
@@ -119,7 +140,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="JUa-BZ-Do7"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                                                        <state key="normal" title="Continue With Gmail">
+                                                                        <state key="normal" title="Continue With Google">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -248,7 +269,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66r-FG-b0e">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="66r-FG-b0e">
                                                 <rect key="frame" x="0.0" y="31" width="388" height="50"/>
                                                 <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
@@ -317,17 +338,17 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rao-AT-4HQ" customClass="SignUpViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKd-Cu-i01">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vE1-XS-vQp">
-                                <rect key="frame" x="0.0" y="140" width="428" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upq-MX-FUx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="450"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SKa-OI-jip" userLabel="Main">
-                                                <rect key="frame" x="20" y="30" width="388" height="350"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SKa-OI-jip" userLabel="Main">
+                                                <rect key="frame" x="20" y="30" width="388" height="320"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nJk-dz-Y9G" userLabel="Name">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="80"/>
@@ -348,7 +369,7 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-hb-b5F">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-hb-b5F">
                                                                 <rect key="frame" x="0.0" y="30" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="IEs-go-H1h"/>
@@ -360,7 +381,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nZW-Fo-IVT" userLabel="Email">
-                                                        <rect key="frame" x="0.0" y="100" width="388" height="80"/>
+                                                        <rect key="frame" x="0.0" y="90" width="388" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-tL-ubk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
@@ -378,7 +399,7 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-L1-Mga">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-L1-Mga">
                                                                 <rect key="frame" x="0.0" y="30" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="tGV-a3-j0v"/>
@@ -390,7 +411,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-Lq-feL" userLabel="Password">
-                                                        <rect key="frame" x="0.0" y="200" width="388" height="80"/>
+                                                        <rect key="frame" x="0.0" y="180" width="388" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h14-Zg-cWh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
@@ -408,7 +429,7 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAD-sG-o6W">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PAD-sG-o6W">
                                                                 <rect key="frame" x="0.0" y="30" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="4gZ-zZ-KS3"/>
@@ -420,7 +441,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="55I-RD-xpQ" userLabel="SignUp">
-                                                        <rect key="frame" x="0.0" y="300" width="388" height="50"/>
+                                                        <rect key="frame" x="0.0" y="270" width="388" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxH-ng-qLY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
@@ -447,12 +468,35 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I5S-1u-Y8n">
+                                                <rect key="frame" x="92.000000000000014" y="360" width="244.33333333333337" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-sF-7MM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185.33333333333334" height="31"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BX-cT-H0N">
+                                                        <rect key="frame" x="190.33333333333331" y="0.0" width="54" height="31"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                        <state key="normal" title="Sign In">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="QRo-Rj-Bfv" kind="presentation" identifier="SignUpToSignInSegue" modalPresentationStyle="automatic" id="gac-dw-9lu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="SKa-OI-jip" firstAttribute="top" secondItem="upq-MX-FUx" secondAttribute="top" constant="30" id="Cgz-OB-KvT"/>
                                             <constraint firstAttribute="height" constant="450" id="TID-f1-yjl"/>
                                             <constraint firstItem="SKa-OI-jip" firstAttribute="leading" secondItem="upq-MX-FUx" secondAttribute="leading" constant="20" id="aDz-xy-3dE"/>
+                                            <constraint firstItem="I5S-1u-Y8n" firstAttribute="top" secondItem="SKa-OI-jip" secondAttribute="bottom" constant="10" id="b03-J1-ntt"/>
+                                            <constraint firstItem="I5S-1u-Y8n" firstAttribute="centerX" secondItem="upq-MX-FUx" secondAttribute="centerX" id="iBF-vs-XyH"/>
                                             <constraint firstAttribute="trailing" secondItem="SKa-OI-jip" secondAttribute="trailing" constant="20" id="mox-I4-xzz"/>
                                         </constraints>
                                     </view>
@@ -489,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yA-ry-4N1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704" y="2807"/>
+            <point key="canvasLocation" x="-705.14018691588785" y="2806.9114470842333"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="4wU-gD-iNF">
@@ -512,7 +556,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-V8-l99">
-                                <rect key="frame" x="20" y="702" width="388" height="170"/>
+                                <rect key="frame" x="20" y="762" width="388" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyf-YU-Rhb">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
@@ -551,16 +595,8 @@
                                             <segue destination="rao-AT-4HQ" kind="show" id="W0K-bb-vNs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IV-Rr-QYG">
-                                        <rect key="frame" x="0.0" y="120" width="388" height="50"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <state key="normal" title="Skip">
-                                            <color key="titleColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4IV-Rr-QYG" firstAttribute="height" secondItem="nyf-YU-Rhb" secondAttribute="height" id="4ky-F1-b3t"/>
                                     <constraint firstItem="0wW-DL-gVC" firstAttribute="height" secondItem="nyf-YU-Rhb" secondAttribute="height" id="MbJ-eh-EYW"/>
                                 </constraints>
                             </stackView>
@@ -621,7 +657,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="wk0-hH-4J1"/>
         <segue reference="uzh-sq-IJl"/>
+        <segue reference="gac-dw-9lu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>

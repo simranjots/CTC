@@ -90,7 +90,7 @@ class FirebaseDataManager {
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil
             {
-                print("this begin \(error)")
+                print("this begin \(String(describing: error))")
             }
             else {
                 if snapshot != nil {
