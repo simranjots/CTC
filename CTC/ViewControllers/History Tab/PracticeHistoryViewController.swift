@@ -1,11 +1,3 @@
-//
-//  PracticeHistoryViewController.swift
-//  CTC
-//
-//  Created by Jaldeep Patel on 2021-06-30.
-//  Copyright © 2021 ConnectToTheCore. All rights reserved.
-//
-
 import UIKit
 
 class PracticeHistoryViewController: UIViewController {
@@ -34,7 +26,7 @@ class PracticeHistoryViewController: UIViewController {
         addShadowToButtons()
         
         //guard let restoreButtonIcon = UIImage(named: "logOut-1") else { return }
-        /Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
+        //Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
         Utilities.styleButton(restoreButtonOutlet)
     }
     

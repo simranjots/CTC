@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
                             self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
                         } else {
                             self.currentUser.signInUser(userName: "", email: email, password: password, Completion: {(flag) -> Void in
-                                    if(flag){
+                                    if(flag == true){
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
                                     }else{
                                         self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")

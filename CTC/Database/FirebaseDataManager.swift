@@ -136,12 +136,16 @@ class FirebaseDataManager {
                          encourage = document.data() ["encourage"] as! String
                          remindswitch = document.data() ["remindswitch"] as! Bool
                          goals = document.data() ["goals"] as! String
-                        
+                   
+                        let practices = UserPractices()
+                        let UserObject = CurrentUser()
+                        let userob = UserObject.getUserObject(email: user)
+                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                        if result == 0 {
+                            self.FetchPracData(email: email, id: practice)
+                        }
                 }
-                    let practices = UserPractices()
-                    let UserObject = CurrentUser()
-                    let userob = UserObject.getUserObject(email: user)
-                    _ = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                   
                     completion(true)
                 }else{
                     completion(false)
@@ -150,5 +154,71 @@ class FirebaseDataManager {
             }
         }
         
+    }
+    func FetchPracData(email:String,id:String)  {
+        print("this start \(email)")
+        var practiceObject = "",toggleBtn = false,note = "",user = "",streak = 0,
+            percentage = 0,trackingDays = 0
+        var currentDate = Timestamp()
+       
+        
+        let ref =  db.collection("UsersData").document(email)
+                   .collection("PracticedData").whereField("id", isEqualTo: id)
+        ref.addSnapshotListener { (snapshot, error) in
+            if error != nil
+            {
+                print(error!)
+            }
+            else {
+                if snapshot != nil {
+                    for document in snapshot!.documents {
+                        practiceObject = document.data() ["practiceName"] as! String
+                        currentDate = document.data() ["PracticedDate"] as! Timestamp
+                        user = document.data() ["user"] as! String
+                        streak = document.data() ["streak"] as! Int
+                        percentage = document.data() ["percentage"] as! Int
+                        trackingDays = document.data() ["trackingDays"] as! Int
+                        note = document.data() ["note"] as! String
+                        toggleBtn = document.data() ["toggleStarBtn"] as! Bool
+                        
+                            let practiceData = UserPracticesData()
+                            let UserObject = CurrentUser()
+                            let userob = UserObject.getUserObject(email: user)
+                        practiceData.addPracticedData(toggleBtn: toggleBtn, practiceObject: practiceObject, currentDate: currentDate.dateValue().dateFormate()!, userObject: userob, note: note, tracking_days: trackingDays, streak: streak, percentage: percentage
+                            )
+                        
+                }
+                    
+                }
+            }
+        }
+    }
+    func fetchHistory(email: String) {
+        let ref =  db.collection("UsersData").document(email)
+                   .collection("PracticedHistory")
+        ref.addSnapshotListener { (snapshot, error) in
+            if error != nil
+            {
+                print(error!)
+            }
+            else {
+                if snapshot != nil {
+                    for document in snapshot!.documents {
+                        let practiceName = document.data() ["practiceName"] as! String
+                        let date = document.data() ["date"] as! Timestamp
+                        let dss = document.data() ["dss"] as! Int
+                        let td = document.data() ["td"] as! Int
+                        let comDelFlag = document.data() ["comDelFlag"] as! Bool
+                        
+                            let practiceHistory = PracticedHistory()
+                            let UserObject = CurrentUser()
+                            let userob = UserObject.getUserObject(email: email)
+                        _ = practiceHistory.addPracticeHistory(practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: userob)
+                        
+                }
+                    
+                }
+            }
+        }
     }
 }

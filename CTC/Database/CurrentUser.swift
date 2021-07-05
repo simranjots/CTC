@@ -8,12 +8,12 @@ class CurrentUser {
     var users = [User]()
     let db = FirebaseDataManager()
     typealias userSignIn = (Bool) -> Void
-    typealias userAdded = (Bool) -> Void
+    typealias userAdded = (Int) -> Void
     
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,completionHandler: @escaping userAdded) -> Int{
+    func addUser(name: String, email: String, password: String,from : String,completionHandler: @escaping userAdded){
         
         loadUser()
         
@@ -35,18 +35,23 @@ class CurrentUser {
             newUser.isloggedin = true
             let result = saveUser()
             if result == 0 {
-                db.FetchPractices(email: email) { success in
-                    if success {
-                      completionHandler(success)
-                    }else{
-                        completionHandler(true)
+                if from == "signUp" {
+                    completionHandler(result)
+                }else {
+                    db.fetchHistory(email: email)
+                    db.FetchPractices(email: email) { success in
+                        if success {
+                          completionHandler(result)
+                        }else{
+                            completionHandler(result)
+                        }
                     }
                 }
-            }
-            return result
+              }
+            
         }else {
             print("User Exist")
-            return 2
+            completionHandler(2)
             
         }
         
@@ -63,26 +68,31 @@ class CurrentUser {
         if users.isEmpty {
             db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
                 if(success){
-                    _ = self.addUser(name: value, email: email, password: password, completionHandler: {(flag) -> Void in
-                        Completion(flag)
+                    self.addUser(name: value, email: email, password: password, from: "signIn", completionHandler: {(flag) -> Void in
+                        if flag == 0
+                        {
+                            Completion(true)
+                        }
+                        
                     })
                     
                 }else{
-                    Completion(success)
+                    Completion(false)
                 }
             })
             
             
         }else{
-            for user in users {
+              let user = getUserObject(email: email)
                 if(user.email == email && user.password == password){
                     user.isloggedin = true
+                    _ = saveUser()
                     Completion(true)
                 }else{
                     Completion(false)
                 }
-            }
             
+           
             
         }
         
@@ -137,7 +147,6 @@ class CurrentUser {
     }
     
     func checkLoggedIn() -> User!{
-        
         loadUser()
         for user in users{
             if user.isloggedin == true{

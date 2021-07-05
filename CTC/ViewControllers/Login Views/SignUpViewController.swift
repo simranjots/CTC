@@ -111,26 +111,28 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
                             } else {
                                 
-                                let resultFlag = self.currentUser.addUser(name: userName, email: email, password: password, completionHandler: {(flag) -> Void in })
+                                self.currentUser.addUser(name: userName, email: email, password: password, from: "signUp", completionHandler: {(flag) -> Void in
+                                    if(flag == 1){
+                                               
+                                               self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
+
+
+                                           }else if (flag == 2){
+
+                                               self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
+
+                                           }else if (flag == 0){
+                                               self.db.collection("dap_users").document( email).setData(["username": userName, "uid": email]) { error in
+                                                   if error != nil {
+                                                       self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+                                                   }
+                                               }
+                                               self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
+                                           }
+                                })
                              
                                 
-                             if(resultFlag == 1){
-                                        
-                                        self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
-
-
-                                    }else if (resultFlag == 2){
-
-                                        self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
-
-                                    }else if (resultFlag == 0){
-                                        self.db.collection("dap_users").document( email).setData(["username": userName, "uid": email]) { error in
-                                            if error != nil {
-                                                self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-                                            }
-                                        }
-                                        self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
-                                    }
+                           
                                 
                                 
                             }
