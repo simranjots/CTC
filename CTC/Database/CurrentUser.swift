@@ -2,7 +2,6 @@ import Foundation
 import CoreData
 import UIKit
 
-
 class CurrentUser {
     
     var users = [User]()
