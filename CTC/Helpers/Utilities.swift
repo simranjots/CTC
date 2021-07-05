@@ -131,6 +131,12 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    static func addButtonImage(button: UIButton, andImage image: UIImage) {
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: -110, bottom: 5, right: 0)
+    }
+    
     //MARK: - Regular expressions for Email and Password
     static func isPasswordValid(_ password:String) -> Bool {
         

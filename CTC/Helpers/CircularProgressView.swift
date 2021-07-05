@@ -29,23 +29,28 @@ class CircularProgressView: UIView {
     }
     
     fileprivate func createCircularPath() {
+        
         self.backgroundColor = UIColor.clear
         self.layer.cornerRadius = self.frame.size.width/2
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width/2, y: frame.size.height/2), radius: (frame.size.width-1.5)/2, startAngle: CGFloat(-0.5 * .pi), endAngle: CGFloat(1.57 + .pi), clockwise: true)
+        
+        //Properties of tracking path
         trackLayer.path = circlePath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.strokeColor = trackColor.cgColor
+        trackLayer.lineWidth = 15.0
         trackLayer.strokeEnd = 1.0
-        trackLayer.lineCap = CAShapeLayerLineCap.round
         layer.addSublayer(trackLayer)
         
+        //Properties of Progress path
         progressLayer.path = circlePath.cgPath
         progressLayer.fillColor = UIColor.clear.cgColor
-        progressLayer.strokeColor = progressColor.cgColor
-        progressLayer.lineWidth = 7.0
+        progressLayer.strokeColor = trackColor.cgColor
+        progressLayer.lineCap = .round
+        progressLayer.lineWidth = 15.0
         progressLayer.strokeEnd = 0.0
-        progressLayer.lineCap = CAShapeLayerLineCap.round
         layer.addSublayer(progressLayer)
+        
     }
     
     func setProgressWithAnimation(duration: TimeInterval, value: Float){
