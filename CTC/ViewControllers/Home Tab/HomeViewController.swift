@@ -47,8 +47,6 @@ class HomeViewController: UIViewController,ReceiveData{
         practicesData = self.getPracticesData(date: selectedDate)
         _ = userPractices.oldestPracticeDate(user: userObject)
         
-       
-        
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
         
         // MARK: Gradiat Color Set for naviagation Bar

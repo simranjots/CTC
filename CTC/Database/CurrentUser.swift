@@ -58,14 +58,8 @@ class CurrentUser {
         
     }
     func signInUser(userName : String, email : String ,password : String,Completion :@escaping userSignIn ) {
-        let request:NSFetchRequest<User> = User.fetchRequest()
-        do {
-            users = try context.fetch(request)
-            
-        } catch let err {
-            print(err)
-        }
-        if users.isEmpty {
+        let user = getUserObject(email: email)
+        if user == nil {
             db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
                 if(success){
                     self.addUser(name: value, email: email, password: password, from: "signIn", completionHandler: {(flag) -> Void in
@@ -83,9 +77,8 @@ class CurrentUser {
             
             
         }else{
-              let user = getUserObject(email: email)
-                if(user.email == email && user.password == password){
-                    user.isloggedin = true
+            if(user!.email == email && user!.password == password){
+                user!.isloggedin = true
                     _ = saveUser()
                     Completion(true)
                 }else{
@@ -98,11 +91,23 @@ class CurrentUser {
         
     }
     
-    func getUserObject(email: String) -> User{
-        let request : NSFetchRequest<User> = User.fetchRequest()
-        request.predicate = NSPredicate(format: "email = %@", argumentArray: [email])
-        loadUser(with: request)
-        return users[0]
+    func getUserObject(email: String) -> User?{
+        var Singleuser = User()
+        let request:NSFetchRequest<User> = User.fetchRequest()
+        do {
+            users = try context.fetch(request)
+            
+        } catch let err {
+            print(err)
+        }
+        for user in users{
+            if user.email == email {
+                Singleuser = user
+                return Singleuser
+            }
+            
+        }
+        return nil
     }
     
     
@@ -110,10 +115,10 @@ class CurrentUser {
         
         let userObject = getUserObject(email: oldEmail)
         
-        userObject.name = name
-        userObject.email = newEmail
-        userObject.dob = dob
-        userObject.password = password
+        userObject!.name = name
+        userObject!.email = newEmail
+        userObject!.dob = dob
+        userObject!.password = password
         let result = saveUser()
         return result
         

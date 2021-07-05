@@ -140,7 +140,7 @@ class FirebaseDataManager {
                         let practices = UserPractices()
                         let UserObject = CurrentUser()
                         let userob = UserObject.getUserObject(email: user)
-                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
                         if result == 0 {
                             self.FetchPracData(email: email, id: practice)
                         }
@@ -213,7 +213,7 @@ class FirebaseDataManager {
                             let practiceHistory = PracticedHistory()
                             let UserObject = CurrentUser()
                             let userob = UserObject.getUserObject(email: email)
-                        _ = practiceHistory.addPracticeHistory(practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: userob)
+                        _ = practiceHistory.addPracticeHistory(practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: userob!)
                         
                 }
                     
