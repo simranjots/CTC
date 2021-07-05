@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class MorePageViewController: UIViewController {
     
@@ -175,7 +176,12 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
             if (userObject != nil) {
                 
                 let resultFlag = currentUser.updateLoginStatus(status: false, email: (userObject?.email)!)
-                
+                let firebaseAuth = Auth.auth()
+                do {
+                  try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                  print ("Error signing out: %@", signOutError)
+                }
                 if (resultFlag == 0) {
                     
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)

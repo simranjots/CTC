@@ -15,44 +15,51 @@ class CurrentUser {
     func addUser(name: String, email: String, password: String,from : String,completionHandler: @escaping userAdded){
         
         loadUser()
-        
-        var userNotExist: Bool = true
-        
-        for user in users{
+        let user = getUserObject(email: email)
+        if from == "GsignIn"{
+            user!.isloggedin = true
+            _ = saveUser()
+            completionHandler(0)
+        }else{
+            var userNotExist: Bool = true
             
-            if(user.email == email){
-                userNotExist = false
+            for user in users{
+                
+                if(user.email == email){
+                    userNotExist = false
+                }
+                
             }
             
-        }
-        
-        if(userNotExist){
-            let newUser = User(context: self.context)
-            newUser.name = name
-            newUser.email = email
-            newUser.password = password
-            newUser.isloggedin = true
-            let result = saveUser()
-            if result == 0 {
-                if from == "signUp" {
-                    completionHandler(result)
-                }else {
-                    db.fetchHistory(email: email)
-                    db.FetchPractices(email: email) { success in
-                        if success {
-                          completionHandler(result)
-                        }else{
-                            completionHandler(result)
+            if(userNotExist){
+                let newUser = User(context: self.context)
+                newUser.name = name
+                newUser.email = email
+                newUser.password = password
+                newUser.isloggedin = true
+                let result = saveUser()
+                if result == 0 {
+                    if from == "signUp" {
+                        completionHandler(result)
+                    }else {
+                        db.fetchHistory(email: email)
+                        db.FetchPractices(email: email) { success in
+                            if success {
+                              completionHandler(result)
+                            }else{
+                                completionHandler(result)
+                            }
                         }
                     }
-                }
-              }
-            
-        }else {
-            print("User Exist")
-            completionHandler(2)
-            
+                  }
+                
+            }else {
+                print("User Exist")
+                completionHandler(2)
+                
+            }
         }
+        
         
         
     }

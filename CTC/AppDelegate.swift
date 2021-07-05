@@ -2,6 +2,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import Firebase
+import GoogleSignIn
 import FirebaseMessaging
 import IQKeyboardManagerSwift
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         //MARK: Firebase Configuration
         FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         // [START set_messaging_delegate]
           Messaging.messaging().delegate = self
           // [END set_messaging_delegate]
@@ -273,6 +276,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
     // [END refresh_token]
+    
   }
-   
+extension AppDelegate  {
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?,
+                     annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+  
+    
+    
+}
 
