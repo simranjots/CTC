@@ -1,6 +1,7 @@
 import UIKit
 
 class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
+    
     @IBOutlet weak var reminderInfo: UIButton!
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var valuesDropDownButtonOutlet: UIButton!
@@ -37,16 +38,16 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     let practicesPickerView = UIPickerView()
     let goalPickerView = UIPickerView()
 
-    
     //Values and Practices options array
     let values: [String] = [
-        "AUTHENTICITY", "ACHIEVEMENT", "ADVENTURE", "BEAUTY", "CHALLENGE", "COMFORT", "COURAGE", "CREATIVITY", "CURIOSITY", "EDUCATION", "EMPOWERMENT", "ENVIRONMENT", "FAMILY", "FINANCIAL", "FREEDOM", "FITNESS", "BALANCE", "GRATITUDE", "LOVE", "FRIENDSHIP", "SERVICE", "HEALTH", "HONESTY", "INDEPENDENCE", "INNER PEACE", "INTEGRITY", "INTELLIGENCE",  "INTIMACY", "JOY", "LEADERSHIP", "LEARNING",  "MOTIVATION", "PASSION", "COMPASSION", "CREDIBILITY", "EMPATHY", "HUMOUR", "RECREATION", "PEACE", "PERFORMANCE", "PERSONAL", "GROWTH", "PLAY", "PRODUCTIVITY", "RELIABILITY", "RESPECT", "SECURITY", "SPIRITUALITY", "SUCCESS", "TIME FREEDOM", "VARIETY" ]
+        "Authenticity", "Achievement", "Adventure", "Beauty", "Challange", "Comfort", "Courage", "Creativity", "Curiosity", "Education", "Empowerment", "Environment", "Family", "Financial", "Freedom", "Fitness", "Balance", "Gratitude", "Love", "Friendship", "Service", "Health", "Honesty", "Independence", "Inner Peace", "Integrity", "Intelligence",  "Intimacy", "Joy", "Leadership", "Learning",  "Motivation", "Passion", "Compassion", "Credibility", "Empathy", "Humour", "Recreation", "Peace", "Performance", "Personal", "Growth", "Play", "Productivity", "Reliability", "Respect", "Security", "Spirituality", "Success", "Time Freedom", "Variaty", "Other"]
     
-    let practices: [String] = ["No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables"]
+    let practices: [String] = ["Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Tracke Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Wrirte handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"]
+    
     // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
     let goals: [String] = ["365 Days"]
     
-    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding"]
+    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"]
     
     var imageName: String = ""
     
@@ -66,54 +67,41 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         homeViewController = HomeViewController()
         practi = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
-  
-        
         setData(AddPracticesViewController.cvalue, AddPracticesViewController.cindexPath)
-        
         styleElements()
         setPickerViewsPropertiesDelegatesAndDataSources()
         
-        //MARK: Popup Date Picker
+        //MARK:- Popup Date Picker
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(self.PopUpDatePickerValueChanged(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePickerView
         datePickerView.maximumDate = Date()
         
-       //MARK: Custome Done Tool bar
+       //MARK: - Custome Done Tool bar
               let toolBar = UIToolbar()
               toolBar.sizeToFit()
               let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.dateSelected))
               toolBar.setItems([doneButton], animated: false)
               toolBar.isUserInteractionEnabled = true
-        dateTextField.inputAccessoryView = toolBar
-        
+              dateTextField.inputAccessoryView = toolBar
     }
     
     private func getPractices() -> [Practice]{
-        
-        
         return userPractices.getPractices(user: userObject)!
-        
-    }
-    private func getPracticesData(date: Date) -> [PracticeData]?{
-        
-        
-        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
-        
     }
     
+    private func getPracticesData(date: Date) -> [PracticeData]?{
+        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
+    }
     
     @objc func dateSelected() {
         dateTextField.text = datePickerView.date.dateFormatemmmdd()
         self.view.endEditing(true)
-
     }
 
-@objc func PopUpDatePickerValueChanged(datePicker: UIDatePicker){
-    
+    @objc func PopUpDatePickerValueChanged(datePicker: UIDatePicker) {
     dateTextField.text = datePicker.date.dateFormatemmmdd()!
-    
-}
+    }
     
     //MARK: - IBActions
     @IBAction func reminderInfoPressed(_ sender: UIButton) {
@@ -206,6 +194,40 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         
     }
     
+    func validatFields() -> String? {
+        
+        let practiceName = choosePracticesTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let valueName = chooseValuesTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let encourage = wordsOfEncouragementTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let goal =  goalTextField.text?.trimmingCharacters(in: .whitespaces)
+        let image_Name = imageName
+        
+        if practiceName == "" || valueName == "" || encourage == "" || goal == "" {
+           return "Practice or Value or Goal or Words of Encouragement Fiels are blank."
+        }
+        
+        if image_Name == "" {
+          return "Please select image icon for practice."
+        }
+        
+        if dateTextField.text == "" {
+            return "Please select practice starting date"
+        }
+        
+        if Utilities.isStringValid(valueName) == true {
+            return "Value field should not contain any special charactors or numbers."
+        }
+        
+        if Utilities.isStringValid(practiceName) == true {
+            return "Practice field should not contain any special charactors or numbers."
+        }
+        
+        if Utilities.isStringContainsAllowedSpecialChar(encourage!) == true {
+            return "Words of encouragement should not contain any special charactors or numbers."
+        }
+        return nil
+    }
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         let practiceName = choosePracticesTextField.text
@@ -215,27 +237,12 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         let goal =  goalTextField.text
         let image_Name = imageName
         
-        if (practiceName == ""){
+        let error = validatFields()
+        
+        if error != nil {
             
-            showToast(message: "Please Enter Your Practice", duration: 3)
-            
-        }
-        else if(image_Name == ""){
-            showToast(message: "Please Select Icon For Practice", duration: 3)
-        }
-        else if(dateTextField.text == ""){
-            showToast(message: "Please Select Practice Starting Date", duration: 3)
-        }else if(chooseValuesTextField.text == ""){
-            showToast(message: "Please Enter Your Values", duration: 3)
-        }
-        else if(goalTextField.text == ""){
-            showToast(message: "Please Enter Your Goals", duration: 3)
-        }else if(choosePracticesTextField.text == ""){
-            showToast(message: "Please Enter Your Practices", duration: 3)
-        }else if(wordsOfEncouragementTextField.text == ""){
-            showToast(message: "Please Enter Your Word Of Encouragement", duration: 3)
-        }
-        else{
+            showToast(message: error!, duration: 2.0)
+        } else {
             var practiceFlag: Int!
             if(isUpdating){
                
@@ -290,10 +297,37 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     }
     
     @IBAction func valuesDropDownTapped(_ sender: UIButton) {
+
+        let alert = UIAlertController(title: "Enter Value", message: "Enter customized value you want to achieve, if you haven't found in the list.", preferredStyle: .alert)
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Enter value you want to accomplish."
+        }
        
+        let action = UIAlertAction(title: "Add Value", style: .default) { (action) in
+            let textField = alert.textFields![0]
+            self.chooseValuesTextField.text = textField.text
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func practicesDropDownTapped(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Enter Practice", message: "Enter customized practice you want to implement, if you haven't found in the list.", preferredStyle: .alert)
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Enter practice you want to implement."
+        }
+        
+        let action = UIAlertAction(title: "Add Practice", style: .default) { (action) in
+            let textField = alert.textFields![0]
+            self.choosePracticesTextField.text = textField.text
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
         
     }
     
