@@ -17,9 +17,10 @@ class HowToUseAppViewController: UIViewController {
     
     //MARK: - Images and Descriptions
     
-    let snapshotImages = ["1.jpeg", "2", "3", "4", "1.jpeg", "2", "3", "4"]
+    let snapshotImages = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     let howToUseDescription = [
-        "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia.",
+        "Tap on the '+' icon to add new activity.",
+        "Select the value, practice, goal and practice starting date from the list. You can also add customized values and practices. Write motivating words in words of encouragement field and select appropriate practice icon from list. Tap on the confirm to save the practice.",
         "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia",
         "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia",
         "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia",

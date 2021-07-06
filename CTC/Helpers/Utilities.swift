@@ -134,14 +134,14 @@ class Utilities {
     static func addButtonImage(button: UIButton, andImage image: UIImage) {
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: -120, bottom: 10, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: -80, bottom: 10, right: 0)
         button.titleEdgeInsets = UIEdgeInsets(top: 15, left: -170, bottom: 15, right: 0)
     }
     
     static func addGoogleImage(button: UIButton, andImage image: UIImage) {
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: -140, bottom: 10, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: -97, bottom: 10, right: 0)
         button.titleEdgeInsets = UIEdgeInsets(top: 15, left: -170, bottom: 15, right: 0)
     }
     

@@ -1,6 +1,6 @@
 import UIKit
 import Firebase
-import GoogleSignIn
+//import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -26,8 +26,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().delegate = self
+       // GIDSignIn.sharedInstance()?.presentingViewController = self
+      //  GIDSignIn.sharedInstance().delegate = self
         currentUser = CurrentUser()
         setUpElements()
         
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func gmailSignInButtonTapped(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().signIn()
+      //  GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
@@ -156,7 +156,7 @@ class LoginViewController: UIViewController {
         guard let passwordLeftIcon = UIImage(named: "password") else { return }
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         guard let googleIcon = UIImage(named: "google") else { return }
-        guard let facebookIcon = UIImage(named: "facebook-1") else { return }
+        guard let facebookIcon = UIImage(named: "facebook") else { return }
         
         //Style the textFields
         Utilities.styleTextField(emailTextField)
@@ -208,38 +208,38 @@ class LoginViewController: UIViewController {
     
     
 }
-extension LoginViewController : GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-        print(error.localizedDescription)
-        return
-        }
-        guard let auth = user.authentication else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-        Auth.auth().signIn(with: credentials) { (authResult, error) in
-            if let error = error {
-            print(error.localizedDescription)
-            } else {
-                let currentUser = Auth.auth().currentUser
-               
-                self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
-                    if flag == 0
-                    {
-                        print("Login Successful.")
-                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                    }else{
-                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                    }
-                    
-                })
-                
-               
-            //This is where you should add the functionality of successful login
-            //i.e. dismissing this view or push the home view controller etc
-            }
-
-        }
-    }
-    
-    
-}
+//extension LoginViewController : GIDSignInDelegate {
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//        print(error.localizedDescription)
+//        return
+//        }
+//        guard let auth = user.authentication else { return }
+//        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+//        Auth.auth().signIn(with: credentials) { (authResult, error) in
+//            if let error = error {
+//            print(error.localizedDescription)
+//            } else {
+//                let currentUser = Auth.auth().currentUser
+//               
+//                self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
+//                    if flag == 0
+//                    {
+//                        print("Login Successful.")
+//                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+//                    }else{
+//                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+//                    }
+//                    
+//                })
+//                
+//               
+//            //This is where you should add the functionality of successful login
+//            //i.e. dismissing this view or push the home view controller etc
+//            }
+//
+//        }
+//    }
+//    
+//    
+//}
