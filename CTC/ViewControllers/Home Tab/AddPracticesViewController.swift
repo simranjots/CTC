@@ -47,7 +47,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
     let goals: [String] = ["365 Days"]
     
-    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"]
+    let moreOptionIconList = ["Book", "Cheese", "Dollar","Exercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"]
     
     var imageName: String = ""
     
