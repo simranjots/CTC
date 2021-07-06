@@ -1,10 +1,3 @@
-//
-//  HistoryHeaderCellTableViewCell.swift
-//  CTC
-//
-//  Created by Nirav Bavishi on 2019-03-15.
-//  Copyright © 2019 Nirav Bavishi. All rights reserved.
-//
 
 import UIKit
 
