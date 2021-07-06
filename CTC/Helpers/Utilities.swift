@@ -158,6 +158,17 @@ class Utilities {
         return emailTest.evaluate(with: email)
     }
     
+    static func isStringValid(_ charString: String) -> Bool {
+        
+        let testString = NSPredicate(format:"SELF MATCHES %@", ".*[^A-Za-z ].*")
+        return testString.evaluate(with: charString)
+    }
+    
+    static func isStringContainsAllowedSpecialChar(_ charString: String) -> Bool {
+        let testString = NSPredicate(format:"SELF MATCHES %@", ".*[^A-Za-z ,.!?].*")
+        return testString.evaluate(with: charString)
+    }
+    
     //MARK: - Add shadows and border to Views
     
     static func addShadowAndBorderToView(_ view: UIView) {

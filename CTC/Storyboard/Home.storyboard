@@ -72,7 +72,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B6Z-Ef-aHZ">
                                                             <rect key="frame" x="70" y="10.666666666666664" width="269" height="79"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e0-Y6-1lx">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0e0-Y6-1lx">
                                                                     <rect key="frame" x="0.0" y="0.0" width="269" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="cAF-s3-hOF"/>
@@ -92,7 +92,7 @@
                                                                     <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you. Become more and more you. Become more and" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz3-Ad-1KT">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you. Become more and more you. Become more and" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wz3-Ad-1KT">
                                                                     <rect key="frame" x="0.0" y="45" width="269" height="34"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="255" id="aKl-KN-pKP"/>
@@ -280,8 +280,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="RXK-ul-tlv"/>
                                                         </constraints>
-                                                        <color key="tintColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button" image="dropDown3"/>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button" image="edit-2"/>
                                                         <connections>
                                                             <action selector="valuesDropDownTapped:" destination="eeE-ms-d9h" eventType="touchUpInside" id="4p6-Fe-M9o"/>
                                                         </connections>
@@ -322,7 +322,7 @@
                                                             <constraint firstAttribute="width" constant="40" id="rO6-rg-tir"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button" image="dropDown3"/>
+                                                        <state key="normal" title="Button" image="edit-2"/>
                                                         <connections>
                                                             <action selector="practicesDropDownTapped:" destination="eeE-ms-d9h" eventType="touchUpInside" id="ayn-x7-go0"/>
                                                         </connections>
@@ -1088,7 +1088,7 @@
         <image name="alarm" width="170.66667175292969" height="170.66667175292969"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
-        <image name="dropDown3" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="edit-2" width="170.66667175292969" height="170.66667175292969"/>
         <image name="gift.fill" catalog="system" width="128" height="124"/>
         <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
         <image name="image-icon" width="512" height="512"/>
