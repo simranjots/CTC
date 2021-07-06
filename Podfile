@@ -13,6 +13,6 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Messaging'
-pod 'GoogleSignIn'
+#pod 'GoogleSignIn'
 
 end

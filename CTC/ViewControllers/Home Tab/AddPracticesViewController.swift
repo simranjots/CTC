@@ -3,7 +3,9 @@ import UIKit
 class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     @IBOutlet weak var reminderInfo: UIButton!
     @IBOutlet var chooseValuesTextField: UITextField!
+    @IBOutlet var valuesDropDownButtonOutlet: UIButton!
     @IBOutlet var choosePracticesTextField: UITextField!
+    @IBOutlet var practicesDropDownButtonOutlet: UIButton!
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet weak var wordsOfEncouragementTextField: UITextField!
     @IBOutlet var activityIconImageView: UIImageView!
@@ -44,7 +46,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
     let goals: [String] = ["365 Days"]
     
-    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship"]
+    let moreOptionIconList = ["Book", "Cheese", "Dollar","Excercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding"]
     
     var imageName: String = ""
     
@@ -113,6 +115,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
 }
     
+    //MARK: - IBActions
     @IBAction func reminderInfoPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
@@ -168,6 +171,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
             
         }
     }
+    
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
         uiSwitch.setOn(false, animated: true)
     }
@@ -283,8 +287,17 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     @IBAction func dateFieldTapped(_ sender: Any) {
      datePickerView.isHidden = false
- }
- func setData(_ value : String,_ indexPath: Int){
+    }
+    
+    @IBAction func valuesDropDownTapped(_ sender: UIButton) {
+       
+    }
+    
+    @IBAction func practicesDropDownTapped(_ sender: UIButton) {
+        
+    }
+    
+    func setData(_ value : String,_ indexPath: Int){
      if value == "add" {
          add()
      }
@@ -368,7 +381,10 @@ extension AddPracticesViewController {
         
         //Set inputViews
         chooseValuesTextField.inputView = valuesPickerView
+        
         choosePracticesTextField.inputView = practicesPickerView
+        //valuesDropDownButtonOutlet. = valuesPickerView
+        
         goalTextField.inputView = goalPickerView
         
         //Set the tags

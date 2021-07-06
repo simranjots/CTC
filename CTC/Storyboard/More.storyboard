@@ -348,7 +348,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5F-T1-C1G">
                                                     <rect key="frame" x="5" y="5" width="315" height="488"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="SWp-M6-iN9">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="SWp-M6-iN9">
                                                             <rect key="frame" x="50" y="10" width="215" height="308"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="300" id="Z92-nV-WsP"/>
@@ -1160,7 +1160,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         </scene>
     </scenes>
     <resources>
-        <image name="1.jpeg" width="1125" height="2247"/>
+        <image name="1.png" width="1284" height="2778"/>
         <image name="More" width="29" height="29"/>
         <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
         <image name="camera" catalog="system" width="128" height="94"/>

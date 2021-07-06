@@ -246,7 +246,7 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VFD-cz-isf">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VFD-cz-isf">
                                                 <rect key="frame" x="0.0" y="55" width="388" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="values" translatesAutoresizingMaskIntoConstraints="NO" id="q7a-Ze-MDX">
@@ -257,7 +257,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9c-6K-pQJ">
-                                                        <rect key="frame" x="40" y="0.0" width="142" height="40"/>
+                                                        <rect key="frame" x="35" y="0.0" width="142" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="142" id="Avr-sf-odp"/>
                                                             <constraint firstAttribute="height" constant="40" id="Ye1-2H-2ae"/>
@@ -266,8 +266,8 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Value" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BuY-qe-K9d">
-                                                        <rect key="frame" x="192" y="0.0" width="196" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Value" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BuY-qe-K9d">
+                                                        <rect key="frame" x="182" y="0.0" width="161" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="KrJ-yC-5IZ"/>
                                                         </constraints>
@@ -275,9 +275,20 @@
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz8-Ux-1Xx">
+                                                        <rect key="frame" x="348" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="RXK-ul-tlv"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button" image="dropDown3"/>
+                                                        <connections>
+                                                            <action selector="valuesDropDownTapped:" destination="eeE-ms-d9h" eventType="touchUpInside" id="4p6-Fe-M9o"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LkS-P2-ADe">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LkS-P2-ADe">
                                                 <rect key="frame" x="0.0" y="110" width="388" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="practice" translatesAutoresizingMaskIntoConstraints="NO" id="vOR-iG-TeM">
@@ -288,7 +299,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Practice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-yc-wRC">
-                                                        <rect key="frame" x="40" y="0.0" width="142" height="40"/>
+                                                        <rect key="frame" x="35" y="0.0" width="142" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="142" id="beV-SN-cMA"/>
                                                         </constraints>
@@ -296,8 +307,8 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Practice" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nQB-pr-z7e">
-                                                        <rect key="frame" x="192" y="0.0" width="196" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Practice" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nQB-pr-z7e">
+                                                        <rect key="frame" x="182" y="0.0" width="161" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="c85-5k-A4i"/>
                                                         </constraints>
@@ -305,9 +316,20 @@
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-33-9fz">
+                                                        <rect key="frame" x="348" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="rO6-rg-tir"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button" image="dropDown3"/>
+                                                        <connections>
+                                                            <action selector="practicesDropDownTapped:" destination="eeE-ms-d9h" eventType="touchUpInside" id="ayn-x7-go0"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-w0-lsk">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-w0-lsk">
                                                 <rect key="frame" x="0.0" y="165" width="388" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-Qt-PyZ">
@@ -318,7 +340,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-Ga-3qh">
-                                                        <rect key="frame" x="40" y="0.0" width="142" height="40"/>
+                                                        <rect key="frame" x="35" y="0.0" width="142" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="142" id="2Jj-pR-s2e"/>
                                                         </constraints>
@@ -327,7 +349,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-ik-DTW">
-                                                        <rect key="frame" x="192" y="0.0" width="196" height="40"/>
+                                                        <rect key="frame" x="182" y="0.0" width="206" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Fuj-mK-HIc"/>
                                                         </constraints>
@@ -337,7 +359,7 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-4G-FOP">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DNL-4G-FOP">
                                                 <rect key="frame" x="0.0" y="220" width="388" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="buq-PZ-j7V">
@@ -348,7 +370,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-Se-TF2">
-                                                        <rect key="frame" x="40" y="0.0" width="142" height="40"/>
+                                                        <rect key="frame" x="35" y="0.0" width="142" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="142" id="j2s-LG-27J"/>
                                                         </constraints>
@@ -357,7 +379,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="umr-dP-XQb">
-                                                        <rect key="frame" x="192" y="0.0" width="196" height="40"/>
+                                                        <rect key="frame" x="182" y="0.0" width="206" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="k6O-Hz-48s"/>
                                                         </constraints>
@@ -549,9 +571,11 @@
                         <outlet property="datePickerView" destination="9rp-CA-Qw6" id="xNb-af-BPZ"/>
                         <outlet property="dateTextField" destination="umr-dP-XQb" id="q3I-pR-f2Y"/>
                         <outlet property="goalTextField" destination="kD6-ik-DTW" id="yvR-KY-bi6"/>
+                        <outlet property="practicesDropDownButtonOutlet" destination="PNY-33-9fz" id="XPI-2N-lk8"/>
                         <outlet property="reminderInfo" destination="mAC-NM-Rf0" id="Qiz-Zi-aHA"/>
                         <outlet property="saveButton" destination="IDc-ET-mQK" id="jRm-z3-7ja"/>
                         <outlet property="uiSwitch" destination="hnU-Wk-IIB" id="Wcf-E1-4qG"/>
+                        <outlet property="valuesDropDownButtonOutlet" destination="wz8-Ux-1Xx" id="Nwf-My-mSe"/>
                         <outlet property="wordsOfEncouragementTextField" destination="vxe-iI-a4I" id="U6n-lS-iJh"/>
                     </connections>
                 </viewController>
@@ -868,7 +892,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-Uq-4Sn">
                                                                 <rect key="frame" x="57.666666666666671" y="10" width="252.66666666666663" height="160"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-aC-Hiz" customClass="ActivityDetailsProgressBarView" customModule="CTC" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-aC-Hiz" customClass="StataticsViewProgressBar" customModule="CTC" customModuleProvider="target">
                                                                         <rect key="frame" x="75.999999999999972" y="0.0" width="100.66666666666666" height="100"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoQ-xL-tpe">
@@ -1064,6 +1088,7 @@
         <image name="alarm" width="170.66667175292969" height="170.66667175292969"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
+        <image name="dropDown3" width="170.66667175292969" height="170.66667175292969"/>
         <image name="gift.fill" catalog="system" width="128" height="124"/>
         <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
         <image name="image-icon" width="512" height="512"/>
