@@ -19,7 +19,7 @@
 		1A554395267C3DA9000C5FFF /* Reminder+CoreProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554394267C3DA9000C5FFF /* Reminder+CoreProperties.swift */; };
 		1A55439726811583000C5FFF /* PracticeReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55439626811583000C5FFF /* PracticeReminders.swift */; };
 		1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56C151267A465B00E6D18E /* NotificationManager.swift */; };
-		1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */; };
+		1A62B81F26658BF60025D92C /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1A62B81E26658BF60025D92C /* SwiftPackageProductDependency */; };
 		1A62B82126659CD70025D92C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62B82026659CD70025D92C /* MainViewController.swift */; };
 		1AA35F842671B0E100BA918F /* PracticesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F832671B0E100BA918F /* PracticesListCell.swift */; };
 		1AA35F862671B41F00BA918F /* PracticesRecordListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA35F852671B41F00BA918F /* PracticesRecordListVC.swift */; };
@@ -241,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */,
-				1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */,
+				1A62B81F26658BF60025D92C /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +579,7 @@
 				E189D67F21E4FA430078380B /* Frameworks */,
 				E189D68021E4FA430078380B /* Resources */,
 				ED23034F08F84536C4D1F076 /* [CP] Embed Pods Frameworks */,
+				8B2FFD0B7A93D8763B9B02DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -586,7 +587,7 @@
 			);
 			name = CTC;
 			packageProductDependencies = (
-				1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */,
+				1A62B81E26658BF60025D92C /* SwiftPackageProductDependency */,
 			);
 			productName = CTC;
 			productReference = E189D68221E4FA430078380B /* CTC.app */;
@@ -623,7 +624,7 @@
 			);
 			mainGroup = E189D67921E4FA430078380B;
 			packageReferences = (
-				1A62B81D26658BF60025D92C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				1A62B81D26658BF60025D92C /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = E189D68321E4FA430078380B /* Products */;
 			projectDirPath = "";
@@ -666,6 +667,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8B2FFD0B7A93D8763B9B02DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CTC/Pods-CTC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CTC/Pods-CTC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CTC/Pods-CTC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A9874A34352A2D481B0C322A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -998,7 +1016,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A62B81D26658BF60025D92C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		1A62B81D26658BF60025D92C /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1009,9 +1027,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A62B81E26658BF60025D92C /* IQKeyboardManagerSwift */ = {
+		1A62B81E26658BF60025D92C /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A62B81D26658BF60025D92C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 1A62B81D26658BF60025D92C /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

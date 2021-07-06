@@ -17,9 +17,20 @@ class CurrentUser {
         loadUser()
         let user = getUserObject(email: email)
         if from == "GsignIn"{
-            user!.isloggedin = true
-            _ = saveUser()
-            completionHandler(0)
+            if user?.email == email {
+                user!.isloggedin = true
+                _ = saveUser()
+                completionHandler(0)
+            }else{
+                let newUser = User(context: self.context)
+                newUser.name = name
+                newUser.email = email
+                newUser.password = password
+                newUser.isloggedin = true
+                _ = saveUser()
+                completionHandler(0)
+            }
+            
         }else{
             var userNotExist: Bool = true
             
