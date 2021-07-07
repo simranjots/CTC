@@ -18,7 +18,6 @@ class FirebaseDataManager {
                      "encourage": encourage,
                      "remindswitch": remindswitch,
                      "goals": goals,
-                     "practiced-days" : 0,
                      "is_completed": false,
                      "is_deleted": false
                      
@@ -55,7 +54,7 @@ class FirebaseDataManager {
             }
         }
     }
-    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32,percentage:Int){
+    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32){
         let datas = ["id": practiceName,
                      "practiceName": practiceName,
                      "PracticedDate": PracticedDate,
@@ -63,7 +62,6 @@ class FirebaseDataManager {
                      "toggleStarBtn": toggleStarBtn,
                      "note": note,
                      "streak":streak,
-                     "percentage" : percentage,
                      "trackingDays":trackingDays
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
@@ -116,7 +114,7 @@ class FirebaseDataManager {
         
     func FetchPractices(uid:String,completion :  @escaping  practiceAdded) {
         print("this start \(uid)")
-        var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false,practiceDays = 0
+        var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false
         var date = Timestamp()
        
         
@@ -138,12 +136,11 @@ class FirebaseDataManager {
                          encourage = document.data() ["encourage"] as! String
                          remindswitch = document.data() ["remindswitch"] as! Bool
                          goals = document.data() ["goals"] as! String
-                        practiceDays = document.data() ["practiced-days"] as! Int
                    
                         let practices = UserPractices()
                         let UserObject = CurrentUser()
                         let userob = UserObject.getUserObject(email: user)
-                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals, practiceDay: practiceDays)
+                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
                         if result == 0 {
                             self.FetchPracData(uid: uid, id: practice)
                         }
@@ -160,8 +157,7 @@ class FirebaseDataManager {
     }
     func FetchPracData(uid:String,id:String)  {
         print("this start \(uid)")
-        var practiceObject = "",toggleBtn = false,note = "",user = "",streak = 0,
-            percentage = 0,trackingDays = 0
+        var practiceObject = "",toggleBtn = false,note = "",user = "",streak = 0,trackingDays = 0
         var currentDate = Timestamp()
        
         
@@ -179,7 +175,6 @@ class FirebaseDataManager {
                         currentDate = document.data() ["PracticedDate"] as! Timestamp
                         user = document.data() ["user"] as! String
                         streak = document.data() ["streak"] as! Int
-                        percentage = document.data() ["percentage"] as! Int
                         trackingDays = document.data() ["trackingDays"] as! Int
                         note = document.data() ["note"] as! String
                         toggleBtn = document.data() ["toggleStarBtn"] as! Bool
@@ -187,8 +182,7 @@ class FirebaseDataManager {
                             let practiceData = UserPracticesData()
                             let UserObject = CurrentUser()
                             let userob = UserObject.getUserObject(email: user)
-                        practiceData.addPracticedData(toggleBtn: toggleBtn, practiceObject: practiceObject, currentDate: currentDate.dateValue().dateFormate()!, userObject: userob, note: note, tracking_days: trackingDays, streak: streak, percentage: percentage
-                            )
+                        practiceData.addPracticedData(toggleBtn: toggleBtn, practiceObject: practiceObject, currentDate: currentDate.dateValue().dateFormate()!, userObject: userob, note: note, tracking_days: trackingDays, streak: streak)
                         
                 }
                     

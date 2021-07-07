@@ -254,7 +254,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
                 
             }
             else{
-                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!, practiceDay: 0)
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!)
                 isUpdating = false
             }
             

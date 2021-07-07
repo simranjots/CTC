@@ -19,7 +19,6 @@ extension Practice {
 
     @NSManaged public var image_name: String?
     @NSManaged public var practice: String?
-    @NSManaged public var practiseddays: Int32
     @NSManaged public var startedday: NSDate?
     @NSManaged public var is_deleted: Bool
     @NSManaged public var is_completed: Bool
