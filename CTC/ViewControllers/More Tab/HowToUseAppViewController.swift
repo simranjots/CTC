@@ -26,9 +26,9 @@ class HowToUseAppViewController: UIViewController {
         "Swipe right to left to delete the practice.",
         "Swipe left to right to edit the practice.",
         "To add reminder first, you have to edit the practice. Toggle the reminder switch, and it will open 'Reminder' screen.",
-        "Now, Tap on the '+' icon and select desired day and time when you want reminders. You can add 'n' numbers of such reminders. Tap on 'Done' and then tap on 'Confirm.' Now, you will get reminder notification according to your setup.",
+        "Now, Tap on the '+' icon on the right, which will open the pop-up. Select desired day and time when you want reminders. You can add 'n' numbers of such reminders. Tap on 'Done' on the left and then tap on 'Confirm.' Now, you will get reminder notification according to your setup.",
         "In this screen, you can see the progress of all the practices. 1. Practice Name. 2. Number of days you did practice. 3. Practice added to date. 4. Percentage Progress 5. Days since started. 6. How many days you did practice this month. 7. Practiced streak. (Auto reset if you don't do practice for two consecutive days.)",
-        "'Activity Progress' screen gives you details about your daily notes and on which day you did practice.",
+        "'Activity Progress' screen shows you details about your daily notes and on which day you did practice.",
         "'Practice history' tab shows you completed and deleted practices list. You can also restore practice by tapping on the 'restore' button. Tap the' next' and 'previous' buttons to scroll the list."]
     
     override func viewDidLoad() {
