@@ -112,7 +112,7 @@ class ProfilePageViewController: UIViewController {
         let newName = nameTextField.text!
         let data = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
         let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
-        let result = user.updateUser(oldEmail: email, oldPassword: Password, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+        let result = user.updateUser(oldEmail: email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
         if result == 0 {
            
             updatefirebaseuser(Email: newEmail, password: newpassword)
@@ -122,8 +122,6 @@ class ProfilePageViewController: UIViewController {
             }
          
             
-        }else if(result == 2){
-            showAlert(title: "Change Email Address", message: "Email already exits by another user", buttonTitle: "try again")
         } else {
           
             showToast(message: "Updation Fail. . .", duration: 2.0)
