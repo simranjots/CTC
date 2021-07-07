@@ -134,22 +134,35 @@ class CurrentUser {
     }
     
     
-    func updateUser(oldEmail: String,newEmail: String, name: String, password: String,image: Data?) -> Int {
-        
+    func updateUser(oldEmail: String,oldPassword:String,newEmail: String, name: String, password: String,image: Data?) -> Int {
+        var result = 0
         let userObject = getUserObject(email: oldEmail)
-        
-        userObject!.name = name
-        userObject!.email = newEmail
-        userObject!.password = password
-        userObject?.image = image
-        let result = saveUser()
-        if result == 0 {
-            database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail],merge: true) { error in
-                if error != nil {
-                    print(error as Any)
+        let credential = EmailAuthProvider.credential(withEmail: oldEmail, password: oldPassword)
+        let user = Auth.auth().currentUser
+        user?.reauthenticate(with: credential, completion: { Result, Error in
+            if Error !=  nil {
+            }else{
+                
+                if user?.email == newEmail {
+                    result = 2
+                }else{
+                    userObject!.name = name
+                    userObject!.email = newEmail
+                    userObject!.password = password
+                    userObject?.image = image
+                    result = self.saveUser()
+                    if result == 0 {
+                        self.database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail],merge: true) { error in
+                            if error != nil {
+                                print(error as Any)
+                            }
+                        }
+                    }
                 }
             }
-        }
+        })
+      
+   
         return result
         
         
