@@ -17,10 +17,8 @@ class UserPracticesData {
     var percentage : Int16 = 0
     
     func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
-       
+        
         let resultFlag = practiceHistory.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
-        var practicedDaysCount = practiceObject.practiseddays
-        let days = Date().days(from: practiceObject.startedday! as Date) + 1
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
         
         practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
@@ -32,32 +30,28 @@ class UserPracticesData {
             
             if (toggleBtn && practiceData.practised == false){
                 tracking_days += 1
-                practicedDaysCount += 1
                 streak += 1
                 
             }else if (toggleBtn == false && practiceData.practised == true){
                 
                 tracking_days -= 1
-                practicedDaysCount -= 1
+                
                 streak -= 1
                 
                 
             }else if (toggleBtn == true && practiceData.practised == false){
                 
                 tracking_days += 1
-                practicedDaysCount += 1
                 streak += 1
                 
             }else if (toggleBtn  && practiceData.practised == true){
                 if save == "" {
                     tracking_days += 1
-                    practicedDaysCount += 1
                     streak += 1
                     
                 }
                 
             }
-           percentage = Int16(Int((Float(practicedDaysCount) / Float(days)) * 100))
             if save == "save"{
                 let Practices = PracticeData(context: self.context)
                 if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
@@ -68,7 +62,7 @@ class UserPracticesData {
                     practiceData.note = note
                     practiceData.tracking_days = Int32(tracking_days)
                     practiceData.streak = streak
-                    practiceData.percentage = percentage
+                    
                 }else{
                     
                     Practices.practised = toggleBtn
@@ -77,7 +71,7 @@ class UserPracticesData {
                     Practices.note = note
                     Practices.tracking_days = Int32(tracking_days)
                     Practices.streak = streak
-                    practiceData.percentage = percentage
+                    
                 }
             }else{
                 
@@ -87,13 +81,13 @@ class UserPracticesData {
                 practiceData.note = note
                 practiceData.tracking_days = Int32(tracking_days)
                 practiceData.streak = streak
-                practiceData.percentage = percentage
+                
             }
             
             
         }
         else{
-           
+            
             let newPracticesData = PracticeData(context: self.context)
             newPracticesData.date = currentDate.dateFormate()! as NSDate
             newPracticesData.practised = toggleBtn
@@ -101,24 +95,20 @@ class UserPracticesData {
             newPracticesData.practiceDataToPractice = practiceObject
             if(toggleBtn == true){
                 tracking_days += 1
-                practicedDaysCount += 1
                 streak += 1
             }
-            percentage = Int16(Int((Float(practicedDaysCount) / Float(days)) * 100))
+            
             newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
-            newPracticesData.percentage = percentage
             
         }
-        userPractices.updatePracticedDay(noOfDays: Int(practicedDaysCount), practiceName: practiceObject.practice!, user: practiceObject.user!)
         let result = currentUser.saveUser()
         if result == 0 {
-            firebaseDataManager.updateSinglePractices(valueName: "practiced-days", value: Int(practicedDaysCount), practiceName: practiceObject.practice!, uid: (practiceObject.user?.uid)!)
-            firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days, percentage: Int(percentage))
+            firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days)
         }
         return result
     }
-    func addPracticedData(toggleBtn: Bool, practiceObject: String, currentDate: Date,userObject: User!,note: String,tracking_days: Int,streak:Int,percentage:Int){
+    func addPracticedData(toggleBtn: Bool, practiceObject: String, currentDate: Date,userObject: User!,note: String,tracking_days: Int,streak:Int){
         let practice =  userPractices.getPractices(practiceName: practiceObject, user: userObject)
         let Practices = PracticeData(context: self.context)
         Practices.practised = toggleBtn
@@ -126,7 +116,6 @@ class UserPracticesData {
         Practices.note = note
         Practices.tracking_days = Int32(tracking_days)
         Practices.streak = Int32(streak)
-        Practices.percentage = Int16(percentage)
         Practices.practiceDataToPractice = practice
         _ = currentUser.saveUser()
     }
@@ -138,12 +127,11 @@ class UserPracticesData {
         for data in arrayData{
             
             if(data.practiceDataToPractice?.practice == practiceName){
-                
                 practiceData = data
                 return practiceData
             }
         }
-       return nil
+        return nil
         
     }
     
@@ -325,7 +313,7 @@ class UserPracticesData {
                                         
                                     }
                                     
-                                   // deletePracticeData(practicesData: pracData)
+                                    // deletePracticeData(practicesData: pracData)
                                     
                                 }}}}}
                 

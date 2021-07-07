@@ -11,7 +11,7 @@ class ActivityDetailsViewController: UIViewController {
     var myIndex: Int!
     var firstDayOfYear : Date! = DateComponents(calendar: .current, year: 2019, month: 1, day: 1).date!
     var currentPractice : Practice!
-    var practicesData: [PracticeData]!
+    var practicesData: PracticeData?
     var delegate: ReceiveData?
     var isOn : Bool = false
     
@@ -57,7 +57,7 @@ class ActivityDetailsViewController: UIViewController {
         // getting current year
     
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate.dateFormate()!)
+        practicesData =  userPracticesData.getPracticeDataObj(practiceName: practicesArray[myIndex].practice!)
      
         
         let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 10).date!
@@ -75,27 +75,27 @@ class ActivityDetailsViewController: UIViewController {
   
     func setData() {
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate.dateFormate()!)
+        practicesData =  userPracticesData.getPracticeDataObj(practiceName: practicesArray[myIndex].practice!)
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
-        
+        let practicedDays = practicesData!.tracking_days
         activityNameTextField.text = practicesArray[myIndex].practice
-        daysPracticedLabel.text =  "\(practicesArray[myIndex].practiseddays)"
+        daysPracticedLabel.text =  "\(practicedDays)"
         daysSinceStartedLabel.text = "\(days)"
-        
+        let percentage = Int((Float(practicedDays) / Float(days)) * 100)
+        setPercentageAnimation(percentageValue: Int(percentage))
         if(practicesData != nil){
             
-            for data in practicesData{
                 
-                if data.practiceDataToPractice == practicesArray[myIndex]{
-                    setPercentageAnimation(percentageValue: Int(data.percentage))
-                    let temp = data.note
+            if practicesData!.practiceDataToPractice == practicesArray[myIndex]{
+                    
+                let temp = practicesData!.note
                     notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
-                    self.activeButton(flag: data.practised)
+                self.activeButton(flag: practicesData?.practised ?? false)
                     
                 }
                 
-            }
+            
             
         }
         

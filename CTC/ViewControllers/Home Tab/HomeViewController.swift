@@ -109,16 +109,16 @@ class HomeViewController: UIViewController,ReceiveData{
     
     // Table View Code
     func delPractice(prac: Practice,userOb: User){
-        
+        let pracData = userPracticesData.getPracticeDataObj(practiceName: prac.practice!)
         let pracName = prac.practice
-        let td = prac.practiseddays
+        let td = pracData?.tracking_days
         let dss = (Date().dateFormate()!).days(from: (prac.startedday! as Date).dateFormate()!) + 1
         let flag = false
         let date = Date().dateFormate()!
         
         userPractices.deletePractice(practice: prac)
     
-        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td),userOb:userOb)
+        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td!),userOb:userOb)
         
         if(resultFlag == 0){
             showToast(message: "\(pracName!) Deleted", duration: 3)

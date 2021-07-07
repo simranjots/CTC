@@ -23,7 +23,7 @@ class PracticesRecordListVC: UIViewController {
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataByDate(date: selectedDate)
+        practicesData =  userPracticesData.getPracticeData(user: userObject)
         reloadPractices()
     }
     override func viewDidLoad() {
@@ -33,6 +33,7 @@ class PracticesRecordListVC: UIViewController {
     func reloadPractices() {
         stataticsVCTableView.reloadData()
     }
+
     
 }
 extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
@@ -62,16 +63,16 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         
         let startedDate = ((practicesArray[indexPath.row].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
-        let practicedDays = Int(practicesArray[indexPath.row].practiseddays)
-        percentage = Int((Float(practicedDays) / Float(days)) * 100)
+        let practicedDays = userPracticesData.getTrackingDay(practice: practicesArray[indexPath.row], date: Date().dateFormate()!)
+        percentage = Int((Float(practicedDays!) / Float(days)) * 100)
         
         
         cell.activityHeaderTitleLabel.text = practicesArray[indexPath.row].practice
-        cell.howManyDaysActivityPracticedLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
+        cell.howManyDaysActivityPracticedLabel.text = "\(practicedDays!)"
         cell.tagLineLabel.text = "Since " + startedDate.dateFormatemmmdd()!
         
         cell.daysSinceStartedLabel.text = "\(days)"
-        cell.activityPracticedForThisMonthLabel.text = "\(practicesArray[indexPath.row].practiseddays)"
+        cell.activityPracticedForThisMonthLabel.text = "\(practicedDays!)"
         let practiceData = userPracticesData.getStreak(practice: practicesArray[indexPath.row])
         if practiceData != 0 {
             cell.streakLabel.text = "\(practiceData)"
