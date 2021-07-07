@@ -42,7 +42,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     let values: [String] = [
         "Authenticity", "Achievement", "Adventure", "Beauty", "Challange", "Comfort", "Courage", "Creativity", "Curiosity", "Education", "Empowerment", "Environment", "Family", "Financial", "Freedom", "Fitness", "Balance", "Gratitude", "Love", "Friendship", "Service", "Health", "Honesty", "Independence", "Inner Peace", "Integrity", "Intelligence",  "Intimacy", "Joy", "Leadership", "Learning",  "Motivation", "Passion", "Compassion", "Credibility", "Empathy", "Humour", "Recreation", "Peace", "Performance", "Personal", "Growth", "Play", "Productivity", "Reliability", "Respect", "Security", "Spirituality", "Success", "Time Freedom", "Variaty", "Other"]
     
-    let practices: [String] = ["Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Tracke Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Wrirte handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"]
+    let practices: [String] = ["Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Tracke Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Write handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"]
     
     // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
     let goals: [String] = ["365 Days"]
@@ -50,6 +50,8 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     let moreOptionIconList = ["Book", "Cheese", "Dollar","Exercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"]
     
     var imageName: String = ""
+    
+    let wordsOfEncouragementQuotes = ["It is health that is real wealth and not pieces of gold and silver.", "Health is not valued till sickness comes.", "Remain calm, because peace equals power.", "A good laugh and a long sleep are the best cures in the doctor’s book.", "Life is either a daring adventure or nothing.", "Only those who risk going too far can possibly find out how far they can go.", "Good things come to those who sweat.", "The pain you feel today will be the strength you feel tomorrow.", "Do not let the behavior of others destroy your inner peace.", "Nobody can bring you peace but yourself.", "When things change inside you, things change around you.", "More smiling, less worrying.", "The most wasted of all days is one without laughter.", "Meditation is a vital way to purify and quiet the mind, thus rejuvenating the body.", "Your goal is not to battle with the mind, but to witness the mind.", "If you can dream it, You can do it.", "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.", "Press forward. Do not stop, do not linger in your journey, but strive for the mark set before you.", "The future belongs to those who believe in the beauty of their dreams.", "One way to keep momentum going is to have constantly greater goals.", "Never give up, for that is just the place and time that the tide will turn.", "Start where you are. Use what you have. Do what you can."]
     
     
     override func viewDidLoad() {
@@ -121,7 +123,8 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     
     @IBAction func changeTapped(_ sender: UIButton) {
-        
+        let randomNumber = Int.random(in: 1..<wordsOfEncouragementQuotes.count)
+        wordsOfEncouragementTextField.text = wordsOfEncouragementQuotes[randomNumber]
     }
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
@@ -303,13 +306,14 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Enter value you want to accomplish."
         }
-       
-        let action = UIAlertAction(title: "Add Value", style: .default) { (action) in
+        
+        alert.addAction( UIAlertAction(title: "Add Value", style: .default, handler: { (action) in
             let textField = alert.textFields![0]
             self.chooseValuesTextField.text = textField.text
-        }
+        }))
         
-        alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         present(alert, animated: true, completion: nil)
     }
     
@@ -321,12 +325,12 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
             alertTextField.placeholder = "Enter practice you want to implement."
         }
         
-        let action = UIAlertAction(title: "Add Practice", style: .default) { (action) in
+        alert.addAction(UIAlertAction(title: "Add Practice", style: .default, handler: { (action) in
             let textField = alert.textFields![0]
             self.choosePracticesTextField.text = textField.text
-        }
+        }))
         
-        alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
         
     }

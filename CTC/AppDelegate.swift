@@ -2,9 +2,9 @@ import UIKit
 import CoreData
 import UserNotifications
 import Firebase
-import GoogleSignIn
+//import GoogleSignIn
 import FirebaseAuth
-import FBSDKCoreKit
+//import FBSDKCoreKit
 import FirebaseMessaging
 import IQKeyboardManagerSwift
 
@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MARK: Firebase Configuration
         FirebaseApp.configure()
         
-       ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+       //ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        //GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         // [START set_messaging_delegate]
           Messaging.messaging().delegate = self
           // [END set_messaging_delegate]
@@ -282,19 +282,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // [END refresh_token]
     
   }
-extension AppDelegate  {
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handledFB =  ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-        let handledGoogle = GIDSignIn.sharedInstance().handle(url)
-        return handledFB || handledGoogle
-    }
-  
-        
-    
-}
 
+//extension AppDelegate  {
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let handledFB =  ApplicationDelegate.shared.application(
+//            app,
+//            open: url,
+//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+//        )
+//        let handledGoogle = GIDSignIn.sharedInstance().handle(url)
+//        return handledFB || handledGoogle
+//    }
+//
+//
+//
+//}
+//
