@@ -190,14 +190,14 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
             if (userObject != nil) {
                 
                 let resultFlag = currentUser.updateLoginStatus(status: false, email: (userObject?.email)!)
-                let firebaseAuth = Auth.auth()
-                do {
-                  try firebaseAuth.signOut()
-                } catch let signOutError as NSError {
-                  print ("Error signing out: %@", signOutError)
-                }
+                
                 if (resultFlag == 0) {
-                    
+                    let firebaseAuth = Auth.auth()
+                    do {
+                      try firebaseAuth.signOut()
+                    } catch let signOutError as NSError {
+                      print ("Error signing out: %@", signOutError)
+                    }
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "newLoginOptions") as! UINavigationController
                     self.present(vc, animated: true, completion: nil)
