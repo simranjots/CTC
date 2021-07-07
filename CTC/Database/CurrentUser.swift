@@ -134,16 +134,17 @@ class CurrentUser {
     }
     
     
-    func updateUser(user: User,newEmail: String, name: String, password: String,image: Data?) -> Int {
-   
+    func updateUser(oldEmail: String,newEmail: String, name: String, password: String,image: Data?) -> Int {
         
-        user.name = name
-        user.email = newEmail
-        user.password = password
-        user.image = image
+        let userObject = getUserObject(email: oldEmail)
+        
+        userObject!.name = name
+        userObject!.email = newEmail
+        userObject!.password = password
+        userObject?.image = image
         let result = saveUser()
         if result == 0 {
-            database.collection("dap_users").document(user.uid!).setData(["username": name, "uid": newEmail],merge: true) { error in
+            database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail],merge: true) { error in
                 if error != nil {
                     print(error as Any)
                 }
