@@ -110,8 +110,9 @@ class ProfilePageViewController: UIViewController {
         let newEmail = emailTextField.text!
         let newpassword = passwordTextField.text!
         let newName = nameTextField.text!
+        let data = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
         let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
-        let result = user.updateUser(oldEmail: email, newEmail: newEmail, name: newName, password: newpassword, image: imageData!)
+        let result = user.updateUser(user: userObject, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
         if result == 0 {
            
             updatefirebaseuser(Email: newEmail, password: newpassword)

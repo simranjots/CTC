@@ -122,7 +122,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
 
                                            }else if (flag == 0){
-                                            self.db.collection("dap_users").document(  Auth.auth().currentUser!.uid).setData(["username": userName, "uid": email]) { error in
+                                            let image = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
+                                            self.db.collection("dap_users").document(  Auth.auth().currentUser!.uid).setData(["username": userName, "uid": email,"image" : image!]) { error in
                                                    if error != nil {
                                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                    }
