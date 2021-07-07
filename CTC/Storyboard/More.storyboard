@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -98,7 +97,7 @@
                             <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="wcp-8T-bYP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="9VB-S7-RGg"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="9VB-S7-RGg"/>
                     <connections>
                         <outlet property="moreVCTableView" destination="GDc-Er-W6g" id="0m3-ze-inl"/>
                         <segue destination="013-ca-cqv" kind="show" identifier="navigateToFAQs" id="vBD-o1-Ocp"/>
@@ -332,33 +331,34 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                 <rect key="frame" x="0.0" y="150" width="428" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TBJ-bw-gSI">
-                                    <size key="itemSize" width="325" height="498"/>
+                                    <size key="itemSize" width="354" height="525"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="howToUseAppCollectionViewReusableCell" id="Si0-Pk-hgm" customClass="HowToUseCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="75" width="325" height="498"/>
+                                        <rect key="frame" x="0.0" y="61.666666666666664" width="354" height="525"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AD1-4b-vvO">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="498"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="525"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5F-T1-C1G">
-                                                    <rect key="frame" x="5" y="5" width="315" height="488"/>
+                                                    <rect key="frame" x="5" y="5" width="344" height="515"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="SWp-M6-iN9">
-                                                            <rect key="frame" x="50" y="10" width="215" height="308"/>
+                                                            <rect key="frame" x="57" y="10" width="230" height="375"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="300" id="Z92-nV-WsP"/>
+                                                                <constraint firstAttribute="width" constant="230" id="0Zc-4Q-ZiP"/>
+                                                                <constraint firstAttribute="height" constant="350" id="hu4-mr-BMO"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Aw-r2u">
-                                                            <rect key="frame" x="15" y="328" width="285" height="150"/>
+                                                            <rect key="frame" x="22" y="393" width="300" height="120"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="cEF-sW-bRj"/>
-                                                                <constraint firstAttribute="width" constant="250" id="kui-oJ-pt8"/>
+                                                                <constraint firstAttribute="height" constant="120" id="cEF-sW-bRj"/>
+                                                                <constraint firstAttribute="width" constant="300" id="kui-oJ-pt8"/>
                                                             </constraints>
                                                             <string key="text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. </string>
                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
@@ -368,13 +368,12 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="Vh8-Aw-r2u" secondAttribute="trailing" constant="15" id="DxY-jg-Lnh"/>
+                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="leading" secondItem="y5F-T1-C1G" secondAttribute="leading" constant="22" id="HTn-f8-KGi"/>
                                                         <constraint firstItem="SWp-M6-iN9" firstAttribute="top" secondItem="y5F-T1-C1G" secondAttribute="top" constant="10" id="WtY-z3-zW8"/>
-                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="leading" secondItem="y5F-T1-C1G" secondAttribute="leading" constant="15" id="Yz5-1c-DAe"/>
-                                                        <constraint firstItem="SWp-M6-iN9" firstAttribute="leading" secondItem="y5F-T1-C1G" secondAttribute="leading" constant="50" id="i7Z-kD-mHq"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Vh8-Aw-r2u" secondAttribute="bottom" constant="10" id="liw-UF-KDO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="SWp-M6-iN9" secondAttribute="trailing" constant="50" id="rqq-Z5-QRa"/>
-                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="top" secondItem="SWp-M6-iN9" secondAttribute="bottom" constant="10" id="snM-nb-UTY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Vh8-Aw-r2u" secondAttribute="trailing" constant="22" id="cTZ-zs-g0v"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Vh8-Aw-r2u" secondAttribute="bottom" constant="2" id="liw-UF-KDO"/>
+                                                        <constraint firstItem="SWp-M6-iN9" firstAttribute="centerX" secondItem="y5F-T1-C1G" secondAttribute="centerX" id="pyC-kN-YWb"/>
+                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="top" secondItem="SWp-M6-iN9" secondAttribute="bottom" constant="8" id="snM-nb-UTY"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -385,7 +384,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <constraint firstItem="y5F-T1-C1G" firstAttribute="top" secondItem="AD1-4b-vvO" secondAttribute="top" constant="5" id="mDz-xC-ipf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="325" height="498"/>
+                                        <size key="customSize" width="354" height="525"/>
                                         <connections>
                                             <outlet property="appSnapshotsImageView" destination="SWp-M6-iN9" id="eYQ-Hj-RMG"/>
                                             <outlet property="containerView" destination="y5F-T1-C1G" id="s1X-Bw-bZn"/>
@@ -434,11 +433,10 @@ Together they decided to share this 201 Day Achievement Principle with the world
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0wk-BZ-cQs" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="primaryTextColor"/>
-                        <color key="barTintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
-                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
@@ -911,7 +909,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="1284" height="2778"/>
+        <image name="1.png" width="963" height="2083.5"/>
         <image name="More" width="29" height="29"/>
         <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
         <image name="camera" catalog="system" width="128" height="94"/>
@@ -921,9 +919,6 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
         <image name="youtube" width="170.66667175292969" height="170.66667175292969"/>
-        <namedColor name="primaryTextColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
