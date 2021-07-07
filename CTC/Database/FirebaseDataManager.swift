@@ -143,7 +143,7 @@ class FirebaseDataManager {
                         let practices = UserPractices()
                         let UserObject = CurrentUser()
                         let userob = UserObject.getUserObject(email: user)
-                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                        let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals, practiceDay: practiceDays)
                         if result == 0 {
                             self.FetchPracData(uid: uid, id: practice)
                         }

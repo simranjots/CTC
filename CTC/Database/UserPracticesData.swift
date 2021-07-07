@@ -94,7 +94,6 @@ class UserPracticesData {
         }
         else{
            
-            
             let newPracticesData = PracticeData(context: self.context)
             newPracticesData.date = currentDate.dateFormate()! as NSDate
             newPracticesData.practised = toggleBtn
@@ -114,6 +113,7 @@ class UserPracticesData {
         userPractices.updatePracticedDay(noOfDays: Int(practicedDaysCount), practiceName: practiceObject.practice!, user: practiceObject.user!)
         let result = currentUser.saveUser()
         if result == 0 {
+            firebaseDataManager.updateSinglePractices(valueName: "practiced-days", value: Int(practicedDaysCount), practiceName: practiceObject.practice!, uid: (practiceObject.user?.uid)!)
             firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days, percentage: Int(percentage))
         }
         return result
@@ -140,10 +140,11 @@ class UserPracticesData {
             if(data.practiceDataToPractice?.practice == practiceName){
                 
                 practiceData = data
+                return practiceData
             }
         }
+       return nil
         
-        return practiceData
     }
     
     func getPracticeDataByDate(date: Date) -> [PracticeData]? {

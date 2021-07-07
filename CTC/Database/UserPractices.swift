@@ -8,7 +8,7 @@ class UserPractices{
     let remindPractices = PracticeReminder()
     var practices = [Practice]()
     var firebaseDataManager = FirebaseDataManager()
-    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
+    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String,practiceDay: Int) -> Int {
         
         let practices = getPractices(user: user)!
         var practiceNotExist = true
@@ -27,7 +27,7 @@ class UserPractices{
             newPractice.practice = practice
             newPractice.image_name = image_name
             newPractice.startedday = date as NSDate
-            newPractice.practiseddays = 0
+            newPractice.practiseddays = Int32(practiceDay)
             newPractice.encourage = encourage
             newPractice.remindswitch = remindswitch
             newPractice.goals = goals

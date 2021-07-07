@@ -81,7 +81,7 @@ class PracticeHistoryViewController: UIViewController {
         if pracName == repeatpracName?.practice {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         }else{
-            _=practice.addPractices(practice:pracName, image_name: "Flour", date: date! , user: userObject, value: "ACHIEVEMENT", encourage: encourage, remindswitch: false, goals: "365")
+            _=practice.addPractices(practice:pracName, image_name: "Flour", date: date! , user: userObject, value: "ACHIEVEMENT", encourage: encourage, remindswitch: false, goals: "365", practiceDay: 0)
         }
         
     }
