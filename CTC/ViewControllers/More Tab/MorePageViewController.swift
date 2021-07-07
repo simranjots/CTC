@@ -7,7 +7,7 @@ class MorePageViewController: UIViewController {
     let profileImageView: UIImageView = {
        
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "profile")
+        imageView.image = UIImage(named: "Profile")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.tintColor = .white

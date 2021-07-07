@@ -745,7 +745,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Vs-fES">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="550"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
                                                 <rect key="frame" x="154" y="20" width="120" height="120"/>
                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -916,7 +916,6 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="locationPin" width="170.66667175292969" height="170.66667175292969"/>
         <image name="next" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
-        <image name="profile" width="478.02398681640625" height="478.02398681640625"/>
         <image name="youtube" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -21,7 +21,7 @@ class ResetPasswordViewController: UIViewController {
         //Texfield and Button stylling
         Utilities.styleTextField(emailTextField)
         Utilities.styleButton(resetPasswordButton)
-        guard let emailIcon = UIImage(named: "email") else { return }
+        guard let emailIcon = UIImage(named: "Email") else { return }
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
     }
     

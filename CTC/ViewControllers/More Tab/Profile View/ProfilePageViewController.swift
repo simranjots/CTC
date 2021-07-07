@@ -66,8 +66,7 @@ class ProfilePageViewController: UIViewController {
         }))
         
         //To Cancel
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in
-        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }
@@ -96,8 +95,6 @@ class ProfilePageViewController: UIViewController {
             present(image, animated: true)
         }
     }
-    
-    
 }
 
 //MARK: - Extension for UIImagePickerViewController
@@ -105,14 +102,17 @@ class ProfilePageViewController: UIViewController {
 extension ProfilePageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("\(info)")
+        
+        //print("\(info)")
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            profileImageView.image = image
+        }
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-
 }
-
 

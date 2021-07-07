@@ -14,7 +14,7 @@
         <scene sceneID="oOe-6g-BRq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m2m-O3-05s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="History" id="ZiF-WO-n8W">
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="ZiF-WO-n8W">
                         <color key="badgeColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -532,7 +532,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="History" width="32" height="32"/>
+        <image name="history" width="32" height="32"/>
         <image name="next1" width="170.66667175292969" height="170.66667175292969"/>
         <image name="previous" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">

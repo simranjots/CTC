@@ -1,8 +1,8 @@
 import UIKit
 import Firebase
-import GoogleSignIn
-import FBSDKLoginKit
-import FBSDKCoreKit
+//import GoogleSignIn
+//import FBSDKLoginKit
+//import FBSDKCoreKit
 
 class LoginViewController: UIViewController {
     
@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().delegate = self
-       
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//        GIDSignIn.sharedInstance().delegate = self
+
         currentUser = CurrentUser()
         setUpElements()
         
@@ -98,54 +98,54 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func gmailSignInButtonTapped(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().signIn()
+       // GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
-        let loginManager = LoginManager()
-                loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
-                    if let error = error {
-                        print("Failed to login: \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let accessToken = AccessToken.current else {
-                        print("Failed to get access token")
-                        return
-                    }
-         
-                    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-                    
-                    // Perform login by calling Firebase APIs
-                    Auth.auth().signIn(with: credential, completion: { (user, error) in
-                        if let error = error {
-                            print("Login error: \(error.localizedDescription)")
-                            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                            alertController.addAction(okayAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            return
-                        }else {
-                            let currentUser = Auth.auth().currentUser
-                            self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
-                                if flag == 0
-                                {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
-                                    if error != nil {
-                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-                                    }
-                                }
-                                    print("Login Successful.")
-                                    self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                }else{
-                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                                }
-                                
-                            })
-                        }
-                    
-                    })
-         
-                }
+//        let loginManager = LoginManager()
+//                loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+//                    if let error = error {
+//                        print("Failed to login: \(error.localizedDescription)")
+//                        return
+//                    }
+//
+//                    guard let accessToken = AccessToken.current else {
+//                        print("Failed to get access token")
+//                        return
+//                    }
+//
+//                    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+//
+//                    // Perform login by calling Firebase APIs
+//                    Auth.auth().signIn(with: credential, completion: { (user, error) in
+//                        if let error = error {
+//                            print("Login error: \(error.localizedDescription)")
+//                            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+//                            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//                            alertController.addAction(okayAction)
+//                            self.present(alertController, animated: true, completion: nil)
+//                            return
+//                        }else {
+//                            let currentUser = Auth.auth().currentUser
+//                            self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
+//                                if flag == 0
+//                                {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
+//                                    if error != nil {
+//                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+//                                    }
+//                                }
+//                                    print("Login Successful.")
+//                                    self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+//                                }else{
+//                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+//                                }
+//
+//                            })
+//                        }
+//
+//                    })
+//
+//                }
 
     }
     
@@ -255,40 +255,40 @@ class LoginViewController: UIViewController {
     }
    
 }
-extension LoginViewController : GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-        print(error.localizedDescription)
-        return
-        }
-        guard let auth = user.authentication else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-        Auth.auth().signIn(with: credentials) { (authResult, error) in
-            if let error = error {
-            print(error.localizedDescription)
-            } else {
-                let currentUser = Auth.auth().currentUser
-               
-                self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
-                    if flag == 0
-                    {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
-                        if error != nil {
-                            self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-                        }
-                    }
-                        print("Login Successful.")
-                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                    }else{
-                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                    }
-                    
-                })
-                
-      
-            }
-
-        }
-    }
-    
-}
+//extension LoginViewController : GIDSignInDelegate {
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//        print(error.localizedDescription)
+//        return
+//        }
+//        guard let auth = user.authentication else { return }
+//        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+//        Auth.auth().signIn(with: credentials) { (authResult, error) in
+//            if let error = error {
+//            print(error.localizedDescription)
+//            } else {
+//                let currentUser = Auth.auth().currentUser
+//               
+//                self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
+//                    if flag == 0
+//                    {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
+//                        if error != nil {
+//                            self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+//                        }
+//                    }
+//                        print("Login Successful.")
+//                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+//                    }else{
+//                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+//                    }
+//                    
+//                })
+//                
+//      
+//            }
+//
+//        }
+//    }
+//    
+//}
 
