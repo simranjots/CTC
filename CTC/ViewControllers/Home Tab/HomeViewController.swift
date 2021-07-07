@@ -200,7 +200,7 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
-                self.db.updateSinglePractices(valueName: "is_deleted", value: true, practiceName: prac.practice!, email: self.userObject.email!)
+                self.db.updateSinglePractices(valueName: "is_deleted", value: true, practiceName: prac.practice!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
                
             }))

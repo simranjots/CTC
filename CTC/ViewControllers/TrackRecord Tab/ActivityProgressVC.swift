@@ -9,7 +9,6 @@ class ActivityProgressVC: UIViewController {
     var valueArray: [PracticeData]?
     var practice : Practice!
     var practiceName : String!
-    var pageTitle = "Activity Details"
     
     @IBOutlet var activityTrackingTableView: UITableView!
     @IBOutlet var tableViewHeader: UIView!
@@ -21,6 +20,7 @@ class ActivityProgressVC: UIViewController {
         userPracticesData = UserPracticesData()
         practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
         valueArray = userPracticesData.getPracticebyName(practice: practice.practice!)
+        self.title  = practiceName
     }
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ActivityProgressVC: UIViewController {
     
         //Set properties of tableView Header
         tableViewHeader.layer.cornerRadius = tableViewHeader.frame.height / 5
-        self.title = pageTitle
+        self.title = practiceName
     }
 }
 

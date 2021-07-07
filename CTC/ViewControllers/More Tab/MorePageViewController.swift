@@ -2,80 +2,9 @@ import UIKit
 import Firebase
 
 class MorePageViewController: UIViewController {
-    
-    //MARK: - Top View elements
-    let profileImageView: UIImageView = {
-       
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "Profile")
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.tintColor = .white
-        imageView.layer.borderWidth = 3
-        imageView.layer.borderColor = UIColor.white.cgColor
-        return imageView
-    }()
-    
-    let editButton: UIButton = {
-        
-        let button = UIButton()
-        button.setImage(UIImage(named: "edit")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(handleEditTap), for: .touchUpInside)
-        return button
-    }()
-    
-    let nameLabel: UILabel = {
-       
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = UIColor.white
-        label.font = UIFont(name: "Arial Rounded MT Bold", size: 22)
-        label.text = "Xxxxx Xxxxx"
-        return label
-    }()
-    
-    let emailLabel: UILabel = {
-       
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = UIColor.white
-        label.font = UIFont(name: "Arial", size: 18)
-        label.text = "xxx.xxx@gmail.com"
-        return label
-    }()
-    
- 
-    
-    //MARK: - Properties of top view elements
-    
-    lazy var containerView: UIView = {
-        
-        let view = UIView()
-        view.backgroundColor = Utilities.primaryTextColor
-        
-        view.addSubview(profileImageView)
-        //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 30, width: 80, height: 80)
-        profileImageView.layer.cornerRadius = 80 / 2
-        
-        view.addSubview(editButton)
-        editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 150, paddingRight: 20, width: 20, height: 20)
-        
-        view.addSubview(nameLabel)
-        //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 110, paddingLeft: 120)
-        
-        view.addSubview(emailLabel)
-        //emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emailLabel.anchor(top:nameLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 5, paddingLeft: 120)
-        
-        return view
-    }()
-    
+
     //MARK:- TableView outlet
     @IBOutlet var moreVCTableView: UITableView!
-    @IBOutlet var manualViewBelowContainerView: UIView!
     
     //MARK: - Array of more options and icons
     
@@ -85,9 +14,16 @@ class MorePageViewController: UIViewController {
     
     var currentUser: CurrentUser!
     var userObject: User?
-    
     //MARK: - LifeCycle Methods
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if userObject?.image != nil {
+            profileImageView.image = UIImage(data: (userObject?.image)!)
+        }
+        nameLabel.text = userObject?.name
+        emailLabel.text = userObject?.email
+        moreVCTableView.reloadData()
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -97,6 +33,13 @@ class MorePageViewController: UIViewController {
         
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
+        
+        //MARK: - Profile Data Setup
+        if userObject?.image != nil {
+            profileImageView.image = UIImage(data: (userObject?.image)!)
+        }
+        nameLabel.text = userObject?.name
+        emailLabel.text = userObject?.email
         
         //Set containerView above tableview
         view.addSubview(containerView)
@@ -116,6 +59,77 @@ class MorePageViewController: UIViewController {
     @objc func handleEditTap() {
         performSegue(withIdentifier: Constants.Segues.moreToUpdateProfileSegue, sender: self)
     }
+    
+       
+       //MARK: - Top View elements
+       let profileImageView: UIImageView = {
+           let imageView = UIImageView()
+           imageView.image = UIImage(named: "Profile")
+           imageView.contentMode = .scaleAspectFill
+           imageView.clipsToBounds = true
+           imageView.tintColor = .white
+           imageView.layer.borderWidth = 3
+           imageView.layer.borderColor = UIColor.white.cgColor
+           return imageView
+       }()
+       
+       let editButton: UIButton = {
+           
+           let button = UIButton()
+           button.setImage(UIImage(named: "edit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+           button.tintColor = .white
+           button.addTarget(self, action: #selector(handleEditTap), for: .touchUpInside)
+           return button
+       }()
+       
+       let nameLabel: UILabel = {
+          
+           let label = UILabel()
+           label.textAlignment = .center
+           label.textColor = UIColor.white
+           label.font = UIFont(name: "Arial Rounded MT Bold", size: 22)
+           label.text = "Xxxxx Xxxxx"
+           return label
+       }()
+       
+       let emailLabel: UILabel = {
+          
+           let label = UILabel()
+           label.textAlignment = .center
+           label.textColor = UIColor.white
+           label.font = UIFont(name: "Arial", size: 18)
+           label.text = "xxx.xxx@gmail.com"
+           return label
+       }()
+       
+    
+       
+       //MARK: - Properties of top view elements
+       
+       lazy var containerView: UIView = {
+           
+           let view = UIView()
+           view.backgroundColor = Utilities.primaryTextColor
+           
+           view.addSubview(profileImageView)
+           //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+           profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 30, width: 80, height: 80)
+           profileImageView.layer.cornerRadius = 80 / 2
+           
+           view.addSubview(editButton)
+           editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 150, paddingRight: 20, width: 20, height: 20)
+           
+           view.addSubview(nameLabel)
+           //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+           nameLabel.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 110, paddingLeft: 120)
+           
+           view.addSubview(emailLabel)
+           //emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+           emailLabel.anchor(top:nameLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 5, paddingLeft: 120)
+           
+           return view
+       }()
+       
 }
 
 

@@ -38,7 +38,7 @@ class HomeVCCell: UITableViewCell {
     @IBAction func toggleStarTapped(_ sender: UIButton) {
         self.activeButton(flag: !isOn)
         resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "", save: "")
-       
+         
         if resultFlag == 0{
             
             print("Data Saved")

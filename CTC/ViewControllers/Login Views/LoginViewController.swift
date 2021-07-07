@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
                         if error != nil {
                             self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
                         } else {
-                            self.currentUser.signInUser(userName: "", email: email, password: password, Completion: {(flag) -> Void in
+                            self.currentUser.signInUser(userName: "", email: email, password: password, uid: Auth.auth().currentUser!.uid, Completion: {(flag) -> Void in
                                     if(flag == true){
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
                                     }else{

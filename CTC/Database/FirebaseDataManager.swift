@@ -5,7 +5,7 @@ import UIKit
 class FirebaseDataManager {
     
     let db = Firestore.firestore()
-    typealias userAdded = (Bool,String)->Void
+    typealias userAdded = (Bool,String,Data)->Void
     typealias practiceAdded = (Bool)->Void
     
     func addPracticesToFirebase(practiceName: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String)  {
@@ -23,7 +23,7 @@ class FirebaseDataManager {
                      "is_deleted": false
                      
         ] as [String : Any]
-        db.collection("UsersData").document(user.email!)
+        db.collection("UsersData").document(user.uid!)
             .collection("Practices").document(practiceName)
             .setData(datas)
     }
@@ -37,13 +37,13 @@ class FirebaseDataManager {
                      "remindswitch": remindswitch,
                      "goals": goals
         ] as [String : Any]
-        db.collection("UsersData").document(user.email!)
+        db.collection("UsersData").document(user.uid!)
             .collection("Practices").document(oldPractice)
             .setData(datas, merge: true)
     }
     
-    func updateSinglePractices(valueName: String,value : Any,practiceName : String,email : String){
-        let practiceStringUpdate = db.collection("UsersData").document(email)
+    func updateSinglePractices(valueName: String,value : Any,practiceName : String,uid : String){
+        let practiceStringUpdate = db.collection("UsersData").document(uid)
             .collection("Practices").document(practiceName)
         practiceStringUpdate.updateData([
             "\(valueName)": value
@@ -66,7 +66,7 @@ class FirebaseDataManager {
                      "percentage" : percentage,
                      "trackingDays":trackingDays
         ] as [String : Any]
-        db.collection("UsersData").document(user.email!)
+        db.collection("UsersData").document(user.uid!)
             .collection("PracticedData").document(practiceName)
             .setData(datas, merge: true)
     }
@@ -78,12 +78,13 @@ class FirebaseDataManager {
                      "dss": dss,
                      "td": td,
         ] as [String : Any]
-        db.collection("UsersData").document(user.email!)
+        db.collection("UsersData").document(user.uid!)
             .collection("PracticedHistory").document(practiceName)
             .setData(datas)
     }
     func fetchUserData(email: String,completionHandler: @escaping userAdded) {
         var uName = ""
+        var image : Data?
         var flag = false
         print("this begin \(email)")
         let ref = db.collection("dap_users").whereField("uid", isEqualTo: email)
@@ -96,15 +97,16 @@ class FirebaseDataManager {
                 if snapshot != nil {
                     for document in snapshot!.documents {
                         uName = document.data() ["username"] as! String
+                        image = document.data() ["image"] as? Data
                         print("this begin \(email)")
                         print("this uName \(uName)")
                         flag = true
                     }
                     print("this end \(email)")
-                   completionHandler(flag,uName)
+                    completionHandler(flag,uName,image!)
                    
                 }else{
-                    completionHandler(flag,uName)
+                    completionHandler(flag,uName,image!)
                 }
                
                
@@ -112,13 +114,13 @@ class FirebaseDataManager {
         }
     }
         
-    func FetchPractices(email:String,completion :  @escaping  practiceAdded) {
-        print("this start \(email)")
-        var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false
+    func FetchPractices(uid:String,completion :  @escaping  practiceAdded) {
+        print("this start \(uid)")
+        var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false,practiceDays = 0
         var date = Timestamp()
        
         
-        let ref =  db.collection("UsersData").document(email)
+        let ref =  db.collection("UsersData").document(uid)
                    .collection("Practices").whereField("is_deleted", isEqualTo: false)
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil
@@ -136,13 +138,14 @@ class FirebaseDataManager {
                          encourage = document.data() ["encourage"] as! String
                          remindswitch = document.data() ["remindswitch"] as! Bool
                          goals = document.data() ["goals"] as! String
+                        practiceDays = document.data() ["practiced-days"] as! Int
                    
                         let practices = UserPractices()
                         let UserObject = CurrentUser()
                         let userob = UserObject.getUserObject(email: user)
                         let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
                         if result == 0 {
-                            self.FetchPracData(email: email, id: practice)
+                            self.FetchPracData(uid: uid, id: practice)
                         }
                 }
                    
@@ -155,14 +158,14 @@ class FirebaseDataManager {
         }
         
     }
-    func FetchPracData(email:String,id:String)  {
-        print("this start \(email)")
+    func FetchPracData(uid:String,id:String)  {
+        print("this start \(uid)")
         var practiceObject = "",toggleBtn = false,note = "",user = "",streak = 0,
             percentage = 0,trackingDays = 0
         var currentDate = Timestamp()
        
         
-        let ref =  db.collection("UsersData").document(email)
+        let ref =  db.collection("UsersData").document(uid)
                    .collection("PracticedData").whereField("id", isEqualTo: id)
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil
@@ -193,8 +196,8 @@ class FirebaseDataManager {
             }
         }
     }
-    func fetchHistory(email: String) {
-        let ref =  db.collection("UsersData").document(email)
+    func fetchHistory(uid: String,email:String) {
+        let ref =  db.collection("UsersData").document(uid)
                    .collection("PracticedHistory")
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil

@@ -48,14 +48,14 @@ class UserPractices{
     func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
         let practiceObject = getPractices(practiceName: oldPractice, user: user)
-        practiceObject.values = value
-        practiceObject.practice = newPractice
-        practiceObject.image_name = image_name
+        practiceObject!.values = value
+        practiceObject!.practice = newPractice
+        practiceObject!.image_name = image_name
        // practiceObject.startedday = date as NSDate
-        practiceObject.encourage = encourage
-        practiceObject.remindswitch = remindswitch
-        practiceObject.goals = goals
-        practiceObject.user = user
+        practiceObject!.encourage = encourage
+        practiceObject!.remindswitch = remindswitch
+        practiceObject!.goals = goals
+        practiceObject!.user = user
         if oldPractice != newPractice {
             remindPractices.RemoveReminder(practiceName: oldPractice)
             #warning("Need to update Reminder")
@@ -93,9 +93,9 @@ class UserPractices{
     }
     
     
-    func getPractices(practiceName: String, user: User) -> Practice {
+    func getPractices(practiceName: String, user: User) -> Practice? {
         
-        var practiceData : Practice!
+        var practiceData : Practice?
         let request : NSFetchRequest<Practice> = Practice.fetchRequest()
         request.predicate = NSPredicate(format: "user.email = %@ && practice = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!, practiceName, false, false])
         request.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
@@ -117,7 +117,7 @@ class UserPractices{
         
         let practices = getPractices(practiceName: practiceName, user: user)
         
-        practices.practiseddays = Int32(noOfDays)
+        practices!.practiseddays = Int32(noOfDays)
         
         do {
             try context.save()

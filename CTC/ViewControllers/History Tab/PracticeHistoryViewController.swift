@@ -20,6 +20,10 @@ class PracticeHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        previousButtonOutlet.isHidden = true
+        nextButtonOutlet.isHidden = true
+        restoreButtonOutlet.isHidden = true
+        pageControl.isHidden = true
         practiceHistoryCollectionView.delegate = self
         practiceHistoryCollectionView.dataSource = self
         addShadowToButtons()
@@ -74,7 +78,7 @@ class PracticeHistoryViewController: UIViewController {
         let date =  Date().dateFormate()
         let encourage = "Think of the good future"
         let repeatpracName  = practice.getPractices(practiceName: pracName, user: userObject)
-        if pracName == repeatpracName.practice {
+        if pracName == repeatpracName?.practice {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         }else{
             _=practice.addPractices(practice:pracName, image_name: "Flour", date: date! , user: userObject, value: "ACHIEVEMENT", encourage: encourage, remindswitch: false, goals: "365")
@@ -102,7 +106,12 @@ class PracticeHistoryViewController: UIViewController {
 extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            
+        if deletedHistory.count > 0 {
+            previousButtonOutlet.isHidden = false
+            nextButtonOutlet.isHidden = false
+            restoreButtonOutlet.isHidden = false
+            pageControl.isHidden = false
+        }
         return deletedHistory.count
         
     }

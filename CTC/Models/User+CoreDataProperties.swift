@@ -21,7 +21,8 @@ extension User {
     @NSManaged public var isloggedin: Bool
     @NSManaged public var name: String?
     @NSManaged public var password: String?
-    @NSManaged public var dob: String?
+    @NSManaged public var uid: String?
+    @NSManaged public var image: Data?
     @NSManaged public var practice: NSSet?
     @NSManaged public var practiceHistory: NSSet?
 

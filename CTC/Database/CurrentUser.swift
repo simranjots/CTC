@@ -1,18 +1,20 @@
 import Foundation
 import CoreData
+import Firebase
 import UIKit
 
 class CurrentUser {
     
     var users = [User]()
     let db = FirebaseDataManager()
+    let database = Firestore.firestore()
     typealias userSignIn = (Bool) -> Void
     typealias userAdded = (Int) -> Void
     
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,from : String,completionHandler: @escaping userAdded){
+    func addUser(name: String, email: String, password: String,uid : String,from : String,image: Data?,completionHandler: @escaping userAdded){
         
         loadUser()
         let user = getUserObject(email: email)
@@ -25,6 +27,8 @@ class CurrentUser {
                 let newUser = User(context: self.context)
                 newUser.name = name
                 newUser.email = email
+                newUser.uid = uid
+                newUser.image = image
                 newUser.password = password
                 newUser.isloggedin = true
                 _ = saveUser()
@@ -46,15 +50,17 @@ class CurrentUser {
                 let newUser = User(context: self.context)
                 newUser.name = name
                 newUser.email = email
+                newUser.uid = uid
                 newUser.password = password
+                newUser.image = image
                 newUser.isloggedin = true
                 let result = saveUser()
                 if result == 0 {
                     if from == "signUp" {
                         completionHandler(result)
                     }else {
-                        db.fetchHistory(email: email)
-                        db.FetchPractices(email: email) { success in
+                        db.fetchHistory(uid: uid, email: email)
+                        db.FetchPractices(uid: uid) { success in
                             if success {
                               completionHandler(result)
                             }else{
@@ -74,12 +80,12 @@ class CurrentUser {
         
         
     }
-    func signInUser(userName : String, email : String ,password : String,Completion :@escaping userSignIn ) {
+    func signInUser(userName : String, email : String ,password : String,uid: String,Completion :@escaping userSignIn ) {
         let user = getUserObject(email: email)
         if user == nil {
-            db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
+            db.fetchUserData(email: email, completionHandler: {(success, value,image) -> Void in
                 if(success){
-                    self.addUser(name: value, email: email, password: password, from: "signIn", completionHandler: {(flag) -> Void in
+                    self.addUser(name: value, email: email, password: password, uid: uid, from: "signIn", image: image, completionHandler: {(flag) -> Void in
                         if flag == 0
                         {
                             Completion(true)
@@ -128,19 +134,27 @@ class CurrentUser {
     }
     
     
-    func updateUser(oldEmail: String,newEmail: String, name: String, dob: String, password: String) -> Int {
+    func updateUser(oldEmail: String,newEmail: String, name: String, password: String,image: Data) -> Int {
         
         let userObject = getUserObject(email: oldEmail)
         
         userObject!.name = name
         userObject!.email = newEmail
-        userObject!.dob = dob
         userObject!.password = password
+        userObject?.image = image
         let result = saveUser()
+        if result == 0 {
+            database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail,"image" : image],merge: true) { error in
+                if error != nil {
+                    print(error as Any)
+                }
+            }
+        }
         return result
         
         
     }
+  
     func passwordCheck(email: String, password: String) -> Bool {
         
         let request : NSFetchRequest<User> = User.fetchRequest()
