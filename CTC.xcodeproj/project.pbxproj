@@ -64,16 +64,13 @@
 		26A2153F268D201100B581BC /* PracticeHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */; };
 		26C197FC268286D5003A6D88 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */; };
 		26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C76571267456F500BD646E /* AddPracticesViewController.swift */; };
-		26CAE06C26850D3B00A54802 /* ActivityDetailsProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */; };
 		26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CAE0952685870F00A54802 /* TabBarViewController.swift */; };
 		26CAE0982685886500A54802 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CAE0972685886500A54802 /* History.storyboard */; };
-		26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */; };
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
 		26DE85DB26701F0A00994DA3 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */; };
 		E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */; };
 		E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */; };
-		E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */; };
 		E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107B9F3222705890014C539 /* User+CoreDataProperties.swift */; };
 		E10D6673226F6F0700C0E4D8 /* faqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D6672226F6F0700C0E4D8 /* faqTableViewCell.swift */; };
 		E10D6675226F6F7900C0E4D8 /* faqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D6674226F6F7900C0E4D8 /* faqViewController.swift */; };
@@ -82,8 +79,6 @@
 		E11037BB21E6602E007BBEF1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11037BA21E6602E007BBEF1 /* LoginViewController.swift */; };
 		E11037BD21E6607C007BBEF1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */; };
 		E11752D92217486F0089B852 /* ToastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11752D82217486F0089B852 /* ToastLabel.swift */; };
-		E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12320E0226E1772006B05CB /* FirebaseHelper.swift */; };
-		E12CCC6322380332009E0870 /* HistoryCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */; };
 		E133554422665FDD00C3E0CF /* FinalLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E133554322665FDD00C3E0CF /* FinalLogo.png */; };
 		E1383D7C21E7835800F8597F /* ShowRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D7B21E7835800F8597F /* ShowRecordViewController.swift */; };
 		E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */; };
@@ -105,16 +100,11 @@
 		E189D69021E4FA450078380B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E189D68F21E4FA450078380B /* Assets.xcassets */; };
 		E189D69321E4FA450078380B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E189D69121E4FA450078380B /* LaunchScreen.storyboard */; };
 		E18EDF1121F8BC08009B18B1 /* MorePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */; };
-		E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */; };
 		E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18EDF1421F9081F009B18B1 /* HomeViewController.swift */; };
 		E1A2CF83221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2CF80221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift */; };
 		E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */; };
-		E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */; };
-		E1BFA7362236B645005AB2D9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */; };
 		E1E2EEEF223064C3002046E7 /* Practice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2EEEE223064C3002046E7 /* Practice+CoreDataProperties.swift */; };
 		E1E7D5752204CD27003C65F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7D5742204CD27003C65F5 /* Extensions.swift */; };
-		E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */; };
-		E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */; };
 		E1F3094721FB8560008ADE9D /* AnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3094621FB855F008ADE9D /* AnimationLabel.swift */; };
 		E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F63FBD220B8C560001FC6D /* PracticeData+CoreDataClass.swift */; };
 		E1F63FC5220B8C560001FC6D /* Practice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F63FBF220B8C560001FC6D /* Practice+CoreDataClass.swift */; };
@@ -178,10 +168,8 @@
 		26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		26C76571267456F500BD646E /* AddPracticesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPracticesViewController.swift; sourceTree = "<group>"; };
-		26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProgressBarView.swift; sourceTree = "<group>"; };
 		26CAE0952685870F00A54802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		26CAE0972685886500A54802 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
-		26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressViewController.swift; sourceTree = "<group>"; };
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
@@ -189,7 +177,6 @@
 		9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
 		E107B9F3222705890014C539 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E10D6672226F6F0700C0E4D8 /* faqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqTableViewCell.swift; sourceTree = "<group>"; };
 		E10D6674226F6F7900C0E4D8 /* faqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faqViewController.swift; sourceTree = "<group>"; };
@@ -198,8 +185,6 @@
 		E11037BA21E6602E007BBEF1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E11752D82217486F0089B852 /* ToastLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastLabel.swift; sourceTree = "<group>"; };
-		E12320E0226E1772006B05CB /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
-		E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardCollectionView.swift; sourceTree = "<group>"; };
 		E133554322665FDD00C3E0CF /* FinalLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FinalLogo.png; sourceTree = "<group>"; };
 		E1383D7B21E7835800F8597F /* ShowRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecordViewController.swift; sourceTree = "<group>"; };
 		E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPercentageCell.swift; sourceTree = "<group>"; };
@@ -223,16 +208,11 @@
 		E189D69221E4FA450078380B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E189D69421E4FA450078380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E18EDF1021F8BC08009B18B1 /* MorePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePageTableViewCell.swift; sourceTree = "<group>"; };
-		E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E18EDF1421F9081F009B18B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1A2CF80221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
-		E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		E1E2EEEE223064C3002046E7 /* Practice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Practice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1E7D5742204CD27003C65F5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
-		E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRecordTableViewCell.swift; sourceTree = "<group>"; };
 		E1F3094621FB855F008ADE9D /* AnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLabel.swift; sourceTree = "<group>"; };
 		E1F63FBD220B8C560001FC6D /* PracticeData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E1F63FBF220B8C560001FC6D /* Practice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Practice+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -273,8 +253,6 @@
 			children = (
 				26BBA852268A4ED5009D1E20 /* More Tab TableView and CollectionView Cells */,
 				1AACDE0B2668777A00A1877D /* Profile View */,
-				26DE85D226701B6600994DA3 /* ActivityProgressViewController.swift */,
-				26CAE06B26850D3B00A54802 /* ActivityDetailsProgressBarView.swift */,
 				E16BBC6221F638D60094D8B6 /* MorePageViewController.swift */,
 				263F60F22681474F00B4908E /* HowToUseAppViewController.swift */,
 				E10D6674226F6F7900C0E4D8 /* faqViewController.swift */,
@@ -313,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				26BBA851268A4EAF009D1E20 /* Profile View Cells */,
-				E18EDF1221F8C7A6009B18B1 /* ProfileViewController.swift */,
 				2626A119267AB49F0043C193 /* ProfilePageViewController.swift */,
 			);
 			path = "Profile View";
@@ -339,7 +316,6 @@
 				1A3FA243266A2C6C003A96A4 /* UserPractices.swift */,
 				E1BFA72F2236B211005AB2D9 /* DatabaseHelper.swift */,
 				1A3FA23F2669FC91003A96A4 /* CurrentUser.swift */,
-				E12320E0226E1772006B05CB /* FirebaseHelper.swift */,
 				1A3FA24B266E924B003A96A4 /* UserPracticesData.swift */,
 				1A55439626811583000C5FFF /* PracticeReminders.swift */,
 				1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */,
@@ -388,9 +364,6 @@
 		26BBA84B268A4A17009D1E20 /* History Tab */ = {
 			isa = PBXGroup;
 			children = (
-				26BBA84F268A4DF6009D1E20 /* History Tab TableView and CollectionView Cells */,
-				E1BFA7352236B645005AB2D9 /* HistoryViewController.swift */,
-				E1EE99D42232E15500F5C5F5 /* HistoryTableView.swift */,
 				26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */,
 				26A2153E268D201100B581BC /* PracticeHistoryCollectionViewCell.swift */,
 			);
@@ -425,17 +398,6 @@
 				1A554390267BB109000C5FFF /* ReminderTableViewCell.swift */,
 			);
 			path = "Home Tab TableViewCells";
-			sourceTree = "<group>";
-		};
-		26BBA84F268A4DF6009D1E20 /* History Tab TableView and CollectionView Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E1029A44223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift */,
-				E1EE99D62232E55900F5C5F5 /* HistoryRecordTableViewCell.swift */,
-				E1BFA7332236B633005AB2D9 /* HistoryCardCollectionViewCell.swift */,
-				E12CCC6222380332009E0870 /* HistoryCardCollectionView.swift */,
-			);
-			path = "History Tab TableView and CollectionView Cells";
 			sourceTree = "<group>";
 		};
 		26BBA850268A4E29009D1E20 /* Track Records Tab TableView Cells */ = {
@@ -728,7 +690,6 @@
 				E10D6673226F6F0700C0E4D8 /* faqTableViewCell.swift in Sources */,
 				E18169B92201042C002EE49F /* ProfileHeaderCell.swift in Sources */,
 				E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */,
-				E12CCC6322380332009E0870 /* HistoryCardCollectionView.swift in Sources */,
 				26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */,
 				E189D68E21E4FA430078380B /* CTC.xcdatamodeld in Sources */,
 				1A3FA2402669FC92003A96A4 /* CurrentUser.swift in Sources */,
@@ -737,20 +698,17 @@
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
 				263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
-				E12320E1226E1772006B05CB /* FirebaseHelper.swift in Sources */,
 				26A2153F268D201100B581BC /* PracticeHistoryCollectionViewCell.swift in Sources */,
 				1A56C152267A465B00E6D18E /* NotificationManager.swift in Sources */,
 				E10D6679226F7D8E00C0E4D8 /* AboutUsTableViewCell.swift in Sources */,
 				2626A11A267AB49F0043C193 /* ProfilePageViewController.swift in Sources */,
 				263F60EF2681240D00B4908E /* ShopBooksViewController.swift in Sources */,
-				E18EDF1321F8C7A6009B18B1 /* ProfileViewController.swift in Sources */,
 				E1BFA7302236B211005AB2D9 /* DatabaseHelper.swift in Sources */,
 				26CAE0962685870F00A54802 /* TabBarViewController.swift in Sources */,
 				1A2E9B8D2689EBC2005587FA /* FirebaseDataManager.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */,
-				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
 				1A554393267C3D46000C5FFF /* Reminder.swift in Sources */,
 				1A554391267BB109000C5FFF /* ReminderTableViewCell.swift in Sources */,
 				E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */,
@@ -761,15 +719,12 @@
 				E1E2EEEF223064C3002046E7 /* Practice+CoreDataProperties.swift in Sources */,
 				E1E7D5752204CD27003C65F5 /* Extensions.swift in Sources */,
 				1AA35F842671B0E100BA918F /* PracticesListCell.swift in Sources */,
-				26CAE06C26850D3B00A54802 /* ActivityDetailsProgressBarView.swift in Sources */,
 				E1383D8221E7905D00F8597F /* DataCell.swift in Sources */,
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
 				263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */,
-				26DE85D326701B6600994DA3 /* ActivityProgressViewController.swift in Sources */,
 				1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */,
-				E1BFA7362236B645005AB2D9 /* HistoryViewController.swift in Sources */,
 				E189D68621E4FA430078380B /* AppDelegate.swift in Sources */,
 				E169CA57225BAA8700A100A6 /* WeeklyData+CoreDataClass.swift in Sources */,
 				E1383D8621E7CDFC00F8597F /* addTodayViewController.swift in Sources */,
@@ -780,7 +735,6 @@
 				E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */,
 				26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */,
 				1AA35F862671B41F00BA918F /* PracticesRecordListVC.swift in Sources */,
-				E1BFA7342236B633005AB2D9 /* HistoryCardCollectionViewCell.swift in Sources */,
 				E1F3094721FB8560008ADE9D /* AnimationLabel.swift in Sources */,
 				1A554395267C3DA9000C5FFF /* Reminder+CoreProperties.swift in Sources */,
 				1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */,
@@ -795,12 +749,10 @@
 				2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */,
 				262946E226601F99005BA95E /* Utilities.swift in Sources */,
 				1A2E9B91268AA6A2005587FA /* PracticedHistory.swift in Sources */,
-				E1EE99D52232E15500F5C5F5 /* HistoryTableView.swift in Sources */,
 				263F60F32681474F00B4908E /* HowToUseAppViewController.swift in Sources */,
 				1A3FA244266A2C6C003A96A4 /* UserPractices.swift in Sources */,
 				2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */,
 				E169CA58225BAA8700A100A6 /* WeeklyData+CoreDataProperties.swift in Sources */,
-				E1029A45223BEFB600207D55 /* HistoryHeaderCellTableViewCell.swift in Sources */,
 				E18169B52200EC97002EE49F /* ProfileDataTableViewCell.swift in Sources */,
 				E1F63FC5220B8C560001FC6D /* Practice+CoreDataClass.swift in Sources */,
 				E11037BD21E6607C007BBEF1 /* SignUpViewController.swift in Sources */,

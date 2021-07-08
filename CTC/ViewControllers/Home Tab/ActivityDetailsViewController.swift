@@ -78,7 +78,7 @@ class ActivityDetailsViewController: UIViewController {
         practicesData =  userPracticesData.getPracticeDataObj(practiceName: practicesArray[myIndex].practice!)
         let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
-        let practicedDays = practicesData!.tracking_days
+        let practicedDays = practicesData?.tracking_days ?? 0
         activityNameTextField.text = practicesArray[myIndex].practice
         daysPracticedLabel.text =  "\(practicedDays)"
         daysSinceStartedLabel.text = "\(days)"

@@ -138,7 +138,7 @@ class HomeViewController: UIViewController,ReceiveData{
         
         userPractices.deletePractice(practice: prac)
     
-        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td!),userOb:userOb)
+        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td ?? 0),userOb:userOb)
         
         if(resultFlag == 0){
             showToast(message: "\(pracName!) Deleted", duration: 3)
