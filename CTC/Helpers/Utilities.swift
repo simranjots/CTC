@@ -169,6 +169,7 @@ class Utilities {
         return testString.evaluate(with: charString)
     }
     
+    
     //MARK: - Add shadows and border to Views
     
     static func addShadowAndBorderToView(_ view: UIView) {

@@ -36,6 +36,7 @@
 		1AD65E85264E45A400CD9974 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E84264E45A400CD9974 /* Books.storyboard */; };
 		1AD65E87264E466C00CD9974 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E86264E466C00CD9974 /* More.storyboard */; };
 		1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */; };
+		26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */; };
 		2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */; };
 		2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */; };
 		2623EF9E2670852900951285 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */; };
@@ -149,6 +150,7 @@
 		1AD65E84264E45A400CD9974 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
 		1AD65E86264E466C00CD9974 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCCell.swift; sourceTree = "<group>"; };
+		26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimationViewController.swift; sourceTree = "<group>"; };
 		2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StataticsViewProgressBar.swift; sourceTree = "<group>"; };
 		2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyTableViewCell.swift; sourceTree = "<group>"; };
 		2623EF9D2670852900951285 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				E11D15092236AE1A000209B9 /* TableViewCells */,
 				E189D68F21E4FA450078380B /* Assets.xcassets */,
 				E189D69121E4FA450078380B /* LaunchScreen.storyboard */,
+				26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */,
 				E189D69421E4FA450078380B /* Info.plist */,
 				1A2E9B99268F4150005587FA /* GoogleService-Info.plist */,
 				E189D68C21E4FA430078380B /* CTC.xcdatamodeld */,
@@ -746,6 +749,7 @@
 				1A2E9B8D2689EBC2005587FA /* FirebaseDataManager.swift in Sources */,
 				263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */,
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
+				26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */,
 				E1EE99D72232E55900F5C5F5 /* HistoryRecordTableViewCell.swift in Sources */,
 				1A554393267C3D46000C5FFF /* Reminder.swift in Sources */,
 				1A554391267BB109000C5FFF /* ReminderTableViewCell.swift in Sources */,
