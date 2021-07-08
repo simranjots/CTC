@@ -110,8 +110,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 //There was an error creating the user
                                 self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
                             } else {
-                                
-                                self.currentUser.addUser(name: userName, email: email, password: password, uid: Auth.auth().currentUser!.uid, from: "signUp", completionHandler: {(flag) -> Void in
+                                let image = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
+                                self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp", completionHandler: {(flag) -> Void in
                                     if(flag == 1){
                                                
                                                self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
@@ -122,7 +122,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
 
                                            }else if (flag == 0){
-                                            let image = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
+                                            
                                             self.db.collection("dap_users").document(  Auth.auth().currentUser!.uid).setData(["username": userName, "uid": email,"image" : image!]) { error in
                                                    if error != nil {
                                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")

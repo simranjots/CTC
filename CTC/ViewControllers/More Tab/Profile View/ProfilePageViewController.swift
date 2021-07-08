@@ -3,6 +3,8 @@ import UIKit
 import MobileCoreServices
 import Firebase
 
+
+
 class ProfilePageViewController: UIViewController {
     
     //MARK: - IBOutlets
@@ -16,14 +18,16 @@ class ProfilePageViewController: UIViewController {
     var email = ""
     var Password = ""
     var isIconClicked = true
-    var db : FirebaseDataManager!
+   
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         styleElements()
         user = CurrentUser()
         userObject = user.checkLoggedIn()
-        db = FirebaseDataManager()
+       
         setUpData()
         
     }
@@ -114,60 +118,42 @@ class ProfilePageViewController: UIViewController {
         let newName = nameTextField.text!
         let data = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
         let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
-        if email == newEmail {
-            let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
-            if result == 0 {
-               
-                self.updatefirebaseuser(Email: newEmail, password: newpassword)
-                self.showToast(message: "Successfully updated", duration: 2.0)
-                _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                    self.navigationController?.popViewController(animated: true)
-                }
-            } else {
-              
-                self.showToast(message: "Updation Fail. . .", duration: 2.0)
-                
-            }
-        }else{
-            db.fetchUserData(email: newEmail) { flag, Value in}
-            let value = UserDefaults.standard.bool(forKey: "check")
-           if value == true {
-                self.showAlert(title: "warning", message: "User already exist", buttonTitle: "try again")
-            }else{
-                let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
-                if result == 0 {
-                   
-                    self.updatefirebaseuser(Email: newEmail, password: newpassword)
-                    self.showToast(message: "Successfully updated", duration: 2.0)
-                    _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                 
-                    
-                } else {
-                  
-                    self.showToast(message: "Updation Fail. . .", duration: 2.0)
-                    
-                }
-            }
-        }
-
-      
-    }
-    func updatefirebaseuser(Email : String , password : String) {
         let credential = EmailAuthProvider.credential(withEmail: email, password: Password)
         let user = Auth.auth().currentUser
         user?.reauthenticate(with: credential, completion: { Result, Error in
             if Error !=  nil {
             }else{
-                Auth.auth().currentUser?.updateEmail(to: Email) { error in
-                  // ...
+                Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
+                    if error != nil {
+                        self.showAlert(title: "warning", message: "The email address is already in use by another account.", buttonTitle: "try again")
+                    }else{
+                        let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+                        if result == 0 {
+                            self.showToast(message: "Successfully updated", duration: 2.0)
+                            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                         
+                            
+                        } else {
+                          
+                            self.showToast(message: "Updation Fail. . .", duration: 2.0)
+                            
+                        }
+                    }
                 }
-                Auth.auth().currentUser?.updatePassword(to: password) { error in
-                  // ...
+                Auth.auth().currentUser?.updatePassword(to: newpassword) { error in
+                    if error != nil {
+                        self.showAlert(title: "warning", message: "\(String(describing: error))" , buttonTitle: "tryagain")
+                    }
                 }
             }
         })
+       
+      
+    }
+    func updatefirebaseuser(Email : String , password : String) {
+      
       
            
     }
