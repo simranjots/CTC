@@ -129,29 +129,29 @@ class ProfilePageViewController: UIViewController {
                 
             }
         }else{
-            db.fetchUserData(email: newEmail) { flag, Value in
-                if flag == true {
-                    self.showAlert(title: "warning", message: "User already exist", buttonTitle: "try again")
-                }else{
-                    let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
-                    if result == 0 {
-                       
-                        self.updatefirebaseuser(Email: newEmail, password: newpassword)
-                        self.showToast(message: "Successfully updated", duration: 2.0)
-                        _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                     
-                        
-                    } else {
-                      
-                        self.showToast(message: "Updation Fail. . .", duration: 2.0)
-                        
+            db.fetchUserData(email: newEmail) { flag, Value in}
+            let value = UserDefaults.standard.bool(forKey: "check")
+           if value == true {
+                self.showAlert(title: "warning", message: "User already exist", buttonTitle: "try again")
+            }else{
+                let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+                if result == 0 {
+                   
+                    self.updatefirebaseuser(Email: newEmail, password: newpassword)
+                    self.showToast(message: "Successfully updated", duration: 2.0)
+                    _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+                        self.navigationController?.popViewController(animated: true)
                     }
+                 
+                    
+                } else {
+                  
+                    self.showToast(message: "Updation Fail. . .", duration: 2.0)
+                    
                 }
             }
-
         }
+
       
     }
     func updatefirebaseuser(Email : String , password : String) {
