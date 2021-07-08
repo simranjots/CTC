@@ -2,19 +2,21 @@ import Foundation
 import CoreData
 import Firebase
 import UIKit
+import FirebaseStorage
 
 class CurrentUser {
     
     var users = [User]()
     let db = FirebaseDataManager()
     let database = Firestore.firestore()
+    // Create a root reference
+    let storageRef = Storage.storage().reference()
     typealias userSignIn = (Bool) -> Void
     typealias userAdded = (Int) -> Void
     
-    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,uid : String,from : String,completionHandler: @escaping userAdded){
+    func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String,completionHandler: @escaping userAdded){
         
         loadUser()
         let user = getUserObject(email: email)
@@ -29,6 +31,7 @@ class CurrentUser {
                 newUser.email = email
                 newUser.uid = uid
                 newUser.password = password
+                newUser.image = image
                 newUser.isloggedin = true
                 _ = saveUser()
                 completionHandler(0)
@@ -51,6 +54,7 @@ class CurrentUser {
                 newUser.email = email
                 newUser.uid = uid
                 newUser.password = password
+                newUser.image = image
                 newUser.isloggedin = true
                 let result = saveUser()
                 if result == 0 {
@@ -60,13 +64,13 @@ class CurrentUser {
                         db.fetchHistory(uid: uid, email: email)
                         db.FetchPractices(uid: uid) { success in
                             if success {
-                              completionHandler(result)
+                                completionHandler(result)
                             }else{
                                 completionHandler(result)
                             }
                         }
                     }
-                  }
+                }
                 
             }else {
                 print("User Exist")
@@ -78,39 +82,7 @@ class CurrentUser {
         
         
     }
-    func signInUser(userName : String, email : String ,password : String,uid: String,Completion :@escaping userSignIn ) {
-        let user = getUserObject(email: email)
-        if user == nil {
-            db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
-                if(success){
-                    self.addUser(name: value, email: email, password: password, uid: uid, from: "signIn", completionHandler: {(flag) -> Void in
-                        if flag == 0
-                        {
-                            Completion(true)
-                        }
-                        
-                    })
-                    
-                }else{
-                    Completion(false)
-                }
-            })
-            
-            
-        }else{
-            if(user!.email == email && user!.password == password){
-                user!.isloggedin = true
-                    _ = saveUser()
-                    Completion(true)
-                }else{
-                    Completion(false)
-                }
-            
-           
-            
-        }
-        
-    }
+    
     
     func getUserObject(email: String) -> User?{
         var Singleuser = User()
@@ -142,17 +114,46 @@ class CurrentUser {
         userObject?.image = image
         let result = saveUser()
         if result == 0 {
-            database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail],merge: true) { error in
-                if error != nil {
-                    print(error as Any)
+           
+            let spaceRef = storageRef.child("images/\(userObject!.uid!)/\((userObject?.image)!)")
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            spaceRef.putData((userObject?.image)!, metadata: metaData) { (StorageMetadata, error) in
+                guard StorageMetadata != nil else{
+                    print("oops an error occured while data uploading")
+                    return
                 }
-            }
+                spaceRef.downloadURL { (url, error) in
+                   guard let downloadURL = url else {
+                     // Uh-oh, an error occurred!
+                     return
+                   }
+                    let urlString: String = downloadURL.absoluteString
+                    self.database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail,"image" : urlString],merge: true) { error in
+                        if error != nil {
+                            print(error as Any)
+                        }
+                    }
+                 }
+               }
+            
+           
         }
         return result
         
         
     }
-  
+    func updatepassword(Email: String, password: String) -> Int {
+        
+        let userObject = getUserObject(email: Email)
+        userObject!.password = password
+        userObject!.isloggedin = true
+        let result = saveUser()
+        return result
+        
+        
+    }
+    
     func passwordCheck(email: String, password: String) -> Bool {
         
         let request : NSFetchRequest<User> = User.fetchRequest()
@@ -165,6 +166,15 @@ class CurrentUser {
             return true
         }
         
+    }
+    func checkUser(email: String) -> Bool{
+        loadUser()
+        for user in users {
+            if user.email == email{
+                return true
+            }
+        }
+        return false
     }
     
     func updateLoginStatus(status: Bool, email: String) -> Int{
