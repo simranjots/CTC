@@ -14,7 +14,7 @@ class CurrentUser {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,uid : String,from : String,image: Data?,completionHandler: @escaping userAdded){
+    func addUser(name: String, email: String, password: String,uid : String,from : String,completionHandler: @escaping userAdded){
         
         loadUser()
         let user = getUserObject(email: email)
@@ -28,7 +28,6 @@ class CurrentUser {
                 newUser.name = name
                 newUser.email = email
                 newUser.uid = uid
-                newUser.image = image
                 newUser.password = password
                 newUser.isloggedin = true
                 _ = saveUser()
@@ -52,7 +51,6 @@ class CurrentUser {
                 newUser.email = email
                 newUser.uid = uid
                 newUser.password = password
-                newUser.image = image
                 newUser.isloggedin = true
                 let result = saveUser()
                 if result == 0 {
@@ -83,9 +81,9 @@ class CurrentUser {
     func signInUser(userName : String, email : String ,password : String,uid: String,Completion :@escaping userSignIn ) {
         let user = getUserObject(email: email)
         if user == nil {
-            db.fetchUserData(email: email, completionHandler: {(success, value,image) -> Void in
+            db.fetchUserData(email: email, completionHandler: {(success, value) -> Void in
                 if(success){
-                    self.addUser(name: value, email: email, password: password, uid: uid, from: "signIn", image: image, completionHandler: {(flag) -> Void in
+                    self.addUser(name: value, email: email, password: password, uid: uid, from: "signIn", completionHandler: {(flag) -> Void in
                         if flag == 0
                         {
                             Completion(true)

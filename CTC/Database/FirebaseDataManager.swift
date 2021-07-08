@@ -5,7 +5,7 @@ import UIKit
 class FirebaseDataManager {
     
     let db = Firestore.firestore()
-    typealias userAdded = (Bool,String,Data)->Void
+    typealias userAdded = (Bool,String)->Void
     typealias practiceAdded = (Bool)->Void
     
     func addPracticesToFirebase(practiceName: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String)  {
@@ -95,16 +95,15 @@ class FirebaseDataManager {
                 if snapshot != nil {
                     for document in snapshot!.documents {
                         uName = document.data() ["username"] as! String
-                        image = document.data() ["image"] as? Data
                         print("this begin \(email)")
                         print("this uName \(uName)")
                         flag = true
                     }
                     print("this end \(email)")
-                    completionHandler(flag,uName,image!)
+                    completionHandler(flag,uName)
                    
                 }else{
-                    completionHandler(flag,uName,image!)
+                    completionHandler(flag,uName)
                 }
                
                

@@ -111,7 +111,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
                             } else {
                                 
-                                self.currentUser.addUser(name: userName, email: email, password: password, uid: Auth.auth().currentUser!.uid, from: "signUp", image: nil, completionHandler: {(flag) -> Void in
+                                self.currentUser.addUser(name: userName, email: email, password: password, uid: Auth.auth().currentUser!.uid, from: "signUp", completionHandler: {(flag) -> Void in
                                     if(flag == 1){
                                                
                                                self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
