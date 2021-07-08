@@ -100,8 +100,8 @@ class LoginViewController: UIViewController {
                                                         // Create Image and Update Image View
                                                         let imagedownloaded = UIImage(data: data)
                                                         let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
-                                                        let backup = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
-                                                        self.currentUser.addUser(name: name, email: Auth.auth().currentUser!.email!, password: password, image: image ?? backup, uid: Auth.auth().currentUser!.uid, from: "signIn", completionHandler: {(flag) -> Void in
+                                                      
+                                                        self.currentUser.addUser(name: name, email: Auth.auth().currentUser!.email!, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signIn", completionHandler: {(flag) -> Void in
                                                                 if(flag == 0){
                                                                     var initialViewController:UIViewController?
                                                                     let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
