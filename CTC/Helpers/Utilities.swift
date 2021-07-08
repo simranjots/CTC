@@ -31,9 +31,9 @@ class Utilities {
         textfield.layer.borderWidth = 1.0
         textfield.layer.cornerRadius = 8.0
         textfield.layer.borderColor = primaryBorderColor.cgColor
-        textfield.layer.shadowColor = UIColor.black.cgColor
-        textfield.layer.shadowOpacity = 0.5
-        textfield.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
+//        textfield.layer.shadowColor = UIColor.black.cgColor
+//        textfield.layer.shadowOpacity = 0.5
+//        textfield.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
     }
     
     static func addBottomLineToTextField(_ textField: UITextField) {
@@ -168,6 +168,7 @@ class Utilities {
         let testString = NSPredicate(format:"SELF MATCHES %@", ".*[^A-Za-z .,!?].*")
         return testString.evaluate(with: charString)
     }
+    
     
     //MARK: - Add shadows and border to Views
     

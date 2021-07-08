@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "password.svg",
+      "filename" : "password.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "password-1.svg",
+      "filename" : "password-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "password-2.svg",
+      "filename" : "password-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

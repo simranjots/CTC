@@ -14,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="moreToLoginOptions" modalPresentationStyle="fullScreen" id="QRo-Rj-Bfv" customClass="LoginViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCb-1X-acB">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-pT-9tt">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
+                                <rect key="frame" x="0.0" y="140" width="428" height="752"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-xK-Q0T" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="500"/>
@@ -32,16 +32,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyp-Os-V7B" userLabel="Email">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="81"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfU-ME-xZp">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfU-ME-xZp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="21"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="Email">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                    <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                                        <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jaldeep@gmail.com" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
@@ -550,14 +544,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="FinalLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-uh-Tqf">
-                                <rect key="frame" x="20" y="160" width="388" height="150"/>
+                                <rect key="frame" x="20" y="170" width="388" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Eb7-HN-qW4"/>
+                                    <constraint firstAttribute="height" constant="200" id="Eb7-HN-qW4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn your wants to haves" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-BR-8es">
-                                <rect key="frame" x="20" y="320" width="388" height="21"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <rect key="frame" x="20" y="380" width="388" height="25.666666666666686"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                 <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -615,7 +609,7 @@
                             <constraint firstItem="d1h-WM-3Ic" firstAttribute="trailing" secondItem="Ra9-uh-Tqf" secondAttribute="trailing" constant="20" id="9Bz-Z6-QCJ"/>
                             <constraint firstItem="d1h-WM-3Ic" firstAttribute="trailing" secondItem="Zap-BR-8es" secondAttribute="trailing" constant="20" id="C2h-Zg-21k"/>
                             <constraint firstItem="Zap-BR-8es" firstAttribute="leading" secondItem="d1h-WM-3Ic" secondAttribute="leading" constant="20" id="TaQ-YK-MTy"/>
-                            <constraint firstItem="Ra9-uh-Tqf" firstAttribute="top" secondItem="d1h-WM-3Ic" secondAttribute="top" constant="20" id="UAO-v9-XhP"/>
+                            <constraint firstItem="Ra9-uh-Tqf" firstAttribute="top" secondItem="d1h-WM-3Ic" secondAttribute="top" constant="30" id="UAO-v9-XhP"/>
                             <constraint firstItem="d1h-WM-3Ic" firstAttribute="bottom" secondItem="nAK-V8-l99" secondAttribute="bottom" constant="20" id="WRd-qm-RYD"/>
                             <constraint firstItem="Ra9-uh-Tqf" firstAttribute="leading" secondItem="d1h-WM-3Ic" secondAttribute="leading" constant="20" id="aoy-4h-Trz"/>
                             <constraint firstItem="nAK-V8-l99" firstAttribute="leading" secondItem="d1h-WM-3Ic" secondAttribute="leading" constant="20" id="pwX-Ja-iZk"/>
@@ -664,8 +658,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wk0-hH-4J1"/>
-        <segue reference="u5l-VQ-IMC"/>
-        <segue reference="gac-dw-9lu"/>
+        <segue reference="uzh-sq-IJl"/>
+        <segue reference="ToE-NL-ABn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>

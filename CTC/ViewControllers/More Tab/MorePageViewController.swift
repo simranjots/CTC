@@ -10,7 +10,7 @@ class MorePageViewController: UIViewController {
     
     let moreOptionsList = ["How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
     
-    let moreOptionIcons = ["howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs-1", "logOut-1"]
+    let moreOptionIcons = ["howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs", "logOut"]
     
     var currentUser: CurrentUser!
     var userObject: User?
@@ -64,10 +64,10 @@ class MorePageViewController: UIViewController {
        //MARK: - Top View elements
        let profileImageView: UIImageView = {
            let imageView = UIImageView()
-           imageView.image = UIImage(named: "Profile")
+           imageView.image = UIImage(named: "profileImage")
            imageView.contentMode = .scaleAspectFill
            imageView.clipsToBounds = true
-           imageView.tintColor = .white
+           imageView.tintColor = Utilities.primaryBorderColor
            imageView.layer.borderWidth = 3
            imageView.layer.borderColor = UIColor.white.cgColor
            return imageView
@@ -88,7 +88,7 @@ class MorePageViewController: UIViewController {
            label.textAlignment = .center
            label.textColor = UIColor.white
            label.font = UIFont(name: "Arial Rounded MT Bold", size: 22)
-           label.text = "Xxxxx Xxxxx"
+           label.text = ""
            return label
        }()
        
@@ -98,7 +98,7 @@ class MorePageViewController: UIViewController {
            label.textAlignment = .center
            label.textColor = UIColor.white
            label.font = UIFont(name: "Arial", size: 18)
-           label.text = "xxx.xxx@gmail.com"
+           label.text = ""
            return label
        }()
        

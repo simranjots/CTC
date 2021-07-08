@@ -485,7 +485,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5v-iX-iuJ">
                                         <rect key="frame" x="338" y="0.0" width="50" height="50"/>
                                         <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button" image="next1"/>
+                                        <state key="normal" title="Button" image="next"/>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="zbS-vz-pog" eventType="touchUpInside" id="9u0-RE-d7v"/>
                                         </connections>
@@ -532,7 +532,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="history" width="32" height="32"/>
+        <image name="history" width="29" height="29"/>
+        <image name="next" width="170.66667175292969" height="170.66667175292969"/>
         <image name="next1" width="170.66667175292969" height="170.66667175292969"/>
         <image name="previous" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">

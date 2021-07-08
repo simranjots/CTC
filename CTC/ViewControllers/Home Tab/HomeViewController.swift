@@ -27,6 +27,7 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var dateTextField: UILabel!
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet var nameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         self.refreshTableview(date: selectedDate)
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
+        nameLabel.text = greetingMessage()
         practiceReminder = PracticeReminder()
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
@@ -62,15 +64,33 @@ class HomeViewController: UIViewController,ReceiveData{
         
         //MARK: for mainatain the practices data weekly
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
-        styleDateLabelView()
     }
     
-    func styleDateLabelView() {
+    func greetingMessage() -> String {
         
-        //        dateView.layer.cornerRadius = dateView.frame.height / 6
-        //        dateView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        //        dateView.layer.borderWidth = 1
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        var message = ""
+        
+        switch hour {
+        case 5...12 :
+            message = "Good Morning, \(userObject.name!)!"
+        case 13...16 :
+            message = "Good Afternoon, \(userObject.name!)!"
+        case 17...21 :
+            message = "Good Evening, \(userObject.name!)!"
+        case 21...24 :
+            message = "Good Night, \(userObject.name!)!"
+        case 0...5 :
+            message = "Good Night, \(userObject.name!)!"
+        default :
+            print("Getting error in formating time.")
+        }
+        return message
     }
+    
+    
     
     @IBAction func ShowProgress(_ sender: UIBarButtonItem) {
         //ShowDetails

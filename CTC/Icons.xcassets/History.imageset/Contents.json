@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "history-4.png",
+      "filename" : "history@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "history@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "history@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

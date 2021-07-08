@@ -34,9 +34,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     func setUpElements() {
         
         //Add textField images
-        guard let nameTextFieldImage = UIImage(named: "Profile") else { return }
-        guard let emailTextFieldImage = UIImage(named: "Email") else { return }
-        guard let passwordLeftIcon = UIImage(named: "Password") else { return }
+        guard let nameTextFieldImage = UIImage(named: "profile") else { return }
+        guard let emailTextFieldImage = UIImage(named: "email") else { return }
+        guard let passwordLeftIcon = UIImage(named: "password") else { return }
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         
         //Style Texfields
@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         //Style Sign Up button
         Utilities.styleButton(signUpButton)
-        Utilities.addShadowToButton(signUpButton)
+        //Utilities.addShadowToButton(signUpButton)
         
         //Set textField Images
         Utilities.addTextFieldImage(textField: nameTextField, andImage: nameTextFieldImage)

@@ -43,6 +43,7 @@ class ProfilePageViewController: UIViewController {
         Utilities.addBorderToView(profileImageView)
         
     }
+    
     func setUpData() {
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
@@ -112,7 +113,7 @@ class ProfilePageViewController: UIViewController {
         let newEmail = emailTextField.text!
         let newpassword = passwordTextField.text!
         let newName = nameTextField.text!
-        let data = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
+        let data = #imageLiteral(resourceName: "profileImage").jpegData(compressionQuality: 1.0)
         let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
         if email == newEmail {
             let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
