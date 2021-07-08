@@ -47,7 +47,7 @@
                                                             <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-wQ-aam">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-1" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-wQ-aam">
                                                             <rect key="frame" x="383" y="22" width="15" height="15"/>
                                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -744,9 +744,9 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Vs-fES">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="550"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="SNu-if-L5C">
                                                 <rect key="frame" x="154" y="20" width="120" height="120"/>
-                                                <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="d0A-QO-Hxn"/>
                                                     <constraint firstAttribute="height" constant="120" id="rIe-xb-kQl"/>
@@ -767,7 +767,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="XXXXX XXXXX" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-Kt-f3S">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-Kt-f3S">
                                                                 <rect key="frame" x="0.0" y="30" width="388" height="50"/>
                                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -782,13 +782,13 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hlr-1a-wgl">
                                                         <rect key="frame" x="0.0" y="95" width="388" height="78"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUZ-Ol-Wz3">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email (Can not update an email)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUZ-Ol-Wz3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="18"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xxx.xxx@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-mn-V8P">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-mn-V8P">
                                                                 <rect key="frame" x="0.0" y="28" width="388" height="50"/>
                                                                 <color key="tintColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -810,7 +810,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Xxxxx@1234" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-Bb-sJj">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQK-Bb-sJj">
                                                                 <rect key="frame" x="0.0" y="28" width="388" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="cTS-bR-WN6"/>
@@ -825,7 +825,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9m-AT-4Ek">
                                                 <rect key="frame" x="20" y="446" width="388" height="50"/>
-                                                <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="vKF-4K-neu"/>
                                                 </constraints>
@@ -852,7 +852,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <constraint firstAttribute="height" constant="25" id="ari-Ta-P7k"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemGrayColor"/>
-                                                <state key="normal" title="Edit Button" image="camera" catalog="system"/>
+                                                <state key="normal" title="Edit Button" image="camera"/>
                                                 <connections>
                                                     <action selector="imageEditButtonTapped:" destination="slY-iE-BfU" eventType="touchUpInside" id="5g8-LV-3LF"/>
                                                 </connections>
@@ -912,12 +912,13 @@ Together they decided to share this 201 Day Achievement Principle with the world
         <image name="1.png" width="963" height="2083.5"/>
         <image name="More" width="29" height="29"/>
         <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="camera" width="170.66667175292969" height="170.66667175292969"/>
         <image name="facebook" width="170.66667175292969" height="170.66667175292969"/>
         <image name="instagram" width="170.66667175292969" height="170.66667175292969"/>
         <image name="locationPin" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="next" width="492.00399780273438" height="492.00399780273438"/>
+        <image name="next-1" width="492.00399780273438" height="492.00399780273438"/>
         <image name="practiceHistory" width="512" height="512"/>
+        <image name="profileImage" width="170.66667175292969" height="170.66667175292969"/>
         <image name="youtube" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

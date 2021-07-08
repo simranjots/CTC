@@ -200,8 +200,8 @@ class LoginViewController: UIViewController {
     func setUpElements() {
         
         //Add textField Images
-        guard let emailIcon = UIImage(named: "Email") else { return }
-        guard let passwordLeftIcon = UIImage(named: "Password") else { return }
+        guard let emailIcon = UIImage(named: "email") else { return }
+        guard let passwordLeftIcon = UIImage(named: "password") else { return }
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         guard let googleIcon = UIImage(named: "google") else { return }
         guard let facebookIcon = UIImage(named: "facebook") else { return }
@@ -212,11 +212,11 @@ class LoginViewController: UIViewController {
         
         //Style the buttons
         Utilities.styleButton(signInButton)
-        Utilities.addShadowToButton(signInButton)
+        //Utilities.addShadowToButton(signInButton)
         Utilities.styleGmailButton(gmailSignInButton)
-        Utilities.addShadowToButton(gmailSignInButton)
+        //Utilities.addShadowToButton(gmailSignInButton)
         Utilities.styleFacebookButton(facebookSignInButton)
-        Utilities.addShadowToButton(facebookSignInButton)
+        //Utilities.addShadowToButton(facebookSignInButton)
         
         //Set textField Images
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)

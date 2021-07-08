@@ -43,6 +43,7 @@ class ProfilePageViewController: UIViewController {
         Utilities.addBorderToView(profileImageView)
         
     }
+    
     func setUpData() {
         guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)

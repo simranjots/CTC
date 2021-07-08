@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "openEye.svg",
+      "filename" : "openEye.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "openEye-1.svg",
+      "filename" : "openEye-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "openEye-2.svg",
+      "filename" : "openEye-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

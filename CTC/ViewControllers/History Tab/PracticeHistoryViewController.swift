@@ -45,6 +45,7 @@ class PracticeHistoryViewController: UIViewController {
             pageControl.numberOfPages = deletedHistory.count
         }
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         refreshTableView()
     }
@@ -129,9 +130,6 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
         cell.percentageLabel.text = "\(Int(percentage))%"
         cell.trackingDaysLabel.text = "\(trackingDays)"
         cell.daysSinceStartedLabel.text = "\(daySinceStarted)"
-        
-        
-        
         
         //Style CollectionView Elements
         Utilities.addShadowAndBorderToView(cell.histotyContainerView)

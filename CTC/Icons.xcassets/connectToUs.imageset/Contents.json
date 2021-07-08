@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "connectToUs.svg",
+      "filename" : "connectToUs-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "connectToUs-1.svg",
+      "filename" : "connectToUs-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "connectToUs-2.svg",
+      "filename" : "connectToUs-3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

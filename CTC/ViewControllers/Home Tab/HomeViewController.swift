@@ -27,6 +27,7 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var dateTextField: UILabel!
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet var nameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         self.refreshTableview(date: selectedDate)
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
+        nameLabel.text = "Hello, \(userObject.name!)!"
         practiceReminder = PracticeReminder()
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)

@@ -181,7 +181,7 @@
     </scenes>
     <resources>
         <image name="201DAPBook" width="108" height="166.33332824707031"/>
-        <image name="shopping-cart" width="32" height="32"/>
+        <image name="shopping-cart" width="29" height="29"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
