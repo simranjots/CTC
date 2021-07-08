@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import FirebaseStorage
 //import GoogleSignIn
 //import FBSDKLoginKit
 //import FBSDKCoreKit
@@ -11,7 +12,8 @@ class LoginViewController: UIViewController {
     var currentUser : CurrentUser!
     var userObjectPass: User!
     let db = Firestore.firestore()
-    
+    let storageRef = Storage.storage().reference()
+    var database : FirebaseDataManager!
     //Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -30,7 +32,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 //        GIDSignIn.sharedInstance()?.presentingViewController = self
 //        GIDSignIn.sharedInstance().delegate = self
-
+        database = FirebaseDataManager()
         currentUser = CurrentUser()
         setUpElements()
         
@@ -74,18 +76,56 @@ class LoginViewController: UIViewController {
                         if error != nil {
                             self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
                         } else {
-                            self.currentUser.signInUser(userName: "", email: email, password: password, uid: Auth.auth().currentUser!.uid, Completion: {(flag) -> Void in
-                                    if(flag == true){
+                            if self.currentUser.checkUser(email: email) {
+                                if self.currentUser.passwordCheck(email: email, password: password){
+                                    let save = self.currentUser.updateLoginStatus(status: true, email: email)
+                                    if save == 0 {
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                    }else{
-                                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
                                     }
+                                    
+                                }else{
+                                   let saved =  self.currentUser.updatepassword(Email: email, password: password)
+                                    if saved == 0 {
+                                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                    }
+                                }
+                            }else{
+                                self.database.fetchUserData(email: Auth.auth().currentUser!.email!) { flag, imagepath,name  in
+                                    if flag == true {
+                                        let fileUrl = URL(string: imagepath)
+                                        DispatchQueue.global().async {
+                                                // Fetch Image Data
+                                            if let data = try? Data(contentsOf: fileUrl!) {
+                                                    DispatchQueue.main.async {
+                                                        // Create Image and Update Image View
+                                                        let imagedownloaded = UIImage(data: data)
+                                                        let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
+                                                      
+                                                        self.currentUser.addUser(name: name, email: Auth.auth().currentUser!.email!, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signIn", completionHandler: {(flag) -> Void in
+                                                                if(flag == 0){
+                                                                    var initialViewController:UIViewController?
+                                                                    let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
+                                                                    initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
+                                                                }else{
+                                                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+                                                                }
+                                                            
+                                                        })
+                                                    }
+                                                }
+                                            }
+                                    }
+                                    
+                                }
+                                   
+                                  
+                                }
                                 
-                            })
+                            }
+                          
                          
                            
                         }
-                    }
                  
                 } else {
                     showToast(message: "Enter Valid Password", duration: 2.0)

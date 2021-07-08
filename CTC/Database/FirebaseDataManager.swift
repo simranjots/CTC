@@ -5,7 +5,7 @@ import UIKit
 class FirebaseDataManager {
     
     let db = Firestore.firestore()
-    typealias userAdded = (Bool,String)->Void
+    typealias userAdded = (Bool,String,String)->Void
     typealias practiceAdded = (Bool)->Void
     
     func addPracticesToFirebase(practiceName: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String)  {
@@ -81,8 +81,8 @@ class FirebaseDataManager {
             .setData(datas)
     }
     func fetchUserData(email: String,completionHandler: @escaping userAdded) {
+        var image = ""
         var uName = ""
-        var cemail = ""
         var flag = false
         UserDefaults.standard.set(false, forKey: "check")
         print("this begin \(email)")
@@ -95,26 +95,21 @@ class FirebaseDataManager {
             else {
                 if snapshot != nil {
                     for document in snapshot!.documents {
+                        image = document.data() ["image"] as! String
                         uName = document.data() ["username"] as! String
-                        cemail = document.data() ["uid"] as! String
-                        print("this begin \(email)")
-                        print("this uName \(uName)")
-                        flag = true
-                        if email == cemail{
-                            UserDefaults.standard.set(true, forKey: "check")
-                        }
-                    }
                     
-                    print("this end \(email)")
-                    completionHandler(flag,uName)
+                        flag = true
+                       
+                    }
+                  
+                    completionHandler(flag,image,uName )
                    
-                }else{
-                    completionHandler(flag,uName)
                 }
                
                
             }
         }
+       
     }
         
     func FetchPractices(uid:String,completion :  @escaping  practiceAdded) {

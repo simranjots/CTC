@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Oyb-rE-mHg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="B85-ze-rcU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="B85-ze-rcU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="a5X-7I-mhA" customClass="NavigationBar" customModule="CTC" customModuleProvider="target">
