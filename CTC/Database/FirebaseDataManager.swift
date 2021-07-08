@@ -82,8 +82,9 @@ class FirebaseDataManager {
     }
     func fetchUserData(email: String,completionHandler: @escaping userAdded) {
         var uName = ""
-        var image : Data?
+        var cemail = ""
         var flag = false
+        UserDefaults.standard.set(false, forKey: "check")
         print("this begin \(email)")
         let ref = db.collection("dap_users").whereField("uid", isEqualTo: email)
         ref.addSnapshotListener { (snapshot, error) in
@@ -95,10 +96,15 @@ class FirebaseDataManager {
                 if snapshot != nil {
                     for document in snapshot!.documents {
                         uName = document.data() ["username"] as! String
+                        cemail = document.data() ["uid"] as! String
                         print("this begin \(email)")
                         print("this uName \(uName)")
                         flag = true
+                        if email == cemail{
+                            UserDefaults.standard.set(true, forKey: "check")
+                        }
                     }
+                    
                     print("this end \(email)")
                     completionHandler(flag,uName)
                    
