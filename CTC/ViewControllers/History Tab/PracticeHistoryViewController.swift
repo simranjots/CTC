@@ -4,7 +4,6 @@ class PracticeHistoryViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet var practiceHistoryCollectionView: UICollectionView!
-    
     @IBOutlet var previousButtonOutlet: UIButton!
     @IBOutlet var nextButtonOutlet: UIButton!
     @IBOutlet var restoreButtonOutlet: UIButton!
@@ -17,9 +16,9 @@ class PracticeHistoryViewController: UIViewController {
     var userObject: User!
     var noOfPages: Int!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         previousButtonOutlet.isHidden = true
         nextButtonOutlet.isHidden = true
         restoreButtonOutlet.isHidden = true
@@ -27,6 +26,7 @@ class PracticeHistoryViewController: UIViewController {
         practiceHistoryCollectionView.delegate = self
         practiceHistoryCollectionView.dataSource = self
         addShadowToButtons()
+        
         guard let restoreButtonIcon = UIImage(named: "restore-1") else { return }
         Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
         Utilities.styleButton(restoreButtonOutlet)
@@ -49,14 +49,11 @@ class PracticeHistoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         refreshTableView()
     }
+    
     func refreshTableView() {
-     
         deletedHistory = []
-        
         let history = practiceHistory.getPracticeHistory(userobject: userObject)
-       
         if(history?.count != 0){
-            
             for data in history!{
                 deletedHistory.append(data)
             }
@@ -81,10 +78,9 @@ class PracticeHistoryViewController: UIViewController {
         let repeatpracName  = practice.getPractices(practiceName: pracName, user: userObject)
         if pracName == repeatpracName?.practice {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
-        }else{
+        } else {
             _=practice.addPractices(practice:pracName, image_name: "Flour", date: date! , user: userObject, value: "ACHIEVEMENT", encourage: encourage, remindswitch: false, goals: "365")
         }
-        
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -103,7 +99,6 @@ class PracticeHistoryViewController: UIViewController {
 }
 
 //MARK: - Extension for UICollectionView
-
 extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,11 +109,9 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
             pageControl.isHidden = false
         }
         return deletedHistory.count
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = practiceHistoryCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.practiceHistoryCollectionViewCell, for: indexPath) as! PracticeHistoryCollectionViewCell
         let history = deletedHistory[indexPath.item]
         let trackingDays = history.td
@@ -142,16 +135,14 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
         let x = targetContentOffset.pointee.x
-        
         pageControl.currentPage = Int(x / practiceHistoryCollectionView.frame.width)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
