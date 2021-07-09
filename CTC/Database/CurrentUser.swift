@@ -13,18 +13,18 @@ class CurrentUser {
     let storageRef = Storage.storage().reference()
     typealias userSignIn = (Bool) -> Void
     typealias userAdded = (Int) -> Void
-    
+
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String,completionHandler: @escaping userAdded){
-        
+    func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String)-> Int{
         loadUser()
         let user = getUserObject(email: email)
         if from == "GsignIn"{
             if user?.email == email {
                 user!.isloggedin = true
-                _ = saveUser()
-                completionHandler(0)
+                let output = saveUser()
+                return output
+               
             }else{
                 let newUser = User(context: self.context)
                 newUser.name = name
@@ -33,8 +33,8 @@ class CurrentUser {
                 newUser.password = password
                 newUser.image = image
                 newUser.isloggedin = true
-                _ = saveUser()
-                completionHandler(0)
+                let output = saveUser()
+                return output
             }
             
         }else{
@@ -59,27 +59,22 @@ class CurrentUser {
                 let result = saveUser()
                 if result == 0 {
                     if from == "signUp" {
-                        completionHandler(result)
+                        return result
                     }else {
                         db.fetchHistory(uid: uid, email: email)
-                        db.FetchPractices(uid: uid) { success in
-                            if success {
-                                completionHandler(result)
-                            }else{
-                                completionHandler(result)
-                            }
-                        }
+                        db.FetchPractices(uid: uid)
+                        return result
                     }
                 }
                 
             }else {
                 print("User Exist")
-                completionHandler(2)
+              return 2
                 
             }
         }
         
-        
+       return 0
         
     }
     
@@ -129,7 +124,11 @@ class CurrentUser {
                      return
                    }
                     let urlString: String = downloadURL.absoluteString
-                    self.database.collection("dap_users").document(userObject!.uid!).setData(["username": name, "uid": newEmail,"image" : urlString],merge: true) { error in
+                    self.database.collection("dap_users").document(userObject!.uid!)
+                        .setData(["uid":Auth.auth().currentUser!.uid,
+                                  "name": name,
+                                  "email":newEmail,
+                                  "imageLink":urlString],merge: true) { error in
                         if error != nil {
                             print(error as Any)
                         }

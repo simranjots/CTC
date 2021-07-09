@@ -29,6 +29,7 @@
 		1AACDE0F2668787400A1877D /* LoginOpitonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */; };
 		1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB939D26828C23007EF555 /* PopUpReminder.swift */; };
 		1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC96E2267B16BA0021195F /* ReminderViewController.swift */; };
+		1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC84FE42698AF2C002E7556 /* UserModel.swift */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
 		1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7E264E357D00CD9974 /* TabVC.storyboard */; };
 		1AD65E81264E412800CD9974 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E80264E412800CD9974 /* Home.storyboard */; };
@@ -133,6 +134,7 @@
 		1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOpitonViewController.swift; sourceTree = "<group>"; };
 		1ABB939D26828C23007EF555 /* PopUpReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpReminder.swift; sourceTree = "<group>"; };
 		1ABC96E2267B16BA0021195F /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		1AC84FE42698AF2C002E7556 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1AD65E7E264E357D00CD9974 /* TabVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabVC.storyboard; sourceTree = "<group>"; };
 		1AD65E80264E412800CD9974 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				1A55439626811583000C5FFF /* PracticeReminders.swift */,
 				1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */,
 				1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */,
+				1AC84FE42698AF2C002E7556 /* UserModel.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				E1383D8221E7905D00F8597F /* DataCell.swift in Sources */,
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
+				1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
 				263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */,
 				1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */,
@@ -902,14 +906,15 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.dap;
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -925,14 +930,15 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.dap;
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.201DAP.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

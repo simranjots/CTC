@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     var currentUser : CurrentUser!
     var userObjectPass: User!
     let db = Firestore.firestore()
+    var userSetup = [userModel]()
     let storageRef = Storage.storage().reference()
     var database : FirebaseDataManager!
     //Outlets
@@ -22,17 +23,17 @@ class LoginViewController: UIViewController {
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
     @IBOutlet var facebookSignInButton: UIButton!
-   
+    
     
     // to store the current active textfield
     var activeTextField : UITextField? = nil
     var isIconClicked = true
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        GIDSignIn.sharedInstance()?.presentingViewController = self
-//        GIDSignIn.sharedInstance().delegate = self
+        //        GIDSignIn.sharedInstance()?.presentingViewController = self
+        //        GIDSignIn.sharedInstance().delegate = self
         database = FirebaseDataManager()
         currentUser = CurrentUser()
         setUpElements()
@@ -44,11 +45,11 @@ class LoginViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-
+    
     override func viewDidAppear(_ animated: Bool) {
         
         currentUser = CurrentUser()
-       
+        
         
         userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
@@ -70,16 +71,19 @@ class LoginViewController: UIViewController {
             showToast(message: error!, duration: 2.0)
             
         } else {
-           
+            
             var email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             email = email.lowercased()
             if(email.isValidEmail) {
                 if(password.isValidPassword) {
-                    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                        if error != nil {
-                            self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
-                        } else {
+                    Auth.auth().signIn(withEmail: email, password: password) {[weak self] (success,message) in
+                        guard let self = self else { return }
+                        if message != nil {
+                            self.showAlert(title: "Error!", message: message!.localizedDescription, buttonTitle: "Try Again")
+                        }
+                        if ((success) != nil) {
+                            
                             if self.currentUser.checkUser(email: email) {
                                 if self.currentUser.passwordCheck(email: email, password: password){
                                     let save = self.currentUser.updateLoginStatus(status: true, email: email)
@@ -88,49 +92,50 @@ class LoginViewController: UIViewController {
                                     }
                                     
                                 }else{
-                                   let saved =  self.currentUser.updatepassword(Email: email, password: password)
+                                    let saved =  self.currentUser.updatepassword(Email: email, password: password)
                                     if saved == 0 {
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
                                     }
                                 }
                             }else{
-                                self.database.fetchUserData(email: Auth.auth().currentUser!.email!) { flag, imagepath,name  in
-                                    if flag == true {
-                                        let fileUrl = URL(string: imagepath)
-                                        DispatchQueue.global().async {
-                                                // Fetch Image Data
+                                self.database.FetchTUserData(email: email, completion: { (users) in
+                                    self.userSetup = users
+                                    for user in self.userSetup {
+                                        
+                                        if user.email == email {
+                                            let fileUrl = URL(string: user.imageLink!)
+                                            
+                                            // Fetch Image Data
                                             if let data = try? Data(contentsOf: fileUrl!) {
-                                                    DispatchQueue.main.async {
-                                                        // Create Image and Update Image View
-                                                        let imagedownloaded = UIImage(data: data)
-                                                        let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
-                                                      
-                                                        self.currentUser.addUser(name: name, email: Auth.auth().currentUser!.email!, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signIn", completionHandler: {(flag) -> Void in
-                                                                if(flag == 0){
-                                                                    var initialViewController:UIViewController?
-                                                                    let storyboard = UIStoryboard(name: "TabVC", bundle: nil)
-                                                                    initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar")
-                                                                }else{
-                                                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                                                                }
-                                                            
-                                                        })
-                                                    }
+                                                
+                                                // Create Image and Update Image View
+                                                let imagedownloaded = UIImage(data: data)
+                                                let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
+                                                let flag = self.currentUser.addUser(name: user.name!, email: email, password: password, image: image, uid: (success?.user.uid)!, from: "signIn")
+                                                if(flag == 0){
+                                                    let storyboard: UIStoryboard = UIStoryboard(name: "TabVC", bundle: nil)
+                                                    let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar") as UIViewController
+                                                    self.present(vc, animated: true, completion: nil)
+                                                }else{
+                                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
                                                 }
                                             }
+                                        }
                                     }
-                                    
-                                }
-                                   
-                                  
-                                }
+                                })
+                                
+                                
+                                
                                 
                             }
-                          
-                         
-                           
+                            
+                            
                         }
-                 
+                        
+                    }
+                    
+                    
+                    
                 } else {
                     showToast(message: "Enter Valid Password", duration: 2.0)
                 }
@@ -142,58 +147,58 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func gmailSignInButtonTapped(_ sender: UIButton) {
-       // GIDSignIn.sharedInstance().signIn()
+        // GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func faceBookSignInButtonTapped(_ sender: UIButton) {
-//        let loginManager = LoginManager()
-//                loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
-//                    if let error = error {
-//                        print("Failed to login: \(error.localizedDescription)")
-//                        return
-//                    }
-//
-//                    guard let accessToken = AccessToken.current else {
-//                        print("Failed to get access token")
-//                        return
-//                    }
-//
-//                    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-//
-//                    // Perform login by calling Firebase APIs
-//                    Auth.auth().signIn(with: credential, completion: { (user, error) in
-//                        if let error = error {
-//                            print("Login error: \(error.localizedDescription)")
-//                            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-//                            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                            alertController.addAction(okayAction)
-//                            self.present(alertController, animated: true, completion: nil)
-//                            return
-//                        }else {
-//                            let currentUser = Auth.auth().currentUser
-//                            self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
-//                                if flag == 0
-//                                {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
-//                                    if error != nil {
-//                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-//                                    }
-//                                }
-//                                    print("Login Successful.")
-//                                    self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-//                                }else{
-//                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-//                                }
-//
-//                            })
-//                        }
-//
-//                    })
-//
-//                }
-
+        //        let loginManager = LoginManager()
+        //                loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+        //                    if let error = error {
+        //                        print("Failed to login: \(error.localizedDescription)")
+        //                        return
+        //                    }
+        //
+        //                    guard let accessToken = AccessToken.current else {
+        //                        print("Failed to get access token")
+        //                        return
+        //                    }
+        //
+        //                    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+        //
+        //                    // Perform login by calling Firebase APIs
+        //                    Auth.auth().signIn(with: credential, completion: { (user, error) in
+        //                        if let error = error {
+        //                            print("Login error: \(error.localizedDescription)")
+        //                            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+        //                            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        //                            alertController.addAction(okayAction)
+        //                            self.present(alertController, animated: true, completion: nil)
+        //                            return
+        //                        }else {
+        //                            let currentUser = Auth.auth().currentUser
+        //                            self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
+        //                                if flag == 0
+        //                                {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
+        //                                    if error != nil {
+        //                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+        //                                    }
+        //                                }
+        //                                    print("Login Successful.")
+        //                                    self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+        //                                }else{
+        //                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+        //                                }
+        //
+        //                            })
+        //                        }
+        //
+        //                    })
+        //
+        //                }
+        
     }
     
-
+    
     func addPasswordEyeIcon(textField: UITextField, andImage image: UIImage) {
         
         //Create textField view
@@ -272,7 +277,7 @@ class LoginViewController: UIViewController {
         //Hide activity indicator
         activityIndicator.hidesWhenStopped = true
         
-
+        
     }
     
     func validateFields() -> String? {
@@ -300,7 +305,7 @@ class LoginViewController: UIViewController {
         
         return nil
     }
-   
+    
 }
 //extension LoginViewController : GIDSignInDelegate {
 //    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

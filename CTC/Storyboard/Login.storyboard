@@ -38,7 +38,7 @@
                                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jaldeep@gmail.com" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
                                                                         <rect key="frame" x="0.0" y="27" width="388" height="50"/>
                                                                         <color key="tintColor" red="0.49019607840000001" green="0.80000000000000004" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -59,7 +59,7 @@
                                                                         <color key="textColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jaldeep@1234" borderStyle="roundedRect" placeholder="Enter Your Password" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="miY-1T-4os">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="miY-1T-4os">
                                                                         <rect key="frame" x="0.0" y="31" width="388" height="50"/>
                                                                         <color key="tintColor" red="0.49019607840000001" green="0.80000000000000004" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
