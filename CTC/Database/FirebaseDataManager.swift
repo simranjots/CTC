@@ -45,7 +45,7 @@ class FirebaseDataManager {
     
     func updateSinglePractices(valueName: String,value : Any,practiceName : String,uid : String){
         let practiceStringUpdate = db.collection("UsersData").document(uid)
-            .collection("Practices").document(valueName)
+            .collection("Practices").document(practiceName)
         practiceStringUpdate.updateData([
             "\(valueName)": value
         ]) { err in
