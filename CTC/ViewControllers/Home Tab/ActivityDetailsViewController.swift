@@ -150,6 +150,12 @@ class ActivityDetailsViewController: UIViewController {
         
         //Style textView, textField and View
         activityNameTextField.setUnderLineWithColor(color: UIColor.lightGray, alpha: 0.5)
+        if #available(iOS 13.0, *) {
+            activityNameTextField.backgroundColor = UIColor.systemBackground
+        } else {
+            activityNameTextField.backgroundColor = UIColor.white
+        }
+        
         Utilities.styleTextField(activityNameTextField)
         
         Utilities.styleTextView(notesTextView)
@@ -158,7 +164,11 @@ class ActivityDetailsViewController: UIViewController {
         stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
         stataticsView.layer.shadowRadius = 0
         stataticsView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        stataticsView.layer.backgroundColor = UIColor.white.cgColor
+        if #available(iOS 13.0, *) {
+            stataticsView.layer.backgroundColor = UIColor.systemBackground.cgColor
+        } else {
+            stataticsView.layer.backgroundColor = UIColor.white.cgColor
+        }
         
         //Style buttons
         Utilities.styleHollowButton(saveButtonOutlet)

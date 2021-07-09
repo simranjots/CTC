@@ -226,7 +226,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         }
         
         if Utilities.isStringContainsAllowedSpecialChar(encourage!) == true {
-            return "Words of encouragement should not contain any special charactors or numbers."
+            return "Words of encouragement should not contain any special charactors exept '.,!?'' or numbers."
         }
         return nil
     }

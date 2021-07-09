@@ -276,7 +276,7 @@
                             </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Practice Progress" id="6c2-Ar-9x4"/>
+                    <navigationItem key="navigationItem" title="Practice Progress" leftItemsSupplementBackButton="YES" id="6c2-Ar-9x4"/>
                     <connections>
                         <outlet property="stataticsVCTableView" destination="iV0-ah-829" id="cMZ-85-Q9g"/>
                         <segue destination="VRj-4O-qQ4" kind="show" identifier="activity" id="cj3-CP-Q2K"/>
