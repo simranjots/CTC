@@ -23,7 +23,7 @@ class FirebaseDataManager {
                      
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
-            .collection("Practices").document(user.uid!)
+            .collection("Practices").document(practiceName)
             .setData(datas)
     }
     func updatePracticesInFirebase(oldPractice: String, newPractice: String,image_name: String, user: User,value : String,encourage : String,remindswitch : Bool,goals : String)  {
@@ -39,7 +39,7 @@ class FirebaseDataManager {
                      "is_deleted": false
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
-            .collection("Practices").document(user.uid!)
+            .collection("Practices").document(oldPractice)
             .setData(datas, merge: true)
     }
     
@@ -67,7 +67,7 @@ class FirebaseDataManager {
                      "trackingDays":trackingDays
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
-            .collection("PracticedData").document(user.uid!)
+            .collection("PracticedData").document(practiceName)
             .setData(datas, merge: true)
     }
     func addPracticeHistoryToFirebase(practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,user:User){
@@ -79,7 +79,7 @@ class FirebaseDataManager {
                      "td": td,
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
-            .collection("PracticedHistory").document(user.uid!)
+            .collection("PracticedHistory").document(practiceName)
             .setData(datas)
     }
     func FetchTUserData(email: String,completion: @escaping ([userModel]) -> Void) {
