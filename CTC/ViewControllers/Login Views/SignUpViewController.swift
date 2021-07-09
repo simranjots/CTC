@@ -4,7 +4,7 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
-
+    
     
     var dbHelper: DatabaseHelper!
     var currentUser : CurrentUser!
@@ -17,12 +17,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     var isIconClicked = true
     
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
     //var activeField: UITextField?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser = CurrentUser()
@@ -85,78 +85,91 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-   
+        
         let error = validateFields()
         
         if error != nil {
-        
+            
             showAlert(title: "Warning!", message: error! , buttonTitle: "Try Again")
-        
+            
         } else {
             
             let userName = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             var email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             email = email.lowercased()
-        
+            
             if(!userName.isEmpty && !email.isEmpty && !password.isEmpty){
-
+                
                 if(email.isValidEmail){
                     if(password.isValidPassword){
-
                         //Create the user
-                         Auth.auth().createUser(withEmail: email, password: password) { result, err in
+                        Auth.auth().createUser(withEmail: email, password: password) { result, err in
                             if err != nil {
                                 //There was an error creating the user
                                 self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
                             } else {
-                                let image = #imageLiteral(resourceName: "Profile-Selected").jpegData(compressionQuality: 1.0)
-                                self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp", completionHandler: {(flag) -> Void in
-                                    if(flag == 1){
-                                               
-                                               self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
-
-
-                                           }else if (flag == 2){
-
-                                               self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
-
-                                           }else if (flag == 0){
-                                            
-                                            self.db.collection("dap_users").document(  Auth.auth().currentUser!.uid).setData(["username": userName, "uid": email,"image" : image!]) { error in
-                                                   if error != nil {
-                                                       self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
-                                                   }
-                                               }
-                                               self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
-                                           }
-                                })
-                             
                                 
-                           
+                                
+                                DispatchQueue.global().async {
+                                    let imagepath = "https://firebasestorage.googleapis.com/v0/b/dayachievementprinciple.appspot.com/o/Profile%2FprofileImage1-2.png?alt=media&token=58f52b23-2cf9-4558-81b0-3d8c9545622d"
+                                    let fileUrl = URL(string: imagepath)
+                                    // Fetch Image Data
+                                    if let data = try? Data(contentsOf: fileUrl!) {
+                                        DispatchQueue.main.async {
+                                            // Create Image and Update Image View
+                                            let imagedownloaded = UIImage(data: data)
+                                            let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
+                                            let flag = self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp")
+                                            if(flag == 1){
+                                                
+                                                self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
+                                                
+                                                
+                                            }else if (flag == 2){
+                                                
+                                                self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
+                                                
+                                            }else if (flag == 0){
+                                                
+                                                self.db.collection("dap_users").document(Auth.auth().currentUser!.uid)
+                                                    .setData(["uid":Auth.auth().currentUser!.uid,
+                                                              "name": userName,
+                                                              "email":email,
+                                                              "imageLink":imagepath]) { error in
+                                                        if error != nil {
+                                                            self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+                                                        }
+                                                    }
+                                                self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
+                                            }
+                                        }
+                                    }
+                                }
+                                
                                 
                                 
                             }
                         }
                         
-
+                        
                     }else{
                         showToast(message: "Enter Valid Password", duration: 2.0)
                     }
                 }else{
                     showToast(message: "Enter Valid Email", duration: 2.0)
                 }
-
-
+                
+                
             }
             else{
-
+                
                 print("fill the form")
-
+                
             }
             
         }
-
+        
     }
     
     
@@ -206,5 +219,5 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         }
         
     }
-  
+    
 }

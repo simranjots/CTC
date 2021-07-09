@@ -50,6 +50,7 @@ class HomeViewController: UIViewController,ReceiveData{
         _ = userPractices.oldestPracticeDate(user: userObject)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
+         
         
         // MARK: Gradiat Color Set for naviagation Bar
         if let navigationBar = self.navigationController?.navigationBar {
@@ -61,9 +62,17 @@ class HomeViewController: UIViewController,ReceiveData{
             gradient.startPoint = CGPoint(x: 0, y: 0)
             gradient.endPoint = CGPoint(x: 1, y: 0)
         }
-        
+        UserDefaults.standard.set(true, forKey: "DailyReminder")
+         
         //MARK: for mainatain the practices data weekly
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
+  }
+    func SetReminder()  {
+        if UserDefaults.standard.bool(forKey: "DailyReminder") {
+            for i in 1...7 {
+            NotificationManager.instance.scheduleNotification(hour: 7, minute: 0, weekday: i, identifier: "DailyReminder", title: "Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
+            }
+        }
     }
     
     func greetingMessage() -> String {
@@ -178,6 +187,7 @@ class HomeViewController: UIViewController,ReceiveData{
 extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return practices.count
     }
     

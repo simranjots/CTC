@@ -82,39 +82,25 @@ class FirebaseDataManager {
             .collection("PracticedHistory").document(user.uid!)
             .setData(datas)
     }
-    func fetchUserData(email: String,completionHandler: @escaping userAdded) {
-        var image = ""
-        var uName = ""
-        var flag = false
-        UserDefaults.standard.set(false, forKey: "check")
-        print("this begin \(email)")
-        let ref = db.collection("dap_users").whereField("uid", isEqualTo: email)
-        ref.addSnapshotListener { (snapshot, error) in
-            if error != nil
-            {
-                print("this begin \(String(describing: error))")
-            }
-            else {
-                if snapshot != nil {
-                    for document in snapshot!.documents {
-                        image = document.data() ["image"] as! String
-                        uName = document.data() ["username"] as! String
-                    
-                        flag = true
-                       
-                    }
-                  
-                    completionHandler(flag,image,uName )
-                   
-                }
+    func FetchTUserData(email: String,completion: @escaping ([userModel]) -> Void) {
+         
+           let ref = Firestore.firestore().collection("dap_users").whereField("email", isEqualTo: email)
+           ref.addSnapshotListener { (snapshot, error) in
+           if error != nil
+           {
                
+           }
+           else {
+               completion(snapshot!.documents.compactMap( {userModel(dictionary: $0.data())} ))
+               return
                
-            }
-        }
-       
-    }
+           }
+
+               
+       }
+       }
         
-    func FetchPractices(uid:String,completion :  @escaping  practiceAdded) {
+    func FetchPractices(uid:String) {
         print("this start \(uid)")
         var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false
         var date = Timestamp()
@@ -148,9 +134,7 @@ class FirebaseDataManager {
                         }
                 }
                    
-                    completion(true)
-                }else{
-                    completion(false)
+                   
                 }
             
             }
