@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         guard let nameTextFieldImage = UIImage(named: "Profile") else { return }
         guard let emailTextFieldImage = UIImage(named: "Email") else { return }
         guard let passwordLeftIcon = UIImage(named: "Password") else { return }
-        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
+        guard let passwordRightIcon = UIImage(named: "openEye") else { return }
         
         //Style Texfields
         Utilities.styleTextField(nameTextField)
@@ -196,12 +196,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         
         if isIconClicked {
             isIconClicked = false
-            tappedImage.image = UIImage(named: "openEye")
+            tappedImage.image = UIImage(named: "closedEye")
             passwordTextField.isSecureTextEntry = false
             
         } else {
             isIconClicked = true
-            tappedImage.image = UIImage(named: "closedEye")
+            tappedImage.image = UIImage(named: "openEye")
             passwordTextField.isSecureTextEntry = true
         }
         

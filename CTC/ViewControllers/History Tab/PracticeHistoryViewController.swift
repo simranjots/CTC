@@ -25,10 +25,10 @@ class PracticeHistoryViewController: UIViewController {
         pageControl.isHidden = true
         practiceHistoryCollectionView.delegate = self
         practiceHistoryCollectionView.dataSource = self
-        addShadowToButtons()
+        //addShadowToButtons()
         
-        guard let restoreButtonIcon = UIImage(named: "restore-1") else { return }
-        Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
+        //guard let restoreButtonIcon = UIImage(named: "restore-1") else { return }
+        //Utilities.addButtonImage(button: restoreButtonOutlet, andImage: restoreButtonIcon)
         Utilities.styleButton(restoreButtonOutlet)
         
         practiceHistory = PracticedHistory()

@@ -36,7 +36,7 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
-        dateTextField.text = "Date : \(Date().dateFormatemmmdd()!)"
+        dateTextField.text = "\(Date().dateFormatemmmdd()!)"
         dbHelper = DatabaseHelper()
         practiceHistory = PracticedHistory()
         currentUser = CurrentUser()

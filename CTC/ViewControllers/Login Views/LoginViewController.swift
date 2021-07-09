@@ -17,8 +17,9 @@ class LoginViewController: UIViewController {
     //Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var signInButton: UIButton!
-    @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
     @IBOutlet var facebookSignInButton: UIButton!
    
@@ -35,6 +36,7 @@ class LoginViewController: UIViewController {
         database = FirebaseDataManager()
         currentUser = CurrentUser()
         setUpElements()
+        
         
     }
     
@@ -58,6 +60,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         view.endEditing(true)
+        
+        activityIndicator.startAnimating()
         
         let error = validateFields()
         
@@ -226,12 +230,12 @@ class LoginViewController: UIViewController {
         
         if isIconClicked {
             isIconClicked = false
-            tappedImage.image = UIImage(named: "openEye")
+            tappedImage.image = UIImage(named: "closedEye")
             passwordTextField.isSecureTextEntry = false
             
         } else {
             isIconClicked = true
-            tappedImage.image = UIImage(named: "closedEye")
+            tappedImage.image = UIImage(named: "openEye")
             passwordTextField.isSecureTextEntry = true
         }
         
@@ -242,7 +246,7 @@ class LoginViewController: UIViewController {
         //Add textField Images
         guard let emailIcon = UIImage(named: "Email") else { return }
         guard let passwordLeftIcon = UIImage(named: "Password") else { return }
-        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
+        guard let passwordRightIcon = UIImage(named: "openEye") else { return }
         guard let googleIcon = UIImage(named: "google") else { return }
         guard let facebookIcon = UIImage(named: "facebook") else { return }
         
@@ -264,6 +268,9 @@ class LoginViewController: UIViewController {
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
         Utilities.addGoogleImage(button: gmailSignInButton, andImage: googleIcon)
         Utilities.addButtonImage(button: facebookSignInButton, andImage: facebookIcon)
+        
+        //Hide activity indicator
+        activityIndicator.hidesWhenStopped = true
         
 
     }
@@ -308,7 +315,7 @@ class LoginViewController: UIViewController {
 //            print(error.localizedDescription)
 //            } else {
 //                let currentUser = Auth.auth().currentUser
-//               
+//
 //                self.currentUser.addUser(name: currentUser?.displayName ?? "No userName", email: (currentUser?.email)!, password: "", from: "GsignIn", completionHandler: {(flag) -> Void in
 //                    if flag == 0
 //                    {self.db.collection("dap_users").document((currentUser?.email)!).setData(["username": currentUser?.displayName ?? "No userName", "uid": (currentUser?.email)!]) { error in
@@ -321,14 +328,14 @@ class LoginViewController: UIViewController {
 //                    }else{
 //                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
 //                    }
-//                    
+//
 //                })
-//                
-//      
+//
+//
 //            }
 //
 //        }
 //    }
-//    
+//
 //}
 

@@ -49,7 +49,7 @@ class ProfilePageViewController: UIViewController {
     }
     
     func setUpData() {
-        guard let passwordRightIcon = UIImage(named: "closedEye") else { return }
+        guard let passwordRightIcon = UIImage(named: "openEye") else { return }
         addPasswordEyeIcon(textField: passwordTextField, andImage: passwordRightIcon)
         nameTextField.text = userObject.name
         emailTextField.text = userObject.email
@@ -97,12 +97,12 @@ class ProfilePageViewController: UIViewController {
         
         if isIconClicked {
             isIconClicked = false
-            tappedImage.image = UIImage(named: "openEye")
+            tappedImage.image = UIImage(named: "closedEye")
             passwordTextField.isSecureTextEntry = false
             
         } else {
             isIconClicked = true
-            tappedImage.image = UIImage(named: "closedEye")
+            tappedImage.image = UIImage(named: "openEye")
             passwordTextField.isSecureTextEntry = true
         }
         
