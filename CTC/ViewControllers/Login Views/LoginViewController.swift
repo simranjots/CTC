@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     //Outlets
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
@@ -81,6 +80,8 @@ class LoginViewController: UIViewController {
                         guard let self = self else { return }
                         if message != nil {
                             self.showAlert(title: "Error!", message: message!.localizedDescription, buttonTitle: "Try Again")
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
                         }
                         if ((success) != nil) {
                             
@@ -118,6 +119,8 @@ class LoginViewController: UIViewController {
                                                     self.present(vc, animated: true, completion: nil)
                                                 }else{
                                                     self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+                                                    self.activityIndicator.stopAnimating()
+                                                    self.activityIndicator.isHidden = true
                                                 }
                                             }
                                         }
@@ -138,9 +141,13 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     showToast(message: "Enter Valid Password", duration: 2.0)
+                    activityIndicator.stopAnimating()
+                    activityIndicator.isHidden = true
                 }
             } else {
                 showToast(message: "Enter Valid Email", duration: 2.0)
+                activityIndicator.stopAnimating()
+                activityIndicator.isHidden = true
             }
         }
     }
@@ -285,21 +292,24 @@ class LoginViewController: UIViewController {
         //Validate any field is not blank
         if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
             return "Email or password are blank."
         }
         
         //Validate Email format is correct
         let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if Utilities.isEmailValid(cleanedEmail) == false {
-            
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
             return "Please enter correct email."
         }
         
         //Validate password is correct
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if Utilities.isPasswordValid(cleanedPassword) == false {
-            
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
             return "Please enter correct password."
         }
         

@@ -112,7 +112,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                 
                                 
                                 DispatchQueue.global().async {
-                                    let imagepath = "https://firebasestorage.googleapis.com/v0/b/dayachievementprinciple.appspot.com/o/images%2F3nHS5K3jCQXcqKZ7JCd45GFu8v82%2F1242299%20bytes?alt=media&token=dde7845c-c016-4016-9db6-c2a2fccf9776"
+                                    let imagepath = "https://firebasestorage.googleapis.com/v0/b/dayachievementprinciple.appspot.com/o/Profile%2FprofileImage1-2.png?alt=media&token=58f52b23-2cf9-4558-81b0-3d8c9545622d"
                                     let fileUrl = URL(string: imagepath)
                                     // Fetch Image Data
                                     if let data = try? Data(contentsOf: fileUrl!) {
