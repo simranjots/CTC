@@ -120,32 +120,29 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                             // Create Image and Update Image View
                                             let imagedownloaded = UIImage(data: data)
                                             let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
-                                           let flag = self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp")
-                                                if(flag == 1){
-                                                    
-                                                    self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
-                                                    
-                                                    
-                                                }else if (flag == 2){
-                                                    
-                                                    self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
-                                                    
-                                                }else if (flag == 0){
-                                                    
-                                                    self.db.collection("dap_users").document(Auth.auth().currentUser!.uid)
-                                                        .setData(["uid":Auth.auth().currentUser!.uid,
-                                                                  "name": userName,
-                                                                  "email":email,
-                                                                  "imageLink":imagepath]) { error in
+                                            let flag = self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp")
+                                            if(flag == 1){
+                                                
+                                                self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")
+                                                
+                                                
+                                            }else if (flag == 2){
+                                                
+                                                self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
+                                                
+                                            }else if (flag == 0){
+                                                
+                                                self.db.collection("dap_users").document(Auth.auth().currentUser!.uid)
+                                                    .setData(["uid":Auth.auth().currentUser!.uid,
+                                                              "name": userName,
+                                                              "email":email,
+                                                              "imageLink":imagepath]) { error in
                                                         if error != nil {
                                                             self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                         }
                                                     }
-                                                    self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
-                                                }
-                                            
-                                            
-                                            
+                                                self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
+                                            }
                                         }
                                     }
                                 }
