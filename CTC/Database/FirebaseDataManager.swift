@@ -80,7 +80,7 @@ class FirebaseDataManager {
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
             .collection("PracticedHistory").document(practiceName)
-            .setData(datas)
+            .setData(datas , merge: false)
     }
     func FetchTUserData(email: String,completion: @escaping ([userModel]) -> Void) {
          
