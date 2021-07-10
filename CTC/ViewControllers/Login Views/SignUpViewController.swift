@@ -120,7 +120,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                             // Create Image and Update Image View
                                             let imagedownloaded = UIImage(data: data)
                                             let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
-                                            let flag = self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp")
+                                            let flag = self.currentUser.addUser(name: userName, email: email, password: password, image: image, uid: Auth.auth().currentUser!.uid, from: "signUp", completion: nil)
                                             if(flag == 1){
                                                 
                                                 self.showAlert(title: "Warning", message: "User Already Exist", buttonTitle: "Try Again")

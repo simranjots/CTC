@@ -43,9 +43,9 @@ class FirebaseDataManager {
             .setData(datas, merge: true)
     }
     
-    func updateSinglePractices(valueName: String,value : Any,practiceName : String,uid : String){
+    func updateSinglePractices(collectionName : String ,valueName: String,value : Any,practiceName : String,uid : String){
         let practiceStringUpdate = db.collection("UsersData").document(uid)
-            .collection("Practices").document(practiceName)
+            .collection("\(collectionName)").document(practiceName)
         practiceStringUpdate.updateData([
             "\(valueName)": value
         ]) { err in
@@ -77,10 +77,11 @@ class FirebaseDataManager {
                      "date": date,
                      "dss": dss,
                      "td": td,
+                     "isRestore" : false
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
             .collection("PracticedHistory").document(practiceName)
-            .setData(datas , merge: false)
+            .setData(datas)
     }
     func FetchTUserData(email: String,completion: @escaping ([userModel]) -> Void) {
          
@@ -100,7 +101,7 @@ class FirebaseDataManager {
        }
        }
         
-    func FetchPractices(uid:String) {
+    func FetchPractices(uid:String,completion : @escaping practiceAdded) {
         print("this start \(uid)")
         var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false
         var date = Timestamp()
@@ -130,7 +131,12 @@ class FirebaseDataManager {
                         let userob = UserObject.getUserObject(email: user)
                         let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
                         if result == 0 {
-                            self.FetchPracData(uid: uid, id: practice)
+                            self.FetchPracData(uid: uid, id: practice, completionHandler: {(Flag) -> Void in
+                                
+                                if Flag{
+                                    completion(true)
+                                }
+                            })
                         }
                 }
                    
@@ -141,7 +147,7 @@ class FirebaseDataManager {
         }
         
     }
-    func FetchPracData(uid:String,id:String)  {
+    func FetchPracData(uid:String,id:String, completionHandler: @escaping practiceAdded)  {
         print("this start \(uid)")
         var practiceObject = "",toggleBtn = false,note = "",user = "",streak = 0,trackingDays = 0
         var currentDate = Timestamp()
@@ -169,8 +175,11 @@ class FirebaseDataManager {
                             let UserObject = CurrentUser()
                             let userob = UserObject.getUserObject(email: user)
                         practiceData.addPracticedData(toggleBtn: toggleBtn, practiceObject: practiceObject, currentDate: currentDate.dateValue().dateFormate()!, userObject: userob, note: note, tracking_days: trackingDays, streak: streak)
-                        
+                       
                 }
+                    
+                            completionHandler(true)
+                     
                     
                 }
             }
@@ -178,7 +187,7 @@ class FirebaseDataManager {
     }
     func fetchHistory(uid: String,email:String) {
         let ref =  db.collection("UsersData").document(uid)
-                   .collection("PracticedHistory")
+            .collection("PracticedHistory").whereField("isRestore", isEqualTo: false)
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil
             {
@@ -199,6 +208,7 @@ class FirebaseDataManager {
                         _ = practiceHistory.addPracticeHistory(practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: userob!)
                         
                 }
+                   
                     
                 }
             }

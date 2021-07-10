@@ -83,11 +83,17 @@
                                                                             </view>
                                                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1cs-MD-QSf">
                                                                                 <rect key="frame" x="131" y="0.0" width="126" height="37"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="126" id="tGY-tY-3RP"/>
+                                                                                </constraints>
                                                                                 <color key="color" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </activityIndicatorView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-Ak-Pog">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-Ak-Pog">
                                                                                 <rect key="frame" x="262" y="0.0" width="126" height="37"/>
-                                                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="126" id="qvo-l2-gR6"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                                                 <state key="normal" title="Forgot Password?">
                                                                                     <color key="titleColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
