@@ -15,6 +15,7 @@ class PracticeHistoryViewController: UIViewController {
     var currentUser : CurrentUser!
     var userObject: User!
     var noOfPages: Int!
+    var firebaseDataManager = FirebaseDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,10 @@ class PracticeHistoryViewController: UIViewController {
             noOfPages = deletedHistory.count
             pageControl.numberOfPages = deletedHistory.count
         }
+        previousButtonOutlet.isHidden = true
+        nextButtonOutlet.isHidden = true
+        restoreButtonOutlet.isHidden = true
+        pageControl.isHidden = true
         self.practiceHistoryCollectionView.reloadData()
     }
     
@@ -80,6 +85,11 @@ class PracticeHistoryViewController: UIViewController {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         } else {
             _=practice.addPractices(practice:pracName, image_name: "Flour", date: date! , user: userObject, value: "ACHIEVEMENT", encourage: encourage, remindswitch: false, goals: "365")
+            self.firebaseDataManager.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, practiceName: pracName, uid: self.userObject.uid!)
+            practiceHistory.deletePracticeHistory(practice: deletedHistory[pageControl.currentPage])
+            showToast(message: "Practice restored", duration: 1.0)
+           refreshTableView()
+            
         }
     }
     
@@ -118,7 +128,12 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
         let daySinceStarted = history.dss
         let percentage = (Float(trackingDays) / Float(daySinceStarted == 0 ? 1 : daySinceStarted)) * 100
         cell.practiceNameLabel.text = history.practice_name
-        cell.dateLabel.text = "Completed On : \(((history.date!) as Date).dateFormateToString()!)"
+        if history.com_del_flag == true {
+            cell.dateLabel.text = "Completed On : \(((history.date!) as Date).dateFormateToString()!)"
+        }else{
+            cell.dateLabel.text = "Deleted On : \(((history.date!) as Date).dateFormateToString()!)"
+        }
+        
         cell.scoreLabel.text = "Your Score was : \(Int(percentage))%"
         cell.percentageLabel.text = "\(Int(percentage))%"
         cell.trackingDaysLabel.text = "\(trackingDays)"

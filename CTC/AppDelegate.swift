@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             let pracName = goal.practice
                             let td = (pracData?.tracking_days)!
                             let dss = (Date().dateFormate()!).days(from: (goal.startedday! as Date).dateFormate()!) + 1
-                            let flag = false
+                            let flag = true
                             let date = Date().dateFormate()!
                             userPractice.deletePractice(practice: goal)
                             let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td), userOb: userObject!)

@@ -9,8 +9,7 @@ class PracticedHistory {
     let currentUser = CurrentUser()
 
     func addPracticeHistory(practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,userOb:User) -> Int {
-        let newHistory = NSEntityDescription.insertNewObject(forEntityName: "PracticeHistory", into: context) as! PracticeHistory
-        
+        let newHistory =  PracticeHistory(context: self.context)
         newHistory.practice_name = practiceName
         newHistory.com_del_flag = comDelFlag
         newHistory.date = date as NSDate
@@ -80,5 +79,10 @@ class PracticedHistory {
         print("Tracking Day Maintainance Completed")
         
         return true
+    }
+    func deletePracticeHistory(practice: PracticeHistory) {
+        
+        context.delete(practice)
+        
     }
 }

@@ -32,6 +32,7 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewWillAppear(_ animated: Bool) {
         self.refreshTableview(date: selectedDate)
     }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController,ReceiveData{
         _ = userPractices.oldestPracticeDate(user: userObject)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
-         
+       
         
         // MARK: Gradiat Color Set for naviagation Bar
         if let navigationBar = self.navigationController?.navigationBar {
@@ -63,9 +64,13 @@ class HomeViewController: UIViewController,ReceiveData{
             gradient.endPoint = CGPoint(x: 1, y: 0)
         }
         UserDefaults.standard.set(true, forKey: "DailyReminder")
+        
+        
          
         //MARK: for mainatain the practices data weekly
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
+        
+        
   }
     func SetReminder()  {
         if UserDefaults.standard.bool(forKey: "DailyReminder") {
@@ -121,6 +126,7 @@ class HomeViewController: UIViewController,ReceiveData{
     func passUserObject(user: User) {
         userObject = user
     }
+   
     
     @IBAction func addPractices(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -230,7 +236,7 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
-                self.db.updateSinglePractices(valueName: "is_deleted", value: true, practiceName: prac.practice!, uid: self.userObject.uid!)
+                self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, practiceName: prac.practice!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
                
             }))
