@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Jogging@1x.png",
+      "filename" : "History@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Jogging@2x.png",
+      "filename" : "History@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Jogging@3x.png",
+      "filename" : "History@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
