@@ -39,15 +39,15 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     let goalPickerView = UIPickerView()
 
     //Values and Practices options array
-    let values: [String] = [
-        "Authenticity", "Achievement", "Adventure", "Beauty", "Challange", "Comfort", "Courage", "Creativity", "Curiosity", "Education", "Empowerment", "Environment", "Family", "Financial", "Freedom", "Fitness", "Balance", "Gratitude", "Love", "Friendship", "Service", "Health", "Honesty", "Independence", "Inner Peace", "Integrity", "Intelligence",  "Intimacy", "Joy", "Leadership", "Learning",  "Motivation", "Passion", "Compassion", "Credibility", "Empathy", "Humour", "Recreation", "Peace", "Performance", "Personal", "Growth", "Play", "Productivity", "Reliability", "Respect", "Security", "Spirituality", "Success", "Time Freedom", "Variaty", "Other"]
-    
-    let practices: [String] = ["Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Tracke Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Write handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"]
-    
-    // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
-    let goals: [String] = ["365 Days"]
-    
-    let moreOptionIconList = ["Book", "Cheese", "Dollar","Exercise","Flour","Friend Circle","Language","Meditation","Music","Salad","Sleep","SpaCandle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"]
+        let values: [String] = [
+            "Authenticity", "Achievement", "Adventure", "Beauty", "Challange", "Comfort", "Courage", "Creativity", "Curiosity", "Education", "Empowerment", "Environment", "Family", "Financial", "Freedom", "Fitness", "Balance", "Gratitude", "Love", "Friendship", "Service", "Health", "Honesty", "Independence", "Inner Peace", "Integrity", "Intelligence",  "Intimacy", "Joy", "Leadership", "Learning",  "Motivation", "Passion", "Compassion", "Credibility", "Empathy", "Humour", "Recreation", "Peace", "Performance", "Personal", "Growth", "Play", "Productivity", "Reliability", "Respect", "Security", "Spirituality", "Success", "Time Freedom", "Variaty"]
+        
+        let practices: [String] = ["Reading", "Writing", "Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "PodCasting", "Content Creation", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Tracke Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Write handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation","No Dairy", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits & Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"]
+        
+        // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
+        let goals: [String] = ["365 Days"]
+        
+        let moreOptionIconList = ["Adventure", "Achievement", "Biking", "Building_Trust", "Challange", "Comfort","Change_a_Routine", "Content-Creation", "Dieting", "Education", "Passion", "Family_Dinner", "Financial_Freedom", "Freedom", "Fruits & Vegetables", "Growth", "Hiking", "Investment", "Increase_Productivity", "Intimacy", "Jogging", "Journal_Writing", "Laugh", "Leadership", "No-Outside_Food", "Save_Money", "No-Alcohol", "No-Salt", "No-Sugar", "Painting", "Peace", "Play_with_Kids", "Play_with_Dog", "Podcast", "Recreational_Activity", "Skincare", "Spread_Love", "Respect", "Spread_Happiness", "Study", "Trekking", "Workout", "Writing", "Book", "No-Cheese", "No-Dairy", "Wealth_Management", "Exercise", "Friend Circle","Language","Meditation","Music", "Salad","Sleep","Candle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-Cellphone"]
     
     var imageName: String = ""
     
