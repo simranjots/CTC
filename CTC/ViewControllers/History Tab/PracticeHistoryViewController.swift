@@ -15,7 +15,7 @@ class PracticeHistoryViewController: UIViewController {
     var currentUser : CurrentUser!
     var userObject: User!
     var noOfPages: Int!
-    var firebaseDataManager = FirebaseDataManager()
+    var db = FirebaseDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,14 @@ class PracticeHistoryViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        refreshTableView()
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
+        db.fetchHistory(Useruid: userObject) { [self] (flag) in
+            if flag {
+                refreshTableView()
+                
+            }
+        }
     }
     
     func refreshTableView() {
@@ -85,10 +92,10 @@ class PracticeHistoryViewController: UIViewController {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         } else {
             _=practice.addPractices(practice:pracName, image_name: "Change_a_Routine", date: date! , user: userObject, value: "Achievement", encourage: encourage, remindswitch: false, goals: "365", Fuid: deletedHistory[pageControl.currentPage].hid)
-            self.firebaseDataManager.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, document: (deletedHistory[pageControl.currentPage].hid)!, uid: self.userObject.uid!)
+            self.db.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, document: (deletedHistory[pageControl.currentPage].hid)!, uid: self.userObject.uid!)
             practiceHistory.deletePracticeHistory(practice: deletedHistory[pageControl.currentPage])
             showToast(message: "Practice restored", duration: 1.0)
-           refreshTableView()
+            refreshTableView()
             
         }
     }
@@ -145,7 +152,7 @@ extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionV
         cell.circularProgressBarView.trackColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         cell.circularProgressBarView.progressColor = #colorLiteral(red: 0, green: 0.7097216845, blue: 0.6863465309, alpha: 1)
         cell.circularProgressBarView.setProgressWithAnimation(duration: 1.0, value: Float(Int(percentage)))
-         
+        
         return cell
     }
     

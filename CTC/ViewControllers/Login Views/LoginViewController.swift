@@ -112,18 +112,14 @@ class LoginViewController: UIViewController {
                                                 // Create Image and Update Image View
                                                 let imagedownloaded = UIImage(data: data)
                                                 let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
-                                                _ = self.currentUser.addUser(name: user.name!, email: email, password: password, image: image, uid: (success?.user.uid)!, from: "signIn", completion: {(out) -> Void in
-                                                    if(out == 0){
-                                                        let storyboard: UIStoryboard = UIStoryboard(name: "TabVC", bundle: nil)
-                                                        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "MainTabbedBar") as UIViewController
-                                                        self.present(vc, animated: true, completion: nil)
-                                                    }else{
-                                                        self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
-                                                        self.activityIndicator.stopAnimating()
-                                                        self.activityIndicator.isHidden = true
-                                                    }
-                                                })
-                                             
+                                                let out = self.currentUser.addUser(name: user.name!, email: email, password: password, image: image, uid: (success?.user.uid)!, from: "signIn")
+                                                if(out == 0){
+                                                    self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                                }else{
+                                                    self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
+                                                    self.activityIndicator.stopAnimating()
+                                                    self.activityIndicator.isHidden = true
+                                                }
                                             }
                                         }
                                     }
