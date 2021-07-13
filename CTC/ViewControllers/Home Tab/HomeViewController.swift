@@ -37,26 +37,28 @@ class HomeViewController: UIViewController,ReceiveData{
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
-        db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pId) -> Void in
-            if value == true {
-                db.FetchPracData(uid: pId, docid: userObject.uid!, completionhandler: { [self](flag) -> Void in
-                    if(flag){
-                        self.refreshTableview(date: selectedDate)
+        var pUid : String?
+        if practices.count == 0{
+            db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
+                if value == true {
+                    pUid = pid
+                    if pUid != nil {
+                        db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
+                            if flag == true{
+                                refreshTableview(date: selectedDate)
+                            }
+                        })
                     }
-                })
-                
-            }
-        })
+                    self.refreshTableview(date: selectedDate)
+                    
+                }
+            })
+          
+           
+        }
+       
 
-        dbHelper = DatabaseHelper()
-        userPractices = UserPractices()
-        userPracticesData = UserPracticesData()
-        userObject = currentUser.checkLoggedIn()
-        nameLabel.text = greetingMessage()
-        practiceReminder = PracticeReminder()
-        practices = self.getPractices()
-        practicesData = self.getPracticesData(date: selectedDate)
-        _ = userPractices.oldestPracticeDate(user: userObject)
+        refreshTableview(date: selectedDate)
         
     }
    
@@ -64,7 +66,7 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
-        dateTextField.text = "\(Date().dateFormatemmmdd()!)"
+        dateTextField.text = selectedDate.dateFormateToString()
         dbHelper = DatabaseHelper()
         practiceHistory = PracticedHistory()
         currentUser = CurrentUser()
@@ -231,8 +233,9 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
-        
+      
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
+    
         
         if (switchFlag != nil){
             HomeVCCell.isOn = switchFlag!

@@ -11,7 +11,7 @@ class PracticeHistoryViewController: UIViewController {
     
     var practiceHistory: PracticedHistory!
     var practice :UserPractices!
-    var deletedHistory: [PracticeHistory] = []
+    var history: [PracticeHistory]? = []
     var currentUser : CurrentUser!
     var userObject: User!
     var noOfPages: Int!
@@ -36,37 +36,36 @@ class PracticeHistoryViewController: UIViewController {
         practice = UserPractices()
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
-        let history = practiceHistory.getPracticeHistory(userobject: userObject)
-        if(history?.count != 0){
-            
-            for data in history!{
-                deletedHistory.append(data)
-            }
-            noOfPages = deletedHistory.count
-            pageControl.numberOfPages = deletedHistory.count
+        history = practiceHistory.getPracticeHistory(userobject: userObject)
+        if(history != nil){
+            noOfPages = history?.count
+            pageControl.numberOfPages = history!.count
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
+        history = practiceHistory.getPracticeHistory(userobject: userObject)
+        if history?.count == 0 {
         db.fetchHistory(Useruid: userObject) { [self] (flag) in
             if flag {
                 refreshTableView()
                 
             }
         }
+        }
+        refreshTableView()
+        
     }
     
     func refreshTableView() {
-        deletedHistory = []
-        let history = practiceHistory.getPracticeHistory(userobject: userObject)
-        if(history?.count != 0){
-            for data in history!{
-                deletedHistory.append(data)
-            }
-            noOfPages = deletedHistory.count
-            pageControl.numberOfPages = deletedHistory.count
+    
+         history = practiceHistory.getPracticeHistory(userobject: userObject)
+        if(history != nil){
+           
+            noOfPages = history?.count
+            pageControl.numberOfPages = history!.count
         }
         previousButtonOutlet.isHidden = true
         nextButtonOutlet.isHidden = true
@@ -84,16 +83,16 @@ class PracticeHistoryViewController: UIViewController {
     }
     
     @IBAction func restoreButtonTapped(_ sender: UIButton) {
-        let pracName =  deletedHistory[pageControl.currentPage].practice_name!
+        let pracName =  history![pageControl.currentPage].practice_name!
         let date =  Date().dateFormate()
         let encourage = "Think of the good future"
         let repeatpracName  = practice.getPractices(practiceName: pracName, user: userObject)
         if pracName == repeatpracName?.practice {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         } else {
-            _=practice.addPractices(practice:pracName, image_name: "Change_a_Routine", date: date! , user: userObject, value: "Achievement", encourage: encourage, remindswitch: false, goals: "365", Fuid: deletedHistory[pageControl.currentPage].hid)
-            self.db.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, document: (deletedHistory[pageControl.currentPage].hid)!, uid: self.userObject.uid!)
-            practiceHistory.deletePracticeHistory(practice: deletedHistory[pageControl.currentPage])
+            _=practice.addPractices(practice:pracName, image_name: "Change_a_Routine", date: date! , user: userObject, value: "Achievement", encourage: encourage, remindswitch: false, goals: "365", Fuid: history![pageControl.currentPage].hid)
+            self.db.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, document: (history![pageControl.currentPage].hid)!, uid: self.userObject.uid!)
+            practiceHistory.deletePracticeHistory(practice: history![pageControl.currentPage])
             showToast(message: "Practice restored", duration: 1.0)
             refreshTableView()
             
@@ -119,18 +118,18 @@ class PracticeHistoryViewController: UIViewController {
 extension PracticeHistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if deletedHistory.count > 0 {
+        if history!.count > 0 {
             previousButtonOutlet.isHidden = false
             nextButtonOutlet.isHidden = false
             restoreButtonOutlet.isHidden = false
             pageControl.isHidden = false
         }
-        return deletedHistory.count
+        return history!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = practiceHistoryCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.practiceHistoryCollectionViewCell, for: indexPath) as! PracticeHistoryCollectionViewCell
-        let history = deletedHistory[indexPath.item]
+        let history = history![indexPath.item]
         let trackingDays = history.td
         let daySinceStarted = history.dss
         let percentage = (Float(trackingDays) / Float(daySinceStarted == 0 ? 1 : daySinceStarted)) * 100
