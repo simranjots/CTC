@@ -57,20 +57,18 @@ class FirebaseDataManager {
         }
     }
     func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32,uid:String){
-        let datas = ["id": practiceName,
-                     "practiceName": practiceName,
-                     "PracticedDate": PracticedDate,
-                     "user": user.email!,
-                     "toggleStarBtn": toggleStarBtn,
-                     "noteuid": uid,
-                     "streak":streak,
-                     "trackingDays":trackingDays
-        ] as [String : Any]
-        db.collection("UsersData").document(user.uid!)
-            .collection("PracticedData").document(practiceName).collection("Data")
-            .document("\(PracticedDate)")
-            .setData(datas, merge: true)
-        AddnotesToFirebase(practiceName: practiceName, user: user, uid: uid, note: note, PracticedDate: PracticedDate)
+          let data = ["id": practiceName,
+                       "practiceName": practiceName,
+                       "PracticedDate": PracticedDate,
+                       "user": user.email!,
+                       "toggleStarBtn": toggleStarBtn,
+                       "note": note,
+                       "streak":streak,
+                       "trackingDays":trackingDays
+          ] as [String : Any]
+          db.collection("UsersData").document(user.uid!)
+              .collection("PracticedData").document(practiceName)
+              .setData(data, merge: true)
     }
     func AddnotesToFirebase(practiceName: String,user: User,uid: String,note: String ,PracticedDate: Date) {
         let datas = ["practiceName":practiceName,
@@ -112,9 +110,9 @@ class FirebaseDataManager {
         }
     }
     
-    func FetchPractices(uid:String,completion : @escaping practiceAdded) -> Bool? {
+    func FetchPractices(uid:String,completion : @escaping practiceAdded) {
         print("this start \(uid)")
-        var result : Bool?
+        
         var practice = "",image_name = "",value = "",user = "",encourage = "",goals = "",remindswitch = false
         var date = Timestamp()
         
@@ -143,36 +141,30 @@ class FirebaseDataManager {
                         let userob = UserObject.getUserObject(email: user)
                         let result = practices.addPractices(practice: practice, image_name: image_name, date: date.dateValue().dateFormate()!, user: userob!, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
                         if result == 0 {
-                            if (self.FetchPracData(uid: uid, id: practice, completionHandler: {(Flag) -> Void in
-                                
+                            self.FetchPracData(uid: uid, id: practice, completionHandler: {(Flag) -> Void in
                                 if Flag{
+                                    
                                    completion(true)
                                 }
-                            })) != nil || true{
-                            }else{
-                                completion(true)
-                            }
-                            
+                            })
                         }
                     }
                     
-                    result = true
-                }else{
-                    result = false
+                    
                 }
                 
             }
         }
-        return result
+       
     }
-    func FetchPracData(uid:String,id:String, completionHandler: @escaping practiceAdded)->Bool?  {
-        var result : Bool?
+    func FetchPracData(uid:String,id:String, completionHandler: @escaping practiceAdded) {
+        
         var practiceObject = "",toggleBtn = false,noteuid = "",user = "",streak = 0,trackingDays = 0
         var currentDate = Timestamp()
         
         
         let ref =  db.collection("UsersData").document(uid)
-            .collection("PracticedData").document(id).collection("Data")
+            .collection("PracticedData").whereField("id", isEqualTo: id)
         ref.addSnapshotListener { (snapshot, error) in
             if error != nil
             {
@@ -195,16 +187,14 @@ class FirebaseDataManager {
                         practiceData.addPracticedData(toggleBtn: toggleBtn, practiceObject: practiceObject, currentDate: currentDate.dateValue().dateFormate()!, userObject: userob, noteuid: noteuid, tracking_days: trackingDays, streak: streak)
                         
                     }
-                    result = true
+                    
                     completionHandler(true)
                     
                     
-                }else{
-                    result = false
                 }
             }
         }
-        return result
+      
     }
     func FetchNotes(Useruid:String,practiceName:String) ->Bool? {
         var result : Bool?
@@ -259,10 +249,6 @@ class FirebaseDataManager {
                         let userob = UserObject.getUserObject(email: email)
                         _ = practiceHistory.addPracticeHistory(practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: userob!)
                         result = true
-                        
-                        
-                        
-                        
                     }
                 }else{
                     result = false

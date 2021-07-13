@@ -13,7 +13,7 @@ class CurrentUser {
     let storageRef = Storage.storage().reference()
     typealias userSignIn = (Bool) -> Void
     typealias userAdded = (Int) -> Void
-
+    
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String, completion : userAdded?)-> Int{
@@ -24,7 +24,7 @@ class CurrentUser {
                 user!.isloggedin = true
                 let output = saveUser()
                 return output
-               
+                
             }else{
                 let newUser = User(context: self.context)
                 newUser.name = name
@@ -61,39 +61,21 @@ class CurrentUser {
                     if from == "signUp" {
                         return result
                     }else {
-                        if (db.fetchHistory(uid: uid, email: email)) != nil || true{
-                            if (db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
-                                completion!(0)
-                                
-                            })) != nil || true{
-                                completion!(0)
-                            }else{
-                                completion!(0)
-                            }
-                            
-                        }else{
-                            if (db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
-                                completion!(0)
-                                
-                            })) != nil || true{
-                                completion!(0)
-                            }else{
-                                completion!(0)
-                            }
-                        }
-                       
-                        
+                        _=db.fetchHistory(uid: uid, email: email)
+                        db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
+                            completion!(0)
+                        })
                     }
                 }
                 
             }else {
                 print("User Exist")
-              return 2
+                return 2
                 
             }
         }
         
-       return 0
+        return 0
         
     }
     
@@ -128,7 +110,7 @@ class CurrentUser {
         userObject?.image = image
         let result = saveUser()
         if result == 0 {
-           
+            
             let spaceRef = storageRef.child("images/\(userObject!.uid!)/\((userObject?.image)!)")
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"
@@ -138,24 +120,24 @@ class CurrentUser {
                     return
                 }
                 spaceRef.downloadURL { (url, error) in
-                   guard let downloadURL = url else {
-                     // Uh-oh, an error occurred!
-                     return
-                   }
+                    guard let downloadURL = url else {
+                        // Uh-oh, an error occurred!
+                        return
+                    }
                     let urlString: String = downloadURL.absoluteString
                     self.database.collection("dap_users").document(userObject!.uid!)
                         .setData(["uid":Auth.auth().currentUser!.uid,
                                   "name": name,
                                   "email":newEmail,
                                   "imageLink":urlString],merge: true) { error in
-                        if error != nil {
-                            print(error as Any)
+                            if error != nil {
+                                print(error as Any)
+                            }
                         }
-                    }
-                 }
-               }
+                }
+            }
             
-           
+            
         }
         return result
         
