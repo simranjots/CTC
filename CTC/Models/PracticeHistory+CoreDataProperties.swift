@@ -17,6 +17,7 @@ extension PracticeHistory {
         return NSFetchRequest<PracticeHistory>(entityName: "PracticeHistory")
     }
 
+    @NSManaged public var hid: String?
     @NSManaged public var practice_name: String?
     @NSManaged public var td: Int32
     @NSManaged public var dss: Int32

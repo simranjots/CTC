@@ -152,10 +152,10 @@ class HomeViewController: UIViewController,ReceiveData{
         let dss = (Date().dateFormate()!).days(from: (prac.startedday! as Date).dateFormate()!) + 1
         let flag = false
         let date = Date().dateFormate()!
-        
+        let uid = prac.uId
         userPractices.deletePractice(practice: prac)
     
-        let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td ?? 0),userOb:userOb)
+        let resultFlag = practiceHistory.addPracticeHistory(hid: uid!, practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td ?? 0),userOb:userOb)
         
         if(resultFlag == 0){
             showToast(message: "\(pracName!) Deleted", duration: 3)
@@ -238,7 +238,7 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
-                self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, practiceName: prac.practice!, uid: self.userObject.uid!)
+                self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
                
             }))

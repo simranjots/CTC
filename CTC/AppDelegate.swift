@@ -87,7 +87,7 @@ import IQKeyboardManagerSwift
                             let flag = true
                             let date = Date().dateFormate()!
                             userPractice.deletePractice(practice: goal)
-                            let resultFlag = practiceHistory.addPracticeHistory(practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td), userOb: userObject!)
+                            let resultFlag = practiceHistory.addPracticeHistory(hid: (pracData?.pUid)!, practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td), userOb: userObject!)
                             print(resultFlag)
                         }
                     }

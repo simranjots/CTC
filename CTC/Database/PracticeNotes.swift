@@ -22,7 +22,7 @@ class PracticeNotes {
         
         arrayData = getNotesByUid(uid: noteuid)!
         for data in arrayData{
-            if(data.practiceData?.noteuid == noteuid){
+            if(data.practiceData?.pUid == noteuid){
                 notesData = arrayData.last
                 return notesData
             }

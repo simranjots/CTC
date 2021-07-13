@@ -8,7 +8,8 @@ class UserPractices{
     let remindPractices = PracticeReminder()
     var practices = [Practice]()
     var firebaseDataManager = FirebaseDataManager()
-    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
+    var uid : String = UUID().uuidString
+    func addPractices(practice: String, image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String,Fuid:String?) -> Int {
         
         let practices = getPractices(user: user)!
         var practiceNotExist = true
@@ -23,6 +24,12 @@ class UserPractices{
         
         if(practiceNotExist){
             let newPractice = Practice(context: self.context)
+            if Fuid != nil {
+                newPractice.uId = Fuid
+            }else{
+                newPractice.uId = uid
+            }
+            
             newPractice.values = value
             newPractice.practice = practice
             newPractice.image_name = image_name
@@ -31,9 +38,11 @@ class UserPractices{
             newPractice.remindswitch = remindswitch
             newPractice.goals = goals
             newPractice.user = user
+            newPractice.is_deleted = false
+            newPractice.is_completed = false
             let result = currentUser.saveUser()
             if result == 0 {
-                firebaseDataManager.addPracticesToFirebase(practiceName: practice, image_name: image_name, date: date, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                firebaseDataManager.addPracticesToFirebase(practiceName: practice, image_name: image_name, date: date, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals, id: newPractice.uId!)
             }
             return result
         }else {
@@ -47,6 +56,7 @@ class UserPractices{
     func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
         
         let practiceObject = getPractices(practiceName: oldPractice, user: user)
+        practiceObject?.uId = practiceObject?.uId
         practiceObject!.values = value
         practiceObject!.practice = newPractice
         practiceObject!.image_name = image_name
@@ -66,7 +76,7 @@ class UserPractices{
         let result = currentUser.saveUser()
         if result == 0 {
             DispatchQueue.main.async {
-                self.firebaseDataManager.updatePracticesInFirebase(oldPractice: oldPractice, newPractice: newPractice, image_name: image_name, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals)
+                self.firebaseDataManager.updatePracticesInFirebase(oldPractice: oldPractice, newPractice: newPractice, image_name: image_name, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals,date: date, id: (practiceObject?.uId!)!)
             }
             
         }
