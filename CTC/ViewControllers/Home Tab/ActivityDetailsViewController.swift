@@ -3,19 +3,18 @@ import UIKit
 class ActivityDetailsViewController: UIViewController {
     
     var dbHelper: DatabaseHelper!
-    var userPracticesData: UserPracticesData!
+    var userPracticesData : UserPracticesData!
     var userObject: User!
     var userPractices: UserPractices!
-    var selectedDate: Date!
+    var selectedDate: Date?
     var practicesArray: [Practice]!
-    var myIndex: Int!
-    var firstDayOfYear : Date! = DateComponents(calendar: .current, year: 2019, month: 1, day: 1).date!
-    var currentPractice : Practice!
     var practicesData: PracticeData?
+    var notesData : Notes!
+    var practiceNotes : PracticeNotes!
     var delegate: ReceiveData?
-    var isOn : Bool = false
-    
-    @IBOutlet var activityNameTextField: UITextField!
+    static var starButton : Bool  = false
+    var selectedPractice : Practice?
+    var check : Bool = false
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
     @IBOutlet var percentageLabel: UILabel!
@@ -26,86 +25,59 @@ class ActivityDetailsViewController: UIViewController {
     @IBOutlet var saveButtonOutlet: UIButton!
     
     var activityName = ""
-     
-     var startValue: Double = 0
-     var endValue: Double = 70
-     var animationDuration: Double = 2.0
-     let animationStartDate = Date()
-     
+    
+    var startValue: Double = 0
+    var endValue: Double = 70
+    var animationDuration: Double = 2.0
+    let animationStartDate = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  "Activity Details"
+        self.title =  "\(selectedPractice?.practice ?? "Activity Details")"
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-       // self.title = selectedDate.dateFormatemmmdd()!
-        
-        // getting current yeat
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        formatter.dateFormat = "yyyy"
-        // again convert your date to string
-        let year = formatter.string(from: yourDate!)
-         firstDayOfYear = DateComponents(calendar: .current, year: Int(year), month: 1, day: 1).date!
-        
-        // getting current year
-    
+        practiceNotes = PracticeNotes()
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataObj(practiceName: practicesArray[myIndex].practice!)
-     
-        
-        let date5 = DateComponents(calendar: .current, year: 2019, month: 2, day: 10).date!
-        let now = Date()
-        _ = now.days(from: date5)
-
-         currentPractice = practicesArray[myIndex]
-
-        createPickerView()
-        createToolBar()
         self.setData()
         styleElements()
-      
+        
     }
-  
+    
     func setData() {
+     
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataObj(practiceName: practicesArray[myIndex].practice!)
-        let startedDate = ((practicesArray[myIndex].startedday)! as Date).originalFormate()
+        practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
+        
+        let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
-        activityNameTextField.text = practicesArray[myIndex].practice
         daysPracticedLabel.text =  "\(practicedDays)"
         daysSinceStartedLabel.text = "\(days)"
         let percentage = Int((Float(practicedDays) / Float(days)) * 100)
         setPercentageAnimation(percentageValue: Int(percentage))
-        if(practicesData != nil){
-            
+        
+        if practicesData != nil {
+            if practicesData!.practiceDataToPractice == selectedPractice{
+                notesData = practiceNotes.getPracticeNoteObj(noteuid: (practicesData!.noteuid)!)
+                let temp = notesData!.note
+                notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                 
-            if practicesData!.practiceDataToPractice == practicesArray[myIndex]{
-                    
-                let temp = practicesData!.note
-                    notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
-                self.activeButton(flag: practicesData?.practised ?? false)
-                    
-                }
+                self.activeButton(flag: ActivityDetailsViewController.starButton )
                 
-            
+            }
             
         }
         
+        
     }
+    
     
     func setPercentageAnimation(percentageValue: Int){
         
         let percentageFloat : Float = Float(percentageValue)
         let percentageInPoint : Float = percentageFloat / 100
-     
+        
         percentageLabel.text = "\(percentageValue)%"
         
         //Set progressbar properties
@@ -114,49 +86,15 @@ class ActivityDetailsViewController: UIViewController {
         circularProgressBar.setProgressWithAnimation(duration: 2.0, value: percentageInPoint)
     }
     
-    func createPickerView(){
-        
-        let resolutionPicker = UIPickerView()
-        resolutionPicker.delegate = self
-        activityNameTextField.inputView = resolutionPicker
-        
-    }
     
-    func createToolBar(){
-        
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(ActivityDetailsViewController.dismissPickerView))
-        
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        activityNameTextField.inputAccessoryView = toolBar
-        
-    }
     
-    @objc func dismissPickerView() {
- 
-        
-        self.setData()
-
-        view.endEditing(true)
-    }
+    
     
     
     
     //Style textFields, textView, Button
     func styleElements() {
         
-        //Style textView, textField and View
-        activityNameTextField.setUnderLineWithColor(color: UIColor.lightGray, alpha: 0.5)
-        if #available(iOS 13.0, *) {
-            activityNameTextField.backgroundColor = UIColor.systemBackground
-        } else {
-            activityNameTextField.backgroundColor = UIColor.white
-        }
-        
-        Utilities.styleTextField(activityNameTextField)
         
         Utilities.styleTextView(notesTextView)
         
@@ -175,37 +113,39 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-    
-        self.activeButton(flag: !isOn)
+        
+        self.activeButton(flag: !ActivityDetailsViewController.starButton)
     }
     
-    func activeButton(flag: Bool){
+    func activeButton(flag: Bool?){
         
-        isOn = flag
-        if (isOn) {
+        ActivityDetailsViewController.starButton = flag!
+        HomeVCCell.isOn = flag!
+        if (ActivityDetailsViewController.starButton) {
             startButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
-            
+            check = true
         } else {
             
             startButtonOutlet.setImage(UIImage(named: "Star"), for: .normal)
+            check = false
         }
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let ispracticed = isOn
+        let ispracticed = ActivityDetailsViewController.starButton
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
             noteData = ""
         }
         
         
-        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: currentPractice, currentDate: selectedDate, userObject: userObject!, note: noteData!, save: "save")
+        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: selectedPractice!, currentDate: selectedDate!, userObject: userObject!, note: noteData!, save: "save", check: check)
         
         if(savingResult == 0){
             
             showToast(message: "Data Saved. . .", duration: 3)
             delegate?.passUserObject(user: userObject)
-          
+            
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
@@ -218,44 +158,19 @@ class ActivityDetailsViewController: UIViewController {
         }
         
     }
-    }
-    
-extension ActivityDetailsViewController : UIPickerViewDataSource, UIPickerViewDelegate{
-    
-    
-    // Picker View
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return practicesArray.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return practicesArray[row].practice
-    }
-    
-   
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        myIndex = row
-        activityNameTextField.text = "\(String(describing: practicesArray[row].practice!))"
-    }
 }
 
 extension UITextField{
     
     func setUnderLineWithColor(color: UIColor, alpha : Float){
-
+        
         self.layer.shadowOpacity = alpha
         self.layer.shadowRadius = 0
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.layer.shadowColor = color.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.cornerRadius = 2
-
+        
     }
 }
 

@@ -12,13 +12,14 @@ class HomeViewController: UIViewController,ReceiveData{
     var userPracticesData: UserPracticesData!
     var selectedDate: Date!
     var datePicker : UIDatePicker!
-    var myIndex: Int!
+    var indexpath : Int = 0
     var window: UIWindow!
     var practi:[Practice]!
     var userObject: User!
     var practices:[Practice]!
     var practicesData: [PracticeData]!
     var practiceReminder : PracticeReminder!
+    var isOn : Bool?
     typealias completion = (Bool)->Void
     static var practiceAdded:completion!
     let db = FirebaseDataManager()
@@ -126,6 +127,7 @@ class HomeViewController: UIViewController,ReceiveData{
     func passUserObject(user: User) {
         userObject = user
     }
+    func onFriendSelected(index: Int) {indexpath = index }
    
     
     @IBAction func addPractices(_ sender: Any) {
@@ -208,7 +210,7 @@ extension HomeViewController : UITableViewDataSource {
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
         
         if (switchFlag != nil){
-            cell.isOn = switchFlag!
+            HomeVCCell.isOn = switchFlag!
             cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
         } else {
@@ -267,7 +269,7 @@ extension HomeViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
+        onFriendSelected(index: indexPath.row)
         performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -277,8 +279,8 @@ extension HomeViewController: UITableViewDelegate{
         
         let destination = segue.destination as! ActivityDetailsViewController
         destination.userObject = userObject
-        destination.myIndex = myIndex
-        destination.selectedDate = datePicker.date.dateFormate()!
+        destination.selectedPractice = practices[indexpath]
+        destination.selectedDate = selectedDate
         destination.delegate = self
         
     }

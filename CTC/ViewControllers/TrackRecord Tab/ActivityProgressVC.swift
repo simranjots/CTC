@@ -6,7 +6,13 @@ class ActivityProgressVC: UIViewController {
     var userPracticesData : UserPracticesData!
     var currentUser: CurrentUser!
     var userPractices: UserPractices!
-    var valueArray: [PracticeData]?
+    var valueArray: PracticeData!
+    var practiceNotes : PracticeNotes!
+    var NotesArray: [Notes]?{
+        didSet {
+            activityTrackingTableView.reloadData()
+        }
+    }
     var practice : Practice!
     var practiceName : String!
     
@@ -18,8 +24,10 @@ class ActivityProgressVC: UIViewController {
         currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
+        practiceNotes = PracticeNotes()
         practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
-        valueArray = userPracticesData.getPracticebyName(practice: practice.practice!)
+        valueArray = userPracticesData.getPracticeDataObj(practiceName: practice.practice!)
+        NotesArray = practiceNotes.getNotesByUid(uid: valueArray.noteuid!)
         self.title  = practiceName
     }
     
@@ -40,17 +48,17 @@ extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return valueArray!.count
+        return NotesArray!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityProgressCell
-        let date = valueArray![indexPath.row].date! as Date
+        let date = NotesArray![indexPath.row].noteDate! as Date
     
         cell.activityDateLabel.text = date.dateFormatemmmdd()
-        cell.activityNotesTextView.text = valueArray![indexPath.row].note
-        if valueArray![indexPath.row].practised == true {
+        cell.activityNotesTextView.text = NotesArray![indexPath.row].note
+        if NotesArray![indexPath.row].practiceData?.practised == true {
             cell.practicedDaysLabel.text = "Yes"
         } else {
             cell.practicedDaysLabel.text = "No"

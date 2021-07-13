@@ -118,8 +118,8 @@ class DatabaseHelper{
                         
                         if(finalDateArray[dateOfData!]?.count != nil){
                             bufferData = finalDateArray[dateOfData!]!
-                            
-                            bufferData.append( ["Practice" : practice.practice,"Note" : practiceDataObject.note, "TrackingDay" : String(practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
+                            //"Note" : practiceDataObject.note
+                            bufferData.append( ["Practice" : practice.practice, "TrackingDay" : String(practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
                                                 "CellType" : "1"
                             ])
                             //                        print("buffer Array. . . . ")
@@ -128,8 +128,8 @@ class DatabaseHelper{
                             //                        print("final Array. . . . ")
                             //                        print(finalDateArray)
                         }else{
-                            
-                            bufferData = [( ["Practice" : practice.practice,"Note" : practiceDataObject.note, "TrackingDay" : String(describing: practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
+                           // ,"Note" : practiceDataObject.note
+                            bufferData = [( ["Practice" : practice.practice, "TrackingDay" : String(describing: practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
                                              "CellType" : "1"
                             ])]
                             //                            print("buffer Array. . . . ")

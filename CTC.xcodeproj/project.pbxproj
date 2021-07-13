@@ -30,6 +30,9 @@
 		1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB939D26828C23007EF555 /* PopUpReminder.swift */; };
 		1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC96E2267B16BA0021195F /* ReminderViewController.swift */; };
 		1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC84FE42698AF2C002E7556 /* UserModel.swift */; };
+		1AC8FD0A26B0A85D00B1685D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0926B0A85D00B1685D /* Notes.swift */; };
+		1AC8FD0C26B0A87D00B1685D /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */; };
+		1AC8FD0E26B0B15E00B1685D /* PracticeNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
 		1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7E264E357D00CD9974 /* TabVC.storyboard */; };
 		1AD65E81264E412800CD9974 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E80264E412800CD9974 /* Home.storyboard */; };
@@ -85,7 +88,6 @@
 		E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */; };
 		E1383D8021E7905000F8597F /* DataHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D7F21E7905000F8597F /* DataHeaderCell.swift */; };
 		E1383D8221E7905D00F8597F /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D8121E7905D00F8597F /* DataCell.swift */; };
-		E1383D8621E7CDFC00F8597F /* addTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */; };
 		E147F43821FF716D00FFB8BB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147F43721FF716D00FFB8BB /* Theme.swift */; };
 		E154CB93221F0B29007ACAC3 /* MaintabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */; };
 		E15E290121EFA76900F2177F /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15E290021EFA76900F2177F /* Icons.xcassets */; };
@@ -135,6 +137,9 @@
 		1ABB939D26828C23007EF555 /* PopUpReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpReminder.swift; sourceTree = "<group>"; };
 		1ABC96E2267B16BA0021195F /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		1AC84FE42698AF2C002E7556 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1AC8FD0926B0A85D00B1685D /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNotes.swift; sourceTree = "<group>"; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1AD65E7E264E357D00CD9974 /* TabVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabVC.storyboard; sourceTree = "<group>"; };
 		1AD65E80264E412800CD9974 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -192,7 +197,6 @@
 		E1383D7D21E7903800F8597F /* ShowPercentageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPercentageCell.swift; sourceTree = "<group>"; };
 		E1383D7F21E7905000F8597F /* DataHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHeaderCell.swift; sourceTree = "<group>"; };
 		E1383D8121E7905D00F8597F /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
-		E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTodayViewController.swift; sourceTree = "<group>"; };
 		E147F43721FF716D00FFB8BB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E154CB92221F0B29007ACAC3 /* MaintabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintabBarViewController.swift; sourceTree = "<group>"; };
 		E15E290021EFA76900F2177F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -243,7 +247,6 @@
 				26C76571267456F500BD646E /* AddPracticesViewController.swift */,
 				263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */,
 				E18EDF1421F9081F009B18B1 /* HomeViewController.swift */,
-				E1383D8521E7CDFC00F8597F /* addTodayViewController.swift */,
 				1ABC96E2267B16BA0021195F /* ReminderViewController.swift */,
 				1ABB939D26828C23007EF555 /* PopUpReminder.swift */,
 			);
@@ -323,6 +326,7 @@
 				1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */,
 				1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */,
 				1AC84FE42698AF2C002E7556 /* UserModel.swift */,
+				1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -528,6 +532,8 @@
 				E1F63FC1220B8C560001FC6D /* User+CoreDataClass.swift */,
 				1A554392267C3D46000C5FFF /* Reminder.swift */,
 				1A554394267C3DA9000C5FFF /* Reminder+CoreProperties.swift */,
+				1AC8FD0926B0A85D00B1685D /* Notes.swift */,
+				1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 			files = (
 				E1F63FC7220B8C560001FC6D /* User+CoreDataClass.swift in Sources */,
 				1A3FA24C266E924B003A96A4 /* UserPracticesData.swift in Sources */,
+				1AC8FD0E26B0B15E00B1685D /* PracticeNotes.swift in Sources */,
 				E1A2CF83221FDAA6009085C9 /* PracticeData+CoreDataProperties.swift in Sources */,
 				1AACDE0F2668787400A1877D /* LoginOpitonViewController.swift in Sources */,
 				E1383D7C21E7835800F8597F /* ShowRecordViewController.swift in Sources */,
@@ -713,6 +720,7 @@
 				E1383D7E21E7903800F8597F /* ShowPercentageCell.swift in Sources */,
 				26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */,
 				1A554393267C3D46000C5FFF /* Reminder.swift in Sources */,
+				1AC8FD0C26B0A87D00B1685D /* Notes+CoreDataProperties.swift in Sources */,
 				1A554391267BB109000C5FFF /* ReminderTableViewCell.swift in Sources */,
 				E16DBD23225D3BD80056D864 /* RecordTableSectionZeroTableViewCell.swift in Sources */,
 				1A62B82126659CD70025D92C /* MainViewController.swift in Sources */,
@@ -727,11 +735,11 @@
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
 				1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
+				1AC8FD0A26B0A85D00B1685D /* Notes.swift in Sources */,
 				263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */,
 				1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */,
 				E189D68621E4FA430078380B /* AppDelegate.swift in Sources */,
 				E169CA57225BAA8700A100A6 /* WeeklyData+CoreDataClass.swift in Sources */,
-				E1383D8621E7CDFC00F8597F /* addTodayViewController.swift in Sources */,
 				E18EDF1121F8BC08009B18B1 /* MorePageTableViewCell.swift in Sources */,
 				262946E026601F8B005BA95E /* Constants.swift in Sources */,
 				26C76572267456F500BD646E /* AddPracticesViewController.swift in Sources */,
