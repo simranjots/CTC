@@ -201,9 +201,9 @@ class FirebaseDataManager {
                 }
             }
         }
-//        if snapshots == nil {
-//            completionhandler(true)
-//        }
+        if snapshots == nil {
+            completionhandler(true)
+        }
     }
     func FetchNotes(Useruid:String,practiceName:String) ->Bool? {
         var result : Bool?

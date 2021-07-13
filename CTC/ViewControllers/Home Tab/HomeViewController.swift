@@ -47,6 +47,16 @@ class HomeViewController: UIViewController,ReceiveData{
                 
             }
         })
+
+        dbHelper = DatabaseHelper()
+        userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
+        userObject = currentUser.checkLoggedIn()
+        nameLabel.text = greetingMessage()
+        practiceReminder = PracticeReminder()
+        practices = self.getPractices()
+        practicesData = self.getPracticesData(date: selectedDate)
+        _ = userPractices.oldestPracticeDate(user: userObject)
         
     }
    
