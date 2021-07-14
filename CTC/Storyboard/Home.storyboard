@@ -979,7 +979,7 @@
                                                             <constraint firstItem="gTN-Uq-4Sn" firstAttribute="top" secondItem="0Eo-Tl-SrG" secondAttribute="top" constant="10" id="yme-qf-kfX"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please add your daily notes here!" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-Fb-Lhy">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Your Notes Here. . . " textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-Fb-Lhy">
                                                         <rect key="frame" x="10" y="190" width="368" height="200"/>
                                                         <color key="textColor" systemColor="systemGrayColor"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>

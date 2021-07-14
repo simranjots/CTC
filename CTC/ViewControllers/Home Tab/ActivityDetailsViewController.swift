@@ -78,7 +78,7 @@ class ActivityDetailsViewController: UIViewController {
             if practicesData!.practiceDataToPractice == selectedPractice{
             
                 let temp = practicesData!.pNotes
-                notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
+                notesTextView.text = temp == "No note created." || temp == nil ? "Write Your Notes Here. . . " : temp
                
                 self.activeButton(flag: starButton )
                 
@@ -124,6 +124,8 @@ class ActivityDetailsViewController: UIViewController {
         } else {
             stataticsView.layer.backgroundColor = UIColor.white.cgColor
         }
+        notesTextView.returnKeyType = .done
+        notesTextView.delegate = self
         
         //Style buttons
         Utilities.styleHollowButton(saveButtonOutlet)
@@ -150,7 +152,7 @@ class ActivityDetailsViewController: UIViewController {
         let ispracticed = starButton
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
-            noteData = ""
+            noteData = "No note created."
         }
         
         
@@ -192,21 +194,27 @@ extension UITextField{
 
 extension ActivityDetailsViewController : UITextViewDelegate{
     
+   
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        if textView.textColor == UIColor.lightGray {
-            if textView.toolbarPlaceholder == "Write Your Notes Here. . . "{
-                textView.text = nil
-                
-            }
+        if textView.text == "Write Your Notes Here. . . " {
+            textView.text = ""
             textView.textColor = UIColor.black
+            textView.font = UIFont(name: "verdana", size: 18.0)
         }
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.toolbarPlaceholder = "Write Your Notes Here. . . "
+        if textView.text == "" {
+            textView.text = "Write Your Notes Here. . . "
             textView.textColor = UIColor.lightGray
+            textView.font = UIFont(name: "verdana", size: 13.0)
         }
     }
     

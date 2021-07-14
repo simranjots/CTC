@@ -86,12 +86,27 @@ class UserPracticesData {
                            }
 
             }else{
-                uid = practiceObject.uId!
-                practiceData.practised = toggleBtn
-                practiceData.date = currentDate.dateFormate()! as NSDate
-                practiceData.practiceDataToPractice = practiceObject
-                practiceData.tracking_days = Int32(tracking_days)
-                practiceData.streak = streak
+                let Practices = PracticeData(context: self.context)
+                if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
+                          uid = practiceObject.uId!
+                           practiceData.pNotes = note
+                           practiceData.practised = toggleBtn
+                           practiceData.date = currentDate.dateFormate()! as NSDate
+                           practiceData.practiceDataToPractice = practiceObject
+                           practiceData.tracking_days = Int32(tracking_days)
+                           practiceData.streak = streak
+
+                           }else{
+                               Practices.pUid = practiceObject.uId!
+                               Practices.pNotes = note
+                               Practices.practised = toggleBtn
+                               Practices.date = currentDate.dateFormate()! as NSDate
+                               Practices.practiceDataToPractice = practiceObject
+                               Practices.tracking_days = Int32(tracking_days)
+                               Practices.streak = streak
+                               uid = practiceData.pUid!
+                           }
+
             }
             
             
@@ -102,6 +117,7 @@ class UserPracticesData {
             newPracticesData.practised = toggleBtn
             newPracticesData.pUid = practiceObject.uId
             newPracticesData.practiceDataToPractice = practiceObject
+            newPracticesData.pNotes = note
             
             if(toggleBtn == true){
                 tracking_days += 1
