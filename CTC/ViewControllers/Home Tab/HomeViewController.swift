@@ -238,7 +238,7 @@ extension HomeViewController : UITableViewDataSource {
     
         
         if (switchFlag != nil){
-            HomeVCCell.isOn = switchFlag!
+            cell.isOn = switchFlag!
             cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
         } else {

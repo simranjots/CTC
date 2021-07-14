@@ -23,8 +23,11 @@ class ActivityProgressVC: UIViewController {
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
        // practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
-        valueArray = userPracticesData.getPracticebyName(practice: practice!.practice!)
-       
+        if practice != nil {
+            valueArray = self.userPracticesData.getPracticebyName(practice: practice!.practice!)
+           
+        }
+        
         self.title  = practice!.practice!
     }
     
