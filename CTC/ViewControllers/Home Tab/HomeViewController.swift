@@ -11,11 +11,13 @@ class HomeViewController: UIViewController,ReceiveData{
     var userPractices: UserPractices!
     var userPracticesData: UserPracticesData!
     var selectedDate: Date!
-    var datePicker : UIDatePicker!
     var indexpath : Int = 0
     var window: UIWindow!
-    var practi:[Practice]!
-    var userObject: User!
+    var userObject: User!{
+        didSet{
+            nameLabel.text = greetingMessage()
+        }
+    }
     var practices:[Practice]!
     var practicesData: [PracticeData]!
     var practiceReminder : PracticeReminder!
@@ -31,14 +33,40 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet var nameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.refreshTableview(date: selectedDate)
+      
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
+        selectedDate = Date().dateFormate()!
+        var pUid : String?
+        if practices.count == 0{
+            db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
+                if value == true {
+                    pUid = pid
+                    if pUid != nil {
+                        db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
+                            if flag == true{
+                                refreshTableview(date: selectedDate)
+                            }
+                        })
+                    }
+                    self.refreshTableview(date: selectedDate)
+                    
+                }
+            })
+          
+           
+        }
+       
+
+        refreshTableview(date: selectedDate)
+        
     }
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
-        dateTextField.text = "\(Date().dateFormatemmmdd()!)"
+        dateTextField.text = selectedDate.dateFormateToString()
         dbHelper = DatabaseHelper()
         practiceHistory = PracticedHistory()
         currentUser = CurrentUser()
@@ -166,16 +194,15 @@ class HomeViewController: UIViewController,ReceiveData{
     }
     
     func refreshTableview(date: Date) {
+        dbHelper = DatabaseHelper()
+        practiceHistory = PracticedHistory()
+        currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         practices = userPractices.getPractices(user: userObject)
         practicesData = self.getPracticesData(date: selectedDate)
-        let oldestDate = userPractices.oldestPracticeDate(user: userObject)
-        self.datePicker = UIDatePicker()
-        self.datePicker.minimumDate = oldestDate
         homeTableView.reloadData()
     }
     
@@ -206,8 +233,9 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
-        
+      
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
+    
         
         if (switchFlag != nil){
             HomeVCCell.isOn = switchFlag!
@@ -218,7 +246,7 @@ extension HomeViewController : UITableViewDataSource {
             cell.activeButton(flag: false)
         }
         cell.practice = practices[indexPath.row]
-        cell.selectedDate = datePicker.date.dateFormate()!
+        cell.selectedDate = selectedDate
         return cell
     }
 }
@@ -270,6 +298,12 @@ extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onFriendSelected(index: indexPath.row)
+        HomeViewController.practiceAdded  = {(flag) in
+            if(flag){
+                self.refreshTableview(date: self.selectedDate)
+                
+            }
+        }
         performSegue(withIdentifier: "HomeToAddDataSague", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         

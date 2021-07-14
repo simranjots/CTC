@@ -13,6 +13,7 @@ class ActivityDetailsViewController: UIViewController {
     static var starButton : Bool  = false
     var selectedPractice : Practice?
     var check : Bool = false
+
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
     @IBOutlet var percentageLabel: UILabel!
@@ -22,13 +23,12 @@ class ActivityDetailsViewController: UIViewController {
     @IBOutlet var startButtonOutlet: UIButton!
     @IBOutlet var saveButtonOutlet: UIButton!
     
-    var activityName = ""
     
     var startValue: Double = 0
     var endValue: Double = 70
     var animationDuration: Double = 2.0
     let animationStartDate = Date()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  "\(selectedPractice?.practice ?? "Activity Details")"
@@ -145,6 +145,7 @@ class ActivityDetailsViewController: UIViewController {
             
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
+                    HomeViewController.practiceAdded(true)
                     self.navigationController!.popToViewController(controller, animated: true)
                     break
                 }

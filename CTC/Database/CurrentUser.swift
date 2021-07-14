@@ -16,7 +16,7 @@ class CurrentUser {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String, completion : userAdded?)-> Int{
+    func addUser(name: String, email: String, password: String,image : Data?,uid : String,from : String)-> Int{
         loadUser()
         let user = getUserObject(email: email)
         if from == "GsignIn"{
@@ -58,21 +58,7 @@ class CurrentUser {
                 newUser.isloggedin = true
                 let result = saveUser()
                 if result == 0 {
-                    if from == "signUp" {
-                        return result
-                    }else {
-                        DispatchQueue.global().async {
-                            self.db.FetchPractices(puid: uid, completion: {(value) -> Void in
-                                if value == true {
-                                    _ = self.db.fetchHistory(uid: uid, email: email)
-                                    completion!(0)
-                                    
-                                }
-                                
-                                
-                            })
-                        }
-                    }
+                    return 0
                 }
                 
             }else {

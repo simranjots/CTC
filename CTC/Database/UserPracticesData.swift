@@ -110,7 +110,7 @@ class UserPracticesData {
             
             newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
-          
+            uid = practiceObject.uId!
         }
         let result = currentUser.saveUser()
         if result == 0 {
