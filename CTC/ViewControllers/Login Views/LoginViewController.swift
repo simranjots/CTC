@@ -89,7 +89,16 @@ class LoginViewController: UIViewController {
                             self.activityIndicator.isHidden = true
                         }
                         if (Auth.auth().currentUser?.isEmailVerified)! {
-                            print("emailverified")
+                            let userupdate = self.db.collection("dap_users").document(Auth.auth().currentUser!.uid)
+                            userupdate.updateData([
+                                "verified": "Verified"
+                            ]) { err in
+                                if let err = err {
+                                    print("Error updating document: \(err)")
+                                } else {
+                                    print("Document successfully updated")
+                                }
+                            }
                             if self.currentUser.checkUser(email: email) {
                                 if self.currentUser.passwordCheck(email: email, password: password){
                                     let save = self.currentUser.updateLoginStatus(status: true, email: email)
@@ -133,7 +142,7 @@ class LoginViewController: UIViewController {
                             
                             
                         }else{
-                            self.showAlert(title: "Login Fail", message: "Please verify your email address First", buttonTitle: "Okay")
+                            self.showAlert(title: "Login Fail", message: "Please verify your email. An email verification link has already sent on your email.", buttonTitle: "OK")
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true
                         }

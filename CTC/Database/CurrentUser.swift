@@ -117,11 +117,11 @@ class CurrentUser {
                         return
                     }
                     let urlString: String = downloadURL.absoluteString
-                    self.database.collection("dap_users").document(userObject!.uid!)
-                        .setData(["uid":Auth.auth().currentUser!.uid,
+                    let userupdate = self.database.collection("dap_users").document(userObject!.uid!)
+                    userupdate.updateData(["uid":Auth.auth().currentUser!.uid,
                                   "name": name,
                                   "email":newEmail,
-                                  "imageLink":urlString],merge: true) { error in
+                                  "imageLink":urlString]) { error in
                             if error != nil {
                                 print(error as Any)
                             }

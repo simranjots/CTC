@@ -124,9 +124,28 @@ class ProfilePageViewController: UIViewController {
         user?.reauthenticate(with: credential, completion: { Result, Error in
             if Error !=  nil {
             }else{
-                Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
+//                Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
+//                    if error != nil {
+//                        self.showAlert(title: "warning", message: "The email address is already in use by another account.", buttonTitle: "try again")
+//                    }else{
+//                        let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+//                        if result == 0 {
+//                            self.showToast(message: "Successfully updated", duration: 2.0)
+//                            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+//                                self.navigationController?.popViewController(animated: true)
+//                            }
+//
+//
+//                        } else {
+//
+//                            self.showToast(message: "Updation Fail. . .", duration: 2.0)
+//
+//                        }
+//                    }
+//                }
+                Auth.auth().currentUser?.updatePassword(to: newpassword) { error in
                     if error != nil {
-                        self.showAlert(title: "warning", message: "The email address is already in use by another account.", buttonTitle: "try again")
+                        self.showAlert(title: "warning", message: "\(String(describing: error))" , buttonTitle: "tryagain")
                     }else{
                         let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
                         if result == 0 {
@@ -142,11 +161,7 @@ class ProfilePageViewController: UIViewController {
                             
                         }
                     }
-                }
-                Auth.auth().currentUser?.updatePassword(to: newpassword) { error in
-                    if error != nil {
-                        self.showAlert(title: "warning", message: "\(String(describing: error))" , buttonTitle: "tryagain")
-                    }
+                    
                 }
             }
         })
