@@ -12,6 +12,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var userPracticesData: UserPracticesData!
     var selectedDate: Date!
     var indexpath : Int = 0
+    var switchFlag  : Bool?
     var window: UIWindow!
     var userObject: User!{
         didSet{
@@ -93,7 +94,7 @@ class HomeViewController: UIViewController,ReceiveData{
             gradient.endPoint = CGPoint(x: 1, y: 0)
         }
         UserDefaults.standard.set(true, forKey: "DailyReminder")
-        
+        SetReminder()
         
          
         //MARK: for mainatain the practices data weekly
@@ -234,7 +235,7 @@ extension HomeViewController : UITableViewDataSource {
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
       
-        let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
+        switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
     
         
         if (switchFlag != nil){
