@@ -117,7 +117,7 @@ class MorePageViewController: UIViewController {
            profileImageView.layer.cornerRadius = 80 / 2
            
            view.addSubview(editButton)
-           editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 150, paddingRight: 265, width: 25, height: 25)
+           editButton.anchor(top: view.topAnchor, right: view.leftAnchor, paddingTop: 150, paddingLeft: 85, width: 25, height: 25)
            
            view.addSubview(nameLabel)
            //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

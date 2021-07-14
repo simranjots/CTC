@@ -88,6 +88,7 @@ class LoginViewController: UIViewController {
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true
                         }
+                        if (success != nil) {
                         if (Auth.auth().currentUser?.isEmailVerified)! {
                             let userupdate = self.db.collection("dap_users").document(Auth.auth().currentUser!.uid)
                             userupdate.updateData([
@@ -142,6 +143,11 @@ class LoginViewController: UIViewController {
                             
                             
                         }else{
+                            self.showAlert(title: "Login Fail", message: "Please verify your email. An email verification link has already sent on your email.", buttonTitle: "OK")
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
+                        }
+                    }else{
                             self.showAlert(title: "Login Fail", message: "Please verify your email. An email verification link has already sent on your email.", buttonTitle: "OK")
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true

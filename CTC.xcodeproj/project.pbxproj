@@ -29,7 +29,6 @@
 		1AACDE0F2668787400A1877D /* LoginOpitonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */; };
 		1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB939D26828C23007EF555 /* PopUpReminder.swift */; };
 		1ABC96E3267B16BA0021195F /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABC96E2267B16BA0021195F /* ReminderViewController.swift */; };
-		1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC84FE42698AF2C002E7556 /* UserModel.swift */; };
 		1AC8FD0A26B0A85D00B1685D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0926B0A85D00B1685D /* Notes.swift */; };
 		1AC8FD0C26B0A87D00B1685D /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */; };
 		1AC8FD0E26B0B15E00B1685D /* PracticeNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */; };
@@ -39,6 +38,7 @@
 		1AD65E83264E449900CD9974 /* TrackRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E82264E449900CD9974 /* TrackRecord.storyboard */; };
 		1AD65E85264E45A400CD9974 /* Books.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E84264E45A400CD9974 /* Books.storyboard */; };
 		1AD65E87264E466C00CD9974 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E86264E466C00CD9974 /* More.storyboard */; };
+		1AE8AF06269FAC96004E9229 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8AF05269FAC96004E9229 /* UserModel.swift */; };
 		1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */; };
 		26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */; };
 		2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */; };
@@ -136,7 +136,6 @@
 		1AACDE0E2668787400A1877D /* LoginOpitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOpitonViewController.swift; sourceTree = "<group>"; };
 		1ABB939D26828C23007EF555 /* PopUpReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpReminder.swift; sourceTree = "<group>"; };
 		1ABC96E2267B16BA0021195F /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
-		1AC84FE42698AF2C002E7556 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1AC8FD0926B0A85D00B1685D /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNotes.swift; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		1AD65E82264E449900CD9974 /* TrackRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackRecord.storyboard; sourceTree = "<group>"; };
 		1AD65E84264E45A400CD9974 /* Books.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Books.storyboard; sourceTree = "<group>"; };
 		1AD65E86264E466C00CD9974 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		1AE8AF05269FAC96004E9229 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCCell.swift; sourceTree = "<group>"; };
 		26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimationViewController.swift; sourceTree = "<group>"; };
 		2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StataticsViewProgressBar.swift; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 				1A55439626811583000C5FFF /* PracticeReminders.swift */,
 				1A2E9B8C2689EBC2005587FA /* FirebaseDataManager.swift */,
 				1A2E9B90268AA6A2005587FA /* PracticedHistory.swift */,
-				1AC84FE42698AF2C002E7556 /* UserModel.swift */,
+				1AE8AF05269FAC96004E9229 /* UserModel.swift */,
 				1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */,
 			);
 			path = Database;
@@ -706,6 +706,7 @@
 				1AA35F882671F31600BA918F /* ActivityProgressVC.swift in Sources */,
 				1ABB939E26828C23007EF555 /* PopUpReminder.swift in Sources */,
 				1AACDE0D2668783400A1877D /* MainNavigationController.swift in Sources */,
+				1AE8AF06269FAC96004E9229 /* UserModel.swift in Sources */,
 				263F60F52681476D00B4908E /* HowToUseCollectionViewCell.swift in Sources */,
 				E18EDF1521F9081F009B18B1 /* HomeViewController.swift in Sources */,
 				26A2153F268D201100B581BC /* PracticeHistoryCollectionViewCell.swift in Sources */,
@@ -733,7 +734,6 @@
 				E1383D8221E7905D00F8597F /* DataCell.swift in Sources */,
 				E1F63FC3220B8C560001FC6D /* PracticeData+CoreDataClass.swift in Sources */,
 				E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */,
-				1AC84FE52698AF2C002E7556 /* UserModel.swift in Sources */,
 				E147F43821FF716D00FFB8BB /* Theme.swift in Sources */,
 				1AC8FD0A26B0A85D00B1685D /* Notes.swift in Sources */,
 				263F60F12681272400B4908E /* ShopBooksCollectionViewCell.swift in Sources */,
@@ -914,7 +914,7 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 7.1;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -938,7 +938,7 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 7.1;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

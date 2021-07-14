@@ -55,6 +55,9 @@ class CurrentUser {
                 newUser.uid = uid
                 newUser.password = password
                 newUser.image = image
+                if from == "signIn"{
+                    newUser.isloggedin = true
+                }
                 let result = saveUser()
                 if result == 0 {
                     return 0
