@@ -38,6 +38,7 @@ class HomeViewController: UIViewController,ReceiveData{
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
+        dateTextField.text = selectedDate.dateFormatemmmdd()
         var pUid : String?
         if practices.count == 0{
             db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
@@ -67,7 +68,7 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date().dateFormate()!
-        dateTextField.text = selectedDate.dateFormateToString()
+        dateTextField.text = selectedDate.dateFormatemmmdd()
         dbHelper = DatabaseHelper()
         practiceHistory = PracticedHistory()
         currentUser = CurrentUser()
