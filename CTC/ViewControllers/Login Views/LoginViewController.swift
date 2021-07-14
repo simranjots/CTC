@@ -83,8 +83,8 @@ class LoginViewController: UIViewController {
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true
                         }
-                        if ((success) != nil) {
-                            
+                        if (Auth.auth().currentUser?.isEmailVerified)! {
+                            print("emailverified")
                             if self.currentUser.checkUser(email: email) {
                                 if self.currentUser.passwordCheck(email: email, password: password){
                                     let save = self.currentUser.updateLoginStatus(status: true, email: email)
@@ -127,6 +127,10 @@ class LoginViewController: UIViewController {
                             }
                             
                             
+                        }else{
+                            self.showAlert(title: "Login Fail", message: "Please verify your email address First", buttonTitle: "Okay")
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
                         }
                         
                     }
