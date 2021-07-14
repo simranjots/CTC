@@ -76,7 +76,7 @@ class MorePageViewController: UIViewController {
        let editButton: UIButton = {
            
            let button = UIButton()
-           button.setImage(UIImage(named: "edit")?.withRenderingMode(.alwaysTemplate), for: .normal)
+           button.setImage(UIImage(named: "pencil")?.withRenderingMode(.alwaysTemplate), for: .normal)
            button.tintColor = .white
            button.addTarget(self, action: #selector(handleEditTap), for: .touchUpInside)
            return button
@@ -113,11 +113,11 @@ class MorePageViewController: UIViewController {
            
            view.addSubview(profileImageView)
            //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-           profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 30, width: 80, height: 80)
+           profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 20, width: 80, height: 80)
            profileImageView.layer.cornerRadius = 80 / 2
            
            view.addSubview(editButton)
-           editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 150, paddingRight: 20, width: 20, height: 20)
+           editButton.anchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 150, paddingRight: 265, width: 25, height: 25)
            
            view.addSubview(nameLabel)
            //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

@@ -23,7 +23,7 @@ class ResetPasswordViewController: UIViewController {
         Utilities.styleButton(resetPasswordButton)
         guard let emailIcon = UIImage(named: "Email") else { return }
         Utilities.addTextFieldImage(textField: emailTextField, andImage: emailIcon)
-        Utilities.addShadowToButton(resetPasswordButton)
+       // Utilities.addShadowToButton(resetPasswordButton)
     }
     
     

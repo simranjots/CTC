@@ -136,7 +136,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                     .setData(["uid":Auth.auth().currentUser!.uid,
                                                               "name": userName,
                                                               "email":email,
-                                                              "imageLink":imagepath]) { error in
+                                                              "imageLink":imagepath,
+                                                              "verified":"Not Verified"]) { error in
                                                         if error != nil {
                                                             self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                         }
@@ -150,8 +151,19 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                                 self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                             }
                                                                 // Notify the user that the mail has sent or couldn't because of an error.
-                                                            self.showAlert(title: "Email sent", message: "Please check your email address, Thank you!" , buttonTitle: "okay")
+                                                            
+                                                        let alert = UIAlertController(title: "Email Sent", message: "An email verification link has been sent to your email. Please check your email.", preferredStyle: .alert)
+                                                              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) -> Void in
+                                                                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                                                                let vc = storyboard.instantiateViewController(withIdentifier: "LoginScreen") as! LoginViewController
+                                                                self.present(vc, animated: true, completion: nil)
+                                                              }))
+                                                      
+                                                            
+                                                        self.present(alert, animated: true, completion: nil)
                                                             })
+                                                    
+                                                       
                                                         
                                                     }
                                             }
