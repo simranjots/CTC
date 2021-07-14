@@ -36,20 +36,25 @@ class LoginViewController: UIViewController {
         database = FirebaseDataManager()
         currentUser = CurrentUser()
         setUpElements()
+        gmailSignInButton.isHidden = true
+        facebookSignInButton.isHidden = true
         
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        gmailSignInButton.isHidden = true
+        facebookSignInButton.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+       
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
+       
         currentUser = CurrentUser()
-        
-        
         userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
             performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
