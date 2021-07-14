@@ -9,8 +9,9 @@ class ActivityDetailsViewController: UIViewController {
     var selectedDate: Date?
     var practicesArray: [Practice]!
     var practicesData: PracticeData?
+    var startpracticesData: [PracticeData]!
     var delegate: ReceiveData?
-    var starButton : Bool  = false
+    var starButton : Bool = false
     var selectedPractice : Practice?
     var check : Bool = false
     let db = FirebaseDataManager()
@@ -37,26 +38,34 @@ class ActivityDetailsViewController: UIViewController {
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practicesArray = userPractices.getPractices(user: userObject)!
+        startpracticesData = self.getPracticesData(date: selectedDate!)
+        if(startpracticesData != nil){
+            for data in startpracticesData!{
+                if data.practiceDataToPractice == selectedPractice!{
+                      starButton = data.practised
+                }
+            }
+        }
         self.setData()
         styleElements()
         
+    }
+    private func getPracticesData(date: Date) -> [PracticeData]? {
+        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
     }
     override func viewWillAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
-        starButton = ((practicesData?.practised) != nil)
+        
         setData()
         styleElements()
     }
     
     func setData() {
-     
         practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
-        starButton = ((practicesData?.practised) != nil)
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
@@ -126,10 +135,8 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     func activeButton(flag: Bool?){
-        
-    
-       
-        if (starButton) {
+       starButton = flag!
+        if (flag!) {
             startButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
             check = true
         } else {

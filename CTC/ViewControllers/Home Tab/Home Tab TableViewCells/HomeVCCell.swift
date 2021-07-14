@@ -3,8 +3,6 @@ import UIKit
 class HomeVCCell: UITableViewCell {
 
     // variables
-    
-    var dbHelper: DatabaseHelper!
     var userPracticesData: UserPracticesData!
     var resultFlag: Int!
     var practice: Practice!
@@ -12,7 +10,6 @@ class HomeVCCell: UITableViewCell {
     var view: UIView!
     var isOn: Bool = false
     var userObject: User!
-    
     @IBOutlet var homeScreenTableCellView: UIView!
     @IBOutlet var activityImageView: UIImageView!
     @IBOutlet var activityNameLabel: UILabel!
@@ -21,11 +18,8 @@ class HomeVCCell: UITableViewCell {
     @IBOutlet var starButtonOutlet: UIButton!
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
-        dbHelper = DatabaseHelper()
         userPracticesData = UserPracticesData()
-        
         homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
         Utilities.addShadowAndBorderToView(homeScreenTableCellView)
         homeScreenTableCellView.layer.borderWidth = 0
@@ -37,7 +31,7 @@ class HomeVCCell: UITableViewCell {
     
     @IBAction func toggleStarTapped(_ sender: UIButton) {
         self.activeButton(flag: !isOn)
-        
+       
         resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "", save: "", check: false)
          
         if resultFlag == 0{
@@ -51,7 +45,7 @@ class HomeVCCell: UITableViewCell {
     
     }
     func activeButton(flag: Bool){
-        
+      
        isOn = flag
         if(isOn){
             starButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
