@@ -57,7 +57,14 @@ extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
         let date = valueArray![indexPath.row].date! as Date
     
         cell.activityDateLabel.text = date.dateFormatemmmdd()
-        cell.activityNotesTextView.text = valueArray![indexPath.row].pNotes
+        if  valueArray![indexPath.row].pNotes == "No note created." {
+            cell.activityNotesTextView.text = "No note created."
+            cell.activityNotesTextView.textColor = UIColor.lightGray
+            cell.activityNotesTextView.font = UIFont(name: "verdana", size: 13.0)
+        }else{
+            cell.activityNotesTextView.text = valueArray![indexPath.row].pNotes
+        }
+        
         if valueArray![indexPath.row].practised == true {
             cell.practicedDaysLabel.text = "Yes"
         } else {

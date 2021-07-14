@@ -163,6 +163,7 @@ class CurrentUser {
         loadUser()
         for user in users {
             if user.email == email{
+                user.isloggedin = true
                 return true
             }
         }
