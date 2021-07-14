@@ -6,15 +6,13 @@ class ActivityProgressVC: UIViewController {
     var userPracticesData : UserPracticesData!
     var currentUser: CurrentUser!
     var userPractices: UserPractices!
-    var valueArray: PracticeData!
-    var practiceNotes : PracticeNotes!
-    var NotesArray: [Notes]?{
+    var valueArray: [PracticeData]?{
         didSet {
             activityTrackingTableView.reloadData()
         }
     }
-    var practice : Practice!
-    var practiceName : String!
+    var practice : Practice?
+   
     
     @IBOutlet var activityTrackingTableView: UITableView!
     @IBOutlet var tableViewHeader: UIView!
@@ -24,11 +22,10 @@ class ActivityProgressVC: UIViewController {
         currentUser = CurrentUser()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        practiceNotes = PracticeNotes()
-        practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
-        valueArray = userPracticesData.getPracticeDataObj(practiceName: practice.practice!)
-        NotesArray = practiceNotes.getNotesByUid(uid: valueArray.noteuid!)
-        self.title  = practiceName
+       // practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
+        valueArray = userPracticesData.getPracticebyName(practice: practice!.practice!)
+       
+        self.title  = practice!.practice!
     }
     
     override func viewDidLoad() {
@@ -36,7 +33,7 @@ class ActivityProgressVC: UIViewController {
     
         //Set properties of tableView Header
         tableViewHeader.layer.cornerRadius = tableViewHeader.frame.height / 5
-        self.title = practiceName
+        self.title = practice!.practice!
     }
 }
 
@@ -48,17 +45,17 @@ extension ActivityProgressVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NotesArray!.count
+        return valueArray!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityProgressCell
-        let date = NotesArray![indexPath.row].noteDate! as Date
+        let date = valueArray![indexPath.row].date! as Date
     
         cell.activityDateLabel.text = date.dateFormatemmmdd()
-        cell.activityNotesTextView.text = NotesArray![indexPath.row].note
-        if NotesArray![indexPath.row].practiceData?.practised == true {
+        cell.activityNotesTextView.text = valueArray![indexPath.row].pNotes
+        if valueArray![indexPath.row].practised == true {
             cell.practicedDaysLabel.text = "Yes"
         } else {
             cell.practicedDaysLabel.text = "No"

@@ -3,4 +3,69 @@
    uuid = "88544F87-5A2E-4DEF-8053-94A58359236D"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F74DE385-D20B-4557-9ABD-95EBE1417CA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CTC/ViewControllers/Login Views/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "signInButtonTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F74DE385-D20B-4557-9ABD-95EBE1417CA0 - e43688bd8c01c648"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;CTC.userModel&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CTC.LoginViewController.signInButtonTapped(Any) -&gt; ()"
+                  moduleName = "CTC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simranjotsingh/Desktop/Apple%20developer/New%20CTC/CTC%20The%20201%20Day%20/CTC/CTC/ViewControllers/Login%20Views/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "2548">
+               </Location>
+               <Location
+                  uuid = "F74DE385-D20B-4557-9ABD-95EBE1417CA0 - e43688bd8c01c648"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;CTC.userModel&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CTC.LoginViewController.signInButtonTapped(Any) -&gt; ()"
+                  moduleName = "CTC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simranjotsingh/Desktop/Apple%20developer/New%20CTC/CTC%20The%20201%20Day%20/CTC/CTC/ViewControllers/Login%20Views/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "3164">
+               </Location>
+               <Location
+                  uuid = "F74DE385-D20B-4557-9ABD-95EBE1417CA0 - 90308c852ed05316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in closure #1 (Swift.Array&lt;CTC.userModel&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CTC.LoginViewController.signInButtonTapped(Any) -&gt; ()"
+                  moduleName = "CTC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simranjotsingh/Desktop/Apple%20developer/New%20CTC/CTC%20The%20201%20Day%20/CTC/CTC/ViewControllers/Login%20Views/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

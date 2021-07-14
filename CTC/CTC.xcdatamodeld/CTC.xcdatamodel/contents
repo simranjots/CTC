@@ -15,14 +15,16 @@
         <attribute name="practice" optional="YES" attributeType="String"/>
         <attribute name="remindswitch" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="startedday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uId" optional="YES" attributeType="String"/>
         <attribute name="values" optional="YES" attributeType="String"/>
         <relationship name="practiceData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeData" inverseName="practiceDataToPractice" inverseEntity="PracticeData"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="practice" inverseEntity="User"/>
     </entity>
     <entity name="PracticeData" representedClassName=".PracticeData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="noteuid" optional="YES" attributeType="String"/>
+        <attribute name="pNotes" optional="YES" attributeType="String"/>
         <attribute name="practised" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="pUid" optional="YES" attributeType="String"/>
         <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tracking_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="practiceData" inverseEntity="Notes"/>
@@ -32,6 +34,7 @@
         <attribute name="com_del_flag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dss" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hid" optional="YES" attributeType="String"/>
         <attribute name="practice_name" optional="YES" attributeType="String"/>
         <attribute name="td" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="practiceHistory" inverseEntity="User"/>
@@ -61,12 +64,12 @@
         <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="194"/>
-        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="134"/>
-        <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="119"/>
+        <element name="Notes" positionX="-522" positionY="-387" width="128" height="89"/>
+        <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="209"/>
+        <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="149"/>
+        <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="134"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="149"/>
         <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="120"/>
-        <element name="Notes" positionX="-522" positionY="-387" width="128" height="89"/>
     </elements>
 </model>

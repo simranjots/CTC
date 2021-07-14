@@ -84,8 +84,8 @@ class PracticeHistoryViewController: UIViewController {
         if pracName == repeatpracName?.practice {
             showAlert(title: "Warning", message: "Can not add practice with same name  ", buttonTitle: "Try Again")
         } else {
-            _=practice.addPractices(practice:pracName, image_name: "Change_a_Routine", date: date! , user: userObject, value: "Achievement", encourage: encourage, remindswitch: false, goals: "365")
-            self.firebaseDataManager.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, practiceName: pracName, uid: self.userObject.uid!)
+            _=practice.addPractices(practice:pracName, image_name: "Change_a_Routine", date: date! , user: userObject, value: "Achievement", encourage: encourage, remindswitch: false, goals: "365", Fuid: deletedHistory[pageControl.currentPage].hid)
+            self.firebaseDataManager.updateSinglePractices(collectionName: "PracticedHistory", valueName: "isRestore", value: true, document: (deletedHistory[pageControl.currentPage].hid)!, uid: self.userObject.uid!)
             practiceHistory.deletePracticeHistory(practice: deletedHistory[pageControl.currentPage])
             showToast(message: "Practice restored", duration: 1.0)
            refreshTableView()

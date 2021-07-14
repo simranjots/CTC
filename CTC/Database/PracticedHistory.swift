@@ -8,8 +8,9 @@ class PracticedHistory {
     var firebaseDataManager = FirebaseDataManager()
     let currentUser = CurrentUser()
 
-    func addPracticeHistory(practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,userOb:User) -> Int {
+    func addPracticeHistory(hid :String,practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,userOb:User) -> Int {
         let newHistory =  PracticeHistory(context: self.context)
+        newHistory.hid = hid
         newHistory.practice_name = practiceName
         newHistory.com_del_flag = comDelFlag
         newHistory.date = date as NSDate
@@ -18,7 +19,7 @@ class PracticedHistory {
         newHistory.user = userOb
         let result = currentUser.saveUser()
         if result == 0 {
-            firebaseDataManager.addPracticeHistoryToFirebase(practiceName: practiceName, comDelFlag: comDelFlag, date: date, dss: dss, td: td, user: userOb)
+            firebaseDataManager.addPracticeHistoryToFirebase(id: newHistory.hid!, practiceName: practiceName, comDelFlag: comDelFlag, date: date, dss: dss, td: td, user: userOb)
         }
         return result
     }

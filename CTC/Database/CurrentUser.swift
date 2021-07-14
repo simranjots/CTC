@@ -61,10 +61,17 @@ class CurrentUser {
                     if from == "signUp" {
                         return result
                     }else {
-                        _=db.fetchHistory(uid: uid, email: email)
-                        db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
-                            completion!(0)
-                        })
+                        DispatchQueue.global().async {
+                            self.db.FetchPractices(puid: uid, completion: {(value) -> Void in
+                                if value == true {
+                                    _ = self.db.fetchHistory(uid: uid, email: email)
+                                    completion!(0)
+                                    
+                                }
+                                
+                                
+                            })
+                        }
                     }
                 }
                 

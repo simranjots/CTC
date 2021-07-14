@@ -54,8 +54,8 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         let destination = segue.destination as! ActivityProgressVC
         
         destination.userObject = userObject
-        destination.practiceName = practicesArray[myIndex].practice
-        print("Practice\(String(describing: practicesArray[myIndex].practice))")
+        destination.practice = practicesArray[myIndex]
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

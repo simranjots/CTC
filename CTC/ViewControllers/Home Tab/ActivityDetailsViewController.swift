@@ -9,8 +9,6 @@ class ActivityDetailsViewController: UIViewController {
     var selectedDate: Date?
     var practicesArray: [Practice]!
     var practicesData: PracticeData?
-    var notesData : Notes!
-    var practiceNotes : PracticeNotes!
     var delegate: ReceiveData?
     static var starButton : Bool  = false
     var selectedPractice : Practice?
@@ -37,7 +35,6 @@ class ActivityDetailsViewController: UIViewController {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        practiceNotes = PracticeNotes()
         practicesArray = userPractices.getPractices(user: userObject)!
         self.setData()
         styleElements()
@@ -59,8 +56,8 @@ class ActivityDetailsViewController: UIViewController {
         
         if practicesData != nil {
             if practicesData!.practiceDataToPractice == selectedPractice{
-                notesData = practiceNotes.getPracticeNoteObj(noteuid: (practicesData!.noteuid)!)
-                let temp = notesData!.note
+            
+                let temp = practicesData!.pNotes
                 notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                 
                 self.activeButton(flag: ActivityDetailsViewController.starButton )

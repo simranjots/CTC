@@ -28,6 +28,7 @@ extension Practice {
     @NSManaged public var encourage: String?
     @NSManaged public var remindswitch: Bool
     @NSManaged public var goals: String?
+    @NSManaged public var uId: String?
 
 }
 
