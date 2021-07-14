@@ -14,11 +14,7 @@ class HomeViewController: UIViewController,ReceiveData{
     var indexpath : Int = 0
     var switchFlag  : Bool?
     var window: UIWindow!
-    var userObject: User!{
-        didSet{
-            nameLabel.text = greetingMessage()
-        }
-    }
+    var userObject: User!
     var practices:[Practice]!
     var practicesData: [PracticeData]!
     var practiceReminder : PracticeReminder!
@@ -34,11 +30,11 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet var nameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-      
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         dateTextField.text = selectedDate.dateFormatemmmdd()
+        nameLabel.text = greetingMessage(user: userObject)
         var pUid : String?
         if practices.count == 0{
             db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
@@ -75,7 +71,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
-        nameLabel.text = greetingMessage()
+        nameLabel.text = greetingMessage(user: userObject)
         practiceReminder = PracticeReminder()
         practices = self.getPractices()
         practicesData = self.getPracticesData(date: selectedDate)
@@ -111,7 +107,7 @@ class HomeViewController: UIViewController,ReceiveData{
         }
     }
     
-    func greetingMessage() -> String {
+    func greetingMessage(user: User) -> String {
         
         let date = Date()
         let calendar = Calendar.current
@@ -120,15 +116,15 @@ class HomeViewController: UIViewController,ReceiveData{
         
         switch hour {
         case 5...12 :
-            message = "Good Morning, \(userObject.name!)!"
+            message = "Good Morning, \(user.name!)!"
         case 13...16 :
-            message = "Good Afternoon, \(userObject.name!)!"
+            message = "Good Afternoon, \(user.name!)!"
         case 17...21 :
-            message = "Good Evening, \(userObject.name!)!"
+            message = "Good Evening, \(user.name!)!"
         case 21...24 :
-            message = "Good Night, \(userObject.name!)!"
+            message = "Good Night, \(user.name!)!"
         case 0...5 :
-            message = "Good Night, \(userObject.name!)!"
+            message = "Good Night, \(user.name!)!"
         default :
             print("Getting error in formating time.")
         }
