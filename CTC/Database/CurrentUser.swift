@@ -55,7 +55,6 @@ class CurrentUser {
                 newUser.uid = uid
                 newUser.password = password
                 newUser.image = image
-                newUser.isloggedin = true
                 let result = saveUser()
                 if result == 0 {
                     return 0

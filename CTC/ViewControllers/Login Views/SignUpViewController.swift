@@ -141,7 +141,19 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                             self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                         }
                                                     }
-                                                self.performSegue(withIdentifier: Constants.Segues.signUpToHomeSegue, sender: self)
+                                                if Auth.auth().currentUser != nil && Auth.auth().currentUser!.isEmailVerified {
+                                                    self.showAlert(title: "Error!", message: err!.localizedDescription , buttonTitle: "Try Again")
+                                                    }
+                                                    else {
+                                                        Auth.auth().currentUser!.sendEmailVerification(completion: { (error) in
+                                                            if error != nil {
+                                                                self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
+                                                            }
+                                                                // Notify the user that the mail has sent or couldn't because of an error.
+                                                            self.showAlert(title: "Email sent", message: "Please check your email address, Thank you!" , buttonTitle: "okay")
+                                                            })
+                                                        
+                                                    }
                                             }
                                         }
                                     }
