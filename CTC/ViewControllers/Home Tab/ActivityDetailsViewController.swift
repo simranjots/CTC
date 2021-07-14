@@ -10,9 +10,10 @@ class ActivityDetailsViewController: UIViewController {
     var practicesArray: [Practice]!
     var practicesData: PracticeData?
     var delegate: ReceiveData?
-    static var starButton : Bool  = false
+    var starButton : Bool  = false
     var selectedPractice : Practice?
     var check : Bool = false
+    let db = FirebaseDataManager()
 
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
@@ -40,12 +41,22 @@ class ActivityDetailsViewController: UIViewController {
         styleElements()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        dbHelper = DatabaseHelper()
+        userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
+        practicesArray = userPractices.getPractices(user: userObject)!
+        practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
+        starButton = ((practicesData?.practised) != nil)
+        setData()
+        styleElements()
+    }
     
     func setData() {
      
         practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
-        
+        starButton = ((practicesData?.practised) != nil)
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
@@ -59,8 +70,8 @@ class ActivityDetailsViewController: UIViewController {
             
                 let temp = practicesData!.pNotes
                 notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
-                
-                self.activeButton(flag: ActivityDetailsViewController.starButton )
+               
+                self.activeButton(flag: starButton )
                 
             }
             
@@ -111,14 +122,14 @@ class ActivityDetailsViewController: UIViewController {
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
-        self.activeButton(flag: !ActivityDetailsViewController.starButton)
+        self.activeButton(flag: !starButton)
     }
     
     func activeButton(flag: Bool?){
         
-        ActivityDetailsViewController.starButton = flag!
-        HomeVCCell.isOn = flag!
-        if (ActivityDetailsViewController.starButton) {
+    
+       
+        if (starButton) {
             startButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
             check = true
         } else {
@@ -129,7 +140,7 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let ispracticed = ActivityDetailsViewController.starButton
+        let ispracticed = starButton
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
             noteData = ""
