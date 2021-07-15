@@ -110,14 +110,15 @@ class MorePageViewController: UIViewController {
            
            let view = UIView()
            view.backgroundColor = Utilities.primaryTextColor
-           
+        
            view.addSubview(profileImageView)
            //profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
            profileImageView.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 97, paddingLeft: 20, width: 80, height: 80)
            profileImageView.layer.cornerRadius = 80 / 2
-           
+        
+         
            view.addSubview(editButton)
-           editButton.anchor(top: view.topAnchor, right: view.leftAnchor, paddingTop: 150, paddingLeft: 85, width: 25, height: 25)
+           editButton.anchor(top: view.topAnchor, left: view.leftAnchor, paddingTop: 150, paddingLeft: 85, width: 25, height: 25)
            
            view.addSubview(nameLabel)
            //nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
