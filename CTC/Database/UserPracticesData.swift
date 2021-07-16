@@ -16,7 +16,7 @@ class UserPracticesData {
     var userObject: User!
     var percentage : Int16 = 0
     
-    func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String) -> Int {
+    func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String,check : Bool) -> Int {
         
         let resultFlag = practiceHistory.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
         print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
@@ -44,35 +44,38 @@ class UserPracticesData {
                 tracking_days += 1
                 streak += 1
                 
-            }else if (toggleBtn  && practiceData.practised == true){
-                if save == "" {
+            }else if (toggleBtn  && practiceData.practised == true && save == ""){
+               
                     tracking_days += 1
                     streak += 1
-                    
-                }
+            }else if (toggleBtn  && practiceData.practised == true && save == "save" ){
+               // print("check 1\(currentDate.dateFormate())")
                 
+              //  print("check 2\((practiceData.date! as Date).dateFormate())")
+                if (currentDate.dateFormate() != (practiceData.date! as Date).dateFormate()) {
+                if check == true {
+                    tracking_days += 1
+                    streak += 1
+                }
+                }
             }
             if save == "save"{
                 let Practices = PracticeData(context: self.context)
-                if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
-                    
-                    practiceData.practised = toggleBtn
-                    practiceData.date = currentDate.dateFormate()! as NSDate
-                    practiceData.practiceDataToPractice = practiceObject
-                    practiceData.note = note
-                    practiceData.tracking_days = Int32(tracking_days)
-                    practiceData.streak = streak
-                    
+                
+               if (currentDate.dateFormate() != (practiceData.date! as Date).dateFormate()) {
+             
+                Practices.note = note
                 }else{
-                    
-                    Practices.practised = toggleBtn
-                    Practices.date = currentDate.dateFormate()! as NSDate
-                    Practices.practiceDataToPractice = practiceObject
-                    Practices.note = note
-                    Practices.tracking_days = Int32(tracking_days)
-                    Practices.streak = streak
+            
+                    practiceData.note = note
+                  
                     
                 }
+                practiceData.practised = toggleBtn
+                practiceData.date = currentDate.dateFormate()! as NSDate
+                practiceData.practiceDataToPractice = practiceObject
+                practiceData.tracking_days = Int32(tracking_days)
+                practiceData.streak = streak
             }else{
                 
                 practiceData.practised = toggleBtn

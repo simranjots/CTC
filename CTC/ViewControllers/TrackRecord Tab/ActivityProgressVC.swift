@@ -6,7 +6,11 @@ class ActivityProgressVC: UIViewController {
     var userPracticesData : UserPracticesData!
     var currentUser: CurrentUser!
     var userPractices: UserPractices!
-    var valueArray: [PracticeData]?
+    var valueArray: [PracticeData]?{
+        didSet {
+            activityTrackingTableView.reloadData()
+        }
+    }
     var practice : Practice!
     var practiceName : String!
     

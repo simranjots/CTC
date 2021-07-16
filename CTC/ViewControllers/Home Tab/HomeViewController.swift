@@ -210,7 +210,7 @@ extension HomeViewController : UITableViewDataSource {
         let switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
         
         if (switchFlag != nil){
-            cell.isOn = switchFlag!
+            HomeVCCell.isOn = switchFlag!
             cell.userObject = userObject
             cell.activeButton(flag: switchFlag!)
         } else {
@@ -280,7 +280,7 @@ extension HomeViewController: UITableViewDelegate{
         let destination = segue.destination as! ActivityDetailsViewController
         destination.userObject = userObject
         destination.selectedPractice = practices[indexpath]
-        destination.selectedDate = datePicker.date.dateFormate()!
+        destination.selectedDate = selectedDate
         destination.delegate = self
         
     }

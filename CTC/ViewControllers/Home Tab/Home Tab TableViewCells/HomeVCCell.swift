@@ -10,7 +10,7 @@ class HomeVCCell: UITableViewCell {
     var practice: Practice!
     var selectedDate: Date!
     var view: UIView!
-    var isOn: Bool = false
+    static var isOn: Bool = false
     var userObject: User!
     
     @IBOutlet var homeScreenTableCellView: UIView!
@@ -36,9 +36,9 @@ class HomeVCCell: UITableViewCell {
     }
     
     @IBAction func toggleStarTapped(_ sender: UIButton) {
-        self.activeButton(flag: !isOn)
+        self.activeButton(flag: !HomeVCCell.isOn)
         
-        resultFlag = userPracticesData.practicedToday(toggleBtn: isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "", save: "")
+        resultFlag = userPracticesData.practicedToday(toggleBtn: HomeVCCell.isOn, practiceObject: practice, currentDate: selectedDate, userObject: userObject, note: "", save: "", check: false)
          
         if resultFlag == 0{
             
@@ -52,9 +52,9 @@ class HomeVCCell: UITableViewCell {
     }
     func activeButton(flag: Bool){
         
-        isOn = flag
-        ActivityDetailsViewController.isOn = flag
-        if(isOn){
+        HomeVCCell.isOn = flag
+        ActivityDetailsViewController.starButton = flag
+        if(HomeVCCell.isOn){
             starButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
          
         }else{

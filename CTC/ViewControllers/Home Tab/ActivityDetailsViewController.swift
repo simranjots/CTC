@@ -6,13 +6,13 @@ class ActivityDetailsViewController: UIViewController {
     var userPracticesData = UserPracticesData()
     var userObject: User!
     var userPractices: UserPractices!
-    var selectedDate: Date!
+    var selectedDate: Date?
     var practicesArray: [Practice]!
     var practicesData: PracticeData?
     var delegate: ReceiveData?
-    static var isOn : Bool?
-    var starButton : Bool?
-    var selectedPractice : Practice? 
+    static var starButton : Bool  = false
+    var selectedPractice : Practice?
+    var check : Bool = false
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
     @IBOutlet var percentageLabel: UILabel!
@@ -23,12 +23,12 @@ class ActivityDetailsViewController: UIViewController {
     @IBOutlet var saveButtonOutlet: UIButton!
     
     var activityName = ""
-     
-     var startValue: Double = 0
-     var endValue: Double = 70
-     var animationDuration: Double = 2.0
-     let animationStartDate = Date()
-     
+    
+    var startValue: Double = 0
+    var endValue: Double = 70
+    var animationDuration: Double = 2.0
+    let animationStartDate = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  "\(selectedPractice?.practice ?? "Activity Details")"
@@ -37,11 +37,11 @@ class ActivityDetailsViewController: UIViewController {
         practicesArray = userPractices.getPractices(user: userObject)!
         self.setData()
         styleElements()
-      
+        
     }
-  
+    
     func setData() {
-        starButton = ActivityDetailsViewController.isOn
+     
         practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
@@ -51,25 +51,28 @@ class ActivityDetailsViewController: UIViewController {
         daysSinceStartedLabel.text = "\(days)"
         let percentage = Int((Float(practicedDays) / Float(days)) * 100)
         setPercentageAnimation(percentageValue: Int(percentage))
-       
-            
+        
+        if practicesData != nil {
             if practicesData!.practiceDataToPractice == selectedPractice{
-                    
-                let temp = practicesData!.note
-                    notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                 
-                self.activeButton(flag: starButton ?? false)
-                    
-                }
-    
+                let temp = practicesData!.note
+                notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
+                
+                self.activeButton(flag: ActivityDetailsViewController.starButton )
+                
+            }
+            
+        }
+        
         
     }
+    
     
     func setPercentageAnimation(percentageValue: Int){
         
         let percentageFloat : Float = Float(percentageValue)
         let percentageInPoint : Float = percentageFloat / 100
-     
+        
         percentageLabel.text = "\(percentageValue)%"
         
         //Set progressbar properties
@@ -78,16 +81,16 @@ class ActivityDetailsViewController: UIViewController {
         circularProgressBar.setProgressWithAnimation(duration: 2.0, value: percentageInPoint)
     }
     
-
     
-  
+    
+    
     
     
     
     //Style textFields, textView, Button
     func styleElements() {
-       
-            
+        
+        
         Utilities.styleTextView(notesTextView)
         
         Utilities.addShadowAndBorderToView(stataticsView)
@@ -105,37 +108,39 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-    
-        self.activeButton(flag: starButton)
+        
+        self.activeButton(flag: !ActivityDetailsViewController.starButton)
     }
     
     func activeButton(flag: Bool?){
         
-        starButton = flag
-        if (starButton!) {
+        ActivityDetailsViewController.starButton = flag!
+        HomeVCCell.isOn = flag!
+        if (ActivityDetailsViewController.starButton) {
             startButtonOutlet.setImage(UIImage(named: "Star-Selected"), for: .normal)
-            
+            check = true
         } else {
             
             startButtonOutlet.setImage(UIImage(named: "Star"), for: .normal)
+            check = false
         }
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let ispracticed = starButton
+        let ispracticed = ActivityDetailsViewController.starButton
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
             noteData = ""
         }
         
         
-        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed!, practiceObject: selectedPractice!, currentDate: selectedDate, userObject: userObject!, note: noteData!, save: "save")
+        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: selectedPractice!, currentDate: selectedDate!, userObject: userObject!, note: noteData!, save: "save", check: check)
         
         if(savingResult == 0){
             
             showToast(message: "Data Saved. . .", duration: 3)
             delegate?.passUserObject(user: userObject)
-          
+            
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: HomeViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
@@ -148,19 +153,19 @@ class ActivityDetailsViewController: UIViewController {
         }
         
     }
-    }
-    
+}
+
 extension UITextField{
     
     func setUnderLineWithColor(color: UIColor, alpha : Float){
-
+        
         self.layer.shadowOpacity = alpha
         self.layer.shadowRadius = 0
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.layer.shadowColor = color.cgColor
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.cornerRadius = 2
-
+        
     }
 }
 
