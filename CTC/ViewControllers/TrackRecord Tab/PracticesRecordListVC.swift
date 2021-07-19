@@ -70,8 +70,8 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         cell.activityHeaderTitleLabel.text = practicesArray[indexPath.row].practice
         cell.howManyDaysActivityPracticedLabel.text = "\(practicedDays!)"
         cell.tagLineLabel.text = "Since " + startedDate.dateFormatemmmdd()!
-        
         cell.daysSinceStartedLabel.text = "\(days)"
+        
         cell.activityPracticedForThisMonthLabel.text = "\(practicedDays!)"
         let practiceData = userPracticesData.getStreak(practice: practicesArray[indexPath.row])
         if practiceData != 0 {
@@ -81,9 +81,27 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         }
        
         cell.setPercentageAnimation(percentageValue: percentage)
-        
-        cell.daysLabelTitle.text = "Days"
-        cell.daysSinceStartedLabelTitle.text = "Days Since Started"
+        if practicedDays ?? 0 > 1 {
+            cell.daysLabelTitle.text = "Days"
+        }else{
+            cell.daysLabelTitle.text = "Day"
+        }
+        if days > 1 {
+            cell.starteddayLabel.text = "Days"
+        }else{
+            cell.starteddayLabel.text = "Day"
+        }
+        if practicedDays ?? 0 > 1 {
+            cell.monthdaylabel.text = "Days"
+        }else{
+            cell.monthdaylabel.text = "Day"
+        }
+        if practiceData > 1 {
+            cell.streakdaylabel.text = "Days"
+        }else{
+            cell.streakdaylabel.text = "Day"
+        }
+        cell.daysSinceStartedLabelTitle.text = "Since Started"
         cell.thisMonthLabelTitle.text = "This Month"
         cell.streakLabelTitle.text = "Streak"
         
