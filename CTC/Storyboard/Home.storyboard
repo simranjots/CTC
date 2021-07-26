@@ -892,15 +892,15 @@
                                                         <rect key="frame" x="10" y="0.0" width="368" height="200"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gTN-Uq-4Sn">
-                                                                <rect key="frame" x="74" y="10" width="220" height="180"/>
+                                                                <rect key="frame" x="16.666666666666657" y="10" width="335" height="180"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-aC-Hiz" customClass="StataticsViewProgressBar" customModule="CTC" customModuleProvider="target">
-                                                                        <rect key="frame" x="59.666666666666664" y="0.0" width="100.66666666666669" height="120"/>
+                                                                        <rect key="frame" x="107" y="0.0" width="120.66666666666669" height="120"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoQ-xL-tpe">
-                                                                                <rect key="frame" x="25.333333333333343" y="35" width="50" height="50"/>
+                                                                                <rect key="frame" x="25.333333333333343" y="35" width="70" height="50"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="50" id="rGC-dB-aec"/>
+                                                                                    <constraint firstAttribute="width" constant="70" id="rGC-dB-aec"/>
                                                                                     <constraint firstAttribute="height" constant="50" id="sa1-YH-5sk"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
@@ -915,8 +915,8 @@
                                                                             <constraint firstItem="NoQ-xL-tpe" firstAttribute="centerX" secondItem="Vgg-aC-Hiz" secondAttribute="centerX" id="hly-Zo-39J"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="31C-Qj-lsi">
-                                                                        <rect key="frame" x="0.0" y="130" width="220" height="50"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="135" translatesAutoresizingMaskIntoConstraints="NO" id="31C-Qj-lsi">
+                                                                        <rect key="frame" x="0.0" y="130" width="335" height="50"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0IE-Xv-r7Z">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
@@ -944,7 +944,7 @@
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaH-oe-SLH">
-                                                                                                <rect key="frame" x="38" y="1.6666666666666856" width="38" height="17"/>
+                                                                                                <rect key="frame" x="38.000000000000007" y="1.6666666666666856" width="37.999999999999993" height="17"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" constant="38" id="0Nc-tZ-uAM"/>
                                                                                                 </constraints>
@@ -957,7 +957,7 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9f9-n7-xLf">
-                                                                                <rect key="frame" x="120" y="0.0" width="100" height="50"/>
+                                                                                <rect key="frame" x="235" y="0.0" width="100" height="50"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Since Started" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehU-Et-aaK">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
@@ -1115,7 +1115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwc-yl-Eqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483.0769230769231" y="470.61611374407579"/>
+            <point key="canvasLocation" x="1481.7757009345794" y="470.41036717062639"/>
         </scene>
     </scenes>
     <resources>

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LOGIN-->
+        <!--Login-->
         <scene sceneID="XcZ-tK-zI8">
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" modalPresentationStyle="fullScreen" id="QRo-Rj-Bfv" customClass="LoginViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="Ltu-8S-VgE"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                                                        <state key="normal" title="SIGN-IN">
+                                                                        <state key="normal" title="Sign In">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -225,7 +225,7 @@
                             <constraint firstItem="aFx-pT-9tt" firstAttribute="leading" secondItem="V09-JU-FDW" secondAttribute="leading" id="xjT-OO-SuP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="LOGIN" id="scy-Hu-20e"/>
+                    <navigationItem key="navigationItem" title="Login" id="scy-Hu-20e"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1cs-MD-QSf" id="AkR-vY-wgp"/>
                         <outlet property="becomeamember" destination="AJB-eT-GLL" id="cGf-6x-GvP"/>
@@ -346,7 +346,7 @@
             </objects>
             <point key="canvasLocation" x="162" y="2515"/>
         </scene>
-        <!--BECOME A MEMBER-->
+        <!--Become a member-->
         <scene sceneID="Jnd-md-Wl9">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rao-AT-4HQ" customClass="SignUpViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -467,7 +467,7 @@
                                                                 </constraints>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
-                                                                        <fragment content="SIGN-UP">
+                                                                        <fragment content="Sign Up">
                                                                             <attributes>
                                                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
@@ -539,7 +539,7 @@
                             <constraint firstItem="vE1-XS-vQp" firstAttribute="bottom" secondItem="JWl-XT-8Ku" secondAttribute="bottom" id="wwc-Qk-KNG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BECOME A MEMBER" id="zXS-z5-MUv">
+                    <navigationItem key="navigationItem" title="Become a member" id="zXS-z5-MUv">
                         <barButtonItem key="backBarButtonItem" title="back" id="8dY-YC-F6m"/>
                     </navigationItem>
                     <connections>
@@ -597,10 +597,11 @@
                                                 </constraints>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="LOGIN">
+                                                        <fragment content="Login">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.9948311237373737" green="0.9948311237373737" blue="0.9948311237373737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" size="18" name="ArialRoundedMTBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
