@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         currentUser = CurrentUser()
         setUpElements()
-        
+       
     }
     
     //Set the properties of Sign Up screen elements

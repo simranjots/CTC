@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var gmailSignInButton: UIButton!
     @IBOutlet var facebookSignInButton: UIButton!
+    @IBOutlet weak var becomeamember: UIButton!
     
     
     // to store the current active textfield

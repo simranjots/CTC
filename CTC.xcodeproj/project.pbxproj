@@ -32,6 +32,7 @@
 		1AC8FD0A26B0A85D00B1685D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0926B0A85D00B1685D /* Notes.swift */; };
 		1AC8FD0C26B0A87D00B1685D /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */; };
 		1AC8FD0E26B0B15E00B1685D /* PracticeNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */; };
+		1ACD671B26A56AC600FC7612 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACD671A26A56AC600FC7612 /* AuthenticationServices.framework */; };
 		1AD65E7D264E32CA00CD9974 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7C264E32CA00CD9974 /* Login.storyboard */; };
 		1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E7E264E357D00CD9974 /* TabVC.storyboard */; };
 		1AD65E81264E412800CD9974 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E80264E412800CD9974 /* Home.storyboard */; };
@@ -139,6 +140,7 @@
 		1AC8FD0926B0A85D00B1685D /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		1AC8FD0B26B0A87D00B1685D /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1AC8FD0D26B0B15E00B1685D /* PracticeNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNotes.swift; sourceTree = "<group>"; };
+		1ACD671A26A56AC600FC7612 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		1AD65E7C264E32CA00CD9974 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1AD65E7E264E357D00CD9974 /* TabVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabVC.storyboard; sourceTree = "<group>"; };
 		1AD65E80264E412800CD9974 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACD671B26A56AC600FC7612 /* AuthenticationServices.framework in Frameworks */,
 				0D4B84FB971FF90E7D5728CE /* Pods_CTC.framework in Frameworks */,
 				1A62B81F26658BF60025D92C /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -441,6 +444,7 @@
 		D41E64161121D26A09DACC1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ACD671A26A56AC600FC7612 /* AuthenticationServices.framework */,
 				9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */,
 			);
 			name = Frameworks;
@@ -914,7 +918,7 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7.2;
+				CURRENT_PROJECT_VERSION = 7.3;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -938,7 +942,7 @@
 				CODE_SIGN_ENTITLEMENTS = CTC/CTC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7.2;
+				CURRENT_PROJECT_VERSION = 7.3;
 				DEVELOPMENT_TEAM = RP2W7V2ZKT;
 				INFOPLIST_FILE = CTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

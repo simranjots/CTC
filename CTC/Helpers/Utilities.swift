@@ -190,6 +190,12 @@ class Utilities {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
     }
-
+    static func adddayBorderToView(_ view: UIView) {
+        view.layer.borderWidth = 1
+        view.layer.borderColor = primaryBorderColor.cgColor
+        view.layer.backgroundColor = UIColor(named: "DialogBoxGray")?.cgColor
+      
+        
+    }
     
 }

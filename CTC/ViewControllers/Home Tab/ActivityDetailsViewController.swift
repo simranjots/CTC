@@ -16,6 +16,8 @@ class ActivityDetailsViewController: UIViewController {
     var check : Bool = false
     let db = FirebaseDataManager()
 
+    @IBOutlet weak var startedday: UILabel!
+    @IBOutlet weak var practicedays: UILabel!
     @IBOutlet var stataticsView: UIView!
     @IBOutlet var circularProgressBar: StataticsViewProgressBar!
     @IBOutlet var percentageLabel: UILabel!
@@ -71,6 +73,16 @@ class ActivityDetailsViewController: UIViewController {
         let practicedDays = practicesData?.tracking_days ?? 0
         daysPracticedLabel.text =  "\(practicedDays)"
         daysSinceStartedLabel.text = "\(days)"
+        if days > 1 {
+            startedday.text = "Days"
+        }else{
+            startedday.text = "Day"
+        }
+        if practicedDays > 1 {
+            practicedays.text = "Days"
+        }else{
+            practicedays.text = "Day"
+        }
         let percentage = Int((Float(practicedDays) / Float(days)) * 100)
         setPercentageAnimation(percentageValue: Int(percentage))
         
@@ -129,6 +141,12 @@ class ActivityDetailsViewController: UIViewController {
         
         //Style buttons
         Utilities.styleHollowButton(saveButtonOutlet)
+        startedday.layer.cornerRadius = startedday.frame.height / 4
+        
+        Utilities.adddayBorderToView(startedday)
+        practicedays.layer.cornerRadius = practicedays.frame.height / 4
+        
+        Utilities.adddayBorderToView(practicedays)
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {

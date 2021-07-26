@@ -25,12 +25,22 @@ class PracticesListCell: UITableViewCell {
     @IBOutlet var streakLabelTitle: UILabel!
     @IBOutlet var thisMonthLabelTitle: UILabel!
     
+    @IBOutlet weak var starteddayLabel: UILabel!
     
+    @IBOutlet weak var streakdaylabel: UILabel!
+    @IBOutlet weak var monthdaylabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
 
         //Set properties of activityTitleView
         headerTitleView.layer.cornerRadius = headerTitleView.frame.height / 4
+        starteddayLabel.layer.cornerRadius = starteddayLabel.frame.height / 4
+        streakdaylabel.layer.cornerRadius = streakdaylabel.frame.height / 4
+        monthdaylabel.layer.cornerRadius = monthdaylabel.frame.height / 4
+        
+        Utilities.adddayBorderToView(monthdaylabel)
+        Utilities.adddayBorderToView(streakdaylabel)
+        Utilities.adddayBorderToView(starteddayLabel)
         Utilities.addShadowAndBorderToView(headerTitleView)
         
         //Set properties of ProgressView
