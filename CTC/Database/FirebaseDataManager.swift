@@ -56,19 +56,27 @@ class FirebaseDataManager {
             }
         }
     }
-    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32){
+    func AddpracticedDataToFirebase(toggleStarBtn: Bool, practiceName: String, PracticedDate: Date,user: User,note: String,streak:Int32,trackingDays:Int32,uid:String){
         let datas = ["id": practiceName,
                      "practiceName": practiceName,
                      "PracticedDate": PracticedDate,
                      "user": user.email!,
                      "toggleStarBtn": toggleStarBtn,
-                     "note": note,
+                     "note": uid,
                      "streak":streak,
                      "trackingDays":trackingDays
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
             .collection("PracticedData").document(practiceName)
             .setData(datas, merge: true)
+        AddnotesToFirebase(practiceName: practiceName, user: user, uid: uid, note: note, PracticedDate: PracticedDate)
+    }
+    func AddnotesToFirebase(practiceName: String,user: User,uid: String,note: String ,PracticedDate: Date) {
+        let datas = ["note": note,
+                     "PracticedDate": PracticedDate ] as [String : Any]
+        db.collection("UsersData").document(user.uid!)
+            .collection("PracticedData").document(practiceName).collection(uid).document()
+            .setData(datas)
     }
     func addPracticeHistoryToFirebase(practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,user:User){
         let datas = ["id": practiceName,
