@@ -43,6 +43,7 @@ class HomeViewController: UIViewController,ReceiveData{
                     if pUid != nil {
                         db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
                             if flag == true{
+                                UserDefaults.standard.set(false, forKey: "Monthlydata")
                                 refreshTableview(date: selectedDate)
                             }
                         })
@@ -95,7 +96,7 @@ class HomeViewController: UIViewController,ReceiveData{
         
          
         //MARK: for mainatain the practices data weekly
-        userPracticesData.maintainPracticeDataWeekly(user: userObject)
+        //userPracticesData.maintainPracticeDataWeekly(user: userObject)
        
         
   }

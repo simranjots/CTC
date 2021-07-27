@@ -6,14 +6,11 @@ import UIKit
 
 class DatabaseHelper{
     var monthInfo : WeeklyData!
-    let context: NSManagedObjectContext?
-    let userPractices = UserPractices()
     
-    init() {
-        
-        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-    }
+    let userPractices = UserPractices()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    
     
     func calculatePercentage(noOfDays: Int, totalNoOfDays: Int) -> Int {
         
@@ -173,7 +170,7 @@ class DatabaseHelper{
         fearchRequest.predicate = NSPredicate(format: "date = %@", argumentArray: [date])
         
         do {
-            let arrayData = try (context?.fetch(fearchRequest)) as! [PracticeData]
+            let arrayData = try (context.fetch(fearchRequest)) as! [PracticeData]
             arrayReturn = arrayData
         } catch let err {
             print(err)
@@ -191,7 +188,7 @@ class DatabaseHelper{
         
         
         do {
-            let dataArray = try (context?.fetch(featchRequest) as? [PracticeData])!
+            let dataArray = try (context.fetch(featchRequest) as? [PracticeData])!
             //            print("Get practice data-----------------------------")
             //            print(dataArray)
             return dataArray
@@ -210,18 +207,15 @@ class DatabaseHelper{
     //MAEK: Practice Weekly  calss
     //-------------------------------------------------------------------------------------------------------------------------------
     
-    func addPracticeWeeklyData(practiceName: String, totalNoOfDaysPracticed: Int, totalNoOfDays: Int, startDay: Date, endDate: Date) -> Int {
-        let newWeeklyData = NSEntityDescription.insertNewObject(forEntityName: "WeeklyData", into: context!) as! WeeklyData
+    func addPracticeWeeklyData(practiceName: String, NoOfDaysPracticed: Int,id : String) -> Int {
         
+        let newWeeklyData = WeeklyData(context: self.context)
         newWeeklyData.practice_name = practiceName
-        newWeeklyData.no_of_days_practiced = Int32(totalNoOfDaysPracticed)
-        newWeeklyData.total_no_of_days = Int32(totalNoOfDays)
-        newWeeklyData.start_date = startDay as NSDate
-        newWeeklyData.end_date = endDate as NSDate
-        
+        newWeeklyData.no_of_days_practiced = Int32(NoOfDaysPracticed)
+        newWeeklyData.month_id =  id
         
         do {
-            try context?.save()
+            try context.save()
         } catch let err {
             print(err)
             return 1
@@ -256,7 +250,7 @@ class DatabaseHelper{
         request.predicate = NSPredicate(format: "practice_name = %@", argumentArray: [practiceName])
         
         do {
-            let dataArray = try context?.fetch(request)
+            let dataArray = try context.fetch(request)
             return dataArray
             
         } catch let err {
