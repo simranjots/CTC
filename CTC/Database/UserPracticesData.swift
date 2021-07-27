@@ -4,6 +4,8 @@ import UIKit
 
 class UserPracticesData {
     var uid : String = ""
+    var id : String = ""
+    var days : Int32 = 0
     var tracking_days : Int32 = 0
     var streak : Int32 = 0
     var practiceData : PracticeData!
@@ -35,32 +37,32 @@ class UserPracticesData {
             if (toggleBtn && practiceData.practised == false){
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1)
+                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
                 
             }else if (toggleBtn == false && practiceData.practised == true){
                 
                 tracking_days -= 1
                 
                 streak -= 1
-                monthPractice(practice: practiceObject.practice!, count: -1)
+                monthPractice(practice: practiceObject.practice!, count: -1, user: userObject, PracticedDate: currentDate)
                 
             }else if (toggleBtn == true && practiceData.practised == false){
                 
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1)
+                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
             }else if (toggleBtn  && practiceData.practised == true && save == ""){
                 
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1)
+                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
             }else if (toggleBtn  && practiceData.practised == true && save == "save" ){
                 
                 if (currentDate.dateFormate() != (practiceData.date! as Date).dateFormate()) {
                     if check == true {
                         tracking_days += 1
                         streak += 1
-                        monthPractice(practice: practiceObject.practice!, count: 1)
+                        monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
                     }
                 }
             }
@@ -70,6 +72,7 @@ class UserPracticesData {
                 
                 if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
                     uid = practiceObject.uId!
+                    practiceData.pUid = practiceObject.uId!
                     practiceData.pNotes = note
                     practiceData.practised = toggleBtn
                     practiceData.date = currentDate.dateFormate()! as NSDate
@@ -92,6 +95,7 @@ class UserPracticesData {
                 let Practices = PracticeData(context: self.context)
                 if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
                     uid = practiceObject.uId!
+                    practiceData.pUid = practiceObject.uId!
                     practiceData.pNotes = note
                     practiceData.practised = toggleBtn
                     practiceData.date = currentDate.dateFormate()! as NSDate
@@ -116,7 +120,7 @@ class UserPracticesData {
         }
         else{
             let newPracticesData = PracticeData(context: self.context)
-            let newPractices = WeeklyData(context: self.context)
+            
             newPracticesData.date = currentDate.dateFormate()! as NSDate
             newPracticesData.practised = toggleBtn
             newPracticesData.pUid = practiceObject.uId
@@ -131,14 +135,19 @@ class UserPracticesData {
             
             newPracticesData.streak = streak
             newPracticesData.tracking_days = tracking_days
+            uid = practiceObject.uId!
+            let newPractices = WeeklyData(context: self.context)
             newPractices.no_of_days_practiced = tracking_days
+            days = newPractices.no_of_days_practiced
             newPractices.practice_name = practiceObject.practice
             newPractices.month_id = Date().getMonth()
-            uid = practiceObject.uId!
+            id = newPractices.month_id!
+            firebaseDataManager.AddMonthlyDataToFirebase(practiceName: practiceObject.practice!, user: userObject, uid: uid, MonthlyPracticedDays: Int(days), PracticedDate: currentDate, month_id: id)
         }
         let result = currentUser.saveUser()
         if result == 0 {
             firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days, uid: uid)
+           
         }
         return result
     }
@@ -273,109 +282,109 @@ class UserPracticesData {
         return arrayReturn
     }
     
-    func maintainPracticeDataWeekly(user: User){
-        
-        let arrayData = getPracticeData(user: user)
-        let practice = userPractices.getPractices(user: user)
-        let oldDate = oldestPracticeDataDate(practiceData: arrayData!)
-        let dayOfWeek = Date().getDayOfWeek()
-        var dateArray = oldDate.getDates(date: Date())
-        dateArray =  dateArray.sorted(by: <)
-        var finalEndDate : Date?
-        
-        
-        
-        if(dayOfWeek == 6){
-            
-            let noOfDays = Date().days(from: oldDate)
-            let noOfWeeks = Float(noOfDays) / 7.0
-            
-            var totalNoOfDays : Int = 0
-            var totalNoOfDaysPractice : Int = 0
-            var weekStartDate : Date!
-            var weekEndDate : Date!
-            
-            if(noOfWeeks >= 4.0){
-                
-                let restWeeks = noOfWeeks - 4.0
-                let restDays = Int(restWeeks * 7.0)
-                
-                
-                for prac in practice!{
-                    weekStartDate = prac.startedday as Date?
-                    let pracName = prac.practice!
-                    totalNoOfDays = 0
-                    totalNoOfDaysPractice = 0
-                    
-                    for i in 0...restDays{
-                        
-                        //                    for dateObject in dateArray{
-                        let dateObject = dateArray[i]
-                        
-                        for pracData in arrayData! {
-                            let pracDataName = pracData.practiceDataToPractice?.practice
-                            
-                            let pracDate = (pracData.date! as Date)
-                            if(pracName == pracDataName){
-                                
-                                let dayNo = dateObject.getDayOfWeek()
-                                if(dayNo == 1){
-                                    weekStartDate = dateObject}
-                                if(pracDate == dateObject){
-                                    totalNoOfDays += 1
-                                    
-                                    if(pracData.practised){
-                                        totalNoOfDaysPractice += 1
-                                    }
-                                    
-                                    
-                                    
-                                    if(dayNo == 7){
-                                        weekEndDate = dateObject
-                                        finalEndDate = dateObject
-                                        //                                        print("Date : \(pracData.date)")
-                                        let result = dbHelper.addPracticeWeeklyData(practiceName: pracName, totalNoOfDaysPracticed: totalNoOfDaysPractice, totalNoOfDays: totalNoOfDays, startDay: weekStartDate, endDate: weekEndDate)
-                                        
-                                        totalNoOfDaysPractice = 0
-                                        totalNoOfDays = 0
-                                        
-                                        
-                                        if(result == 0 ){
-                                            print("Weekly Data Added With date \(String(describing: weekStartDate))")
-                                        }else{
-                                            print("Error in Weekly Data adding")
-                                        }
-                                        
-                                    }
-                                    
-                                    // deletePracticeData(practicesData: pracData)
-                                    
-                                }}}}}
-                
-                if(finalEndDate != nil){
-                    
-                    var delPracArray : [PracticeData]? = []
-                    for prac in practice!{
-                        
-                        let deletedDateArray = (prac.startedday! as Date).getDates(date: finalEndDate!)
-                        for date in deletedDateArray {
-                            
-                            for pracData in arrayData!{
-                                if(pracData.date! as Date == date && pracData.practiceDataToPractice! == prac){
-                                    delPracArray?.append(pracData)
-                                }
-                            }
-                            
-                        }
-                        
-                    }
-                    deletePracticeData(practicesData: delPracArray!)
-                }
-            }
-        }
-        
-    }
-    
+//    func maintainPracticeDataWeekly(user: User){
+//        
+//        let arrayData = getPracticeData(user: user)
+//        let practice = userPractices.getPractices(user: user)
+//        let oldDate = oldestPracticeDataDate(practiceData: arrayData!)
+//        let dayOfWeek = Date().getDayOfWeek()
+//        var dateArray = oldDate.getDates(date: Date())
+//        dateArray =  dateArray.sorted(by: <)
+//        var finalEndDate : Date?
+//        
+//        
+//        
+//        if(dayOfWeek == 6){
+//            
+//            let noOfDays = Date().days(from: oldDate)
+//            let noOfWeeks = Float(noOfDays) / 7.0
+//            
+//            var totalNoOfDays : Int = 0
+//            var totalNoOfDaysPractice : Int = 0
+//            var weekStartDate : Date!
+//            var weekEndDate : Date!
+//            
+//            if(noOfWeeks >= 4.0){
+//                
+//                let restWeeks = noOfWeeks - 4.0
+//                let restDays = Int(restWeeks * 7.0)
+//                
+//                
+//                for prac in practice!{
+//                    weekStartDate = prac.startedday as Date?
+//                    let pracName = prac.practice!
+//                    totalNoOfDays = 0
+//                    totalNoOfDaysPractice = 0
+//                    
+//                    for i in 0...restDays{
+//                        
+//                        //                    for dateObject in dateArray{
+//                        let dateObject = dateArray[i]
+//                        
+//                        for pracData in arrayData! {
+//                            let pracDataName = pracData.practiceDataToPractice?.practice
+//                            
+//                            let pracDate = (pracData.date! as Date)
+//                            if(pracName == pracDataName){
+//                                
+//                                let dayNo = dateObject.getDayOfWeek()
+//                                if(dayNo == 1){
+//                                    weekStartDate = dateObject}
+//                                if(pracDate == dateObject){
+//                                    totalNoOfDays += 1
+//                                    
+//                                    if(pracData.practised){
+//                                        totalNoOfDaysPractice += 1
+//                                    }
+//                                    
+//                                    
+//                                    
+//                                    if(dayNo == 7){
+//                                        weekEndDate = dateObject
+//                                        finalEndDate = dateObject
+//                                        //                                        print("Date : \(pracData.date)")
+//                                        let result = dbHelper.addPracticeWeeklyData(practiceName: pracName, totalNoOfDaysPracticed: totalNoOfDaysPractice, totalNoOfDays: totalNoOfDays, startDay: weekStartDate, endDate: weekEndDate)
+//                                        
+//                                        totalNoOfDaysPractice = 0
+//                                        totalNoOfDays = 0
+//                                        
+//                                        
+//                                        if(result == 0 ){
+//                                            print("Weekly Data Added With date \(String(describing: weekStartDate))")
+//                                        }else{
+//                                            print("Error in Weekly Data adding")
+//                                        }
+//                                        
+//                                    }
+//                                    
+//                                    // deletePracticeData(practicesData: pracData)
+//                                    
+//                                }}}}}
+//                
+//                if(finalEndDate != nil){
+//                    
+//                    var delPracArray : [PracticeData]? = []
+//                    for prac in practice!{
+//                        
+//                        let deletedDateArray = (prac.startedday! as Date).getDates(date: finalEndDate!)
+//                        for date in deletedDateArray {
+//                            
+//                            for pracData in arrayData!{
+//                                if(pracData.date! as Date == date && pracData.practiceDataToPractice! == prac){
+//                                    delPracArray?.append(pracData)
+//                                }
+//                            }
+//                            
+//                        }
+//                        
+//                    }
+//                    deletePracticeData(practicesData: delPracArray!)
+//                }
+//            }
+//        }
+//        
+//    }
+//    
     func deletePracticeData(practicesData: [PracticeData]!) {
         
         for delprac in practicesData{
@@ -406,31 +415,36 @@ class UserPracticesData {
         return oldestDate
     }
     
-    func monthPractice(practice: String,count: Int32)  {
-        
+    func monthPractice(practice: String,count: Int32,user: User, PracticedDate: Date)  {
+       
         if let practisedData = getPracticeDataObj(practiceName: practice) {
             if Calendar.current.isDate(practisedData.date! as Date, equalTo: Date(), toGranularity: .month) {
                 if let  monthdata = dbHelper.getmonthlyData(practiceName: practice){
+                    id = monthdata.month_id!
                     monthdata.no_of_days_practiced += count
-                      
+                    days = monthdata.no_of_days_practiced
                     }
                 
             }else{
                 let newPracticesData = WeeklyData(context: self.context)
                 newPracticesData.practice_name = practice
                 newPracticesData.month_id = Date().getMonth()
+                id = newPracticesData.month_id!
                 if count == 1 {
                     newPracticesData.no_of_days_practiced = 1
                 }else{
                     newPracticesData.no_of_days_practiced = 0
                 }
-                _ = currentUser.saveUser()
+                days = newPracticesData.no_of_days_practiced
             }
             
             
             
         }
-        
+        let result = currentUser.saveUser()
+        if result == 0 {
+            firebaseDataManager.AddMonthlyDataToFirebase(practiceName: practice, user: user, uid: practiceData.pUid!, MonthlyPracticedDays: Int(days), PracticedDate: PracticedDate, month_id: id)
+        }
     }
     
     

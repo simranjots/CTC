@@ -78,6 +78,14 @@ class FirebaseDataManager {
             .collection("PracticedData").document(practiceName).collection("Notes").document("\(PracticedDate)")
             .setData(datas)
     }
+    func AddMonthlyDataToFirebase(practiceName: String,user: User,uid: String,MonthlyPracticedDays:Int,PracticedDate: Date,month_id:String) {
+        let datas = ["practiceName":practiceName,
+                     "uid" : month_id,
+                     "MonthlyPracticedDays": MonthlyPracticedDays] as [String : Any]
+        db.collection("UsersData").document(user.uid!)
+            .collection("Monthlypracticed").document(uid).collection("Dates").document("\(PracticedDate)")
+            .setData(datas)
+    }
     func addPracticeHistoryToFirebase(id :String,practiceName: String, comDelFlag: Bool, date: Date, dss: Int, td: Int,user:User){
         let datas = ["id": id,
                      "practiceName": practiceName,
@@ -232,7 +240,7 @@ class FirebaseDataManager {
         }
         return result
     }
-    func  fetchHistory(Useruid: User,completion:@escaping practiceDataAdded) {
+    func fetchHistory(Useruid: User,completion:@escaping practiceDataAdded) {
         
         let ref =  db.collection("UsersData").document(Useruid.uid!)
             .collection("PracticedHistory").whereField("isRestore", isEqualTo: false)
@@ -253,6 +261,34 @@ class FirebaseDataManager {
                         
                         let practiceHistory = PracticedHistory()
                         _ = practiceHistory.addPracticeHistory(hid: id, practiceName: practiceName, comDelFlag: comDelFlag, date: date.dateValue().dateFormate()!, dss: dss, td: td, userOb: Useruid)
+                        completion(true)
+                    }
+                }else{
+                   completion(true)
+                }
+                
+            }
+        }
+       
+    }
+    func fetchMonthlyData(uid:String,docid:String,completion:@escaping practiceDataAdded) {
+        
+        let ref =  db.collection("UsersData").document(docid)
+            .collection("Monthlypracticed").document(uid).collection("Dates")
+        ref.getDocuments() { (snapshot, error) in
+            if error != nil
+            {
+                print(error!)
+            }
+            else {
+                if snapshot != nil {
+                    for document in snapshot!.documents {
+                        let practiceName = document.data() ["practiceName"] as! String
+                        let MonthlyPracticedDays = document.data() ["MonthlyPracticedDays"] as! Int
+                        let uid = document.data() ["uid"] as! String
+                        print(practiceName + "\(MonthlyPracticedDays)" + uid)
+                        let monthlydata = DatabaseHelper()
+                        _ = monthlydata.addPracticeWeeklyData(practiceName: practiceName, NoOfDaysPracticed: MonthlyPracticedDays, id: uid)
                         completion(true)
                     }
                 }else{
