@@ -15,7 +15,9 @@ class LoginViewController: UIViewController {
     var userSetup = [userModel]()
     let storageRef = Storage.storage().reference()
     var database : FirebaseDataManager!
+    private var rememberMeFlag = false
     //Outlets
+    @IBOutlet weak var checkbox: UIButton!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -39,6 +41,14 @@ class LoginViewController: UIViewController {
         setUpElements()
         gmailSignInButton.isHidden = true
         facebookSignInButton.isHidden = true
+        rememberMeFlag = UserDefaults.standard.bool(forKey: "REMEMBER_USER")
+        if rememberMeFlag {
+            checkbox.setImage(UIImage(named: "check"), for: .normal)
+            let email = UserDefaults.standard.string(forKey: "USER_EMAIL")
+            emailTextField.text = email
+        }else{
+            checkbox.setImage(UIImage(named: "uncheck"), for: .selected)
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +73,23 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func checkboxBtn(_ sender: UIButton) {
+        rememberMeFlag = !rememberMeFlag
+        UserDefaults.standard.set(rememberMeFlag, forKey: "REMEMBER_USER")
+        if rememberMeFlag {
+            checkbox.setImage(UIImage(named: "check"), for: .normal)
+            let text = emailTextField.text
+            UserDefaults.standard.set(text, forKey:"USER_EMAIL")
+        }else{
+            checkbox.setImage(UIImage(named: "uncheck"), for: .normal)
+            UserDefaults.standard.removeObject(forKey: "USER_EMAIL")
+        }
+    }
+    @objc func textFieldDidChange(_ sender: UITextField){
+          guard rememberMeFlag else { return }
+          let text = emailTextField.text
+          UserDefaults.standard.set(text, forKey:"USER_EMAIL")
+      }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         view.endEditing(true)
