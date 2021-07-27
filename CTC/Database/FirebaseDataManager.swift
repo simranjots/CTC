@@ -66,7 +66,7 @@ class FirebaseDataManager {
                     "trackingDays":trackingDays
         ] as [String : Any]
         db.collection("UsersData").document(user.uid!)
-            .collection("PracticedData").document(uid)
+            .collection("PracticedData").document(uid).collection("Dates").document("\(PracticedDate)")
             .setData(data, merge: true)
     }
     func AddnotesToFirebase(practiceName: String,user: User,uid: String,note: String ,PracticedDate: Date) {
@@ -168,7 +168,7 @@ class FirebaseDataManager {
         
         var snapshots : QuerySnapshot?
         let ref =   db.collection("UsersData").document(docid)
-            .collection("PracticedData").whereField("id", isEqualTo: uid)
+            .collection("PracticedData").document(uid).collection("Dates").whereField("id", isEqualTo: uid)
         ref.getDocuments() { (snapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

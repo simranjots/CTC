@@ -52,8 +52,8 @@ import IQKeyboardManagerSwift
           // [END register_for_notifications]
         
         //MARK: for path od coredata
-//        let urls = FileManager.default.urls(for: .documentDirectory, in:   .userDomainMask)
-//        print("Address \(urls)")
+        let urls = FileManager.default.urls(for: .documentDirectory, in:   .userDomainMask)
+        print("Address \(urls)")
         
         //MARK:  to select app launch
         

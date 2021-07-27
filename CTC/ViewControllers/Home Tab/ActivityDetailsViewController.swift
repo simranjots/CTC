@@ -50,7 +50,7 @@ class ActivityDetailsViewController: UIViewController {
         }
         self.setData()
         styleElements()
-        
+    
     }
     private func getPracticesData(date: Date) -> [PracticeData]? {
         return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)

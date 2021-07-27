@@ -58,6 +58,7 @@
     </entity>
     <entity name="WeeklyData" representedClassName=".WeeklyData" syncable="YES">
         <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="month_id" optional="YES" attributeType="String"/>
         <attribute name="no_of_days_practiced" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practice_name" optional="YES" attributeType="String"/>
         <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -70,6 +71,6 @@
         <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="134"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="149"/>
-        <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="120"/>
+        <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="119"/>
     </elements>
 </model>
