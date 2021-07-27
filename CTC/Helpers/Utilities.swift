@@ -11,8 +11,8 @@ class Utilities {
     
     static let primaryTextColor = rgb(red: 62, green: 178, blue: 174)
     static let primaryBorderColor = rgb(red: 115, green: 115, blue: 115)
-    static let gradientColor1 = rgb(red: 78, green: 114, blue: 186)
-    static let gradientColor2 = rgb(red: 62, green: 178, blue: 174)
+    static let gradientColor1 = rgb(red: 78, green: 114, blue: 186) //#3EB2AE
+    static let gradientColor2 = rgb(red: 62, green: 178, blue: 174) //#4E72BA
     
     func addColorGradient(view: UIView) {
         
