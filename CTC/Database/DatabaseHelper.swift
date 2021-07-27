@@ -5,13 +5,13 @@ import UIKit
 
 
 class DatabaseHelper{
-    
+    var monthInfo : WeeklyData!
     let context: NSManagedObjectContext?
     let userPractices = UserPractices()
     
     init() {
         
-        context = (UIApplication.shared.delegate  as? AppDelegate)?.persistentContainer.viewContext
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
     }
     
@@ -128,7 +128,7 @@ class DatabaseHelper{
                             //                        print("final Array. . . . ")
                             //                        print(finalDateArray)
                         }else{
-                           // ,"Note" : practiceDataObject.note
+                            // ,"Note" : practiceDataObject.note
                             bufferData = [( ["Practice" : practice.practice, "TrackingDay" : String(describing: practiceDataObject.tracking_days), "Practiced" : String(practiceDataObject.practised),
                                              "CellType" : "1"
                             ])]
@@ -161,8 +161,8 @@ class DatabaseHelper{
         return finalDateArray
         
     }
-
-
+    
+    
     
     func getPracticeDataByDate(date: Date) -> [PracticeData]?{
         
@@ -182,13 +182,13 @@ class DatabaseHelper{
         return arrayReturn
     }
     
-
+    
     
     func getPracticebyName(practice: Practice) -> [PracticeData]? {
         
         let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PracticeData")
         featchRequest.predicate = NSPredicate(format: "practiceDataToPractice = %@", argumentArray: [practice])
- 
+        
         
         do {
             let dataArray = try (context?.fetch(featchRequest) as? [PracticeData])!
@@ -230,35 +230,33 @@ class DatabaseHelper{
         return 0
     }
     
-//
-//    func getPracticeWeeklyData() -> [WeeklyData]? {
-//
-//        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WeeklyData")
-//        featchRequest.returnsObjectsAsFaults = false
-//
-//        do {
-//            let dataArray = try (context?.fetch(featchRequest) as? [WeeklyData])!
-//            //            print("Get practice data-----------------------------")
-//            //            print(dataArray)
-//            return dataArray
-//
-//        } catch let err {
-//            print(err)
-//        }
-//
-//        return nil
-//
-//    }
-//
+    //
+    //    func getPracticeWeeklyData() -> [WeeklyData]? {
+    //
+    //        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WeeklyData")
+    //        featchRequest.returnsObjectsAsFaults = false
+    //
+    //        do {
+    //            let dataArray = try (context?.fetch(featchRequest) as? [WeeklyData])!
+    //            //            print("Get practice data-----------------------------")
+    //            //            print(dataArray)
+    //            return dataArray
+    //
+    //        } catch let err {
+    //            print(err)
+    //        }
+    //
+    //        return nil
+    //
+    //    }
+    //
     func getPracticeWeeklyData(practiceName: String) -> [WeeklyData]? {
-        
-        let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WeeklyData")
-        featchRequest.returnsObjectsAsFaults = false
-        featchRequest.predicate = NSPredicate(format: "practice_name = %@", argumentArray: [practiceName])
+        let request : NSFetchRequest<WeeklyData> = WeeklyData.fetchRequest()
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "practice_name = %@", argumentArray: [practiceName])
         
         do {
-            let dataArray = try (context?.fetch(featchRequest) as? [WeeklyData])!
-       
+            let dataArray = try context?.fetch(request)
             return dataArray
             
         } catch let err {
@@ -268,8 +266,29 @@ class DatabaseHelper{
         return nil
         
     }
-    
-    
+    func getmonthlyData(practiceName: String) -> WeeklyData? {
+        if let  monthdata = getPracticeWeeklyData(practiceName: practiceName){
+            for data in monthdata{
+                if(data.practice_name == practiceName){
+                    monthInfo = monthdata.last
+                    return monthInfo
+                }
+            }
+            
+        }
+        return nil
+    }
+    func getMonthid(practiceName: String) -> Int32?{
+        if let  monthdata = getmonthlyData(practiceName: practiceName){
+            if monthdata.month_id == Date().getMonth(){
+                return monthdata.no_of_days_practiced
+            }else{
+                return 0
+            }
+            
+        }
+        return 0
+    }
     //MAEK: Practice Weekly calss over
     //-------------------------------------------------------------------------------------------------------------------------------
     

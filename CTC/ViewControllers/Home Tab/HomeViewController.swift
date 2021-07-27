@@ -96,7 +96,7 @@ class HomeViewController: UIViewController,ReceiveData{
          
         //MARK: for mainatain the practices data weekly
         userPracticesData.maintainPracticeDataWeekly(user: userObject)
-        
+       
         
   }
     func SetReminder()  {
