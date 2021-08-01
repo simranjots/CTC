@@ -3,12 +3,14 @@ import UIKit
 class ActivityDetailsViewController: UIViewController {
     
     var dbHelper: DatabaseHelper!
-    var userPracticesData = UserPracticesData()
+    var userPracticesData : UserPracticesData!
     var userObject: User!
     var userPractices: UserPractices!
     var selectedDate: Date?
     var practicesArray: [Practice]!
     var practicesData: PracticeData?
+    var notesData : Notes!
+    var practiceNotes : PracticeNotes!
     var delegate: ReceiveData?
     static var starButton : Bool  = false
     var selectedPractice : Practice?
@@ -34,6 +36,8 @@ class ActivityDetailsViewController: UIViewController {
         self.title =  "\(selectedPractice?.practice ?? "Activity Details")"
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
+        userPracticesData = UserPracticesData()
+        practiceNotes = PracticeNotes()
         practicesArray = userPractices.getPractices(user: userObject)!
         self.setData()
         styleElements()
@@ -44,6 +48,7 @@ class ActivityDetailsViewController: UIViewController {
      
         practicesArray = userPractices.getPractices(user: userObject)!
         practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
+        
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
@@ -54,8 +59,8 @@ class ActivityDetailsViewController: UIViewController {
         
         if practicesData != nil {
             if practicesData!.practiceDataToPractice == selectedPractice{
-                
-                let temp = practicesData!.note
+                notesData = practiceNotes.getPracticeNoteObj(noteuid: (practicesData!.noteuid)!)
+                let temp = notesData!.note
                 notesTextView.text = temp == "" || temp == nil ? "Write Your Notes Here. . . " : temp
                 
                 self.activeButton(flag: ActivityDetailsViewController.starButton )

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Notes" representedClassName=".Notes" syncable="YES">
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="noteDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="practiceData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PracticeData" inverseName="notes" inverseEntity="PracticeData"/>
+    </entity>
     <entity name="Practice" representedClassName=".Practice" syncable="YES">
         <attribute name="encourage" optional="YES" attributeType="String"/>
         <attribute name="goals" optional="YES" attributeType="String"/>
@@ -15,11 +21,11 @@
     </entity>
     <entity name="PracticeData" representedClassName=".PracticeData" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="noteuid" optional="YES" attributeType="String"/>
         <attribute name="practised" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tracking_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="practiceData" inverseEntity="Notes"/>
         <relationship name="practiceDataToPractice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Practice" inverseName="practiceData" inverseEntity="Practice"/>
     </entity>
     <entity name="PracticeHistory" representedClassName=".PracticeHistory" syncable="YES">
@@ -61,5 +67,6 @@
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="149"/>
         <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="120"/>
+        <element name="Notes" positionX="-522" positionY="-387" width="128" height="89"/>
     </elements>
 </model>

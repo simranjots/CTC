@@ -61,10 +61,27 @@ class CurrentUser {
                     if from == "signUp" {
                         return result
                     }else {
-                        db.fetchHistory(uid: uid, email: email)
-                        db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
-                            completion!(0)
-                        })
+                        if (db.fetchHistory(uid: uid, email: email)) != nil || true{
+                            if (db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
+                                completion!(0)
+                                
+                            })) != nil || true{
+                                completion!(0)
+                            }else{
+                                completion!(0)
+                            }
+                            
+                        }else{
+                            if (db.FetchPractices(uid: uid, completion: {(Bool) -> Void in
+                                completion!(0)
+                                
+                            })) != nil || true{
+                                completion!(0)
+                            }else{
+                                completion!(0)
+                            }
+                        }
+                       
                         
                     }
                 }
