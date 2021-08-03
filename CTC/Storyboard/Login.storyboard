@@ -751,10 +751,10 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTS-vx-9ul">
                                                     <rect key="frame" x="5" y="10" width="539" height="1029"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="260" id="HIm-el-dKw">
+                                                        <constraint firstAttribute="width" constant="280" id="HIm-el-dKw">
                                                             <variation key="heightClass=regular-widthClass=regular" constant="490"/>
                                                         </constraint>
-                                                        <constraint firstAttribute="height" constant="445" id="Q4w-of-BtE">
+                                                        <constraint firstAttribute="height" constant="550" id="Q4w-of-BtE">
                                                             <variation key="heightClass=regular-widthClass=regular" constant="980"/>
                                                         </constraint>
                                                     </constraints>
@@ -786,7 +786,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="e9F-gK-TL2" eventType="touchUpInside" id="l3n-wo-27I"/>
+                                    <action selector="doneButtonTapped:" destination="e9F-gK-TL2" eventType="touchUpInside" id="l3n-wo-27I"/>
                                     <segue destination="iDN-fk-6wi" kind="show" identifier="navigateToHome" id="80g-pg-Qiy"/>
                                 </connections>
                             </button>
@@ -810,7 +810,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="How to Use App" id="73h-5U-89a"/>
                     <connections>
-                        <outlet property="nextButtonOutlet" destination="2j6-u3-S6f" id="ztx-tp-Ys3"/>
+                        <outlet property="doneButtonOutlet" destination="2j6-u3-S6f" id="ztx-tp-Ys3"/>
                         <outlet property="onBoardingCollectionView" destination="mid-Z1-g97" id="C7I-2T-K25"/>
                     </connections>
                 </viewController>

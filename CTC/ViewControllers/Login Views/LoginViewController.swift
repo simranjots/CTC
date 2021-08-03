@@ -145,13 +145,9 @@ class LoginViewController: UIViewController {
                                 }else{
                                     let saved =  self.currentUser.updatepassword(Email: email, password: password)
                                     if saved == 0 {
-                                        if UserDefaults.standard.bool(forKey: "OnBoard"){
+                                       
                                             self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                            }else{
-                                                UserDefaults.standard.setValue(true, forKey: "OnBoard")
-                                                self.performSegue(withIdentifier: Constants.Segues.onBoardingSegue, sender: self)
-                                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                            }
+                                            
                                     }
                                 }
                             }else{
