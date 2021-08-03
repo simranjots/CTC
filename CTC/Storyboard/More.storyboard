@@ -91,9 +91,15 @@
                         <viewLayoutGuide key="safeArea" id="efP-em-2FJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="100" id="H5g-7a-Koh"/>
-                            <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0"/>
-                            <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3"/>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="top" secondItem="efP-em-2FJ" secondAttribute="top" constant="100" id="H5g-7a-Koh">
+                                <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                            </constraint>
+                            <constraint firstItem="GDc-Er-W6g" firstAttribute="leading" secondItem="Wwc-sa-fyf" secondAttribute="leading" id="MM6-E9-Kh0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="GDc-Er-W6g" secondAttribute="trailing" id="Wov-r2-Gs3">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="GDc-Er-W6g" secondAttribute="bottom" id="wcp-8T-bYP"/>
                         </constraints>
                     </view>
@@ -120,7 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="306" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-hP-3F3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="306" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-hP-3F3">
                                 <rect key="frame" x="0.0" y="140" width="428" height="786"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -176,7 +182,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-5B-ydE" userLabel="Description 2">
-                                                                    <rect key="frame" x="0.0" y="103" width="378" height="168"/>
+                                                                    <rect key="frame" x="0.0" y="103" width="378" height="164"/>
                                                                     <string key="text">cular. She was hard on herself when she didn’t do these things every day. She saw success as all or nothing. This created inner-tension; the ‘missing days’ drove her into a negative mindset.
 
 Teresa decided to apply Kim’s 201 magic number to her practices. His formula worked. Success followed, and she soon added other practices.
@@ -186,6 +192,13 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-G3-ZBV">
+                                                                    <rect key="frame" x="0.0" y="270" width="378" height="1"/>
+                                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="1" id="doO-Z2-uRw"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -223,13 +236,16 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <viewLayoutGuide key="safeArea" id="R3r-hU-0S8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vJX-hP-3F3" secondAttribute="trailing" id="3nU-mR-xaj"/>
                             <constraint firstAttribute="bottom" secondItem="vJX-hP-3F3" secondAttribute="bottom" id="5fQ-Lj-e8n"/>
-                            <constraint firstItem="R3r-hU-0S8" firstAttribute="trailing" secondItem="vJX-hP-3F3" secondAttribute="trailing" id="Cp5-gN-DS9"/>
-                            <constraint firstItem="vJX-hP-3F3" firstAttribute="leading" secondItem="R3r-hU-0S8" secondAttribute="leading" id="QHQ-z2-nUX"/>
-                            <constraint firstItem="vJX-hP-3F3" firstAttribute="top" secondItem="R3r-hU-0S8" secondAttribute="top" id="axf-Oi-J98"/>
-                            <constraint firstItem="vJX-hP-3F3" firstAttribute="top" secondItem="R3r-hU-0S8" secondAttribute="top" id="pgy-LA-7f5"/>
-                            <constraint firstItem="vJX-hP-3F3" firstAttribute="leading" secondItem="ZxR-8L-jD4" secondAttribute="leading" id="ybS-24-wz4"/>
+                            <constraint firstItem="R3r-hU-0S8" firstAttribute="trailing" secondItem="vJX-hP-3F3" secondAttribute="trailing" id="Cp5-gN-DS9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint firstItem="vJX-hP-3F3" firstAttribute="top" secondItem="R3r-hU-0S8" secondAttribute="top" id="pgy-LA-7f5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="vJX-hP-3F3" firstAttribute="leading" secondItem="ZxR-8L-jD4" secondAttribute="leading" id="ybS-24-wz4">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About Authors" id="MLD-hb-UMM"/>
@@ -239,7 +255,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omv-Am-Dgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279.9065420560746" y="2775.8099352051836"/>
+            <point key="canvasLocation" x="1279.6875" y="2775.5490483162516"/>
         </scene>
         <!--FAQs-->
         <scene sceneID="0oK-dA-Mv5">
@@ -249,7 +265,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-AS-9h0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-AS-9h0">
                                 <rect key="frame" x="0.0" y="140" width="428" height="703"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -271,18 +287,28 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-hl-GDU">
-                                                    <rect key="frame" x="20" y="50" width="388" height="136"/>
+                                                    <rect key="frame" x="20" y="50" width="388" height="132"/>
                                                     <string key="text">This is not an all or nothing program. There will be times when adhering to your practices is more challenging than others. You can make those days up throughout the year. Also, plan to bank before times you know will be harder or at the beginning of the year so you don’t feel the pressure at the end of the year. And keep tracking every week so you know where you’re at. If you are able to be around 60% you should have lots of leeway. If you haven’t done your practice all week, your numbers would stay the same but the percentage would go down.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-0t-cQf">
+                                                    <rect key="frame" x="20" y="190" width="388" height="1"/>
+                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="jU9-KO-OUE"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ECr-Xf-dbC" secondAttribute="trailing" constant="20" id="0tc-XH-CtL"/>
+                                                <constraint firstItem="8SF-0t-cQf" firstAttribute="top" secondItem="bSd-hl-GDU" secondAttribute="bottom" constant="8" id="40L-zM-rf8"/>
+                                                <constraint firstItem="8SF-0t-cQf" firstAttribute="leading" secondItem="2Kw-vD-jbH" secondAttribute="leading" constant="20" symbolic="YES" id="7Ab-It-LxB"/>
                                                 <constraint firstItem="ECr-Xf-dbC" firstAttribute="leading" secondItem="2Kw-vD-jbH" secondAttribute="leading" constant="20" id="9cN-1J-ICh"/>
                                                 <constraint firstAttribute="trailing" secondItem="bSd-hl-GDU" secondAttribute="trailing" constant="20" id="AUu-63-0cd"/>
-                                                <constraint firstAttribute="bottom" secondItem="bSd-hl-GDU" secondAttribute="bottom" constant="10" id="Thh-kn-qNu"/>
+                                                <constraint firstAttribute="bottom" secondItem="8SF-0t-cQf" secondAttribute="bottom" constant="5" id="RsX-Hz-I5h"/>
+                                                <constraint firstAttribute="trailing" secondItem="8SF-0t-cQf" secondAttribute="trailing" constant="20" symbolic="YES" id="YzM-hT-N4W"/>
                                                 <constraint firstItem="bSd-hl-GDU" firstAttribute="leading" secondItem="2Kw-vD-jbH" secondAttribute="leading" constant="20" id="cBR-g9-URs"/>
                                                 <constraint firstItem="ECr-Xf-dbC" firstAttribute="top" secondItem="2Kw-vD-jbH" secondAttribute="top" constant="5" id="mAC-zg-baE"/>
                                                 <constraint firstItem="bSd-hl-GDU" firstAttribute="top" secondItem="ECr-Xf-dbC" secondAttribute="bottom" constant="5" id="y2Q-yT-fri"/>
@@ -304,9 +330,15 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <viewLayoutGuide key="safeArea" id="la8-Ed-bWA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="la8-Ed-bWA" firstAttribute="trailing" secondItem="HAf-AS-9h0" secondAttribute="trailing" id="3Rq-74-lmH"/>
-                            <constraint firstItem="HAf-AS-9h0" firstAttribute="top" secondItem="la8-Ed-bWA" secondAttribute="top" id="3sk-YK-uz3"/>
-                            <constraint firstItem="HAf-AS-9h0" firstAttribute="leading" secondItem="la8-Ed-bWA" secondAttribute="leading" id="F2K-7L-vsi"/>
+                            <constraint firstItem="la8-Ed-bWA" firstAttribute="trailing" secondItem="HAf-AS-9h0" secondAttribute="trailing" id="3Rq-74-lmH">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint firstItem="HAf-AS-9h0" firstAttribute="top" secondItem="la8-Ed-bWA" secondAttribute="top" id="3sk-YK-uz3">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="HAf-AS-9h0" firstAttribute="leading" secondItem="la8-Ed-bWA" secondAttribute="leading" id="F2K-7L-vsi">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstItem="la8-Ed-bWA" firstAttribute="bottom" secondItem="HAf-AS-9h0" secondAttribute="bottom" id="v3S-xi-kfi"/>
                         </constraints>
                     </view>
@@ -327,68 +359,45 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agz-tS-E4b">
-                                <rect key="frame" x="0.0" y="150" width="428" height="648"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agz-tS-E4b">
+                                <rect key="frame" x="0.0" y="140" width="428" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TBJ-bw-gSI">
-                                    <size key="itemSize" width="354" height="525"/>
+                                    <size key="itemSize" width="549" height="1049"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="howToUseAppCollectionViewReusableCell" id="Si0-Pk-hgm" customClass="HowToUseCollectionViewCell" customModule="CTC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="61.666666666666664" width="354" height="525"/>
+                                        <rect key="frame" x="0.0" y="-195.66666666666666" width="549" height="1049"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AD1-4b-vvO">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="525"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="549" height="1049"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5F-T1-C1G">
-                                                    <rect key="frame" x="5" y="5" width="344" height="515"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="SWp-M6-iN9">
-                                                            <rect key="frame" x="57" y="10" width="230" height="375"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="230" id="0Zc-4Q-ZiP"/>
-                                                                <constraint firstAttribute="height" constant="350" id="hu4-mr-BMO"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Aw-r2u">
-                                                            <rect key="frame" x="22" y="393" width="300" height="120"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="120" id="cEF-sW-bRj"/>
-                                                                <constraint firstAttribute="width" constant="300" id="kui-oJ-pt8"/>
-                                                            </constraints>
-                                                            <string key="text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. </string>
-                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWp-M6-iN9">
+                                                    <rect key="frame" x="5" y="10" width="539" height="1029"/>
                                                     <constraints>
-                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="leading" secondItem="y5F-T1-C1G" secondAttribute="leading" constant="22" id="HTn-f8-KGi"/>
-                                                        <constraint firstItem="SWp-M6-iN9" firstAttribute="top" secondItem="y5F-T1-C1G" secondAttribute="top" constant="10" id="WtY-z3-zW8"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Vh8-Aw-r2u" secondAttribute="trailing" constant="22" id="cTZ-zs-g0v"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Vh8-Aw-r2u" secondAttribute="bottom" constant="2" id="liw-UF-KDO"/>
-                                                        <constraint firstItem="SWp-M6-iN9" firstAttribute="centerX" secondItem="y5F-T1-C1G" secondAttribute="centerX" id="pyC-kN-YWb"/>
-                                                        <constraint firstItem="Vh8-Aw-r2u" firstAttribute="top" secondItem="SWp-M6-iN9" secondAttribute="bottom" constant="8" id="snM-nb-UTY"/>
+                                                        <constraint firstAttribute="height" constant="445" id="bZi-0D-ntR">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="980"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="260" id="fk4-CO-Hwl">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="490"/>
+                                                        </constraint>
                                                     </constraints>
-                                                </view>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="y5F-T1-C1G" secondAttribute="trailing" constant="5" id="CiI-Y7-GAJ"/>
-                                                <constraint firstItem="y5F-T1-C1G" firstAttribute="leading" secondItem="AD1-4b-vvO" secondAttribute="leading" constant="5" id="E5I-R6-TEx"/>
-                                                <constraint firstAttribute="bottom" secondItem="y5F-T1-C1G" secondAttribute="bottom" constant="5" id="FYZ-pJ-Hl5"/>
-                                                <constraint firstItem="y5F-T1-C1G" firstAttribute="top" secondItem="AD1-4b-vvO" secondAttribute="top" constant="5" id="mDz-xC-ipf"/>
+                                                <constraint firstAttribute="bottom" secondItem="SWp-M6-iN9" secondAttribute="bottom" constant="10" id="GYa-gS-KSt"/>
+                                                <constraint firstAttribute="trailing" secondItem="SWp-M6-iN9" secondAttribute="trailing" constant="5" id="c3c-sU-1yD"/>
+                                                <constraint firstItem="SWp-M6-iN9" firstAttribute="top" secondItem="AD1-4b-vvO" secondAttribute="top" constant="10" id="pBg-QQ-WRp"/>
+                                                <constraint firstItem="SWp-M6-iN9" firstAttribute="leading" secondItem="AD1-4b-vvO" secondAttribute="leading" constant="5" id="tGS-O6-BOU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="354" height="525"/>
+                                        <size key="customSize" width="549" height="1049"/>
                                         <connections>
                                             <outlet property="appSnapshotsImageView" destination="SWp-M6-iN9" id="eYQ-Hj-RMG"/>
-                                            <outlet property="containerView" destination="y5F-T1-C1G" id="s1X-Bw-bZn"/>
-                                            <outlet property="useDescriptionLabel" destination="Vh8-Aw-r2u" id="oOg-bb-pkA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -405,12 +414,18 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <viewLayoutGuide key="safeArea" id="ITh-yO-tqL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="agz-tS-E4b" firstAttribute="top" secondItem="ITh-yO-tqL" secondAttribute="top" constant="10" id="0Ws-Pn-NIE"/>
                             <constraint firstItem="cTX-Ph-shY" firstAttribute="centerX" secondItem="QUV-6b-Sd5" secondAttribute="centerX" id="0hJ-AL-Dkc"/>
+                            <constraint firstItem="cTX-Ph-shY" firstAttribute="top" secondItem="agz-tS-E4b" secondAttribute="bottom" constant="5" id="7To-wY-ZEq"/>
+                            <constraint firstItem="agz-tS-E4b" firstAttribute="top" secondItem="ITh-yO-tqL" secondAttribute="top" id="DAP-vA-Xx3">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
                             <constraint firstItem="ITh-yO-tqL" firstAttribute="bottom" secondItem="cTX-Ph-shY" secondAttribute="bottom" constant="25" id="I6H-5W-HDA"/>
-                            <constraint firstItem="agz-tS-E4b" firstAttribute="leading" secondItem="QUV-6b-Sd5" secondAttribute="leading" id="N0r-4L-9Y6"/>
-                            <constraint firstItem="cTX-Ph-shY" firstAttribute="top" secondItem="agz-tS-E4b" secondAttribute="bottom" constant="5" id="kDb-I8-Jbv"/>
-                            <constraint firstAttribute="trailing" secondItem="agz-tS-E4b" secondAttribute="trailing" id="uSV-rh-OQ4"/>
+                            <constraint firstItem="ITh-yO-tqL" firstAttribute="trailing" secondItem="agz-tS-E4b" secondAttribute="trailing" id="LM3-Av-wwK">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="agz-tS-E4b" firstAttribute="leading" secondItem="ITh-yO-tqL" secondAttribute="leading" id="S0s-V8-X7g">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="How to Use App" id="gZ1-s8-cgB"/>
@@ -421,7 +436,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XX-Gv-h4T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1725.7009345794393" y="2774.51403887689"/>
+            <point key="canvasLocation" x="-1727.34375" y="2773.7920937042459"/>
         </scene>
         <!--More-->
         <scene sceneID="83V-Vd-v1L">
@@ -460,7 +475,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="59v-rT-X1n">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="59v-rT-X1n">
                                 <rect key="frame" x="0.0" y="140" width="428" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -483,19 +498,29 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-NZ-P7X">
-                                                    <rect key="frame" x="20" y="35" width="388" height="155"/>
+                                                    <rect key="frame" x="20" y="35" width="388" height="140"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-dw-h6k">
+                                                    <rect key="frame" x="20" y="183" width="388" height="1"/>
+                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="y6r-zS-FRP"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TGE-dw-h6k" secondAttribute="bottom" constant="5" id="0QK-jI-gzi"/>
                                                 <constraint firstItem="QuJ-NZ-P7X" firstAttribute="trailing" secondItem="HfJ-CY-fch" secondAttribute="trailingMargin" id="Fi4-5F-MRm"/>
                                                 <constraint firstItem="QuJ-NZ-P7X" firstAttribute="top" secondItem="2cu-vK-Nz2" secondAttribute="bottom" constant="5" id="PH0-CA-Cju"/>
                                                 <constraint firstItem="2cu-vK-Nz2" firstAttribute="leading" secondItem="HfJ-CY-fch" secondAttribute="leading" constant="20" symbolic="YES" id="QrD-XP-tqY"/>
                                                 <constraint firstItem="QuJ-NZ-P7X" firstAttribute="leading" secondItem="HfJ-CY-fch" secondAttribute="leadingMargin" id="Qsv-q0-Inu"/>
-                                                <constraint firstItem="QuJ-NZ-P7X" firstAttribute="bottom" secondItem="HfJ-CY-fch" secondAttribute="bottomMargin" constant="1" id="dpv-dj-1Mq"/>
+                                                <constraint firstItem="TGE-dw-h6k" firstAttribute="top" secondItem="QuJ-NZ-P7X" secondAttribute="bottom" constant="8" id="TYW-DF-Uij"/>
+                                                <constraint firstItem="TGE-dw-h6k" firstAttribute="leading" secondItem="HfJ-CY-fch" secondAttribute="leading" constant="20" symbolic="YES" id="Wqz-ZV-h3z"/>
+                                                <constraint firstAttribute="trailing" secondItem="TGE-dw-h6k" secondAttribute="trailing" constant="20" symbolic="YES" id="kPn-u9-f6m"/>
                                                 <constraint firstItem="2cu-vK-Nz2" firstAttribute="top" secondItem="HfJ-CY-fch" secondAttribute="top" constant="10" id="oE4-lz-dTQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="2cu-vK-Nz2" secondAttribute="trailing" constant="20" symbolic="YES" id="udi-LL-j75"/>
                                             </constraints>
@@ -511,10 +536,14 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <viewLayoutGuide key="safeArea" id="v3A-Q7-fQb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="59v-rT-X1n" firstAttribute="leading" secondItem="D3C-zc-LyF" secondAttribute="leading" id="BSv-0H-SRW"/>
+                            <constraint firstItem="59v-rT-X1n" firstAttribute="leading" secondItem="D3C-zc-LyF" secondAttribute="leading" id="BSv-0H-SRW">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstItem="59v-rT-X1n" firstAttribute="top" secondItem="v3A-Q7-fQb" secondAttribute="top" id="M8l-ae-Yf1"/>
                             <constraint firstAttribute="bottom" secondItem="59v-rT-X1n" secondAttribute="bottom" id="XsE-bR-Axq"/>
-                            <constraint firstAttribute="trailing" secondItem="59v-rT-X1n" secondAttribute="trailing" id="uAn-DX-Gbm"/>
+                            <constraint firstAttribute="trailing" secondItem="59v-rT-X1n" secondAttribute="trailing" id="uAn-DX-Gbm">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Privacy Policy" id="tX5-VO-lQt"/>
@@ -543,7 +572,9 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-Wh-Qtn">
                                                 <rect key="frame" x="20" y="30" width="388" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="TXH-58-a4J"/>
+                                                    <constraint firstAttribute="height" constant="200" id="TXH-58-a4J">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
                                                 </constraints>
                                             </mapView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationPin" translatesAutoresizingMaskIntoConstraints="NO" id="CiW-LS-xFM">
@@ -575,7 +606,9 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <rect key="frame" x="20" y="340" width="388" height="1"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="sYe-lo-mHG"/>
+                                                    <constraint firstAttribute="height" constant="1" id="sYe-lo-mHG">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                                                    </constraint>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-Zn-yDU">
@@ -618,7 +651,6 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="QAh-MS-8dM"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="io6-Wa-Llx"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on our other social platforms for updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tup-dw-ury">
@@ -671,30 +703,56 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="top" secondItem="Et8-Zk-o1T" secondAttribute="top" constant="30" id="0XQ-Bb-HZW"/>
-                                            <constraint firstAttribute="trailing" secondItem="wSf-IM-ELO" secondAttribute="trailing" constant="20" symbolic="YES" id="1Gh-Gq-j7I"/>
-                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="6xm-Bu-08X"/>
-                                            <constraint firstAttribute="trailing" secondItem="Tup-dw-ury" secondAttribute="trailing" constant="20" symbolic="YES" id="7KF-GF-2Ms"/>
+                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="top" secondItem="Et8-Zk-o1T" secondAttribute="top" constant="30" id="0XQ-Bb-HZW">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="wSf-IM-ELO" secondAttribute="trailing" constant="20" symbolic="YES" id="1Gh-Gq-j7I">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstItem="bg7-Wh-Qtn" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="6xm-Bu-08X">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="Tup-dw-ury" secondAttribute="trailing" constant="20" symbolic="YES" id="7KF-GF-2Ms">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="w4h-yt-dVV" firstAttribute="leading" secondItem="CiW-LS-xFM" secondAttribute="trailing" constant="10" id="AQ1-dU-AH8"/>
-                                            <constraint firstAttribute="trailing" secondItem="b3G-C5-6XO" secondAttribute="trailing" constant="20" symbolic="YES" id="BRi-Cv-U4p"/>
+                                            <constraint firstAttribute="trailing" secondItem="b3G-C5-6XO" secondAttribute="trailing" constant="20" symbolic="YES" id="BRi-Cv-U4p">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="b3G-C5-6XO" firstAttribute="top" secondItem="w4h-yt-dVV" secondAttribute="bottom" constant="20" id="EGu-kb-h9O"/>
-                                            <constraint firstAttribute="trailing" secondItem="w4h-yt-dVV" secondAttribute="trailing" constant="20" symbolic="YES" id="Ey1-RO-OgF"/>
-                                            <constraint firstItem="CiW-LS-xFM" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="10" id="JOH-9G-JA6"/>
-                                            <constraint firstAttribute="height" constant="650" id="Kkm-s0-g25"/>
+                                            <constraint firstAttribute="trailing" secondItem="w4h-yt-dVV" secondAttribute="trailing" constant="20" symbolic="YES" id="Ey1-RO-OgF">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstItem="CiW-LS-xFM" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="10" id="JOH-9G-JA6">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="650" id="Kkm-s0-g25">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="900"/>
+                                            </constraint>
                                             <constraint firstItem="w4h-yt-dVV" firstAttribute="top" secondItem="bg7-Wh-Qtn" secondAttribute="bottom" constant="20" id="QSh-ZX-pGY"/>
                                             <constraint firstItem="Tup-dw-ury" firstAttribute="top" secondItem="wSf-IM-ELO" secondAttribute="bottom" constant="20" id="V30-eZ-9kp"/>
-                                            <constraint firstAttribute="trailing" secondItem="bg7-Wh-Qtn" secondAttribute="trailing" constant="20" symbolic="YES" id="aTv-zc-IJW"/>
+                                            <constraint firstAttribute="trailing" secondItem="bg7-Wh-Qtn" secondAttribute="trailing" constant="20" symbolic="YES" id="aTv-zc-IJW">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="b3G-C5-6XO" firstAttribute="top" secondItem="CiW-LS-xFM" secondAttribute="bottom" constant="20" id="aU6-HE-g7K"/>
-                                            <constraint firstAttribute="trailing" secondItem="1nd-Zn-yDU" secondAttribute="trailing" constant="20" symbolic="YES" id="b3C-Rc-n3I"/>
+                                            <constraint firstAttribute="trailing" secondItem="1nd-Zn-yDU" secondAttribute="trailing" constant="20" symbolic="YES" id="b3C-Rc-n3I">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="1nd-Zn-yDU" firstAttribute="top" secondItem="b3G-C5-6XO" secondAttribute="bottom" constant="20" id="cNI-9f-ZFP"/>
-                                            <constraint firstItem="b3G-C5-6XO" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="dNx-iI-b5f"/>
+                                            <constraint firstItem="b3G-C5-6XO" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="dNx-iI-b5f">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="1nd-Zn-yDU" firstAttribute="leading" secondItem="b3G-C5-6XO" secondAttribute="leading" id="eB2-58-iJ7"/>
-                                            <constraint firstItem="wSf-IM-ELO" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="flC-oN-0FK"/>
+                                            <constraint firstItem="wSf-IM-ELO" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="flC-oN-0FK">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="CiW-LS-xFM" firstAttribute="top" secondItem="bg7-Wh-Qtn" secondAttribute="bottom" constant="20" id="hWi-ZX-8ci"/>
                                             <constraint firstItem="acT-1H-2KT" firstAttribute="top" secondItem="Tup-dw-ury" secondAttribute="bottom" constant="20" id="kXb-ap-ATx"/>
                                             <constraint firstItem="acT-1H-2KT" firstAttribute="centerX" secondItem="Et8-Zk-o1T" secondAttribute="centerX" id="mhL-1v-VfF"/>
                                             <constraint firstItem="wSf-IM-ELO" firstAttribute="top" secondItem="1nd-Zn-yDU" secondAttribute="bottom" constant="20" id="v1V-pX-Cl5"/>
-                                            <constraint firstItem="Tup-dw-ury" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="yzw-4m-0qv"/>
+                                            <constraint firstItem="Tup-dw-ury" firstAttribute="leading" secondItem="Et8-Zk-o1T" secondAttribute="leading" constant="20" symbolic="YES" id="yzw-4m-0qv">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -748,8 +806,12 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <rect key="frame" x="154" y="20" width="120" height="120"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="d0A-QO-Hxn"/>
-                                                    <constraint firstAttribute="height" constant="120" id="rIe-xb-kQl"/>
+                                                    <constraint firstAttribute="width" constant="120" id="d0A-QO-Hxn">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="120" id="rIe-xb-kQl">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-Wm-PwB">
@@ -848,8 +910,12 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <rect key="frame" x="254" y="110" width="25" height="25"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="QtF-7U-lKc"/>
-                                                    <constraint firstAttribute="height" constant="25" id="ari-Ta-P7k"/>
+                                                    <constraint firstAttribute="width" constant="25" id="QtF-7U-lKc">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="25" id="ari-Ta-P7k">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                                 <state key="normal" title="Edit Button" image="camera"/>
@@ -860,17 +926,33 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="U9m-AT-4Ek" secondAttribute="trailing" constant="20" symbolic="YES" id="5zr-l5-Gim"/>
+                                            <constraint firstAttribute="trailing" secondItem="U9m-AT-4Ek" secondAttribute="trailing" constant="20" symbolic="YES" id="5zr-l5-Gim">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="zIr-a1-rIR" secondAttribute="bottom" constant="25" id="Ivx-n0-bL3"/>
-                                            <constraint firstAttribute="trailing" secondItem="TR9-Wm-PwB" secondAttribute="trailing" constant="20" id="KUY-Fe-yY8"/>
-                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="SNu-if-L5C" secondAttribute="bottom" constant="20" id="KXc-hT-Q5U"/>
+                                            <constraint firstAttribute="trailing" secondItem="TR9-Wm-PwB" secondAttribute="trailing" constant="20" id="KUY-Fe-yY8">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="top" secondItem="SNu-if-L5C" secondAttribute="bottom" constant="20" id="KXc-hT-Q5U">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                                            </constraint>
                                             <constraint firstItem="U9m-AT-4Ek" firstAttribute="top" secondItem="TR9-Wm-PwB" secondAttribute="bottom" constant="20" id="KpT-0b-rmi"/>
                                             <constraint firstItem="SNu-if-L5C" firstAttribute="centerX" secondItem="jJG-Vs-fES" secondAttribute="centerX" id="PYu-yz-Mo3"/>
-                                            <constraint firstItem="SNu-if-L5C" firstAttribute="top" secondItem="jJG-Vs-fES" secondAttribute="top" constant="20" id="QN0-7E-obN"/>
-                                            <constraint firstAttribute="height" constant="550" id="SkA-0S-Dgl"/>
-                                            <constraint firstItem="zIr-a1-rIR" firstAttribute="leading" secondItem="SNu-if-L5C" secondAttribute="trailing" constant="-20" id="f7C-RI-6GH"/>
-                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" id="iVH-F5-bnL"/>
-                                            <constraint firstItem="U9m-AT-4Ek" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" symbolic="YES" id="j8J-1b-VDt"/>
+                                            <constraint firstItem="SNu-if-L5C" firstAttribute="top" secondItem="jJG-Vs-fES" secondAttribute="top" constant="20" id="QN0-7E-obN">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="550" id="SkA-0S-Dgl">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="700"/>
+                                            </constraint>
+                                            <constraint firstItem="zIr-a1-rIR" firstAttribute="leading" secondItem="SNu-if-L5C" secondAttribute="trailing" constant="-20" id="f7C-RI-6GH">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="-30"/>
+                                            </constraint>
+                                            <constraint firstItem="TR9-Wm-PwB" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" id="iVH-F5-bnL">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstItem="U9m-AT-4Ek" firstAttribute="leading" secondItem="jJG-Vs-fES" secondAttribute="leading" constant="20" symbolic="YES" id="j8J-1b-VDt">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -901,6 +983,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                         <outlet property="emailTextField" destination="Pgq-mn-V8P" id="c5z-bS-Ymi"/>
                         <outlet property="nameTextField" destination="QN8-Kt-f3S" id="t97-CY-gbA"/>
                         <outlet property="passwordTextField" destination="eQK-Bb-sJj" id="vB8-V3-eRt"/>
+                        <outlet property="profileImageEditButton" destination="zIr-a1-rIR" id="fR1-On-CCr"/>
                         <outlet property="profileImageView" destination="SNu-if-L5C" id="zzO-qA-LMo"/>
                         <outlet property="updateProfileButton" destination="U9m-AT-4Ek" id="Hb5-5G-oAz"/>
                     </connections>
@@ -911,7 +994,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="963" height="2083.5"/>
+        <image name="1.jpg" width="1242" height="2688"/>
         <image name="More" width="29" height="29"/>
         <image name="Teresa Easler" width="133.33332824707031" height="133.33332824707031"/>
         <image name="camera" width="170.66667175292969" height="170.66667175292969"/>

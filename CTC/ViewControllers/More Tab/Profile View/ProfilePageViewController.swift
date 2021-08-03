@@ -9,6 +9,7 @@ class ProfilePageViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var profileImageEditButton: UIButton!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -193,6 +194,12 @@ class ProfilePageViewController: UIViewController {
         //To Cancel
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
+        //Action controller for iPad
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alert.popoverPresentationController?.permittedArrowDirections = .right
+            alert.popoverPresentationController?.sourceView = profileImageEditButton
+        }
+    
         present(alert, animated: true, completion: nil)
     }
     

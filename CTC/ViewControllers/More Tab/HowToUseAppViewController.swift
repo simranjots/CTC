@@ -54,34 +54,22 @@ extension HowToUseAppViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = howToUseCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.howToUseCollectionViewCell, for: indexPath) as! HowToUseCollectionViewCell
         
         cell.appSnapshotsImageView.image = UIImage(named: snapshotImages[indexPath.row])
-        //cell.useDescriptionLabel.text = howToUseDescription[indexPath.row]
         
-        //View style
-        //Utilities.addBorderToView(cell.containerView)
-
-        //ImageView styles
-        //cell.appSnapshotsImageView.layer.borderWidth = 1
-        //cell.appSnapshotsImageView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
+        //Style appSnapshotImageView
         cell.appSnapshotsImageView.layer.cornerRadius = cell.appSnapshotsImageView.frame.height / 25
-//        homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
-        Utilities.addShadowAndBorderToView(cell.contentView)
-        cell.containerView.layer.cornerRadius = cell.containerView.frame.height / 25
-        cell.contentView.layer.borderWidth = 0
+        cell.appSnapshotsImageView.layer.shadowColor = UIColor.black.cgColor
+        cell.appSnapshotsImageView.layer.shadowOpacity = 0.5
+        cell.appSnapshotsImageView.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
         
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 374, height: 605)
-//    }
-//
+
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
+
         let xCoordinate = targetContentOffset.pointee.x
         let pageNumber = xCoordinate / view.frame.width
         pageControl.currentPage = Int(pageNumber)
-        
+
     }
     
 }
