@@ -49,6 +49,7 @@ struct Constants {
         static let moreToProfileSegue = "navigateToProfile"
         static let moreToUpdateProfileSegue = "navigateToUpdateProfile"
         static let loginToResetPasswordSegue = "loginToResetPassword"
+        static let onBoardingSegue = "loginToOnBoardingSegue"
         
     }
 }

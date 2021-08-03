@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-       
+        
         currentUser = CurrentUser()
         userObjectPass = currentUser.checkLoggedIn()
         if (userObjectPass != nil){
@@ -133,13 +133,25 @@ class LoginViewController: UIViewController {
                                 if self.currentUser.passwordCheck(email: email, password: password){
                                     let save = self.currentUser.updateLoginStatus(status: true, email: email)
                                     if save == 0 {
+                                        if UserDefaults.standard.bool(forKey: "OnBoard"){
+                                            self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                            }else{
+                                                UserDefaults.standard.setValue(true, forKey: "OnBoard")
+                                                self.performSegue(withIdentifier: Constants.Segues.onBoardingSegue, sender: self)
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                            }
                                     }
                                     
                                 }else{
                                     let saved =  self.currentUser.updatepassword(Email: email, password: password)
                                     if saved == 0 {
+                                        if UserDefaults.standard.bool(forKey: "OnBoard"){
+                                            self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                            }else{
+                                                UserDefaults.standard.setValue(true, forKey: "OnBoard")
+                                                self.performSegue(withIdentifier: Constants.Segues.onBoardingSegue, sender: self)
                                         self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                            }
                                     }
                                 }
                             }else{
@@ -158,7 +170,14 @@ class LoginViewController: UIViewController {
                                                 let image = imagedownloaded?.jpegData(compressionQuality: 1.0)
                                                 let out = self.currentUser.addUser(name: user.name!, email: email, password: password, image: image, uid: (success?.user.uid)!, from: "signIn")
                                                 if(out == 0){
+                                                    if UserDefaults.standard.bool(forKey: "OnBoard"){
+                                                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                                        }else{
+                                                            UserDefaults.standard.setValue(true, forKey: "OnBoard")
+                                                            self.performSegue(withIdentifier: Constants.Segues.onBoardingSegue, sender: self)
                                                     self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
+                                                        }
+                                                   
                                                 }else{
                                                     self.showAlert(title: "Login Fail", message: "Invalid Login Credentials. . .", buttonTitle: "Try Again")
                                                     self.activityIndicator.stopAnimating()

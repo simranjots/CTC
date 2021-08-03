@@ -41,6 +41,7 @@
 		1AD65E87264E466C00CD9974 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD65E86264E466C00CD9974 /* More.storyboard */; };
 		1AE8AF06269FAC96004E9229 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE8AF05269FAC96004E9229 /* UserModel.swift */; };
 		1AE94EFD2675FEF500DB9579 /* HomeVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */; };
+		260CEEEA26B9D5A200B13140 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260CEEE926B9D5A200B13140 /* OnBoardingVC.swift */; };
 		26229B192697A3810019D2D0 /* LaunchScreenAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */; };
 		2623EF9626705B6100951285 /* StataticsViewProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */; };
 		2623EF9C2670850500951285 /* PrivacyPolicyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */; };
@@ -148,6 +149,7 @@
 		1AD65E86264E466C00CD9974 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		1AE8AF05269FAC96004E9229 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1AE94EFC2675FEF500DB9579 /* HomeVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCCell.swift; sourceTree = "<group>"; };
+		260CEEE926B9D5A200B13140 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		26229B182697A3810019D2D0 /* LaunchScreenAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAnimationViewController.swift; sourceTree = "<group>"; };
 		2623EF9526705B6100951285 /* StataticsViewProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StataticsViewProgressBar.swift; sourceTree = "<group>"; };
 		2623EF9B2670850500951285 /* PrivacyPolicyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyTableViewCell.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				E11037BA21E6602E007BBEF1 /* LoginViewController.swift */,
 				E11037BC21E6607C007BBEF1 /* SignUpViewController.swift */,
 				26C197FB268286D5003A6D88 /* ResetPasswordViewController.swift */,
+				260CEEE926B9D5A200B13140 /* OnBoardingVC.swift */,
 			);
 			path = "Login Views";
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */,
 				26A2153D268D1FEE00B581BC /* PracticeHistoryViewController.swift in Sources */,
 				E11752D92217486F0089B852 /* ToastLabel.swift in Sources */,
+				260CEEEA26B9D5A200B13140 /* OnBoardingVC.swift in Sources */,
 				E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */,
 				E10D6675226F6F7900C0E4D8 /* faqViewController.swift in Sources */,
 				E16BBC6321F638D60094D8B6 /* MorePageViewController.swift in Sources */,
