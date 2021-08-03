@@ -85,6 +85,7 @@ class LoginViewController: UIViewController {
             UserDefaults.standard.removeObject(forKey: "USER_EMAIL")
         }
     }
+    
     @objc func textFieldDidChange(_ sender: UITextField){
           guard rememberMeFlag else { return }
           let text = emailTextField.text

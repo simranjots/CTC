@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Tn-qxU" customClass="shopBoo">
-                                <rect key="frame" x="0.0" y="98" width="428" height="828"/>
+                                <rect key="frame" x="0.0" y="150" width="428" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NNc-iQ-4nf">
                                     <size key="itemSize" width="333" height="399"/>
@@ -163,10 +163,14 @@
                         <viewLayoutGuide key="safeArea" id="Njs-xf-sz2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="hUs-Ty-vDv" secondAttribute="leading" id="K2R-UT-dbn"/>
+                            <constraint firstItem="ba7-Tn-qxU" firstAttribute="leading" secondItem="hUs-Ty-vDv" secondAttribute="leading" id="K2R-UT-dbn">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="ba7-Tn-qxU" secondAttribute="bottom" id="SFj-kb-8zD"/>
                             <constraint firstItem="ba7-Tn-qxU" firstAttribute="top" secondItem="Njs-xf-sz2" secondAttribute="top" constant="10" id="tfL-ku-6At"/>
-                            <constraint firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" id="z2S-YA-gfH"/>
+                            <constraint firstAttribute="trailing" secondItem="ba7-Tn-qxU" secondAttribute="trailing" id="z2S-YA-gfH">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Books" id="2B4-Hv-8oa"/>
