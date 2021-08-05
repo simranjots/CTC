@@ -291,14 +291,14 @@ class LoginViewController: UIViewController {
         textFieldImageView.tintColor = .darkGray
         
         //Add Tap Gesture
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer: )))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(eyeImageTapped(tapGestureRecognizer: )))
         textFieldImageView.isUserInteractionEnabled = true
         textFieldImageView.addGestureRecognizer(tapGestureRecognizer)
         
         
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func eyeImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
