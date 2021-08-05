@@ -6,7 +6,7 @@ class OnBoardingVC: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet var onBoardingCollectionView: UICollectionView!
-    @IBOutlet var nextButtonOutlet: UIButton!
+    @IBOutlet var doneButtonOutlet: UIButton!
     //MARK: - Images and Descriptions
     
     let snapshotImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
@@ -16,14 +16,11 @@ class OnBoardingVC: UIViewController {
         
         onBoardingCollectionView.delegate = self
         onBoardingCollectionView.dataSource = self
-        Utilities.styleButton(nextButtonOutlet)
+        Utilities.styleButton(doneButtonOutlet)
     }
     
     
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
-//        let nextIndex = min(snapshotImages.count, snapshotImages.count-1)
-//        let indexPath = IndexPath(item: nextIndex, section: 0)
-//        onBoardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
         
     }

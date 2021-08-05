@@ -145,13 +145,9 @@ class LoginViewController: UIViewController {
                                 }else{
                                     let saved =  self.currentUser.updatepassword(Email: email, password: password)
                                     if saved == 0 {
-                                        if UserDefaults.standard.bool(forKey: "OnBoard"){
+                                       
                                             self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                            }else{
-                                                UserDefaults.standard.setValue(true, forKey: "OnBoard")
-                                                self.performSegue(withIdentifier: Constants.Segues.onBoardingSegue, sender: self)
-                                        self.performSegue(withIdentifier: Constants.Segues.signInToHomeSegue, sender: self)
-                                            }
+                                            
                                     }
                                 }
                             }else{
@@ -295,14 +291,14 @@ class LoginViewController: UIViewController {
         textFieldImageView.tintColor = .darkGray
         
         //Add Tap Gesture
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer: )))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(eyeImageTapped(tapGestureRecognizer: )))
         textFieldImageView.isUserInteractionEnabled = true
         textFieldImageView.addGestureRecognizer(tapGestureRecognizer)
         
         
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func eyeImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
