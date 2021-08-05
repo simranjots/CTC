@@ -20,9 +20,9 @@ class HomeVCCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         userPracticesData = UserPracticesData()
-        homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
-        Utilities.addShadowAndBorderToView(homeScreenTableCellView)
-        homeScreenTableCellView.layer.borderWidth = 0
+        //homeScreenTableCellView.layer.cornerRadius = homeScreenTableCellView.frame.height / 8
+        //Utilities.addShadowAndBorderToView(homeScreenTableCellView)
+        //homeScreenTableCellView.layer.borderWidth = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
