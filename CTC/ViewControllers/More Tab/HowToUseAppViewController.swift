@@ -17,7 +17,7 @@ class HowToUseAppViewController: UIViewController {
     
     //MARK: - Images and Descriptions
     
-    let snapshotImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
+    let snapshotImages = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 //    let howToUseDescription = [
 //        "Tap on the '+' icon to add new practice.",
 //        "1. Select a value from the list or tap on the edit icon to enter a customized value. 2. Select practice from the list or tap on the edit icon to enter customized practice. 3. Select starting date. 4. Enter words of encouragement. You can also generate random quotes by tapping on 'change' 5. Choose an appropriate image icon from the list. 6. Tap 'Add.'",
@@ -53,7 +53,7 @@ extension HowToUseAppViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = howToUseCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.howToUseCollectionViewCell, for: indexPath) as! HowToUseCollectionViewCell
         
-        cell.appSnapshotsImageView.image = UIImage(named: snapshotImages[indexPath.row])
+        cell.appSnapshotsImageView.image = UIImage(named: "\(snapshotImages[indexPath.row]).jpg")
         
         //Style appSnapshotImageView
         cell.appSnapshotsImageView.layer.cornerRadius = cell.appSnapshotsImageView.frame.height / 25

@@ -37,7 +37,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Allow access of Camera  to click image.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Please allow to see current location.</string>
+	<string>Please allow to see our location.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow access of photo gallary to choose image.</string>
 	<key>UIBackgroundModes</key>
