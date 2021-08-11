@@ -204,7 +204,7 @@ class HomeViewController: UIViewController,ReceiveData{
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
         if(practicesData != nil){
             for data in practicesData!{
-                if data.practiceDataToPractice == practice{
+                if data.practiceDataToPractice?.uId == practice.uId{
                     
                     return data.practised
                 }
