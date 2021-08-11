@@ -75,7 +75,6 @@ class HomeViewController: UIViewController,ReceiveData{
         nameLabel.text = greetingMessage(user: userObject)
         practiceReminder = PracticeReminder()
         practices = self.getPractices()
-        practicesData = self.getPracticesData(date: selectedDate)
         _ = userPractices.oldestPracticeDate(user: userObject)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
@@ -143,9 +142,7 @@ class HomeViewController: UIViewController,ReceiveData{
         return userPractices.getPractices(user: userObject)!
     }
     
-    private func getPracticesData(date: Date) -> [PracticeData]? {
-        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
-    }
+    
     
     @objc func reloadHomeTableView(){
         self.homeTableView.reloadData()
@@ -201,7 +198,6 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         practices = userPractices.getPractices(user: userObject)
-        practicesData = self.getPracticesData(date: selectedDate)
         homeTableView.reloadData()
     }
     
@@ -209,6 +205,7 @@ class HomeViewController: UIViewController,ReceiveData{
         if(practicesData != nil){
             for data in practicesData!{
                 if data.practiceDataToPractice == practice{
+                    
                     return data.practised
                 }
             }
@@ -232,7 +229,7 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
-      
+        practicesData = userPracticesData.getPracticeDataByDate(date: selectedDate, uid: practices[indexPath.row].uId!)
         switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
     
         

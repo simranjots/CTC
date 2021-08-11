@@ -28,7 +28,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     var dbHelper: DatabaseHelper!
     var practi:[Practice]!
     var homeViewController : HomeViewController!
-    var practicesData: [PracticeData]!
+    //var practicesData: [PracticeData]!
     let date = Date()
     static var cvalue : String = ""
     static var cindexPath : Int = 0
@@ -70,7 +70,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         selectedDate = Date().dateFormate()!
         homeViewController = HomeViewController()
         practi = self.getPractices()
-        practicesData = self.getPracticesData(date: selectedDate)
+       // practicesData = self.getPracticesData(date: selectedDate)
         setData(AddPracticesViewController.cvalue, AddPracticesViewController.cindexPath)
         styleElements()
         setPickerViewsPropertiesDelegatesAndDataSources()
@@ -94,9 +94,9 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         return userPractices.getPractices(user: userObject)!
     }
     
-    private func getPracticesData(date: Date) -> [PracticeData]?{
-        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
-    }
+//    private func getPracticesData(date: Date) -> [PracticeData]?{
+//        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
+//    }
     
     @objc func dateSelected() {
         dateTextField.text = datePickerView.date.dateFormatemmmdd()
