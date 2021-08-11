@@ -180,15 +180,15 @@ class UserPracticesData {
         
     }
     
-    func getPracticeDataByDate(date: Date) -> [PracticeData]? {
+    func getPracticeDataByDate(date: Date,uid: String) -> [PracticeData]? {
         
         let request : NSFetchRequest<PracticeData> = PracticeData.fetchRequest()
-        
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "date = %@", argumentArray: [date])
+        request.predicate = NSPredicate(format: "date = %@ && pUid = %@" , argumentArray: [date,uid])
         
         do {
             let dateArray = try context.fetch(request)
+          
             return dateArray
         } catch let err {
             print(err)

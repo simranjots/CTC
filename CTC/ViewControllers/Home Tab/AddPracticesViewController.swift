@@ -25,6 +25,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     var isUpdating: Bool! = false
     var oldPractice: String?
     var userObject: User!
+    var dbHelper: DatabaseHelper!
     var practi:[Practice]!
     var homeViewController : HomeViewController!
     var practicesData: [PracticeData]!
@@ -63,6 +64,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         dateTextField.text = date.dateFormatemmmdd()
         userPractices = UserPractices()
         currentUser = CurrentUser()
+        dbHelper = DatabaseHelper()
         userPracticesData = UserPracticesData()
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
@@ -93,7 +95,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     }
     
     private func getPracticesData(date: Date) -> [PracticeData]?{
-        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
+        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
     }
     
     @objc func dateSelected() {

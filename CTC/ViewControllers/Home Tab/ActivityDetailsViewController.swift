@@ -43,7 +43,8 @@ class ActivityDetailsViewController: UIViewController {
         startpracticesData = self.getPracticesData(date: selectedDate!)
         if(startpracticesData != nil){
             for data in startpracticesData!{
-                if data.practiceDataToPractice == selectedPractice!{
+                if data.practiceDataToPractice?.uId == selectedPractice?.uId{
+                    practicesData = data
                       starButton = data.practised
                 }
             }
@@ -53,7 +54,7 @@ class ActivityDetailsViewController: UIViewController {
     
     }
     private func getPracticesData(date: Date) -> [PracticeData]? {
-        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
+        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!, uid: (selectedPractice?.uId)!)
     }
     override func viewWillAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
@@ -66,8 +67,6 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     func setData() {
-        practicesArray = userPractices.getPractices(user: userObject)!
-        practicesData =  userPracticesData.getPracticeDataObj(practiceName: selectedPractice!.practice!)
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
