@@ -14,6 +14,7 @@ class MorePageViewController: UIViewController {
     
     var currentUser: CurrentUser!
     var userObject: User?
+    
     //MARK: - LifeCycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -24,6 +25,7 @@ class MorePageViewController: UIViewController {
         emailLabel.text = userObject?.email
         moreVCTableView.reloadData()
     }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

@@ -9,7 +9,7 @@ class OnBoardingVC: UIViewController {
     @IBOutlet var doneButtonOutlet: UIButton!
     //MARK: - Images and Descriptions
     
-    let snapshotImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
+    let snapshotImages = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ extension OnBoardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = onBoardingCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.howToUseCollectionViewCell, for: indexPath) as! HowToUseCollectionViewCell
         
-        cell.appSnapshotsImageView.image = UIImage(named: snapshotImages[indexPath.row])
+        cell.appSnapshotsImageView.image = UIImage(named: "\(snapshotImages[indexPath.row]).jpg")
         
         //Style appSnapshotImageView
         cell.appSnapshotsImageView.layer.cornerRadius = cell.appSnapshotsImageView.frame.height / 25

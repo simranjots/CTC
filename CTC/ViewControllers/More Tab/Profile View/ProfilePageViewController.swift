@@ -14,14 +14,13 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var updateProfileButton: UIButton!
+    
     var user : CurrentUser!
     var userObject: User!
     var email = ""
     var Password = ""
     var isIconClicked = true
    
-  
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +81,7 @@ class ProfilePageViewController: UIViewController {
         
         
         //Add color to textField Image
-        textFieldImageView.tintColor = .darkGray
+        textFieldImageView.tintColor = UIColor(named: "Brand Secondary Color")
         
         //Add Tap Gesture
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer: )))

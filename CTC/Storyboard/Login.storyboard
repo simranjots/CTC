@@ -16,23 +16,23 @@
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" modalPresentationStyle="fullScreen" id="QRo-Rj-Bfv" customClass="LoginViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCb-1X-acB">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-pT-9tt">
-                                <rect key="frame" x="0.0" y="140" width="428" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-xK-Q0T" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="500"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rjD-NC-BTh" userLabel="Main">
-                                                <rect key="frame" x="20" y="-31.333333333333314" width="388" height="463"/>
+                                                <rect key="frame" x="20" y="-31.666666666666657" width="388" height="463.33333333333326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-XQ-wyl" userLabel="Email-Password-SignIn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="333"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="333.33333333333331"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Cyp-Os-V7B" userLabel="Email">
-                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="81"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="81.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfU-ME-xZp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="16"/>
@@ -41,19 +41,19 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-Ts-W7N">
-                                                                        <rect key="frame" x="0.0" y="30.999999999999986" width="388" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="31.000000000000004" width="388" height="50.333333333333343"/>
                                                                         <color key="tintColor" red="0.49019607840000001" green="0.80000000000000004" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="SJG-Yr-2Nj"/>
                                                                         </constraints>
-                                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" name="Brand Secondary Color"/>
                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8X9-40-UPD" userLabel="Password">
-                                                                <rect key="frame" x="0.0" y="96" width="388" height="86"/>
+                                                                <rect key="frame" x="0.0" y="96.333333333333343" width="388" height="86"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-Mv-k3f">
                                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="21"/>
@@ -67,14 +67,14 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="h85-ZW-zmY"/>
                                                                         </constraints>
-                                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" name="Brand Secondary Color"/>
                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-oE-uj3" userLabel="SignIn-ForgotPassword">
-                                                                <rect key="frame" x="0.0" y="197" width="388" height="90"/>
+                                                                <rect key="frame" x="0.0" y="197.33333333333331" width="388" height="90"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WEd-Vt-O5L">
                                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
@@ -88,7 +88,7 @@
                                                                                             <constraint firstAttribute="width" constant="20" id="VH1-PO-dTA"/>
                                                                                             <constraint firstAttribute="height" constant="20" id="kmP-gu-UAf"/>
                                                                                         </constraints>
-                                                                                        <color key="tintColor" name="DialogBoxGray"/>
+                                                                                        <color key="tintColor" name="Brand Secondary Color"/>
                                                                                         <state key="normal" title="Button" image="uncheck"/>
                                                                                         <connections>
                                                                                             <action selector="checkboxBtn:" destination="QRo-Rj-Bfv" eventType="touchUpInside" id="sgw-Ou-iA0"/>
@@ -97,7 +97,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-XT-lb5">
                                                                                         <rect key="frame" x="25" y="0.0" width="116" height="20"/>
                                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="textColor" name="Brand Secondary Color"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -116,7 +116,7 @@
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                                 <state key="normal" title="Forgot Password?">
-                                                                                    <color key="titleColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="titleColor" name="Brand Secondary Color"/>
                                                                                 </state>
                                                                                 <connections>
                                                                                     <segue destination="sun-Dt-Lao" kind="presentation" id="n4t-n2-Bmn"/>
@@ -141,12 +141,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="v16-N9-ar0">
-                                                                <rect key="frame" x="0.0" y="302" width="388" height="31"/>
+                                                                <rect key="frame" x="0.0" y="302.33333333333337" width="388" height="31"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-0D-yTi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="194" height="31"/>
                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" name="Brand Secondary Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJB-eT-GLL">
@@ -167,7 +167,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-iU-njZ" userLabel="Gmail-Facebook">
-                                                        <rect key="frame" x="0.0" y="348" width="388" height="115"/>
+                                                        <rect key="frame" x="0.0" y="348.33333333333337" width="388" height="115"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zpm-PS-lAe" userLabel="Gmail-Facebook Buttons">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="115"/>
@@ -187,7 +187,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-sC-2cV">
-                                                                        <rect key="frame" x="0.0" y="64.999999999999943" width="388" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="65" width="388" height="50"/>
                                                                         <color key="backgroundColor" red="0.25882352939999997" green="0.4039215686" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="RV7-Or-ed0"/>
@@ -293,7 +293,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="80.666666666666671"/>
                                         <string key="text">Please enter the email address associated with your profile. We will send you an email which will allow you to reset your password.</string>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="Brand Secondary Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-FR-0ZN" userLabel="Email">
@@ -380,11 +380,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rao-AT-4HQ" customClass="SignUpViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKd-Cu-i01">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vE1-XS-vQp">
-                                <rect key="frame" x="0.0" y="140" width="428" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upq-MX-FUx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="450"/>
@@ -417,14 +417,14 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="IEs-go-H1h"/>
                                                                 </constraints>
-                                                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" name="Brand Secondary Color"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nZW-Fo-IVT" userLabel="Email">
-                                                        <rect key="frame" x="0.0" y="100.00000000000003" width="388" height="85"/>
+                                                        <rect key="frame" x="0.0" y="100" width="388" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-tL-ubk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
@@ -443,19 +443,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-L1-Mga">
-                                                                <rect key="frame" x="0.0" y="35" width="388" height="50"/>
+                                                                <rect key="frame" x="0.0" y="34.999999999999986" width="388" height="50"/>
                                                                 <color key="tintColor" red="0.49019607840000001" green="0.80000000000000004" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="tGV-a3-j0v"/>
                                                                 </constraints>
-                                                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" name="Brand Secondary Color"/>
                                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" smartInsertDeleteType="yes" textContentType="username"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-Lq-feL" userLabel="Password">
-                                                        <rect key="frame" x="0.0" y="200.00000000000003" width="388" height="84.999999999999972"/>
+                                                        <rect key="frame" x="0.0" y="200" width="388" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h14-Zg-cWh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="20"/>
@@ -474,7 +474,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PAD-sG-o6W">
-                                                                <rect key="frame" x="0.0" y="35" width="388" height="50"/>
+                                                                <rect key="frame" x="0.0" y="35.000000000000028" width="388" height="50"/>
                                                                 <color key="tintColor" red="0.49019607840000001" green="0.80000000000000004" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="4gZ-zZ-KS3"/>
@@ -515,12 +515,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I5S-1u-Y8n">
-                                                <rect key="frame" x="92.000000000000014" y="392.66666666666663" width="244.33333333333337" height="31"/>
+                                                <rect key="frame" x="92.000000000000014" y="392.66666666666669" width="244.33333333333337" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-sF-7MM">
                                                         <rect key="frame" x="0.0" y="0.0" width="185.33333333333334" height="31"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                        <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="Brand Secondary Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BX-cT-H0N">
@@ -820,17 +820,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W0K-bb-vNs"/>
-        <segue reference="80g-pg-Qiy"/>
-        <segue reference="ToE-NL-ABn"/>
+        <segue reference="wk0-hH-4J1"/>
+        <segue reference="u5l-VQ-IMC"/>
+        <segue reference="gac-dw-9lu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1.jpg" width="1242" height="2688"/>
         <image name="FinalLogo.png" width="255.1199951171875" height="144.24000549316406"/>
         <image name="forgotPassword" width="170.66667175292969" height="170.66667175292969"/>
         <image name="uncheck" width="170.66667175292969" height="170.66667175292969"/>
-        <namedColor name="DialogBoxGray">
-            <color red="0.52499997615814209" green="0.54500001668930054" blue="0.55699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Brand Secondary Color">
+            <color red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -56,13 +56,10 @@
 		263FEE8E2675C62500EAEDCC /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */; };
 		2655D9B1268300E8004EF7AD /* ConnectToUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */; };
 		267C95D326B0BBFF002E6F57 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95C926B0BBFE002E6F57 /* 6.jpg */; };
-		267C95D426B0BBFF002E6F57 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CA26B0BBFE002E6F57 /* 5.jpg */; };
 		267C95D526B0BBFF002E6F57 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CB26B0BBFE002E6F57 /* 1.jpg */; };
 		267C95D626B0BBFF002E6F57 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CC26B0BBFE002E6F57 /* 9.jpg */; };
-		267C95D726B0BBFF002E6F57 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CD26B0BBFE002E6F57 /* 3.jpg */; };
 		267C95D826B0BBFF002E6F57 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CE26B0BBFE002E6F57 /* 7.jpg */; };
 		267C95D926B0BBFF002E6F57 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95CF26B0BBFF002E6F57 /* 10.jpg */; };
-		267C95DA26B0BBFF002E6F57 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95D026B0BBFF002E6F57 /* 4.jpg */; };
 		267C95DB26B0BBFF002E6F57 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95D126B0BBFF002E6F57 /* 8.jpg */; };
 		267C95DC26B0BBFF002E6F57 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C95D226B0BBFF002E6F57 /* 2.jpg */; };
 		26A2153D268D1FEE00B581BC /* PracticeHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */; };
@@ -74,6 +71,9 @@
 		26DE85D726701BBA00994DA3 /* ActivityTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */; };
 		26DE85D926701EA700994DA3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85D826701EA700994DA3 /* CircularProgressView.swift */; };
 		26DE85DB26701F0A00994DA3 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */; };
+		26FCC51826C1E5A300D583DA /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26FCC51526C1E5A200D583DA /* 3.jpg */; };
+		26FCC51926C1E5A300D583DA /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26FCC51626C1E5A200D583DA /* 4.jpg */; };
+		26FCC51A26C1E5A300D583DA /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26FCC51726C1E5A300D583DA /* 5.jpg */; };
 		E1029A42223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */; };
 		E1029A43223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1029A41223ABE9100207D55 /* PracticeHistory+CoreDataProperties.swift */; };
 		E107B9F4222705890014C539 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107B9F3222705890014C539 /* User+CoreDataProperties.swift */; };
@@ -164,13 +164,10 @@
 		263FEE8D2675C62500EAEDCC /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
 		2655D9B0268300E8004EF7AD /* ConnectToUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectToUsViewController.swift; sourceTree = "<group>"; };
 		267C95C926B0BBFE002E6F57 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
-		267C95CA26B0BBFE002E6F57 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		267C95CB26B0BBFE002E6F57 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		267C95CC26B0BBFE002E6F57 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
-		267C95CD26B0BBFE002E6F57 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		267C95CE26B0BBFE002E6F57 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		267C95CF26B0BBFF002E6F57 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
-		267C95D026B0BBFF002E6F57 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		267C95D126B0BBFF002E6F57 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		267C95D226B0BBFF002E6F57 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		26A2153C268D1FEE00B581BC /* PracticeHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHistoryViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +179,9 @@
 		26DE85D626701BBA00994DA3 /* ActivityTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackTableViewCell.swift; sourceTree = "<group>"; };
 		26DE85D826701EA700994DA3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		26DE85DA26701F0A00994DA3 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		26FCC51526C1E5A200D583DA /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		26FCC51626C1E5A200D583DA /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		26FCC51726C1E5A300D583DA /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		844AA35F4ACF0ABF3EE6D56D /* Pods-CTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTC/Pods-CTC.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F178E0D56A7109313F1D6 /* Pods_CTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1029A40223ABE9100207D55 /* PracticeHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -468,9 +468,9 @@
 				E133554322665FDD00C3E0CF /* FinalLogo.png */,
 				267C95CB26B0BBFE002E6F57 /* 1.jpg */,
 				267C95D226B0BBFF002E6F57 /* 2.jpg */,
-				267C95CD26B0BBFE002E6F57 /* 3.jpg */,
-				267C95D026B0BBFF002E6F57 /* 4.jpg */,
-				267C95CA26B0BBFE002E6F57 /* 5.jpg */,
+				26FCC51526C1E5A200D583DA /* 3.jpg */,
+				26FCC51626C1E5A200D583DA /* 4.jpg */,
+				26FCC51726C1E5A300D583DA /* 5.jpg */,
 				267C95C926B0BBFE002E6F57 /* 6.jpg */,
 				267C95CE26B0BBFE002E6F57 /* 7.jpg */,
 				267C95D126B0BBFF002E6F57 /* 8.jpg */,
@@ -631,16 +631,16 @@
 				26CAE0982685886500A54802 /* History.storyboard in Resources */,
 				E189D69021E4FA450078380B /* Assets.xcassets in Resources */,
 				267C95DB26B0BBFF002E6F57 /* 8.jpg in Resources */,
-				267C95D726B0BBFF002E6F57 /* 3.jpg in Resources */,
 				1AD65E81264E412800CD9974 /* Home.storyboard in Resources */,
-				267C95DA26B0BBFF002E6F57 /* 4.jpg in Resources */,
 				E133554422665FDD00C3E0CF /* FinalLogo.png in Resources */,
 				1A2E9B9A268F4150005587FA /* GoogleService-Info.plist in Resources */,
+				26FCC51A26C1E5A300D583DA /* 5.jpg in Resources */,
 				267C95D526B0BBFF002E6F57 /* 1.jpg in Resources */,
 				1AD65E7F264E357D00CD9974 /* TabVC.storyboard in Resources */,
 				1AD65E83264E449900CD9974 /* TrackRecord.storyboard in Resources */,
 				267C95D926B0BBFF002E6F57 /* 10.jpg in Resources */,
-				267C95D426B0BBFF002E6F57 /* 5.jpg in Resources */,
+				26FCC51926C1E5A300D583DA /* 4.jpg in Resources */,
+				26FCC51826C1E5A300D583DA /* 3.jpg in Resources */,
 				267C95D626B0BBFF002E6F57 /* 9.jpg in Resources */,
 				267C95D826B0BBFF002E6F57 /* 7.jpg in Resources */,
 				E15E290121EFA76900F2177F /* Icons.xcassets in Resources */,
