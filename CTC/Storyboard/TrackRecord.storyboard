@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-281"/>
         </scene>
-        <!--Practice In Progress-->
+        <!--Progress-->
         <scene sceneID="msh-va-dxi">
             <objects>
                 <viewController id="aaY-xe-BSj" customClass="PracticesRecordListVC" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zR5-Fg-LPN">
                                                                     <rect key="frame" x="15" y="9.9999999999999982" width="312.66666666666669" height="23.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                                                    <color key="textColor" name="primaryBackground"/>
+                                                                    <color key="textColor" name="Brand Secondary Color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="110" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x43-cd-GDh">
@@ -78,13 +78,13 @@
                                                                         <constraint firstAttribute="width" constant="45" id="oNS-1g-c7s"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                                                    <color key="textColor" name="primaryBackground"/>
+                                                                    <color key="textColor" name="Brand Secondary Color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become more and more you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dz-rM-kcT">
                                                                     <rect key="frame" x="15" y="38.333333333333336" width="313" height="15"/>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
-                                                                    <color key="textColor" name="primaryBackground"/>
+                                                                    <color key="textColor" name="Brand Secondary Color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSb-1i-Ut6">
@@ -93,11 +93,11 @@
                                                                         <constraint firstAttribute="width" constant="45" id="CVB-SV-fm3"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                                                    <color key="textColor" name="primaryBackground"/>
+                                                                    <color key="textColor" name="Brand Secondary Color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                             <constraints>
                                                                 <constraint firstItem="zR5-Fg-LPN" firstAttribute="firstBaseline" secondItem="x43-cd-GDh" secondAttribute="firstBaseline" id="6bs-Aa-IVe"/>
                                                                 <constraint firstItem="7dz-rM-kcT" firstAttribute="top" secondItem="zR5-Fg-LPN" secondAttribute="bottom" constant="5" id="7JS-55-CLX"/>
@@ -357,7 +357,7 @@
                             </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Practice In Progress" leftItemsSupplementBackButton="YES" id="6c2-Ar-9x4"/>
+                    <navigationItem key="navigationItem" title="Progress" leftItemsSupplementBackButton="YES" id="6c2-Ar-9x4"/>
                     <connections>
                         <outlet property="stataticsVCTableView" destination="iV0-ah-829" id="cMZ-85-Q9g"/>
                         <segue destination="VRj-4O-qQ4" kind="show" identifier="activity" id="cj3-CP-Q2K"/>
@@ -394,7 +394,7 @@
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ZBw-Nk-cLf">
                                                             <rect key="frame" x="109" y="10" width="211" height="60"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" name="Brand Secondary Color"/>
                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -520,17 +520,17 @@
     </scenes>
     <resources>
         <image name="progress" width="29" height="29"/>
+        <namedColor name="Brand Secondary Color">
+            <color red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BrandMainColor">
             <color red="0.24313725490196078" green="0.69803921568627447" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="primaryBackground">
-            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

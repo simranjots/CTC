@@ -30,7 +30,7 @@ class Utilities {
         //Textfield style
         textfield.layer.borderWidth = 1.0
         textfield.layer.cornerRadius = 8.0
-        textfield.layer.borderColor = primaryBorderColor.cgColor
+        textfield.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
 //        textfield.layer.shadowColor = UIColor.black.cgColor
 //        textfield.layer.shadowOpacity = 0.5
 //        textfield.layer.shadowOffset = CGSize(width: 0.0, height: 1.7)
@@ -42,7 +42,7 @@ class Utilities {
         let bottomLine  = CALayer()
         
         bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 1)
-        bottomLine.backgroundColor = primaryBorderColor.cgColor
+        bottomLine.backgroundColor = UIColor(named: "Brand Secondary Color")?.cgColor
             
         //Remove border on textField
         textField.borderStyle = .none
@@ -57,7 +57,7 @@ class Utilities {
         //TextView style
         textView.layer.borderWidth = 1.0
         textView.layer.cornerRadius = 8.0
-        textView.layer.borderColor = primaryBorderColor.cgColor
+        textView.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
     }
     
     //MARK: - Set TextField left image
@@ -72,7 +72,7 @@ class Utilities {
         //Set subview frame
         textFieldImageView.frame = CGRect(x: 15, y: 8, width: 25, height: 25)
         
-        textFieldImageView.tintColor = .darkGray
+        textFieldImageView.tintColor = UIColor(named: "Brand Secondary Color")
         
         //Add subview
         textFieldView.addSubview(textFieldImageView)
@@ -89,7 +89,7 @@ class Utilities {
         //TextView style
         imageView.layer.borderWidth = 1.0
         imageView.layer.cornerRadius = 8.0
-        imageView.layer.borderColor = primaryBorderColor.cgColor
+        imageView.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
         
     }
     
@@ -173,7 +173,7 @@ class Utilities {
     //MARK: - Add shadows and border to Views
     
     static func addShadowAndBorderToView(_ view: UIView) {
-        view.layer.borderColor = primaryBorderColor.cgColor
+        view.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
         view.layer.borderWidth = 1
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.5
@@ -182,7 +182,7 @@ class Utilities {
     
     static func addBorderToView(_ view: UIView) {
         view.layer.borderWidth = 1
-        view.layer.borderColor = primaryBorderColor.cgColor
+        view.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
     }
     
     static func addShadowToButton(_ button: UIButton) {
@@ -192,7 +192,7 @@ class Utilities {
     }
     static func adddayBorderToView(_ view: UIView) {
         view.layer.borderWidth = 1
-        view.layer.borderColor = primaryBorderColor.cgColor
+        view.layer.borderColor = UIColor(named: "Brand Secondary Color")?.cgColor
         view.layer.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
       
         

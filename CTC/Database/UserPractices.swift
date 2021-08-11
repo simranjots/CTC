@@ -67,7 +67,7 @@ class UserPractices{
         practiceObject!.user = user
         if oldPractice != newPractice {
             remindPractices.RemoveReminder(practiceName: oldPractice)
-            #warning("Need to update Reminder")
+           // #warning("Need to update Reminder")
         }
         if remindswitch == false {
         
