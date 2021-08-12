@@ -46,6 +46,12 @@ class ProfilePageViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         Utilities.addBorderToView(profileImageView)
         
+        //Add tapGesture to ImageView
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gestureFired(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        profileImageView.addGestureRecognizer(gestureRecognizer)
+        profileImageView.isUserInteractionEnabled = true
     }
     
     func setUpData() {
@@ -110,6 +116,10 @@ class ProfilePageViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func imageEditButtonTapped(_ sender: UIButton) {
+        actionSheet()
+    }
+    
+    @objc func gestureFired(_ gesture: UITapGestureRecognizer) {
         actionSheet()
     }
     
