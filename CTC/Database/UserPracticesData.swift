@@ -21,12 +21,8 @@ class UserPracticesData {
     var notesData : Notes!
     
     func practicedToday(toggleBtn: Bool, practiceObject: Practice, currentDate: Date,userObject: User!,note: String,save: String,check : Bool) -> Int {
-        
-        let resultFlag = practiceHistory.maintainTrackingDay(date: currentDate, flag: toggleBtn, practice: practiceObject)
-        print(resultFlag ? "Trakcing Day Maintened Successfully" : "Error in Maintenance Tracking Days")
-        
-        practiceData =  getPracticeDataObj(practiceName: practiceObject.practice!)
-        
+      
+        practiceData =  getPracticeDataObj(practiceUid: practiceObject.uId!)
         
         tracking_days = (getTrackingDay(practice: practiceObject, date: currentDate) ?? 0)
         streak =  (getStreak(practice: practiceObject))
@@ -37,61 +33,36 @@ class UserPracticesData {
             if (toggleBtn && practiceData.practised == false){
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
+                monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: 1, user: userObject, PracticedDate: currentDate)
                 
             }else if (toggleBtn == false && practiceData.practised == true){
                 
                 tracking_days -= 1
                 
                 streak -= 1
-                monthPractice(practice: practiceObject.practice!, count: -1, user: userObject, PracticedDate: currentDate)
+                monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: -1, user: userObject, PracticedDate: currentDate)
                 
             }else if (toggleBtn == true && practiceData.practised == false){
                 
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
+                monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: 1, user: userObject, PracticedDate: currentDate)
             }else if (toggleBtn  && practiceData.practised == true && save == ""){
                 
                 tracking_days += 1
                 streak += 1
-                monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
+                monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: 1, user: userObject, PracticedDate: currentDate)
             }else if (toggleBtn  && practiceData.practised == true && save == "save" ){
                 
                 if (currentDate.dateFormate() != (practiceData.date! as Date).dateFormate()) {
                     if check == true {
                         tracking_days += 1
                         streak += 1
-                        monthPractice(practice: practiceObject.practice!, count: 1, user: userObject, PracticedDate: currentDate)
+                        monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: 1, user: userObject, PracticedDate: currentDate)
                     }
                 }
             }
             
-            if save == "save"{
-                let Practices = PracticeData(context: self.context)
-                
-                if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
-                    uid = practiceObject.uId!
-                    practiceData.pUid = practiceObject.uId!
-                    practiceData.pNotes = note
-                    practiceData.practised = toggleBtn
-                    practiceData.date = currentDate.dateFormate()! as NSDate
-                    practiceData.practiceDataToPractice = practiceObject
-                    practiceData.tracking_days = Int32(tracking_days)
-                    practiceData.streak = streak
-                    
-                }else{
-                    Practices.pUid = practiceObject.uId!
-                    Practices.pNotes = note
-                    Practices.practised = toggleBtn
-                    Practices.date = currentDate.dateFormate()! as NSDate
-                    Practices.practiceDataToPractice = practiceObject
-                    Practices.tracking_days = Int32(tracking_days)
-                    Practices.streak = streak
-                    uid = practiceData.pUid!
-                }
-                
-            }else{
                 let Practices = PracticeData(context: self.context)
                 if (currentDate.dateFormate() == (practiceData.date! as Date).dateFormate()) {
                     uid = practiceObject.uId!
@@ -100,7 +71,7 @@ class UserPracticesData {
                     practiceData.practised = toggleBtn
                     practiceData.date = currentDate.dateFormate()! as NSDate
                     practiceData.practiceDataToPractice = practiceObject
-                    practiceData.tracking_days = Int32(tracking_days)
+                    practiceData.tracking_days = tracking_days
                     practiceData.streak = streak
                     
                 }else{
@@ -109,13 +80,10 @@ class UserPracticesData {
                     Practices.practised = toggleBtn
                     Practices.date = currentDate.dateFormate()! as NSDate
                     Practices.practiceDataToPractice = practiceObject
-                    Practices.tracking_days = Int32(tracking_days)
+                    Practices.tracking_days = tracking_days
                     Practices.streak = streak
                     uid = practiceData.pUid!
                 }
-                
-            }
-            
             
         }
         else{
@@ -145,9 +113,9 @@ class UserPracticesData {
             firebaseDataManager.AddMonthlyDataToFirebase(practiceName: practiceObject.practice!, user: userObject, uid: uid, MonthlyPracticedDays: Int(days), PracticedDate: currentDate, month_id: id)
         }
         let result = currentUser.saveUser()
+        
         if result == 0 {
             firebaseDataManager.AddpracticedDataToFirebase(toggleStarBtn: toggleBtn, practiceName: practiceObject.practice!, PracticedDate: currentDate, user: userObject, note: note, streak: streak, trackingDays: tracking_days, uid: uid)
-           
         }
         return result
     }
@@ -167,11 +135,11 @@ class UserPracticesData {
     }
     
     
-    func getPracticeDataObj(practiceName: String) -> PracticeData? {
+    func getPracticeDataObj(practiceUid: String) -> PracticeData? {
         
-        arrayData = getPracticebyName(practice: practiceName)!
+        arrayData = getPracticebyUID(practiceuid: practiceUid)!
         for data in arrayData{
-            if(data.practiceDataToPractice?.practice == practiceName){
+            if(data.practiceDataToPractice?.uId == practiceUid){
                 practiceData = arrayData.last
                 return practiceData
             }
@@ -180,11 +148,11 @@ class UserPracticesData {
         
     }
     
-    func getPracticeDataByDate(date: Date,uid: String) -> [PracticeData]? {
+    func getPracticeDataByUid(uid: String) -> [PracticeData]? {
         
         let request : NSFetchRequest<PracticeData> = PracticeData.fetchRequest()
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "date = %@ && pUid = %@" , argumentArray: [date,uid])
+        request.predicate = NSPredicate(format: "pUid = %@" , argumentArray: [uid])
         
         do {
             let dateArray = try context.fetch(request)
@@ -196,10 +164,10 @@ class UserPracticesData {
         return nil
     }
     
-    func getPracticebyName(practice: String) -> [PracticeData]? {
+    func getPracticebyUID(practiceuid: String) -> [PracticeData]? {
         
         let request : NSFetchRequest<PracticeData> = PracticeData.fetchRequest()
-        request.predicate = NSPredicate(format: "practiceDataToPractice.practice = %@", argumentArray: [practice])
+        request.predicate = NSPredicate(format: "pUid = %@", argumentArray: [practiceuid])
         
         do {
             let dataArray = try context.fetch(request)
@@ -219,7 +187,7 @@ class UserPracticesData {
         var dateArray = (startingDate! as Date).getDates(date: date)
         dateArray =  dateArray.sorted(by: >)
         for _ in dateArray{
-            let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
+            let lastDayData = getPracticeDataObj(practiceUid: practice.uId!)
             if(lastDayData != nil){
                 return (lastDayData?.tracking_days)
             }
@@ -227,7 +195,7 @@ class UserPracticesData {
         return 0
     }
     func getStreak(practice: Practice) -> Int32 {
-        let lastDayData = getPracticeDataObj(practiceName: practice.practice!)
+        let lastDayData = getPracticeDataObj(practiceUid: practice.uId!)
         if(lastDayData != nil){
             let newDay = Date().days(from: lastDayData!.date! as Date )
             let Today =  Date().days(from: Date().originalFormate())
@@ -415,9 +383,9 @@ class UserPracticesData {
         return oldestDate
     }
     
-    func monthPractice(practice: String,count: Int32,user: User, PracticedDate: Date)  {
+    func monthPractice(practice: String,uid: String,count: Int32,user: User, PracticedDate: Date)  {
        
-        if let practisedData = getPracticeDataObj(practiceName: practice) {
+        if let practisedData = getPracticeDataObj(practiceUid: uid) {
             if Calendar.current.isDate(practisedData.date! as Date, equalTo: Date(), toGranularity: .month) {
                 if let  monthdata = dbHelper.getmonthlyData(practiceName: practice){
                     id = monthdata.month_id!

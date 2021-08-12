@@ -60,11 +60,13 @@ class UserPractices{
         practiceObject!.values = value
         practiceObject!.practice = newPractice
         practiceObject!.image_name = image_name
-       // practiceObject.startedday = date as NSDate
+        practiceObject!.startedday = practiceObject!.startedday
         practiceObject!.encourage = encourage
         practiceObject!.remindswitch = remindswitch
         practiceObject!.goals = goals
         practiceObject!.user = user
+        practiceObject!.is_deleted = false
+        practiceObject!.is_completed =  false
         if oldPractice != newPractice {
             remindPractices.RemoveReminder(practiceName: oldPractice)
            // #warning("Need to update Reminder")
@@ -85,14 +87,13 @@ class UserPractices{
     
     
     func getPractices(user: User) -> [Practice]? {
-        
         let request : NSFetchRequest<Practice> = Practice.fetchRequest()
-        request.predicate = NSPredicate(format: "user.email = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email!,false,false])
+        request.predicate = NSPredicate(format: "user.email = %@ && is_deleted = %@ && is_completed = %@", argumentArray: [user.email as Any,false,false])
         request.sortDescriptors = [NSSortDescriptor(key: "startedday", ascending: true)]
         
         do {
             practices = try context.fetch(request)
-           
+         
         } catch let err {
             print(err)
         }

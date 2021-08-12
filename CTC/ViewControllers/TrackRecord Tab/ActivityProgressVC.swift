@@ -24,7 +24,7 @@ class ActivityProgressVC: UIViewController {
         userPracticesData = UserPracticesData()
        // practice = userPractices.getPractices(practiceName: practiceName, user: userObject)
         if practice != nil {
-            valueArray = self.userPracticesData.getPracticebyName(practice: practice!.practice!)
+            valueArray = self.userPracticesData.getPracticebyUID(practiceuid: practice!.uId!)
            
         }
         

@@ -37,6 +37,7 @@ class HomeViewController: UIViewController,ReceiveData{
         nameLabel.text = greetingMessage(user: userObject)
         var pUid : String?
         if practices.count == 0{
+            if UserDefaults.standard.bool(forKey: "Pracdata") {
             db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
                 if value == true {
                     pUid = pid
@@ -44,6 +45,7 @@ class HomeViewController: UIViewController,ReceiveData{
                         db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
                             if flag == true{
                                 UserDefaults.standard.set(false, forKey: "Monthlydata")
+                                UserDefaults.standard.set(false, forKey: "Pracdata")
                                 refreshTableview(date: selectedDate)
                             }
                         })
@@ -55,8 +57,8 @@ class HomeViewController: UIViewController,ReceiveData{
           
            
         }
+        }
        
-
         refreshTableview(date: selectedDate)
         
     }
@@ -74,7 +76,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = currentUser.checkLoggedIn()
         nameLabel.text = greetingMessage(user: userObject)
         practiceReminder = PracticeReminder()
-        practices = self.getPractices()
+        practices = self.getPractices(user: userObject)
         _ = userPractices.oldestPracticeDate(user: userObject)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reloadHomeTableView), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
@@ -138,8 +140,8 @@ class HomeViewController: UIViewController,ReceiveData{
         performSegue(withIdentifier: "ShowDetails", sender: self)
     }
     
-    private func getPractices() -> [Practice]{
-        return userPractices.getPractices(user: userObject)!
+    private func getPractices(user: User) -> [Practice]{
+        return userPractices.getPractices(user: user)!
     }
     
     
@@ -170,7 +172,7 @@ class HomeViewController: UIViewController,ReceiveData{
     
     // Table View Code
     func delPractice(prac: Practice,userOb: User){
-        let pracData = userPracticesData.getPracticeDataObj(practiceName: prac.practice!)
+        let pracData = userPracticesData.getPracticeDataObj(practiceUid: prac.uId!)
         let pracName = prac.practice
         let td = pracData?.tracking_days
         let dss = (Date().dateFormate()!).days(from: (prac.startedday! as Date).dateFormate()!) + 1
@@ -202,13 +204,14 @@ class HomeViewController: UIViewController,ReceiveData{
     }
     
     func isSwitchOn(practice: Practice, practicesData: [PracticeData]?) -> Bool? {
+        var starButton : Bool = false
         if(practicesData != nil){
             for data in practicesData!{
-                if data.practiceDataToPractice?.uId == practice.uId{
-                    
-                    return data.practised
+                if data.pUid == practice.uId{
+                    starButton = data.practised
                 }
             }
+            return starButton
         }
         return nil
     }
@@ -229,7 +232,8 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
-        practicesData = userPracticesData.getPracticeDataByDate(date: selectedDate, uid: practices[indexPath.row].uId!)
+        practicesData = userPracticesData.getPracticeDataByUid(uid: practices[indexPath.row].uId!)
+        
         switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
     
         

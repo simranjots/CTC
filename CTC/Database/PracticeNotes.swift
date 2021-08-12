@@ -10,7 +10,7 @@ class PracticeNotes {
     let currentUser = CurrentUser()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     func addNotesData(uid: String, currentDate: Date,note: String,practiceName: String){
-        let practiceData =  practiceData.getPracticeDataObj(practiceName: practiceName)
+        let practiceData =  practiceData.getPracticeDataObj(practiceUid: uid)
         let notes = Notes(context: self.context)
         notes.uid = uid
         notes.noteDate = currentDate.dateFormate()! as NSDate

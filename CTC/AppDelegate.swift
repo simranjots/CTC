@@ -80,7 +80,7 @@ import IQKeyboardManagerSwift
                         let Today =  Date().days(from: Date().originalFormate())
                         let diff = startDate - Today
                         if diff > 365 {
-                            let pracData = userPracticeData.getPracticeDataObj(practiceName: goal.practice!)
+                            let pracData = userPracticeData.getPracticeDataObj(practiceUid: goal.uId!)
                             let pracName = goal.practice
                             let td = (pracData?.tracking_days)!
                             let dss = (Date().dateFormate()!).days(from: (goal.startedday! as Date).dateFormate()!) + 1
