@@ -40,10 +40,10 @@ class ActivityDetailsViewController: UIViewController {
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practicesArray = userPractices.getPractices(user: userObject)!
-        startpracticesData = self.getPracticesData(date: selectedDate!)
+        startpracticesData = self.getPracticesData(uid: (selectedPractice?.uId!)!)
         if(startpracticesData != nil){
             for data in startpracticesData!{
-                if data.practiceDataToPractice?.uId == selectedPractice?.uId{
+                if data.pUid == selectedPractice?.uId{
                     practicesData = data
                       starButton = data.practised
                 }
@@ -53,15 +53,23 @@ class ActivityDetailsViewController: UIViewController {
         styleElements()
     
     }
-    private func getPracticesData(date: Date) -> [PracticeData]? {
-        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!, uid: (selectedPractice?.uId)!)
+    private func getPracticesData(uid: String) -> [PracticeData]? {
+        return userPracticesData.getPracticeDataByUid(uid: uid)
     }
     override func viewWillAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practicesArray = userPractices.getPractices(user: userObject)!
-        
+        startpracticesData = self.getPracticesData(uid: (selectedPractice?.uId!)!)
+        if(startpracticesData != nil){
+            for data in startpracticesData!{
+                if data.pUid == selectedPractice?.uId{
+                    practicesData = data
+                      starButton = data.practised
+                }
+            }
+        }
         setData()
         styleElements()
     }

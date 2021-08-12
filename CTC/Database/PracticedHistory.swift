@@ -43,44 +43,7 @@ class PracticedHistory {
         
     }
     
-    func maintainTrackingDay(date: Date, flag: Bool, practice: Practice) -> Bool {
-        
-        var dateArray = date.getDates(date: Date())
-        dateArray.remove(at: 0)
-        
-        for tempDate in dateArray{
-            
-            let pracData = dbHelper.getPracticeDataByDate(date: tempDate)
-            if(flag == true){
-                
-                for pracobject in pracData!{
-                    if(practice == pracobject.practiceDataToPractice){
-                        pracobject.tracking_days = pracobject.tracking_days + 1
-                    }
-                }
-                
-            }else if (flag == false){
-                
-                for pracobject in pracData!{
-                    if(practice == pracobject.practiceDataToPractice){
-                        pracobject.tracking_days = pracobject.tracking_days - 1
-                    }
-                }
-                
-            }
-            
-        }
-        
-        do {
-            try context.save()
-        } catch let err {
-            print(err)
-            return false
-        }
-        print("Tracking Day Maintainance Completed")
-        
-        return true
-    }
+   
     func deletePracticeHistory(practice: PracticeHistory) {
         
         context.delete(practice)

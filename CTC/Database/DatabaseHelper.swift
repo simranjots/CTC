@@ -184,7 +184,7 @@ class DatabaseHelper{
     func getPracticebyName(practice: Practice) -> [PracticeData]? {
         
         let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PracticeData")
-        featchRequest.predicate = NSPredicate(format: "practiceDataToPractice = %@", argumentArray: [practice])
+        featchRequest.predicate = NSPredicate(format: "practiceDataToPractice.uID = %@", argumentArray: [practice.uId])
         
         
         do {
