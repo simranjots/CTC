@@ -46,6 +46,12 @@ class ProfilePageViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         Utilities.addBorderToView(profileImageView)
         
+        //Add tapGesture to ImageView
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gestureFired(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        profileImageView.addGestureRecognizer(gestureRecognizer)
+        profileImageView.isUserInteractionEnabled = true
     }
     
     func setUpData() {
@@ -113,6 +119,10 @@ class ProfilePageViewController: UIViewController {
         actionSheet()
     }
     
+    @objc func gestureFired(_ gesture: UITapGestureRecognizer) {
+        actionSheet()
+    }
+    
     @IBAction func updateProfileButtonTapped(_ sender: UIButton) {
         let newEmail = emailTextField.text!
         let newpassword = passwordTextField.text!
@@ -165,9 +175,8 @@ class ProfilePageViewController: UIViewController {
                 }
             }
         })
-       
-      
     }
+    
     func updatefirebaseuser(Email : String , password : String) {
       
       

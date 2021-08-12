@@ -50,6 +50,13 @@ class MorePageViewController: UIViewController {
     
         //Set containerView bottom constraints
         moreVCTableView.anchor(top: containerView.bottomAnchor, paddingTop: 10)
+        
+        //Add tapGesture to ImageView
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gestureFired(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        profileImageView.addGestureRecognizer(gestureRecognizer)
+        profileImageView.isUserInteractionEnabled = true
     }
    
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -62,7 +69,10 @@ class MorePageViewController: UIViewController {
         performSegue(withIdentifier: Constants.Segues.moreToUpdateProfileSegue, sender: self)
     }
     
-       
+    @objc func gestureFired(_ gesture: UITapGestureRecognizer) {
+        performSegue(withIdentifier: Constants.Segues.moreToUpdateProfileSegue, sender: self)
+    }
+    
        //MARK: - Top View elements
        let profileImageView: UIImageView = {
            let imageView = UIImageView()
