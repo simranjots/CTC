@@ -22,7 +22,7 @@ class faqViewController: UIViewController, UITableViewDataSource, UITableViewDel
         FAQData(questions: [
             "What if I didn't do anything all week?",
             "How do I Calculate my numbers and progess every week?",
-            "What happens if I'm good at one of these activity and not so good at the other?",
+            "What happens if I'm good at one of these activities and not so good at the other?",
             "What if I want to quit one of my commitments?"
         ],
         answers: ["This is not an all or nothing program. There will be times when adhering to your practices is more challenging than others. You can make those days up throughout the year. Also, plan to bank before times you know will be harder or at the beginning of the year so you don’t feel the pressure at the end of the year. And keep tracking every week so you know where you’re at. If you are able to be around 60% you should have lots of leeway. If you haven’t done your practice all week, your numbers would stay the same but the percentage would go down.",

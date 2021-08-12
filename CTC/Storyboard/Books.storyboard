@@ -111,7 +111,7 @@
                                                                         <constraint firstAttribute="height" constant="50" id="a8h-Rp-8Q8"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                                                    <state key="normal" title="Tap on the book to make purchase!">
+                                                                    <state key="normal" title="Tap on the book to purchase!">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                 </button>
