@@ -175,9 +175,8 @@ class ProfilePageViewController: UIViewController {
                 }
             }
         })
-       
-      
     }
+    
     func updatefirebaseuser(Email : String , password : String) {
       
       

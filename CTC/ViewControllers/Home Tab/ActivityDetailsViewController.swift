@@ -122,18 +122,10 @@ class ActivityDetailsViewController: UIViewController {
         circularProgressBar.setProgressWithAnimation(duration: 2.0, value: percentageInPoint)
     }
     
-    
-    
-    
-    
-    
-    
     //Style textFields, textView, Button
     func styleElements() {
         
-        
         Utilities.styleTextView(notesTextView)
-        
         Utilities.addShadowAndBorderToView(stataticsView)
         stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
         stataticsView.layer.shadowRadius = 0
@@ -223,7 +215,7 @@ extension ActivityDetailsViewController : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Write Your Notes Here. . . " {
             textView.text = ""
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor(named: "Brand Secondary Color")
             textView.font = UIFont(name: "verdana", size: 18.0)
         }
     }
