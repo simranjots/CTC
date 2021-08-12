@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         
         tagLineLabel.text = ""
         var charIndex = 0.0
-        let taglineText = "Turn your wants to haves"
+        let taglineText = "Turn your wants into haves"
         
         for letters in taglineText {
             

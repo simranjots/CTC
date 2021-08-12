@@ -8,7 +8,7 @@ class MorePageViewController: UIViewController {
     
     //MARK: - Array of more options and icons
     
-    let moreOptionsList = ["How to Use App", "Join Facebook Community", "Frequently Asked Questions",  "About Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
+    let moreOptionsList = ["How to Use This App", "Join The Facebook Community", "Frequently Asked Questions",  "About The Authors", "Privacy Policy",  "Contact Us", "Sign Out"]
     
     let moreOptionIcons = ["howToUseApp", "joinFacebookCommunity", "FAQs", "aboutAuthors", "privacyPolicy",  "connectToUs", "logOut"]
     
@@ -175,11 +175,11 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch moreOptionsList[indexPath.row] {
     
-        case "How to Use App":
+        case "How to Use This App":
             performSegue(withIdentifier: Constants.Segues.moreToHowToUseSegue, sender: self)
             break
             
-        case "Join Facebook Community":
+        case "Join The Facebook Community":
             UIApplication.shared.open(URL(string: "https://www.facebook.com/groups/375234539714492/")!, options: [:], completionHandler: nil)
             break
             
@@ -187,7 +187,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: Constants.Segues.moreToFAQsSegue, sender: self)
             break
             
-        case "About Authors":
+        case "About The Authors":
             performSegue(withIdentifier: Constants.Segues.moreToAboutAuthorsSegue, sender: self)
             break
             

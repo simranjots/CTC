@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-786.95652173913049" y="2049.7767857142858"/>
         </scene>
-        <!--About Authors-->
+        <!--About The Authors-->
         <scene sceneID="zYJ-Tw-gH5">
             <objects>
                 <viewController id="Bcp-7X-tqs" customClass="AboutUsViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,7 +249,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                             </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About Authors" id="MLD-hb-UMM"/>
+                    <navigationItem key="navigationItem" title="About The Authors" id="MLD-hb-UMM"/>
                     <connections>
                         <outlet property="aboutAuthorsTableView" destination="vJX-hP-3F3" id="51i-Fh-kqx"/>
                     </connections>
@@ -352,7 +352,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
             </objects>
             <point key="canvasLocation" x="-984.11214953271019" y="2775.8099352051836"/>
         </scene>
-        <!--How to Use App-->
+        <!--How to Use This App-->
         <scene sceneID="EeL-i5-EFV">
             <objects>
                 <viewController id="pGD-iz-FJC" customClass="HowToUseAppViewController" customModule="CTC" customModuleProvider="target" sceneMemberID="viewController">
@@ -429,7 +429,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                             </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="How to Use App" id="gZ1-s8-cgB"/>
+                    <navigationItem key="navigationItem" title="How to Use This App" id="gZ1-s8-cgB"/>
                     <connections>
                         <outlet property="howToUseCollectionView" destination="agz-tS-E4b" id="76s-fB-miS"/>
                         <outlet property="pageControl" destination="cTX-Ph-shY" id="dkb-ma-bWa"/>
@@ -648,7 +648,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-IM-ELO">
-                                                <rect key="frame" x="20" y="501.33333333333331" width="388" height="0.66666666666666663"/>
+                                                <rect key="frame" x="20" y="501.33333333333331" width="388" height="0.33333333333331439"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="QAh-MS-8dM"/>
