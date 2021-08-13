@@ -50,7 +50,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         }
         
         practicesArray = userPractices.getPractices(user: userObject)!
-        startpracticesData = self.getPracticesData(uid: (selectedPractice?.uId!)!)
+        startpracticesData = self.getPracticesData(date: selectedDate!)
         if(startpracticesData != nil){
             for data in startpracticesData!{
                 if data.pUid == selectedPractice?.uId{
@@ -63,15 +63,15 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         styleElements()
     
     }
-    private func getPracticesData(uid: String) -> [PracticeData]? {
-        return userPracticesData.getPracticeDataByUid(uid: uid)
+    private func getPracticesData(date: Date) -> [PracticeData]? {
+        return userPracticesData.getPracticeDataByDate(date: date)
     }
     override func viewWillAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
         practicesArray = userPractices.getPractices(user: userObject)!
-        startpracticesData = self.getPracticesData(uid: (selectedPractice?.uId!)!)
+        startpracticesData = self.getPracticesData(date: selectedDate!)
         if(startpracticesData != nil){
             for data in startpracticesData!{
                 if data.pUid == selectedPractice?.uId{

@@ -30,34 +30,7 @@ class HomeViewController: UIViewController,ReceiveData{
     @IBOutlet var nameLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        currentUser = CurrentUser()
-        userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
-        dateTextField.text = selectedDate.dateFormatemmmdd()
-        nameLabel.text = greetingMessage(user: userObject)
-        var pUid : String?
-        if practices.count == 0{
-            if UserDefaults.standard.bool(forKey: "Pracdata") {
-            db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
-                if value == true {
-                    pUid = pid
-                    if pUid != nil {
-                        db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
-                            if flag == true{
-                                UserDefaults.standard.set(false, forKey: "Pracdata")
-                                refreshTableview(date: selectedDate)
-                            }
-                        })
-                    }
-                    self.refreshTableview(date: selectedDate)
-                    
-                }
-            })
-          
-           
-        }
-        }
-       
         refreshTableview(date: selectedDate)
         
     }
@@ -231,7 +204,7 @@ extension HomeViewController : UITableViewDataSource {
         cell.activityImageView.image = UIImage(named:practices[indexPath.row ].image_name!)
         cell.valueLabel.text = practices[indexPath.row].values
         cell.tagLineLabel.text = practices[indexPath.row].encourage
-        practicesData = userPracticesData.getPracticeDataByUid(uid: practices[indexPath.row].uId!)
+        practicesData = userPracticesData.getPracticeDataByDate(date: selectedDate)
         
         switchFlag = self.isSwitchOn(practice: practices[indexPath.row], practicesData: practicesData)
     
