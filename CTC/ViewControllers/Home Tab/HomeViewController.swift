@@ -31,6 +31,17 @@ class HomeViewController: UIViewController,ReceiveData{
     
     override func viewWillAppear(_ animated: Bool) {
         selectedDate = Date().dateFormate()!
+        practices = self.getPractices(user: userObject)
+        if practices != nil {
+                for data in practices{
+                    db.fetchMonthlyData(uid: data.uId!, docid: userObject.uid!) { [self] flag in
+                        if flag {
+                            refreshTableview(date: selectedDate)
+                        }
+                    }
+                }
+            
+        }
         refreshTableview(date: selectedDate)
         
     }
