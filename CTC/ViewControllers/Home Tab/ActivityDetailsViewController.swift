@@ -64,7 +64,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     
     }
     private func getPracticesData(date: Date) -> [PracticeData]? {
-        return userPracticesData.getPracticeDataByDate(date: date)
+        return userPracticesData.getPracticeDataByDate(date: date.dateFormate()!)
     }
     override func viewWillAppear(_ animated: Bool) {
         dbHelper = DatabaseHelper()
@@ -86,6 +86,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     
     func setData() {
         let startedDate = ((selectedPractice!.startedday)! as Date).originalFormate()
+        practicesData =  userPracticesData.getPracticeDataObj(practiceUid: (selectedPractice?.uId)!)
         let days = Date().days(from: startedDate) + 1
         let practicedDays = practicesData?.tracking_days ?? 0
         daysPracticedLabel.text =  "\(practicedDays)"
