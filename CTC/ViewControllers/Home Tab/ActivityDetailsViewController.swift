@@ -190,6 +190,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
             }
         self.present(vc, animated: true, completion: nil)
     }
+    
     @IBAction func remindSwitchTapped(_ sender: Any) {
         let value = UserDefaults.standard.bool(forKey: "Permission")
         //if AddPracticesViewController.cvalue == "edit"{
