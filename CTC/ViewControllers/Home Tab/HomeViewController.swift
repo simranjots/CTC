@@ -44,7 +44,6 @@ class HomeViewController: UIViewController,ReceiveData{
                     if pUid != nil {
                         db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
                             if flag == true{
-                                UserDefaults.standard.set(false, forKey: "Monthlydata")
                                 UserDefaults.standard.set(false, forKey: "Pracdata")
                                 refreshTableview(date: selectedDate)
                             }
