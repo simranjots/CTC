@@ -152,7 +152,6 @@ class LoginViewController: UIViewController {
                                 }
                             }else{
                                 self.database.FetchTUserData(email: email, completion: { (users) in
-                                    UserDefaults.standard.set(true, forKey: "Pracdata")
                                     self.userSetup = users
                                     for user in self.userSetup {
                                         
