@@ -68,9 +68,16 @@ class UserPractices{
         practiceObject!.is_completed =  false
         if oldPractice != newPractice {
             remindPractices.RemoveReminder(practiceName: oldPractice)
+            if let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: oldPractice) {
+                remindPractices.deleteReminder(reminder: remind)
+                       }
+            
            // #warning("Need to update Reminder")
-            let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: oldPractice)
-            remindPractices.AddReminder(daysLabel: remind.day!, hour: remind.hour, minute: remind.minute, practiceName: newPractice, identifier: remind.identifier!)
+//            if let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: oldPractice) {
+//                remindPractices.AddReminder(daysLabel: remind.day!, hour: remind.hour, minute: remind.minute, practiceName: newPractice, identifier: remind.identifier!)
+//            }
+    
+           
         }
         practiceObject!.remindswitch = ((practiceObject?.remindswitch) != nil)
        
