@@ -26,14 +26,12 @@ class OnBoardingVC: UIViewController {
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         var pUid : String?
-            if UserDefaults.standard.bool(forKey: "Pracdata") {
             db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
                 if value == true {
                     pUid = pid
                     if pUid != nil {
                         db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
                             if flag == true{
-                                UserDefaults.standard.set(false, forKey: "Pracdata")
                             }
                         })
                     }
@@ -41,7 +39,7 @@ class OnBoardingVC: UIViewController {
             })
           
            
-        }
+        
         
     }
     
