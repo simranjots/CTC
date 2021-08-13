@@ -183,7 +183,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-5B-ydE" userLabel="Description 2">
-                                                                    <rect key="frame" x="0.0" y="102.99999999999999" width="378" height="164.66666666666663"/>
+                                                                    <rect key="frame" x="0.0" y="103.00000000000001" width="378" height="164.33333333333337"/>
                                                                     <string key="text">cular. She was hard on herself when she didn’t do these things every day. She saw success as all or nothing. This created inner-tension; the ‘missing days’ drove her into a negative mindset.
 
 Teresa decided to apply Kim’s 201 magic number to her practices. His formula worked. Success followed, and she soon added other practices.
@@ -194,10 +194,10 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-G3-ZBV">
-                                                                    <rect key="frame" x="0.0" y="270.66666666666669" width="378" height="0.33333333333331439"/>
+                                                                    <rect key="frame" x="0.0" y="270.33333333333331" width="378" height="0.66666666666668561"/>
                                                                     <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="0.5" id="doO-Z2-uRw"/>
+                                                                        <constraint firstAttribute="height" constant="0.67000000000000004" id="doO-Z2-uRw"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -288,17 +288,17 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-hl-GDU">
-                                                    <rect key="frame" x="20" y="50" width="388" height="132.66666666666666"/>
+                                                    <rect key="frame" x="20" y="50" width="388" height="132.33333333333334"/>
                                                     <string key="text">This is not an all or nothing program. There will be times when adhering to your practices is more challenging than others. You can make those days up throughout the year. Also, plan to bank before times you know will be harder or at the beginning of the year so you don’t feel the pressure at the end of the year. And keep tracking every week so you know where you’re at. If you are able to be around 60% you should have lots of leeway. If you haven’t done your practice all week, your numbers would stay the same but the percentage would go down.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" name="Brand Secondary Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-0t-cQf">
-                                                    <rect key="frame" x="20" y="190.66666666666666" width="388" height="0.33333333333334281"/>
+                                                    <rect key="frame" x="20" y="190.33333333333334" width="388" height="0.66666666666665719"/>
                                                     <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="0.5" id="jU9-KO-OUE"/>
+                                                        <constraint firstAttribute="height" constant="0.67000000000000004" id="jU9-KO-OUE"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -499,17 +499,17 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-NZ-P7X">
-                                                    <rect key="frame" x="20" y="35" width="388" height="140.66666666666666"/>
+                                                    <rect key="frame" x="20" y="35" width="388" height="140.33333333333334"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                     <color key="textColor" name="Brand Secondary Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-dw-h6k">
-                                                    <rect key="frame" x="20" y="183.66666666666666" width="388" height="0.33333333333334281"/>
+                                                    <rect key="frame" x="20" y="183.33333333333334" width="388" height="0.66666666666665719"/>
                                                     <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="0.5" id="y6r-zS-FRP"/>
+                                                        <constraint firstAttribute="height" constant="0.67000000000000004" id="y6r-zS-FRP"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -607,7 +607,7 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 <rect key="frame" x="20" y="340" width="388" height="0.66666666666668561"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="0.5" id="sYe-lo-mHG">
+                                                    <constraint firstAttribute="height" constant="0.67000000000000004" id="sYe-lo-mHG">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="1"/>
                                                     </constraint>
                                                 </constraints>
@@ -648,20 +648,20 @@ Together they decided to share this 201 Day Achievement Principle with the world
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-IM-ELO">
-                                                <rect key="frame" x="20" y="501.33333333333331" width="388" height="0.33333333333331439"/>
+                                                <rect key="frame" x="20" y="501.33333333333331" width="388" height="0.66666666666668561"/>
                                                 <color key="backgroundColor" red="0.24313725489999999" green="0.69803921570000005" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="0.5" id="QAh-MS-8dM"/>
+                                                    <constraint firstAttribute="height" constant="0.67000000000000004" id="QAh-MS-8dM"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on our other social platforms for updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tup-dw-ury">
-                                                <rect key="frame" x="20" y="521.66666666666663" width="388" height="40.333333333333371"/>
+                                                <rect key="frame" x="20" y="522" width="388" height="40.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                 <color key="textColor" name="Brand Secondary Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="acT-1H-2KT">
-                                                <rect key="frame" x="154" y="582" width="120" height="30"/>
+                                                <rect key="frame" x="154" y="582.33333333333337" width="120" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-jK-rNL">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
