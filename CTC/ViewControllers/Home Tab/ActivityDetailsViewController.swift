@@ -42,12 +42,19 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        uiSwitch.setOn(selectedPractice!.remindswitch, animated: true)
-        if selectedPractice?.remindswitch == true {
-            remindInfoBtn.isHidden = false
+        if let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: (selectedPractice?.practice)!) {
+            uiSwitch.setOn(selectedPractice!.remindswitch, animated: true)
+            if selectedPractice?.remindswitch == true {
+                remindInfoBtn.isHidden = false
+            }else{
+                remindInfoBtn.isHidden = true
+            }
         }else{
             remindInfoBtn.isHidden = true
+           
         }
+        
+       
         
         practicesArray = userPractices.getPractices(user: userObject)!
         startpracticesData = self.getPracticesData(date: selectedDate!)

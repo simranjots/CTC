@@ -112,8 +112,9 @@ class PracticeReminder {
         
         return reminder
     }
-    func loadReminderbyPracticeNameonly(practiceName: String) -> Reminder{
-        var rem  : Reminder!
+
+    func loadReminderbyPracticeNameonly(practiceName: String) -> Reminder?{
+        var rem  : Reminder?
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "practiceName = %@", argumentArray: [practiceName])
@@ -125,12 +126,13 @@ class PracticeReminder {
                     rem = data
                 }
             }
+            return rem ?? nil
         
         } catch let err {
             print(err)
         }
-        
-        return rem
+        return nil
+       
     }
     func checkIdentifier(identifier: String) -> Bool {
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")

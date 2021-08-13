@@ -183,6 +183,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         practices = userPractices.getPractices(user: userObject)
+        nameLabel.text = greetingMessage(user: userObject)
         homeTableView.reloadData()
     }
     
@@ -249,6 +250,9 @@ extension HomeViewController: UITableViewDelegate{
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(practiceName: prac.practice!)
+                if let remind = self.practiceReminder.loadReminderbyPracticeNameonly(practiceName: prac.practice!) {
+                    self.practiceReminder.deleteReminder(reminder: remind)
+                    }
                 self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
                
