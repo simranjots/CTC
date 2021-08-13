@@ -10,6 +10,10 @@ class OnBoardingVC: UIViewController {
     //MARK: - Images and Descriptions
     
     let snapshotImages = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    var currentUser : CurrentUser!
+    var userObject: User!
+    let db = FirebaseDataManager()
+    var selectedDate: Date!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,28 @@ class OnBoardingVC: UIViewController {
         onBoardingCollectionView.delegate = self
         onBoardingCollectionView.dataSource = self
         Utilities.styleButton(doneButtonOutlet)
+        
+        currentUser = CurrentUser()
+        userObject = currentUser.checkLoggedIn()
+        selectedDate = Date().dateFormate()!
+        var pUid : String?
+            if UserDefaults.standard.bool(forKey: "Pracdata") {
+            db.FetchPractices(puid: userObject.uid!, completion: { [self](value,pid) -> Void in
+                if value == true {
+                    pUid = pid
+                    if pUid != nil {
+                        db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
+                            if flag == true{
+                                UserDefaults.standard.set(false, forKey: "Pracdata")
+                            }
+                        })
+                    }
+                }
+            })
+          
+           
+        }
+        
     }
     
     

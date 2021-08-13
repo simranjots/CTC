@@ -30,16 +30,14 @@ class PracticesRecordListVC: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         if practicesArray != nil {
-            if UserDefaults.standard.bool(forKey: "Monthlydata") {
                 for data in practicesArray{
                     db.fetchMonthlyData(uid: data.uId!, docid: userObject.uid!) { [self] flag in
                         if flag {
-                            UserDefaults.standard.set(true, forKey: "Monthlydata")
                             reloadPractices()
                         }
                     }
                 }
-            }
+            
         }
     }
     override func viewDidLoad() {
