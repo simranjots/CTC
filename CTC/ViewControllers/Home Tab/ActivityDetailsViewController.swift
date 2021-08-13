@@ -126,10 +126,12 @@ class ActivityDetailsViewController: UIViewController {
     func styleElements() {
         
         Utilities.styleTextView(notesTextView)
-        Utilities.addShadowAndBorderToView(stataticsView)
-        stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
-        stataticsView.layer.shadowRadius = 0
-        stataticsView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        //Utilities.addShadowAndBorderToView(stataticsView)
+        
+//        stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
+//        stataticsView.layer.shadowRadius = 0
+//        stataticsView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        
         if #available(iOS 13.0, *) {
             stataticsView.layer.backgroundColor = UIColor.systemBackground.cgColor
         } else {
@@ -139,12 +141,10 @@ class ActivityDetailsViewController: UIViewController {
         notesTextView.delegate = self
         
         //Style buttons
-        Utilities.styleHollowButton(saveButtonOutlet)
         startedday.layer.cornerRadius = startedday.frame.height / 4
         
         Utilities.adddayBorderToView(startedday)
         practicedays.layer.cornerRadius = practicedays.frame.height / 4
-        
         Utilities.adddayBorderToView(practicedays)
     }
     
@@ -165,7 +165,10 @@ class ActivityDetailsViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
         let ispracticed = starButton
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
@@ -193,7 +196,39 @@ class ActivityDetailsViewController: UIViewController {
         }
         
     }
-}
+
+        
+    }
+    
+//func saveButtonTapped(_ sender: Any) {
+//        let ispracticed = starButton
+//        var noteData = notesTextView.text
+//        if noteData == "Write Your Notes Here. . . "{
+//            noteData = "No note created."
+//        }
+//
+//
+//        let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: selectedPractice!, currentDate: selectedDate!, userObject: userObject!, note: noteData!, save: "save", check: check)
+//
+//        if(savingResult == 0){
+//
+//            showToast(message: "Data Saved. . .", duration: 3)
+//            delegate?.passUserObject(user: userObject)
+//
+//            for controller in self.navigationController!.viewControllers as Array {
+//                if controller.isKind(of: HomeViewController.self) {
+//                    HomeViewController.practiceAdded(true)
+//                    self.navigationController!.popToViewController(controller, animated: true)
+//                    break
+//                }
+//            }
+//        }
+//        else if(savingResult == 1){
+//            showAlert(title: "Error", message: "Datasaving Error Please try again. . .", buttonTitle: "Try Again")
+//        }
+//
+//    }
+//}
 
 extension UITextField{
     
