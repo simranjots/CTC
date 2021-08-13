@@ -32,7 +32,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     let date = Date()
     static var cvalue : String = ""
     static var cindexPath : Int = 0
-    static var toggle : Bool =  false
+    //static var toggle : Bool =  false
     
     //PickerView instances
     let valuesPickerView = UIPickerView()
@@ -52,14 +52,14 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     var imageName: String = ""
     
-    let wordsOfEncouragementQuotes = ["It is health that is real wealth and not pieces of gold and silver.", "Health is not valued till sickness comes.", "Remain calm, because peace equals power.", "A good laugh and a long sleep are the best cures in the doctor’s book.", "Life is either a daring adventure or nothing.", "Only those who risk going too far can possibly find out how far they can go.", "Good things come to those who sweat.", "The pain you feel today will be the strength you feel tomorrow.", "Do not let the behavior of others destroy your inner peace.", "Nobody can bring you peace but yourself.", "When things change inside you, things change around you.", "More smiling, less worrying.", "The most wasted of all days is one without laughter.", "Meditation is a vital way to purify and quiet the mind, thus rejuvenating the body.", "Your goal is not to battle with the mind, but to witness the mind.", "If you can dream it, You can do it.", "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.", "Press forward. Do not stop, do not linger in your journey, but strive for the mark set before you.", "The future belongs to those who believe in the beauty of their dreams.", "One way to keep momentum going is to have constantly greater goals.", "Never give up, for that is just the place and time that the tide will turn.", "Start where you are. Use what you have. Do what you can."]
+    let wordsOfEncouragementQuotes = ["It is health that is real wealth and not pieces of gold and silver.", "Health is not valued till sickness comes.", "Remain calm, because peace equals power.", "A good laugh and a long sleep are the best cures in the doctor’s book.", "Life is either a daring adventure or nothing.", "Only those who risk going too far can possibly find out how far they can go.", "Good things come to those who sweat.", "The pain you feel today will be the strength you feel tomorrow.", "Do not let the behavior of others destroy your inner peace.", "Nobody can bring you peace but yourself.", "When things change inside you, things change around you.", "More smiling, less worrying.", "The most wasted of all days is one without laughter.", "Meditation is a vital way to purify and quiet the mind, thus rejuvenating the body.", "Your goal is not to battle with the mind, but to witness the mind.", "If you can dream it, You can do it.", "Press forward. Do not stop, do not linger in your journey, but strive for the mark set before you.", "The future belongs to those who believe in the beauty of their dreams.", "One way to keep momentum going is to have constantly greater goals.", "Never give up, for that is just the place and time that the tide will turn.", "Start where you are. Use what you have. Do what you can."]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reminderInfo.isHidden = true
+       // reminderInfo.isHidden = true
         NotificationManager.instance.requestAuthorization()
-        uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
+       // uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
         userPractices = UserPractices()
@@ -109,18 +109,18 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     //MARK: - IBActions
     @IBAction func reminderInfoPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-            vc.practiceName = choosePracticesTextField.text!
-            vc.value = AddPracticesViewController.cvalue
-            ReminderViewController.switchCompletion = {(flag) in
-             if(flag){
-                self.uiSwitch.setOn(flag, animated: true)
-             }else{
-                self.uiSwitch.setOn(flag, animated: true)
-             }
-            }
-        self.present(vc, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+//            vc.practiceName = choosePracticesTextField.text!
+//            vc.value = AddPracticesViewController.cvalue
+//            ReminderViewController.switchCompletion = {(flag) in
+//             if(flag){
+//                self.uiSwitch.setOn(flag, animated: true)
+//             }else{
+//                self.uiSwitch.setOn(flag, animated: true)
+//             }
+//            }
+//        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -130,43 +130,43 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     }
     
     @IBAction func reminderTapped(_ sender: UISwitch) {
-        let value = UserDefaults.standard.bool(forKey: "Permission")
-        if AddPracticesViewController.cvalue == "edit"{
-        if uiSwitch.isOn{
-            if  value == true {
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-                vc.practiceName = choosePracticesTextField.text!
-                vc.value = AddPracticesViewController.cvalue
-                vc.presentationController?.delegate = self
-                ReminderViewController.switchCompletion = {(flag) in
-                 if(flag){
-                    self.uiSwitch.setOn(flag, animated: true)
-                 }else{
-                    self.uiSwitch.setOn(flag, animated: true)
-                 }
-                }
-            self.present(vc, animated: true, completion: nil)
-            }else{
-                
-               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
-                uiSwitch.setOn(false, animated: true)
-                _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
-                    self.dismiss(animated: true)
-                }
-            }
-        }else{
-            uiSwitch.setOn(false, animated: true)
-        }
-        }else{
-            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
-            uiSwitch.setOn(false, animated: true)
-            
-        }
+//        let value = UserDefaults.standard.bool(forKey: "Permission")
+//        //if AddPracticesViewController.cvalue == "edit"{
+//        if uiSwitch.isOn{
+//            if  value == true {
+//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+//                vc.practiceName = choosePracticesTextField.text!
+//                vc.value = AddPracticesViewController.cvalue
+//                vc.presentationController?.delegate = self
+//                ReminderViewController.switchCompletion = {(flag) in
+//                 if(flag){
+//                    self.uiSwitch.setOn(flag, animated: true)
+//                 }else{
+//                    self.uiSwitch.setOn(flag, animated: true)
+//                 }
+//                }
+//            self.present(vc, animated: true, completion: nil)
+//            }else{
+//
+//               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
+//                uiSwitch.setOn(false, animated: true)
+//                _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
+//                    self.dismiss(animated: true)
+//                }
+//            }
+//        }else{
+//            uiSwitch.setOn(false, animated: true)
+//        }
+//        }else{
+//            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
+//            uiSwitch.setOn(false, animated: true)
+//
+//        }
     }
     
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-        uiSwitch.setOn(false, animated: true)
+       // uiSwitch.setOn(false, animated: true)
     }
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
@@ -238,7 +238,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         let practiceName = choosePracticesTextField.text
         let valueName = chooseValuesTextField.text
         let encourage = wordsOfEncouragementTextField.text
-        let switchValue = uiSwitch.isOn
+        //let switchValue = uiSwitch.isOn
         let goal =  goalTextField.text
         let image_Name = imageName
         
@@ -251,12 +251,12 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
             var practiceFlag: Int!
             if(isUpdating){
                
-                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!)
+                practiceFlag = userPractices.updatePractice(oldPractice: oldPractice!, newPractice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!, goals: goal!)
                 isUpdating = false
                 
             }
             else{
-                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : switchValue, goals: goal!, Fuid: nil )
+                practiceFlag = userPractices.addPractices(practice: practiceName!, image_name: image_Name, date: datePickerView.date.dateFormate()!, user: userObject,value : valueName!,encourage : encourage!,remindswitch : false, goals: goal!, Fuid: nil )
                 isUpdating = false
             }
             
@@ -287,7 +287,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        uiSwitch.setOn(false, animated: true)
+       // uiSwitch.setOn(false, animated: true)
         self.chooseValuesTextField.text = ""
         self.choosePracticesTextField.text = ""
         self.goalTextField.text = ""
@@ -348,7 +348,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
 
  func add(){
      self.title = "Add Practice"
-      reminderInfo.isHidden = true
+     // reminderInfo.isHidden = true
      self.saveButton.setTitle("Add", for: .normal)
      dateTextField.text = Date().dateFormatemmmdd()
      chooseValuesTextField.text = values.first
@@ -370,10 +370,10 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
      datePickerView.date = (self.practi[indexPath].startedday)! as Date
      
     dateTextField.text = ((self.practi[indexPath].startedday)! as Date).dateFormatemmmdd()
-    uiSwitch.setOn(self.practi[indexPath].remindswitch, animated: true)
-    if self.practi[indexPath].remindswitch {
-        reminderInfo.isHidden = false
-    }
+    //uiSwitch.setOn(self.practi[indexPath].remindswitch, animated: true)
+//    if self.practi[indexPath].remindswitch {
+//        reminderInfo.isHidden = false
+//    }
     wordsOfEncouragementTextField.text = practi[indexPath].encourage
     // titleLabel.text = "Edit Practice"
     saveButton.setTitle("Confirm", for: .normal)
@@ -404,6 +404,7 @@ extension AddPracticesViewController {
         Utilities.styleHollowButton(cancelButton)
         changeButton.layer.cornerRadius = 8.0
         changeButton.layer.borderWidth = 1.0
+        changeButton.layer.borderColor = UIColor(named: "duelcolour")?.cgColor
     }
     
     //Set pickerView datasources, delegates and inputViews

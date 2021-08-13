@@ -151,7 +151,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                                 self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                             }
                                                                 // Notify the user that the mail has sent or couldn't because of an error.
-                                                            
+                                                            self.signUpButton.isUserInteractionEnabled = false
                                                         let alert = UIAlertController(title: "Email Sent", message: "An email verification link has been sent to your email. Please check your email.", preferredStyle: .alert)
                                                               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) -> Void in
                                                                 let storyboard = UIStoryboard(name: "Login", bundle: nil)

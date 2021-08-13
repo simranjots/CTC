@@ -1,6 +1,6 @@
 import UIKit
 
-class ActivityDetailsViewController: UIViewController {
+class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationControllerDelegate {
     
     var dbHelper: DatabaseHelper!
     var userPracticesData : UserPracticesData!
@@ -15,7 +15,10 @@ class ActivityDetailsViewController: UIViewController {
     var selectedPractice : Practice?
     var check : Bool = false
     let db = FirebaseDataManager()
+    let remindPractices = PracticeReminder()
 
+    @IBOutlet weak var uiSwitch: UISwitch!
+    @IBOutlet weak var remindInfoBtn: UIButton!
     @IBOutlet weak var startedday: UILabel!
     @IBOutlet weak var practicedays: UILabel!
     @IBOutlet var stataticsView: UIView!
@@ -39,13 +42,20 @@ class ActivityDetailsViewController: UIViewController {
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
+        uiSwitch.setOn(selectedPractice!.remindswitch, animated: true)
+        if selectedPractice?.remindswitch == true {
+            remindInfoBtn.isHidden = false
+        }else{
+            remindInfoBtn.isHidden = true
+        }
+        
         practicesArray = userPractices.getPractices(user: userObject)!
         startpracticesData = self.getPracticesData(uid: (selectedPractice?.uId!)!)
         if(startpracticesData != nil){
             for data in startpracticesData!{
                 if data.pUid == selectedPractice?.uId{
                     practicesData = data
-                      starButton = data.practised
+                    starButton = data.practised
                 }
             }
         }
@@ -166,15 +176,74 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     
+    @IBAction func remindInfoTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+        vc.practiceName = (practicesData?.practiceDataToPractice?.practice)!
+            vc.value = AddPracticesViewController.cvalue
+            ReminderViewController.switchCompletion = {(flag) in
+             if(flag){
+                self.uiSwitch.setOn(flag, animated: true)
+             }else{
+                self.uiSwitch.setOn(flag, animated: true)
+             }
+            }
+        self.present(vc, animated: true, completion: nil)
+    }
+    @IBAction func remindSwitchTapped(_ sender: Any) {
+        let value = UserDefaults.standard.bool(forKey: "Permission")
+        //if AddPracticesViewController.cvalue == "edit"{
+        if uiSwitch.isOn{
+            if  value == true {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
+                vc.practiceName = (selectedPractice?.practice)!
+                vc.value = AddPracticesViewController.cvalue
+                vc.presentationController?.delegate = self
+                ReminderViewController.switchCompletion = {(flag) in
+                 if(flag){
+                    self.uiSwitch.setOn(flag, animated: true)
+                 }else{
+                    self.uiSwitch.setOn(flag, animated: true)
+                 }
+                }
+            self.present(vc, animated: true, completion: nil)
+            }else{
+                
+               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
+                uiSwitch.setOn(false, animated: true)
+                _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+                    self.dismiss(animated: true)
+                }
+            }
+        }else{
+            uiSwitch.setOn(false, animated: true)
+            remindPractices.RemoveReminder(practiceName: (selectedPractice?.practice)!)
+            
+        }
+//        }else{
+//            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
+//            uiSwitch.setOn(false, animated: true)
+//
+//        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        save()
+    }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        
+        save()
+    }
+    
+    func save() {
         let ispracticed = starButton
+        let switchValue = uiSwitch.isOn
         var noteData = notesTextView.text
         if noteData == "Write Your Notes Here. . . "{
             noteData = "No note created."
         }
-        
+        userPractices.updateReminderSwitchValue(practice: selectedPractice!, value: switchValue,user: userObject)
         
         let savingResult = userPracticesData.practicedToday(toggleBtn: ispracticed, practiceObject: selectedPractice!, currentDate: selectedDate!, userObject: userObject!, note: noteData!, save: "save", check: check)
         
@@ -195,6 +264,9 @@ class ActivityDetailsViewController: UIViewController {
             showAlert(title: "Error", message: "Datasaving Error Please try again. . .", buttonTitle: "Try Again")
         }
         
+    }
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        uiSwitch.setOn(false, animated: true)
     }
 
         

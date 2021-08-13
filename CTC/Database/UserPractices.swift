@@ -53,7 +53,7 @@ class UserPractices{
         
     }
     
-    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String,encourage : String,remindswitch : Bool,goals : String) -> Int {
+    func updatePractice(oldPractice: String, newPractice: String,image_name: String,date: Date, user: User,value : String,encourage : String,goals : String) -> Int {
         
         let practiceObject = getPractices(practiceName: oldPractice, user: user)
         practiceObject?.uId = practiceObject?.uId
@@ -62,7 +62,6 @@ class UserPractices{
         practiceObject!.image_name = image_name
         practiceObject!.startedday = practiceObject!.startedday
         practiceObject!.encourage = encourage
-        practiceObject!.remindswitch = remindswitch
         practiceObject!.goals = goals
         practiceObject!.user = user
         practiceObject!.is_deleted = false
@@ -70,19 +69,27 @@ class UserPractices{
         if oldPractice != newPractice {
             remindPractices.RemoveReminder(practiceName: oldPractice)
            // #warning("Need to update Reminder")
+            let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: oldPractice)
+            remindPractices.AddReminder(daysLabel: remind.day!, hour: remind.hour, minute: remind.minute, practiceName: newPractice, identifier: remind.identifier!)
         }
-        if remindswitch == false {
-        
-            remindPractices.RemoveReminder(practiceName: oldPractice)
-        }
+        practiceObject!.remindswitch = ((practiceObject?.remindswitch) != nil)
+       
         let result = currentUser.saveUser()
         if result == 0 {
             DispatchQueue.main.async {
-                self.firebaseDataManager.updatePracticesInFirebase(oldPractice: oldPractice, newPractice: newPractice, image_name: image_name, user: user, value: value, encourage: encourage, remindswitch: remindswitch, goals: goals,date: date, id: (practiceObject?.uId!)!)
+                self.firebaseDataManager.updatePracticesInFirebase(oldPractice: oldPractice, newPractice: newPractice, image_name: image_name, user: user, value: value, encourage: encourage, remindswitch: practiceObject!.remindswitch, goals: goals,date: date, id: (practiceObject?.uId!)!)
             }
             
         }
         return result
+    }
+    func updateReminderSwitchValue(practice: Practice,value: Bool,user:User) {
+        practice.remindswitch = value
+        let result = currentUser.saveUser()
+        if result == 0{
+            firebaseDataManager.updateSinglePractices(collectionName: "Practices", valueName: "remindswitch", value: value, document: practice.uId!, uid: user.uid!)
+        }
+       
     }
     
     

@@ -249,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="erh-Sx-6LG">
-                                <rect key="frame" x="20" y="64" width="388" height="535"/>
+                                <rect key="frame" x="20" y="64" width="388" height="480"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-kT-o0L">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="370"/>
@@ -356,7 +356,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="dCN-qg-atc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-Ga-3qh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-Ga-3qh">
                                                         <rect key="frame" x="35" y="0.0" width="142" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="142" id="2Jj-pR-s2e"/>
@@ -365,7 +365,7 @@
                                                         <color key="textColor" name="Brand Secondary Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-ik-DTW">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-ik-DTW">
                                                         <rect key="frame" x="182" y="0.0" width="206" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Fuj-mK-HIc"/>
@@ -395,7 +395,7 @@
                                                         <color key="textColor" name="Brand Secondary Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="umr-dP-XQb">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="umr-dP-XQb">
                                                         <rect key="frame" x="182" y="0.0" width="206" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="k6O-Hz-48s"/>
@@ -462,45 +462,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PPA-If-1zT">
-                                        <rect key="frame" x="0.0" y="385" width="388" height="40"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reminder" translatesAutoresizingMaskIntoConstraints="NO" id="q5E-vA-ctC">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
-                                                <color key="tintColor" name="Brand Secondary Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="2Yd-EF-K2Y"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Practice Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgw-EM-xpQ">
-                                                <rect key="frame" x="40" y="0.0" width="249" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Ync-L2-7rm"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="Brand Secondary Color"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-NM-Rf0">
-                                                <rect key="frame" x="299" y="0.0" width="30" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="axC-RY-VjW"/>
-                                                </constraints>
-                                                <color key="tintColor" name="Brand Secondary Color"/>
-                                                <connections>
-                                                    <action selector="reminderInfoPressed:" destination="eeE-ms-d9h" eventType="touchUpInside" id="Bic-oQ-Np8"/>
-                                                </connections>
-                                            </button>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hnU-Wk-IIB">
-                                                <rect key="frame" x="339" y="0.0" width="51" height="40"/>
-                                                <connections>
-                                                    <action selector="reminderTapped:" destination="eeE-ms-d9h" eventType="valueChanged" id="oBe-SD-ShH"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BKE-VJ-HUr">
-                                        <rect key="frame" x="0.0" y="440" width="388" height="95"/>
+                                        <rect key="frame" x="0.0" y="385" width="388" height="95"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7vg-m7-XSq">
                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -563,7 +526,7 @@
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="9rp-CA-Qw6">
-                                <rect key="frame" x="20" y="614" width="388" height="278"/>
+                                <rect key="frame" x="20" y="559" width="388" height="333"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ur8-DK-aky"/>
@@ -594,9 +557,7 @@
                         <outlet property="dateTextField" destination="umr-dP-XQb" id="q3I-pR-f2Y"/>
                         <outlet property="goalTextField" destination="kD6-ik-DTW" id="yvR-KY-bi6"/>
                         <outlet property="practicesDropDownButtonOutlet" destination="PNY-33-9fz" id="XPI-2N-lk8"/>
-                        <outlet property="reminderInfo" destination="mAC-NM-Rf0" id="Qiz-Zi-aHA"/>
                         <outlet property="saveButton" destination="IDc-ET-mQK" id="jRm-z3-7ja"/>
-                        <outlet property="uiSwitch" destination="hnU-Wk-IIB" id="Wcf-E1-4qG"/>
                         <outlet property="valuesDropDownButtonOutlet" destination="wz8-Ux-1Xx" id="Nwf-My-mSe"/>
                         <outlet property="wordsOfEncouragementTextField" destination="vxe-iI-a4I" id="U6n-lS-iJh"/>
                     </connections>
@@ -1056,9 +1017,15 @@
                                                                     <constraint firstAttribute="width" constant="30" id="7CX-98-MYn"/>
                                                                 </constraints>
                                                                 <color key="tintColor" name="Brand Secondary Color"/>
+                                                                <connections>
+                                                                    <action selector="remindInfoTapped:" destination="vyD-VZ-RiF" eventType="touchUpInside" id="SdK-Bt-QFd"/>
+                                                                </connections>
                                                             </button>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-G2-Flq">
                                                                 <rect key="frame" x="339" y="0.0" width="51" height="40"/>
+                                                                <connections>
+                                                                    <action selector="remindSwitchTapped:" destination="vyD-VZ-RiF" eventType="valueChanged" id="rld-1r-rXJ"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
@@ -1172,9 +1139,11 @@
                         <outlet property="notesTextView" destination="hAd-Fb-Lhy" id="IUu-6H-19J"/>
                         <outlet property="percentageLabel" destination="NoQ-xL-tpe" id="59l-mf-A3A"/>
                         <outlet property="practicedays" destination="ZaH-oe-SLH" id="F9r-OB-ccz"/>
+                        <outlet property="remindInfoBtn" destination="Bt5-F9-AEu" id="cC8-X4-yp5"/>
                         <outlet property="startButtonOutlet" destination="2Tz-Wt-Lp0" id="tEz-p7-Ana"/>
                         <outlet property="startedday" destination="i3p-oP-nvh" id="eHU-Mu-PHm"/>
                         <outlet property="stataticsView" destination="0Eo-Tl-SrG" id="jvb-hG-Kgv"/>
+                        <outlet property="uiSwitch" destination="TP4-G2-Flq" id="Eec-Ge-Kwn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwc-yl-Eqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

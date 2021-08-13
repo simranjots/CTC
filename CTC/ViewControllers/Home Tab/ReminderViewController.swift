@@ -57,7 +57,7 @@ class ReminderViewController: UIViewController {
     
     
     @IBAction func addPressed(_ sender: Any) {
-        if value == "edit" {
+        //if value == "edit" {
             PopUpReminder.value = "add"
             PopUpReminder.practiceName = practiceName
             PopUpReminder.searchCompletion = {(flag) in
@@ -66,29 +66,29 @@ class ReminderViewController: UIViewController {
                 }
             }
             popUp.showPopup(parentVC: self)
-        }else{
-            print("hello \(practiceName)")
-            if (practiceName == ""){
-                showToast(message: "Please Create your practice then set the the reminder", duration: 1)
-            }else{
-                for practiceData in practices{
-                    if(practiceData.practice == practiceName){
-                        
-                        showToast(message: "Please Change the Practice Name it already exist", duration: 1)
-                    }else{
-                        PopUpReminder.value = "add"
-                        PopUpReminder.practiceName = practiceName
-                        PopUpReminder.searchCompletion = {(flag) in
-                            if(flag){
-                                self.reloadTable()
-                            }
-                        }
-                        popUp.showPopup(parentVC: self)
-                    }
-                }
-            }
-            
-        }
+//        }else{
+//            print("hello \(practiceName)")
+//            if (practiceName == ""){
+//                showToast(message: "Please Create your practice then set the the reminder", duration: 1)
+//            }else{
+//                for practiceData in practices{
+//                    if(practiceData.practice == practiceName){
+//
+//                        showToast(message: "Please Change the Practice Name it already exist", duration: 1)
+//                    }else{
+//                        PopUpReminder.value = "add"
+//                        PopUpReminder.practiceName = practiceName
+//                        PopUpReminder.searchCompletion = {(flag) in
+//                            if(flag){
+//                                self.reloadTable()
+//                            }
+//                        }
+//                        popUp.showPopup(parentVC: self)
+//                    }
+//                }
+//            }
+//
+//        }
         
     }
     
