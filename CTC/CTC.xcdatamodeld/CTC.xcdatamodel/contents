@@ -45,6 +45,7 @@
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practiceName" optional="YES" attributeType="String"/>
+        <attribute name="uid" optional="YES" attributeType="String"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="email" attributeType="String"/>
@@ -69,7 +70,7 @@
         <element name="Practice" positionX="-731.80078125" positionY="-439.97265625" width="128" height="209"/>
         <element name="PracticeData" positionX="-381.73828125" positionY="-80.26953125" width="128" height="149"/>
         <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="134"/>
-        <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="118"/>
+        <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="119"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="149"/>
         <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="119"/>
     </elements>

@@ -15,8 +15,8 @@ class ReminderViewController: UIViewController {
     var label = " "
     var hourlabel = " "
     var minutelabel = " "
-    var practiceName = ""
-    var value = ""
+    var selectedPractice : Practice?
+    var value : User?
     var reminder = [Reminder]()
     var practiceReminder : PracticeReminder!
     var popUp : PopUpReminder!
@@ -37,12 +37,16 @@ class ReminderViewController: UIViewController {
         practiceReminder = PracticeReminder()
         addPrac = AddPracticesViewController()
         popUp = PopUpReminder()
-        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+        reminder = practiceReminder.loadReminderbyPracticeName(uid: (selectedPractice?.uId)!)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        reminder = practiceReminder.loadReminderbyPracticeName(uid: (selectedPractice?.uId)!)
+        remindTableview.reloadData()
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         
-        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+        reminder = practiceReminder.loadReminderbyPracticeName(uid: (selectedPractice?.uId)!)
         if reminder.first?.identifier != nil {
             self.dismiss(animated: true)
             ReminderViewController.switchCompletion(true)
@@ -59,7 +63,7 @@ class ReminderViewController: UIViewController {
     @IBAction func addPressed(_ sender: Any) {
         //if value == "edit" {
             PopUpReminder.value = "add"
-            PopUpReminder.practiceName = practiceName
+            PopUpReminder.selectPractice = selectedPractice
             PopUpReminder.searchCompletion = {(flag) in
                 if(flag){
                     self.reloadTable()
@@ -95,12 +99,11 @@ class ReminderViewController: UIViewController {
     func reloadTable(){
         practiceReminder = PracticeReminder()
         popUp = PopUpReminder()
-        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: practiceName)
+        reminder = practiceReminder.loadReminderbyPracticeName(uid: (selectedPractice?.uId)!)
         self.remindTableview.reloadData()
     }
     
     private func getPractices() -> [Practice]{
-        
         
         return userPractices.getPractices(user: userObject)!
         
@@ -137,7 +140,7 @@ extension ReminderViewController:UITableViewDataSource {
 extension ReminderViewController:UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        PopUpReminder.practiceName = practiceName
+        PopUpReminder.selectPractice = selectedPractice
         PopUpReminder.myindex = indexPath.row
         PopUpReminder.value = "update"
         PopUpReminder.labels = reminder[indexPath.row].day!

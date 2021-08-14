@@ -70,7 +70,7 @@ import IQKeyboardManagerSwift
         
         userObject = currentUser.checkLoggedIn()
         if (userObject != nil){
-            let days: [String] = ["365 Days"]
+            let days: [String] = ["201 / 365 Days"]
             let data = userPractice.getPractices(user: userObject!)
             for goal in data! {
                 for day in days {

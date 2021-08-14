@@ -13,7 +13,7 @@ class PopUpReminder: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     var delegate: PopUpProtocol?
     var RemindDaysLabel = "Everyday"
-    static var practiceName = ""
+    static var selectPractice : Practice?
     static var myindex : Int = 0
     static var value = ""
     var reminder = [Reminder]()
@@ -34,7 +34,7 @@ class PopUpReminder: UIViewController {
         super.viewDidLoad()
         setupView()
         practiceReminder = PracticeReminder()
-        reminder = practiceReminder.loadReminderbyPracticeName(practiceName: PopUpReminder.practiceName)
+        reminder = practiceReminder.loadReminderbyPracticeName(uid: (PopUpReminder.selectPractice?.uId)!)
         toolBar.sizeToFit()
         //Toobar button
         let doneButton = UIBarButtonItem(barButtonSystemItem: .save, target: nil, action: #selector(savePressed))
@@ -62,7 +62,7 @@ class PopUpReminder: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         
         if PopUpReminder.value == "add"{
-            let identifier = PopUpReminder.practiceName+label.text!+hour.text!+minute.text!
+            let identifier = (PopUpReminder.selectPractice?.practice)!+label.text!+hour.text!+minute.text!
             let identify = practiceReminder.checkIdentifier(identifier: identifier)
             if reminder.first?.identifier != nil {
                     if identify == false {
@@ -70,24 +70,23 @@ class PopUpReminder: UIViewController {
                         
                     }else{
                         
-                        self.practiceReminder.AddReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: identifier)
-                        setNotification(practiceName: PopUpReminder.practiceName)
+                        self.practiceReminder.AddReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: identifier)
+                        setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
                         self.dismiss(animated: true, completion: nil)
                         PopUpReminder.searchCompletion(true)
                     }
                 
             }else{
-                self.practiceReminder.AddReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: identifier)
-                setNotification(practiceName: PopUpReminder.practiceName)
+                self.practiceReminder.AddReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: identifier)
+                setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
                 self.dismiss(animated: true, completion: nil)
                 PopUpReminder.searchCompletion(true)
             }
             
         }
         if PopUpReminder.value == "update"{
-            
-            practiceReminder.UpdateReminder(daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: PopUpReminder.practiceName, identifier: reminder[PopUpReminder.myindex].identifier!)
-            setNotification(practiceName: PopUpReminder.practiceName)
+            practiceReminder.UpdateReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: reminder[PopUpReminder.myindex].identifier!)
+            setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
             self.dismiss(animated: true, completion: nil)
             PopUpReminder.searchCompletion(true)
         }
@@ -98,17 +97,17 @@ class PopUpReminder: UIViewController {
     func setNotification(practiceName:String) {
         if label.text == "Weekdays" {
             for i in 2...6 {
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
+                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: (PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
             }
         }else if label.text == "Everyday"{
             for i in 1...7 {
-                print("note \(PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!)")
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: PopUpReminder.practiceName+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
+                print("note \((PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!)")
+                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: (PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
             }
         }else {
             for weekday in weekDict {
                 if weekday.key == label.text {
-                    NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: weekday.value, identifier: PopUpReminder.practiceName+"\(weekday.value)"+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
+                    NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: weekday.value, identifier: (PopUpReminder.selectPractice?.practice)!+"\(weekday.value)"+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
                 }
             }
         }

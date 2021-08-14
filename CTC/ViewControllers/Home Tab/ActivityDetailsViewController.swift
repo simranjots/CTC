@@ -42,7 +42,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        if let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: (selectedPractice?.practice)!) {
+        if let remind = remindPractices.loadReminderbyPracticeNameonly(uid: (selectedPractice?.uId)! ) {
             uiSwitch.setOn(selectedPractice!.remindswitch, animated: true)
             if selectedPractice?.remindswitch == true {
                 remindInfoBtn.isHidden = false
@@ -187,8 +187,8 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     @IBAction func remindInfoTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-        vc.practiceName = (practicesData?.practiceDataToPractice?.practice)!
-            vc.value = AddPracticesViewController.cvalue
+        vc.selectedPractice = selectedPractice
+        vc.value = selectedPractice?.user
             ReminderViewController.switchCompletion = {(flag) in
              if(flag){
                 self.uiSwitch.setOn(flag, animated: true)
@@ -206,8 +206,8 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
             if  value == true {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-                vc.practiceName = (selectedPractice?.practice)!
-                vc.value = AddPracticesViewController.cvalue
+                vc.selectedPractice = selectedPractice
+                vc.value = selectedPractice?.user
                 vc.presentationController?.delegate = self
                 ReminderViewController.switchCompletion = {(flag) in
                  if(flag){
@@ -227,7 +227,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
             }
         }else{
             uiSwitch.setOn(false, animated: true)
-            remindPractices.RemoveReminder(practiceName: (selectedPractice?.practice)!)
+            remindPractices.RemoveReminder(uid: (selectedPractice?.uId)!)
             
         }
 //        }else{

@@ -13,5 +13,6 @@ extension Reminder {
     @NSManaged public var minute: Int16
     @NSManaged public var practiceName: String?
     @NSManaged public var identifier: String?
+    @NSManaged public var uid: String?
    
 }
