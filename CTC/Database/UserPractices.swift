@@ -67,8 +67,9 @@ class UserPractices{
         practiceObject!.is_deleted = false
         practiceObject!.is_completed =  false
         if oldPractice != newPractice {
-            remindPractices.RemoveReminder(practiceName: oldPractice)
-            if let remind = remindPractices.loadReminderbyPracticeNameonly(practiceName: oldPractice) {
+            remindPractices.RemoveReminder(uid: (practiceObject?.uId)!)
+            if let remind = remindPractices.loadReminderbyPracticeNameonly(uid: (practiceObject?.uId)!) {
+                remindPractices.RemoveReminder(uid: (practiceObject?.uId)!)
                 remindPractices.deleteReminder(reminder: remind)
                        }
             

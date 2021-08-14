@@ -8,8 +8,9 @@ class PracticeReminder {
     var reminder = [Reminder]()
     let weekDict = ["Sunday" : 1, "Monday" : 2, "Tuesday" : 3, "Wednesday" : 4, "thursday" : 5, "Friday" : 6, "Saturday" : 7]
     
-    func AddReminder(daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
+    func AddReminder(uid: String,daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
         let reminder = Reminder(context: self.context)
+        reminder.uid = uid
         reminder.day = daysLabel
         reminder.hour = hour
         reminder.minute = minute
@@ -24,8 +25,8 @@ class PracticeReminder {
         
         
     }
-    func UpdateReminder(daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
-        let reminder = loadReminderbyPracticeName(practiceName: practiceName)
+    func UpdateReminder(uid: String,daysLabel : String,hour: Int16,minute: Int16,practiceName: String,identifier:String) {
+        let reminder = loadReminderbyPracticeName(uid: uid)
         for data in reminder {
             if data.identifier == identifier{
                 data.day = daysLabel
@@ -45,10 +46,10 @@ class PracticeReminder {
         
         
     }
-    func RemoveReminder(practiceName:String){
-        reminder = loadReminderbyPracticeName(practiceName: practiceName)
+    func RemoveReminder(uid:String){
+        reminder = loadReminderbyPracticeName(uid: uid)
         for practices in reminder{
-            if practices.practiceName == practiceName{
+            if practices.uid == uid{
                 deleteNotification(remind: practices)
             }
             
@@ -71,7 +72,7 @@ class PracticeReminder {
         }else {
             for weekday in weekDict {
                 if weekday.key == remind.day{
-                    NotificationManager.instance.cancelNotification(identifier: PopUpReminder.practiceName+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
+                    NotificationManager.instance.cancelNotification(identifier: (PopUpReminder.selectPractice?.practice)!+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
                     
                 }
             }
@@ -81,29 +82,29 @@ class PracticeReminder {
     func deleteNotification(remind : Reminder) {
         if remind.day == "Weekdays" {
             for i in 2...6 {
-                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+"\(String(describing: remind.day))"+"\(remind.hour)"+"\(remind.minute)")
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+remind.day!+"\(remind.hour)"+"\(remind.minute)")
                 
             }
         }else if remind.day == "Everyday"{
             for i in 1...7 {
-                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+"\(String(describing: remind.day))"+"\(remind.hour)"+"\(remind.minute)")
+                NotificationManager.instance.cancelNotification(identifier: remind.practiceName!+"\(i)"+remind.day!+"\(remind.hour)"+"\(remind.minute)")
                 
             }
         }else {
             for weekday in weekDict {
                 if weekday.key == remind.day{
-                    NotificationManager.instance.cancelNotification(identifier: PopUpReminder.practiceName+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
+                    NotificationManager.instance.cancelNotification(identifier: (PopUpReminder.selectPractice?.practice)!+"\(weekday.value)"+"\(remind.hour)"+"\(remind.minute)")
                     
                 }
             }
         }
         
     }
-    func loadReminderbyPracticeName(practiceName: String) -> [Reminder]{
+    func loadReminderbyPracticeName(uid: String) -> [Reminder]{
         
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "practiceName = %@", argumentArray: [practiceName])
+        request.predicate = NSPredicate(format: "uid = %@", argumentArray: [uid])
         do {
             reminder = try context.fetch(request)
         } catch let err {
@@ -113,16 +114,16 @@ class PracticeReminder {
         return reminder
     }
 
-    func loadReminderbyPracticeNameonly(practiceName: String) -> Reminder?{
+    func loadReminderbyPracticeNameonly(uid: String) -> Reminder?{
         var rem  : Reminder?
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "practiceName = %@", argumentArray: [practiceName])
+        request.predicate = NSPredicate(format: "uid = %@", argumentArray: [uid])
         do {
-            print(practiceName)
+            print(uid)
             reminder = try context.fetch(request)
             for data in reminder {
-                if data.practiceName == practiceName {
+                if data.uid == uid {
                     rem = data
                 }
             }

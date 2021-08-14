@@ -1,8 +1,8 @@
 import UIKit
 
-class AddPracticesViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
+class AddPracticesViewController: UIViewController {
     
-    @IBOutlet weak var reminderInfo: UIButton!
+
     @IBOutlet var chooseValuesTextField: UITextField!
     @IBOutlet var valuesDropDownButtonOutlet: UIButton!
     @IBOutlet var choosePracticesTextField: UITextField!
@@ -16,7 +16,7 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var goalTextField: UITextField!
-    @IBOutlet weak var uiSwitch: UISwitch!
+
     
     var userPractices: UserPractices!
     var userPracticesData: UserPracticesData!
@@ -45,7 +45,6 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         
     let practices: [String] = ["Reading", "Writing", "Change Up The Routine", "Skincare Routine", "Coding", "Paint a Picture", "Learn a new Instrument", "Play Music", "PodCasting", "Content Creation", "Take a Course", "Watch a Educational Video", "Sit Down Dinners", "Read to Kids at bedtime", "No Cellphone Until Kids Are Asleep", "Saving Money", "Track Spending", "Investing", "Go on Walk", "Go on a Run", "Workout", "Play with Kids", "Write handwritten Note to Someone", "Act of Kindness", "Volunteer", "No Sugar", "Reduce Salt", "No Cheese", "Exercise", "Yoga", "Meditation","No Dairy", "No Meat", "No Alcohol", "Dieting", "No Outside Food", "Fruits and Vegetables", "Read an Article", "Watch an Educational Video", "Work on Project", "Make Someone Laugh", "Watch Funny Video", "Play with Kids", "Play with Dog", "Do a fun Activity", "Journaling", "Ride Bike to Work"].sorted()
         
-        // "Forever", "7 Days", "10 Days", "14 Days", "21 Days", "30 Days", "60 Days", "100 Days", "150 Days", "201 Days",
         let goals: [String] = ["201 / 365 Days"]
         
     let moreOptionIconList = ["Adventure", "Achievement", "Biking", "Building_Trust", "Challange", "Comfort","Change_a_Routine", "Content-Creation", "Dieting", "Education", "Passion", "Family_Dinner", "Financial_Freedom", "Freedom", "Fruits & Vegetables", "Growth", "Hiking", "Investment", "Increase_Productivity", "Intimacy", "Jogging", "Journal_Writing", "Laugh", "Leadership", "No-Outside_Food", "Save_Money", "No-Alcohol", "No-Salt", "No-Sugar", "Painting", "Peace", "Play_with_Kids", "Play_with_Dog", "Podcast", "Recreational_Activity", "Skincare", "Spread_Love", "Respect", "Spread_Happiness", "Study", "Trekking", "Workout", "Writing", "Book", "No-Cheese", "No-Dairy", "Wealth_Management", "Exercise", "Friend Circle","Language","Meditation","Music", "Salad","Sleep","Candle","Speak","Walking","WineGlass","Yoga", "Friendship", "Coding", "No-CellPhone"].sorted()
@@ -94,10 +93,6 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
         return userPractices.getPractices(user: userObject)!
     }
     
-//    private func getPracticesData(date: Date) -> [PracticeData]?{
-//        return dbHelper.getPracticeDataByDate(date: date.dateFormate()!)
-//    }
-    
     @objc func dateSelected() {
         dateTextField.text = datePickerView.date.dateFormatemmmdd()
         self.view.endEditing(true)
@@ -108,66 +103,12 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
     }
     
     //MARK: - IBActions
-    @IBAction func reminderInfoPressed(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-//            vc.practiceName = choosePracticesTextField.text!
-//            vc.value = AddPracticesViewController.cvalue
-//            ReminderViewController.switchCompletion = {(flag) in
-//             if(flag){
-//                self.uiSwitch.setOn(flag, animated: true)
-//             }else{
-//                self.uiSwitch.setOn(flag, animated: true)
-//             }
-//            }
-//        self.present(vc, animated: true, completion: nil)
-    }
-    
     
     @IBAction func changeTapped(_ sender: UIButton) {
         let randomNumber = Int.random(in: 1..<wordsOfEncouragementQuotes.count)
         wordsOfEncouragementTextField.text = wordsOfEncouragementQuotes[randomNumber]
     }
     
-    @IBAction func reminderTapped(_ sender: UISwitch) {
-//        let value = UserDefaults.standard.bool(forKey: "Permission")
-//        //if AddPracticesViewController.cvalue == "edit"{
-//        if uiSwitch.isOn{
-//            if  value == true {
-//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "Reminder") as! ReminderViewController
-//                vc.practiceName = choosePracticesTextField.text!
-//                vc.value = AddPracticesViewController.cvalue
-//                vc.presentationController?.delegate = self
-//                ReminderViewController.switchCompletion = {(flag) in
-//                 if(flag){
-//                    self.uiSwitch.setOn(flag, animated: true)
-//                 }else{
-//                    self.uiSwitch.setOn(flag, animated: true)
-//                 }
-//                }
-//            self.present(vc, animated: true, completion: nil)
-//            }else{
-//
-//               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
-//                uiSwitch.setOn(false, animated: true)
-//                _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
-//                    self.dismiss(animated: true)
-//                }
-//            }
-//        }else{
-//            uiSwitch.setOn(false, animated: true)
-//        }
-//        }else{
-//            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
-//            uiSwitch.setOn(false, animated: true)
-//
-//        }
-    }
-    
-    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-       // uiSwitch.setOn(false, animated: true)
-    }
     
     @IBAction func choosePracticesIconButtonTapped(_ sender: UIButton) {
         
@@ -370,12 +311,9 @@ class AddPracticesViewController: UIViewController, UIAdaptivePresentationContro
      datePickerView.date = (self.practi[indexPath].startedday)! as Date
      
     dateTextField.text = ((self.practi[indexPath].startedday)! as Date).dateFormatemmmdd()
-    //uiSwitch.setOn(self.practi[indexPath].remindswitch, animated: true)
-//    if self.practi[indexPath].remindswitch {
-//        reminderInfo.isHidden = false
-//    }
+ 
     wordsOfEncouragementTextField.text = practi[indexPath].encourage
-    // titleLabel.text = "Edit Practice"
+  
     saveButton.setTitle("Confirm", for: .normal)
     dateTextField.isUserInteractionEnabled = false
      isUpdating = true
@@ -409,10 +347,7 @@ extension AddPracticesViewController {
     
     //Set pickerView datasources, delegates and inputViews
     func setPickerViewsPropertiesDelegatesAndDataSources() {
-        
-        //==============PickerViews' datasource, delegates and inputViews============//
-        
-        //Set delegate and datasource
+      
         valuesPickerView.dataSource = self
         valuesPickerView.delegate = self
         practicesPickerView.dataSource = self
@@ -424,7 +359,7 @@ extension AddPracticesViewController {
         chooseValuesTextField.inputView = valuesPickerView
         
         choosePracticesTextField.inputView = practicesPickerView
-        //valuesDropDownButtonOutlet. = valuesPickerView
+        
         
         goalTextField.inputView = goalPickerView
         
@@ -433,13 +368,10 @@ extension AddPracticesViewController {
         practicesPickerView.tag = 2
         goalPickerView.tag = 3
         
-        //=================DatePickerView inputView and toolbar=====================//
-        
-        //Toolbar
+      
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        
-        //Toobar button
+       
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolBar.setItems([doneButton], animated: true)
         
@@ -453,13 +385,11 @@ extension AddPracticesViewController {
     }
     
     @objc func donePressed() {
-        
-        //Format the date
+       
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
-        //Assign formatted date to textField
         dateTextField.text = dateFormatter.string(from: datePickerView.date)
         self.view.endEditing(true)
     }
