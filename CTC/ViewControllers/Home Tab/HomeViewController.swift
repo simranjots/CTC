@@ -87,9 +87,8 @@ class HomeViewController: UIViewController,ReceiveData{
     func SetReminder()  {
         if UserDefaults.standard.bool(forKey: "DailyReminder") {
             for i in 1...7 {
-                NotificationManager.instance.scheduleNotification(hour: 7, minute: 0, weekday: i, identifier: "DailyReminder" + "\(i)", title: "Good Morning, "+"\(userObject.name ?? "User")!", body:  "Practice Reminder: Stay on track to meet your goals. Let's get started!")
+            NotificationManager.instance.scheduleNotification(hour: 7, minute: 0, weekday: i, identifier: "DailyReminder" + "\(i)", title: "Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
             }
-            UserDefaults.standard.set(false, forKey: "DailyReminder")
         }
     }
     
@@ -184,6 +183,7 @@ class HomeViewController: UIViewController,ReceiveData{
         userObject = currentUser.checkLoggedIn()
         selectedDate = Date().dateFormate()!
         practices = userPractices.getPractices(user: userObject)
+        nameLabel.text = greetingMessage(user: userObject)
         homeTableView.reloadData()
     }
     
@@ -249,10 +249,10 @@ extension HomeViewController: UITableViewDelegate{
             let alert = UIAlertController(title: "Warning", message: "Do you want to delete \(prac.practice!)?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
-                self.practiceReminder.RemoveReminder(uid: prac.uId!)
-                if let remind =  self.practiceReminder.loadReminderbyPracticeNameonly(uid: prac.uId!) {
+                self.practiceReminder.RemoveReminder(uid: prac.practice!)
+                if let remind = self.practiceReminder.loadReminderbyPracticeNameonly(uid: prac.practice!) {
                     self.practiceReminder.deleteReminder(reminder: remind)
-                }
+                    }
                 self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
                

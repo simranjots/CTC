@@ -105,37 +105,39 @@ extension UIButton{
 }
 
 extension UIViewController {
+    
     func showToast(message: String, duration: Double) {
-            let toastContainer = UIView(frame: CGRect())
+           
+            let toastContainer = UIView()
             toastContainer.backgroundColor = UIColor.black
             toastContainer.alpha = 0.0
-            toastContainer.layer.cornerRadius = 25;
+            toastContainer.layer.cornerRadius = 10;
             toastContainer.clipsToBounds  =  true
 
-            let toastLabel = UILabel(frame: CGRect())
+            let toastLabel = UILabel()
             toastLabel.textColor = UIColor.white
             toastLabel.textAlignment = .center;
             toastLabel.font.withSize(12.0)
             toastLabel.text = message
             toastLabel.clipsToBounds  =  true
             toastLabel.numberOfLines = 0
-
+            
             toastContainer.addSubview(toastLabel)
             view.addSubview(toastContainer)
 
             toastLabel.translatesAutoresizingMaskIntoConstraints = false
             toastContainer.translatesAutoresizingMaskIntoConstraints = false
 
-            let a1 = NSLayoutConstraint(item: toastLabel, attribute: .leading, relatedBy: .equal, toItem: toastContainer, attribute: .leading, multiplier: 1, constant: 15)
-            let a2 = NSLayoutConstraint(item: toastLabel, attribute: .trailing, relatedBy: .equal, toItem: toastContainer, attribute: .trailing, multiplier: 1, constant: -15)
-            let a3 = NSLayoutConstraint(item: toastLabel, attribute: .bottom, relatedBy: .equal, toItem: toastContainer, attribute: .bottom, multiplier: 1, constant: -15)
-            let a4 = NSLayoutConstraint(item: toastLabel, attribute: .top, relatedBy: .equal, toItem: toastContainer, attribute: .top, multiplier: 1, constant: 15)
+            let a1 = NSLayoutConstraint(item: toastLabel, attribute: .leading, relatedBy: .equal, toItem: toastContainer, attribute: .leading, multiplier: 1, constant: 5)
+            let a2 = NSLayoutConstraint(item: toastLabel, attribute: .trailing, relatedBy: .equal, toItem: toastContainer, attribute: .trailing, multiplier: 1, constant: 5)
+            let a3 = NSLayoutConstraint(item: toastLabel, attribute: .bottom, relatedBy: .equal, toItem: toastContainer, attribute: .bottom, multiplier: 1, constant: 0)
+            let a4 = NSLayoutConstraint(item: toastLabel, attribute: .top, relatedBy: .equal, toItem: toastContainer, attribute: .top, multiplier: 1, constant: 0)
             toastContainer.addConstraints([a1, a2, a3, a4])
 
-            let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 65)
-            let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: -65)
-            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: -75)
-            self.view.addConstraints([c1, c2, c3])
+        let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 20)
+        let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 0.9, constant: 20)
+        let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 0.9, constant: -50)
+        self.view.addConstraints([c1, c2, c3])
 
         UIView.animate(withDuration: duration, animations: {
             toastContainer.alpha = 1
@@ -157,10 +159,8 @@ extension UIViewController {
                     })
                 }
             }
-            
-            
         }
-        }
+    }
     
     
     func show(message : String, duration: Double) {
@@ -168,23 +168,22 @@ extension UIViewController {
         let backView = UIView()
         let lbl = UILabel()
         
-        let white = UIColor ( red: 1/255, green: 0/255, blue:0/255, alpha: 0.0 )
-        
         backView.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
-        overlayView.backgroundColor = white
+        overlayView.backgroundColor = .white
         overlayView.alpha = 0.0
         overlayView.layer.cornerRadius = 10;
         overlayView.clipsToBounds  =  true
         view.addSubview(backView)
         
-        overlayView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 60  , height: 40)
+        overlayView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 70)
         overlayView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height - 150)
-        overlayView.backgroundColor = UIColor.black
+        overlayView.backgroundColor = .black
         overlayView.alpha = 0.0
         overlayView.layer.cornerRadius = 10;
         overlayView.clipsToBounds  =  true
         
-        lbl.frame = CGRect(x: 0, y: 0, width: overlayView.frame.width, height: 40)
+        lbl.frame = CGRect(x: 0, y: 0, width: overlayView.frame.width, height: 70)
+        lbl.numberOfLines = 0
         lbl.textColor = UIColor.white
         lbl.textAlignment = .center;
         lbl.font.withSize(12.0)
@@ -193,9 +192,7 @@ extension UIViewController {
         lbl.numberOfLines = 0
         lbl.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
         overlayView.addSubview(lbl)
-        
         view.addSubview(overlayView)
-        
         
         UIView.animate(withDuration: 1, animations: {
             overlayView.alpha = 1
@@ -217,10 +214,7 @@ extension UIViewController {
                     })
                 }
             }
-            
-            
         }
-        
     }
     
     func showAlert(title:String, message: String, buttonTitle: String) {

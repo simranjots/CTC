@@ -220,7 +220,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
             self.present(vc, animated: true, completion: nil)
             }else{
     
-               showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
+               show(message: "In order to set remider, please go to the settings and allow notifications permission.", duration: 4)
                 uiSwitch.setOn(false, animated: true)
                 _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     self.navigationController?.popViewController(animated: true)
