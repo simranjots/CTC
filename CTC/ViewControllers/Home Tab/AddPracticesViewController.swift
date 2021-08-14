@@ -56,9 +56,7 @@ class AddPracticesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // reminderInfo.isHidden = true
-        NotificationManager.instance.requestAuthorization()
-       // uiSwitch.setOn(AddPracticesViewController.toggle, animated: true)
+       
         datePickerView.isHidden = true
         dateTextField.text = date.dateFormatemmmdd()
         userPractices = UserPractices()

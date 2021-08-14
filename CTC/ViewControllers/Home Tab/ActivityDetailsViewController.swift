@@ -42,7 +42,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
         userPracticesData = UserPracticesData()
-        if let remind = remindPractices.loadReminderbyPracticeNameonly(uid: (selectedPractice?.uId)! ) {
+        if remindPractices.loadReminderbyPracticeNameonly(uid: (selectedPractice?.uId)! ) != nil {
             uiSwitch.setOn(selectedPractice!.remindswitch, animated: true)
             if selectedPractice?.remindswitch == true {
                 remindInfoBtn.isHidden = false
@@ -200,6 +200,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     }
     
     @IBAction func remindSwitchTapped(_ sender: Any) {
+        NotificationManager.instance.requestAuthorization()
         let value = UserDefaults.standard.bool(forKey: "Permission")
         //if AddPracticesViewController.cvalue == "edit"{
         if uiSwitch.isOn{
@@ -218,11 +219,11 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
                 }
             self.present(vc, animated: true, completion: nil)
             }else{
-                
+    
                showToast(message: "Please go to the setting and allow Permission for Notification", duration: 3)
                 uiSwitch.setOn(false, animated: true)
                 _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }else{
