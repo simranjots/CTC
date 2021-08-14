@@ -14,7 +14,7 @@ class NotificationManager{
             success, error in
             if let error = error {
                 print("ERROR: \(error)")
-                
+            
             } else {
                 print("SUCCESS")
                 print(success)

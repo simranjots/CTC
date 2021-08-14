@@ -105,9 +105,65 @@ extension UIButton{
 }
 
 extension UIViewController {
+    func showToast(message: String, duration: Double) {
+            let toastContainer = UIView(frame: CGRect())
+            toastContainer.backgroundColor = UIColor.black
+            toastContainer.alpha = 0.0
+            toastContainer.layer.cornerRadius = 25;
+            toastContainer.clipsToBounds  =  true
+
+            let toastLabel = UILabel(frame: CGRect())
+            toastLabel.textColor = UIColor.white
+            toastLabel.textAlignment = .center;
+            toastLabel.font.withSize(12.0)
+            toastLabel.text = message
+            toastLabel.clipsToBounds  =  true
+            toastLabel.numberOfLines = 0
+
+            toastContainer.addSubview(toastLabel)
+            view.addSubview(toastContainer)
+
+            toastLabel.translatesAutoresizingMaskIntoConstraints = false
+            toastContainer.translatesAutoresizingMaskIntoConstraints = false
+
+            let a1 = NSLayoutConstraint(item: toastLabel, attribute: .leading, relatedBy: .equal, toItem: toastContainer, attribute: .leading, multiplier: 1, constant: 15)
+            let a2 = NSLayoutConstraint(item: toastLabel, attribute: .trailing, relatedBy: .equal, toItem: toastContainer, attribute: .trailing, multiplier: 1, constant: -15)
+            let a3 = NSLayoutConstraint(item: toastLabel, attribute: .bottom, relatedBy: .equal, toItem: toastContainer, attribute: .bottom, multiplier: 1, constant: -15)
+            let a4 = NSLayoutConstraint(item: toastLabel, attribute: .top, relatedBy: .equal, toItem: toastContainer, attribute: .top, multiplier: 1, constant: 15)
+            toastContainer.addConstraints([a1, a2, a3, a4])
+
+            let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 65)
+            let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: -65)
+            let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: -75)
+            self.view.addConstraints([c1, c2, c3])
+
+        UIView.animate(withDuration: duration, animations: {
+            toastContainer.alpha = 1
+        }) { (true) in
+            
+            UIView.animate(withDuration: duration, animations: {
+                toastContainer.alpha = 1
+            }) { (true) in
+                UIView.animate(withDuration: duration, animations: {
+                    toastContainer.alpha = 0
+                }) { (true) in
+                    UIView.animate(withDuration: 1, animations: {
+                        DispatchQueue.main.async(execute: {
+                            toastContainer.alpha = 0
+                            toastLabel.removeFromSuperview()
+                            toastContainer.removeFromSuperview()
+                            //toastContainer.removeFromSuperview()
+                        })
+                    })
+                }
+            }
+            
+            
+        }
+        }
     
     
-    func showToast(message : String, duration: Double) {
+    func show(message : String, duration: Double) {
         let overlayView = UIView()
         let backView = UIView()
         let lbl = UILabel()
@@ -115,23 +171,26 @@ extension UIViewController {
         let white = UIColor ( red: 1/255, green: 0/255, blue:0/255, alpha: 0.0 )
         
         backView.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
-        backView.center = view.center
-        backView.backgroundColor = white
+        overlayView.backgroundColor = white
+        overlayView.alpha = 0.0
+        overlayView.layer.cornerRadius = 10;
+        overlayView.clipsToBounds  =  true
         view.addSubview(backView)
         
         overlayView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 60  , height: 40)
         overlayView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height - 150)
         overlayView.backgroundColor = UIColor.black
-        overlayView.clipsToBounds = true
-        overlayView.layer.cornerRadius = 10
-        overlayView.alpha = 0
+        overlayView.alpha = 0.0
+        overlayView.layer.cornerRadius = 10;
+        overlayView.clipsToBounds  =  true
         
         lbl.frame = CGRect(x: 0, y: 0, width: overlayView.frame.width, height: 40)
-        lbl.numberOfLines = 0
         lbl.textColor = UIColor.white
-        lbl.center = overlayView.center
+        lbl.textAlignment = .center;
+        lbl.font.withSize(12.0)
         lbl.text = message
-        lbl.textAlignment = .center
+        lbl.clipsToBounds  =  true
+        lbl.numberOfLines = 0
         lbl.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
         overlayView.addSubview(lbl)
         
