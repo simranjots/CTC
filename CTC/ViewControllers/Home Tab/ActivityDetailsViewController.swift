@@ -38,6 +38,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationManager.instance.requestAuthorization()
         self.title =  "\(selectedPractice?.practice ?? "Activity Details")"
         dbHelper = DatabaseHelper()
         userPractices = UserPractices()
@@ -144,11 +145,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     func styleElements() {
         
         Utilities.styleTextView(notesTextView)
-        //Utilities.addShadowAndBorderToView(stataticsView)
-        
-//        stataticsView.layer.cornerRadius = stataticsView.frame.height / 20
-//        stataticsView.layer.shadowRadius = 0
-//        stataticsView.layer.shadowOffset = CGSize(width: 0, height: 1)
+  
         
         if #available(iOS 13.0, *) {
             stataticsView.layer.backgroundColor = UIColor.systemBackground.cgColor
@@ -200,9 +197,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     }
     
     @IBAction func remindSwitchTapped(_ sender: Any) {
-        NotificationManager.instance.requestAuthorization()
         let value = UserDefaults.standard.bool(forKey: "Permission")
-        //if AddPracticesViewController.cvalue == "edit"{
         if uiSwitch.isOn{
             if  value == true {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -222,20 +217,13 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
     
                show(message: "In order to set remider, please go to the settings and allow notifications permission.", duration: 4)
                 uiSwitch.setOn(false, animated: true)
-                _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                    self.navigationController?.popViewController(animated: true)
-                }
             }
         }else{
             uiSwitch.setOn(false, animated: true)
             remindPractices.RemoveReminder(uid: (selectedPractice?.uId)!)
             
         }
-//        }else{
-//            showToast(message: "To set reminder go to edit after adding the Practise", duration: 2)
-//            uiSwitch.setOn(false, animated: true)
-//
-//        }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

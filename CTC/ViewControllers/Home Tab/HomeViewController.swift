@@ -87,7 +87,7 @@ class HomeViewController: UIViewController,ReceiveData{
     func SetReminder()  {
         if UserDefaults.standard.bool(forKey: "DailyReminder") {
             for i in 1...7 {
-            NotificationManager.instance.scheduleNotification(hour: 7, minute: 0, weekday: i, identifier: "DailyReminder" + "\(i)", title: "Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
+                NotificationManager.instance.scheduleNotification(hour: 7, minute: 0, weekday: i, identifier: "DailyReminder" + "\(i)", title:"Good Morning ,"+"\(userObject.name ?? "User")!" , body: "Practice Reminder: Stay on track to meet your goals. Let's get started!")
             }
         }
     }
