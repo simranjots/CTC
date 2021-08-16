@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     var userSetup = [userModel]()
     let storageRef = Storage.storage().reference()
     var database : FirebaseDataManager!
-    private var rememberMeFlag = false
+    private var rememberMeFlag :Bool?
     //Outlets
     @IBOutlet weak var checkbox: UIButton!
     @IBOutlet var emailTextField: UITextField!
@@ -41,14 +41,11 @@ class LoginViewController: UIViewController {
         setUpElements()
         gmailSignInButton.isHidden = true
         facebookSignInButton.isHidden = true
-        rememberMeFlag = UserDefaults.standard.bool(forKey: "REMEMBER_USER")
-        if rememberMeFlag {
-            checkbox.setImage(UIImage(named: "check"), for: .normal)
-            let email = UserDefaults.standard.string(forKey: "USER_EMAIL")
-            emailTextField.text = email
-        }else{
-            checkbox.setImage(UIImage(named: "uncheck"), for: .selected)
-        }
+      
+        checkbox.setImage(UIImage(named: "uncheck"), for: .normal)
+        let email = UserDefaults.standard.string(forKey: "USER_EMAIL")
+        emailTextField.text = email
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +71,9 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func checkboxBtn(_ sender: UIButton) {
-        rememberMeFlag = !rememberMeFlag
+        rememberMeFlag = !(rememberMeFlag ?? false)
         UserDefaults.standard.set(rememberMeFlag, forKey: "REMEMBER_USER")
-        if rememberMeFlag {
+        if rememberMeFlag ?? false {
             checkbox.setImage(UIImage(named: "check"), for: .normal)
             let text = emailTextField.text
             UserDefaults.standard.set(text, forKey:"USER_EMAIL")
@@ -87,7 +84,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ sender: UITextField){
-          guard rememberMeFlag else { return }
+        guard rememberMeFlag ?? false else { return }
           let text = emailTextField.text
           UserDefaults.standard.set(text, forKey:"USER_EMAIL")
       }
