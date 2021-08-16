@@ -36,7 +36,8 @@ class ResetPasswordViewController: UIViewController {
                 self.showAlert(title: "Error!", message: error!.localizedDescription, buttonTitle: "Try Again")
             } else {
                 
-                self.showAlert(title: "Hurray!", message: "A password reset request link has been sent to your email. Please check your inbox.", buttonTitle: "OK")
+                self.showAlertwithDismis(title:"Hurray!", message: "A password reset request link has been sent to your email. Please check your inbox.", buttonTitle: "OK")
+                self.navigationController?.popViewController(animated: true)
                 self.emailTextField.text = ""
             }
         }

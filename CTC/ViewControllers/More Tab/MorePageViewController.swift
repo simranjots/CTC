@@ -14,6 +14,10 @@ class MorePageViewController: UIViewController {
     
     var currentUser: CurrentUser!
     var userObject: User?
+    var practices:[Practice]!
+    var userPractices: UserPractices!
+    let db = FirebaseDataManager()
+    
     
     //MARK: - LifeCycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +39,8 @@ class MorePageViewController: UIViewController {
         
         currentUser = CurrentUser()
         userObject = currentUser.checkLoggedIn()
-        
+        userPractices = UserPractices()
+        practices = self.getPractices(user: userObject!)
         //MARK: - Profile Data Setup
         if userObject?.image != nil {
             profileImageView.image = UIImage(data: (userObject?.image)!)
@@ -61,6 +66,16 @@ class MorePageViewController: UIViewController {
    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    private func getPractices(user: User) -> [Practice]{
+        return userPractices.getPractices(user: user)!
+    }
+    
+    func updateReminder() {
+        for remindswtich in practices {
+            remindswtich.remindswitch = false
+            db.updateSinglePractices(collectionName: "Practices", valueName: "remindswitch", value: false, document: remindswtich.uId!, uid: self.userObject!.uid!)
+        }
     }
     
     //MARK:- Selector
@@ -212,6 +227,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
                       print ("Error signing out: %@", signOutError)
                     }
                     NotificationManager.instance.CancelAllNotification()
+                    updateReminder()
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "newLoginOptions") as! UINavigationController
                     self.present(vc, animated: true, completion: nil)

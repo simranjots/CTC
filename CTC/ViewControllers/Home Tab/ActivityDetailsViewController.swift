@@ -215,7 +215,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
             self.present(vc, animated: true, completion: nil)
             }else{
     
-               show(message: "In order to set remider, please go to the settings and allow notifications permission.", duration: 4)
+               showToast(message: "In order to set remider, please go to the settings and allow notifications permission.", duration: 4, height: 20)
                 uiSwitch.setOn(false, animated: true)
             }
         }else{
@@ -247,7 +247,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
         
         if(savingResult == 0){
             
-            showToast(message: "Data Saved. . .", duration: 3)
+            showToast(message: "Data Saved. . .", duration: 3, height: 30)
             delegate?.passUserObject(user: userObject)
             
             for controller in self.navigationController!.viewControllers as Array {
@@ -282,7 +282,7 @@ class ActivityDetailsViewController: UIViewController,UIAdaptivePresentationCont
 //
 //        if(savingResult == 0){
 //
-//            showToast(message: "Data Saved. . .", duration: 3)
+//            showToast(message: "Data Saved. . .", duration: 3, height: 30)
 //            delegate?.passUserObject(user: userObject)
 //
 //            for controller in self.navigationController!.viewControllers as Array {

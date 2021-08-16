@@ -105,65 +105,8 @@ extension UIButton{
 }
 
 extension UIViewController {
-    
-    func showToast(message: String, duration: Double) {
-           
-            let toastContainer = UIView()
-            toastContainer.backgroundColor = UIColor.black
-            toastContainer.alpha = 0.0
-            toastContainer.layer.cornerRadius = 10;
-            toastContainer.clipsToBounds  =  true
-
-            let toastLabel = UILabel()
-            toastLabel.textColor = UIColor.white
-            toastLabel.textAlignment = .center;
-            toastLabel.font.withSize(12.0)
-            toastLabel.text = message
-            toastLabel.clipsToBounds  =  true
-            toastLabel.numberOfLines = 0
-            
-            toastContainer.addSubview(toastLabel)
-            view.addSubview(toastContainer)
-
-            toastLabel.translatesAutoresizingMaskIntoConstraints = false
-            toastContainer.translatesAutoresizingMaskIntoConstraints = false
-
-            let a1 = NSLayoutConstraint(item: toastLabel, attribute: .leading, relatedBy: .equal, toItem: toastContainer, attribute: .leading, multiplier: 1, constant: 5)
-            let a2 = NSLayoutConstraint(item: toastLabel, attribute: .trailing, relatedBy: .equal, toItem: toastContainer, attribute: .trailing, multiplier: 1, constant: 5)
-            let a3 = NSLayoutConstraint(item: toastLabel, attribute: .bottom, relatedBy: .equal, toItem: toastContainer, attribute: .bottom, multiplier: 1, constant: 0)
-            let a4 = NSLayoutConstraint(item: toastLabel, attribute: .top, relatedBy: .equal, toItem: toastContainer, attribute: .top, multiplier: 1, constant: 0)
-            toastContainer.addConstraints([a1, a2, a3, a4])
-
-        let c1 = NSLayoutConstraint(item: toastContainer, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 20)
-        let c2 = NSLayoutConstraint(item: toastContainer, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 0.9, constant: 20)
-        let c3 = NSLayoutConstraint(item: toastContainer, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 0.9, constant: -50)
-        self.view.addConstraints([c1, c2, c3])
-
-        UIView.animate(withDuration: duration, animations: {
-            toastContainer.alpha = 1
-        }) { (true) in
-            
-            UIView.animate(withDuration: duration, animations: {
-                toastContainer.alpha = 1
-            }) { (true) in
-                UIView.animate(withDuration: duration, animations: {
-                    toastContainer.alpha = 0
-                }) { (true) in
-                    UIView.animate(withDuration: 1, animations: {
-                        DispatchQueue.main.async(execute: {
-                            toastContainer.alpha = 0
-                            toastLabel.removeFromSuperview()
-                            toastContainer.removeFromSuperview()
-                            //toastContainer.removeFromSuperview()
-                        })
-                    })
-                }
-            }
-        }
-    }
-    
-    
-    func show(message : String, duration: Double) {
+        
+    func showToast(message : String, duration: Double, height: Int) {
         let overlayView = UIView()
         let backView = UIView()
         let lbl = UILabel()
@@ -175,7 +118,7 @@ extension UIViewController {
         overlayView.clipsToBounds  =  true
         view.addSubview(backView)
         
-        overlayView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 70)
+        overlayView.frame = CGRect(x: 0, y: 0, width: Int(view.frame.width) - 40, height: 70 - height)
         overlayView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height - 150)
         overlayView.backgroundColor = .black
         overlayView.alpha = 0.0
@@ -225,6 +168,16 @@ extension UIViewController {
         
         self.present(alert, animated: true, completion: nil)
         
+    }
+    func showAlertwithDismis(title:String, message: String, buttonTitle: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+        alert.addAction( UIAlertAction(title: buttonTitle, style: .default, handler: { (action) in
+            self.dismiss(animated: true)
+        }))
+    
+        present(alert, animated: true, completion: nil)
     }
     
     func createDoneToolBar(textField: UITextField){

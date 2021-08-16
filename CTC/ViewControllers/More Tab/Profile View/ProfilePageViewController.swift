@@ -123,58 +123,97 @@ class ProfilePageViewController: UIViewController {
         actionSheet()
     }
     
+    //Check the fields and validate that the data is correct. If everything is correct, this method returns
+    // nil. Otherwise, it returns the error message
+    func validateFields() -> String? {
+        
+        //Check that all the fields are filled
+        if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            showToast(message: "Please fill all the fields.", duration: 2.0, height: 30)
+            return "nil"
+        }
+        
+        //Check Profile name is not containing any special characters.
+        let cleanedProfileName = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isStringValid(cleanedProfileName) == true {
+            showToast(message: "Special characters or numbers are not allowed in Profile Name.", duration: 2.0, height: 20)
+            return "nil"
+        }
+        
+        //Check password is secured
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            showToast(message: "Please make sure your password is at least 8 characters, contains at least one upper case letter, a special charactor and a number.", duration: 2.0, height: 0)
+            return "nil"
+        }
+        return nil
+    }
+    
+    
     @IBAction func updateProfileButtonTapped(_ sender: UIButton) {
-        let newEmail = emailTextField.text!
-        let newpassword = passwordTextField.text!
-        let newName = nameTextField.text!
-        let data = #imageLiteral(resourceName: "profileImage").jpegData(compressionQuality: 1.0)
-        let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
-        let credential = EmailAuthProvider.credential(withEmail: email, password: Password)
-        let user = Auth.auth().currentUser
-        user?.reauthenticate(with: credential, completion: { Result, Error in
-            if Error !=  nil {
-            }else{
-//                Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
-//                    if error != nil {
-//                        self.showAlert(title: "warning", message: "The email address is already in use by another account.", buttonTitle: "try again")
-//                    }else{
-//                        let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
-//                        if result == 0 {
-//                            self.showToast(message: "Successfully updated", duration: 2.0)
-//                            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-//                                self.navigationController?.popViewController(animated: true)
-//                            }
-//
-//
-//                        } else {
-//
-//                            self.showToast(message: "Updation Fail. . .", duration: 2.0)
-//
-//                        }
-//                    }
-//                }
-                Auth.auth().currentUser?.updatePassword(to: newpassword) { error in
-                    if error != nil {
-                        self.showAlert(title: "warning", message: "\(String(describing: error))" , buttonTitle: "tryagain")
-                    }else{
-                        let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
-                        if result == 0 {
-                            self.showToast(message: "Successfully updated", duration: 2.0)
-                            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-                                self.navigationController?.popViewController(animated: true)
+        
+        let error = validateFields()
+        
+        if error != nil {
+            
+        }
+        else {
+            let newEmail = emailTextField.text!
+            let newpassword = passwordTextField.text!
+            let newName = nameTextField.text!
+            let data = #imageLiteral(resourceName: "profileImage").jpegData(compressionQuality: 1.0)
+            let imageData = profileImageView.image?.jpegData(compressionQuality: 1.0)
+            let credential = EmailAuthProvider.credential(withEmail: email, password: Password)
+            let user = Auth.auth().currentUser
+            user?.reauthenticate(with: credential, completion: { Result, Error in
+                if Error !=  nil {
+                }else{
+    //                Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
+    //                    if error != nil {
+    //                        self.showAlert(title: "warning", message: "The email address is already in use by another account.", buttonTitle: "try again")
+    //                    }else{
+    //                        let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+    //                        if result == 0 {
+    //                            self.showToast(message: "Successfully updated", duration: 2.0)
+    //                            _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+    //                                self.navigationController?.popViewController(animated: true)
+    //                            }
+    //
+    //
+    //                        } else {
+    //
+    //                            self.showToast(message: "Updation Fail. . .", duration: 2.0)
+    //
+    //                        }
+    //                    }
+    //                }
+                    Auth.auth().currentUser?.updatePassword(to: newpassword) { error in
+                        if error != nil {
+                            self.showAlert(title: "warning", message: "\(String(describing: error))" , buttonTitle: "tryagain")
+                        }else{
+                            let result = self.user.updateUser(oldEmail: self.email, newEmail: newEmail, name: newName, password: newpassword, image: imageData ?? data)
+                            if result == 0 {
+                                self.showToast(message: "Successfully updated", duration: 2.0, height: 30)
+                                _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                             
+                                
+                            } else {
+                              
+                                self.showToast(message: "Updation Fail. . .", duration: 2.0, height: 30)
+                                
                             }
-                         
-                            
-                        } else {
-                          
-                            self.showToast(message: "Updation Fail. . .", duration: 2.0)
-                            
                         }
+                        
                     }
-                    
                 }
-            }
-        })
+            })
+        }
+        
+        
+        
     }
     
     func updatefirebaseuser(Email : String , password : String) {

@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     // to store the current active textfield
     var activeTextField : UITextField? = nil
     var isIconClicked = true
+    var email: String?
     
     
     override func viewDidLoad() {
@@ -43,8 +44,8 @@ class LoginViewController: UIViewController {
         facebookSignInButton.isHidden = true
       
         checkbox.setImage(UIImage(named: "uncheck"), for: .normal)
-        let email = UserDefaults.standard.string(forKey: "USER_EMAIL")
-        emailTextField.text = email
+        email = UserDefaults.standard.string(forKey: "USER_EMAIL")
+        emailTextField.text = email ?? ""
         
         
     }
@@ -98,7 +99,7 @@ class LoginViewController: UIViewController {
         
         if error != nil {
             
-            showToast(message: error!, duration: 2.0)
+            showToast(message: error!, duration: 2.0, height: 30)
             
         } else {
             
@@ -199,12 +200,12 @@ class LoginViewController: UIViewController {
                     
                     
                 } else {
-                    showToast(message: "Enter Valid Password", duration: 2.0)
+                    showToast(message: "Enter Valid Password", duration: 2.0, height: 30)
                     activityIndicator.stopAnimating()
                     activityIndicator.isHidden = true
                 }
             } else {
-                showToast(message: "Enter Valid Email", duration: 2.0)
+                showToast(message: "Enter Valid Email", duration: 2.0, height: 30)
                 activityIndicator.stopAnimating()
                 activityIndicator.isHidden = true
             }

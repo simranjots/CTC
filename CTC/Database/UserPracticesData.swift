@@ -99,6 +99,7 @@ class UserPracticesData {
             if(toggleBtn == true){
                 tracking_days += 1
                 streak += 1
+                monthPractice(practice: practiceObject.practice!, uid: practiceObject.uId!, count: 0, user: userObject, PracticedDate: currentDate)
             }
             
             newPracticesData.streak = streak
@@ -352,20 +353,10 @@ class UserPracticesData {
 //        }
 //        
 //    }
-//    
-    func deletePracticeData(practicesData: [PracticeData]!) {
+//
+    func deletePracticeData(practicesData: PracticeData) {
         
-        for delprac in practicesData{
-            context.delete(delprac)
-        }
-        
-        do {
-            try context.save()
-        } catch let err {
-            print(err)
-            
-        }
-        
+        context.delete(practicesData)
         
     }
     

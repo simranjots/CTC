@@ -66,7 +66,7 @@ class PopUpReminder: UIViewController {
             let identify = practiceReminder.checkIdentifier(identifier: identifier)
             if reminder.first?.identifier != nil {
                     if identify == false {
-                        showToast(message: "This Reminder already exits", duration: 1)
+                        showToast(message: "This Reminder already exits", duration: 1, height: 30)
                         
                     }else{
                         self.practiceReminder.AddReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: identifier)
