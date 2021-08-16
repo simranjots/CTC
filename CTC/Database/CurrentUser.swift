@@ -111,7 +111,7 @@ class CurrentUser {
             metaData.contentType = "image/jpg"
             spaceRef.putData((userObject?.image)!, metadata: metaData) { (StorageMetadata, error) in
                 guard StorageMetadata != nil else{
-                    print("oops an error occured while data uploading")
+                    print("Oops an error occured while data uploading")
                     return
                 }
                 spaceRef.downloadURL { (url, error) in
@@ -121,7 +121,7 @@ class CurrentUser {
                     }
                     let urlString: String = downloadURL.absoluteString
                     let userupdate = self.database.collection("dap_users").document(userObject!.uid!)
-                    userupdate.updateData(["uid":Auth.auth().currentUser!.uid,
+                    userupdate.updateData(["uid":userObject?.uid as Any,
                                   "name": name,
                                   "email":newEmail,
                                   "imageLink":urlString]) { error in

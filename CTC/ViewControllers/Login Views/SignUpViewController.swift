@@ -65,8 +65,13 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  ||
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
             return "Please fill all the fields."
+        }
+        
+        //Check Profile name is not containing any special characters.
+        let cleanedProfileName = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isStringValid(cleanedProfileName) == true {
+            return "Special characters or numbers are not allowed in Profile Name."
         }
         
         //Check email format is valid
@@ -179,10 +184,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                         
                         
                     }else{
-                        showToast(message: "Enter Valid Password", duration: 2.0)
+                        showToast(message: "Enter Valid Password", duration: 2.0, height: 30)
                     }
                 }else{
-                    showToast(message: "Enter Valid Email", duration: 2.0)
+                    showToast(message: "Enter Valid Email", duration: 2.0, height: 30)
                 }
                 
                 

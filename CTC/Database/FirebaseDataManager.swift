@@ -62,6 +62,7 @@ class FirebaseDataManager {
                     "user": user.email!,
                     "toggleStarBtn": toggleStarBtn,
                     "note": note,
+                    "is_deleted": false,
                     "streak":streak,
                     "trackingDays":trackingDays
         ] as [String : Any]
@@ -176,7 +177,7 @@ class FirebaseDataManager {
         
         var snapshots : QuerySnapshot?
         let ref =   db.collection("UsersData").document(docid)
-            .collection("PracticedData").document(uid).collection("Dates").whereField("id", isEqualTo: uid)
+            .collection("PracticedData").document(uid).collection("Dates").whereField("id", isEqualTo: uid).whereField("is_deleted", isEqualTo: false)
         ref.getDocuments() { (snapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

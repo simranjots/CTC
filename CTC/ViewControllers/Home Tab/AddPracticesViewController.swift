@@ -185,7 +185,7 @@ class AddPracticesViewController: UIViewController {
         
         if error != nil {
             
-            showToast(message: error!, duration: 2.0)
+            showToast(message: error!, duration: 2.0, height: 30)
         } else {
             var practiceFlag: Int!
             if(isUpdating){

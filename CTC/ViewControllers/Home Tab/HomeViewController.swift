@@ -162,14 +162,15 @@ class HomeViewController: UIViewController,ReceiveData{
         let flag = false
         let date = Date().dateFormate()!
         let uid = prac.uId
+
         userPractices.deletePractice(practice: prac)
     
         let resultFlag = practiceHistory.addPracticeHistory(hid: uid!, practiceName: pracName!, comDelFlag: flag, date: date, dss: dss, td: Int(td ?? 0),userOb:userOb)
         
         if(resultFlag == 0){
-            showToast(message: "\(pracName!) Deleted", duration: 3)
+            showToast(message: "\(pracName!) Deleted", duration: 3, height: 30)
         } else {
-            showToast(message: "Deletion Error", duration: 3)
+            showToast(message: "Deletion Error", duration: 3, height: 30)
         }
         self.refreshTableview(date: selectedDate)
     }
@@ -246,15 +247,24 @@ extension HomeViewController: UITableViewDelegate{
         if(editingStyle == .delete){
             
             let prac = self.practices[indexPath.row]
+            
             let alert = UIAlertController(title: "Warning", message: "Do you want to delete \(prac.practice!)?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action:UIAlertAction) -> Void in
                 self.practiceReminder.RemoveReminder(uid: prac.practice!)
-                if let remind = self.practiceReminder.loadReminderbyPracticeNameonly(uid: prac.practice!) {
+                if let remind =  self.practiceReminder.loadReminderbyPracticeNameonly(uid: prac.uId!) {
+                    self.practiceReminder.RemoveReminder(uid:prac.uId!)
                     self.practiceReminder.deleteReminder(reminder: remind)
-                    }
+                           }
                 self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
+                self.db.updateSinglePractices(collectionName: "PracticedData", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
                 self.delPractice(prac: prac, userOb: self.userObject)
+                
+                if  self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!) != nil {
+                    self.userPracticesData.deletePracticeData(practicesData: self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!)!)
+                    }
+                
+               
                
             }))
             
