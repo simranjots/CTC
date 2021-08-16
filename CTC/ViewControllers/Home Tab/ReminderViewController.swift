@@ -50,6 +50,7 @@ class ReminderViewController: UIViewController {
         if reminder.first?.identifier != nil {
             self.dismiss(animated: true)
             ReminderViewController.switchCompletion(true)
+            setNotification(Reminder: reminder)
         }else{
             self.dismiss(animated: true)
             ReminderViewController.switchCompletion(false)
@@ -134,6 +135,28 @@ extension ReminderViewController:UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func setNotification(Reminder:[Reminder]) {
+        for Remind in Reminder {
+        if Remind.day == "Weekdays" {
+            for i in 2...6 {
+                NotificationManager.instance.scheduleNotification(hour: Int(Remind.hour), minute: Int(Remind.minute), weekday: i, identifier: (selectedPractice?.practice)!+"\(i)"+Remind.day!+"\(Remind.hour)"+"\(Remind.minute)",title: "\(Remind.practiceName ?? "Practice")", body: "Practice Reminder: Stay on track to meet your goals. Let's get started!")
+            }
+        }else if Remind.day == "Everyday"{
+            for i in 1...7 {
+              
+                NotificationManager.instance.scheduleNotification(hour: Int(Remind.hour), minute: Int(Remind.minute), weekday: i, identifier: (selectedPractice?.practice)!+"\(i)"+Remind.day!+"\(Remind.hour)"+"\(Remind.minute)",title: "\(Remind.practiceName ?? "Practice")", body: "Practice Reminder: Stay on track to meet your goals. Let's get started!")
+            }
+        }else {
+            for weekday in weekDict {
+                if weekday.key == Remind.day {
+                    NotificationManager.instance.scheduleNotification(hour: Int(Remind.hour), minute: Int(Remind.minute), weekday: weekday.value, identifier: (selectedPractice?.practice)!+"\(weekday.value)"+Remind.day!+"\(Remind.hour)"+"\(Remind.minute)",title: "\(Remind.practiceName ?? "Practice")", body: "Practice Reminder: Stay on track to meet your goals. Let's get started!")
+                }
+            }
+        }
+        
+    }
     }
 }
 

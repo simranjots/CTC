@@ -79,6 +79,7 @@ class PracticeReminder {
         }
         
     }
+    
     func deleteNotification(remind : Reminder) {
         if remind.day == "Weekdays" {
             for i in 2...6 {

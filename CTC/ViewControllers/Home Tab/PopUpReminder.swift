@@ -69,16 +69,14 @@ class PopUpReminder: UIViewController {
                         showToast(message: "This Reminder already exits", duration: 1)
                         
                     }else{
-                        
                         self.practiceReminder.AddReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: identifier)
-                        setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
                         self.dismiss(animated: true, completion: nil)
                         PopUpReminder.searchCompletion(true)
                     }
                 
             }else{
                 self.practiceReminder.AddReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: identifier)
-                setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
+                
                 self.dismiss(animated: true, completion: nil)
                 PopUpReminder.searchCompletion(true)
             }
@@ -86,31 +84,12 @@ class PopUpReminder: UIViewController {
         }
         if PopUpReminder.value == "update"{
             practiceReminder.UpdateReminder(uid: (PopUpReminder.selectPractice?.uId)!, daysLabel: label.text!, hour: Int16(hour.text!)!, minute: Int16(minute.text!)!, practiceName: (PopUpReminder.selectPractice?.practice)!, identifier: reminder[PopUpReminder.myindex].identifier!)
-            setNotification(practiceName: (PopUpReminder.selectPractice?.practice)!)
+           
             self.dismiss(animated: true, completion: nil)
             PopUpReminder.searchCompletion(true)
         }
        
         
-        
-    }
-    func setNotification(practiceName:String) {
-        if label.text == "Weekdays" {
-            for i in 2...6 {
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: (PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
-            }
-        }else if label.text == "Everyday"{
-            for i in 1...7 {
-                print("note \((PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!)")
-                NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: i, identifier: (PopUpReminder.selectPractice?.practice)!+"\(i)"+label.text!+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
-            }
-        }else {
-            for weekday in weekDict {
-                if weekday.key == label.text {
-                    NotificationManager.instance.scheduleNotification(hour: Int(hour.text!)!, minute: Int(minute.text!)!, weekday: weekday.value, identifier: (PopUpReminder.selectPractice?.practice)!+"\(weekday.value)"+hour.text!+minute.text!,title: "\(practiceName) Practice Reminder", body: "Stay on track to meet your goals. Let's get started!")
-                }
-            }
-        }
         
     }
     func add()  {

@@ -211,6 +211,7 @@ extension MorePageViewController : UITableViewDelegate, UITableViewDataSource {
                     } catch let signOutError as NSError {
                       print ("Error signing out: %@", signOutError)
                     }
+                    NotificationManager.instance.CancelAllNotification()
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "newLoginOptions") as! UINavigationController
                     self.present(vc, animated: true, completion: nil)
