@@ -258,11 +258,17 @@ extension HomeViewController: UITableViewDelegate{
                            }
                 self.db.updateSinglePractices(collectionName: "Practices", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
                 self.db.updateSinglePractices(collectionName: "PracticedData", valueName: "is_deleted", value: true, document: prac.uId!, uid: self.userObject.uid!)
-                self.delPractice(prac: prac, userOb: self.userObject)
                 
-                if  self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!) != nil {
-                    self.userPracticesData.deletePracticeData(practicesData: self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!)!)
-                    }
+                if (self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!) != nil) {
+                    let p = self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!)
+                    self.delPractice(prac: prac, userOb: self.userObject)
+                    self.userPracticesData.deletePracticeData(practicesData: p!)
+                }else{
+                    self.delPractice(prac: prac, userOb: self.userObject)
+                }
+               
+                   
+                    
                 
                
                

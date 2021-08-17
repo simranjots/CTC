@@ -22,7 +22,7 @@ extension Practice {
     @NSManaged public var startedday: NSDate?
     @NSManaged public var is_deleted: Bool
     @NSManaged public var is_completed: Bool
-    @NSManaged public var practiceData: NSSet?
+    @NSManaged public var practiceData: PracticeData?
     @NSManaged public var user: User?
     @NSManaged public var values: String?
     @NSManaged public var encourage: String?
