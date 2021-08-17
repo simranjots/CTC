@@ -138,6 +138,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                 user?.delete { error in
                                                     if error != nil {
                                                     // An error happened.
+                                                        self.showAlert(title: "Error!", message: error!.localizedDescription , buttonTitle: "Try Again")
                                                   } else {
                                                     self.currentUser.deleteUser(email: email)
                                                     // Account deleted.
