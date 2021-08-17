@@ -217,5 +217,15 @@ class CurrentUser {
             print(err)
         }
     }
+    func deleteUser(email: String) {
+        loadUser()
+        for user in users{
+            if user.email == email{
+                context.delete(user)
+            }
+        }
+        
+        
+    }
     
 }

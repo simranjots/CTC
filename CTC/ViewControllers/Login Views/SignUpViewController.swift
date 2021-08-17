@@ -133,7 +133,16 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                 
                                             }else if (flag == 2){
                                                 
-                                                self.showAlert(title: "Error", message: "Please Report an error. . .", buttonTitle: "Try Again")
+                                                self.showAlert(title: "Error", message: "There might be some issue please try again", buttonTitle: "Try Again")
+                                                let user = Auth.auth().currentUser
+                                                user?.delete { error in
+                                                    if error != nil {
+                                                    // An error happened.
+                                                  } else {
+                                                    self.currentUser.deleteUser(email: email)
+                                                    // Account deleted.
+                                                  }
+                                                }
                                                 
                                             }else if (flag == 0){
                                                 
@@ -160,9 +169,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                             
                                                         let alert = UIAlertController(title: "Email Sent", message: "An email verification link has been sent to your email. Please check your email.", preferredStyle: .alert)
                                                               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) -> Void in
-                                                                let storyboard = UIStoryboard(name: "Login", bundle: nil)
-                                                                let vc = storyboard.instantiateViewController(withIdentifier: "LoginScreen") as! LoginViewController
-                                                                self.present(vc, animated: true, completion: nil)
+                                                                self.navigationController?.popViewController(animated: true)
                                                               }))
                                                       
                                                             
