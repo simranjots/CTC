@@ -170,7 +170,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                                                             
                                                         let alert = UIAlertController(title: "Email Sent", message: "An email verification link has been sent to your email. Please check your email.", preferredStyle: .alert)
                                                               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) -> Void in
-                                                                self.navigationController?.popViewController(animated: true)
+                                                                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                                                                                                                               let vc = storyboard.instantiateViewController(withIdentifier: "LoginScreen") as! LoginViewController
+                                                                                                                               self.present(vc, animated: true, completion: nil)
                                                               }))
                                                       
                                                             
