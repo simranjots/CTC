@@ -29,16 +29,7 @@ class PracticesRecordListVC: UIViewController {
         reloadPractices()
     }
     override func viewDidAppear(_ animated: Bool) {
-        if practicesArray != nil {
-                for data in practicesArray{
-                    db.fetchMonthlyData(uid: data.uId!, docid: userObject.uid!) { [self] flag in
-                        if flag {
-                            reloadPractices()
-                        }
-                    }
-                }
-            
-        }
+        reloadPractices()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
