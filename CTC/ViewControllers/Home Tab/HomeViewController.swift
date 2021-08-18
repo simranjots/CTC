@@ -32,16 +32,19 @@ class HomeViewController: UIViewController,ReceiveData{
     override func viewWillAppear(_ animated: Bool) {
         selectedDate = Date().dateFormate()!
         practices = self.getPractices(user: userObject)
+        if UserDefaults.standard.bool(forKey: "weekly"){
         if practices != nil {
                 for data in practices{
                     db.fetchMonthlyData(uid: data.uId!, docid: userObject.uid!) { [self] flag in
                         if flag {
                             refreshTableview(date: selectedDate)
+                            UserDefaults.standard.set(false, forKey: "weekly")
                         }
                     }
                 }
             
         }
+    }
         refreshTableview(date: selectedDate)
         
     }
@@ -261,8 +264,8 @@ extension HomeViewController: UITableViewDelegate{
                 
                 if (self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!) != nil) {
                     let p = self.userPracticesData.getPracticeDataObj(practiceUid: prac.uId!)
-                    self.delPractice(prac: prac, userOb: self.userObject)
                     self.userPracticesData.deletePracticeData(practicesData: p!)
+                    self.delPractice(prac: prac, userOb: self.userObject)
                 }else{
                     self.delPractice(prac: prac, userOb: self.userObject)
                 }

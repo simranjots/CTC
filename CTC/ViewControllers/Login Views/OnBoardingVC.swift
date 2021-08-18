@@ -32,6 +32,7 @@ class OnBoardingVC: UIViewController {
                     if pUid != nil {
                         db.FetchPracData(uid: pUid!, docid: userObject.uid!,completionhandler: { (flag) in
                             if flag == true{
+                                UserDefaults.standard.set(true, forKey: "weekly")
                             }
                         })
                     }

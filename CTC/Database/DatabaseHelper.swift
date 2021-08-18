@@ -54,7 +54,7 @@ class DatabaseHelper{
             }
             
             
-            let weeklyData = getPracticeWeeklyData(practiceName: prac.practice!)
+            let weeklyData = getPracticeWeeklyData(uid: prac.uId!)
             
             for weekData in weeklyData!{
                 
@@ -90,7 +90,7 @@ class DatabaseHelper{
     
     func getPracticeRecords(user: User) ->  [String: [ [String: String?] ] ]? {
         
-        getPracRecordTemp(user: user)
+        _=getPracRecordTemp(user: user)
         
         var finalDateArray = [String:[[String:String?]]]()
         
@@ -184,7 +184,7 @@ class DatabaseHelper{
     func getPracticebyName(practice: Practice) -> [PracticeData]? {
         
         let featchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PracticeData")
-        featchRequest.predicate = NSPredicate(format: "practiceDataToPractice.uID = %@", argumentArray: [practice.uId])
+        featchRequest.predicate = NSPredicate(format: "practiceDataToPractice.uID = %@", argumentArray: [practice.uId as Any])
         
         
         do {
@@ -207,12 +207,13 @@ class DatabaseHelper{
     //MAEK: Practice Weekly  calss
     //-------------------------------------------------------------------------------------------------------------------------------
     
-    func addPracticeWeeklyData(practiceName: String, NoOfDaysPracticed: Int,id : String) -> Int {
+    func addPracticeWeeklyData(practiceName: String, NoOfDaysPracticed: Int,id : String,uid:String) -> Int {
         
         let newWeeklyData = WeeklyData(context: self.context)
         newWeeklyData.practice_name = practiceName
         newWeeklyData.no_of_days_practiced = Int32(NoOfDaysPracticed)
         newWeeklyData.month_id =  id
+        newWeeklyData.muid = uid
         
         do {
             try context.save()
@@ -244,11 +245,10 @@ class DatabaseHelper{
     //
     //    }
     //
-    func getPracticeWeeklyData(practiceName: String) -> [WeeklyData]? {
+    func getPracticeWeeklyData(uid: String) -> [WeeklyData]? {
         let request : NSFetchRequest<WeeklyData> = WeeklyData.fetchRequest()
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "practice_name = %@", argumentArray: [practiceName])
-        
+        request.predicate = NSPredicate(format: "muid = %@", argumentArray: [uid])
         do {
             let dataArray = try context.fetch(request)
             return dataArray
@@ -260,10 +260,10 @@ class DatabaseHelper{
         return nil
         
     }
-    func getmonthlyData(practiceName: String) -> WeeklyData? {
-        if let  monthdata = getPracticeWeeklyData(practiceName: practiceName){
+    func getmonthlyData(uid: String) -> WeeklyData? {
+        if let  monthdata = getPracticeWeeklyData(uid: uid){
             for data in monthdata{
-                if(data.practice_name == practiceName){
+                if(data.muid == uid){
                     monthInfo = monthdata.last
                     return monthInfo
                 }
@@ -272,8 +272,8 @@ class DatabaseHelper{
         }
         return nil
     }
-    func getMonthid(practiceName: String) -> Int32?{
-        if let  monthdata = getmonthlyData(practiceName: practiceName){
+    func getMonthid(uid: String) -> Int32?{
+        if let  monthdata = getmonthlyData(uid: uid){
             if monthdata.month_id == Date().getMonth(){
                 return monthdata.no_of_days_practiced
             }else{
@@ -282,6 +282,17 @@ class DatabaseHelper{
             
         }
         return 0
+    }
+    
+    func deleteMonthData(uid: String) {
+        let monthdata = getmonthlyData(uid: uid)!
+        context.delete(monthdata)
+        do{
+            try context.save()
+        }catch{
+            print("Error saving context \(error)")
+            
+        }
     }
     //MAEK: Practice Weekly calss over
     //-------------------------------------------------------------------------------------------------------------------------------

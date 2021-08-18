@@ -19,6 +19,7 @@ extension WeeklyData {
 
     @NSManaged public var practice_name: String?
     @NSManaged public var month_id: String?
+    @NSManaged public var muid: String?
     @NSManaged public var no_of_days_practiced: Int32
     @NSManaged public var total_no_of_days: Int32
     @NSManaged public var start_date: NSDate?

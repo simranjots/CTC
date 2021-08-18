@@ -81,6 +81,7 @@ class FirebaseDataManager {
     }
     func AddMonthlyDataToFirebase(practiceName: String,user: User,uid: String,MonthlyPracticedDays:Int,PracticedDate: Date,month_id:String) {
         let datas = ["practiceName":practiceName,
+                     "muid": uid,
                      "uid" : month_id,
                      "MonthlyPracticedDays": MonthlyPracticedDays] as [String : Any]
         db.collection("UsersData").document(user.uid!)
@@ -287,9 +288,10 @@ class FirebaseDataManager {
                         let practiceName = document.data() ["practiceName"] as! String
                         let MonthlyPracticedDays = document.data() ["MonthlyPracticedDays"] as! Int
                         let uid = document.data() ["uid"] as! String
+                        let muid = document.data() ["muid"] as! String
                         print(practiceName + "\(MonthlyPracticedDays)" + uid)
                         let monthlydata = DatabaseHelper()
-                        _ = monthlydata.addPracticeWeeklyData(practiceName: practiceName, NoOfDaysPracticed: MonthlyPracticedDays, id: uid)
+                        _ = monthlydata.addPracticeWeeklyData(practiceName: practiceName, NoOfDaysPracticed: MonthlyPracticedDays, id: uid,uid: muid)
                         completion(true)
                     }
                 }else{

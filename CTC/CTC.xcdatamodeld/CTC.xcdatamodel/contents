@@ -58,12 +58,10 @@
         <relationship name="practiceHistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PracticeHistory" inverseName="user" inverseEntity="PracticeHistory"/>
     </entity>
     <entity name="WeeklyData" representedClassName=".WeeklyData" syncable="YES">
-        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="month_id" optional="YES" attributeType="String"/>
+        <attribute name="muid" optional="YES" attributeType="String"/>
         <attribute name="no_of_days_practiced" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="practice_name" optional="YES" attributeType="String"/>
-        <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="total_no_of_days" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Notes" positionX="-522" positionY="-387" width="128" height="89"/>
@@ -72,6 +70,6 @@
         <element name="PracticeHistory" positionX="160" positionY="192" width="128" height="134"/>
         <element name="Reminder" positionX="-291.734375" positionY="-458.1171875" width="128" height="119"/>
         <element name="User" positionX="-501.1171875" positionY="-548.9765625" width="128" height="149"/>
-        <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="119"/>
+        <element name="WeeklyData" positionX="-552.4296875" positionY="-178.09375" width="128" height="89"/>
     </elements>
 </model>

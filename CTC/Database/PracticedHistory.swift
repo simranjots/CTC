@@ -47,6 +47,12 @@ class PracticedHistory {
     func deletePracticeHistory(practice: PracticeHistory) {
         
         context.delete(practice)
+        do{
+            try context.save()
+        }catch{
+            print("Error saving context \(error)")
+            
+        }
         
     }
 }

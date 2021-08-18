@@ -70,7 +70,7 @@ extension PracticesRecordListVC: UITableViewDelegate, UITableViewDataSource {
         let days = Date().days(from: startedDate) + 1
         let practicedDays = userPracticesData.getTrackingDay(practice: practicesArray[indexPath.row], date: Date().dateFormate()!)
         percentage = Int((Float(practicedDays!) / Float(days)) * 100)
-        if let  monthdata = dbHelper.getMonthid(practiceName: practicesArray[indexPath.row].practice!){
+        if let  monthdata = dbHelper.getMonthid(uid: practicesArray[indexPath.row].uId!){
             cell.activityPracticedForThisMonthLabel.text = "\(monthdata)"
             
         }
